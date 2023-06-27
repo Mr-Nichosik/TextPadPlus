@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LineNotFound" xml:space="preserve">
+    <value>Nothing was found according to your request.</value>
+  </data>
+  <data name="MissingXmlFile" xml:space="preserve">
+    <value>Missing configuration file.</value>
+  </data>
+  <data name="MSGErrorNoTabsOpen" xml:space="preserve">
+    <value>No tabs open</value>
+  </data>
+  <data name="MSGErrorPythonInterPath" xml:space="preserve">
+    <value>You must specify the path to the Python interpreter.</value>
+  </data>
+  <data name="MSGErrorRunBatFile" xml:space="preserve">
+    <value>An error occurred while running the command line script. It may not have been saved correctly or the cmd.exe file is missing from the directories of the C:\Windows\ folder.</value>
+  </data>
+  <data name="MSGErrorRunPythonFile" xml:space="preserve">
+    <value>Error when starting the program on Python.</value>
+  </data>
+  <data name="MSGErrorRunVBSFile" xml:space="preserve">
+    <value>An error occurred while running the Visual Basic script file. Perhaps it was not saved correctly or the VBS core cscript.exe is missing in the directories of the C:\Windows\ folder.</value>
+  </data>
+  <data name="MSGErrorStartUpdater" xml:space="preserve">
+    <value>An error occurred while launching the update installer. Updater.exe is missing.</value>
+  </data>
+  <data name="MSGErrorWhenCheckingInternet" xml:space="preserve">
+    <value>An error has occurred. Check your internet connection.</value>
+  </data>
+  <data name="MSGErrorWhenOpenFIle" xml:space="preserve">
+    <value>An error occurred while opening the file</value>
+  </data>
+  <data name="MSGErrorWhenRunningEmptyScript" xml:space="preserve">
+    <value>Can't run empty script</value>
+  </data>
+  <data name="MSGErrorWhenSaveFile" xml:space="preserve">
+    <value>An error occurred while saving the file</value>
+  </data>
+  <data name="MSGQuestionTextInFTB" xml:space="preserve">
+    <value>The text box contains text. Want to save it to a document?</value>
+  </data>
+  <data name="newDocumentTitle" xml:space="preserve">
+    <value>New document</value>
+  </data>
+  <data name="openFileDialogFilter" xml:space="preserve">
+    <value>Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files(*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|All files (*.*)|*.*</value>
+  </data>
+  <data name="saveFileDialogFilter" xml:space="preserve">
+    <value>Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files (*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|All files (*.*)|*.*</value>
+  </data>
+  <data name="SearchUINoFoundWord" xml:space="preserve">
+    <value>No such word found</value>
+  </data>
+  <data name="SettingsLangChange" xml:space="preserve">
+    <value>Restart the program to apply the settings.</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>Unknown error</value>
+  </data>
+</root>
