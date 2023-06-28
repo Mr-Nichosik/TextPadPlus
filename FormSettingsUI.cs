@@ -5,7 +5,6 @@ namespace TextPad_
     {
         private bool isLangChanged = false;
 
-
         public SettingsUI()
         {
             if (Properties.Settings.Default.Language == "English")

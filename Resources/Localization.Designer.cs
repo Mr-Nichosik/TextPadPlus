@@ -169,6 +169,15 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Переместить элемент в корзину?.
+        /// </summary>
+        public static string MSGQestionMoveFileToTrash {
+            get {
+                return ResourceManager.GetString("MSGQestionMoveFileToTrash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Текстовое поле содержит текст. Хотите сохранить его в документ?.
         /// </summary>
         public static string MSGQuestionTextInFTB {

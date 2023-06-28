@@ -1,5 +1,7 @@
 ﻿
+using Microsoft.VisualBasic.FileIO;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 
 namespace TextPad_
@@ -15,10 +17,10 @@ namespace TextPad_
         private readonly ILogger LS = new LogSystem($"{Application.StartupPath}\\logs");
 
         // Обработчик запуска файлов
-        private static IFileRunner FileRunner = new TextEditor();
+        private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "26.06.2023";
+        public string DateOfRelease { get; } = "IN DEVELOPING";
         public string ProgramPath { get; } = Application.StartupPath;
         public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
@@ -27,7 +29,7 @@ namespace TextPad_
         internal List<string> OpenedFiles { get; set; } = new();
 
         // Общая переменная для Rich Text Box
-        private static RichTextBox? rtb;
+        private RichTextBox? rtb;
 
         // Запуск программы в обычном режиме
         public FormMainUI()
@@ -80,6 +82,8 @@ namespace TextPad_
         }
 
         #region Обработка событий разных элементов формы
+
+        // Методы для кнопок панели инструментов, контекстного и главного меню
         private void saveAsFileButton(object sender, EventArgs e)
         {
             TextEditor.SaveAsFile();
@@ -140,6 +144,7 @@ namespace TextPad_
             TextEditor.dateTime(tabControl);
         }
 
+        // Методы для TabControl
         private void createTabClick(object sender, EventArgs e)
         {
             CreateTab();
@@ -197,6 +202,14 @@ namespace TextPad_
                 rtb.WordWrap = Properties.Settings.Default.WordWarp;
                 rtb.Font = Properties.Settings.Default.EditorFont;
                 textLengthLabel.Text = rtb.TextLength.ToString();
+                if (rtb.Lines.Length == 0)
+                {
+                    textLinesLabel.Text = "1";
+                }
+                else
+                {
+                    textLinesLabel.Text = rtb.Lines.Length.ToString();
+                }
 
                 switch (Properties.Settings.Default.Theme)
                 {
@@ -215,18 +228,29 @@ namespace TextPad_
             {
                 LS.Error($"{ex} Error while selecting tabs (?). Maybe not have any tabs open.");
                 textLengthLabel.Text = "0";
+                textLinesLabel.Text = "1";
             }
         }
 
+        // Обработка события TextChanged для каждого rich text box'а
         private void TextBoxTextChanged()
         {
             rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
             textLengthLabel.Text = rtb.Text.Length.ToString();
+            if (rtb.Lines.Length == 0)
+            {
+                textLinesLabel.Text = "1";
+            }
+            else
+            {
+                textLinesLabel.Text = rtb.Lines.Length.ToString();
+            }
 
             LS.Trace("Handling the \"Text Changed\" event");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
+        // Методы для кнопок панели проводника
         private void OpenFolderBtnClick(object sender, EventArgs e)
         {
             if (folderBrowserDialog.ShowDialog() == DialogResult.Cancel)
@@ -235,6 +259,7 @@ namespace TextPad_
             }
 
             workFolderLabel.Text = new DirectoryInfo(folderBrowserDialog.SelectedPath).Name;
+            listView.Clear();
 
             // Папки
             foreach (string item in Directory.GetDirectories(folderBrowserDialog.SelectedPath))
@@ -254,9 +279,39 @@ namespace TextPad_
             }
         }
 
+        private void AboveFolderBtnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                string newDirectory = Directory.GetParent(folderBrowserDialog.SelectedPath).ToString();
+                folderBrowserDialog.SelectedPath = newDirectory;
+
+                workFolderLabel.Text = new DirectoryInfo(newDirectory).Name;
+                listView.Clear();
+
+                // Папки
+                foreach (string item in Directory.GetDirectories(newDirectory))
+                {
+                    ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
+                    lvi.ToolTipText = item;
+                    listView.Items.Add(lvi);
+
+                }
+
+                // Файлы
+                foreach (string item in Directory.GetFiles(newDirectory))
+                {
+                    ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
+                    lvi.ToolTipText = item;
+                    listView.Items.Add(lvi);
+                }
+            }
+            catch { }
+        }
+
         private void RefreshFolder(object sender, EventArgs e)
         {
-            if (folderBrowserDialog.SelectedPath == "")
+            if (folderBrowserDialog.SelectedPath == null)
             {
                 return;
             }
@@ -267,16 +322,15 @@ namespace TextPad_
             foreach (string item in Directory.GetDirectories(folderBrowserDialog.SelectedPath))
             {
                 ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
-                lvi.ToolTipText = new DirectoryInfo(item).Name;
+                lvi.ToolTipText = item;
                 listView.Items.Add(lvi);
-
             }
 
             // Файлы
             foreach (string item in Directory.GetFiles(folderBrowserDialog.SelectedPath))
             {
                 ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
-                lvi.ToolTipText = new DirectoryInfo(item).Name;
+                lvi.ToolTipText = item;
                 listView.Items.Add(lvi);
             }
         }
@@ -288,10 +342,30 @@ namespace TextPad_
             //Проверка существования файла
             if (Directory.Exists(path))
             {
-                return;
+                folderBrowserDialog.SelectedPath = path;
+
+                workFolderLabel.Text = new DirectoryInfo(path).Name;
+                listView.Clear();
+
+                // Папки
+                foreach (string item in Directory.GetDirectories(path))
+                {
+                    ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
+                    lvi.ToolTipText = item;
+                    listView.Items.Add(lvi);
+
+                }
+
+                // Файлы
+                foreach (string item in Directory.GetFiles(path))
+                {
+                    ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
+                    lvi.ToolTipText = item;
+                    listView.Items.Add(lvi);
+                }
             }
 
-            if (File.Exists(path))
+            else if (File.Exists(path))
             {
                 CreateTab(new DirectoryInfo(path).Name);
                 OpenedFiles.Insert(tabControl.TabPages.Count - 1, path);
@@ -301,10 +375,6 @@ namespace TextPad_
                 rtb.Text = fileText;
 
                 tabControl.SelectTab(tabControl.TabPages[tabControl.TabPages.Count - 1]);
-            }
-            else
-            {
-
             }
         }
 
@@ -340,6 +410,38 @@ namespace TextPad_
             }
         }
 
+        // Контекстное меню проводника
+        private void deleteFile(object sender, EventArgs e)
+        {
+            if (listView.Items.Count < 1)
+                return;
+
+            try
+            {
+                if (File.Exists(listView.Items[listView.FocusedItem.Index].ToolTipText))
+                {
+                    if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+                    FileSystem.DeleteFile(listView.Items[listView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                }
+                else if (Directory.Exists(listView.Items[listView.FocusedItem.Index].ToolTipText))
+                {
+                    if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+                    FileSystem.DeleteDirectory(listView.Items[listView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                }
+
+                RefreshFolder(sender, e);
+            }
+            catch { }
+        }
+
+        // Методы для кнопок панели запуска файлов
         private void RunScript(object sender, EventArgs e)
         {
             FileRunner.RunScript();
@@ -361,6 +463,7 @@ namespace TextPad_
             FileRunner.VbsRun();
         }
 
+        // Просто выход
         private void exit(object sender, EventArgs e)
         {
             Application.Exit();
@@ -591,10 +694,12 @@ namespace TextPad_
                     break;
             }
 
+            listView.Clear();
+
             /*
              * Здесь ваыставляется состояние окна, которое было в момент последнего запуска. По умолчанию это обычное.
              * Но если окно было свёрнуто, то всё равно ставится обычное.
-            */ 
+            */
             switch (Properties.Settings.Default.MainWindowState)
             {
                 case "Normal":
@@ -619,8 +724,8 @@ namespace TextPad_
                  * В первый элемент программа сама записывает инфу о себе, а во втором находятся неизменяемая информация о моём сайте (url адреса).
                  */
 
-            // Загрузка Xml файла
-            XmlDocument xmlConfig = new XmlDocument();
+                // Загрузка Xml файла
+                XmlDocument xmlConfig = new XmlDocument();
                 xmlConfig.Load(Application.StartupPath + @"Config.xml");
 
                 // В корневом элементе (DocumentElement) загруженного файла (xmlConfig) идёт обзор элементов в корневом элементе.

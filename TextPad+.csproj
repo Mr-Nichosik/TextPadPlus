@@ -26,6 +26,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FormMainUI.resx~RF4736cee.TMP" />
+    <None Remove="pxcb1glf.b43~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Resources\Icons\TextPadLogo.ico" />
   </ItemGroup>
 

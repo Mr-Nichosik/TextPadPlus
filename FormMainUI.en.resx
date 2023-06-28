@@ -58,39 +58,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="editMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="optionsMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="runMenuItem.Text" xml:space="preserve">
-    <value>Run</value>
-  </data>
-  <data name="referenceMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="referenceMenuItem.Text" xml:space="preserve">
-    <value>Reference</value>
-  </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="createTabMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 22</value>
   </data>
@@ -135,6 +102,12 @@
   </data>
   <data name="выходToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileMenuItem.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="копироватьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -196,6 +169,24 @@
   <data name="найтиИЗаменитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Find and Replace</value>
   </data>
+  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="editMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="optionsMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="runMenuItem.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
   <data name="aboutProgramMenuBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 22</value>
   </data>
@@ -208,8 +199,14 @@
   <data name="getUpdateBtn.Text" xml:space="preserve">
     <value>Checking for updates</value>
   </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 164</value>
+  <data name="referenceMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="referenceMenuItem.Text" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>Menu</value>
   </data>
   <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -256,14 +253,20 @@
   <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
     <value>Redo</value>
   </data>
+  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 164</value>
+  </data>
   <data name="textLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 17</value>
   </data>
   <data name="textLabelStatus.Text" xml:space="preserve">
     <value>Text length: </value>
   </data>
-  <data name="toolsStrip.Text" xml:space="preserve">
-    <value>Toolbar</value>
+  <data name="textLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 17</value>
+  </data>
+  <data name="textLinesLabelStatus.Text" xml:space="preserve">
+    <value>Rows per tab:</value>
   </data>
   <data name="toolStripButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -469,8 +472,8 @@
   <data name="toolStripButton10.Text" xml:space="preserve">
     <value>Find and replace</value>
   </data>
-  <data name="runFileToolStrip.Text" xml:space="preserve">
-    <value>Script Launcher</value>
+  <data name="toolsStrip.Text" xml:space="preserve">
+    <value>Toolbar</value>
   </data>
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 22</value>
@@ -478,12 +481,15 @@
   <data name="toolStripLabel1.Text" xml:space="preserve">
     <value>Run as</value>
   </data>
+  <data name="runFileToolStrip.Text" xml:space="preserve">
+    <value>Script Launcher</value>
+  </data>
   <data name="listViewImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAFwAQIBcAECARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAF4AQIBeAECARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -527,8 +533,14 @@
   <data name="closeFolderToolBtn.Text" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="AboveFolderBtn.Text" xml:space="preserve">
+    <value>Parent folder</value>
+  </data>
   <data name="UpSizeListViewTool.Text" xml:space="preserve">
-    <value>Reduce</value>
+    <value>Increase panel size</value>
+  </data>
+  <data name="DownSizeListViewTool.Text" xml:space="preserve">
+    <value>Reduce panel size</value>
   </data>
   <data name="workFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 25</value>

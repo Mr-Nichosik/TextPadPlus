@@ -78,11 +78,20 @@ Corrections:
   <data name="tabPage2.Text" xml:space="preserve">
     <value>What's new</value>
   </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>About program</value>
+  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 21</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Components:</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 15</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 122</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 21</value>
@@ -90,11 +99,17 @@ Corrections:
   <data name="label7.Text" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 1</value>
+  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Version</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 1</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 21</value>
@@ -102,8 +117,23 @@ Corrections:
   <data name="label9.Text" xml:space="preserve">
     <value>Developer</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 17</value>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 58</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 58</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 89</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 27</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 27</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 89</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>A free and open source program for quickly creating small text documents based on the C# language and its Windows Forms library.
@@ -135,9 +165,6 @@ Corrections:
   </data>
   <data name="labelWebSite.Text" xml:space="preserve">
     <value>Project site:</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>About program</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

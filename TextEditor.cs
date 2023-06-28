@@ -220,7 +220,7 @@ namespace TextPad_
             {
                 if (rtb.TextLength == 0)
                 {
-                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -231,7 +231,7 @@ namespace TextPad_
             catch (Exception ex)
             {
                 Ls.Error($"{ex} Error while running python file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.tabControl.SelectedIndex)}");
-                MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
@@ -246,7 +246,7 @@ namespace TextPad_
             {
                 if (rtb.TextLength == 0)
                 {
-                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -257,7 +257,7 @@ namespace TextPad_
             catch (Exception ex)
             {
                 Ls.Error($"{ex} Error while running python file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.tabControl.SelectedIndex)}");
-                MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
@@ -273,7 +273,7 @@ namespace TextPad_
             {
                 if (rtb.TextLength == 0)
                 {
-                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -299,7 +299,7 @@ namespace TextPad_
             {
                 if (rtb.TextLength == 0)
                 {
-                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Localization.MSGErrorWhenRunningEmptyScript, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -310,7 +310,7 @@ namespace TextPad_
             catch (Exception ex)
             {
                 Ls.Error($"{ex} Error while running VBScript file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.tabControl.SelectedIndex)}");
-                MessageBox.Show(Resources.Localization.MSGErrorRunVBSFile, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.Localization.MSGErrorRunVBSFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }

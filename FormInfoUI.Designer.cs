@@ -72,16 +72,16 @@ namespace TextPad_
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.labelVersion);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             // 
             // textBox2
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             // 
@@ -92,7 +92,6 @@ namespace TextPad_
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.componentsPanel);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.DeveloperLabel);
@@ -106,15 +105,16 @@ namespace TextPad_
             this.tabPage1.Controls.Add(this.textBoxWebSiteUrl);
             this.tabPage1.Controls.Add(this.labelWebSite);
             this.tabPage1.Controls.Add(this.ProgramNameLabel);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // componentsPanel
             // 
-            resources.ApplyResources(this.componentsPanel, "componentsPanel");
             this.componentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.componentsPanel.Controls.Add(this.label6);
             this.componentsPanel.Controls.Add(this.tableLayoutPanel1);
+            resources.ApplyResources(this.componentsPanel, "componentsPanel");
             this.componentsPanel.Name = "componentsPanel";
             // 
             // label6
@@ -202,9 +202,9 @@ namespace TextPad_
             // 
             // textBox1
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 
@@ -240,8 +240,8 @@ namespace TextPad_
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::TextPad_.Properties.Resources.TextPadLogo;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -254,9 +254,9 @@ namespace TextPad_
             // 
             // textBoxWebSiteUrl
             // 
-            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
             this.textBoxWebSiteUrl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxWebSiteUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
             this.textBoxWebSiteUrl.Name = "textBoxWebSiteUrl";
             this.textBoxWebSiteUrl.ReadOnly = true;
             // 
@@ -272,9 +272,9 @@ namespace TextPad_
             // 
             // tabControl
             // 
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 

@@ -49,7 +49,7 @@ namespace TextPad_
                 }
                 else
                 {
-                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information); // в противном случае сообщаем о не найденном слове 
+                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information); // в противном случае сообщаем о не найденном слове 
                 }
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace TextPad_
                 }
                 else
                 {
-                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information); // в противном случае сообщаем о не найденном слове 
+                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information); // в противном случае сообщаем о не найденном слове 
                 }
             }
             catch (Exception ex)
@@ -109,7 +109,7 @@ namespace TextPad_
                 }
                 else
                 {
-                    MessageBox.Show(Resources.Localization.LineNotFound, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Localization.LineNotFound, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -152,7 +152,7 @@ namespace TextPad_
                 else
                 {
                     findCutLength = 0;
-                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

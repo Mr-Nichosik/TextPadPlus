@@ -3,7 +3,7 @@ namespace TextPad_
 {
     public partial class FormPythonInterpreterUI : Form
     {
-        private IFileRunner FileRunner = new TextEditor();
+        private readonly IFileRunner FileRunner = new TextEditor();
 
         public FormPythonInterpreterUI()
         {
@@ -20,7 +20,7 @@ namespace TextPad_
             {
                 if (pathTextBox.Text == "")
                 {
-                    MessageBox.Show(Resources.Localization.MSGErrorPythonInterPath, "TextPad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.Localization.MSGErrorPythonInterPath, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 FileRunner.PythonRun(pathTextBox.Text);

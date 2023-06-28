@@ -153,6 +153,9 @@
   <data name="MSGErrorWhenSaveFile" xml:space="preserve">
     <value>An error occurred while saving the file</value>
   </data>
+  <data name="MSGQestionMoveFileToTrash" xml:space="preserve">
+    <value>Move item to recycle bin?</value>
+  </data>
   <data name="MSGQuestionTextInFTB" xml:space="preserve">
     <value>The text box contains text. Want to save it to a document?</value>
   </data>
