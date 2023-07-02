@@ -57,37 +57,838 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboveFolderBtn.Text" xml:space="preserve">
-    <value>На уровень выше</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton5.Name" xml:space="preserve">
-    <value>toolStripButton5</value>
-  </data>
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>11, 18</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="UpSizeListViewTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
+  <data name="createTabMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
   </data>
-  <data name="closeFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="createTabMenuItem.Text" xml:space="preserve">
+    <value>Создать</value>
   </data>
-  <data name="toolStripButton8.Text" xml:space="preserve">
-    <value>Отменить</value>
+  <data name="закрыть_menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
   </data>
-  <data name="&gt;&gt;toolsStrip.Name" xml:space="preserve">
-    <value>toolsStrip</value>
+  <data name="закрыть_menu.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="новоеОкноToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="новоеОкноToolStripMenuItem.Text" xml:space="preserve">
+    <value>Новое окно</value>
+  </data>
+  <data name="сохранитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="сохранитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="сохранитьКакToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="сохранитьКакToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сохранить как</value>
+  </data>
+  <data name="открытьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="открытьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="mainMenuStripSep1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 6</value>
+  </data>
+  <data name="recentFilesMenuStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="recentFilesMenuStripItem.Text" xml:space="preserve">
+    <value>Последние файлы</value>
+  </data>
+  <data name="mainMenuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 6</value>
+  </data>
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="fileMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="fileMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="копироватьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="копироватьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Копировать                 CTRL + C</value>
+  </data>
+  <data name="вырезатьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="вырезатьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вырезать                      CTRL + X</value>
+  </data>
+  <data name="вставитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="вставитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить                       CTRL + V</value>
+  </data>
+  <data name="выделитьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="выделитьВсёToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выделить всё              CTRL + A</value>
+  </data>
+  <data name="удалитьDeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="удалитьDeleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Удалить                        Delete</value>
+  </data>
+  <data name="menuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 6</value>
+  </data>
+  <data name="отменитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="отменитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Отменить                     CTRL + Z</value>
+  </data>
+  <data name="вернутьCTRLYToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="вернутьCTRLYToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вернуть                        CTRL + SHIFT + Z</value>
+  </data>
+  <data name="menuStripSep3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 6</value>
   </data>
   <data name="датаИВремяToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="&gt;&gt;listView.ZOrder" xml:space="preserve">
+  <data name="датаИВремяToolStripMenuItem.Text" xml:space="preserve">
+    <value>Дата и время</value>
+  </data>
+  <data name="найтиИЗаменитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="найтиИЗаменитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Найти и заменить...   CTRL + F</value>
+  </data>
+  <data name="editMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="editMenuItem.Text" xml:space="preserve">
+    <value>Правка</value>
+  </data>
+  <data name="optionsMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="optionsMenuItem.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="pythonToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="pythonToolStripMenuItem.Text" xml:space="preserve">
+    <value>Python</value>
+  </data>
+  <data name="vBSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="vBSToolStripMenuItem.Text" xml:space="preserve">
+    <value>VBS</value>
+  </data>
+  <data name="batToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="batToolStripMenuItem.Text" xml:space="preserve">
+    <value>Windows Bat</value>
+  </data>
+  <data name="runMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 20</value>
+  </data>
+  <data name="runMenuItem.Text" xml:space="preserve">
+    <value>Запустить как</value>
+  </data>
+  <data name="aboutProgramMenuBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 22</value>
+  </data>
+  <data name="aboutProgramMenuBtn.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="getUpdateBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 22</value>
+  </data>
+  <data name="getUpdateBtn.Text" xml:space="preserve">
+    <value>Проверка обновлений</value>
+  </data>
+  <data name="referenceMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="referenceMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="referenceMenuItem.Text" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>103, 20</value>
+  </metadata>
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>218, 21</value>
+  </metadata>
+  <metadata name="fontDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>342, 20</value>
+  </metadata>
+  <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>777, 19</value>
+  </metadata>
+  <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="копироватьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="вырезатьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="вырезатьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="вставитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="вставитьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="выделитьВсёToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="выделитьВсёToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Выделить всё</value>
+  </data>
+  <data name="удалитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="удалитьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 6</value>
+  </data>
+  <data name="отменитьToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="отменитьToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="вернутьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вернуть</value>
+  </data>
+  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 164</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip.Name" xml:space="preserve">
+    <value>contextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>441, 18</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="statusStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="textLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="textLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 17</value>
+  </data>
+  <data name="textLabelStatus.Text" xml:space="preserve">
+    <value>Символов на вкладке: </value>
+  </data>
+  <data name="textLengthLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="textLengthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 17</value>
+  </data>
+  <data name="textLengthLabel.Text" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="toolStripStatusLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 17</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="textLinesLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="textLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="textLinesLabelStatus.Text" xml:space="preserve">
+    <value>Строк на вкладке: </value>
+  </data>
+  <data name="textLinesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="textLinesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 17</value>
+  </data>
+  <data name="textLinesLabel.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 508</value>
+  </data>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 22</value>
+  </data>
+  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 49</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>721, 459</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="toolsStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>536, 20</value>
+  </metadata>
+  <data name="toolsStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="toolStripButton12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANSSURBVHhe7dw5ixRBGMbxUUQUFw8QRHQ/gImJqWhiJmho
+        YqAYmnnft+IRiKCCfgBRBEH8FoJgbGLgGYh4YSTq88A0FC/VvTU1U29XV70P/JK2txf+jrO96+yMbLbc
+        tw42wzws5QHb7LYWbsBb+Of4Bc9hB9im3B74Dm5gHwZfBbaIXYa/4Avr8xpWgC1wi+A2yJCf4Q4chPPw
+        EuQ5T8AWMEa+CzLgI5gDub3wG9xzt4GtY4x8H9xoDT56V4NvjO2e+wxsLeuK3OiK/Qqa837AErCJtUV+
+        CLyFc4+1xb4C7nkbweasLfIJ4LZDSOwj4J6zCWzjtUU+Ce5CYvPR7/75GrBhoZGbdcVeCV/Gx+gN2LBJ
+        Izdri/1YHLsO1Y+RfffJZyBkW4F3FfLjGz+BP3iqetNGbtYV+wBUvbani1MQM/nFj6p/ymiLfBpixls/
+        eS3+S+Hn6dxy4LeN/Mr5tUDfQIaZZWT+JS4YmdsP8oNLFhuZdyXyWsGRuaMgL1CqsxAzXyM+Ty+G4NUS
+        utfIXA2hz0HMZhaZKz10FpG5kkNnE5krNXRs5GMgrzV1ZK7E0NlF5koLzf+hjlnSyFxJobONzJUSOuvI
+        XAmhL0DM+E2MvBZ/phz8bfUkG3ro2EfycfBdj6+1S7Ihh551ZLLQQuwP2rsik4V2pIpMFnosZWSy0JA6
+        MlUfmr/eEDPe+vmu16bq0FqRqdrQmpGpytDakam60H1EpqpC9xWZqgl9E2J2EXzXm1QVofuOTMWHziEy
+        FR06l8hUbOicIlORoW9BzC6B73qzUFzoHCNTcaFj7pVTR6Yinzomia0RmYoI/dFzjAEX2lWQH5dKEaF3
+        wT1xjLoe2XyDEnl+SkWEXg98zURobO3INPjQn6BZSOw+ItPgQ78Ad4z9AOR5fM6+Jo5pGnxo34td2h7Z
+        fRp86J3gW26xBx+aXwh92wC74QP4Pk7boEO/A45vGMJfWufrLPic7buv7tugQ/PdAN6LY7ka/FPHUFho
+        JRZaiYVWYqGVWGglFlqJhVZioZVYaCUWWomFVmKhlVhoJRZaiYVWYqGVWGglFlqJhVZioZVYaCXJQh8C
+        3yesFd9FPcm2wB/wfdIaPYVkY+zDwFcQ1WwfLAObzWbrZ6PRf6Q0Jv+UbIt0AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton12.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton12.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="toolStripButton13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton13.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton13.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="toolStripSep1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="toolStripButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALPSURBVHhe7dw/ihVBFIXxiVTQFahr0ExdlH9CDQ0N1UUp
+        RuoaXIEoqJHeKwyIfHVeTQ+nu2rqfvDLGs6d5vEme2dVVVVVVVVVVVVVVVXV326EZ+FD+B5+d3BEO6kV
+        PZtehuG6Gz4HOlhxRDupFT17bqiXnZ/kLS85OaKd1Iqe/dcwLzu/LujAHo5oJ7WiZ/83xMvO72Q6rocj
+        2kmt6Fly+Mv+FuiwHo5oJ7WiZ1tehcOig3o5op3Uip5VDnvZdEwvR7STWtGzpxzysumQXo5oJ7WiZ3vs
+        /rLpiF6OaCe1omd77fqy6YBejmgntaJnL2K3l03jvRzRTmpFz17ULi+bhns5op3Uip7dwh6N9nJEO6kV
+        PbuFPRrt5Yh2Uit6dgt7NNprhOiuLezRaK8Roru2sEejvUaI7trCHo32uh2O7E6gu7awR6O9nocjexHo
+        ri3s0WivXyFf9t6f7NzL3dynu7awR6MrskejK7JHoyuyR6MrskejK7JHoyuyR6MrskejK7JHoyuyR6Mr
+        skejK7JHoyuyR6MrskejK7JHoyuyR6M9foTX4UG4GY4qtx+GN+FnoFt72KPRU76Ee2G07oe8jW4+xR6N
+        KvlJHvEln5cve8sn2x6NKvl1MXpvA92u2KNRJb+TR+9RoNsVezSq3AqjlzfS7Yo9GlVmiW5X7NGoMkt0
+        u2KPRpVZotsVezSqzBLdrtijUWWW6HbFHo0qs0S3K/ZoVJklul2xR6PKLNHtij0aVWaJblfs0agyS3S7
+        Yo9GlVmi2xV7NKrMEt2u2KNRZZbodsUejSqzRLcr9mhUmSW6XbFHo8os0e2KPRpVZoluV+zRqDJLdLti
+        7zI/x3ZVfA32LvMDg1fF+2DvaaDxlTwO9q6HT4EOWMHHcC3sUv6s8YovO19y/kLCruUn+0nI76ur/A8y
+        /7Z3Ib8udvskV1VVVVVVVVVVVVVVjdvZ2R/zOWO4ufQq9QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="toolStripButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASiSURBVHhe7dtbq65TFAfw5RxSdjnER3Aoic03UHKFK1eU
+        UFLaJQp3lFzxHciWG1/DBcUNUU45Szlvp/D/l1X/ZmOu9c75PMN6xljjX7/ae+33GWM+79zv4ZnPXHsT
+        +Seov+AeSBfrZKNIOSnWiUaSblKsk4wm1aRYJxjBn8bf74bw0ZOK5C74o/lZileKnlAkTMpJ0ZOJZD/p
+        JkVPJBJNqknRk4ikTZpJ0ROIxEqKSdHBR9JL+EnRgUdyUEJPig46ksMSdlJ0wJHskpCTooONZNeEmxQd
+        aCQjCTUpOshIRhNmUnSAkcwkxKTo4CKZzeYnRQcWyZJselJ0UJEszWYnRQcUyRrZ5KToYCJZK5ubFB1I
+        JGtmU5Oig4hk7WxmUnQAkXhkE5OizSPxypFPijaOxDNHOinaNBLvcNOdtRnPPdqwHM49VtPS5x6raelz
+        j9W09LnHalr63GM1LX3usZqWPvdYTUufe6ympc89VtPS5x6raelzj9W09LnHalr63GM1LX3usZqWPvdY
+        TUufe6ympc89VtPS5x6raelzj9W09LnHalr63GM1LX3usZqWPvdYTUufe6ympc89VtPS5x6raelzj9W0
+        9LnHalr63GM1LX3usZqWPvdYTUvfleAaq2np+wWeg0vBJVbTcrhv4HZYPVaz4+B7eAnuh5vhcjjvP/wz
+        f8Z/exl+AKvG3/A8nAOrxWqU2btwL1wIu4aPvQ/eA6smJ+1cWCVWg4x+hUdhyRPHY08Ba7X1X4NVXilt
+        4Yw+h5OwVm6AT6Dt8wwsTls0m7fgalg7rMna2oufKXfAomjBbD4Dj8nYDz/83wft+SVcAtPRYpmcgZG3
+        qfb4XXMt8NpEj30WpqOFMuEH+Eja40fyJOix/M9wFUxFC2XBr7aj36baGiO5GPjFQY9/AqaiRbLgdcZo
+        2hqjeRD0+A/gLBiOFsmAV+AjF337aeuM5iL4EbTGjTAcLZABl0Nm0taZyWnQGo/AcLRABlx/mklbZyYP
+        gNZ4BYajBTK4CWbS1pnJLaA1eOE4HC2QwWVgxXrsElauAH3MpzAcLZDB+WDFeuwSVi4AfQwXIYejBTLY
+        0oT8BsPRAhls6S3rWxiOFshgdpm9rTOTW0FrvAPD0QIZbOlrL29aDUcLZMDbqTNp68zkVdAaj8NwtEAG
+        3JBwFEsnXGD8CbTG1DWRFsiCGxJG09YYzUOgx/MW79kwHC2SBXeH/N/L71+AHj99f12LZMLdISNpjx/J
+        06DH8gbV9K1jLZQJr5K52W3XtMfvmuuh3Rb0IkxHC2XDu3jemxx4I0p7fg0nYDpaLCOuuPKJWzus+Sa0
+        /e6ERWkLZsStOtfBWuHbVPvKoBdgcdqiWfF9nrtD+I1oNjz2KbC2kr4OtZV0Aj9XuCGB98B3DR/L64z2
+        q+0+TsbMxagZq8FxwA0JvAfO9Sfe6eNnApfuiau2/Bknjssh7RW44jeqVX8dIXtugw/BejKX+AoWf4Af
+        1/C9n79Y8zNYT+4IXvTxVeH2K23HKbw+eAw+AuvJPgjXprgcMr1FtHJwroGHgZ8Rb8DHwE3Tv8N38Dbw
+        fgaX0HnFP7FQuLf3LzvzZjqpUap3AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton2.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="toolStripSep2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="toolStripButton3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL5SURBVHhe7Zy9ihRREEYXFTVQH0CNBV/AzMBEUHwNM39C
+        H0TxRTbwCVSM1GdQIyNRUSP9bjCwFKdmuherpqunDpxk+Zbv3tqmZ/Y2M0dN0zRN0zSr5qJ8Kt/JH/Jv
+        gn/ka3lLHgTX5UdJw8jwl7wrV824kvc55I2rH/a4XdDG9+Gqhz3uybTpfbnaYX+XtOFof8LPNq5y2LTR
+        DG/LbX/k3/KBXA20yQwHBzVs2mCGGw5m2LS5DE9yEMOmjWVoWf2waVMZEqseNm0oQ4/VDps2k+E2Vjls
+        2kiGu1j0sLcddXqczGQ6hTtycf9B7jrq9KBshlNZ1LCnHHV6UDbDOUwZdsrDgylHnR6UzfCqnMOuYY8n
+        NeFMOer0oGyGz+Rctg17PBYLZ9ur80YPymY4BjOG/T+v7HCo1OpB2aqGQ6VWD8pWNRwqtXpQtqrhUKnV
+        g7JVDYdKrR6UrWo4VGr1oGxVw6FSqwdlqxoOlVo9KFvVcKjU6kHZqoZDpVYPylY1HCq1elC2quFQqdWD
+        slUNh0qtHpStajhUavWgbFXDoVKrB2WrGg6VWj0oW9VwqNTqQdmqhkOlVg/KVjUcKrV6ULaq4VCp1YOy
+        VQ2HSq0elK1qOFRq9aBsVcOhUqsHZasaDpVaPShb1XCo1OpB2aqGQ6VWD8pWNRwqtXpQtqrhUKnVg7JV
+        DYdKrR6UrWo4VGr1oGxVw6FSqwdlqxoOlVo9KFvVcKjU6kHZqoZDpdbLkpjyaYEKfpPhULH1hiSW9lU/
+        p/WtDIeKrfck8URSvpqPZDhUbH0hiQvyg6TfqeJ7eV6GQ+XWT/KcJManbqsOewz5mkyBFkA+lB7jyn4s
+        x71u6S+QY31v5LhdpFzJG2gx5BfpvftoJkBD9Xwlz8rmFNBAt/lcnpHNTGiYuzyWV2QzAxrkFL/K8c0I
+        3ruRxkBDnONn+VLelzflJdkANLyqLhpacFUXDS24qoumjzqT6KPOJPqoM4k+6kykjzoT6aPOpmmapmma
+        pmma+hwd/QO9pVMRfunhhwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton3.Text" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="toolStripButton4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton4.Text" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="toolStripButton5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHlSURBVHhe7ZZBTsNAEATzD+A5SPApxKMQHOA1cIU3wKzE
+        SKY1Nhp3u3FISqpLdlMztnLI4cyZP+E2fAk/wvfwObwJT4L78HPGu/Bfcx1WDz513Nkt1cJoUp1NfQgv
+        wsvw8fuzJZPqDN2MahiaVGdTx4MnV2F1Z2pSnaGbUQ1Dk+ps6sm/gPGzHy9hPPzT92dLJtUZuhnVMDSp
+        zhiT6gzdjM4gvMu6ROcuRWfQW4j31/oaLoH3N6MzaPzbU7yE8fC//UvE72yGbVAT2162QU1se9kGNbHt
+        ZRvUxLaXbVAT2162QU1se9kGNbHtZRvUxLaXbVAT2162QU1se9kGNbHtpRiEDac0iiA2nNIogthwSqMI
+        YsMpjSKIDac0iiA2nNIogthwSqMIYsMpjSKIDac0iiA2UiVVf0ijCGIjVVL1hzSKIDac0iiC2HBKowhi
+        wymNIogNpzSKIDbStVStOWkUQWyka6lac9IogthwSqMIYsMpjSKIDac0iiA2nNIogthIlVT9IY0iiI1U
+        SdUf0iiC2HBKowhiwymNIogNpzSKIDac0iiC2EjXUrXmpFEEsZGupWrNSaMIYsMpjSKIDac0VfSYpKmi
+        xyRNFT0maaroMbkLqsVc7oJqMZe7oFrM5ZkzPzgcvgDvZj9gRIMLDgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton5.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton5.Text" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="toolStripButton7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWdSURBVHhe7Z05qyxFAIWvCyq48yIRDRRE0cztZWqmqKDG
+        ZgriH1BDQQMj96eR/gA3EAz1Jxi45SqCigtu4ILbOXALDsN53dXTtfbUBx/vcu909amqnurq6n4zR4PB
+        YDAYDAaDwWCQgBvg8/BT+Bv8r7JPwoPgHHgK/gNdQ9R0853Axv8Ausq34qY7gUe+q3RrbrITOOb/DV2F
+        W3RznfACdBVt2WfgZvgMukq27mbeCb9CV8Ee3MQ7wVVMLY3LMGX3neAqpZbGZZiz605wFVJL4zLE2G0n
+        uMqopXEZYu2yE1xF1NK4DEvsrhNcJdTSuAxL7aoTXAXU0rgM+9hNJ7jwamlchn3tohNccLU0LsMam+8E
+        F1otjcuw1qY7wQVWS+MypLDZTnBh1dK4DKlsshNcULU0LkNKm+sEF1ItjcuQ2qY6wQVUS+My5LCZTnDh
+        1NK4DLlsohNcMLU0LkNOq+NCqaVxGXJaHRdKLY3LkNPquFBqaVyGnFbHhVJ7x9VJrY4LpfaOq5NaHRdK
+        7R1XJ7U6LpTaO65OanVcKLV3XJ3U6rhQau+4OqnVcaHU3nF1UqvjQqm94+qkVseFUnvH1Umtjgul9o6r
+        k1odF0rtHVcntToulNo7rk5qdVwotXduh1fBS+EZx/LnqyH/Vh3X6OogM67R1UFmXKOrg8y4RlcHmXGN
+        rg4y4xpdHWTGNbo6yIxrdLVHzoS3wCfgW/Bj+CP881j+zN+9CfkavpbbVME1utoTl8Gn4ZfQ1WXKLyC3
+        ZRlFcWHUHuCVLT905Hfo6rBElsGyLoFFcCHU1nkAfgtd9jV+A1l2dtzO1VY5C5b4qB1+fh73lQ23U7VF
+        zoPvQJc3h9wX95kFt0O1NXg0cvbisub0XXg2TI7bmdoaNT/h6zmYHLcjtSV4UnQZTyenoy/BO+G18Hx4
+        LrwC3gNfhz9Bt63zX3g/TIrbkdoKnGrGzna+gg/DmJPnHXDJhxZydpR0iup2orbCi9Dl25Vj9YUwhpPw
+        Z+jKmZLDYDLcDtQW4NVpzEUWOyl2SYGNv2T4UZkl2RWz24HaAlwicNlUHvklGj/ITElwhau1YaNyncZl
+        C3LMXzLsrG18+jlMsoDnCldrw5VKl0t9CMawpPFjTsw3wdW4gtXacLnY5Qpyqhkz21nS+Dwxc3Y0d4J+
+        HK7GFazWhuv5LleQJ945boS8B+C235WNzs4ivE5wrwm+AVfjClZr8wl0uYJ3wSluhbFHPl8XGp/cC93r
+        grypsxpXsFqb76HLFbwGno41jU+uhO61we/galzBam14C9HlCl4AHUuGHdf4hMsW7vXBP+BqXMFqbeY6
+        gI20S4rGJxdBt03wIDpgbgjiwpqydthRuIDntgsexBA0dxLmqmYgZeOTu6HbNngQJ+G5aehrkKQadpRX
+        ods+mGQa+gt0hZfyUTjF3IUYG/O243/d33fl6/hOmYN3v7jE4coIPgZXU/srTF6BU8QsRcSu58c2PnkE
+        ujLUJEsRvM3mCi/lh3CKmMW4GJc0/sXwa+jKCSZbjLse1vwaK35z3wk4Rcxy9JRLGp+N+h505ahPwWTw
+        vqnbSSkfhFPE3pBxLm38l6ErR016Q4bwqwzfh25nJeQRN8c+T0MsHXZijnzKh7WSw07gymKN4egveDmc
+        gjfCeUPcbe9kPTg7moOzHZ5w58b8YPKb8rvwnPAs5AVQye8Yi7nFx8dS+GiI297JdwCvE3hBxStmPt3G
+        taPrjn/HGdjcVFPlvu+DBw3f/q5xSsgD8+Cp+Whi1od0e4IroCUfzn0bulXXg4ZHIy8il5wTlsqyOeyM
+        I38CPqu5ZHYUK8tM/hzoVuG0kNcJ+16sqSyDJ/pi/0VpS/DqlEsE+6wdcW2H2ya9wj1UuKRwM+RzO5wx
+        fQR/gOG/qfJn/o5/45IyVzX3WFg7Ovofz7k2QoPUNU4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton7.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton7.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="toolStripSep3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="toolStripButton8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHcSURBVGhD7dq/K+1xHMfxI79ykUlXBleYpExKWe5ylfsH
+        MCg/SnYpAyUGGYw2g0nKcBeDDEpcWZQSm0KUIpmUkl/PV1Lvvp0jPz7f03nr+6xHCX3PeXV++J5zpJKS
+        crMyLOIK8yiAuzTiP56MLrgq3QjphpsyjdhEMVxUinVER2yhHC5KRuRKyYhc6VuM0BVN9xT7Gdc4xy6W
+        MY1O/ESsVWAb6a5USI/QuGHEMipbQ6xbzKIKQQt51/oI3Q37EbRMpyL6nn72nkpQjUa0QVdyDvt4QPTY
+        r/Q7Qc+kQ4zJlB4XQzhB9PiyBDdjVCFGcYfoZcwgaHGPUS04hj2+ntnaEbRsjGnAJezxD1GEoGVjTCvu
+        YY/fh+C9NeYHQqTX//bYO4ilTGNGEKIaRB/89YildGMmEaoN2GMPIrY0ZgW6oD2EPMUYgx2iu1vs6ZQm
+        7+XLYP2BHaJb32XNsEOO4DKdo9khF3BZJb7FkFrYIW7vWjr1t0MO4LLfsEPcPmv1wA5ZgMvGYYdMwWX/
+        YIf0wmXRF1lNcNcv2BE3yIe7BmCHrMJla7BD9G6ku3SOZV/q6g2IOrhrAvbW0GeTLjuDHaLHi8tO8TpC
+        /4igz2lc9he6VfR3pEPfSEpK+mqp1DOl1lSacpTlNQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton8.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton8.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="toolStripButton9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVGhD7dlLSFVRFMbxmw/UEBoIgg90FjRrIIEORQTz
+        iWlGJGoiClkUjpRw7lTEmeCwYaDo3EnTqBxFEPYciE803/Zf0IXF5giS6xxYcj74TS549v04nn323jeT
+        Js31TB+28RsP5AOPycUOzv85wSO4Sw42kC0ijtENd3kIuRNhGZf/Zj2QL6/LHKED7iIP/SnCMu1wl36E
+        ZQ7RBncZQFSZVrjLU0SVaYa7DCIsc4D7SCQVeIwpLOI95K29Cf2l/tce6hFLKjGBD4ga3Jp5mSrMQabJ
+        qAHjYlbkBl5gF1EDxcmsRCHeIGoQIcsNeS5m0Ys63EEZ5G8vm2GcQV97Hw24cgqwDH3xrM8YRQmumiGE
+        Jf6gESaR50FfXMiUOIY8WOSiabcJJpF9gr64kLtwF1a56K1u9iIsxk/oAX6gGlaJWjSar7NeIRzA8k7I
+        pBDuScyX8TLVfoEeZBpW6UIiG6t70IPIPF4Kq/yCvn5sW91x6IEWYBn97MV6+PAWusgzWKYFMnGITvkg
+        rqxCF6mBy4TLb8spN9GEK9ubcJmwSD5cZgu6yC24zHfoIuVwmU/QRSyXJolGDhB0EZeHZZIZ6CIv4TLP
+        oYvMw2VqoYt8hMsUQb9LZC9tufpNNCvQd+UJXOY1dJEluMxt6OMZ2fzIOZXLvIO+K5NwmRHoImtwGTkS
+        Wke2yFe4jfzIIgW+wezkL02aNEkkk/kLlY9XMGRXDpIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton9.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton9.Text" xml:space="preserve">
+    <value>Вернуть</value>
+  </data>
+  <data name="toolStripSep4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="toolStripButton11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton11.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton11.Text" xml:space="preserve">
+    <value>Шрифт</value>
+  </data>
+  <data name="toolStripSep5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="toolStripButton10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripButton10.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="toolStripButton10.Text" xml:space="preserve">
+    <value>Найти и заменить</value>
+  </data>
+  <data name="toolsStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="toolsStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 459</value>
+  </data>
+  <data name="toolsStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="toolsStrip.Text" xml:space="preserve">
+    <value>Панель инструментов</value>
+  </data>
+  <data name="&gt;&gt;toolsStrip.Name" xml:space="preserve">
+    <value>toolsStrip</value>
+  </data>
+  <data name="&gt;&gt;toolsStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolsStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolsStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="runFileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>639, 19</value>
+  </metadata>
+  <data name="toolStripLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 22</value>
+  </data>
+  <data name="toolStripLabel1.Text" xml:space="preserve">
+    <value>Запустить как</value>
+  </data>
+  <data name="startScriptCombobox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="startScriptCombobox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="startScriptCombobox.Items" xml:space="preserve">
+    <value>Python File</value>
+  </data>
+  <data name="startScriptCombobox.Items1" xml:space="preserve">
+    <value>Windows Bat</value>
+  </data>
+  <data name="startScriptCombobox.Items2" xml:space="preserve">
+    <value>VBScript</value>
+  </data>
+  <data name="startScriptCombobox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 25</value>
+  </data>
+  <data name="RunFile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="RunFile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="RunFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="runFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="runFileToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>11, 0, 1, 0</value>
+  </data>
+  <data name="runFileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 25</value>
+  </data>
+  <data name="runFileToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="runFileToolStrip.Text" xml:space="preserve">
+    <value>toolStrip2</value>
+  </data>
+  <data name="&gt;&gt;runFileToolStrip.Name" xml:space="preserve">
+    <value>runFileToolStrip</value>
+  </data>
+  <data name="&gt;&gt;runFileToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;runFileToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;runFileToolStrip.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="explorerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1326, 19</value>
+  </metadata>
+  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
+  </data>
+  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="explorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 26</value>
+  </data>
+  <data name="&gt;&gt;explorerContextMenu.Name" xml:space="preserve">
+    <value>explorerContextMenu</value>
+  </data>
+  <data name="&gt;&gt;explorerContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <metadata name="listViewImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1194, 19</value>
+  </metadata>
   <data name="listViewImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAHcAQUB4AEFARABAAEQAQAE/wEJARAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAEgAQgBIAEIARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -118,165 +919,200 @@
         /wIAAf8DAAL/AQAB/wMAAf8BAAH/AQAC/wIAA///AP8A4AABQykAAe8UAAFDPgABQz4AAUNlAAFCAU0B
         PgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAC/wHgAQMEAAL/AeABAwQAAcABAQHgAQME
         AAHAAQEB4AEDBAABwAEBAeABAwQAAcABAQHgAQMEAAHAAQEB4AEDBAABwAEBAeABAwQAAcABAQHgAQME
-        AAHAAQEB4AEDBAABwAEBAeABAwQAAcABAQHgATsEAAHAAf8B4AE3BAAC/wHgAS8EAAL/AeABHwQABP8a
+        AAHAAQEB4AEDBAABwAEBAeABAwQAAcABAQHgATsEAAHAAf8B4AE3BAAC/wHgAS8EAAL/AeABHwQABP8E
         AAs=
 </value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="listView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
   </data>
-  <data name="editMenuItem.Text" xml:space="preserve">
-    <value>Правка</value>
+  <data name="listView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 432</value>
   </data>
-  <data name="&gt;&gt;датаИВремяToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="folderExplorerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;referenceMenuItem.Name" xml:space="preserve">
-    <value>referenceMenuItem</value>
-  </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="pythonToolStripMenuItem.Text" xml:space="preserve">
-    <value>Python</value>
-  </data>
-  <data name="runFileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 25</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 24</value>
-  </data>
-  <data name="toolsStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 49</value>
-  </data>
-  <data name="новоеОкноToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="&gt;&gt;сохранитьToolStripMenuItem.Name" xml:space="preserve">
-    <value>сохранитьToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;удалитьToolStripMenuItem.Name" xml:space="preserve">
-    <value>удалитьToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;AboveFolderBtn.Name" xml:space="preserve">
-    <value>AboveFolderBtn</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="удалитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="удалитьDeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="workFolderLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;удалитьDeleteToolStripMenuItem.Name" xml:space="preserve">
-    <value>удалитьDeleteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton13.Name" xml:space="preserve">
-    <value>toolStripButton13</value>
-  </data>
-  <data name="&gt;&gt;удалитьToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textLengthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textLinesLabel.Name" xml:space="preserve">
-    <value>textLinesLabel</value>
-  </data>
-  <data name="DownSizeListViewTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="открытьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="найтиИЗаменитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Найти и заменить...   CTRL + F</value>
-  </data>
-  <data name="toolStripButton13.Text" xml:space="preserve">
-    <value>Закрыть</value>
+  <data name="listView.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;listView.Name" xml:space="preserve">
     <value>listView</value>
   </data>
-  <data name="toolStripButton1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolsStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABKJJREFUeF7t21urrlMUB/DlHFJ2OcRHcCiJzTdQcoUrV5RQUtolCneUXPEdyJYb
-        X8MFxQ1RTjlLOW+n8P+XVf9mY671zvk8w3rGWONfv9p77fcZYz7v3O/hmc9cexP5J6i/4B5IF+tko0g5
-        KdaJRpJuUqyTjCbVpFgnGMGfxt/vhvDRk4rkLvij+VmKV4qeUCRMyknRk4lkP+kmRU8kEk2qSdGTiKRN
-        mknRE4jESopJ0cFH0kv4SdGBR3JQQk+KDjqSwxJ2UnTAkeySkJOig41k14SbFB1oJCMJNSk6yEhGE2ZS
-        dICRzCTEpOjgIpnN5idFBxbJkmx6UnRQkSzNZidFBxTJGtnkpOhgIlkrm5sUHUgka2ZTk6KDiGTtbGZS
-        dACReGQTk6LNI/HKkU+KNo7EM0c6Kdo0Eu9w0521Gc892rAczj1W09LnHqtp6XOP1bT0ucdqWvrcYzUt
-        fe6xmpY+91hNS597rKalzz1W09LnHqtp6XOP1bT0ucdqWvrcYzUtfe6xmpY+91hNS597rKalzz1W09Ln
-        Hqtp6XOP1bT0ucdqWvrcYzUtfe6xmpY+91hNS597rKalzz1W09LnHqtp6XOP1bT0ucdqWvrcYzUtfe6x
-        mpY+91hNS9+V4Bqraen7BZ6DS8ElVtNyuG/gdlg9VrPj4Ht4Ce6Hm+FyOO8//DN/xn97GX4Aq8bf8Dyc
-        A6vFapTZu3AvXAi7ho+9D94DqyYn7VxYJVaDjH6FR2HJE8djTwFrtfVfg1VeKW3hjD6Hk7BWboBPoO3z
-        DCxOWzSbt+BqWDusydrai58pd8CiaMFsPgOPydgPP/zfB+35JVwC09FimZyBkbep9vhdcy3w2kSPfRam
-        o4Uy4Qf4SNrjR/Ik6LH8z3AVTEULZcGvtqPfptoaI7kY+MVBj38CpqJFsuB1xmjaGqN5EPT4D+AsGI4W
-        yYBX4CMXfftp64zmIvgRtMaNMBwtkAGXQ2bS1pnJadAaj8BwtEAGXH+aSVtnJg+A1ngFhqMFMrgJZtLW
-        mcktoDV44TgcLZDBZWDFeuwSVq4AfcynMBwtkMH5YMV67BJWLgB9DBchh6MFMtjShPwGw9ECGWzpLetb
-        GI4WyGB2mb2tM5NbQWu8A8PRAhls6Wsvb1oNRwtkwNupM2nrzORV0BqPw3C0QAbckHAUSydcYPwJtMbU
-        NZEWyIIbEkbT1hjNQ6DH8xbv2TAcLZIFd4f838vvX4AeP31/XYtkwt0hI2mPH8nToMfyBtX0rWMtlAmv
-        krnZbde0x++a66HdFvQiTEcLZcO7eN6bHHgjSnt+DSdgOlosI6648olbO6z5JrT97oRFaQtmxK0618Fa
-        4dtU+8qgF2Bx2qJZ8X2eu0P4jWg2PPYpsLaSvg61lXQCP1e4IYH3wHcNH8vrjPar7T5OxszFqBmrwXHA
-        DQm8B871J97p42cCl+6Jq7b8GSeOyyHtFbjiN6pVfx0he26DD8F6Mpf4ChZ/gB/X8L2fv1jzM1hP7ghe
-        9PFV4fYrbccpvD54DD4C68k+CNemuBwyvUW0cnCugYeBnxFvwMfATdO/w3fwNvB+BpfQecU/sVC4t/cv
-        O/NmOqlRqncAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip.Name" xml:space="preserve">
-    <value>contextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;выходToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;folderToolStrip.Parent" xml:space="preserve">
-    <value>folderExplorerPanel</value>
-  </data>
-  <data name="explorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 26</value>
-  </data>
-  <data name="textLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="createTabMenuItem.Text" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="vBSToolStripMenuItem.Text" xml:space="preserve">
-    <value>VBS</value>
+  <data name="&gt;&gt;listView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listView.Parent" xml:space="preserve">
     <value>folderExplorerPanel</value>
   </data>
-  <data name="&gt;&gt;createTabMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;listView.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <metadata name="folderToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>926, 19</value>
+  </metadata>
+  <data name="folderToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="openFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="openFolderToolBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="openFolderToolBtn.Text" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="refreshFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="refreshFolderToolBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="refreshFolderToolBtn.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="closeFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="closeFolderToolBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="closeFolderToolBtn.Text" xml:space="preserve">
+    <value>Закрыть папку</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="AboveFolderBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="AboveFolderBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="AboveFolderBtn.Text" xml:space="preserve">
+    <value>На уровень выше</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="UpSizeListViewTool.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Maroon</value>
+  </data>
+  <data name="UpSizeListViewTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="UpSizeListViewTool.Text" xml:space="preserve">
+    <value>Увеличить размер</value>
+  </data>
+  <data name="DownSizeListViewTool.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="DownSizeListViewTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="DownSizeListViewTool.Text" xml:space="preserve">
+    <value>Уменьшить размер</value>
+  </data>
+  <data name="folderToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>209, 0</value>
+  </data>
+  <data name="folderToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 457</value>
+  </data>
+  <data name="folderToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="folderToolStrip.Text" xml:space="preserve">
+    <value>FoldersToolStrip</value>
+  </data>
+  <data name="&gt;&gt;folderToolStrip.Name" xml:space="preserve">
+    <value>folderToolStrip</value>
+  </data>
+  <data name="&gt;&gt;folderToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;folderToolStrip.Parent" xml:space="preserve">
+    <value>folderExplorerPanel</value>
+  </data>
+  <data name="&gt;&gt;folderToolStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1031, 19</value>
+  </metadata>
+  <metadata name="folderExplorerPanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="workFolderLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="workFolderLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="workFolderLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="workFolderLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="editMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="workFolderLabel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 0, 5</value>
+  </data>
+  <data name="workFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 25</value>
+  </data>
+  <data name="workFolderLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="workFolderLabel.Text" xml:space="preserve">
+    <value>Рабочая папка</value>
+  </data>
+  <data name="&gt;&gt;workFolderLabel.Name" xml:space="preserve">
+    <value>workFolderLabel</value>
+  </data>
+  <data name="&gt;&gt;workFolderLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;workFolderLabel.Parent" xml:space="preserve">
+    <value>folderExplorerPanel</value>
+  </data>
+  <data name="&gt;&gt;workFolderLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="folderExplorerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="folderExplorerPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 49</value>
+  </data>
+  <data name="folderExplorerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 459</value>
+  </data>
+  <data name="folderExplorerPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;folderExplorerPanel.Name" xml:space="preserve">
+    <value>folderExplorerPanel</value>
+  </data>
+  <data name="&gt;&gt;folderExplorerPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;folderExplorerPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;folderExplorerPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>55</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>980, 530</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -756,1302 +1592,484 @@
         2/8PebEDaSqnFfAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="createTabMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>700, 480</value>
   </data>
-  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAs9JREFUeF7t3D+KFUEUhfGJVNAVqGvQTF2Uf0INDQ3VRSlG6hpcgSiokd4rDIh8
-        dV5ND6e7aup+8Msazp3m8SZ7Z1VVVVVVVVVVVVVVVdXfboRn4UP4Hn53cEQ7qRU9m16G4bobPgc6WHFE
-        O6kVPXtuqJedn+QtLzk5op3Uip791zAvO78u6MAejmgntaJn/zfEy87vZDquhyPaSa3oWXL4y/4W6LAe
-        jmgntaJnW16Fw6KDejmindSKnlUOe9l0TC9HtJNa0bOnHPKy6ZBejmgntaJne+z+sumIXo5oJ7WiZ3vt
-        +rLpgF6OaCe1omcvYreXTeO9HNFOakXPXtQuL5uGezmindSKnt3CHo32ckQ7qRU9u4U9Gu3liHZSK3p2
-        C3s02muE6K4t7NForxGiu7awR6O9Roju2sIejfa6HY7sTqC7trBHo72ehyN7EeiuLezRaK9fIV/23p/s
-        3Mvd3Ke7trBHoyuyR6MrskejK7JHoyuyR6MrskejK7JHoyuyR6MrskejK7JHoyuyR6MrskejK7JHoyuy
-        R6MrskejK7JHoz1+hNfhQbgZjiq3H4Y34WegW3vYo9FTvoR7YbTuh7yNbj7FHo0q+Uke8SWfly97yyfb
-        Ho0q+XUxem8D3a7Yo1Elv5NH71Gg2xV7NKrcCqOXN9Ltij0aVWaJblfs0agyS3S7Yo9GlVmi2xV7NKrM
-        Et2u2KNRZZbodsUejSqzRLcr9mhUmSW6XbFHo8os0e2KPRpVZoluV+zRqDJLdLtij0aVWaLbFXs0qswS
-        3a7Yo1Flluh2xR6NKrNEtyv2aFSZJbpdsUejyizR7Yo9GlVmiW5X7NGoMkt0u2LvMj/HdlV8DfYu8wOD
-        V8X7YO9poPGVPA72rodPgQ5YwcdwLexS/qzxii87X3L+QsKu5Sf7Scjvq6v8DzL/tnchvy52+yRXVVVV
-        VVVVVVVVVVWN29nZH/M5Y7i59Cr1AAAAAElFTkSuQmCC
-</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>TextPad+</value>
   </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;fileMenuItem.Name" xml:space="preserve">
+    <value>fileMenuItem</value>
   </data>
-  <data name="menuStripSep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 6</value>
-  </data>
-  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>|</value>
-  </data>
-  <data name="textLinesLabel.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="workFolderLabel.Text" xml:space="preserve">
-    <value>Рабочая папка</value>
-  </data>
-  <data name="&gt;&gt;вырезатьToolStripMenuItem1.Name" xml:space="preserve">
-    <value>вырезатьToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;выделитьВсёToolStripMenuItem1.Name" xml:space="preserve">
-    <value>выделитьВсёToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;вернутьCTRLYToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;fileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;createTabMenuItem.Name" xml:space="preserve">
+    <value>createTabMenuItem</value>
   </data>
-  <data name="&gt;&gt;toolStripButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton9.Name" xml:space="preserve">
-    <value>toolStripButton9</value>
-  </data>
-  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 17</value>
-  </data>
-  <data name="открытьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="fileMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="вставитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="&gt;&gt;closeFolderToolBtn.Name" xml:space="preserve">
-    <value>closeFolderToolBtn</value>
-  </data>
-  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
-  </data>
-  <data name="&gt;&gt;открытьToolStripMenuItem.Name" xml:space="preserve">
-    <value>открытьToolStripMenuItem</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 6</value>
-  </data>
-  <data name="toolStripSep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="вырезатьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="&gt;&gt;вставитьToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;createTabMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="statusStrip.Text" xml:space="preserve">
-    <value>statusStrip1</value>
+  <data name="&gt;&gt;закрыть_menu.Name" xml:space="preserve">
+    <value>закрыть_menu</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>980, 530</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;RunFile.Name" xml:space="preserve">
-    <value>RunFile</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton8.Name" xml:space="preserve">
-    <value>toolStripButton8</value>
-  </data>
-  <data name="toolStripButton5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="toolStripButton10.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;датаИВремяToolStripMenuItem.Name" xml:space="preserve">
-    <value>датаИВремяToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;копироватьToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;закрыть_menu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButton10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormMainUI</value>
-  </data>
-  <data name="toolStripButton8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="startScriptCombobox.Items" xml:space="preserve">
-    <value>Python File</value>
-  </data>
-  <data name="workFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 25</value>
-  </data>
-  <data name="&gt;&gt;listView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="закрыть_menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="AboveFolderBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="&gt;&gt;pythonToolStripMenuItem.Name" xml:space="preserve">
-    <value>pythonToolStripMenuItem</value>
-  </data>
-  <data name="выделитьВсёToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Выделить всё</value>
-  </data>
-  <data name="&gt;&gt;runFileToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="getUpdateBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
-  </data>
-  <data name="batToolStripMenuItem.Text" xml:space="preserve">
-    <value>Windows Bat</value>
-  </data>
-  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAvlJREFUeF7tnL2KFFEQRhcVNVAfQI0FX8DMwERQfA0zf0IfRPFFNvAJVIzUZ1Aj
-        I1FRI/1uMLAUp2a6F6umq6cOnGT5lu/e2qZn9jYzR03TNE3TNKvmonwq38kf8m+Cf+RreUseBNflR0nD
-        yPCXvCtXzbiS9znkjasf9rhd0Mb34aqHPe7JtOl9udphf5e04Wh/ws82rnLYtNEMb8ttf+Tf8oFcDbTJ
-        DAcHNWzaYIYbDmbYtLkMT3IQw6aNZWhZ/bBpUxkSqx42bShDj9UOmzaT4TZWOWzaSIa7WPSwtx11epzM
-        ZDqFO3Jx/0HuOur0oGyGU1nUsKccdXpQNsM5TBl2ysODKUedHpTN8Kqcw65hjyc14Uw56vSgbIbP5Fy2
-        DXs8Fgtn26vzRg/KZjgGM4b9P6/scKjU6kHZqoZDpVYPylY1HCq1elC2quFQqdWDslUNh0qtHpStajhU
-        avWgbFXDoVKrB2WrGg6VWj0oW9VwqNTqQdmqhkOlVg/KVjUcKrV6ULaq4VCp1YOyVQ2HSq0elK1qOFRq
-        9aBsVcOhUqsHZasaDpVaPShb1XCo1OpB2aqGQ6VWD8pWNRwqtXpQtqrhUKnVg7JVDYdKrR6UrWo4VGr1
-        oGxVw6FSqwdlqxoOlVo9KFvVcKjU6kHZqoZDpVYPylY1HCq1elC2quFQqdWDslUNh0qtHpStajhUavWg
-        bFXDoVKrB2WrGg6VWj0oW9VwqNTqQdmqhkOl1suSmPJpgQp+k+FQsfWGJJb2VT+n9a0Mh4qt9yTxRFK+
-        mo9kOFRsfSGJC/KDpN+p4nt5XoZD5dZP8pwkxqduqw57DPmaTIEWQD6UHuPKfizHvW7pL5BjfW/kuF2k
-        XMkbaDHkF+m9+2gmQEP1fCXPyuYU0EC3+Vyekc1MaJi7PJZXZDMDGuQUv8rxzQjeu5HGQEOc42f5Ut6X
-        N+Ul2QA0vKouGlpwVRcNLbiqi6aPOpPoo84k+qgziT7qTKSPOhPpo86maZqmaZqmaZr6HB39A72lUxF+
-        6eGHAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton4.Name" xml:space="preserve">
-    <value>toolStripButton4</value>
-  </data>
-  <data name="toolStripButton2.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;menuStripSep1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="runMenuItem.Text" xml:space="preserve">
-    <value>Запустить как</value>
-  </data>
-  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
-    <value>openFileDialog</value>
+  <data name="&gt;&gt;новоеОкноToolStripMenuItem.Name" xml:space="preserve">
+    <value>новоеОкноToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;новоеОкноToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripButton3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;сохранитьToolStripMenuItem.Name" xml:space="preserve">
+    <value>сохранитьToolStripMenuItem</value>
   </data>
-  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="сохранитьКакToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;referenceMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;сохранитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;explorerContextMenu.Name" xml:space="preserve">
-    <value>explorerContextMenu</value>
+  <data name="&gt;&gt;сохранитьКакToolStripMenuItem.Name" xml:space="preserve">
+    <value>сохранитьКакToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;textLabelStatus.Name" xml:space="preserve">
-    <value>textLabelStatus</value>
-  </data>
-  <data name="folderExplorerPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 49</value>
-  </data>
-  <data name="выделитьВсёToolStripMenuItem.Text" xml:space="preserve">
-    <value>Выделить всё              CTRL + A</value>
-  </data>
-  <data name="&gt;&gt;toolsStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="toolStripButton8.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="textLengthLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="toolStripButton7.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;найтиИЗаменитьToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;сохранитьКакToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;runFileToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;открытьToolStripMenuItem.Name" xml:space="preserve">
+    <value>открытьToolStripMenuItem</value>
   </data>
-  <data name="toolStripButton9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;открытьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripButton9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAhlJREFUaEPt2UtIVVEUxvGbD9QQGgiCD3QWNGsggQ5FBPOJaUYkaiIKWRSOlHDu
-        VMSZ4LBhoOjcSdOoHEUQ9hyITzTf9l/QhcXmCJLrHFhyPvhNLnj2/TieffbeN5MmzfVMH7bxGw/kA4/J
-        xQ7O/znBI7hLDjaQLSKO0Q13eQi5E2EZl/9mPZAvr8scoQPuIg/9KcIy7XCXfoRlDtEGdxlAVJlWuMtT
-        RJVphrsMIixzgPtIJBV4jCks4j3krb0J/aX+1x7qEUsqMYEPiBrcmnmZKsxBpsmoAeNiVuQGXmAXUQPF
-        yaxEId4gahAhyw15LmbRizrcQRnkby+bYZxBX3sfDbhyCrAMffGszxhFCa6aIYQl/qARJpHnQV9cyJQ4
-        hjxY5KJptwkmkX2CvriQu3AXVrnorW72IizGT+gBfqAaVolaNJqvs14hHMDyTsikEO5JzJfxMtV+gR5k
-        GlbpQiIbq3vQg8g8Xgqr/IK+fmxb3XHogRZgGf3sxXr48Ba6yDNYpgUycYhO+SCurEIXqYHLhMtvyyk3
-        0YQr25twmbBIPlxmC7rILbjMd+gi5XCZT9BFLJcmiUYOEHQRl4dlkhnoIi/hMs+hi8zDZWqhi3yEyxRB
-        v0tkL225+k00K9B35Qlc5jV0kSW4zG3o4xnZ/Mg5lcu8g74rk3CZEegia3AZORJaR7bIV7iN/MgiBb7B
-        7OQvTZo0SSST+QuVj1cwZFcOkgAAAABJRU5ErkJggg==
-</value>
+  <data name="&gt;&gt;mainMenuStripSep1.Name" xml:space="preserve">
+    <value>mainMenuStripSep1</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+  <data name="&gt;&gt;mainMenuStripSep1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;runMenuItem.Name" xml:space="preserve">
-    <value>runMenuItem</value>
+  <data name="&gt;&gt;recentFilesMenuStripItem.Name" xml:space="preserve">
+    <value>recentFilesMenuStripItem</value>
   </data>
-  <data name="выделитьВсёToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+  <data name="&gt;&gt;recentFilesMenuStripItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="aboutProgramMenuBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+  <data name="&gt;&gt;mainMenuStripSep2.Name" xml:space="preserve">
+    <value>mainMenuStripSep2</value>
   </data>
-  <data name="toolStripButton11.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="&gt;&gt;mainMenuStripSep2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textLengthLabel.Text" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;выходToolStripMenuItem.Name" xml:space="preserve">
+    <value>выходToolStripMenuItem</value>
   </data>
-  <data name="startScriptCombobox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>System</value>
+  <data name="&gt;&gt;выходToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textLinesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 17</value>
+  <data name="&gt;&gt;editMenuItem.Name" xml:space="preserve">
+    <value>editMenuItem</value>
   </data>
-  <data name="folderToolStrip.Text" xml:space="preserve">
-    <value>FoldersToolStrip</value>
+  <data name="&gt;&gt;editMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;копироватьToolStripMenuItem.Name" xml:space="preserve">
+    <value>копироватьToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;копироватьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;вырезатьToolStripMenuItem.Name" xml:space="preserve">
     <value>вырезатьToolStripMenuItem</value>
   </data>
-  <data name="toolStripButton13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="найтиИЗаменитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="&gt;&gt;aboutProgramMenuBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;вырезатьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSep3.Name" xml:space="preserve">
-    <value>toolStripSep3</value>
+  <data name="&gt;&gt;вставитьToolStripMenuItem.Name" xml:space="preserve">
+    <value>вставитьToolStripMenuItem</value>
   </data>
-  <data name="закрыть_menu.Text" xml:space="preserve">
-    <value>Закрыть</value>
+  <data name="&gt;&gt;вставитьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;выделитьВсёToolStripMenuItem.Name" xml:space="preserve">
+    <value>выделитьВсёToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;выделитьВсёToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;удалитьDeleteToolStripMenuItem.Name" xml:space="preserve">
+    <value>удалитьDeleteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;удалитьDeleteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStripSep2.Name" xml:space="preserve">
+    <value>menuStripSep2</value>
+  </data>
+  <data name="&gt;&gt;menuStripSep2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;отменитьToolStripMenuItem.Name" xml:space="preserve">
+    <value>отменитьToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;отменитьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;вернутьCTRLYToolStripMenuItem.Name" xml:space="preserve">
     <value>вернутьCTRLYToolStripMenuItem</value>
   </data>
-  <data name="toolStripButton11.Text" xml:space="preserve">
-    <value>Шрифт</value>
-  </data>
-  <data name="&gt;&gt;вырезатьToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;вернутьCTRLYToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuStripSep3.Name" xml:space="preserve">
     <value>menuStripSep3</value>
   </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startScriptCombobox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;сохранитьToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;вернутьToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="startScriptCombobox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;fontDialog.Name" xml:space="preserve">
-    <value>fontDialog</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;закрыть_menu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton13.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;editMenuItem.Name" xml:space="preserve">
-    <value>editMenuItem</value>
-  </data>
-  <data name="&gt;&gt;отменитьToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAeVJREFUeF7tlkFOw0AQBPMP4DlI8CnEoxAc4DVwhTfArMRIpjU2Gne7cUhKqkt2
-        UzO2csjhzJk/4TZ8CT/C9/A5vAlPgvvwc8a78F9zHVYPPnXc2S3VwmhSnU19CC/Cy/Dx+7Mlk+oM3Yxq
-        GJpUZ1PHgydXYXVnalKdoZtRDUOT6mzqyb+A8bMfL2E8/NP3Z0sm1Rm6GdUwNKnOGJPqDN2MziC8y7pE
-        5y5FZ9BbiPfX+hougfc3ozNo/NtTvITx8L/9S8TvbIZtUBPbXrZBTWx72QY1se1lG9TEtpdtUBPbXrZB
-        TWx72QY1se1lG9TEtpdtUBPbXrZBTWx72QY1se2lGIQNpzSKIDac0iiC2HBKowhiwymNIogNpzSKIDac
-        0iiC2HBKowhiwymNIogNpzSKIDZSJVV/SKMIYiNVUvWHNIogNpzSKILYcEqjCGLDKY0iiA2nNIogNtK1
-        VK05aRRBbKRrqVpz0iiC2HBKowhiwymNIogNpzSKIDac0iiC2EiVVP0hjSKIjVRJ1R/SKILYcEqjCGLD
-        KY0iiA2nNIogNpzSKILYSNdSteakUQSxka6las1JowhiwymNIogNpzRV9JikqaLHJE0VPSZpqugxuQuq
-        xVzugmoxl7ugWszlmTM/OBy+AO9mP2BEgwsOAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="toolStripButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAA1JJREFUeF7t3DmLFEEYxvFRRBQXDxBEdD+AiYmpaGImaGhioBiaed+34hGIoIJ+
-        AFEEQfwWgmBsYuAZiHhhJOrzwDQUL9W9NTVTb1dXvQ/8kra3F/6Os73r7Ixstty3DjbDPCzlAdvsthZu
-        wFv45/gFz2EH2KbcHvgObmAfBl8Ftohdhr/gC+vzGlaALXCL4DbIkJ/hDhyE8/AS5DlPwBYwRr4LMuAj
-        mAO5vfAb3HO3ga1jjHwf3GgNPnpXg2+M7Z77DGwt64rc6Ir9CprzfsASsIm1RX4IvIVzj7XFvgLueRvB
-        5qwt8gngtkNI7CPgnrMJbOO1RT4J7kJi89Hv/vkasGGhkZt1xV4JX8bH6A3YsEkjN2uL/Vgcuw7Vj5F9
-        98lnIGRbgXcV8uMbP4E/eKp600Zu1hX7AFS9tqeLUxAz+cWPqn/KaIt8GmLGWz95Lf5L4efp3HLgt438
-        yvm1QN9AhpllZP4lLhiZ2w/yg0sWG5l3JfJawZG5oyAvUKqzEDNfIz5PL4bg1RK618hcDaHPQcxmFpkr
-        PXQWkbmSQ2cTmSs1dGzkYyCvNXVkrsTQ2UXmSgvN/6GOWdLIXEmhs43MlRI668hcCaEvQMz4TYy8Fn+m
-        HPxt9SQbeujYR/Jx8F2Pr7VLsiGHnnVkstBC7A/auyKThXakikwWeixlZLLQkDoyVR+av94QM976+a7X
-        purQWpGp2tCakanK0NqRqbrQfUSmqkL3FZmqCX0TYnYRfNebVBWh+45MxYfOITIVHTqXyFRs6JwiU5Gh
-        b0HMLoHverNQXOgcI1NxoWPulVNHpiKfOiaJrRGZigj90XOMARfaVZAfl0oRoXfBPXGMuh7ZfIMSeX5K
-        RYReD3zNRGhs7cg0+NCfoFlI7D4i0+BDvwB3jP0A5Hl8zr4mjmkafGjfi13aHtl9GnzoneBbbrEHH5pf
-        CH3bALvhA/g+TtugQ78Djm8Ywl9a5+ss+Jztu6/u26BD890A3otjuRr8U8dQWGglFlqJhVZioZVYaCUW
-        WomFVmKhlVhoJRZaiYVWYqGVWGglFlqJhVZioZVYaCUWWomFVmKhlVhoJclCHwLfJ6wV30U9ybbAH/B9
-        0ho9hWRj7MPAVxDVbB8sA5vNZutno9F/pDQm/5Rsi3QAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripSep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="&gt;&gt;workFolderLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;отменитьToolStripMenuItem.Name" xml:space="preserve">
-    <value>отменитьToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;refreshFolderToolBtn.Name" xml:space="preserve">
-    <value>refreshFolderToolBtn</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>700, 480</value>
-  </data>
-  <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вернуть</value>
-  </data>
-  <data name="toolStripButton7.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;вернутьToolStripMenuItem.Name" xml:space="preserve">
-    <value>вернутьToolStripMenuItem</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="workFolderLabel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 0, 5</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
-    <value>toolStripButton2</value>
-  </data>
-  <data name="сохранитьКакToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сохранить как</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="optionsMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;RunFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton10.Text" xml:space="preserve">
-    <value>Найти и заменить</value>
-  </data>
-  <data name="&gt;&gt;folderToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>TextPad+</value>
-  </data>
-  <data name="aboutProgramMenuBtn.Text" xml:space="preserve">
-    <value>О программе</value>
-  </data>
-  <data name="toolStripButton2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;DownSizeListViewTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="копироватьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Копировать</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="RunFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="&gt;&gt;menuStripSep2.Name" xml:space="preserve">
-    <value>menuStripSep2</value>
-  </data>
   <data name="&gt;&gt;menuStripSep3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;runMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;датаИВремяToolStripMenuItem.Name" xml:space="preserve">
+    <value>датаИВремяToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;датаИВремяToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;aboutProgramMenuBtn.Name" xml:space="preserve">
-    <value>aboutProgramMenuBtn</value>
-  </data>
-  <data name="&gt;&gt;UpSizeListViewTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;refreshFolderToolBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton3.Name" xml:space="preserve">
-    <value>toolStripButton3</value>
-  </data>
-  <data name="toolStripButton8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="workFolderLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog.Name" xml:space="preserve">
-    <value>saveFileDialog</value>
-  </data>
-  <data name="&gt;&gt;workFolderLabel.Name" xml:space="preserve">
-    <value>workFolderLabel</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="вырезатьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вырезать                      CTRL + X</value>
-  </data>
-  <data name="&gt;&gt;выделитьВсёToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optionsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;выделитьВсёToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripStatusLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="startScriptCombobox.Items1" xml:space="preserve">
-    <value>Windows Bat</value>
-  </data>
-  <data name="AboveFolderBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;listViewImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 22</value>
-  </data>
-  <data name="UpSizeListViewTool.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Maroon</value>
-  </data>
-  <data name="&gt;&gt;отменитьToolStripMenuItem2.Name" xml:space="preserve">
-    <value>отменитьToolStripMenuItem2</value>
-  </data>
-  <data name="toolStripButton12.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="statusStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep5.Name" xml:space="preserve">
-    <value>toolStripSep5</value>
-  </data>
-  <data name="&gt;&gt;pythonToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="listView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="отменитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="getUpdateBtn.Text" xml:space="preserve">
-    <value>Проверка обновлений</value>
-  </data>
-  <data name="toolStripButton5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="refreshFolderToolBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="startScriptCombobox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 25</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="startScriptCombobox.Items2" xml:space="preserve">
-    <value>VBScript</value>
-  </data>
-  <data name="&gt;&gt;folderBrowserDialog.Name" xml:space="preserve">
-    <value>folderBrowserDialog</value>
-  </data>
-  <data name="folderToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolsStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="workFolderLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="toolsStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton12.Name" xml:space="preserve">
-    <value>toolStripButton12</value>
-  </data>
-  <data name="closeFolderToolBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="удалитьDeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Удалить                        Delete</value>
-  </data>
-  <data name="&gt;&gt;createTabMenuItem.Name" xml:space="preserve">
-    <value>createTabMenuItem</value>
-  </data>
-  <data name="&gt;&gt;вставитьToolStripMenuItem1.Name" xml:space="preserve">
-    <value>вставитьToolStripMenuItem1</value>
-  </data>
-  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
-    <value>Выход</value>
-  </data>
-  <data name="&gt;&gt;editMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
-  </data>
-  <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="вставитьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Вставить</value>
-  </data>
-  <data name="&gt;&gt;вставитьToolStripMenuItem.Name" xml:space="preserve">
-    <value>вставитьToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DownSizeListViewTool.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep2.Name" xml:space="preserve">
-    <value>toolStripSep2</value>
-  </data>
-  <data name="отменитьToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="отменитьToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Отменить</value>
-  </data>
-  <data name="&gt;&gt;textLinesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fontDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="optionsMenuItem.Text" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
-  <data name="runFileToolStrip.Text" xml:space="preserve">
-    <value>toolStrip2</value>
-  </data>
-  <data name="вернутьCTRLYToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="toolStripButton4.Text" xml:space="preserve">
-    <value>Вырезать</value>
-  </data>
-  <data name="&gt;&gt;openFolderToolBtn.Name" xml:space="preserve">
-    <value>openFolderToolBtn</value>
-  </data>
-  <data name="&gt;&gt;копироватьToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton5.Text" xml:space="preserve">
-    <value>Вставить</value>
-  </data>
-  <data name="fileMenuItem.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="&gt;&gt;vBSToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton7.Name" xml:space="preserve">
-    <value>toolStripButton7</value>
-  </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="&gt;&gt;сохранитьКакToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolsStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="openFolderToolBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="вырезатьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Вырезать</value>
-  </data>
-  <data name="&gt;&gt;workFolderLabel.Parent" xml:space="preserve">
-    <value>folderExplorerPanel</value>
-  </data>
-  <data name="новоеОкноToolStripMenuItem.Text" xml:space="preserve">
-    <value>Новое окно</value>
-  </data>
-  <data name="menuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 6</value>
-  </data>
-  <data name="&gt;&gt;listViewImages.Name" xml:space="preserve">
-    <value>listViewImages</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;runFileToolStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;новоеОкноToolStripMenuItem.Name" xml:space="preserve">
-    <value>новоеОкноToolStripMenuItem</value>
-  </data>
-  <data name="вставитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="&gt;&gt;копироватьToolStripMenuItem.Name" xml:space="preserve">
-    <value>копироватьToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;textLabelStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="workFolderLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="вернутьCTRLYToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вернуть                        CTRL + SHIFT + Z</value>
-  </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 22</value>
-  </data>
-  <data name="DownSizeListViewTool.Text" xml:space="preserve">
-    <value>Уменьшить размер</value>
-  </data>
-  <data name="toolStripButton7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABZ1JREFUeF7tnTmrLEUAha8LKrjzIhENFETRzO1laqaooMZmCuIfUENBAyP3p5H+
-        ADcQDPUnGLjlKoKKC27ggts5cAsOw3nd1dO19tQHH+9y73T1qaqe6urqfjNHg8FgMBgMBoPBYJCAG+Dz
-        8FP4G/yvsk/Cg+AceAr+A11D1HTzncDG/wC6yrfipjuBR76rdGtushM45v8NXYVbdHOd8AJ0FW3ZZ+Bm
-        +Ay6SrbuZt4Jv0JXwR7cxDvBVUwtjcswZfed4CqllsZlmLPrTnAVUkvjMsTYbSe4yqilcRli7bITXEXU
-        0rgMS+yuE1wl1NK4DEvtqhNcBdTSuAz72E0nuPBqaVyGfe2iE1xwtTQuwxqb7wQXWi2Ny7DWpjvBBVZL
-        4zKksNlOcGHV0rgMqWyyE1xQtTQuQ0qb6wQXUi2Ny5DapjrBBVRL4zLksJlOcOHU0rgMuWyiE1wwtTQu
-        Q06r40KppXEZclodF0otjcuQ0+q4UGppXIacVseFUnvH1Umtjgul9o6rk1odF0rtHVcntToulNo7rk5q
-        dVwotXdcndTquFBq77g6qdVxodTecXVSq+NCqb3j6qRWx4VSe8fVSa2OC6X2jquTWh0XSu0dVye1Oi6U
-        2juuTmp1XCi1d26HV8FL4RnH8uerIf9WHdfo6iAzrtHVQWZco6uDzLhGVweZcY2uDjLjGl0dZMY1ujrI
-        jGt0tUfOhLfAJ+Bb8GP4I/zzWP7M370J+Rq+lttUwTW62hOXwafhl9DVZcovILdlGUVxYdQe4JUtP3Tk
-        d+jqsESWwbIugUVwIdTWeQB+C132NX4DWXZ23M7VVjkLlvioHX5+HveVDbdTtUXOg+9AlzeH3Bf3mQW3
-        Q7U1eDRy9uKy5vRdeDZMjtuZ2ho1P+HrOZgctyO1JXhSdBlPJ6ejL8E74bXwfHguvALeA1+HP0G3rfNf
-        eD9MituR2gqcasbOdr6CD8OYk+cdcMmHFnJ2lHSK6naitsKL0OXblWP1hTCGk/Bn6MqZksNgMtwO1Bbg
-        1WnMRRY7KXZJgY2/ZPhRmSXZFbPbgdoCXCJw2VQe+SUaP8hMSXCFq7Vho3KdxmULcsxfMuysbXz6OUyy
-        gOcKV2vDlUqXS30IxrCk8WNOzDfB1biC1dpwudjlCnKqGTPbWdL4PDFzdjR3gn4crsYVrNaG6/kuV5An
-        3jluhLwH4LbflY3OziK8TnCvCb4BV+MKVmvzCXS5gnfBKW6FsUc+Xxcan9wL3euCvKmzGlewWpvvocsV
-        vAaejjWNT66E7rXB7+BqXMFqbXgL0eUKXgAdS4Yd1/iEyxbu9cE/4GpcwWpt5jqAjbRLisYnF0G3TfAg
-        OmBuCOLCmrJ22FG4gOe2Cx7EEDR3EuaqZiBl45O7ods2eBAn4blp6GuQpBp2lFeh2z6YZBr6C3SFl/JR
-        OMXchRgb87bjf93fd+Xr+E6Zg3e/uMThygg+BldT+ytMXoFTxCxFxK7nxzY+eQS6MtQkSxG8zeYKL+WH
-        cIqYxbgYlzT+xfBr6MoJJluMux7W/BorfnPfCThFzHL0lEsan436HnTlqE/BZPC+qdtJKR+EU8TekHEu
-        bfyXoStHTXpDhvCrDN+Hbmcl5BE3xz5PQywddmKOfMqHtZLDTuDKYo3h6C94OZyCN8J5Q9xt72Q9ODua
-        g7MdnnDnxvxg8pvyu/Cc8CzkBVDJ7xiLucXHx1L4aIjb3sl3AK8TeEHFK2Y+3ca1o+uOf8cZ2NxUU+W+
-        74MHDd/+rnFKyAPz4Kn5aGLWh3R7giugJR/OfRu6VdeDhkcjLyKXnBOWyrI57IwjfwI+q7lkdhQry0z+
-        HOhW4bSQ1wn7XqypLIMn+mL/RWlL8OqUSwT7rB1xbYfbJr3CPVS4pHAz5HM7nDF9BH+A4b+p8mf+jn/j
-        kjJXNfdYWDs6+h/PuTZCg9Q1TgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="openFolderToolBtn.Text" xml:space="preserve">
-    <value>Открыть папку</value>
-  </data>
-  <data name="folderExplorerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 459</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabel1.Name" xml:space="preserve">
-    <value>toolStripLabel1</value>
-  </data>
-  <data name="toolStripButton12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="&gt;&gt;удалитьToolStripMenuItem1.Name" xml:space="preserve">
-    <value>удалитьToolStripMenuItem1</value>
-  </data>
-  <data name="listView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 432</value>
-  </data>
-  <data name="folderExplorerPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;вырезатьToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;удалитьDeleteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;getUpdateBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="folderToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 457</value>
-  </data>
-  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="referenceMenuItem.Text" xml:space="preserve">
-    <value>Справка</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
-  </data>
-  <data name="workFolderLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="копироватьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
   </data>
   <data name="&gt;&gt;найтиИЗаменитьToolStripMenuItem.Name" xml:space="preserve">
     <value>найтиИЗаменитьToolStripMenuItem</value>
   </data>
-  <data name="folderToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 0</value>
-  </data>
-  <data name="вырезатьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="&gt;&gt;batToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;найтиИЗаменитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textLabelStatus.Text" xml:space="preserve">
-    <value>Символов на вкладке: </value>
-  </data>
-  <data name="UpSizeListViewTool.Text" xml:space="preserve">
-    <value>Увеличить размер</value>
-  </data>
-  <data name="pythonToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
-  </data>
-  <data name="&gt;&gt;menuStripSep2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolsStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 459</value>
-  </data>
-  <data name="&gt;&gt;getUpdateBtn.Name" xml:space="preserve">
-    <value>getUpdateBtn</value>
-  </data>
-  <data name="&gt;&gt;сохранитьКакToolStripMenuItem.Name" xml:space="preserve">
-    <value>сохранитьКакToolStripMenuItem</value>
-  </data>
-  <data name="отменитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Отменить                     CTRL + Z</value>
-  </data>
-  <data name="toolStripButton12.Text" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
-    <value>toolStripStatusLabel1</value>
-  </data>
-  <data name="toolStripButton9.Text" xml:space="preserve">
-    <value>Вернуть</value>
-  </data>
-  <data name="&gt;&gt;menuStripSep1.Name" xml:space="preserve">
-    <value>menuStripSep1</value>
-  </data>
-  <data name="&gt;&gt;UpSizeListViewTool.Name" xml:space="preserve">
-    <value>UpSizeListViewTool</value>
-  </data>
-  <data name="&gt;&gt;textLinesLabelStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;batToolStripMenuItem.Name" xml:space="preserve">
-    <value>batToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;optionsMenuItem.Name" xml:space="preserve">
     <value>optionsMenuItem</value>
   </data>
-  <data name="&gt;&gt;выходToolStripMenuItem.Name" xml:space="preserve">
-    <value>выходToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="runFileToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton10.Name" xml:space="preserve">
-    <value>toolStripButton10</value>
-  </data>
-  <data name="runFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="toolStripButton10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;folderToolStrip.Name" xml:space="preserve">
-    <value>folderToolStrip</value>
-  </data>
-  <data name="listView.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 49</value>
-  </data>
-  <data name="folderToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="toolStripButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="toolStripSep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="&gt;&gt;startScriptCombobox.Name" xml:space="preserve">
-    <value>startScriptCombobox</value>
-  </data>
-  <data name="toolStripButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="&gt;&gt;folderExplorerPanel.Name" xml:space="preserve">
-    <value>folderExplorerPanel</value>
-  </data>
-  <data name="&gt;&gt;runFileToolStrip.Name" xml:space="preserve">
-    <value>runFileToolStrip</value>
-  </data>
-  <data name="batToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
-  </data>
-  <data name="closeFolderToolBtn.Text" xml:space="preserve">
-    <value>Закрыть папку</value>
-  </data>
-  <data name="textLinesLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;закрыть_menu.Name" xml:space="preserve">
-    <value>закрыть_menu</value>
-  </data>
-  <data name="textLengthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 17</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep4.Name" xml:space="preserve">
-    <value>toolStripSep4</value>
-  </data>
-  <data name="&gt;&gt;workFolderLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DownSizeListViewTool.Name" xml:space="preserve">
-    <value>DownSizeListViewTool</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;копироватьToolStripMenuItem1.Name" xml:space="preserve">
-    <value>копироватьToolStripMenuItem1</value>
-  </data>
-  <data name="датаИВремяToolStripMenuItem.Text" xml:space="preserve">
-    <value>Дата и время</value>
-  </data>
-  <data name="&gt;&gt;explorerContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="referenceMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
-  </data>
-  <data name="&gt;&gt;textLinesLabelStatus.Name" xml:space="preserve">
-    <value>textLinesLabelStatus</value>
-  </data>
-  <data name="listView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
-  </data>
-  <data name="toolStripButton9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="&gt;&gt;fileMenuItem.Name" xml:space="preserve">
-    <value>fileMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolStripSep1.Name" xml:space="preserve">
-    <value>toolStripSep1</value>
-  </data>
-  <data name="RunFile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripLabel1.Text" xml:space="preserve">
-    <value>Запустить как</value>
-  </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 508</value>
-  </data>
-  <data name="toolStripButton7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="refreshFolderToolBtn.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="вернутьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="openFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;открытьToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;optionsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;folderToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;runMenuItem.Name" xml:space="preserve">
+    <value>runMenuItem</value>
   </data>
-  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
-    <value>toolStripButton1</value>
+  <data name="&gt;&gt;runMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+  <data name="&gt;&gt;pythonToolStripMenuItem.Name" xml:space="preserve">
+    <value>pythonToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;pythonToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;vBSToolStripMenuItem.Name" xml:space="preserve">
     <value>vBSToolStripMenuItem</value>
   </data>
-  <data name="toolStripButton4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;vBSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripButton11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
+  <data name="&gt;&gt;batToolStripMenuItem.Name" xml:space="preserve">
+    <value>batToolStripMenuItem</value>
   </data>
-  <data name="сохранитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
+  <data name="&gt;&gt;batToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
+  <data name="&gt;&gt;referenceMenuItem.Name" xml:space="preserve">
+    <value>referenceMenuItem</value>
   </data>
-  <data name="runMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;referenceMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButton12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;aboutProgramMenuBtn.Name" xml:space="preserve">
+    <value>aboutProgramMenuBtn</value>
   </data>
-  <data name="удалитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+  <data name="&gt;&gt;aboutProgramMenuBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;getUpdateBtn.Name" xml:space="preserve">
+    <value>getUpdateBtn</value>
+  </data>
+  <data name="&gt;&gt;getUpdateBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Name" xml:space="preserve">
+    <value>saveFileDialog</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
+    <value>openFileDialog</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontDialog.Name" xml:space="preserve">
+    <value>fontDialog</value>
+  </data>
+  <data name="&gt;&gt;fontDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;копироватьToolStripMenuItem1.Name" xml:space="preserve">
+    <value>копироватьToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;копироватьToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;вырезатьToolStripMenuItem1.Name" xml:space="preserve">
+    <value>вырезатьToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;вырезатьToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;вставитьToolStripMenuItem1.Name" xml:space="preserve">
+    <value>вставитьToolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;вставитьToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripSep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
+  <data name="&gt;&gt;выделитьВсёToolStripMenuItem1.Name" xml:space="preserve">
+    <value>выделитьВсёToolStripMenuItem1</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton3.Text" xml:space="preserve">
-    <value>Копировать</value>
-  </data>
-  <data name="menuStripSep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 6</value>
-  </data>
-  <data name="toolStripButton8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAdxJREFUaEPt2r8r7XEcx/Ejv3KRSVcGV5ikTEpZ7nKV+wcwKD9KdikDJQYZjDaD
-        ScpwF4MMSlxZlBKbQpQimZSSX89XUu++nSM/Pt/Teev7rEcJfc95dX74nnOkkpJyszIs4grzKIC7NOI/
-        nowuuCrdCOmGmzKN2EQxXFSKdURHbKEcLkpG5ErJiFzpW4zQFU33FPsZ1zjHLpYxjU78RKxVYBvprlRI
-        j9C4YcQyKltDrFvMogpBC3nX+gjdDfsRtEynIvqefvaeSlCNRrRBV3IO+3hA9Niv9DtBz6RDjMmUHhdD
-        OEH0+LIEN2NUIUZxh+hlzCBocY9RLTiGPb6e2doRtGyMacAl7PEPUYSgZWNMK+5hj9+H4L015gdCpNf/
-        9tg7iKVMY0YQohpEH/z1iKV0YyYRqg3YYw8itjRmBbqgPYQ8xRiDHaK7W+zplCbv5ctg/YEdolvfZc2w
-        Q47gMp2j2SEXcFklvsWQWtghbu9aOvW3Qw7gst+wQ9w+a/XADlmAy8Zhh0zBZf9gh/TCZdEXWU1w1y/Y
-        ETfIh7sGYIeswmVrsEP0bqS7dI5lX+rqDYg6uGsC9tbQZ5MuO4MdoseLy07xOkL/iKDPaVz2F7pV9Hek
-        Q99ISkr6aqnUM6XWVJpylOU1AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="textLinesLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;closeFolderToolBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="refreshFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="textLinesLabelStatus.Text" xml:space="preserve">
-    <value>Строк на вкладке: </value>
-  </data>
-  <data name="RunFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="toolsStrip.Text" xml:space="preserve">
-    <value>Панель инструментов</value>
-  </data>
-  <data name="toolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;openFolderToolBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;folderBrowserDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 164</value>
-  </data>
-  <data name="копироватьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Копировать                 CTRL + C</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="вставитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить                       CTRL + V</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripButton9.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="runFileToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>11, 0, 1, 0</value>
-  </data>
-  <data name="&gt;&gt;выделитьВсёToolStripMenuItem.Name" xml:space="preserve">
-    <value>выделитьВсёToolStripMenuItem</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>721, 459</value>
-  </data>
-  <data name="&gt;&gt;удалитьToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;выделитьВсёToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;удалитьToolStripMenuItem.Name" xml:space="preserve">
+    <value>удалитьToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;toolStripButton11.Name" xml:space="preserve">
-    <value>toolStripButton11</value>
+  <data name="&gt;&gt;удалитьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
   </data>
-  <data name="toolStripButton5.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;textLengthLabel.Name" xml:space="preserve">
-    <value>textLengthLabel</value>
-  </data>
-  <data name="vBSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
-  </data>
-  <data name="выделитьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="textLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;toolStripLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;отменитьToolStripMenuItem2.Name" xml:space="preserve">
+    <value>отменитьToolStripMenuItem2</value>
   </data>
   <data name="&gt;&gt;отменитьToolStripMenuItem2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;вернутьToolStripMenuItem.Name" xml:space="preserve">
+    <value>вернутьToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;вернутьToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textLabelStatus.Name" xml:space="preserve">
+    <value>textLabelStatus</value>
+  </data>
+  <data name="&gt;&gt;textLabelStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textLengthLabel.Name" xml:space="preserve">
+    <value>textLengthLabel</value>
+  </data>
+  <data name="&gt;&gt;textLengthLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textLinesLabelStatus.Name" xml:space="preserve">
+    <value>textLinesLabelStatus</value>
+  </data>
+  <data name="&gt;&gt;textLinesLabelStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textLinesLabel.Name" xml:space="preserve">
+    <value>textLinesLabel</value>
+  </data>
+  <data name="&gt;&gt;textLinesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton12.Name" xml:space="preserve">
+    <value>toolStripButton12</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton13.Name" xml:space="preserve">
+    <value>toolStripButton13</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep1.Name" xml:space="preserve">
+    <value>toolStripSep1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
+    <value>toolStripButton2</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep2.Name" xml:space="preserve">
+    <value>toolStripSep2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton3.Name" xml:space="preserve">
+    <value>toolStripButton3</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton4.Name" xml:space="preserve">
+    <value>toolStripButton4</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton5.Name" xml:space="preserve">
+    <value>toolStripButton5</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton7.Name" xml:space="preserve">
+    <value>toolStripButton7</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep3.Name" xml:space="preserve">
+    <value>toolStripSep3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton8.Name" xml:space="preserve">
+    <value>toolStripButton8</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton9.Name" xml:space="preserve">
+    <value>toolStripButton9</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep4.Name" xml:space="preserve">
+    <value>toolStripSep4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton11.Name" xml:space="preserve">
+    <value>toolStripButton11</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep5.Name" xml:space="preserve">
+    <value>toolStripSep5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSep5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton10.Name" xml:space="preserve">
+    <value>toolStripButton10</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabel1.Name" xml:space="preserve">
+    <value>toolStripLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startScriptCombobox.Name" xml:space="preserve">
+    <value>startScriptCombobox</value>
+  </data>
+  <data name="&gt;&gt;startScriptCombobox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RunFile.Name" xml:space="preserve">
+    <value>RunFile</value>
+  </data>
+  <data name="&gt;&gt;RunFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;удалитьToolStripMenuItem1.Name" xml:space="preserve">
+    <value>удалитьToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;удалитьToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listViewImages.Name" xml:space="preserve">
+    <value>listViewImages</value>
+  </data>
+  <data name="&gt;&gt;listViewImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFolderToolBtn.Name" xml:space="preserve">
+    <value>openFolderToolBtn</value>
+  </data>
+  <data name="&gt;&gt;openFolderToolBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;refreshFolderToolBtn.Name" xml:space="preserve">
+    <value>refreshFolderToolBtn</value>
+  </data>
+  <data name="&gt;&gt;refreshFolderToolBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;closeFolderToolBtn.Name" xml:space="preserve">
+    <value>closeFolderToolBtn</value>
+  </data>
+  <data name="&gt;&gt;closeFolderToolBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboveFolderBtn.Name" xml:space="preserve">
+    <value>AboveFolderBtn</value>
+  </data>
   <data name="&gt;&gt;AboveFolderBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripSep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
   </data>
-  <data name="сохранитьToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сохранить</value>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="&gt;&gt;UpSizeListViewTool.Name" xml:space="preserve">
+    <value>UpSizeListViewTool</value>
   </data>
-  <data name="referenceMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;UpSizeListViewTool.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>777, 19</value>
-  </metadata>
-  <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1031, 19</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>55</value>
-  </metadata>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>441, 18</value>
-  </metadata>
-  <metadata name="toolsStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>536, 20</value>
-  </metadata>
-  <metadata name="folderExplorerPanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>103, 20</value>
-  </metadata>
-  <metadata name="fontDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>342, 20</value>
-  </metadata>
-  <metadata name="explorerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1326, 19</value>
-  </metadata>
-  <metadata name="folderToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>926, 19</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>en</value>
-  </metadata>
-  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 21</value>
-  </metadata>
-  <metadata name="runFileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>639, 19</value>
-  </metadata>
-  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>11, 18</value>
-  </metadata>
-  <metadata name="listViewImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1194, 19</value>
-  </metadata>
+  <data name="&gt;&gt;DownSizeListViewTool.Name" xml:space="preserve">
+    <value>DownSizeListViewTool</value>
+  </data>
+  <data name="&gt;&gt;DownSizeListViewTool.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog.Name" xml:space="preserve">
+    <value>folderBrowserDialog</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormMainUI</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

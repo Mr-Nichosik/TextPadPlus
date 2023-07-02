@@ -4,7 +4,6 @@ namespace TextPad_
     /// <summary>
     ///  Класс окна с информацией о программе. из функционала есть только кнопка для перехода на сайт проекта.
     /// </summary>
-
     public partial class FormInfoUI : Form
     {
         private readonly ILogger Ls = new LogSystem("logs");
@@ -52,6 +51,7 @@ namespace TextPad_
             DeveloperLabel.Text = Program.mainUI.GetAssemblyCompany().ToString();
 
             labelVersion.Text += Program.mainUI.GetAssemblyVersion();
+            LSVersionLabel.Text = LogSystem.GetAssemblyVersion();
         }
     }
 }

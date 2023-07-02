@@ -14,7 +14,7 @@
     <Description>TextPad+ x86</Description>
     <PackageIcon>TextPadLogo.png</PackageIcon>
     <PackageProjectUrl>https://mr-nichosik.github.io/Main_Page/</PackageProjectUrl>
-    <Version>2.3.1</Version>
+    <Version>2.4.0</Version>
     <IncludeSymbols>False</IncludeSymbols>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <UseWPF>False</UseWPF>
@@ -35,10 +35,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Logging System\LoggingSystem.csproj" />
+    <Reference Include="LoggingSystem">
+      <HintPath>..\Logging System\bin\Release\net6.0\LoggingSystem.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\RecentFiles.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RecentFiles.settings</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Localization.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -71,6 +78,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Properties\RecentFiles.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>RecentFiles.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,7 +1,6 @@
 ﻿
 using Microsoft.VisualBasic.FileIO;
 using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
 
 namespace TextPad_
@@ -10,7 +9,6 @@ namespace TextPad_
     /// Класс главного окна программы, где обрабатывается только (как я надеюсь) внешний вид и пользовательский UI.
     /// Всю (наверное) логику работы программы я переместил в класс TextEditor.
     /// <summary>
-
     public partial class FormMainUI : Form
     {
         // Logger
@@ -20,7 +18,7 @@ namespace TextPad_
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "IN DEVELOPING";
+        public string DateOfRelease { get; } = "01.07.2023";
         public string ProgramPath { get; } = Application.StartupPath;
         public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
@@ -375,6 +373,13 @@ namespace TextPad_
                 rtb.Text = fileText;
 
                 tabControl.SelectTab(tabControl.TabPages[tabControl.TabPages.Count - 1]);
+
+                if (recentFilesMenuStripItem.DropDownItems.Count == 10)
+                    recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
+                ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                tsmi.Text = OpenedFiles.ElementAt(tabControl.SelectedIndex);
+                tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                recentFilesMenuStripItem.DropDownItems.Add(tsmi);
             }
         }
 
@@ -472,7 +477,7 @@ namespace TextPad_
         #endregion
 
         // Прочие отдельные методы
-        private void CreateTab()
+        internal void CreateTab()
         {
             /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
             * задаются кое-какие параметры, затем в tabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
@@ -648,12 +653,18 @@ namespace TextPad_
                 {
                     rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
                     // в список помещаем под индексом новой вкладки путь до файла
-
                     OpenedFiles.Insert(tabControl.SelectedIndex, args[1]);
                     // в text box помещаем текст
                     rtb.Text = File.ReadAllText(args[1]);
                     // задаём даголовок вкладки
                     tabControl.SelectedTab.Text = Path.GetFileName(OpenedFiles.ElementAt(Program.mainUI.tabControl.SelectedIndex));
+
+                    if (recentFilesMenuStripItem.DropDownItems.Count == 10)
+                        recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = OpenedFiles.ElementAt(tabControl.SelectedIndex);
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
                 }
                 catch (Exception ex)
                 {
@@ -680,7 +691,6 @@ namespace TextPad_
             folderExplorerPanel.Visible = Properties.Settings.Default.Explorer;
             startScriptCombobox.SelectedItem = Properties.Settings.Default.StartScriptsConfig;
             folderExplorerPanel.Width = Properties.Settings.Default.ExplorerSize;
-
             switch (Properties.Settings.Default.Theme)
             {
                 case "White":
@@ -693,13 +703,6 @@ namespace TextPad_
                     colorThemeDark();
                     break;
             }
-
-            listView.Clear();
-
-            /*
-             * Здесь ваыставляется состояние окна, которое было в момент последнего запуска. По умолчанию это обычное.
-             * Но если окно было свёрнуто, то всё равно ставится обычное.
-            */
             switch (Properties.Settings.Default.MainWindowState)
             {
                 case "Normal":
@@ -715,6 +718,8 @@ namespace TextPad_
                     this.WindowState = FormWindowState.Normal;
                     break;
             }
+
+            LoadRecentFiles();
 
             // Xml конфигурация
             try
@@ -787,10 +792,151 @@ namespace TextPad_
             Properties.Settings.Default.StartScriptsConfig = startScriptCombobox.SelectedItem.ToString();
             Properties.Settings.Default.ExplorerSize = folderExplorerPanel.Width;
             Properties.Settings.Default.Save();
+            SaveRecentFiles();
 
             LS.Info("Exiting the program and saving parameters");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
             LS.Debug("Total tabs: " + tabControl.TabPages.Count.ToString());
+        }
+
+        // Немного говнокода для сохранения в файл параметров список последних файлов
+        private void LoadRecentFiles()
+        {
+            try
+            {
+                if (Properties.RecentFiles.Default.element0 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element0;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element1 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element1;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element2 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element2;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element3 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element3;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element4 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element4;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element5 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element5;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element6 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element6;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element7 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element7;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element8 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element8;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element9 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element9;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                }
+            }
+            catch { }
+        }
+
+        private void SaveRecentFiles()
+        {
+            Properties.RecentFiles.Default.element0 = "Missing";
+            Properties.RecentFiles.Default.element1 = "Missing";
+            Properties.RecentFiles.Default.element2 = "Missing";
+            Properties.RecentFiles.Default.element3 = "Missing";
+            Properties.RecentFiles.Default.element4 = "Missing";
+            Properties.RecentFiles.Default.element5 = "Missing";
+            Properties.RecentFiles.Default.element6 = "Missing";
+            Properties.RecentFiles.Default.element7 = "Missing";
+            Properties.RecentFiles.Default.element8 = "Missing";
+            Properties.RecentFiles.Default.element9 = "Missing";
+
+            try
+            {
+                if (recentFilesMenuStripItem.DropDownItems[0] != null)
+                {
+                    Properties.RecentFiles.Default.element0 = recentFilesMenuStripItem.DropDownItems[0].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[1] != null)
+                {
+                    Properties.RecentFiles.Default.element1 = recentFilesMenuStripItem.DropDownItems[1].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[2] != null)
+                {
+                    Properties.RecentFiles.Default.element2 = recentFilesMenuStripItem.DropDownItems[2].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[3] != null)
+                {
+                    Properties.RecentFiles.Default.element3 = recentFilesMenuStripItem.DropDownItems[3].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[4] != null)
+                {
+                    Properties.RecentFiles.Default.element4 = recentFilesMenuStripItem.DropDownItems[4].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[5] != null)
+                {
+                    Properties.RecentFiles.Default.element5 = recentFilesMenuStripItem.DropDownItems[5].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[6] != null)
+                {
+                    Properties.RecentFiles.Default.element6 = recentFilesMenuStripItem.DropDownItems[6].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[7] != null)
+                {
+                    Properties.RecentFiles.Default.element7 = recentFilesMenuStripItem.DropDownItems[7].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[8] != null)
+                {
+                    Properties.RecentFiles.Default.element8 = recentFilesMenuStripItem.DropDownItems[8].Text;
+                }
+                if (recentFilesMenuStripItem.DropDownItems[9] != null)
+                {
+                    Properties.RecentFiles.Default.element9 = recentFilesMenuStripItem.DropDownItems[9].Text;
+                }
+            }
+            catch { }
+
+            Properties.RecentFiles.Default.Save();
         }
     }
 }

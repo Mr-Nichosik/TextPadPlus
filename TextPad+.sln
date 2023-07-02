@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextPad+", "TextPad+.csproj", "{5D807C1A-B1A8-4529-BF75-C869791A0BCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSystem", "..\Logging System\LoggingSystem.csproj", "{C2B81218-F163-4997-9182-8A9C5ECC6064}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTabControl", "..\CustomTabControl\CustomTabControl.csproj", "{16E63C93-AD71-428B-BEAE-072DF857D02C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{5D807C1A-B1A8-4529-BF75-C869791A0BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D807C1A-B1A8-4529-BF75-C869791A0BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D807C1A-B1A8-4529-BF75-C869791A0BCD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2B81218-F163-4997-9182-8A9C5ECC6064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2B81218-F163-4997-9182-8A9C5ECC6064}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2B81218-F163-4997-9182-8A9C5ECC6064}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2B81218-F163-4997-9182-8A9C5ECC6064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E63C93-AD71-428B-BEAE-072DF857D02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E63C93-AD71-428B-BEAE-072DF857D02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E63C93-AD71-428B-BEAE-072DF857D02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E63C93-AD71-428B-BEAE-072DF857D02C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

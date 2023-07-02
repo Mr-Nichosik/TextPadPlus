@@ -58,19 +58,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox2.Text" xml:space="preserve">
-    <value>*TextPad+ 2.3.1
+    <value>*TextPad+ 2.4.0
 
 Main changes:
-—Small interface changes
+—A button has been added to the explorer panel that allows you to open a folder one level higher
+—Added the ability to open a folder from the list of items in an open folder in File Explorer
+—Added the ability to delete a file through the right-click menu
+—Added a count of the number of lines in the text on the status bar
+—Added a list of recent files in the "File" menu.
+—Added saving the path to the Python interpreter, specified manually
+
+Corrections:
+—Fixed a bug with multiple opening folders in Explorer
+—Minor interface improvements
+
+*Update Installer 1.6.1 (Only when reinstalling)
+
+  Corrections:
+—Fixed a bug related to the creation of the "logs" folder in the directory with the file through which the program was opened.
+— Minor fixes
+_________________________________________________________________________________________________________________
+
+*TextPad+ 2.3.1
+
+Main changes:
+-Small interface changes
 
 Corrections:
 —Fixed a bug related to choosing fonts through a button on the toolbar
 —Fixed a bug with creating a "logs" folder in a folder with an open file
 —Fixed a bug due to which the search window did not open the keyboard shortcut Ctrl + F</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 21</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Changes in TextPad+ 2.2</value>
@@ -81,6 +98,10 @@ Corrections:
   <data name="tabPage1.Text" xml:space="preserve">
     <value>About program</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 0</value>
+  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 21</value>
   </data>
@@ -88,10 +109,17 @@ Corrections:
     <value>Components:</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 15</value>
+    <value>6, 28</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 122</value>
+    <value>560, 122</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 21</value>
@@ -99,8 +127,11 @@ Corrections:
   <data name="label7.Text" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 1</value>
+    <value>244, 3</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
@@ -108,8 +139,11 @@ Corrections:
   <data name="label8.Text" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 1</value>
+    <value>356, 3</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 21</value>
@@ -117,27 +151,87 @@ Corrections:
   <data name="label9.Text" xml:space="preserve">
     <value>Developer</value>
   </data>
+  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 62</value>
+  </data>
+  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 58</value>
+    <value>244, 62</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 21</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>1.6.1</value>
+  </data>
+  <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 58</value>
+    <value>356, 62</value>
+  </data>
+  <data name="label13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 94</value>
+  </data>
+  <data name="label15.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 89</value>
+    <value>356, 94</value>
+  </data>
+  <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 31</value>
+  </data>
+  <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 27</value>
+    <value>244, 31</value>
+  </data>
+  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 27</value>
+    <value>356, 31</value>
   </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 89</value>
+  <data name="LSVersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="LSVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 94</value>
+  </data>
+  <data name="LSVersionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="LSVersionLabel.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 184</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 65</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>A free and open source program for quickly creating small text documents based on the C# language and its Windows Forms library.
 .NET 6.0 Library: https://dotnet.microsoft.com/en-us/download/dotnet/6.0</value>
+  </data>
+  <data name="DeveloperLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 108</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 108</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 20</value>
@@ -145,11 +239,23 @@ Corrections:
   <data name="label4.Text" xml:space="preserve">
     <value>Developer: </value>
   </data>
+  <data name="DateOfReleaseLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 79</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 79</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 20</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Release date: </value>
+  </data>
+  <data name="VersionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 50</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 50</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -157,8 +263,26 @@ Corrections:
   <data name="label1.Text" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 134</value>
+  </data>
+  <data name="buttonWebsite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 140</value>
+  </data>
+  <data name="buttonWebsite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 23</value>
+  </data>
   <data name="buttonWebsite.Text" xml:space="preserve">
     <value>Go to website</value>
+  </data>
+  <data name="textBoxWebSiteUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 140</value>
+  </data>
+  <data name="labelWebSite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 140</value>
   </data>
   <data name="labelWebSite.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 20</value>

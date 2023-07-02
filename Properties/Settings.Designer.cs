@@ -202,5 +202,17 @@ namespace TextPad_.Properties {
                 this["ExplorerSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty File")]
+        public string PythonInterpreter {
+            get {
+                return ((string)(this["PythonInterpreter"]));
+            }
+            set {
+                this["PythonInterpreter"] = value;
+            }
+        }
     }
 }

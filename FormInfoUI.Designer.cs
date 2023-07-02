@@ -45,10 +45,7 @@ namespace TextPad_
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.LSVersionLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DeveloperLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,8 +77,8 @@ namespace TextPad_
             // 
             // textBox2
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             // 
@@ -111,10 +108,10 @@ namespace TextPad_
             // 
             // componentsPanel
             // 
+            resources.ApplyResources(this.componentsPanel, "componentsPanel");
             this.componentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.componentsPanel.Controls.Add(this.label6);
             this.componentsPanel.Controls.Add(this.tableLayoutPanel1);
-            resources.ApplyResources(this.componentsPanel, "componentsPanel");
             this.componentsPanel.Name = "componentsPanel";
             // 
             // label6
@@ -134,10 +131,7 @@ namespace TextPad_
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label15, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label18, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.LSVersionLabel, 1, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // label7
@@ -180,31 +174,16 @@ namespace TextPad_
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
             // 
-            // label16
+            // LSVersionLabel
             // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
+            resources.ApplyResources(this.LSVersionLabel, "LSVersionLabel");
+            this.LSVersionLabel.Name = "LSVersionLabel";
             // 
             // textBox1
             // 
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 
@@ -295,7 +274,6 @@ namespace TextPad_
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.componentsPanel.ResumeLayout(false);
-            this.componentsPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -333,11 +311,8 @@ namespace TextPad_
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label LSVersionLabel;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         //private System.Windows.Forms.Button buttonSite;
     }
 }

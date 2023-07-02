@@ -31,12 +31,13 @@ namespace TextPad_
 
         private void browseBtn_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == DialogResult.Cancel) 
+            if (openFileDialog.ShowDialog() == DialogResult.Cancel)
             {
                 return;
             }
 
             pathTextBox.Text = openFileDialog.FileName;
+            Properties.Settings.Default.PythonInterpreter = openFileDialog.FileName;
         }
 
         private void radioButtonCheckedChanged(object sender, EventArgs e)
@@ -57,7 +58,16 @@ namespace TextPad_
 
         private void FormPythonInterpreterUI_Load(object sender, EventArgs e)
         {
-            radioButton1.Checked = true;
+            if (Properties.Settings.Default.PythonInterpreter != "Empty File")
+            {
+                radioButton2.Checked = true;
+                pathTextBox.Text = Properties.Settings.Default.PythonInterpreter;
+            }
+            else
+            {
+                radioButton1.Checked = true;
+            }
+            
             openFileDialog.Filter = "*.exe|*.exe";
         }
     }

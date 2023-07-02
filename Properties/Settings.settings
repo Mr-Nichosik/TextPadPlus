@@ -47,5 +47,8 @@
     <Setting Name="ExplorerSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">235</Value>
     </Setting>
+    <Setting Name="PythonInterpreter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Empty File</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
