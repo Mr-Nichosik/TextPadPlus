@@ -35,6 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CustomTabControl\CustomTabControl.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="LoggingSystem">
       <HintPath>..\Logging System\bin\Release\net6.0\LoggingSystem.dll</HintPath>
     </Reference>
