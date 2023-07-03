@@ -40,12 +40,15 @@ namespace TextPad_
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.LSVersionLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CTCLabelVersion = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DeveloperLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,10 +72,10 @@ namespace TextPad_
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.labelVersion);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             // 
             // textBox2
@@ -89,6 +92,7 @@ namespace TextPad_
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.componentsPanel);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.DeveloperLabel);
@@ -102,7 +106,6 @@ namespace TextPad_
             this.tabPage1.Controls.Add(this.textBoxWebSiteUrl);
             this.tabPage1.Controls.Add(this.labelWebSite);
             this.tabPage1.Controls.Add(this.ProgramNameLabel);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -126,12 +129,15 @@ namespace TextPad_
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label15, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.LSVersionLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.CTCLabelVersion, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // label7
@@ -148,16 +154,6 @@ namespace TextPad_
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
             // 
             // label12
             // 
@@ -178,6 +174,31 @@ namespace TextPad_
             // 
             resources.ApplyResources(this.LSVersionLabel, "LSVersionLabel");
             this.LSVersionLabel.Name = "LSVersionLabel";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // CTCLabelVersion
+            // 
+            resources.ApplyResources(this.CTCLabelVersion, "CTCLabelVersion");
+            this.CTCLabelVersion.Name = "CTCLabelVersion";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // textBox1
             // 
@@ -219,8 +240,8 @@ namespace TextPad_
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TextPad_.Properties.Resources.TextPadLogo;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::TextPad_.Properties.Resources.TextPadLogo;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -233,9 +254,9 @@ namespace TextPad_
             // 
             // textBoxWebSiteUrl
             // 
+            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
             this.textBoxWebSiteUrl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxWebSiteUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
             this.textBoxWebSiteUrl.Name = "textBoxWebSiteUrl";
             this.textBoxWebSiteUrl.ReadOnly = true;
             // 
@@ -251,9 +272,9 @@ namespace TextPad_
             // 
             // tabControl
             // 
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
@@ -313,6 +334,9 @@ namespace TextPad_
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label LSVersionLabel;
         private System.Windows.Forms.Label label15;
+        private Label label3;
+        private Label CTCLabelVersion;
+        private Label label14;
         //private System.Windows.Forms.Button buttonSite;
     }
 }

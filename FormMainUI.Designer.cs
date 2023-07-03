@@ -81,7 +81,6 @@ namespace TextPad_
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textLinesLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.textLinesLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabControl = new System.Windows.Forms.TabControl();
             this.toolsStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
@@ -120,6 +119,7 @@ namespace TextPad_
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.folderExplorerPanel = new System.Windows.Forms.Panel();
             this.workFolderLabel = new System.Windows.Forms.Label();
+            this.cTabControl = new CustomTabControl.CTabControl();
             this.menuStrip.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -452,15 +452,6 @@ namespace TextPad_
             resources.ApplyResources(this.textLinesLabel, "textLinesLabel");
             this.textLinesLabel.Name = "textLinesLabel";
             // 
-            // tabControl
-            // 
-            this.tabControl.AllowDrop = true;
-            resources.ApplyResources(this.tabControl, "tabControl");
-            this.tabControl.HotTrack = true;
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControlSelecting);
-            // 
             // toolsStrip
             // 
             this.toolsStrip.BackColor = System.Drawing.SystemColors.Control;
@@ -762,11 +753,18 @@ namespace TextPad_
             resources.ApplyResources(this.workFolderLabel, "workFolderLabel");
             this.workFolderLabel.Name = "workFolderLabel";
             // 
+            // cTabControl
+            // 
+            resources.ApplyResources(this.cTabControl, "cTabControl");
+            this.cTabControl.Name = "cTabControl";
+            this.cTabControl.SelectedIndex = 0;
+            this.cTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.cTabControlSelecting);
+            // 
             // FormMainUI
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.cTabControl);
             this.Controls.Add(this.folderExplorerPanel);
             this.Controls.Add(this.toolsStrip);
             this.Controls.Add(this.runFileToolStrip);
@@ -872,7 +870,6 @@ namespace TextPad_
         private Label workFolderLabel;
         private ToolStripButton closeFolderToolBtn;
         private ToolStripLabel toolStripLabel1;
-        internal TabControl tabControl;
         internal SaveFileDialog saveFileDialog;
         internal ToolStripComboBox startScriptCombobox;
         internal Panel folderExplorerPanel;
@@ -886,6 +883,7 @@ namespace TextPad_
         private ContextMenuStrip contextMenuStrip;
         private ToolStripSeparator mainMenuStripSep1;
         internal ToolStripMenuItem recentFilesMenuStripItem;
+        internal CTabControl cTabControl;
     }
 }
 

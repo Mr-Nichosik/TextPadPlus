@@ -1,6 +1,7 @@
 # TextPad+
 
-Это простой текстовый редактор, сделанный на C# WinForms. Из зависимостей у него есть моя система лоирования Logging System https://github.com/Mr-Nichosik/LoggingSystem.
+Это простой текстовый редактор, сделанный на C# WinForms.
+Зависимости: моя система лоирования Logging System https://github.com/Mr-Nichosik/LoggingSystem и Custom TabControl, который я только начал разрабатывать https://github.com/Mr-Nichosik/CustomTabControl.
 
 Я сделал в нём несколько классов: 4 класса с формами, основной класс Program и класс с логикой работы TextEditor.
 Все формы имеют две локализации: стандартную - она же русская (файлы Form.resx), и английскую (файлы Form.en.resx)

@@ -67,10 +67,13 @@ Main changes:
 —Added a count of the number of lines in the text on the status bar
 —Added a list of recent files in the "File" menu.
 —Added saving the path to the Python interpreter, specified manually
+—Changed the system for changing color themes: now the color only applies to the text field
+—The process of replacing the file management system through tabs has begun. In future updates, a new look and functionality will be added for it.
 
 Corrections:
 —Fixed a bug with multiple opening folders in Explorer
 —Minor interface improvements
+—Fixed bug with color theme when closing all tabs
 
 *Update Installer 1.6.1 (Only when reinstalling)
 
@@ -114,21 +117,11 @@ Corrections:
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>560, 122</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 3</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 21</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Name</value>
-  </data>
-  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>244, 3</value>
@@ -139,9 +132,6 @@ Corrections:
   <data name="label8.Text" xml:space="preserve">
     <value>Version</value>
   </data>
-  <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>356, 3</value>
   </data>
@@ -151,71 +141,23 @@ Corrections:
   <data name="label9.Text" xml:space="preserve">
     <value>Developer</value>
   </data>
-  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 62</value>
-  </data>
-  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 62</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 21</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>1.6.1</value>
-  </data>
-  <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>356, 62</value>
-  </data>
-  <data name="label13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 94</value>
-  </data>
-  <data name="label15.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>356, 94</value>
   </data>
-  <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 31</value>
-  </data>
-  <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 31</value>
-  </data>
-  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>356, 31</value>
-  </data>
-  <data name="LSVersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
   <data name="LSVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>244, 94</value>
   </data>
-  <data name="LSVersionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 31</value>
   </data>
-  <data name="LSVersionLabel.Text" xml:space="preserve">
-    <value>—</value>
+  <data name="CTCLabelVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 62</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 31</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 184</value>

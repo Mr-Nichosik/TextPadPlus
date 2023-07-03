@@ -18,7 +18,7 @@ namespace TextPad_
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "01.07.2023";
+        public string DateOfRelease { get; } = "03.07.2023";
         public string ProgramPath { get; } = Application.StartupPath;
         public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
@@ -43,12 +43,10 @@ namespace TextPad_
                 System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
             }
 
-            InitializeComponent();
             LS.Info("Program Initialization");
+            InitializeComponent();
 
             Program.mainUI = this;
-
-            CreateTab();
 
             LS.Info("Program launched successfully");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
@@ -61,19 +59,19 @@ namespace TextPad_
 
             if (e.KeyCode == Keys.V && e.Control)
             {
-                TextEditor.pasteTextFromTB(tabControl);
+                TextEditor.pasteTextFromTB(cTabControl);
                 e.Handled = true;
             }
 
             if (e.KeyCode == Keys.F && e.Control)
             {
-                rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
                 if (rtb.TextLength > 0)
                 {
                     SearchUI search_ui = new SearchUI();
                     search_ui.ShowDialog(this);
 
-                    rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
                 }
                 e.Handled = true;
             }
@@ -94,55 +92,55 @@ namespace TextPad_
 
         private void openFileButton(object sender, EventArgs e)
         {
-            TextEditor.OpenFile(tabControl, openFileDialog);
+            TextEditor.OpenFile(openFileDialog);
         }
 
         private void copyTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.copyTextFromTB(tabControl);
+            TextEditor.copyTextFromTB(cTabControl);
         }
 
         private void cutTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.cutTextFromTB(tabControl);
+            TextEditor.cutTextFromTB(cTabControl);
         }
 
         private void pasteTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.pasteTextFromTB(tabControl);
+            TextEditor.pasteTextFromTB(cTabControl);
         }
 
         private void fontTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.fontTextFromTB(tabControl, fontDialog);
+            TextEditor.fontTextFromTB(cTabControl, fontDialog);
         }
 
         private void selectAllTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.selectAllTextFromTB(tabControl);
+            TextEditor.selectAllTextFromTB(cTabControl);
         }
 
         private void undoTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.undoTextFromTB(tabControl);
+            TextEditor.undoTextFromTB(cTabControl);
         }
 
         private void redoTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.redoTextFromTB(tabControl);
+            TextEditor.redoTextFromTB(cTabControl);
         }
 
         private void deleteTextFromTBButton(object sender, EventArgs e)
         {
-            TextEditor.deleteTextFromTB(tabControl);
+            TextEditor.deleteTextFromTB(cTabControl);
         }
 
         private void dateAndTime(object sender, EventArgs e)
         {
-            TextEditor.dateTime(tabControl);
+            TextEditor.dateTime(cTabControl);
         }
 
-        // Методы для TabControl
+        // Методы для cTabControl
         private void createTabClick(object sender, EventArgs e)
         {
             CreateTab();
@@ -150,7 +148,12 @@ namespace TextPad_
 
         private void CloseTab(object sender, EventArgs e)
         {
-            rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            if (cTabControl.TabPages.Count == 1)
+            {
+                return;
+            }
+
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
             if (rtb.TextLength != 0)
             {
                 DialogResult dr = MessageBox.Show(Resources.Localization.MSGQuestionTextInFTB, "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
@@ -159,8 +162,8 @@ namespace TextPad_
                     if (saveFileDialog.ShowDialog() == DialogResult.Yes)
                     {
                         File.WriteAllText(saveFileDialog.FileName, rtb.Text);
-                        OpenedFiles.RemoveAt(tabControl.SelectedIndex);
-                        tabControl.TabPages.Remove(tabControl.SelectedTab);
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(cTabControl.SelectedTab);
                         return;
                     }
                     else
@@ -170,8 +173,8 @@ namespace TextPad_
                 }
                 else if (dr == DialogResult.No)
                 {
-                    OpenedFiles.RemoveAt(tabControl.SelectedIndex);
-                    tabControl.TabPages.Remove(tabControl.SelectedTab);
+                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                    cTabControl.TabPages.Remove(cTabControl.SelectedTab);
                 }
                 else if (dr == DialogResult.Cancel)
                 {
@@ -180,22 +183,17 @@ namespace TextPad_
             }
             else
             {
-                OpenedFiles.RemoveAt(tabControl.SelectedIndex);
-                tabControl.TabPages.Remove(tabControl.SelectedTab);
-            }
-
-            if (tabControl.TabPages.Count <= 0)
-            {
-                CreateTab();
+                OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                cTabControl.TabPages.Remove(cTabControl.SelectedTab);
             }
         }
 
-        private void TabControlSelecting(object sender, TabControlCancelEventArgs e)
+        private void cTabControlSelecting(object sender, TabControlCancelEventArgs e)
         {
             // Этот метод нужен для того, что бы на каждой новой вкладке применялись заданные ранее параметры (вкл/выкл перенос слов, цвет текста, фона, шрифт и т.д.)
             try
             {
-                rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
 
                 rtb.WordWrap = Properties.Settings.Default.WordWarp;
                 rtb.Font = Properties.Settings.Default.EditorFont;
@@ -233,7 +231,7 @@ namespace TextPad_
         // Обработка события TextChanged для каждого rich text box'а
         private void TextBoxTextChanged()
         {
-            rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
             textLengthLabel.Text = rtb.Text.Length.ToString();
             if (rtb.Lines.Length == 0)
             {
@@ -366,18 +364,18 @@ namespace TextPad_
             else if (File.Exists(path))
             {
                 CreateTab(new DirectoryInfo(path).Name);
-                OpenedFiles.Insert(tabControl.TabPages.Count - 1, path);
+                OpenedFiles.Insert(cTabControl.TabPages.Count - 1, path);
                 string fileText = File.ReadAllText(path);
 
-                rtb = tabControl.TabPages[tabControl.TabPages.Count - 1].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<RichTextBox>().First();
                 rtb.Text = fileText;
 
-                tabControl.SelectTab(tabControl.TabPages[tabControl.TabPages.Count - 1]);
+                cTabControl.SelectTab(cTabControl.TabPages[cTabControl.TabPages.Count - 1]);
 
                 if (recentFilesMenuStripItem.DropDownItems.Count == 10)
                     recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
                 ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                tsmi.Text = OpenedFiles.ElementAt(tabControl.SelectedIndex);
+                tsmi.Text = OpenedFiles.ElementAt(cTabControl.SelectedIndex);
                 tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                 recentFilesMenuStripItem.DropDownItems.Add(tsmi);
             }
@@ -480,7 +478,7 @@ namespace TextPad_
         internal void CreateTab()
         {
             /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
-            * задаются кое-какие параметры, затем в tabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
+            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
             * переноса слов.
             */
@@ -495,15 +493,15 @@ namespace TextPad_
             rtb.AcceptsTab = true;
 
             tpage.Controls.Add(rtb);
-            tabControl.TabPages.Add(tpage);
+            cTabControl.TabPages.Add(tpage);
 
-            OpenedFiles.Insert(tabControl.TabPages.IndexOf(tpage), "Missing");
+            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
         }
 
-        private void CreateTab(string tabName)
+        internal void CreateTab(string tabName)
         {
             /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
-            * задаются кое-какие параметры, затем в tabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
+            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
             * переноса слов.
             */
@@ -518,33 +516,17 @@ namespace TextPad_
             rtb.AcceptsTab = true;
 
             tpage.Controls.Add(rtb);
-            tabControl.TabPages.Add(tpage);
+            cTabControl.TabPages.Add(tpage);
 
-            OpenedFiles.Insert(tabControl.TabPages.IndexOf(tpage), "Missing");
+            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
         }
 
         // Цветовые схемы
         internal void colorThemeWhite()
         {
-            // Цвет основного интерфейса
-            MainMenuStrip.BackColor = SystemColors.Control;
-            toolsStrip.BackColor = SystemColors.Control;
-            statusStrip.BackColor = SystemColors.Control;
-            runFileToolStrip.BackColor = SystemColors.Control;
-            BackColor = SystemColors.Control;
-            runFileToolStrip.BackColor = SystemColors.Control;
-
-            MainMenuStrip.ForeColor = SystemColors.ControlText;
-            runFileToolStrip.ForeColor = SystemColors.ControlText;
-
-            fileMenuItem.BackColor = SystemColors.Control;
-
-            textLabelStatus.ForeColor = SystemColors.ControlText;
-            textLengthLabel.ForeColor = SystemColors.ControlText;
-
             // цвет rtb
-            tabControl.TabPages[tabControl.SelectedIndex].BackColor = Color.Transparent;
-            rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Transparent;
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
 
             rtb.ForeColor = Color.Black;
             rtb.BackColor = SystemColors.Window;
@@ -553,27 +535,11 @@ namespace TextPad_
 
         internal void colorThemeDark()
         {
-            // Цвет основного интерфейса
-            MainMenuStrip.BackColor = SystemColors.ControlDarkDark;
-            toolsStrip.BackColor = SystemColors.ControlDarkDark;
-            statusStrip.BackColor = SystemColors.ControlDarkDark;
-            runFileToolStrip.BackColor = SystemColors.ControlDarkDark;
-            BackColor = SystemColors.ControlDarkDark;
-
-            MainMenuStrip.ForeColor = SystemColors.ControlLight;
-            runFileToolStrip.ForeColor = SystemColors.ControlLight;
-
-            fileMenuItem.BackColor = SystemColors.ControlDarkDark;
-
-            textLabelStatus.ForeColor = SystemColors.ControlLight;
-            textLengthLabel.ForeColor = SystemColors.ControlLight;
-
             // цвет rtb
-            tabControl.TabPages[tabControl.SelectedIndex].BackColor = Color.Black;
-            rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Black;
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
 
-            rtb.ForeColor = Color.White;
-            rtb.BackColor = Color.DimGray;
+            rtb.BackColor = Color.FromArgb(64, 64, 64);
             rtb.ForeColor = Color.Cyan;
         }
 
@@ -645,30 +611,33 @@ namespace TextPad_
         {
             LS.Debug("Loading parameters");
 
+            CreateTab();
+            LoadRecentFiles();
+
             // Количество аргументов запуска программы
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
             {
                 try
                 {
-                    rtb = tabControl.TabPages[tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
                     // в список помещаем под индексом новой вкладки путь до файла
-                    OpenedFiles.Insert(tabControl.SelectedIndex, args[1]);
+                    OpenedFiles.Insert(cTabControl.SelectedIndex, args[1]);
                     // в text box помещаем текст
                     rtb.Text = File.ReadAllText(args[1]);
                     // задаём даголовок вкладки
-                    tabControl.SelectedTab.Text = Path.GetFileName(OpenedFiles.ElementAt(Program.mainUI.tabControl.SelectedIndex));
+                    cTabControl.SelectedTab.Text = Path.GetFileName(OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
                     if (recentFilesMenuStripItem.DropDownItems.Count == 10)
                         recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = OpenedFiles.ElementAt(tabControl.SelectedIndex);
+                    tsmi.Text = OpenedFiles.ElementAt(cTabControl.SelectedIndex);
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuStripItem.DropDownItems.Add(tsmi);
                 }
                 catch (Exception ex)
                 {
-                    LS.Error($"{ex} Error when trying to create a tab while running a program through a file: {OpenedFiles.ElementAt(Program.mainUI.tabControl.SelectedIndex)}");
+                    LS.Error($"{ex} Error when trying to create a tab while running a program through a file: {OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
                     MessageBox.Show(ex.Message, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -718,8 +687,6 @@ namespace TextPad_
                     this.WindowState = FormWindowState.Normal;
                     break;
             }
-
-            LoadRecentFiles();
 
             // Xml конфигурация
             try
@@ -796,7 +763,7 @@ namespace TextPad_
 
             LS.Info("Exiting the program and saving parameters");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
-            LS.Debug("Total tabs: " + tabControl.TabPages.Count.ToString());
+            LS.Debug("Total tabs: " + cTabControl.TabPages.Count.ToString());
         }
 
         // Немного говнокода для сохранения в файл параметров список последних файлов

@@ -24,7 +24,7 @@ namespace TextPad_
 
         private void saveSettings(object sender, EventArgs e)
         {
-            var rtb = Program.mainUI.tabControl.TabPages[Program.mainUI.tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
 
             // Проверка настроек языка
             switch (comboBoxLanguage.SelectedItem)
@@ -102,7 +102,7 @@ namespace TextPad_
             Properties.Settings.Default.EditorFont = Program.mainUI.fontDialog.Font;
             Properties.Settings.Default.Save();
 
-            var rtb = Program.mainUI.tabControl.TabPages[Program.mainUI.tabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
             rtb.Font = Program.mainUI.fontDialog.Font;
         }
 

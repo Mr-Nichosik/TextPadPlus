@@ -52,6 +52,7 @@ namespace TextPad_
 
             labelVersion.Text += Program.mainUI.GetAssemblyVersion();
             LSVersionLabel.Text = LogSystem.GetAssemblyVersion();
+            CTCLabelVersion.Text = CTabControl.GetAssemblyVersion();
         }
     }
 }

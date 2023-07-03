@@ -93,10 +93,10 @@
     <value>Тёмная / Dark</value>
   </data>
   <data name="comboTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 5</value>
+    <value>141, 5</value>
   </data>
   <data name="comboTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 23</value>
+    <value>149, 23</value>
   </data>
   <data name="comboTheme.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -117,16 +117,16 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+    <value>4, 8</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 15</value>
+    <value>132, 15</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Цветовая схема: </value>
+    <value>Цветовая схема поля: </value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -141,10 +141,10 @@
     <value>1</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 73</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 57</value>
+    <value>300, 57</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -165,7 +165,7 @@
     <value>True</value>
   </data>
   <data name="runFilesPanelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 6</value>
+    <value>275, 6</value>
   </data>
   <data name="runFilesPanelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -213,10 +213,10 @@
     <value>1</value>
   </data>
   <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 257</value>
+    <value>16, 255</value>
   </data>
   <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 27</value>
+    <value>300, 30</value>
   </data>
   <data name="panel6.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -244,7 +244,7 @@
     <value>NoControl</value>
   </data>
   <data name="statusStripCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 6</value>
+    <value>275, 5</value>
   </data>
   <data name="statusStripCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -295,10 +295,10 @@
     <value>1</value>
   </data>
   <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 185</value>
+    <value>16, 183</value>
   </data>
   <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 27</value>
+    <value>300, 30</value>
   </data>
   <data name="panel7.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -322,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="instrumentPanelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 6</value>
+    <value>275, 6</value>
   </data>
   <data name="instrumentPanelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -373,10 +373,10 @@
     <value>1</value>
   </data>
   <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 221</value>
+    <value>16, 219</value>
   </data>
   <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 27</value>
+    <value>300, 30</value>
   </data>
   <data name="panel8.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -403,7 +403,7 @@
     <value>NoControl</value>
   </data>
   <data name="explorerCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 6</value>
+    <value>275, 6</value>
   </data>
   <data name="explorerCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -430,7 +430,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+    <value>4, 6</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 15</value>
@@ -454,10 +454,10 @@
     <value>1</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 290</value>
+    <value>16, 291</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 27</value>
+    <value>300, 30</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -481,10 +481,10 @@
     <value>English / Английский</value>
   </data>
   <data name="comboBoxLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 6</value>
+    <value>141, 6</value>
   </data>
   <data name="comboBoxLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 23</value>
+    <value>149, 23</value>
   </data>
   <data name="comboBoxLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -508,7 +508,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 6</value>
+    <value>4, 9</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 15</value>
@@ -532,10 +532,10 @@
     <value>1</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 6</value>
+    <value>16, 7</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 60</value>
+    <value>300, 60</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -556,13 +556,13 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="FontTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 7</value>
+    <value>141, 7</value>
   </data>
   <data name="FontTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
   </data>
   <data name="FontTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 27</value>
+    <value>149, 27</value>
   </data>
   <data name="FontTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -586,7 +586,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 13</value>
+    <value>4, 13</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 15</value>
@@ -610,10 +610,10 @@
     <value>1</value>
   </data>
   <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 135</value>
+    <value>16, 136</value>
   </data>
   <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 41</value>
+    <value>300, 41</value>
   </data>
   <data name="panel9.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -668,7 +668,7 @@
     <value>NoControl</value>
   </data>
   <data name="wordWarpCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 6</value>
+    <value>280, 6</value>
   </data>
   <data name="wordWarpCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -722,7 +722,7 @@
     <value>16, 43</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 30</value>
+    <value>300, 30</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -746,7 +746,7 @@
     <value>NoControl</value>
   </data>
   <data name="overWindowsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 6</value>
+    <value>280, 6</value>
   </data>
   <data name="overWindowsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -800,7 +800,7 @@
     <value>16, 7</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 30</value>
+    <value>300, 30</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
