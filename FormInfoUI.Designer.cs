@@ -56,7 +56,7 @@ namespace TextPad_
             this.label2 = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonWebsite = new System.Windows.Forms.Button();
             this.textBoxWebSiteUrl = new System.Windows.Forms.TextBox();
             this.labelWebSite = new System.Windows.Forms.Label();
@@ -66,16 +66,16 @@ namespace TextPad_
             this.tabPage1.SuspendLayout();
             this.componentsPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.labelVersion);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             // 
             // textBox2
@@ -92,7 +92,6 @@ namespace TextPad_
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.componentsPanel);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.DeveloperLabel);
@@ -101,11 +100,12 @@ namespace TextPad_
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.VersionLabel);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Controls.Add(this.pictureBox);
             this.tabPage1.Controls.Add(this.buttonWebsite);
             this.tabPage1.Controls.Add(this.textBoxWebSiteUrl);
             this.tabPage1.Controls.Add(this.labelWebSite);
             this.tabPage1.Controls.Add(this.ProgramNameLabel);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -238,12 +238,12 @@ namespace TextPad_
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::TextPad_.Properties.Resources.TextPadLogo;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.InitialImage = global::TextPad_.Properties.Resources.TextPadTile;
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.TabStop = false;
             // 
             // buttonWebsite
             // 
@@ -254,9 +254,9 @@ namespace TextPad_
             // 
             // textBoxWebSiteUrl
             // 
-            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
             this.textBoxWebSiteUrl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBoxWebSiteUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
             this.textBoxWebSiteUrl.Name = "textBoxWebSiteUrl";
             this.textBoxWebSiteUrl.ReadOnly = true;
             // 
@@ -272,9 +272,9 @@ namespace TextPad_
             // 
             // tabControl
             // 
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
@@ -297,7 +297,7 @@ namespace TextPad_
             this.componentsPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -317,7 +317,7 @@ namespace TextPad_
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label VersionLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label DeveloperLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;

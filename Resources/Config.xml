@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <program name="TextPad+">
-    <version>2.2</version>
-    <path>D:\Ilya\Private\Scripts\C#\Updater\bin\Debug\net6.0-windows</path>
+    <version>2..0</version>
+    <path>D:\Ilya\Private\Scripts\C#\TextPad+\bin\Release\net6.0-windows7.0</path>
     <language>Russian</language>
   </program>
   <web>
-    <site>https://mr-nichosik.github.io/Main_Page/</site>
+    <Site>https://mr-nichosik.github.io/Main_Page/</Site>
     <TextPadVersion>https://mr-nichosik.github.io/TextPadVersion/</TextPadVersion>
     <webSiteInstaller>https://mr-nichosik.github.io/Main_Page/res/TextPad+.zip</webSiteInstaller>
     <webSiteNewUpdateRu>https://mr-nichosik.github.io/TextPadNewUpdateRu/</webSiteNewUpdateRu>

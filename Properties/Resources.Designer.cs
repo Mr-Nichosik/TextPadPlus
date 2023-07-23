@@ -63,9 +63,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _new {
+        internal static System.Drawing.Bitmap ArrowDown {
             get {
-                object obj = ResourceManager.GetObject("new", resourceCulture);
+                object obj = ResourceManager.GetObject("ArrowDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close {
+        internal static System.Drawing.Bitmap ArrowUp {
             get {
-                object obj = ResourceManager.GetObject("close", resourceCulture);
+                object obj = ResourceManager.GetObject("ArrowUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap down {
+        internal static System.Drawing.Bitmap DocumentClose {
             get {
-                object obj = ResourceManager.GetObject("down", resourceCulture);
+                object obj = ResourceManager.GetObject("DocumentClose", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap external_link {
+        internal static System.Drawing.Bitmap DocumentCreate {
             get {
-                object obj = ResourceManager.GetObject("external_link", resourceCulture);
+                object obj = ResourceManager.GetObject("DocumentCreate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap file {
+        internal static System.Drawing.Bitmap DocumentOpen {
             get {
-                object obj = ResourceManager.GetObject("file", resourceCulture);
+                object obj = ResourceManager.GetObject("DocumentOpen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder {
+        internal static System.Drawing.Bitmap DocumentSave {
             get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
+                object obj = ResourceManager.GetObject("DocumentSave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap font {
+        internal static System.Drawing.Bitmap FileStart {
             get {
-                object obj = ResourceManager.GetObject("font", resourceCulture);
+                object obj = ResourceManager.GetObject("FileStart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,39 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap open {
+        internal static System.Drawing.Bitmap FolderAbove {
             get {
-                object obj = ResourceManager.GetObject("open", resourceCulture);
+                object obj = ResourceManager.GetObject("FolderAbove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FolderClose {
+            get {
+                object obj = ResourceManager.GetObject("FolderClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FolderOpen {
+            get {
+                object obj = ResourceManager.GetObject("FolderOpen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Font {
+            get {
+                object obj = ResourceManager.GetObject("Font", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +223,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refresh {
+        internal static System.Drawing.Bitmap Refresh {
             get {
-                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +233,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap save {
+        internal static System.Drawing.Bitmap Search {
             get {
-                object obj = ResourceManager.GetObject("save", resourceCulture);
+                object obj = ResourceManager.GetObject("Search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,40 +243,10 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search {
+        internal static System.Drawing.Bitmap TextPadTile {
             get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
+                object obj = ResourceManager.GetObject("TextPadTile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap start {
-            get {
-                object obj = ResourceManager.GetObject("start", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TextPadLogo {
-            get {
-                object obj = ResourceManager.GetObject("TextPadLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
-        /// </summary>
-        internal static System.Drawing.Icon TextPadLogo1 {
-            get {
-                object obj = ResourceManager.GetObject("TextPadLogo1", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -256,26 +256,6 @@ namespace TextPad_.Properties {
         internal static System.Drawing.Bitmap undo {
             get {
                 object obj = ResourceManager.GetObject("undo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap up {
-            get {
-                object obj = ResourceManager.GetObject("up", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap upFolder {
-            get {
-                object obj = ResourceManager.GetObject("upFolder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

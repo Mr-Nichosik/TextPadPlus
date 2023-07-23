@@ -18,7 +18,7 @@ namespace TextPad_
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "03.07.2023";
+        public string DateOfRelease { get; } = "Developement";
         public string ProgramPath { get; } = Application.StartupPath;
         public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
@@ -52,7 +52,7 @@ namespace TextPad_
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
-        // Обрботка некоторых нажатий клавиш
+        // Переопределение OnKeyDown для добавления сочетаний клавиш
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
@@ -148,28 +148,13 @@ namespace TextPad_
 
         private void CloseTab(object sender, EventArgs e)
         {
-            if (cTabControl.TabPages.Count == 1)
-            {
-                return;
-            }
-
             rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
             if (rtb.TextLength != 0)
             {
                 DialogResult dr = MessageBox.Show(Resources.Localization.MSGQuestionTextInFTB, "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    if (saveFileDialog.ShowDialog() == DialogResult.Yes)
-                    {
-                        File.WriteAllText(saveFileDialog.FileName, rtb.Text);
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
-                        cTabControl.TabPages.Remove(cTabControl.SelectedTab);
-                        return;
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    TextEditor.SaveCurrentFile();
                 }
                 else if (dr == DialogResult.No)
                 {
@@ -185,6 +170,11 @@ namespace TextPad_
             {
                 OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                 cTabControl.TabPages.Remove(cTabControl.SelectedTab);
+            }
+
+            if (cTabControl.TabPages.Count == 0)
+            {
+                CreateTab();
             }
         }
 
@@ -206,6 +196,8 @@ namespace TextPad_
                 {
                     textLinesLabel.Text = rtb.Lines.Length.ToString();
                 }
+
+                checkFiles();
 
                 switch (Properties.Settings.Default.Theme)
                 {
@@ -242,7 +234,8 @@ namespace TextPad_
                 textLinesLabel.Text = rtb.Lines.Length.ToString();
             }
 
-            LS.Trace("Handling the \"Text Changed\" event");
+            checkFiles();
+
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
@@ -372,12 +365,12 @@ namespace TextPad_
 
                 cTabControl.SelectTab(cTabControl.TabPages[cTabControl.TabPages.Count - 1]);
 
-                if (recentFilesMenuStripItem.DropDownItems.Count == 10)
-                    recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
+                if (recentFilesMenuItem.DropDownItems.Count == 10)
+                    recentFilesMenuItem.DropDownItems.RemoveAt(0);
                 ToolStripMenuItem tsmi = new ToolStripMenuItem();
                 tsmi.Text = OpenedFiles.ElementAt(cTabControl.SelectedIndex);
                 tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                recentFilesMenuItem.DropDownItems.Add(tsmi);
             }
         }
 
@@ -466,6 +459,17 @@ namespace TextPad_
             FileRunner.VbsRun();
         }
 
+        // Открытие папки файла
+        private void openFileFolder(object sender, EventArgs e)
+        {
+            try
+            {
+                if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
+                    Process.Start("explorer.exe", Path.GetDirectoryName(OpenedFiles.ElementAt(cTabControl.SelectedIndex)));
+            }
+            catch { return; }
+        }
+
         // Просто выход
         private void exit(object sender, EventArgs e)
         {
@@ -496,6 +500,34 @@ namespace TextPad_
             cTabControl.TabPages.Add(tpage);
 
             OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
+
+            if (Properties.Settings.Default.Theme == "White")
+            {
+                colorThemeWhite();
+            }
+            else
+            {
+                colorThemeDark();
+            }
+
+            if (rtb.Text.Length == 0)
+            {
+                saveCurrentFileMenuItem.Enabled = false;
+                saveAsFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                saveCurrentFileMenuItem.Enabled = true;
+                saveAsFileMenuItem.Enabled = true;
+            }
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            {
+                fileFolderFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                fileFolderFileMenuItem.Enabled = true;
+            }
         }
 
         internal void CreateTab(string tabName)
@@ -519,6 +551,63 @@ namespace TextPad_
             cTabControl.TabPages.Add(tpage);
 
             OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
+
+            if (Properties.Settings.Default.Theme == "White")
+            {
+                colorThemeWhite();
+            }
+            else
+            {
+                colorThemeDark();
+            }
+
+            if (rtb.Text.Length == 0)
+            {
+                saveCurrentFileMenuItem.Enabled = false;
+                saveAsFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                saveCurrentFileMenuItem.Enabled = true;
+                saveAsFileMenuItem.Enabled = true;
+            }
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            {
+                fileFolderFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                fileFolderFileMenuItem.Enabled = true;
+            }
+        }
+
+        private void checkFiles()
+        {
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            if (rtb.Text.Length == 0)
+            {
+                saveCurrentFileMenuItem.Enabled = false;
+                saveAsFileMenuItem.Enabled = false;
+                saveToolStripItem.Enabled = false;
+                searchEditMenuItem.Enabled = false;
+                searchToolStripItem.Enabled = false;
+            }
+            else
+            {
+                saveCurrentFileMenuItem.Enabled = true;
+                saveAsFileMenuItem.Enabled = true;
+                saveToolStripItem.Enabled = true;
+                searchEditMenuItem.Enabled = true;
+                searchToolStripItem.Enabled = true;
+            }
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            {
+                fileFolderFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                fileFolderFileMenuItem.Enabled = true;
+            }
         }
 
         // Цветовые схемы
@@ -541,6 +630,146 @@ namespace TextPad_
 
             rtb.BackColor = Color.FromArgb(64, 64, 64);
             rtb.ForeColor = Color.Cyan;
+        }
+
+        // Немного говнокода для сохранения в файл параметров список последних файлов
+        private void LoadRecentFiles()
+        {
+            try
+            {
+                if (Properties.RecentFiles.Default.element0 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element0;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element1 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element1;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element2 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element2;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element3 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element3;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element4 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element4;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element5 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element5;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element6 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element6;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element7 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element7;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element8 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element8;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+                if (Properties.RecentFiles.Default.element9 != "Missing")
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
+                    tsmi.Text = Properties.RecentFiles.Default.element9;
+                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
+                }
+            }
+            catch { }
+        }
+
+        private void SaveRecentFiles()
+        {
+            Properties.RecentFiles.Default.element0 = "Missing";
+            Properties.RecentFiles.Default.element1 = "Missing";
+            Properties.RecentFiles.Default.element2 = "Missing";
+            Properties.RecentFiles.Default.element3 = "Missing";
+            Properties.RecentFiles.Default.element4 = "Missing";
+            Properties.RecentFiles.Default.element5 = "Missing";
+            Properties.RecentFiles.Default.element6 = "Missing";
+            Properties.RecentFiles.Default.element7 = "Missing";
+            Properties.RecentFiles.Default.element8 = "Missing";
+            Properties.RecentFiles.Default.element9 = "Missing";
+
+            try
+            {
+                if (recentFilesMenuItem.DropDownItems[0] != null)
+                {
+                    Properties.RecentFiles.Default.element0 = recentFilesMenuItem.DropDownItems[0].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[1] != null)
+                {
+                    Properties.RecentFiles.Default.element1 = recentFilesMenuItem.DropDownItems[1].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[2] != null)
+                {
+                    Properties.RecentFiles.Default.element2 = recentFilesMenuItem.DropDownItems[2].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[3] != null)
+                {
+                    Properties.RecentFiles.Default.element3 = recentFilesMenuItem.DropDownItems[3].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[4] != null)
+                {
+                    Properties.RecentFiles.Default.element4 = recentFilesMenuItem.DropDownItems[4].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[5] != null)
+                {
+                    Properties.RecentFiles.Default.element5 = recentFilesMenuItem.DropDownItems[5].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[6] != null)
+                {
+                    Properties.RecentFiles.Default.element6 = recentFilesMenuItem.DropDownItems[6].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[7] != null)
+                {
+                    Properties.RecentFiles.Default.element7 = recentFilesMenuItem.DropDownItems[7].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[8] != null)
+                {
+                    Properties.RecentFiles.Default.element8 = recentFilesMenuItem.DropDownItems[8].Text;
+                }
+                if (recentFilesMenuItem.DropDownItems[9] != null)
+                {
+                    Properties.RecentFiles.Default.element9 = recentFilesMenuItem.DropDownItems[9].Text;
+                }
+            }
+            catch { }
+
+            Properties.RecentFiles.Default.Save();
         }
 
         #region Вызов окон
@@ -628,12 +857,12 @@ namespace TextPad_
                     // задаём даголовок вкладки
                     cTabControl.SelectedTab.Text = Path.GetFileName(OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
-                    if (recentFilesMenuStripItem.DropDownItems.Count == 10)
-                        recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
+                    if (recentFilesMenuItem.DropDownItems.Count == 10)
+                        recentFilesMenuItem.DropDownItems.RemoveAt(0);
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
                     tsmi.Text = OpenedFiles.ElementAt(cTabControl.SelectedIndex);
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                    recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
                 catch (Exception ex)
                 {
@@ -687,6 +916,8 @@ namespace TextPad_
                     this.WindowState = FormWindowState.Normal;
                     break;
             }
+
+            checkFiles();
 
             // Xml конфигурация
             try
@@ -764,146 +995,6 @@ namespace TextPad_
             LS.Info("Exiting the program and saving parameters");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
             LS.Debug("Total tabs: " + cTabControl.TabPages.Count.ToString());
-        }
-
-        // Немного говнокода для сохранения в файл параметров список последних файлов
-        private void LoadRecentFiles()
-        {
-            try
-            {
-                if (Properties.RecentFiles.Default.element0 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element0;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element1 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element1;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element2 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element2;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element3 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element3;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element4 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element4;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element5 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element5;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element6 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element6;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element7 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element7;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element8 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element8;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-                if (Properties.RecentFiles.Default.element9 != "Missing")
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element9;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                    recentFilesMenuStripItem.DropDownItems.Add(tsmi);
-                }
-            }
-            catch { }
-        }
-
-        private void SaveRecentFiles()
-        {
-            Properties.RecentFiles.Default.element0 = "Missing";
-            Properties.RecentFiles.Default.element1 = "Missing";
-            Properties.RecentFiles.Default.element2 = "Missing";
-            Properties.RecentFiles.Default.element3 = "Missing";
-            Properties.RecentFiles.Default.element4 = "Missing";
-            Properties.RecentFiles.Default.element5 = "Missing";
-            Properties.RecentFiles.Default.element6 = "Missing";
-            Properties.RecentFiles.Default.element7 = "Missing";
-            Properties.RecentFiles.Default.element8 = "Missing";
-            Properties.RecentFiles.Default.element9 = "Missing";
-
-            try
-            {
-                if (recentFilesMenuStripItem.DropDownItems[0] != null)
-                {
-                    Properties.RecentFiles.Default.element0 = recentFilesMenuStripItem.DropDownItems[0].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[1] != null)
-                {
-                    Properties.RecentFiles.Default.element1 = recentFilesMenuStripItem.DropDownItems[1].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[2] != null)
-                {
-                    Properties.RecentFiles.Default.element2 = recentFilesMenuStripItem.DropDownItems[2].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[3] != null)
-                {
-                    Properties.RecentFiles.Default.element3 = recentFilesMenuStripItem.DropDownItems[3].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[4] != null)
-                {
-                    Properties.RecentFiles.Default.element4 = recentFilesMenuStripItem.DropDownItems[4].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[5] != null)
-                {
-                    Properties.RecentFiles.Default.element5 = recentFilesMenuStripItem.DropDownItems[5].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[6] != null)
-                {
-                    Properties.RecentFiles.Default.element6 = recentFilesMenuStripItem.DropDownItems[6].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[7] != null)
-                {
-                    Properties.RecentFiles.Default.element7 = recentFilesMenuStripItem.DropDownItems[7].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[8] != null)
-                {
-                    Properties.RecentFiles.Default.element8 = recentFilesMenuStripItem.DropDownItems[8].Text;
-                }
-                if (recentFilesMenuStripItem.DropDownItems[9] != null)
-                {
-                    Properties.RecentFiles.Default.element9 = recentFilesMenuStripItem.DropDownItems[9].Text;
-                }
-            }
-            catch { }
-
-            Properties.RecentFiles.Default.Save();
         }
     }
 }

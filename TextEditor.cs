@@ -37,12 +37,12 @@ namespace TextPad_
                     // заголовком вкладки становится название файла, путь до которого взят из списка openedFiles с индексом этой вкладки
                     Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
-                    if (Program.mainUI.recentFilesMenuStripItem.DropDownItems.Count == 10)
-                        Program.mainUI.recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
+                    if (Program.mainUI.recentFilesMenuItem.DropDownItems.Count == 10)
+                        Program.mainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
                     tsmi.Text = Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex);
                     tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                    Program.mainUI.recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                    Program.mainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
 
                     Ls.Debug("Saving file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
                 }
@@ -115,12 +115,12 @@ namespace TextPad_
                 // Задаём заголовок вкладки с названием файла
                 Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
-                if (Program.mainUI.recentFilesMenuStripItem.DropDownItems.Count == 10)
-                    Program.mainUI.recentFilesMenuStripItem.DropDownItems.RemoveAt(0);
+                if (Program.mainUI.recentFilesMenuItem.DropDownItems.Count == 10)
+                    Program.mainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
                 ToolStripMenuItem tsmi = new ToolStripMenuItem();
                 tsmi.Text = Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex);
                 tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                Program.mainUI.recentFilesMenuStripItem.DropDownItems.Add(tsmi);
+                Program.mainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
 
                 Ls.Debug("Opening file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
             }

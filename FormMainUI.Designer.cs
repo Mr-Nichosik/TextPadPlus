@@ -33,16 +33,17 @@ namespace TextPad_
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainUI));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createTabMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.закрыть_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.новоеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainMenuStripSep1 = new System.Windows.Forms.ToolStripSeparator();
-            this.recentFilesMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainMenuStripSep2 = new System.Windows.Forms.ToolStripSeparator();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createTabFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeTabFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWindowFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCurrentFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.separator1FileMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.fileFolderFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recentFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.separator2FileMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.exitFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.копироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вырезатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,15 +55,15 @@ namespace TextPad_
             this.вернутьCTRLYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripSep3 = new System.Windows.Forms.ToolStripSeparator();
             this.датаИВремяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.найтиИЗаменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pythonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vBSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.batToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pythonRunMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vbsRunMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.batRunMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referenceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutProgramMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.getUpdateBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutProgramReferenceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getUpdateReferenceMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
@@ -85,8 +86,8 @@ namespace TextPad_
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSep1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripItem = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSep2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -98,7 +99,7 @@ namespace TextPad_
             this.toolStripSep4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSep5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.searchToolStripItem = new System.Windows.Forms.ToolStripButton();
             this.runFileToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.startScriptCombobox = new System.Windows.Forms.ToolStripComboBox();
@@ -145,75 +146,87 @@ namespace TextPad_
             // fileMenuItem
             // 
             this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createTabMenuItem,
-            this.закрыть_menu,
-            this.новоеОкноToolStripMenuItem,
-            this.сохранитьToolStripMenuItem,
-            this.сохранитьКакToolStripMenuItem,
-            this.открытьToolStripMenuItem,
-            this.mainMenuStripSep1,
-            this.recentFilesMenuStripItem,
-            this.mainMenuStripSep2,
-            this.выходToolStripMenuItem});
+            this.createTabFileMenuItem,
+            this.closeTabFileMenuItem,
+            this.newWindowFileMenuItem,
+            this.saveCurrentFileMenuItem,
+            this.saveAsFileMenuItem,
+            this.openFileMenuItem,
+            this.separator1FileMenuItem,
+            this.fileFolderFileMenuItem,
+            this.recentFilesMenuItem,
+            this.separator2FileMenuItem,
+            this.exitFileMenuItem});
             resources.ApplyResources(this.fileMenuItem, "fileMenuItem");
             this.fileMenuItem.Name = "fileMenuItem";
             // 
-            // createTabMenuItem
+            // createTabFileMenuItem
             // 
-            this.createTabMenuItem.Name = "createTabMenuItem";
-            resources.ApplyResources(this.createTabMenuItem, "createTabMenuItem");
-            this.createTabMenuItem.Click += new System.EventHandler(this.createTabClick);
+            this.createTabFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentCreate;
+            this.createTabFileMenuItem.Name = "createTabFileMenuItem";
+            resources.ApplyResources(this.createTabFileMenuItem, "createTabFileMenuItem");
+            this.createTabFileMenuItem.Click += new System.EventHandler(this.createTabClick);
             // 
-            // закрыть_menu
+            // closeTabFileMenuItem
             // 
-            this.закрыть_menu.Name = "закрыть_menu";
-            resources.ApplyResources(this.закрыть_menu, "закрыть_menu");
-            this.закрыть_menu.Click += new System.EventHandler(this.CloseTab);
+            this.closeTabFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentClose;
+            this.closeTabFileMenuItem.Name = "closeTabFileMenuItem";
+            resources.ApplyResources(this.closeTabFileMenuItem, "closeTabFileMenuItem");
+            this.closeTabFileMenuItem.Click += new System.EventHandler(this.CloseTab);
             // 
-            // новоеОкноToolStripMenuItem
+            // newWindowFileMenuItem
             // 
-            this.новоеОкноToolStripMenuItem.Name = "новоеОкноToolStripMenuItem";
-            resources.ApplyResources(this.новоеОкноToolStripMenuItem, "новоеОкноToolStripMenuItem");
-            this.новоеОкноToolStripMenuItem.Click += new System.EventHandler(this.newWindow);
+            this.newWindowFileMenuItem.Name = "newWindowFileMenuItem";
+            resources.ApplyResources(this.newWindowFileMenuItem, "newWindowFileMenuItem");
+            this.newWindowFileMenuItem.Click += new System.EventHandler(this.newWindow);
             // 
-            // сохранитьToolStripMenuItem
+            // saveCurrentFileMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            resources.ApplyResources(this.сохранитьToolStripMenuItem, "сохранитьToolStripMenuItem");
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.saveFileButton);
+            this.saveCurrentFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentSave;
+            this.saveCurrentFileMenuItem.Name = "saveCurrentFileMenuItem";
+            resources.ApplyResources(this.saveCurrentFileMenuItem, "saveCurrentFileMenuItem");
+            this.saveCurrentFileMenuItem.Click += new System.EventHandler(this.saveFileButton);
             // 
-            // сохранитьКакToolStripMenuItem
+            // saveAsFileMenuItem
             // 
-            this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            resources.ApplyResources(this.сохранитьКакToolStripMenuItem, "сохранитьКакToolStripMenuItem");
-            this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.saveAsFileButton);
+            this.saveAsFileMenuItem.Name = "saveAsFileMenuItem";
+            resources.ApplyResources(this.saveAsFileMenuItem, "saveAsFileMenuItem");
+            this.saveAsFileMenuItem.Click += new System.EventHandler(this.saveAsFileButton);
             // 
-            // открытьToolStripMenuItem
+            // openFileMenuItem
             // 
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            resources.ApplyResources(this.открытьToolStripMenuItem, "открытьToolStripMenuItem");
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.openFileButton);
+            this.openFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentOpen;
+            this.openFileMenuItem.Name = "openFileMenuItem";
+            resources.ApplyResources(this.openFileMenuItem, "openFileMenuItem");
+            this.openFileMenuItem.Click += new System.EventHandler(this.openFileButton);
             // 
-            // mainMenuStripSep1
+            // separator1FileMenuItem
             // 
-            this.mainMenuStripSep1.Name = "mainMenuStripSep1";
-            resources.ApplyResources(this.mainMenuStripSep1, "mainMenuStripSep1");
+            this.separator1FileMenuItem.Name = "separator1FileMenuItem";
+            resources.ApplyResources(this.separator1FileMenuItem, "separator1FileMenuItem");
             // 
-            // recentFilesMenuStripItem
+            // fileFolderFileMenuItem
             // 
-            this.recentFilesMenuStripItem.Name = "recentFilesMenuStripItem";
-            resources.ApplyResources(this.recentFilesMenuStripItem, "recentFilesMenuStripItem");
+            this.fileFolderFileMenuItem.Image = global::TextPad_.Properties.Resources.FolderOpen;
+            this.fileFolderFileMenuItem.Name = "fileFolderFileMenuItem";
+            resources.ApplyResources(this.fileFolderFileMenuItem, "fileFolderFileMenuItem");
+            this.fileFolderFileMenuItem.Click += new System.EventHandler(this.openFileFolder);
             // 
-            // mainMenuStripSep2
+            // recentFilesMenuItem
             // 
-            this.mainMenuStripSep2.Name = "mainMenuStripSep2";
-            resources.ApplyResources(this.mainMenuStripSep2, "mainMenuStripSep2");
+            this.recentFilesMenuItem.Name = "recentFilesMenuItem";
+            resources.ApplyResources(this.recentFilesMenuItem, "recentFilesMenuItem");
             // 
-            // выходToolStripMenuItem
+            // separator2FileMenuItem
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            resources.ApplyResources(this.выходToolStripMenuItem, "выходToolStripMenuItem");
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.exit);
+            this.separator2FileMenuItem.Name = "separator2FileMenuItem";
+            resources.ApplyResources(this.separator2FileMenuItem, "separator2FileMenuItem");
+            // 
+            // exitFileMenuItem
+            // 
+            this.exitFileMenuItem.Name = "exitFileMenuItem";
+            resources.ApplyResources(this.exitFileMenuItem, "exitFileMenuItem");
+            this.exitFileMenuItem.Click += new System.EventHandler(this.exit);
             // 
             // editMenuItem
             // 
@@ -228,7 +241,7 @@ namespace TextPad_
             this.вернутьCTRLYToolStripMenuItem,
             this.menuStripSep3,
             this.датаИВремяToolStripMenuItem,
-            this.найтиИЗаменитьToolStripMenuItem});
+            this.searchEditMenuItem});
             resources.ApplyResources(this.editMenuItem, "editMenuItem");
             this.editMenuItem.Name = "editMenuItem";
             // 
@@ -290,11 +303,12 @@ namespace TextPad_
             resources.ApplyResources(this.датаИВремяToolStripMenuItem, "датаИВремяToolStripMenuItem");
             this.датаИВремяToolStripMenuItem.Click += new System.EventHandler(this.dateAndTime);
             // 
-            // найтиИЗаменитьToolStripMenuItem
+            // searchEditMenuItem
             // 
-            this.найтиИЗаменитьToolStripMenuItem.Name = "найтиИЗаменитьToolStripMenuItem";
-            resources.ApplyResources(this.найтиИЗаменитьToolStripMenuItem, "найтиИЗаменитьToolStripMenuItem");
-            this.найтиИЗаменитьToolStripMenuItem.Click += new System.EventHandler(this.search);
+            this.searchEditMenuItem.Image = global::TextPad_.Properties.Resources.Search;
+            this.searchEditMenuItem.Name = "searchEditMenuItem";
+            resources.ApplyResources(this.searchEditMenuItem, "searchEditMenuItem");
+            this.searchEditMenuItem.Click += new System.EventHandler(this.search);
             // 
             // optionsMenuItem
             // 
@@ -305,49 +319,49 @@ namespace TextPad_
             // runMenuItem
             // 
             this.runMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pythonToolStripMenuItem,
-            this.vBSToolStripMenuItem,
-            this.batToolStripMenuItem});
+            this.pythonRunMenuItem,
+            this.vbsRunMenuItem,
+            this.batRunMenuItem});
             resources.ApplyResources(this.runMenuItem, "runMenuItem");
             this.runMenuItem.Name = "runMenuItem";
             // 
-            // pythonToolStripMenuItem
+            // pythonRunMenuItem
             // 
-            this.pythonToolStripMenuItem.Name = "pythonToolStripMenuItem";
-            resources.ApplyResources(this.pythonToolStripMenuItem, "pythonToolStripMenuItem");
-            this.pythonToolStripMenuItem.Click += new System.EventHandler(this.PythonRun);
+            this.pythonRunMenuItem.Name = "pythonRunMenuItem";
+            resources.ApplyResources(this.pythonRunMenuItem, "pythonRunMenuItem");
+            this.pythonRunMenuItem.Click += new System.EventHandler(this.PythonRun);
             // 
-            // vBSToolStripMenuItem
+            // vbsRunMenuItem
             // 
-            this.vBSToolStripMenuItem.Name = "vBSToolStripMenuItem";
-            resources.ApplyResources(this.vBSToolStripMenuItem, "vBSToolStripMenuItem");
-            this.vBSToolStripMenuItem.Click += new System.EventHandler(this.VbsRun);
+            this.vbsRunMenuItem.Name = "vbsRunMenuItem";
+            resources.ApplyResources(this.vbsRunMenuItem, "vbsRunMenuItem");
+            this.vbsRunMenuItem.Click += new System.EventHandler(this.VbsRun);
             // 
-            // batToolStripMenuItem
+            // batRunMenuItem
             // 
-            this.batToolStripMenuItem.Name = "batToolStripMenuItem";
-            resources.ApplyResources(this.batToolStripMenuItem, "batToolStripMenuItem");
-            this.batToolStripMenuItem.Click += new System.EventHandler(this.BatRun);
+            this.batRunMenuItem.Name = "batRunMenuItem";
+            resources.ApplyResources(this.batRunMenuItem, "batRunMenuItem");
+            this.batRunMenuItem.Click += new System.EventHandler(this.BatRun);
             // 
             // referenceMenuItem
             // 
             this.referenceMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutProgramMenuBtn,
-            this.getUpdateBtn});
+            this.aboutProgramReferenceMenuItem,
+            this.getUpdateReferenceMenuItem});
             resources.ApplyResources(this.referenceMenuItem, "referenceMenuItem");
             this.referenceMenuItem.Name = "referenceMenuItem";
             // 
-            // aboutProgramMenuBtn
+            // aboutProgramReferenceMenuItem
             // 
-            this.aboutProgramMenuBtn.Name = "aboutProgramMenuBtn";
-            resources.ApplyResources(this.aboutProgramMenuBtn, "aboutProgramMenuBtn");
-            this.aboutProgramMenuBtn.Click += new System.EventHandler(this.aboutWindow);
+            this.aboutProgramReferenceMenuItem.Name = "aboutProgramReferenceMenuItem";
+            resources.ApplyResources(this.aboutProgramReferenceMenuItem, "aboutProgramReferenceMenuItem");
+            this.aboutProgramReferenceMenuItem.Click += new System.EventHandler(this.aboutWindow);
             // 
-            // getUpdateBtn
+            // getUpdateReferenceMenuItem
             // 
-            this.getUpdateBtn.Name = "getUpdateBtn";
-            resources.ApplyResources(this.getUpdateBtn, "getUpdateBtn");
-            this.getUpdateBtn.Click += new System.EventHandler(this.getupdate);
+            this.getUpdateReferenceMenuItem.Name = "getUpdateReferenceMenuItem";
+            resources.ApplyResources(this.getUpdateReferenceMenuItem, "getUpdateReferenceMenuItem");
+            this.getUpdateReferenceMenuItem.Click += new System.EventHandler(this.getupdate);
             // 
             // fontDialog
             // 
@@ -461,8 +475,8 @@ namespace TextPad_
             this.toolStripButton12,
             this.toolStripButton13,
             this.toolStripSep1,
-            this.toolStripButton1,
-            this.toolStripButton2,
+            this.saveToolStripItem,
+            this.openToolStripItem,
             this.toolStripSep2,
             this.toolStripButton3,
             this.toolStripButton4,
@@ -474,7 +488,7 @@ namespace TextPad_
             this.toolStripSep4,
             this.toolStripButton11,
             this.toolStripSep5,
-            this.toolStripButton10});
+            this.searchToolStripItem});
             this.toolsStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolsStrip.Name = "toolsStrip";
             // 
@@ -482,6 +496,7 @@ namespace TextPad_
             // 
             this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButton12, "toolStripButton12");
+            this.toolStripButton12.Image = global::TextPad_.Properties.Resources.DocumentCreate;
             this.toolStripButton12.Name = "toolStripButton12";
             this.toolStripButton12.Click += new System.EventHandler(this.createTabClick);
             // 
@@ -489,7 +504,7 @@ namespace TextPad_
             // 
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
-            this.toolStripButton13.Image = global::TextPad_.Properties.Resources.close;
+            this.toolStripButton13.Image = global::TextPad_.Properties.Resources.DocumentClose;
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Click += new System.EventHandler(this.CloseTab);
             // 
@@ -499,19 +514,21 @@ namespace TextPad_
             this.toolStripSep1.Name = "toolStripSep1";
             resources.ApplyResources(this.toolStripSep1, "toolStripSep1");
             // 
-            // toolStripButton1
+            // saveToolStripItem
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.saveFileButton);
+            this.saveToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.saveToolStripItem, "saveToolStripItem");
+            this.saveToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentSave;
+            this.saveToolStripItem.Name = "saveToolStripItem";
+            this.saveToolStripItem.Click += new System.EventHandler(this.saveFileButton);
             // 
-            // toolStripButton2
+            // openToolStripItem
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.openFileButton);
+            this.openToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.openToolStripItem, "openToolStripItem");
+            this.openToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentOpen;
+            this.openToolStripItem.Name = "openToolStripItem";
+            this.openToolStripItem.Click += new System.EventHandler(this.openFileButton);
             // 
             // toolStripSep2
             // 
@@ -575,7 +592,7 @@ namespace TextPad_
             // 
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButton11, "toolStripButton11");
-            this.toolStripButton11.Image = global::TextPad_.Properties.Resources.font;
+            this.toolStripButton11.Image = global::TextPad_.Properties.Resources.Font;
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Click += new System.EventHandler(this.fontTextFromTBButton);
             // 
@@ -586,13 +603,13 @@ namespace TextPad_
             this.toolStripSep5.Name = "toolStripSep5";
             resources.ApplyResources(this.toolStripSep5, "toolStripSep5");
             // 
-            // toolStripButton10
+            // searchToolStripItem
             // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
-            this.toolStripButton10.Image = global::TextPad_.Properties.Resources.search;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Click += new System.EventHandler(this.search);
+            this.searchToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.searchToolStripItem, "searchToolStripItem");
+            this.searchToolStripItem.Image = global::TextPad_.Properties.Resources.Search;
+            this.searchToolStripItem.Name = "searchToolStripItem";
+            this.searchToolStripItem.Click += new System.EventHandler(this.search);
             // 
             // runFileToolStrip
             // 
@@ -623,7 +640,7 @@ namespace TextPad_
             // 
             this.RunFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.RunFile, "RunFile");
-            this.RunFile.Image = global::TextPad_.Properties.Resources.start;
+            this.RunFile.Image = global::TextPad_.Properties.Resources.FileStart;
             this.RunFile.Name = "RunFile";
             this.RunFile.Click += new System.EventHandler(this.RunScript);
             // 
@@ -684,7 +701,7 @@ namespace TextPad_
             // openFolderToolBtn
             // 
             this.openFolderToolBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openFolderToolBtn.Image = global::TextPad_.Properties.Resources.folder;
+            this.openFolderToolBtn.Image = global::TextPad_.Properties.Resources.FolderOpen;
             resources.ApplyResources(this.openFolderToolBtn, "openFolderToolBtn");
             this.openFolderToolBtn.Name = "openFolderToolBtn";
             this.openFolderToolBtn.Click += new System.EventHandler(this.OpenFolderBtnClick);
@@ -692,7 +709,7 @@ namespace TextPad_
             // refreshFolderToolBtn
             // 
             this.refreshFolderToolBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshFolderToolBtn.Image = global::TextPad_.Properties.Resources.refresh;
+            this.refreshFolderToolBtn.Image = global::TextPad_.Properties.Resources.Refresh;
             resources.ApplyResources(this.refreshFolderToolBtn, "refreshFolderToolBtn");
             this.refreshFolderToolBtn.Name = "refreshFolderToolBtn";
             this.refreshFolderToolBtn.Click += new System.EventHandler(this.RefreshFolder);
@@ -700,7 +717,7 @@ namespace TextPad_
             // closeFolderToolBtn
             // 
             this.closeFolderToolBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.closeFolderToolBtn.Image = global::TextPad_.Properties.Resources.close;
+            this.closeFolderToolBtn.Image = global::TextPad_.Properties.Resources.FolderClose;
             resources.ApplyResources(this.closeFolderToolBtn, "closeFolderToolBtn");
             this.closeFolderToolBtn.Name = "closeFolderToolBtn";
             this.closeFolderToolBtn.Click += new System.EventHandler(this.closeFolderToolBtnClick);
@@ -713,7 +730,7 @@ namespace TextPad_
             // AboveFolderBtn
             // 
             this.AboveFolderBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AboveFolderBtn.Image = global::TextPad_.Properties.Resources.upFolder;
+            this.AboveFolderBtn.Image = global::TextPad_.Properties.Resources.FolderAbove;
             resources.ApplyResources(this.AboveFolderBtn, "AboveFolderBtn");
             this.AboveFolderBtn.Name = "AboveFolderBtn";
             this.AboveFolderBtn.Click += new System.EventHandler(this.AboveFolderBtnClick);
@@ -726,7 +743,7 @@ namespace TextPad_
             // UpSizeListViewTool
             // 
             this.UpSizeListViewTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.UpSizeListViewTool.Image = global::TextPad_.Properties.Resources.up;
+            this.UpSizeListViewTool.Image = global::TextPad_.Properties.Resources.ArrowUp;
             resources.ApplyResources(this.UpSizeListViewTool, "UpSizeListViewTool");
             this.UpSizeListViewTool.Name = "UpSizeListViewTool";
             this.UpSizeListViewTool.Click += new System.EventHandler(this.UpSizeListView);
@@ -734,7 +751,7 @@ namespace TextPad_
             // DownSizeListViewTool
             // 
             this.DownSizeListViewTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.DownSizeListViewTool.Image = global::TextPad_.Properties.Resources.down;
+            this.DownSizeListViewTool.Image = global::TextPad_.Properties.Resources.ArrowDown;
             resources.ApplyResources(this.DownSizeListViewTool, "DownSizeListViewTool");
             this.DownSizeListViewTool.Name = "DownSizeListViewTool";
             this.DownSizeListViewTool.Click += new System.EventHandler(this.DownSizeListView);
@@ -797,7 +814,7 @@ namespace TextPad_
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem копироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutProgramMenuBtn;
+        private System.Windows.Forms.ToolStripMenuItem aboutProgramReferenceMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem вырезатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вставитьToolStripMenuItem;
@@ -811,21 +828,21 @@ namespace TextPad_
         private System.Windows.Forms.ToolStripSeparator menuStripSep2;
         private System.Windows.Forms.ToolStripMenuItem отменитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вернутьCTRLYToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem новоеОкноToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newWindowFileMenuItem;
         private System.Windows.Forms.ToolStripSeparator menuStripSep3;
         private System.Windows.Forms.ToolStripMenuItem датаИВремяToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem отменитьToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem вернутьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator mainMenuStripSep2;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem найтиИЗаменитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem закрыть_menu;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripMenuItem saveCurrentFileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsFileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFileMenuItem;
+        private System.Windows.Forms.ToolStripSeparator separator2FileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitFileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchEditMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeTabFileMenuItem;
+        private System.Windows.Forms.ToolStripButton saveToolStripItem;
+        private System.Windows.Forms.ToolStripButton openToolStripItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSep2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
@@ -835,16 +852,16 @@ namespace TextPad_
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripSeparator toolStripSep4;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripButton searchToolStripItem;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripSeparator toolStripSep5;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripMenuItem pythonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vBSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem batToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pythonRunMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vbsRunMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem batRunMenuItem;
         private System.Windows.Forms.ToolStripButton RunFile;
-        private System.Windows.Forms.ToolStripMenuItem getUpdateBtn;
+        private System.Windows.Forms.ToolStripMenuItem getUpdateReferenceMenuItem;
         public System.Windows.Forms.StatusStrip statusStrip;
         public System.Windows.Forms.ToolStrip runFileToolStrip;
         private System.Windows.Forms.ToolStripStatusLabel textLabelStatus;
@@ -853,7 +870,7 @@ namespace TextPad_
         private System.Windows.Forms.ToolStripMenuItem referenceMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createTabMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createTabFileMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSep1;
         internal System.Windows.Forms.ToolStripMenuItem fileMenuItem;
         internal FontDialog fontDialog;
@@ -881,9 +898,10 @@ namespace TextPad_
         private ContextMenuStrip explorerContextMenu;
         private ToolStripMenuItem удалитьToolStripMenuItem1;
         private ContextMenuStrip contextMenuStrip;
-        private ToolStripSeparator mainMenuStripSep1;
-        internal ToolStripMenuItem recentFilesMenuStripItem;
+        private ToolStripSeparator separator1FileMenuItem;
+        internal ToolStripMenuItem recentFilesMenuItem;
         internal CTabControl cTabControl;
+        private ToolStripMenuItem fileFolderFileMenuItem;
     }
 }
 

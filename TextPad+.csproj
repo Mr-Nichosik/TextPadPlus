@@ -7,14 +7,14 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
-    <ApplicationIcon>Resources\Icons\TextPadLogo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icons\TextPad+ Favicon.ico</ApplicationIcon>
     <PlatformTarget>x86</PlatformTarget>
     <Title>TextPad+</Title>
     <Authors>Mr Nichosik</Authors>
     <Description>TextPad+ x86</Description>
-    <PackageIcon>TextPadLogo.png</PackageIcon>
+    <PackageIcon>TextPad+ Tile.png</PackageIcon>
     <PackageProjectUrl>https://mr-nichosik.github.io/Main_Page/</PackageProjectUrl>
-    <Version>2.4.0</Version>
+    <Version>2.4.1</Version>
     <IncludeSymbols>False</IncludeSymbols>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <UseWPF>False</UseWPF>
@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\Icons\TextPadLogo.ico" />
+    <Content Include="Resources\Icons\TextPad+ Favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,6 +89,10 @@
     <None Update="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\Icons\TextPad+ Tile.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
     <None Update="Resources\Icons\TextPadLogo.png">
       <Pack>True</Pack>
