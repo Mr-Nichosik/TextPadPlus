@@ -7,17 +7,17 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
-    <ApplicationIcon>Resources\Icons\TextPad+ Favicon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icons\Favicon.ico</ApplicationIcon>
     <PlatformTarget>x86</PlatformTarget>
     <Title>TextPad+</Title>
     <Authors>Mr Nichosik</Authors>
     <Description>TextPad+ x86</Description>
-    <PackageIcon>TextPad+ Tile.png</PackageIcon>
+    <PackageIcon>TextPad+ Logo.png</PackageIcon>
     <PackageProjectUrl>https://mr-nichosik.github.io/Main_Page/</PackageProjectUrl>
-    <Version>2.4.1</Version>
+    <Version>2.5.0</Version>
     <IncludeSymbols>False</IncludeSymbols>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <UseWPF>False</UseWPF>
+    <UseWPF>True</UseWPF>
     <StartupObject>TextPad_.Program</StartupObject>
   </PropertyGroup>
 
@@ -31,14 +31,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\Icons\TextPad+ Favicon.ico" />
+    <Content Include="Resources\Icons\Favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomTabControl\CustomTabControl.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Reference Include="CustomTabControl">
+      <HintPath>..\CustomTabControl\bin\Release\net6.0-windows\CustomTabControl.dll</HintPath>
+    </Reference>
     <Reference Include="LoggingSystem">
       <HintPath>..\Logging System\bin\Release\net6.0\LoggingSystem.dll</HintPath>
     </Reference>
@@ -89,6 +88,10 @@
     <None Update="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\Icons\TextPad+ Logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
     <None Update="Resources\Icons\TextPad+ Tile.png">
       <Pack>True</Pack>

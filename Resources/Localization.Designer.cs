@@ -79,6 +79,15 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось удалить элемент.
+        /// </summary>
+        public static string MSGErrorCantDeleteFile {
+            get {
+                return ResourceManager.GetString("MSGErrorCantDeleteFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не открыто ни одной вкладки..
         /// </summary>
         public static string MSGErrorNoTabsOpen {
@@ -178,11 +187,11 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Текстовое поле содержит текст. Хотите сохранить его в документ?.
+        ///   Ищет локализованную строку, похожую на Сохранить текст в файл.
         /// </summary>
-        public static string MSGQuestionTextInFTB {
+        public static string MSGQuestionSaveFile {
             get {
-                return ResourceManager.GetString("MSGQuestionTextInFTB", resourceCulture);
+                return ResourceManager.GetString("MSGQuestionSaveFile", resourceCulture);
             }
         }
         
@@ -196,7 +205,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad (*.tpf)|*.tpf|Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|Все файлы(*.*)|*.*.
+        ///   Ищет локализованную строку, похожую на Все файлы(*.*)|*.*|Текстовые документы (*.txt)|*.txt|Файл TextPad (*.tpf)|*.tpf|Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js.
         /// </summary>
         public static string openFileDialogFilter {
             get {

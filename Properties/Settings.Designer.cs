@@ -214,5 +214,17 @@ namespace TextPad_.Properties {
                 this["PythonInterpreter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExitWhenClosingLastTab {
+            get {
+                return ((bool)(this["ExitWhenClosingLastTab"]));
+            }
+            set {
+                this["ExitWhenClosingLastTab"] = value;
+            }
+        }
     }
 }

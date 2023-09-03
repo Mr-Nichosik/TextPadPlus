@@ -18,8 +18,6 @@ namespace TextPad_
                 rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
                 Program.mainUI.saveFileDialog.Filter = Program.mainUI.saveFileDialog.Filter = Resources.Localization.saveFileDialogFilter;
 
-                if (rtb.TextLength == 0)
-                    return;
                 if (Program.mainUI.saveFileDialog.ShowDialog() == DialogResult.Cancel)
                     return;
 
@@ -44,6 +42,8 @@ namespace TextPad_
                     tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
                     Program.mainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
 
+                    Program.mainUI.deletFileFileMenuItem.Enabled = true;
+
                     Ls.Debug("Saving file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
                 }
                 catch
@@ -66,8 +66,6 @@ namespace TextPad_
             try
             {
                 rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
-                if (rtb.TextLength == 0)
-                    return;
 
                 // если путь до файла с индексом открытой вкладки отсутствует (Missing)
                 if (Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex) == "Missing")
@@ -81,6 +79,7 @@ namespace TextPad_
                     try
                     {
                         File.WriteAllText(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), rtb.Text);
+                        Program.mainUI.deletFileFileMenuItem.Enabled = true;
                     }
                     catch
                     {
@@ -99,17 +98,17 @@ namespace TextPad_
         }
 
         // Открытие файла
-        public static void OpenFile(OpenFileDialog openFileDialog)
+        public static void OpenFile()
         {
-            openFileDialog.Filter = Resources.Localization.openFileDialogFilter;
-            if (openFileDialog.ShowDialog() == DialogResult.Cancel)
+            Program.mainUI.openFileDialog.Filter = Resources.Localization.openFileDialogFilter;
+            if (Program.mainUI.openFileDialog.ShowDialog() == DialogResult.Cancel)
                 return;
 
             try
             {
                 rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
                 // Вызываем openFileDialog и полученный путь до файла (fileName) записываем в список openedFiles в индекс текущей вкладки
-                Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, openFileDialog.FileName);
+                Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, Program.mainUI.openFileDialog.FileName);
                 // Считываем текст этого файла, путь берём из того же списка
                 rtb.Text = File.ReadAllText(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
                 // Задаём заголовок вкладки с названием файла

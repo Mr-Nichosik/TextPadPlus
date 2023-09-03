@@ -123,6 +123,9 @@
   <data name="MissingXmlFile" xml:space="preserve">
     <value>Отсутствует файл конфигурации.</value>
   </data>
+  <data name="MSGErrorCantDeleteFile" xml:space="preserve">
+    <value>Не удалось удалить элемент</value>
+  </data>
   <data name="MSGErrorNoTabsOpen" xml:space="preserve">
     <value>Не открыто ни одной вкладки.</value>
   </data>
@@ -156,14 +159,14 @@
   <data name="MSGQestionMoveFileToTrash" xml:space="preserve">
     <value>Переместить элемент в корзину?</value>
   </data>
-  <data name="MSGQuestionTextInFTB" xml:space="preserve">
-    <value>Текстовое поле содержит текст. Хотите сохранить его в документ?</value>
+  <data name="MSGQuestionSaveFile" xml:space="preserve">
+    <value>Сохранить текст в файл</value>
   </data>
   <data name="newDocumentTitle" xml:space="preserve">
     <value>Новый документ</value>
   </data>
   <data name="openFileDialogFilter" xml:space="preserve">
-    <value>Текстовые документы (*.txt)|*.txt|Файл TextPad (*.tpf)|*.tpf|Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|Все файлы(*.*)|*.*</value>
+    <value>Все файлы(*.*)|*.*|Текстовые документы (*.txt)|*.txt|Файл TextPad (*.tpf)|*.tpf|Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js</value>
   </data>
   <data name="saveFileDialogFilter" xml:space="preserve">
     <value>Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|Все файлы (*.*)|*.*</value>

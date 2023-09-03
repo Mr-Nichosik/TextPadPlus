@@ -18,16 +18,19 @@ namespace TextPad_
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "Developement";
+        public string DateOfRelease { get; } = "03.09.2023";
         public string ProgramPath { get; } = Application.StartupPath;
         public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
-        // Списоки открытых файлов и папок (для обозревателя проекта)
+        // Список открытых файлов
         internal List<string> OpenedFiles { get; set; } = new();
 
-        // Общая переменная для Rich Text Box
+        // Общее поле для Rich Text Box
         private RichTextBox? rtb;
+
+        // Поле для настроек программы. Если isLangChanched = true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
+        private static bool isLangChanged = false;
 
         // Запуск программы в обычном режиме
         public FormMainUI()
@@ -92,7 +95,7 @@ namespace TextPad_
 
         private void openFileButton(object sender, EventArgs e)
         {
-            TextEditor.OpenFile(openFileDialog);
+            TextEditor.OpenFile();
         }
 
         private void copyTextFromTBButton(object sender, EventArgs e)
@@ -140,7 +143,332 @@ namespace TextPad_
             TextEditor.dateTime(cTabControl);
         }
 
+        private void openFileFolder(object sender, EventArgs e)
+        {
+            try
+            {
+                if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
+                    Process.Start("explorer.exe", Path.GetDirectoryName(OpenedFiles.ElementAt(cTabControl.SelectedIndex)));
+            }
+            catch { return; }
+        }
+
+        private void deleteFile(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists(OpenedFiles.ElementAt(cTabControl.SelectedIndex)))
+                {
+                    FileSystem.DeleteFile(OpenedFiles.ElementAt(cTabControl.SelectedIndex), UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+
+                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                    cTabControl.TabPages.Remove(cTabControl.TabPages[cTabControl.SelectedIndex]);
+                    if (cTabControl.TabPages.Count == 0)
+                    {
+                        switch (Properties.Settings.Default.ExitWhenClosingLastTab)
+                        {
+                            case true:
+                                Application.Exit();
+                                break;
+                            case false:
+                                CreateTab();
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Resources.Localization.MSGErrorCantDeleteFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch { }
+        }
+
+        private void copyFullPath(object sender, EventArgs e)
+        {
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
+                Clipboard.SetText(OpenedFiles.ElementAt(cTabControl.SelectedIndex));
+            else
+                return;
+        }
+
+        private void copyFileName(object sender, EventArgs e)
+        {
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
+                Clipboard.SetText(Path.GetFileName(OpenedFiles.ElementAt(cTabControl.SelectedIndex)));
+            else
+                return;
+        }
+
+        // Методы для настроек
+        private void openSettings(object sender, EventArgs e)
+        {
+            MainUIPanel.Visible = false;
+            SettingsUIPanel.Visible = true;
+
+            textBoxWebSiteUrl.Text = WebSite;
+            ProgramNameLabel.Text = $"{GetAssemblyName()} {GetAssemblyVersion()}";
+            VersionLabel.Text = GetAssemblyVersion();
+            DateOfReleaseLabel.Text = DateOfRelease;
+            DeveloperLabel.Text = GetAssemblyCompany();
+
+            LSVersionLabel.Text = LogSystem.GetAssemblyVersion();
+            CTCLabelVersion.Text = CTabControl.GetAssemblyVersion();
+
+            // Загрузка настроек
+            statusStripCheckBox.Checked = Properties.Settings.Default.StatusStripVisible;
+            overWindowsCheckBox.Checked = Properties.Settings.Default.Topmost;
+            runFilesPanelCheckBox.Checked = Properties.Settings.Default.RunFileToolbar;
+            wordWarpCheckBox.Checked = Properties.Settings.Default.WordWarp;
+            instrumentPanelCheckBox.Checked = Properties.Settings.Default.InstrumentalPanel;
+            wordWarpCheckBox.Checked = Properties.Settings.Default.WordWarp;
+            explorerCheckBox.Checked = Properties.Settings.Default.Explorer;
+            exitWhenClosingLastTabCheckBox.Checked = Properties.Settings.Default.ExitWhenClosingLastTab;
+
+            if (Properties.Settings.Default.Theme == "Dark")
+            {
+                comboTheme.SelectedItem = "Тёмная / Dark";
+            }
+            else
+            {
+                comboTheme.SelectedItem = "Белая / White";
+            }
+
+            if (Properties.Settings.Default.Language == "Russian")
+            {
+                comboBoxLanguage.SelectedItem = "Русский / Russian";
+            }
+            else if (Properties.Settings.Default.Language == "English")
+            {
+                comboBoxLanguage.SelectedItem = "English / Английский";
+            }
+
+            FontTextBox.Text = Properties.Settings.Default.EditorFont.ToString();
+        }
+
+        private void saveSettings(object sender, EventArgs e)
+        {
+            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+
+            // Проверка настроек языка
+            switch (Program.mainUI.comboBoxLanguage.SelectedItem)
+            {
+                case @"English / Английский":
+                    if (Properties.Settings.Default.Language != "English")
+                        isLangChanged = true;
+
+                    Properties.Settings.Default.Language = "English";
+                    break;
+                case @"Русский / Russian":
+                    if (Properties.Settings.Default.Language != "Russian")
+                        isLangChanged = true;
+
+                    Properties.Settings.Default.Language = "Russian";
+                    break;
+            }
+
+            // Проверка настроек цветовой схемы
+            switch (Program.mainUI.comboTheme.SelectedItem)
+            {
+                case "Белая / White":
+                    Properties.Settings.Default.Theme = "White";
+
+                    // на текущей вкладке
+                    Program.mainUI.colorThemeWhite();
+                    break;
+                case "Тёмная / Dark":
+                    Properties.Settings.Default.Theme = "Dark";
+
+                    // на текущей вкладке
+                    Program.mainUI.colorThemeDark();
+                    break;
+            }
+
+            // Проверка настроек строки состояния
+            Program.mainUI.statusStrip.Visible = Program.mainUI.statusStripCheckBox.Checked;
+            Properties.Settings.Default.StatusStripVisible = Program.mainUI.statusStripCheckBox.Checked;
+
+            // Проверка настроек TopMost'а
+            Program.mainUI.TopMost = Program.mainUI.overWindowsCheckBox.Checked;
+            Properties.Settings.Default.Topmost = Program.mainUI.overWindowsCheckBox.Checked;
+
+            // Проверка настроек панели запуска файлов
+            Program.mainUI.runFileToolStrip.Visible = Program.mainUI.runFilesPanelCheckBox.Checked;
+            Properties.Settings.Default.RunFileToolbar = Program.mainUI.runFilesPanelCheckBox.Checked;
+
+            // Проверка настроек переноса слов
+            Properties.Settings.Default.WordWarp = Program.mainUI.wordWarpCheckBox.Checked;
+            rtb.WordWrap = Program.mainUI.wordWarpCheckBox.Checked;
+
+            // Проверка настроек панели инструментов
+            Properties.Settings.Default.InstrumentalPanel = Program.mainUI.instrumentPanelCheckBox.Checked;
+            Program.mainUI.toolsStrip.Visible = Program.mainUI.instrumentPanelCheckBox.Checked;
+
+            // Проверка настроек обозревателя папок
+            Properties.Settings.Default.Explorer = Program.mainUI.explorerCheckBox.Checked;
+            Program.mainUI.folderExplorerPanel.Visible = Program.mainUI.explorerCheckBox.Checked;
+
+            // Нужно ли закрывать программу при закрытии последней вкладки
+            Properties.Settings.Default.ExitWhenClosingLastTab = Program.mainUI.exitWhenClosingLastTabCheckBox.Checked;
+
+            // Сообщение о перезапуске программы
+            if (isLangChanged == true)
+            {
+                MessageBox.Show(Resources.Localization.SettingsLangChange, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                isLangChanged = false;
+            }
+
+            Program.mainUI.SettingsUIPanel.Visible = false;
+            Program.mainUI.MainUIPanel.Visible = true;
+        }
+
+        private void closeSettings(object sender, EventArgs e)
+        {
+            MainUIPanel.Visible = true;
+            SettingsUIPanel.Visible = false;
+        }
+
+        private void fontSettings(object sender, EventArgs e)
+        {
+            Program.mainUI.fontDialog.ShowDialog();
+            Program.mainUI.FontTextBox.Text = Program.mainUI.fontDialog.Font.ToString();
+
+            Properties.Settings.Default.EditorFont = Program.mainUI.fontDialog.Font;
+            Properties.Settings.Default.Save();
+
+            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb.Font = Program.mainUI.fontDialog.Font;
+        }
+
+        private void openWebSite(object sender, EventArgs e)
+        {
+            try
+            {
+                Process websiteProcess = new Process();
+                websiteProcess.StartInfo.UseShellExecute = true;
+                websiteProcess.StartInfo.FileName = Program.mainUI.WebSite;
+                websiteProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Resources.Localization.MSGErrorWhenCheckingInternet, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LS.Error($"{ex} when starting web site from InfoUI window.");
+            }
+        }
+
+        // Открытие окон и нажатия на кнопки в настройках
+
+        private void newWindow(object sender, EventArgs e)
+        {
+            Process.Start("TextPad+.exe");
+        }
+
+        private void search(object sender, EventArgs e)
+        {
+            SearchUI search_ui = new SearchUI();
+            search_ui.ShowDialog(this);
+        }
+
+        private void getUpdate(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(UpdaterPath);
+            }
+            catch
+            {
+                MessageBox.Show(Resources.Localization.MSGErrorStartUpdater, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LS.Error("An error occurred while launching the update installer. Updater.exe is missing.");
+            }
+        }
+
         // Методы для cTabControl
+        internal void CreateTab()
+        {
+            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
+            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
+            * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
+            * переноса слов.
+            */
+            TabPage tpage = new TabPage(Resources.Localization.newDocumentTitle);
+            var rtb = new RichTextBox();
+            rtb.Dock = DockStyle.Fill;
+            rtb.BorderStyle = BorderStyle.None;
+            rtb.WordWrap = Properties.Settings.Default.WordWarp;
+            rtb.ContextMenuStrip = contextMenuStrip;
+            rtb.Font = Properties.Settings.Default.EditorFont;
+            rtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            rtb.AcceptsTab = true;
+
+            tpage.Controls.Add(rtb);
+            cTabControl.TabPages.Add(tpage);
+
+            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
+
+            if (Properties.Settings.Default.Theme == "White")
+            {
+                colorThemeWhite();
+            }
+            else
+            {
+                colorThemeDark();
+            }
+
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            {
+                fileFolderFileMenuItem.Enabled = false;
+                deletFileFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                fileFolderFileMenuItem.Enabled = true;
+                deletFileFileMenuItem.Enabled = true;
+            }
+        }
+
+        internal void CreateTab(string tabName)
+        {
+            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
+            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
+            * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
+            * переноса слов.
+            */
+            TabPage tpage = new TabPage(tabName);
+            var rtb = new RichTextBox();
+            rtb.Dock = DockStyle.Fill;
+            rtb.BorderStyle = BorderStyle.None;
+            rtb.WordWrap = Properties.Settings.Default.WordWarp;
+            rtb.ContextMenuStrip = contextMenuStrip;
+            rtb.Font = Properties.Settings.Default.EditorFont;
+            rtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            rtb.AcceptsTab = true;
+
+            tpage.Controls.Add(rtb);
+            cTabControl.TabPages.Add(tpage);
+
+            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
+
+            if (Properties.Settings.Default.Theme == "White")
+            {
+                colorThemeWhite();
+            }
+            else
+            {
+                colorThemeDark();
+            }
+
+            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            {
+                fileFolderFileMenuItem.Enabled = false;
+                deletFileFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                fileFolderFileMenuItem.Enabled = true;
+                deletFileFileMenuItem.Enabled = true;
+            }
+        }
+
         private void createTabClick(object sender, EventArgs e)
         {
             CreateTab();
@@ -149,9 +477,11 @@ namespace TextPad_
         private void CloseTab(object sender, EventArgs e)
         {
             rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            TabPage tab = cTabControl.SelectedTab;
+
             if (rtb.TextLength != 0)
             {
-                DialogResult dr = MessageBox.Show(Resources.Localization.MSGQuestionTextInFTB, "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show($"Сохранить текст в файл \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     TextEditor.SaveCurrentFile();
@@ -159,7 +489,7 @@ namespace TextPad_
                 else if (dr == DialogResult.No)
                 {
                     OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
-                    cTabControl.TabPages.Remove(cTabControl.SelectedTab);
+                    cTabControl.TabPages.Remove(tab);
                 }
                 else if (dr == DialogResult.Cancel)
                 {
@@ -169,12 +499,119 @@ namespace TextPad_
             else
             {
                 OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
-                cTabControl.TabPages.Remove(cTabControl.SelectedTab);
+                cTabControl.TabPages.Remove(tab);
             }
 
             if (cTabControl.TabPages.Count == 0)
             {
-                CreateTab();
+                switch (Properties.Settings.Default.ExitWhenClosingLastTab)
+                {
+                    case true:
+                        Application.Exit();
+                        break;
+                    case false:
+                        CreateTab();
+                        break;
+                }
+            }
+        }
+
+        private void closeAllTabs(object sender, EventArgs e)
+        {
+            foreach (TabPage tab in cTabControl.TabPages)
+            {
+                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<RichTextBox>().First();
+
+                if (rtb.TextLength != 0)
+                {
+                    DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        TextEditor.SaveCurrentFile();
+
+                    }
+                    else if (dr == DialogResult.No)
+                    {
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(tab);
+
+                    }
+                    else if (dr == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                    cTabControl.TabPages.Remove(tab);
+                }
+            }
+
+            // Проверяем, нужно ли выходить из программы, если заакрывается последняя вкладка
+            if (cTabControl.TabPages.Count == 0)
+            {
+                switch (Properties.Settings.Default.ExitWhenClosingLastTab)
+                {
+                    case true:
+                        Application.Exit();
+                        break;
+                    case false:
+                        CreateTab();
+                        break;
+                }
+            }
+        }
+
+        private void closeAllWithoutCurrentTab(object sender, EventArgs e)
+        {
+            foreach (TabPage tab in cTabControl.TabPages)
+            {
+                if (tab == cTabControl.TabPages[cTabControl.SelectedIndex])
+                {
+                    continue;
+                }
+
+                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<RichTextBox>().First();
+
+                if (rtb.TextLength != 0)
+                {
+                    DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        TextEditor.SaveCurrentFile();
+
+                    }
+                    else if (dr == DialogResult.No)
+                    {
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(tab);
+
+                    }
+                    else if (dr == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                    cTabControl.TabPages.Remove(tab);
+                }
+            }
+
+            // Проверяем, нужно ли выходить из программы, если заакрывается последняя вкладка
+            if (cTabControl.TabPages.Count == 0)
+            {
+                switch (Properties.Settings.Default.ExitWhenClosingLastTab)
+                {
+                    case true:
+                        Application.Exit();
+                        break;
+                    case false:
+                        CreateTab();
+                        break;
+                }
             }
         }
 
@@ -407,7 +844,7 @@ namespace TextPad_
         }
 
         // Контекстное меню проводника
-        private void deleteFile(object sender, EventArgs e)
+        private void deleteFileInExplorer(object sender, EventArgs e)
         {
             if (listView.Items.Count < 1)
                 return;
@@ -430,6 +867,10 @@ namespace TextPad_
                     }
 
                     FileSystem.DeleteDirectory(listView.Items[listView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                }
+                else
+                {
+                    MessageBox.Show(Resources.Localization.MSGErrorCantDeleteFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 RefreshFolder(sender, e);
@@ -459,17 +900,6 @@ namespace TextPad_
             FileRunner.VbsRun();
         }
 
-        // Открытие папки файла
-        private void openFileFolder(object sender, EventArgs e)
-        {
-            try
-            {
-                if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
-                    Process.Start("explorer.exe", Path.GetDirectoryName(OpenedFiles.ElementAt(cTabControl.SelectedIndex)));
-            }
-            catch { return; }
-        }
-
         // Просто выход
         private void exit(object sender, EventArgs e)
         {
@@ -479,134 +909,28 @@ namespace TextPad_
         #endregion
 
         // Прочие отдельные методы
-        internal void CreateTab()
-        {
-            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
-            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
-            * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
-            * переноса слов.
-            */
-            TabPage tpage = new TabPage(Resources.Localization.newDocumentTitle);
-            var rtb = new RichTextBox();
-            rtb.Dock = DockStyle.Fill;
-            rtb.BorderStyle = BorderStyle.None;
-            rtb.WordWrap = Properties.Settings.Default.WordWarp;
-            rtb.ContextMenuStrip = contextMenuStrip;
-            rtb.Font = Properties.Settings.Default.EditorFont;
-            rtb.TextChanged += (sender, args) => TextBoxTextChanged();
-            rtb.AcceptsTab = true;
-
-            tpage.Controls.Add(rtb);
-            cTabControl.TabPages.Add(tpage);
-
-            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
-
-            if (Properties.Settings.Default.Theme == "White")
-            {
-                colorThemeWhite();
-            }
-            else
-            {
-                colorThemeDark();
-            }
-
-            if (rtb.Text.Length == 0)
-            {
-                saveCurrentFileMenuItem.Enabled = false;
-                saveAsFileMenuItem.Enabled = false;
-            }
-            else
-            {
-                saveCurrentFileMenuItem.Enabled = true;
-                saveAsFileMenuItem.Enabled = true;
-            }
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
-            {
-                fileFolderFileMenuItem.Enabled = false;
-            }
-            else
-            {
-                fileFolderFileMenuItem.Enabled = true;
-            }
-        }
-
-        internal void CreateTab(string tabName)
-        {
-            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
-            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
-            * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
-            * переноса слов.
-            */
-            TabPage tpage = new TabPage(tabName);
-            var rtb = new RichTextBox();
-            rtb.Dock = DockStyle.Fill;
-            rtb.BorderStyle = BorderStyle.None;
-            rtb.WordWrap = Properties.Settings.Default.WordWarp;
-            rtb.ContextMenuStrip = contextMenuStrip;
-            rtb.Font = Properties.Settings.Default.EditorFont;
-            rtb.TextChanged += (sender, args) => TextBoxTextChanged();
-            rtb.AcceptsTab = true;
-
-            tpage.Controls.Add(rtb);
-            cTabControl.TabPages.Add(tpage);
-
-            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
-
-            if (Properties.Settings.Default.Theme == "White")
-            {
-                colorThemeWhite();
-            }
-            else
-            {
-                colorThemeDark();
-            }
-
-            if (rtb.Text.Length == 0)
-            {
-                saveCurrentFileMenuItem.Enabled = false;
-                saveAsFileMenuItem.Enabled = false;
-            }
-            else
-            {
-                saveCurrentFileMenuItem.Enabled = true;
-                saveAsFileMenuItem.Enabled = true;
-            }
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
-            {
-                fileFolderFileMenuItem.Enabled = false;
-            }
-            else
-            {
-                fileFolderFileMenuItem.Enabled = true;
-            }
-        }
-
         private void checkFiles()
         {
             rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
             if (rtb.Text.Length == 0)
             {
-                saveCurrentFileMenuItem.Enabled = false;
-                saveAsFileMenuItem.Enabled = false;
-                saveToolStripItem.Enabled = false;
                 searchEditMenuItem.Enabled = false;
                 searchToolStripItem.Enabled = false;
             }
             else
             {
-                saveCurrentFileMenuItem.Enabled = true;
-                saveAsFileMenuItem.Enabled = true;
-                saveToolStripItem.Enabled = true;
                 searchEditMenuItem.Enabled = true;
                 searchToolStripItem.Enabled = true;
             }
             if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
             {
                 fileFolderFileMenuItem.Enabled = false;
+                deletFileFileMenuItem.Enabled = false;
             }
             else
             {
                 fileFolderFileMenuItem.Enabled = true;
+                deletFileFileMenuItem.Enabled = true;
             }
         }
 
@@ -771,46 +1095,6 @@ namespace TextPad_
 
             Properties.RecentFiles.Default.Save();
         }
-
-        #region Вызов окон
-
-        private void aboutWindow(object sender, EventArgs e)
-        {
-            FormInfoUI info_ui = new FormInfoUI();
-            info_ui.ShowDialog(this);
-        }
-
-        private void search(object sender, EventArgs e)
-        {
-            SearchUI search_ui = new SearchUI();
-            search_ui.ShowDialog(this);
-        }
-
-        private void settingsWindow(object sender, EventArgs e)
-        {
-            SettingsUI setwin = new SettingsUI();
-            setwin.ShowDialog(this);
-        }
-
-        private void newWindow(object sender, EventArgs e)
-        {
-            Process.Start("TextPad+.exe");
-        }
-
-        private void getupdate(object sender, EventArgs e)
-        {
-            try
-            {
-                Process.Start(UpdaterPath);
-            }
-            catch
-            {
-                MessageBox.Show(Resources.Localization.MSGErrorStartUpdater, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error("An error occurred while launching the update installer. Updater.exe is missing.");
-            }
-        }
-
-        #endregion
 
         #region Методы для получения информации о сборке
 
@@ -984,6 +1268,38 @@ namespace TextPad_
 
         private void MainFormClosing(object sender, FormClosingEventArgs e)
         {
+            // Закрытие всех вкладок
+            foreach (TabPage tab in cTabControl.TabPages)
+            {
+                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<RichTextBox>().First();
+
+                if (rtb.TextLength != 0)
+                {
+                    DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        TextEditor.SaveCurrentFile();
+
+                    }
+                    else if (dr == DialogResult.No)
+                    {
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(tab);
+
+                    }
+                    else if (dr == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                    cTabControl.TabPages.Remove(tab);
+                }
+            }
+
+            // Сохранение настроек и недавних файлов
             Properties.Settings.Default.MainWindowState = this.WindowState.ToString();
             Properties.Settings.Default.FormWidth = this.Width;
             Properties.Settings.Default.FormHeight = this.Height;

@@ -17,7 +17,7 @@ namespace TextPad_
     {
         public static FormMainUI mainUI = new FormMainUI();
         /// <summary>
-        ///  Точка входа в программу.
+        /// Точка входа в программу
         /// </summary>
         [STAThread]
         static void Main(string[] args)

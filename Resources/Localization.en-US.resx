@@ -123,6 +123,9 @@
   <data name="MissingXmlFile" xml:space="preserve">
     <value>Missing configuration file.</value>
   </data>
+  <data name="MSGErrorCantDeleteFile" xml:space="preserve">
+    <value>Failed to delete item</value>
+  </data>
   <data name="MSGErrorNoTabsOpen" xml:space="preserve">
     <value>No tabs open</value>
   </data>
@@ -156,14 +159,14 @@
   <data name="MSGQestionMoveFileToTrash" xml:space="preserve">
     <value>Move item to recycle bin?</value>
   </data>
-  <data name="MSGQuestionTextInFTB" xml:space="preserve">
-    <value>The text box contains text. Want to save it to a document?</value>
+  <data name="MSGQuestionSaveFile" xml:space="preserve">
+    <value>Save text to</value>
   </data>
   <data name="newDocumentTitle" xml:space="preserve">
     <value>New document</value>
   </data>
   <data name="openFileDialogFilter" xml:space="preserve">
-    <value>Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files(*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|All files (*.*)|*.*</value>
+    <value>All files (*.*)|*.*|Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files(*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js</value>
   </data>
   <data name="saveFileDialogFilter" xml:space="preserve">
     <value>Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files (*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|All files (*.*)|*.*</value>

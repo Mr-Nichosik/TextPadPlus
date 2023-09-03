@@ -75,10 +75,6 @@
             this.doneBtn.UseVisualStyleBackColor = true;
             this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
             // 
-            // openFileDialog
-            // 
-            resources.ApplyResources(this.openFileDialog, "openFileDialog");
-            // 
             // FormPythonInterpreterUI
             // 
             resources.ApplyResources(this, "$this");

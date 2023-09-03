@@ -2,13 +2,13 @@
 <configuration>
   <program name="TextPad+">
     <version>2..0</version>
-    <path>D:\Ilya\Private\Scripts\C#\TextPad+\bin\Release\net6.0-windows7.0</path>
+    <path>D:\Ilya\Private\Scripts\C#\TextPad+\bin\Release\net6.0-windows7.0\</path>
     <language>Russian</language>
   </program>
   <web>
     <Site>https://mr-nichosik.github.io/Main_Page/</Site>
     <TextPadVersion>https://mr-nichosik.github.io/TextPadVersion/</TextPadVersion>
-    <webSiteInstaller>https://mr-nichosik.github.io/Main_Page/res/TextPad+.zip</webSiteInstaller>
+    <webSiteInstaller>https://mr-nichosik.github.io/Main_Page/res/Setup.exe</webSiteInstaller>
     <webSiteNewUpdateRu>https://mr-nichosik.github.io/TextPadNewUpdateRu/</webSiteNewUpdateRu>
     <webSiteNewUpdateEn>https://mr-nichosik.github.io/TextPadNewUpdateEn/</webSiteNewUpdateEn>
   </web>

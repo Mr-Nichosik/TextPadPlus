@@ -50,5 +50,8 @@
     <Setting Name="PythonInterpreter" Type="System.String" Scope="User">
       <Value Profile="(Default)">Empty File</Value>
     </Setting>
+    <Setting Name="ExitWhenClosingLastTab" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
