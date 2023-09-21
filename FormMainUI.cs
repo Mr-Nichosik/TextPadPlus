@@ -18,7 +18,7 @@ namespace TextPad_
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "03.09.2023";
+        public string DateOfRelease { get; } = "DEVELOPEMENT";
         public string ProgramPath { get; } = Application.StartupPath;
         public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";

@@ -92,8 +92,8 @@ namespace TextPad_
             // 
             // numericLineNumber
             // 
-            this.numericLineNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.numericLineNumber, "numericLineNumber");
+            this.numericLineNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericLineNumber.Maximum = new decimal(new int[] {
             268435455,
             1042612833,

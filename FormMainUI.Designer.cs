@@ -1429,8 +1429,8 @@ namespace TextPad_
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.MainUIPanel);
             this.Controls.Add(this.SettingsUIPanel);
+            this.Controls.Add(this.MainUIPanel);
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMainUI";

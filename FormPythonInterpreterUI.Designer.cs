@@ -75,6 +75,10 @@
             this.doneBtn.UseVisualStyleBackColor = true;
             this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
             // 
+            // openFileDialog
+            // 
+            resources.ApplyResources(this.openFileDialog, "openFileDialog");
+            // 
             // FormPythonInterpreterUI
             // 
             resources.ApplyResources(this, "$this");
@@ -89,6 +93,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPythonInterpreterUI";
+            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.FormPythonInterpreterUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
