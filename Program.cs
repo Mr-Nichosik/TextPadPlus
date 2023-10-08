@@ -7,6 +7,7 @@ global using System.IO;
 global using System.Linq;
 global using System.Windows.Forms;
 global using System.Xml;
+global using ModifiedTextBox;
 
 namespace TextPad_
 {

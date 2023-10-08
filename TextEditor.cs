@@ -2,20 +2,20 @@
 namespace TextPad_
 {
     /// <summary>
-    /// Класс, созданный для того, что бы обрабатывать всю логику работы текстового редактора. Пока что работает только исключительно с RichTextBox.
+    /// Класс, созданный для того, что бы обрабатывать всю логику работы текстового редактора. Пока что работает только исключительно с MTextBox.
     /// Его методы вызываются из класса главного окна программы (MainForm).
     /// </summary>
     internal class TextEditor : IFileRunner
     {
         private static readonly ILogger Ls = new LogSystem($"{Application.StartupPath}\\logs");
-        private static RichTextBox? rtb;
+        private static MTextBox? rtb;
 
-        // Метод сохранения файла "сохранить как..."
+        // Метод сохранения файла "Сохранить как..."
         public static void SaveAsFile()
         {
             try
             {
-                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 Program.mainUI.saveFileDialog.Filter = Program.mainUI.saveFileDialog.Filter = Resources.Localization.saveFileDialogFilter;
 
                 if (Program.mainUI.saveFileDialog.ShowDialog() == DialogResult.Cancel)
@@ -24,17 +24,25 @@ namespace TextPad_
                 try
                 {
                     /* 
-                     * в список openedFiles добавляется путь до файла, выбранного пользователем при сохранеии.
+                     * в список OpenedFiles добавляется путь до файла, выбранного пользователем при сохранеии.
                      * А индекс элемента равен вкладке, из которой взят текст для файла.
                     */
                     Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, Program.mainUI.saveFileDialog.FileName);
 
                     // в файл сохраняется текст текущей вкладки по пути, указанному пользователем и ранее добавленного в список.
-                    File.WriteAllText(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), rtb.Text);
+                    StreamWriter fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false);
+                    fileWriter.Write(rtb.Text);
+                    fileWriter.Close();
 
                     // заголовком вкладки становится название файла, путь до которого взят из списка openedFiles с индексом этой вкладки
                     Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
+                    // Обновление статуса файла
+                    rtb.IsFileSaved = true;
+                    rtb.IsFileChanged = false;
+                    Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
+
+                    // Внос файла в список недавних файлов
                     if (Program.mainUI.recentFilesMenuItem.DropDownItems.Count == 10)
                         Program.mainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
@@ -65,7 +73,8 @@ namespace TextPad_
         {
             try
             {
-                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+
+                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 // если путь до файла с индексом открытой вкладки отсутствует (Missing)
                 if (Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex) == "Missing")
@@ -73,12 +82,21 @@ namespace TextPad_
                     // то вызываем обычный saveAsFile метод, где используется saveFileDialog и добавляется в список под индексом вкладки выранный путь.
                     SaveAsFile();
                 }
+                // если нет, то значит путь до файла в списке найден, а значит сохраняем через этот самый путь как обычно.
                 else
                 {
-                    // иначе путь до файла в списке найден, а значит сохраняем через этот самый путь как обычно.
                     try
                     {
-                        File.WriteAllText(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), rtb.Text);
+                        // в файл сохраняется текст текущей вкладки по пути, указанному пользователем и ранее добавленного в список.
+                        StreamWriter fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false);
+                        fileWriter.Write(rtb.Text);
+                        fileWriter.Close();
+
+                        // Обновление статуса файла
+                        rtb.IsFileSaved = true;
+                        rtb.IsFileChanged = false;
+                        Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
+
                         Program.mainUI.deletFileFileMenuItem.Enabled = true;
                     }
                     catch
@@ -106,14 +124,20 @@ namespace TextPad_
 
             try
             {
-                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
                 // Вызываем openFileDialog и полученный путь до файла (fileName) записываем в список openedFiles в индекс текущей вкладки
                 Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, Program.mainUI.openFileDialog.FileName);
+
                 // Считываем текст этого файла, путь берём из того же списка
-                rtb.Text = File.ReadAllText(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                StreamReader fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                rtb.Text = fileReader.ReadToEnd();
+                fileReader.Close();
+
                 // Задаём заголовок вкладки с названием файла
                 Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
+                // Внос файла в список недавних файлов
                 if (Program.mainUI.recentFilesMenuItem.DropDownItems.Count == 10)
                     Program.mainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
                 ToolStripMenuItem tsmi = new ToolStripMenuItem();
@@ -130,6 +154,7 @@ namespace TextPad_
             }
         }
 
+        // Открытие файла по конкретному пути
         public static void OpenFile(string fileName)
         {
             try
@@ -137,11 +162,16 @@ namespace TextPad_
                 Program.mainUI.CreateTab();
                 Program.mainUI.cTabControl.SelectTab(Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.TabPages.Count - 1]);
 
-                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
                 // Вызываем openFileDialog и полученный путь до файла (fileName) записываем в список openedFiles в индекс текущей вкладки
                 Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, fileName);
+
                 // Считываем текст этого файла, путь берём из того же списка
-                rtb.Text = File.ReadAllText(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                StreamReader fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                rtb.Text = fileReader.ReadToEnd();
+                fileReader.Close();
+
                 // Задаём заголовок вкладки с названием файла
                 Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
@@ -157,7 +187,7 @@ namespace TextPad_
         #region Стандартные функции для правки текста, по названиям понятно, чё он делают.
         public static void copyTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (rtb.TextLength > 0)
             {
                 rtb.Copy();
@@ -166,7 +196,7 @@ namespace TextPad_
 
         public static void cutTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (rtb.TextLength > 0)
             {
                 rtb.Cut();
@@ -175,7 +205,7 @@ namespace TextPad_
 
         public static void pasteTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             rtb.Paste();
             string newText = rtb.Text;
             rtb.Text = newText.ToString();
@@ -184,7 +214,7 @@ namespace TextPad_
 
         public static void fontTextFromTB(CTabControl cTabControl, FontDialog fontDialog)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             fontDialog.ShowDialog();
             rtb.Font = fontDialog.Font;
             Properties.Settings.Default.EditorFont = fontDialog.Font;
@@ -192,7 +222,7 @@ namespace TextPad_
 
         public static void selectAllTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (rtb.TextLength > 0)
             {
                 rtb.SelectAll();
@@ -201,19 +231,19 @@ namespace TextPad_
 
         public static void redoTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             rtb.Redo();
         }
 
         public static void undoTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             rtb.Undo();
         }
 
         public static void deleteTextFromTB(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (rtb.TextLength > 0)
             {
                 rtb.SelectedText = string.Empty;
@@ -222,7 +252,7 @@ namespace TextPad_
 
         public static void dateTime(CTabControl cTabControl)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             rtb.AppendText(Convert.ToString(DateTime.Now));
         }
         #endregion
@@ -248,7 +278,7 @@ namespace TextPad_
         public void PythonRun()
         {
             Ls.Debug("Running a Python file");
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -274,7 +304,7 @@ namespace TextPad_
         public void PythonRun(string path)
         {
             Ls.Debug("Running a Python file");
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -301,7 +331,7 @@ namespace TextPad_
         {
             Ls.Debug("Running a bat file");
 
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -327,7 +357,7 @@ namespace TextPad_
         {
             Ls.Debug("Running a vbs file");
 
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {

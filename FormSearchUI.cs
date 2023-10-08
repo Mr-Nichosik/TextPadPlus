@@ -30,7 +30,7 @@ namespace TextPad_
         {
             try
             {
-                RichTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 if (rtb.Text.Contains(FindTextBox.Text))
                 {
                     int index = rtb.Text.IndexOf(FindTextBox.Text);
@@ -64,7 +64,7 @@ namespace TextPad_
         {
             try
             {
-                RichTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 if (rtb.Text.Contains(FindTextBox.Text))
                 {
                     while (rtb.Text.Contains(FindTextBox.Text))
@@ -98,7 +98,7 @@ namespace TextPad_
         {
             try
             {
-                RichTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 int lineNumber = Convert.ToInt32(numericLineNumber.Text);
                 if (lineNumber > 0 && lineNumber <= rtb.Lines.Count())
@@ -129,7 +129,7 @@ namespace TextPad_
         {
             try
             {
-                RichTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 if (rtb.Text.ToLower().Contains(FindTextBox.Text.ToLower()))
                 {

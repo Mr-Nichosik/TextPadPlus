@@ -27,7 +27,7 @@ namespace TextPad_
         internal List<string> OpenedFiles { get; set; } = new();
 
         // Общее поле для Rich Text Box
-        private RichTextBox? rtb;
+        private MTextBox? rtb;
 
         // Поле для настроек программы. Если isLangChanched = true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
         private static bool isLangChanged = false;
@@ -68,13 +68,13 @@ namespace TextPad_
 
             if (e.KeyCode == Keys.F && e.Control)
             {
-                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 if (rtb.TextLength > 0)
                 {
                     SearchUI search_ui = new SearchUI();
                     search_ui.ShowDialog(this);
 
-                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 }
                 e.Handled = true;
             }
@@ -200,6 +200,17 @@ namespace TextPad_
                 return;
         }
 
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
+            //if (e.KeyChar == '(')
+            //{
+            //    rtb.SelectedText = ")";
+            //    e.Handled = true;
+            //}
+        }
+
         // Методы для настроек
         private void openSettings(object sender, EventArgs e)
         {
@@ -214,6 +225,7 @@ namespace TextPad_
 
             LSVersionLabel.Text = LogSystem.GetAssemblyVersion();
             CTCLabelVersion.Text = CTabControl.GetAssemblyVersion();
+            MTBVersionLabel.Text = MTextBox.GetAssemblyVersion();
 
             // Загрузка настроек
             statusStripCheckBox.Checked = Properties.Settings.Default.StatusStripVisible;
@@ -248,7 +260,7 @@ namespace TextPad_
 
         private void saveSettings(object sender, EventArgs e)
         {
-            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             // Проверка настроек языка
             switch (Program.mainUI.comboBoxLanguage.SelectedItem)
@@ -336,7 +348,7 @@ namespace TextPad_
             Properties.Settings.Default.EditorFont = Program.mainUI.fontDialog.Font;
             Properties.Settings.Default.Save();
 
-            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             rtb.Font = Program.mainUI.fontDialog.Font;
         }
 
@@ -385,19 +397,20 @@ namespace TextPad_
         // Методы для cTabControl
         internal void CreateTab()
         {
-            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
+            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый MTextBox (rtb, потому что раньше это был MTextBox, а мне лень менять названия),
             * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
             * переноса слов.
             */
             TabPage tpage = new TabPage(Resources.Localization.newDocumentTitle);
-            var rtb = new RichTextBox();
+            var rtb = new MTextBox();
             rtb.Dock = DockStyle.Fill;
             rtb.BorderStyle = BorderStyle.None;
             rtb.WordWrap = Properties.Settings.Default.WordWarp;
             rtb.ContextMenuStrip = contextMenuStrip;
             rtb.Font = Properties.Settings.Default.EditorFont;
             rtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            rtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress);
             rtb.AcceptsTab = true;
 
             tpage.Controls.Add(rtb);
@@ -428,19 +441,20 @@ namespace TextPad_
 
         internal void CreateTab(string tabName)
         {
-            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый RichTextBox (rtb, потому что раньше это был RichTextBox, а мне лень менять названия),
+            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый MTextBox (rtb, потому что раньше это был MTextBox, а мне лень менять названия),
             * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
             * переноса слов.
             */
             TabPage tpage = new TabPage(tabName);
-            var rtb = new RichTextBox();
+            var rtb = new MTextBox();
             rtb.Dock = DockStyle.Fill;
             rtb.BorderStyle = BorderStyle.None;
             rtb.WordWrap = Properties.Settings.Default.WordWarp;
             rtb.ContextMenuStrip = contextMenuStrip;
             rtb.Font = Properties.Settings.Default.EditorFont;
             rtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            rtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress);
             rtb.AcceptsTab = true;
 
             tpage.Controls.Add(rtb);
@@ -476,7 +490,7 @@ namespace TextPad_
 
         private void CloseTab(object sender, EventArgs e)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             TabPage tab = cTabControl.SelectedTab;
 
             if (rtb.TextLength != 0)
@@ -520,14 +534,16 @@ namespace TextPad_
         {
             foreach (TabPage tab in cTabControl.TabPages)
             {
-                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
-                if (rtb.TextLength != 0)
+                if (rtb.IsFileSaved == false)
                 {
                     DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
                         TextEditor.SaveCurrentFile();
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(tab);
 
                     }
                     else if (dr == DialogResult.No)
@@ -572,7 +588,7 @@ namespace TextPad_
                     continue;
                 }
 
-                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
                 if (rtb.TextLength != 0)
                 {
@@ -620,7 +636,7 @@ namespace TextPad_
             // Этот метод нужен для того, что бы на каждой новой вкладке применялись заданные ранее параметры (вкл/выкл перенос слов, цвет текста, фона, шрифт и т.д.)
             try
             {
-                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 rtb.WordWrap = Properties.Settings.Default.WordWarp;
                 rtb.Font = Properties.Settings.Default.EditorFont;
@@ -660,7 +676,7 @@ namespace TextPad_
         // Обработка события TextChanged для каждого rich text box'а
         private void TextBoxTextChanged()
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             textLengthLabel.Text = rtb.Text.Length.ToString();
             if (rtb.Lines.Length == 0)
             {
@@ -669,6 +685,13 @@ namespace TextPad_
             else
             {
                 textLinesLabel.Text = rtb.Lines.Length.ToString();
+            }
+
+            rtb.IsFileSaved = false;
+            if (rtb.IsFileChanged == false)
+            {
+                cTabControl.TabPages[cTabControl.SelectedIndex].Text += "*";
+                rtb.IsFileChanged = true;
             }
 
             checkFiles();
@@ -797,7 +820,7 @@ namespace TextPad_
                 OpenedFiles.Insert(cTabControl.TabPages.Count - 1, path);
                 string fileText = File.ReadAllText(path);
 
-                rtb = cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<MTextBox>().First();
                 rtb.Text = fileText;
 
                 cTabControl.SelectTab(cTabControl.TabPages[cTabControl.TabPages.Count - 1]);
@@ -911,7 +934,7 @@ namespace TextPad_
         // Прочие отдельные методы
         private void checkFiles()
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (rtb.Text.Length == 0)
             {
                 searchEditMenuItem.Enabled = false;
@@ -939,7 +962,7 @@ namespace TextPad_
         {
             // цвет rtb
             cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Transparent;
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             rtb.ForeColor = Color.Black;
             rtb.BackColor = SystemColors.Window;
@@ -950,7 +973,7 @@ namespace TextPad_
         {
             // цвет rtb
             cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Black;
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             rtb.BackColor = Color.FromArgb(64, 64, 64);
             rtb.ForeColor = Color.Cyan;
@@ -1133,7 +1156,7 @@ namespace TextPad_
             {
                 try
                 {
-                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<RichTextBox>().First();
+                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                     // в список помещаем под индексом новой вкладки путь до файла
                     OpenedFiles.Insert(cTabControl.SelectedIndex, args[1]);
                     // в text box помещаем текст
@@ -1271,7 +1294,7 @@ namespace TextPad_
             // Закрытие всех вкладок
             foreach (TabPage tab in cTabControl.TabPages)
             {
-                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<RichTextBox>().First();
+                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
                 if (rtb.TextLength != 0)
                 {

@@ -41,6 +41,9 @@
     <Reference Include="LoggingSystem">
       <HintPath>..\Logging System\bin\Release\net6.0\LoggingSystem.dll</HintPath>
     </Reference>
+    <Reference Include="ModifiedTextBox">
+      <HintPath>..\ModifiedTextBox\bin\Release\net6.0-windows\ModifiedTextBox.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

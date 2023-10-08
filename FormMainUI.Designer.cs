@@ -85,6 +85,8 @@ namespace TextPad_
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textLinesLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.textLinesLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusZoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolsStrip = new System.Windows.Forms.ToolStrip();
             this.newTabToolStripItem = new System.Windows.Forms.ToolStripButton();
             this.closeTabToolStripItem = new System.Windows.Forms.ToolStripButton();
@@ -165,6 +167,7 @@ namespace TextPad_
             this.programComponentsPanel = new System.Windows.Forms.Panel();
             this.programComponentsTitle = new System.Windows.Forms.Label();
             this.componentsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.LSVersionLabel = new System.Windows.Forms.Label();
@@ -177,6 +180,8 @@ namespace TextPad_
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.MTBVersionLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.programDescriptionPanel = new System.Windows.Forms.Panel();
             this.infoTextBox = new System.Windows.Forms.TextBox();
             this.programInfoPanel = new System.Windows.Forms.Panel();
@@ -568,7 +573,9 @@ namespace TextPad_
             this.textLengthLabel,
             this.toolStripStatusLabel1,
             this.textLinesLabelStatus,
-            this.textLinesLabel});
+            this.textLinesLabel,
+            this.toolStripStatusLabel2,
+            this.StatusZoomLabel});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.statusStrip.Name = "statusStrip";
             // 
@@ -601,6 +608,16 @@ namespace TextPad_
             this.textLinesLabel.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.textLinesLabel, "textLinesLabel");
             this.textLinesLabel.Name = "textLinesLabel";
+            // 
+            // toolStripStatusLabel2
+            // 
+            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            // 
+            // StatusZoomLabel
+            // 
+            resources.ApplyResources(this.StatusZoomLabel, "StatusZoomLabel");
+            this.StatusZoomLabel.Name = "StatusZoomLabel";
             // 
             // toolsStrip
             // 
@@ -1213,6 +1230,7 @@ namespace TextPad_
             // 
             resources.ApplyResources(this.componentsTable, "componentsTable");
             this.componentsTable.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.componentsTable.Controls.Add(this.label10, 0, 4);
             this.componentsTable.Controls.Add(this.label14, 2, 1);
             this.componentsTable.Controls.Add(this.label16, 2, 3);
             this.componentsTable.Controls.Add(this.LSVersionLabel, 1, 3);
@@ -1225,7 +1243,14 @@ namespace TextPad_
             this.componentsTable.Controls.Add(this.label17, 2, 2);
             this.componentsTable.Controls.Add(this.label18, 0, 2);
             this.componentsTable.Controls.Add(this.label15, 0, 3);
+            this.componentsTable.Controls.Add(this.MTBVersionLabel, 1, 4);
+            this.componentsTable.Controls.Add(this.label26, 2, 4);
             this.componentsTable.Name = "componentsTable";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // label14
             // 
@@ -1286,6 +1311,16 @@ namespace TextPad_
             // 
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
+            // 
+            // MTBVersionLabel
+            // 
+            resources.ApplyResources(this.MTBVersionLabel, "MTBVersionLabel");
+            this.MTBVersionLabel.Name = "MTBVersionLabel";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
             // 
             // programDescriptionPanel
             // 
@@ -1660,6 +1695,11 @@ namespace TextPad_
         internal OpenFileDialog openFileDialog;
         private Panel programDescriptionPanel;
         internal ToolStripMenuItem deletFileFileMenuItem;
+        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel StatusZoomLabel;
+        private Label label10;
+        private Label MTBVersionLabel;
+        private Label label26;
     }
 }
 
