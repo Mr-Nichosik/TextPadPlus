@@ -58,6 +58,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="editMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="optionsMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="runMenuItem.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
   <data name="createTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 22</value>
   </data>
@@ -136,12 +163,6 @@
   <data name="exitFileMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
   <data name="copyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
@@ -196,17 +217,17 @@
   <data name="dateEditMenuItem.Text" xml:space="preserve">
     <value>Date and time</value>
   </data>
-  <data name="путьИИмяФайлаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Path and file name</value>
-  </data>
-  <data name="имяФайлаToolStripMenuItem.Text" xml:space="preserve">
-    <value>File name</value>
-  </data>
   <data name="copyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
   <data name="copyToClipboardEditMenuItem.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
+  </data>
+  <data name="путьИИмяФайлаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Path and file name</value>
+  </data>
+  <data name="имяФайлаToolStripMenuItem.Text" xml:space="preserve">
+    <value>File name</value>
   </data>
   <data name="searchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
@@ -214,26 +235,8 @@
   <data name="searchEditMenuItem.Text" xml:space="preserve">
     <value>Find and replace...        CTRL + F</value>
   </data>
-  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="editMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="optionsMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="runMenuItem.Text" xml:space="preserve">
-    <value>Run</value>
-  </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>Menu</value>
+  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 164</value>
   </data>
   <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -280,9 +283,6 @@
   <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
     <value>Redo</value>
   </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 164</value>
-  </data>
   <data name="textLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 17</value>
   </data>
@@ -294,6 +294,9 @@
   </data>
   <data name="textLinesLabelStatus.Text" xml:space="preserve">
     <value>Rows per tab:</value>
+  </data>
+  <data name="toolsStrip.Text" xml:space="preserve">
+    <value>Toolbar</value>
   </data>
   <data name="newTabToolStripItem.Text" xml:space="preserve">
     <value>Create</value>
@@ -360,8 +363,8 @@
   <data name="searchToolStripItem.Text" xml:space="preserve">
     <value>Search and replace</value>
   </data>
-  <data name="toolsStrip.Text" xml:space="preserve">
-    <value>Toolbar</value>
+  <data name="runFileToolStrip.Text" xml:space="preserve">
+    <value>Script Launcher</value>
   </data>
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 22</value>
@@ -375,15 +378,6 @@
   <data name="startFileButton.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="runFileToolStrip.Text" xml:space="preserve">
-    <value>Script Launcher</value>
-  </data>
-  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <data name="explorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 26</value>
   </data>
@@ -392,7 +386,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAH4AQIB+AECARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAEQAQMBEAEDARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -427,6 +421,12 @@
         AAs=
 </value>
   </data>
+  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="openFolderToolBtn.Text" xml:space="preserve">
     <value>Open folder</value>
   </data>
@@ -451,6 +451,17 @@
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="settingsTabPage.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="settingsTabPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="settingsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="settingsTabPage.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 15</value>
@@ -512,16 +523,14 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Script Launcher:</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="settingsTabPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="infoTabPage.Text" xml:space="preserve">
+    <value>Reference</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="settingsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>About program</value>
   </data>
-  <data name="settingsTabPage.Text" xml:space="preserve">
-    <value>Settings</value>
+  <data name="programComponentsTitle.Text" xml:space="preserve">
+    <value>Program components:</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
@@ -572,11 +581,25 @@ Powered by .NET 6.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet
   <data name="buttonWebsite.Text" xml:space="preserve">
     <value>Go to site</value>
   </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>About program</value>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Change log</value>
   </data>
   <data name="textBox2.Text" xml:space="preserve">
-    <value>*TextPad+ 2.5.0
+    <value>
+*TextPad+ 2.5.1
+
+Corrections:
+—Included new icons in English localization
+—Improved file reading and writing system
+—Unsaved files are marked *, and when closing tabs with them, the program offers to save
+
+*Update installer 1.8.0
+
+Main changes:
+—When installing an update, the old version of the program will be deleted
+—Added a status bar with an installation progress bar
+
+*TextPad+ 2.5.0
 
 Main changes:
 —Added the ability to open a file folder from the "File" menu
@@ -602,12 +625,6 @@ Main changes:
 —Redesigned update installation system
 —Updates are now installed at the path specified in the configuration file
 For the correct operation of the update installer, reinstall the program.</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>Change log</value>
-  </data>
-  <data name="infoTabPage.Text" xml:space="preserve">
-    <value>Reference</value>
   </data>
   <data name="checkUpdatesButton.Text" xml:space="preserve">
     <value>Check for updates</value>

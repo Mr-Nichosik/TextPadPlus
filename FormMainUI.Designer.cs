@@ -85,8 +85,6 @@ namespace TextPad_
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textLinesLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.textLinesLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusZoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolsStrip = new System.Windows.Forms.ToolStrip();
             this.newTabToolStripItem = new System.Windows.Forms.ToolStripButton();
             this.closeTabToolStripItem = new System.Windows.Forms.ToolStripButton();
@@ -109,7 +107,7 @@ namespace TextPad_
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.startScriptCombobox = new System.Windows.Forms.ToolStripComboBox();
             this.startFileButton = new System.Windows.Forms.ToolStripButton();
-            this.listView = new System.Windows.Forms.ListView();
+            this.FilesListView = new System.Windows.Forms.ListView();
             this.explorerContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewImages = new System.Windows.Forms.ImageList(this.components);
@@ -573,9 +571,7 @@ namespace TextPad_
             this.textLengthLabel,
             this.toolStripStatusLabel1,
             this.textLinesLabelStatus,
-            this.textLinesLabel,
-            this.toolStripStatusLabel2,
-            this.StatusZoomLabel});
+            this.textLinesLabel});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.statusStrip.Name = "statusStrip";
             // 
@@ -608,16 +604,6 @@ namespace TextPad_
             this.textLinesLabel.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.textLinesLabel, "textLinesLabel");
             this.textLinesLabel.Name = "textLinesLabel";
-            // 
-            // toolStripStatusLabel2
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            // 
-            // StatusZoomLabel
-            // 
-            resources.ApplyResources(this.StatusZoomLabel, "StatusZoomLabel");
-            this.StatusZoomLabel.Name = "StatusZoomLabel";
             // 
             // toolsStrip
             // 
@@ -800,21 +786,21 @@ namespace TextPad_
             this.startFileButton.Name = "startFileButton";
             this.startFileButton.Click += new System.EventHandler(this.RunScript);
             // 
-            // listView
+            // FilesListView
             // 
-            this.listView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView.ContextMenuStrip = this.explorerContextMenu;
-            resources.ApplyResources(this.listView, "listView");
-            this.listView.FullRowSelect = true;
-            this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView.LargeImageList = this.listViewImages;
-            this.listView.MultiSelect = false;
-            this.listView.Name = "listView";
-            this.listView.SmallImageList = this.listViewImages;
-            this.listView.StateImageList = this.listViewImages;
-            this.listView.UseCompatibleStateImageBehavior = false;
-            this.listView.View = System.Windows.Forms.View.List;
-            this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
+            this.FilesListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FilesListView.ContextMenuStrip = this.explorerContextMenu;
+            resources.ApplyResources(this.FilesListView, "FilesListView");
+            this.FilesListView.FullRowSelect = true;
+            this.FilesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.FilesListView.LargeImageList = this.listViewImages;
+            this.FilesListView.MultiSelect = false;
+            this.FilesListView.Name = "FilesListView";
+            this.FilesListView.SmallImageList = this.listViewImages;
+            this.FilesListView.StateImageList = this.listViewImages;
+            this.FilesListView.UseCompatibleStateImageBehavior = false;
+            this.FilesListView.View = System.Windows.Forms.View.List;
+            this.FilesListView.DoubleClick += new System.EventHandler(this.FilesListViewDoubleClick);
             // 
             // explorerContextMenu
             // 
@@ -917,7 +903,7 @@ namespace TextPad_
             // 
             this.folderExplorerPanel.BackColor = System.Drawing.Color.Transparent;
             this.folderExplorerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.folderExplorerPanel.Controls.Add(this.listView);
+            this.folderExplorerPanel.Controls.Add(this.FilesListView);
             this.folderExplorerPanel.Controls.Add(this.workFolderLabel);
             this.folderExplorerPanel.Controls.Add(this.folderToolStrip);
             resources.ApplyResources(this.folderExplorerPanel, "folderExplorerPanel");
@@ -1464,8 +1450,8 @@ namespace TextPad_
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.SettingsUIPanel);
             this.Controls.Add(this.MainUIPanel);
+            this.Controls.Add(this.SettingsUIPanel);
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMainUI";
@@ -1587,7 +1573,7 @@ namespace TextPad_
         internal System.Windows.Forms.ToolStripMenuItem fileMenuItem;
         internal FontDialog fontDialog;
         internal ToolStripStatusLabel textLengthLabel;
-        private ListView listView;
+        private ListView FilesListView;
         private ToolStrip folderToolStrip;
         private ToolStripButton openFolderToolBtn;
         private ToolStripSeparator toolStripSeparator1;
@@ -1695,8 +1681,6 @@ namespace TextPad_
         internal OpenFileDialog openFileDialog;
         private Panel programDescriptionPanel;
         internal ToolStripMenuItem deletFileFileMenuItem;
-        private ToolStripStatusLabel toolStripStatusLabel2;
-        private ToolStripStatusLabel StatusZoomLabel;
         private Label label10;
         private Label MTBVersionLabel;
         private Label label26;

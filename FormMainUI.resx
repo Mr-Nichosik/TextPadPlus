@@ -414,24 +414,6 @@
   <data name="textLinesLabel.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="toolStripStatusLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 17</value>
-  </data>
-  <data name="toolStripStatusLabel2.Text" xml:space="preserve">
-    <value>|</value>
-  </data>
-  <data name="StatusZoomLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="StatusZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="StatusZoomLabel.Text" xml:space="preserve">
-    <value>Zoom</value>
-  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 508</value>
   </data>
@@ -762,11 +744,8 @@
   <data name="&gt;&gt;explorerContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="FilesListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="listView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
   </data>
   <metadata name="listViewImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1194, 19</value>
@@ -776,7 +755,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAEgARMBIAETARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAFkARMBZAETARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -811,25 +790,25 @@
         AAs=
 </value>
   </data>
-  <data name="listView.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="FilesListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 25</value>
   </data>
-  <data name="listView.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FilesListView.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 432</value>
   </data>
-  <data name="listView.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="FilesListView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;listView.Name" xml:space="preserve">
-    <value>listView</value>
+  <data name="&gt;&gt;FilesListView.Name" xml:space="preserve">
+    <value>FilesListView</value>
   </data>
-  <data name="&gt;&gt;listView.Type" xml:space="preserve">
+  <data name="&gt;&gt;FilesListView.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listView.Parent" xml:space="preserve">
+  <data name="&gt;&gt;FilesListView.Parent" xml:space="preserve">
     <value>folderExplorerPanel</value>
   </data>
-  <data name="&gt;&gt;listView.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FilesListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="folderToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1034,7 +1013,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainUIPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="settingsTabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Bottom</value>
@@ -3021,6 +3000,7 @@
 Исправления:
 —Включены новые иконки в английской локализации
 —Улучшена система чтения и записи файлов
+—Не сохранённые файла помечаются *, а при закрытии вкладок с ними программа предлагает сохранить
 
 *Установщик обновлений 1.8.0
 
@@ -3327,7 +3307,7 @@ ________________________________________________________________________________
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SettingsUIPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3859,18 +3839,6 @@ ________________________________________________________________________________
     <value>textLinesLabel</value>
   </data>
   <data name="&gt;&gt;textLinesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel2.Name" xml:space="preserve">
-    <value>toolStripStatusLabel2</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusZoomLabel.Name" xml:space="preserve">
-    <value>StatusZoomLabel</value>
-  </data>
-  <data name="&gt;&gt;StatusZoomLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;newTabToolStripItem.Name" xml:space="preserve">

@@ -530,7 +530,13 @@ namespace TextPad_
             }
         }
 
+        // Метод для события в форме, потому с аргументами
         private void closeAllTabs(object sender, EventArgs e)
+        {
+            closeAllTabs();
+        }
+
+        private void closeAllTabs()
         {
             foreach (TabPage tab in cTabControl.TabPages)
             {
@@ -596,6 +602,8 @@ namespace TextPad_
                     if (dr == DialogResult.Yes)
                     {
                         TextEditor.SaveCurrentFile();
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(tab);
 
                     }
                     else if (dr == DialogResult.No)
@@ -708,14 +716,14 @@ namespace TextPad_
             }
 
             workFolderLabel.Text = new DirectoryInfo(folderBrowserDialog.SelectedPath).Name;
-            listView.Clear();
+            FilesListView.Clear();
 
             // Папки
             foreach (string item in Directory.GetDirectories(folderBrowserDialog.SelectedPath))
             {
                 ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
                 lvi.ToolTipText = item;
-                listView.Items.Add(lvi);
+                FilesListView.Items.Add(lvi);
 
             }
 
@@ -724,7 +732,7 @@ namespace TextPad_
             {
                 ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
                 lvi.ToolTipText = item;
-                listView.Items.Add(lvi);
+                FilesListView.Items.Add(lvi);
             }
         }
 
@@ -736,14 +744,14 @@ namespace TextPad_
                 folderBrowserDialog.SelectedPath = newDirectory;
 
                 workFolderLabel.Text = new DirectoryInfo(newDirectory).Name;
-                listView.Clear();
+                FilesListView.Clear();
 
                 // Папки
                 foreach (string item in Directory.GetDirectories(newDirectory))
                 {
                     ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
                     lvi.ToolTipText = item;
-                    listView.Items.Add(lvi);
+                    FilesListView.Items.Add(lvi);
 
                 }
 
@@ -752,7 +760,7 @@ namespace TextPad_
                 {
                     ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
                     lvi.ToolTipText = item;
-                    listView.Items.Add(lvi);
+                    FilesListView.Items.Add(lvi);
                 }
             }
             catch { }
@@ -765,14 +773,14 @@ namespace TextPad_
                 return;
             }
 
-            listView.Clear();
+            FilesListView.Clear();
 
             // Папки
             foreach (string item in Directory.GetDirectories(folderBrowserDialog.SelectedPath))
             {
                 ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
                 lvi.ToolTipText = item;
-                listView.Items.Add(lvi);
+                FilesListView.Items.Add(lvi);
             }
 
             // Файлы
@@ -780,13 +788,13 @@ namespace TextPad_
             {
                 ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
                 lvi.ToolTipText = item;
-                listView.Items.Add(lvi);
+                FilesListView.Items.Add(lvi);
             }
         }
 
-        private void listView_DoubleClick(object sender, EventArgs e)
+        private void FilesListViewDoubleClick(object sender, EventArgs e)
         {
-            string path = listView.Items[listView.FocusedItem.Index].ToolTipText;
+            string path = FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText;
 
             //Проверка существования файла
             if (Directory.Exists(path))
@@ -794,14 +802,14 @@ namespace TextPad_
                 folderBrowserDialog.SelectedPath = path;
 
                 workFolderLabel.Text = new DirectoryInfo(path).Name;
-                listView.Clear();
+                FilesListView.Clear();
 
                 // Папки
                 foreach (string item in Directory.GetDirectories(path))
                 {
                     ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
                     lvi.ToolTipText = item;
-                    listView.Items.Add(lvi);
+                    FilesListView.Items.Add(lvi);
 
                 }
 
@@ -810,7 +818,7 @@ namespace TextPad_
                 {
                     ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
                     lvi.ToolTipText = item;
-                    listView.Items.Add(lvi);
+                    FilesListView.Items.Add(lvi);
                 }
             }
 
@@ -836,25 +844,25 @@ namespace TextPad_
 
         private void UpSizeListView(object sender, EventArgs e)
         {
-            if (listView.Width < 410)
+            if (FilesListView.Width < 410)
             {
-                listView.Width += 30;
+                FilesListView.Width += 30;
                 folderExplorerPanel.Width += 30;
             }
         }
 
         private void DownSizeListView(object sender, EventArgs e)
         {
-            if (listView.Width > 110)
+            if (FilesListView.Width > 110)
             {
-                listView.Width -= 30;
+                FilesListView.Width -= 30;
                 folderExplorerPanel.Width -= 30;
             }
         }
 
         private void closeFolderToolBtnClick(object sender, EventArgs e)
         {
-            listView.Clear();
+            FilesListView.Clear();
             switch (Properties.Settings.Default.Language)
             {
                 case "Russian":
@@ -869,27 +877,27 @@ namespace TextPad_
         // Контекстное меню проводника
         private void deleteFileInExplorer(object sender, EventArgs e)
         {
-            if (listView.Items.Count < 1)
+            if (FilesListView.Items.Count < 1)
                 return;
 
             try
             {
-                if (File.Exists(listView.Items[listView.FocusedItem.Index].ToolTipText))
+                if (File.Exists(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText))
                 {
                     if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     {
                         return;
                     }
-                    FileSystem.DeleteFile(listView.Items[listView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    FileSystem.DeleteFile(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                 }
-                else if (Directory.Exists(listView.Items[listView.FocusedItem.Index].ToolTipText))
+                else if (Directory.Exists(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText))
                 {
                     if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     {
                         return;
                     }
 
-                    FileSystem.DeleteDirectory(listView.Items[listView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    FileSystem.DeleteDirectory(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                 }
                 else
                 {
@@ -1292,35 +1300,7 @@ namespace TextPad_
         private void MainFormClosing(object sender, FormClosingEventArgs e)
         {
             // Закрытие всех вкладок
-            foreach (TabPage tab in cTabControl.TabPages)
-            {
-                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
-
-                if (rtb.TextLength != 0)
-                {
-                    DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dr == DialogResult.Yes)
-                    {
-                        TextEditor.SaveCurrentFile();
-
-                    }
-                    else if (dr == DialogResult.No)
-                    {
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
-                        cTabControl.TabPages.Remove(tab);
-
-                    }
-                    else if (dr == DialogResult.Cancel)
-                    {
-                        e.Cancel = true;
-                    }
-                }
-                else
-                {
-                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
-                    cTabControl.TabPages.Remove(tab);
-                }
-            }
+            closeAllTabs();
 
             // Сохранение настроек и недавних файлов
             Properties.Settings.Default.MainWindowState = this.WindowState.ToString();
