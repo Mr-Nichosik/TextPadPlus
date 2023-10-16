@@ -1,13 +1,12 @@
-global using LoggingSystem;
 global using CustomTabControl;
+global using LoggingSystem;
+global using ModifiedTextBox;
 global using System;
 global using System.Diagnostics;
 global using System.Drawing;
 global using System.IO;
 global using System.Linq;
 global using System.Windows.Forms;
-global using System.Xml;
-global using ModifiedTextBox;
 
 namespace TextPad_
 {
@@ -17,6 +16,8 @@ namespace TextPad_
     internal static class Program
     {
         public static FormMainUI mainUI = new FormMainUI();
+        public static bool isUpdating = false;
+
         /// <summary>
         /// Точка входа в программу
         /// </summary>

@@ -67,7 +67,7 @@ namespace TextPad_
             {
                 radioButton1.Checked = true;
             }
-            
+
             openFileDialog.Filter = "*.exe|*.exe";
         }
     }

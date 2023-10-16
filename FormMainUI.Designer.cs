@@ -29,1548 +29,1542 @@ namespace TextPad_
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainUI));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createTabFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeTabFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllTabsFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeWithoutCurrentTabsFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCurrentFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletFileFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.separator1FileMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.fileFolderFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recentFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.separator2FileMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.exitFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectAllEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStripSep2 = new System.Windows.Forms.ToolStripSeparator();
-            this.undoEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStripSep3 = new System.Windows.Forms.ToolStripSeparator();
-            this.dateEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToClipboardEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.путьИИмяФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.имяФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchEditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.runMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pythonRunMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vbsRunMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.batRunMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.копироватьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.вырезатьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.вставитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.выделитьВсёToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.отменитьToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.вернутьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.textLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.textLengthLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.textLinesLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.textLinesLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolsStrip = new System.Windows.Forms.ToolStrip();
-            this.newTabToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.closeTabToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSep1 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSep2 = new System.Windows.Forms.ToolStripSeparator();
-            this.copyToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.cutToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.deleteToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSep3 = new System.Windows.Forms.ToolStripSeparator();
-            this.undoToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.redoToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSep4 = new System.Windows.Forms.ToolStripSeparator();
-            this.fontToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSep5 = new System.Windows.Forms.ToolStripSeparator();
-            this.searchToolStripItem = new System.Windows.Forms.ToolStripButton();
-            this.runFileToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.startScriptCombobox = new System.Windows.Forms.ToolStripComboBox();
-            this.startFileButton = new System.Windows.Forms.ToolStripButton();
-            this.FilesListView = new System.Windows.Forms.ListView();
-            this.explorerContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listViewImages = new System.Windows.Forms.ImageList(this.components);
-            this.folderToolStrip = new System.Windows.Forms.ToolStrip();
-            this.openFolderToolBtn = new System.Windows.Forms.ToolStripButton();
-            this.refreshFolderToolBtn = new System.Windows.Forms.ToolStripButton();
-            this.closeFolderToolBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboveFolderBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.upSizeListViewTool = new System.Windows.Forms.ToolStripButton();
-            this.downSizeListViewTool = new System.Windows.Forms.ToolStripButton();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.folderExplorerPanel = new System.Windows.Forms.Panel();
-            this.workFolderLabel = new System.Windows.Forms.Label();
-            this.cTabControl = new CustomTabControl.CTabControl();
-            this.MainUIPanel = new System.Windows.Forms.Panel();
-            this.SettingsUIPanel = new System.Windows.Forms.Panel();
-            this.settingsTabControl = new System.Windows.Forms.TabControl();
-            this.settingsTabPage = new System.Windows.Forms.TabPage();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.exitWhenClosingLastTabCheckBox = new System.Windows.Forms.CheckBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.wordWarpCheckBox = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.overWindowsCheckBox = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.explorerCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.FontTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.instrumentPanelCheckBox = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboTheme = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.statusStripCheckBox = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.runFilesPanelCheckBox = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.infoTabPage = new System.Windows.Forms.TabPage();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.programComponentsPanel = new System.Windows.Forms.Panel();
-            this.programComponentsTitle = new System.Windows.Forms.Label();
-            this.componentsTable = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.LSVersionLabel = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.CTCLabelVersion = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.MTBVersionLabel = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.programDescriptionPanel = new System.Windows.Forms.Panel();
-            this.infoTextBox = new System.Windows.Forms.TextBox();
-            this.programInfoPanel = new System.Windows.Forms.Panel();
-            this.ProgramNameLabel = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBoxWebSiteUrl = new System.Windows.Forms.TextBox();
-            this.DeveloperLabel = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.DateOfReleaseLabel = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.VersionLabel = new System.Windows.Forms.Label();
-            this.labelWebSite = new System.Windows.Forms.Label();
-            this.buttonWebsite = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.SettingsBottomUIPanel = new System.Windows.Forms.Panel();
-            this.checkUpdatesButton = new System.Windows.Forms.Button();
-            this.cancelBatton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.menuStrip.SuspendLayout();
-            this.contextMenuStrip.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.toolsStrip.SuspendLayout();
-            this.runFileToolStrip.SuspendLayout();
-            this.explorerContextMenu.SuspendLayout();
-            this.folderToolStrip.SuspendLayout();
-            this.folderExplorerPanel.SuspendLayout();
-            this.MainUIPanel.SuspendLayout();
-            this.SettingsUIPanel.SuspendLayout();
-            this.settingsTabControl.SuspendLayout();
-            this.settingsTabPage.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.infoTabPage.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.programComponentsPanel.SuspendLayout();
-            this.componentsTable.SuspendLayout();
-            this.programDescriptionPanel.SuspendLayout();
-            this.programInfoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.SettingsBottomUIPanel.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip = new MenuStrip();
+            fileMenuItem = new ToolStripMenuItem();
+            createTabFileMenuItem = new ToolStripMenuItem();
+            closeTabFileMenuItem = new ToolStripMenuItem();
+            closeAllTabsFileMenuItem = new ToolStripMenuItem();
+            closeWithoutCurrentTabsFileMenuItem = new ToolStripMenuItem();
+            newWindowFileMenuItem = new ToolStripMenuItem();
+            saveCurrentFileMenuItem = new ToolStripMenuItem();
+            saveAsFileMenuItem = new ToolStripMenuItem();
+            openFileMenuItem = new ToolStripMenuItem();
+            deletFileFileMenuItem = new ToolStripMenuItem();
+            separator1FileMenuItem = new ToolStripSeparator();
+            fileFolderFileMenuItem = new ToolStripMenuItem();
+            recentFilesMenuItem = new ToolStripMenuItem();
+            separator2FileMenuItem = new ToolStripSeparator();
+            exitFileMenuItem = new ToolStripMenuItem();
+            editMenuItem = new ToolStripMenuItem();
+            copyEditMenuItem = new ToolStripMenuItem();
+            cutEditMenuItem = new ToolStripMenuItem();
+            pasteEditMenuItem = new ToolStripMenuItem();
+            selectAllEditMenuItem = new ToolStripMenuItem();
+            deleteEditMenuItem = new ToolStripMenuItem();
+            menuStripSep2 = new ToolStripSeparator();
+            undoEditMenuItem = new ToolStripMenuItem();
+            redoEditMenuItem = new ToolStripMenuItem();
+            menuStripSep3 = new ToolStripSeparator();
+            dateEditMenuItem = new ToolStripMenuItem();
+            copyToClipboardEditMenuItem = new ToolStripMenuItem();
+            путьИИмяФайлаToolStripMenuItem = new ToolStripMenuItem();
+            имяФайлаToolStripMenuItem = new ToolStripMenuItem();
+            searchEditMenuItem = new ToolStripMenuItem();
+            optionsMenuItem = new ToolStripMenuItem();
+            runMenuItem = new ToolStripMenuItem();
+            pythonRunMenuItem = new ToolStripMenuItem();
+            vbsRunMenuItem = new ToolStripMenuItem();
+            batRunMenuItem = new ToolStripMenuItem();
+            saveFileDialog = new SaveFileDialog();
+            openFileDialog = new OpenFileDialog();
+            fontDialog = new FontDialog();
+            contextMenuStrip = new ContextMenuStrip(components);
+            копироватьToolStripMenuItem1 = new ToolStripMenuItem();
+            вырезатьToolStripMenuItem1 = new ToolStripMenuItem();
+            вставитьToolStripMenuItem1 = new ToolStripMenuItem();
+            выделитьВсёToolStripMenuItem1 = new ToolStripMenuItem();
+            удалитьToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator4 = new ToolStripSeparator();
+            отменитьToolStripMenuItem2 = new ToolStripMenuItem();
+            вернутьToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip = new StatusStrip();
+            textLabelStatus = new ToolStripStatusLabel();
+            textLengthLabel = new ToolStripStatusLabel();
+            statusStripSep1 = new ToolStripStatusLabel();
+            textLinesLabelStatus = new ToolStripStatusLabel();
+            textLinesLabel = new ToolStripStatusLabel();
+            statusStripSep2 = new ToolStripStatusLabel();
+            statusStripEncodingLabel = new ToolStripStatusLabel();
+            encodingStatusLabel = new ToolStripStatusLabel();
+            encodingDropDownBtn = new ToolStripDropDownButton();
+            uTF16ToolStripMenuItem = new ToolStripMenuItem();
+            unicodeToolStripMenuItem = new ToolStripMenuItem();
+            uTF7ToolStripMenuItem = new ToolStripMenuItem();
+            uTF8ToolStripMenuItem = new ToolStripMenuItem();
+            aSCIIToolStripMenuItem = new ToolStripMenuItem();
+            toolsStrip = new ToolStrip();
+            newTabToolStripItem = new ToolStripButton();
+            closeTabToolStripItem = new ToolStripButton();
+            toolStripSep1 = new ToolStripSeparator();
+            saveToolStripItem = new ToolStripButton();
+            openToolStripItem = new ToolStripButton();
+            toolStripSep2 = new ToolStripSeparator();
+            copyToolStripItem = new ToolStripButton();
+            cutToolStripItem = new ToolStripButton();
+            pasteToolStripItem = new ToolStripButton();
+            deleteToolStripItem = new ToolStripButton();
+            toolStripSep3 = new ToolStripSeparator();
+            undoToolStripItem = new ToolStripButton();
+            redoToolStripItem = new ToolStripButton();
+            toolStripSep4 = new ToolStripSeparator();
+            fontToolStripItem = new ToolStripButton();
+            toolStripSep5 = new ToolStripSeparator();
+            searchToolStripItem = new ToolStripButton();
+            runFileToolStrip = new ToolStrip();
+            toolStripLabel1 = new ToolStripLabel();
+            startScriptCombobox = new ToolStripComboBox();
+            startFileButton = new ToolStripButton();
+            FilesListView = new ListView();
+            explorerContextMenu = new ContextMenuStrip(components);
+            удалитьToolStripMenuItem1 = new ToolStripMenuItem();
+            listViewImages = new ImageList(components);
+            folderToolStrip = new ToolStrip();
+            openFolderToolBtn = new ToolStripButton();
+            refreshFolderToolBtn = new ToolStripButton();
+            closeFolderToolBtn = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            aboveFolderBtn = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            upSizeListViewTool = new ToolStripButton();
+            downSizeListViewTool = new ToolStripButton();
+            folderBrowserDialog = new FolderBrowserDialog();
+            folderExplorerPanel = new Panel();
+            workFolderLabel = new Label();
+            cTabControl = new CTabControl();
+            MainUIPanel = new Panel();
+            SettingsUIPanel = new Panel();
+            settingsTabControl = new TabControl();
+            settingsTabPage = new TabPage();
+            panel10 = new Panel();
+            encodingComboBox = new ComboBox();
+            label25 = new Label();
+            panel11 = new Panel();
+            exitWhenClosingLastTabCheckBox = new CheckBox();
+            label24 = new Label();
+            panel5 = new Panel();
+            wordWarpCheckBox = new CheckBox();
+            label5 = new Label();
+            panel4 = new Panel();
+            overWindowsCheckBox = new CheckBox();
+            label4 = new Label();
+            panel1 = new Panel();
+            explorerCheckBox = new CheckBox();
+            label1 = new Label();
+            panel3 = new Panel();
+            comboBoxLanguage = new ComboBox();
+            label3 = new Label();
+            panel9 = new Panel();
+            textBox3 = new TextBox();
+            FontTextBox = new TextBox();
+            label9 = new Label();
+            panel8 = new Panel();
+            instrumentPanelCheckBox = new CheckBox();
+            label8 = new Label();
+            panel2 = new Panel();
+            comboTheme = new ComboBox();
+            label2 = new Label();
+            panel7 = new Panel();
+            statusStripCheckBox = new CheckBox();
+            label7 = new Label();
+            panel6 = new Panel();
+            runFilesPanelCheckBox = new CheckBox();
+            label6 = new Label();
+            infoTabPage = new TabPage();
+            tabControl = new TabControl();
+            tabPage4 = new TabPage();
+            programInfoPanel = new Panel();
+            ProgramNameLabel = new Label();
+            pictureBox = new PictureBox();
+            label23 = new Label();
+            textBoxWebSiteUrl = new TextBox();
+            DeveloperLabel = new Label();
+            label22 = new Label();
+            DateOfReleaseLabel = new Label();
+            label21 = new Label();
+            VersionLabel = new Label();
+            labelWebSite = new Label();
+            buttonWebsite = new Button();
+            infoTextBox = new TextBox();
+            programComponentsPanel = new Panel();
+            programComponentsTitle = new Label();
+            componentsTable = new TableLayoutPanel();
+            label10 = new Label();
+            label14 = new Label();
+            label16 = new Label();
+            LSVersionLabel = new Label();
+            label19 = new Label();
+            label20 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            CTCLabelVersion = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            label15 = new Label();
+            MTBVersionLabel = new Label();
+            label26 = new Label();
+            label11 = new Label();
+            tabPage5 = new TabPage();
+            textBox2 = new TextBox();
+            SettingsBottomUIPanel = new Panel();
+            checkUpdatesButton = new Button();
+            cancelBatton = new Button();
+            saveButton = new Button();
+            menuStrip.SuspendLayout();
+            contextMenuStrip.SuspendLayout();
+            statusStrip.SuspendLayout();
+            toolsStrip.SuspendLayout();
+            runFileToolStrip.SuspendLayout();
+            explorerContextMenu.SuspendLayout();
+            folderToolStrip.SuspendLayout();
+            folderExplorerPanel.SuspendLayout();
+            MainUIPanel.SuspendLayout();
+            SettingsUIPanel.SuspendLayout();
+            settingsTabControl.SuspendLayout();
+            settingsTabPage.SuspendLayout();
+            panel10.SuspendLayout();
+            panel11.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel9.SuspendLayout();
+            panel8.SuspendLayout();
+            panel2.SuspendLayout();
+            panel7.SuspendLayout();
+            panel6.SuspendLayout();
+            infoTabPage.SuspendLayout();
+            tabControl.SuspendLayout();
+            tabPage4.SuspendLayout();
+            programInfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            programComponentsPanel.SuspendLayout();
+            componentsTable.SuspendLayout();
+            tabPage5.SuspendLayout();
+            SettingsBottomUIPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenuItem,
-            this.editMenuItem,
-            this.optionsMenuItem,
-            this.runMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
-            this.menuStrip.Name = "menuStrip";
+            menuStrip.BackColor = SystemColors.Control;
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenuItem, editMenuItem, optionsMenuItem, runMenuItem });
+            resources.ApplyResources(menuStrip, "menuStrip");
+            menuStrip.Name = "menuStrip";
             // 
             // fileMenuItem
             // 
-            this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createTabFileMenuItem,
-            this.closeTabFileMenuItem,
-            this.closeAllTabsFileMenuItem,
-            this.closeWithoutCurrentTabsFileMenuItem,
-            this.newWindowFileMenuItem,
-            this.saveCurrentFileMenuItem,
-            this.saveAsFileMenuItem,
-            this.openFileMenuItem,
-            this.deletFileFileMenuItem,
-            this.separator1FileMenuItem,
-            this.fileFolderFileMenuItem,
-            this.recentFilesMenuItem,
-            this.separator2FileMenuItem,
-            this.exitFileMenuItem});
-            resources.ApplyResources(this.fileMenuItem, "fileMenuItem");
-            this.fileMenuItem.Name = "fileMenuItem";
+            fileMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createTabFileMenuItem, closeTabFileMenuItem, closeAllTabsFileMenuItem, closeWithoutCurrentTabsFileMenuItem, newWindowFileMenuItem, saveCurrentFileMenuItem, saveAsFileMenuItem, openFileMenuItem, deletFileFileMenuItem, separator1FileMenuItem, fileFolderFileMenuItem, recentFilesMenuItem, separator2FileMenuItem, exitFileMenuItem });
+            resources.ApplyResources(fileMenuItem, "fileMenuItem");
+            fileMenuItem.Name = "fileMenuItem";
             // 
             // createTabFileMenuItem
             // 
-            this.createTabFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentCreate;
-            this.createTabFileMenuItem.Name = "createTabFileMenuItem";
-            resources.ApplyResources(this.createTabFileMenuItem, "createTabFileMenuItem");
-            this.createTabFileMenuItem.Click += new System.EventHandler(this.createTabClick);
+            createTabFileMenuItem.Image = Properties.Resources.DocumentCreate;
+            createTabFileMenuItem.Name = "createTabFileMenuItem";
+            resources.ApplyResources(createTabFileMenuItem, "createTabFileMenuItem");
+            createTabFileMenuItem.Click += createTabClick;
             // 
             // closeTabFileMenuItem
             // 
-            this.closeTabFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentClose;
-            this.closeTabFileMenuItem.Name = "closeTabFileMenuItem";
-            resources.ApplyResources(this.closeTabFileMenuItem, "closeTabFileMenuItem");
-            this.closeTabFileMenuItem.Click += new System.EventHandler(this.CloseTab);
+            closeTabFileMenuItem.Image = Properties.Resources.DocumentClose;
+            closeTabFileMenuItem.Name = "closeTabFileMenuItem";
+            resources.ApplyResources(closeTabFileMenuItem, "closeTabFileMenuItem");
+            closeTabFileMenuItem.Click += CloseTab;
             // 
             // closeAllTabsFileMenuItem
             // 
-            this.closeAllTabsFileMenuItem.Name = "closeAllTabsFileMenuItem";
-            resources.ApplyResources(this.closeAllTabsFileMenuItem, "closeAllTabsFileMenuItem");
-            this.closeAllTabsFileMenuItem.Click += new System.EventHandler(this.closeAllTabs);
+            closeAllTabsFileMenuItem.Name = "closeAllTabsFileMenuItem";
+            resources.ApplyResources(closeAllTabsFileMenuItem, "closeAllTabsFileMenuItem");
+            closeAllTabsFileMenuItem.Click += closeAllTabs;
             // 
             // closeWithoutCurrentTabsFileMenuItem
             // 
-            this.closeWithoutCurrentTabsFileMenuItem.Name = "closeWithoutCurrentTabsFileMenuItem";
-            resources.ApplyResources(this.closeWithoutCurrentTabsFileMenuItem, "closeWithoutCurrentTabsFileMenuItem");
-            this.closeWithoutCurrentTabsFileMenuItem.Click += new System.EventHandler(this.closeAllWithoutCurrentTab);
+            closeWithoutCurrentTabsFileMenuItem.Name = "closeWithoutCurrentTabsFileMenuItem";
+            resources.ApplyResources(closeWithoutCurrentTabsFileMenuItem, "closeWithoutCurrentTabsFileMenuItem");
+            closeWithoutCurrentTabsFileMenuItem.Click += closeAllWithoutCurrentTab;
             // 
             // newWindowFileMenuItem
             // 
-            this.newWindowFileMenuItem.Name = "newWindowFileMenuItem";
-            resources.ApplyResources(this.newWindowFileMenuItem, "newWindowFileMenuItem");
-            this.newWindowFileMenuItem.Click += new System.EventHandler(this.newWindow);
+            newWindowFileMenuItem.Name = "newWindowFileMenuItem";
+            resources.ApplyResources(newWindowFileMenuItem, "newWindowFileMenuItem");
+            newWindowFileMenuItem.Click += newWindow;
             // 
             // saveCurrentFileMenuItem
             // 
-            this.saveCurrentFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentSave;
-            this.saveCurrentFileMenuItem.Name = "saveCurrentFileMenuItem";
-            resources.ApplyResources(this.saveCurrentFileMenuItem, "saveCurrentFileMenuItem");
-            this.saveCurrentFileMenuItem.Click += new System.EventHandler(this.saveFileButton);
+            saveCurrentFileMenuItem.Image = Properties.Resources.DocumentSave;
+            saveCurrentFileMenuItem.Name = "saveCurrentFileMenuItem";
+            resources.ApplyResources(saveCurrentFileMenuItem, "saveCurrentFileMenuItem");
+            saveCurrentFileMenuItem.Click += saveFileButton;
             // 
             // saveAsFileMenuItem
             // 
-            this.saveAsFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentSaveAs;
-            this.saveAsFileMenuItem.Name = "saveAsFileMenuItem";
-            resources.ApplyResources(this.saveAsFileMenuItem, "saveAsFileMenuItem");
-            this.saveAsFileMenuItem.Click += new System.EventHandler(this.saveAsFileButton);
+            saveAsFileMenuItem.Image = Properties.Resources.DocumentSaveAs;
+            saveAsFileMenuItem.Name = "saveAsFileMenuItem";
+            resources.ApplyResources(saveAsFileMenuItem, "saveAsFileMenuItem");
+            saveAsFileMenuItem.Click += saveAsFileButton;
             // 
             // openFileMenuItem
             // 
-            this.openFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentOpen;
-            this.openFileMenuItem.Name = "openFileMenuItem";
-            resources.ApplyResources(this.openFileMenuItem, "openFileMenuItem");
-            this.openFileMenuItem.Click += new System.EventHandler(this.openFileButton);
+            openFileMenuItem.Image = Properties.Resources.DocumentOpen;
+            openFileMenuItem.Name = "openFileMenuItem";
+            resources.ApplyResources(openFileMenuItem, "openFileMenuItem");
+            openFileMenuItem.Click += openFileButton;
             // 
             // deletFileFileMenuItem
             // 
-            this.deletFileFileMenuItem.Image = global::TextPad_.Properties.Resources.DocumentDelete;
-            this.deletFileFileMenuItem.Name = "deletFileFileMenuItem";
-            resources.ApplyResources(this.deletFileFileMenuItem, "deletFileFileMenuItem");
-            this.deletFileFileMenuItem.Click += new System.EventHandler(this.deleteFile);
+            deletFileFileMenuItem.Image = Properties.Resources.DocumentDelete;
+            deletFileFileMenuItem.Name = "deletFileFileMenuItem";
+            resources.ApplyResources(deletFileFileMenuItem, "deletFileFileMenuItem");
+            deletFileFileMenuItem.Click += deleteFile;
             // 
             // separator1FileMenuItem
             // 
-            this.separator1FileMenuItem.Name = "separator1FileMenuItem";
-            resources.ApplyResources(this.separator1FileMenuItem, "separator1FileMenuItem");
+            separator1FileMenuItem.Name = "separator1FileMenuItem";
+            resources.ApplyResources(separator1FileMenuItem, "separator1FileMenuItem");
             // 
             // fileFolderFileMenuItem
             // 
-            this.fileFolderFileMenuItem.Image = global::TextPad_.Properties.Resources.FolderOpen;
-            this.fileFolderFileMenuItem.Name = "fileFolderFileMenuItem";
-            resources.ApplyResources(this.fileFolderFileMenuItem, "fileFolderFileMenuItem");
-            this.fileFolderFileMenuItem.Click += new System.EventHandler(this.openFileFolder);
+            fileFolderFileMenuItem.Image = Properties.Resources.FolderOpen;
+            fileFolderFileMenuItem.Name = "fileFolderFileMenuItem";
+            resources.ApplyResources(fileFolderFileMenuItem, "fileFolderFileMenuItem");
+            fileFolderFileMenuItem.Click += openFileFolder;
             // 
             // recentFilesMenuItem
             // 
-            this.recentFilesMenuItem.Name = "recentFilesMenuItem";
-            resources.ApplyResources(this.recentFilesMenuItem, "recentFilesMenuItem");
+            recentFilesMenuItem.Name = "recentFilesMenuItem";
+            resources.ApplyResources(recentFilesMenuItem, "recentFilesMenuItem");
             // 
             // separator2FileMenuItem
             // 
-            this.separator2FileMenuItem.Name = "separator2FileMenuItem";
-            resources.ApplyResources(this.separator2FileMenuItem, "separator2FileMenuItem");
+            separator2FileMenuItem.Name = "separator2FileMenuItem";
+            resources.ApplyResources(separator2FileMenuItem, "separator2FileMenuItem");
             // 
             // exitFileMenuItem
             // 
-            this.exitFileMenuItem.Name = "exitFileMenuItem";
-            resources.ApplyResources(this.exitFileMenuItem, "exitFileMenuItem");
-            this.exitFileMenuItem.Click += new System.EventHandler(this.exit);
+            exitFileMenuItem.Name = "exitFileMenuItem";
+            resources.ApplyResources(exitFileMenuItem, "exitFileMenuItem");
+            exitFileMenuItem.Click += exit;
             // 
             // editMenuItem
             // 
-            this.editMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyEditMenuItem,
-            this.cutEditMenuItem,
-            this.pasteEditMenuItem,
-            this.selectAllEditMenuItem,
-            this.deleteEditMenuItem,
-            this.menuStripSep2,
-            this.undoEditMenuItem,
-            this.redoEditMenuItem,
-            this.menuStripSep3,
-            this.dateEditMenuItem,
-            this.copyToClipboardEditMenuItem,
-            this.searchEditMenuItem});
-            resources.ApplyResources(this.editMenuItem, "editMenuItem");
-            this.editMenuItem.Name = "editMenuItem";
+            editMenuItem.DropDownItems.AddRange(new ToolStripItem[] { copyEditMenuItem, cutEditMenuItem, pasteEditMenuItem, selectAllEditMenuItem, deleteEditMenuItem, menuStripSep2, undoEditMenuItem, redoEditMenuItem, menuStripSep3, dateEditMenuItem, copyToClipboardEditMenuItem, searchEditMenuItem });
+            resources.ApplyResources(editMenuItem, "editMenuItem");
+            editMenuItem.Name = "editMenuItem";
             // 
             // copyEditMenuItem
             // 
-            this.copyEditMenuItem.Image = global::TextPad_.Properties.Resources.DocumentCopy;
-            this.copyEditMenuItem.Name = "copyEditMenuItem";
-            resources.ApplyResources(this.copyEditMenuItem, "copyEditMenuItem");
-            this.copyEditMenuItem.Click += new System.EventHandler(this.copyTextFromTBButton);
+            copyEditMenuItem.Image = Properties.Resources.DocumentCopy;
+            copyEditMenuItem.Name = "copyEditMenuItem";
+            resources.ApplyResources(copyEditMenuItem, "copyEditMenuItem");
+            copyEditMenuItem.Click += copyTextFromTBButton;
             // 
             // cutEditMenuItem
             // 
-            this.cutEditMenuItem.Image = global::TextPad_.Properties.Resources.DocumentCut;
-            this.cutEditMenuItem.Name = "cutEditMenuItem";
-            resources.ApplyResources(this.cutEditMenuItem, "cutEditMenuItem");
-            this.cutEditMenuItem.Click += new System.EventHandler(this.cutTextFromTBButton);
+            cutEditMenuItem.Image = Properties.Resources.DocumentCut;
+            cutEditMenuItem.Name = "cutEditMenuItem";
+            resources.ApplyResources(cutEditMenuItem, "cutEditMenuItem");
+            cutEditMenuItem.Click += cutTextFromTBButton;
             // 
             // pasteEditMenuItem
             // 
-            this.pasteEditMenuItem.Image = global::TextPad_.Properties.Resources.DocumentPaste;
-            this.pasteEditMenuItem.Name = "pasteEditMenuItem";
-            resources.ApplyResources(this.pasteEditMenuItem, "pasteEditMenuItem");
-            this.pasteEditMenuItem.Click += new System.EventHandler(this.pasteTextFromTBButton);
+            pasteEditMenuItem.Image = Properties.Resources.DocumentPaste;
+            pasteEditMenuItem.Name = "pasteEditMenuItem";
+            resources.ApplyResources(pasteEditMenuItem, "pasteEditMenuItem");
+            pasteEditMenuItem.Click += pasteTextFromTBButton;
             // 
             // selectAllEditMenuItem
             // 
-            this.selectAllEditMenuItem.Name = "selectAllEditMenuItem";
-            resources.ApplyResources(this.selectAllEditMenuItem, "selectAllEditMenuItem");
-            this.selectAllEditMenuItem.Click += new System.EventHandler(this.selectAllTextFromTBButton);
+            selectAllEditMenuItem.Name = "selectAllEditMenuItem";
+            resources.ApplyResources(selectAllEditMenuItem, "selectAllEditMenuItem");
+            selectAllEditMenuItem.Click += selectAllTextFromTBButton;
             // 
             // deleteEditMenuItem
             // 
-            this.deleteEditMenuItem.Image = global::TextPad_.Properties.Resources.DocumentDelete;
-            this.deleteEditMenuItem.Name = "deleteEditMenuItem";
-            resources.ApplyResources(this.deleteEditMenuItem, "deleteEditMenuItem");
-            this.deleteEditMenuItem.Click += new System.EventHandler(this.deleteTextFromTBButton);
+            deleteEditMenuItem.Image = Properties.Resources.DocumentDelete;
+            deleteEditMenuItem.Name = "deleteEditMenuItem";
+            resources.ApplyResources(deleteEditMenuItem, "deleteEditMenuItem");
+            deleteEditMenuItem.Click += deleteTextFromTBButton;
             // 
             // menuStripSep2
             // 
-            this.menuStripSep2.Name = "menuStripSep2";
-            resources.ApplyResources(this.menuStripSep2, "menuStripSep2");
+            menuStripSep2.Name = "menuStripSep2";
+            resources.ApplyResources(menuStripSep2, "menuStripSep2");
             // 
             // undoEditMenuItem
             // 
-            this.undoEditMenuItem.Name = "undoEditMenuItem";
-            resources.ApplyResources(this.undoEditMenuItem, "undoEditMenuItem");
-            this.undoEditMenuItem.Click += new System.EventHandler(this.undoTextFromTBButton);
+            undoEditMenuItem.Name = "undoEditMenuItem";
+            resources.ApplyResources(undoEditMenuItem, "undoEditMenuItem");
+            undoEditMenuItem.Click += undoTextFromTBButton;
             // 
             // redoEditMenuItem
             // 
-            this.redoEditMenuItem.Name = "redoEditMenuItem";
-            resources.ApplyResources(this.redoEditMenuItem, "redoEditMenuItem");
-            this.redoEditMenuItem.Click += new System.EventHandler(this.redoTextFromTBButton);
+            redoEditMenuItem.Name = "redoEditMenuItem";
+            resources.ApplyResources(redoEditMenuItem, "redoEditMenuItem");
+            redoEditMenuItem.Click += redoTextFromTBButton;
             // 
             // menuStripSep3
             // 
-            this.menuStripSep3.Name = "menuStripSep3";
-            resources.ApplyResources(this.menuStripSep3, "menuStripSep3");
+            menuStripSep3.Name = "menuStripSep3";
+            resources.ApplyResources(menuStripSep3, "menuStripSep3");
             // 
             // dateEditMenuItem
             // 
-            this.dateEditMenuItem.Name = "dateEditMenuItem";
-            resources.ApplyResources(this.dateEditMenuItem, "dateEditMenuItem");
-            this.dateEditMenuItem.Click += new System.EventHandler(this.dateAndTime);
+            dateEditMenuItem.Name = "dateEditMenuItem";
+            resources.ApplyResources(dateEditMenuItem, "dateEditMenuItem");
+            dateEditMenuItem.Click += dateAndTime;
             // 
             // copyToClipboardEditMenuItem
             // 
-            this.copyToClipboardEditMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.путьИИмяФайлаToolStripMenuItem,
-            this.имяФайлаToolStripMenuItem});
-            this.copyToClipboardEditMenuItem.Name = "copyToClipboardEditMenuItem";
-            resources.ApplyResources(this.copyToClipboardEditMenuItem, "copyToClipboardEditMenuItem");
+            copyToClipboardEditMenuItem.DropDownItems.AddRange(new ToolStripItem[] { путьИИмяФайлаToolStripMenuItem, имяФайлаToolStripMenuItem });
+            copyToClipboardEditMenuItem.Name = "copyToClipboardEditMenuItem";
+            resources.ApplyResources(copyToClipboardEditMenuItem, "copyToClipboardEditMenuItem");
             // 
             // путьИИмяФайлаToolStripMenuItem
             // 
-            this.путьИИмяФайлаToolStripMenuItem.Name = "путьИИмяФайлаToolStripMenuItem";
-            resources.ApplyResources(this.путьИИмяФайлаToolStripMenuItem, "путьИИмяФайлаToolStripMenuItem");
-            this.путьИИмяФайлаToolStripMenuItem.Click += new System.EventHandler(this.copyFullPath);
+            путьИИмяФайлаToolStripMenuItem.Name = "путьИИмяФайлаToolStripMenuItem";
+            resources.ApplyResources(путьИИмяФайлаToolStripMenuItem, "путьИИмяФайлаToolStripMenuItem");
+            путьИИмяФайлаToolStripMenuItem.Click += copyFullPath;
             // 
             // имяФайлаToolStripMenuItem
             // 
-            this.имяФайлаToolStripMenuItem.Name = "имяФайлаToolStripMenuItem";
-            resources.ApplyResources(this.имяФайлаToolStripMenuItem, "имяФайлаToolStripMenuItem");
-            this.имяФайлаToolStripMenuItem.Click += new System.EventHandler(this.copyFileName);
+            имяФайлаToolStripMenuItem.Name = "имяФайлаToolStripMenuItem";
+            resources.ApplyResources(имяФайлаToolStripMenuItem, "имяФайлаToolStripMenuItem");
+            имяФайлаToolStripMenuItem.Click += copyFileName;
             // 
             // searchEditMenuItem
             // 
-            this.searchEditMenuItem.Image = global::TextPad_.Properties.Resources.Search;
-            this.searchEditMenuItem.Name = "searchEditMenuItem";
-            resources.ApplyResources(this.searchEditMenuItem, "searchEditMenuItem");
-            this.searchEditMenuItem.Click += new System.EventHandler(this.search);
+            searchEditMenuItem.Image = Properties.Resources.Search;
+            searchEditMenuItem.Name = "searchEditMenuItem";
+            resources.ApplyResources(searchEditMenuItem, "searchEditMenuItem");
+            searchEditMenuItem.Click += search;
             // 
             // optionsMenuItem
             // 
-            resources.ApplyResources(this.optionsMenuItem, "optionsMenuItem");
-            this.optionsMenuItem.Name = "optionsMenuItem";
-            this.optionsMenuItem.Click += new System.EventHandler(this.openSettings);
+            resources.ApplyResources(optionsMenuItem, "optionsMenuItem");
+            optionsMenuItem.Name = "optionsMenuItem";
+            optionsMenuItem.Click += openSettings;
             // 
             // runMenuItem
             // 
-            this.runMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pythonRunMenuItem,
-            this.vbsRunMenuItem,
-            this.batRunMenuItem});
-            resources.ApplyResources(this.runMenuItem, "runMenuItem");
-            this.runMenuItem.Name = "runMenuItem";
+            runMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pythonRunMenuItem, vbsRunMenuItem, batRunMenuItem });
+            resources.ApplyResources(runMenuItem, "runMenuItem");
+            runMenuItem.Name = "runMenuItem";
             // 
             // pythonRunMenuItem
             // 
-            this.pythonRunMenuItem.Name = "pythonRunMenuItem";
-            resources.ApplyResources(this.pythonRunMenuItem, "pythonRunMenuItem");
-            this.pythonRunMenuItem.Click += new System.EventHandler(this.PythonRun);
+            pythonRunMenuItem.Name = "pythonRunMenuItem";
+            resources.ApplyResources(pythonRunMenuItem, "pythonRunMenuItem");
+            pythonRunMenuItem.Click += PythonRun;
             // 
             // vbsRunMenuItem
             // 
-            this.vbsRunMenuItem.Name = "vbsRunMenuItem";
-            resources.ApplyResources(this.vbsRunMenuItem, "vbsRunMenuItem");
-            this.vbsRunMenuItem.Click += new System.EventHandler(this.VbsRun);
+            vbsRunMenuItem.Name = "vbsRunMenuItem";
+            resources.ApplyResources(vbsRunMenuItem, "vbsRunMenuItem");
+            vbsRunMenuItem.Click += VbsRun;
             // 
             // batRunMenuItem
             // 
-            this.batRunMenuItem.Name = "batRunMenuItem";
-            resources.ApplyResources(this.batRunMenuItem, "batRunMenuItem");
-            this.batRunMenuItem.Click += new System.EventHandler(this.BatRun);
+            batRunMenuItem.Name = "batRunMenuItem";
+            resources.ApplyResources(batRunMenuItem, "batRunMenuItem");
+            batRunMenuItem.Click += BatRun;
             // 
             // fontDialog
             // 
-            this.fontDialog.FontMustExist = true;
-            this.fontDialog.ShowApply = true;
+            fontDialog.FontMustExist = true;
+            fontDialog.ShowApply = true;
             // 
             // contextMenuStrip
             // 
-            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.копироватьToolStripMenuItem1,
-            this.вырезатьToolStripMenuItem1,
-            this.вставитьToolStripMenuItem1,
-            this.выделитьВсёToolStripMenuItem1,
-            this.удалитьToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.отменитьToolStripMenuItem2,
-            this.вернутьToolStripMenuItem});
-            this.contextMenuStrip.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { копироватьToolStripMenuItem1, вырезатьToolStripMenuItem1, вставитьToolStripMenuItem1, выделитьВсёToolStripMenuItem1, удалитьToolStripMenuItem, toolStripSeparator4, отменитьToolStripMenuItem2, вернутьToolStripMenuItem });
+            contextMenuStrip.Name = "contextMenuStrip1";
+            resources.ApplyResources(contextMenuStrip, "contextMenuStrip");
             // 
             // копироватьToolStripMenuItem1
             // 
-            this.копироватьToolStripMenuItem1.Image = global::TextPad_.Properties.Resources.DocumentCopy;
-            this.копироватьToolStripMenuItem1.Name = "копироватьToolStripMenuItem1";
-            resources.ApplyResources(this.копироватьToolStripMenuItem1, "копироватьToolStripMenuItem1");
-            this.копироватьToolStripMenuItem1.Click += new System.EventHandler(this.copyTextFromTBButton);
+            копироватьToolStripMenuItem1.Image = Properties.Resources.DocumentCopy;
+            копироватьToolStripMenuItem1.Name = "копироватьToolStripMenuItem1";
+            resources.ApplyResources(копироватьToolStripMenuItem1, "копироватьToolStripMenuItem1");
+            копироватьToolStripMenuItem1.Click += copyTextFromTBButton;
             // 
             // вырезатьToolStripMenuItem1
             // 
-            this.вырезатьToolStripMenuItem1.Image = global::TextPad_.Properties.Resources.DocumentCut;
-            this.вырезатьToolStripMenuItem1.Name = "вырезатьToolStripMenuItem1";
-            resources.ApplyResources(this.вырезатьToolStripMenuItem1, "вырезатьToolStripMenuItem1");
-            this.вырезатьToolStripMenuItem1.Click += new System.EventHandler(this.cutTextFromTBButton);
+            вырезатьToolStripMenuItem1.Image = Properties.Resources.DocumentCut;
+            вырезатьToolStripMenuItem1.Name = "вырезатьToolStripMenuItem1";
+            resources.ApplyResources(вырезатьToolStripMenuItem1, "вырезатьToolStripMenuItem1");
+            вырезатьToolStripMenuItem1.Click += cutTextFromTBButton;
             // 
             // вставитьToolStripMenuItem1
             // 
-            this.вставитьToolStripMenuItem1.Image = global::TextPad_.Properties.Resources.DocumentPaste;
-            this.вставитьToolStripMenuItem1.Name = "вставитьToolStripMenuItem1";
-            resources.ApplyResources(this.вставитьToolStripMenuItem1, "вставитьToolStripMenuItem1");
-            this.вставитьToolStripMenuItem1.Click += new System.EventHandler(this.pasteTextFromTBButton);
+            вставитьToolStripMenuItem1.Image = Properties.Resources.DocumentPaste;
+            вставитьToolStripMenuItem1.Name = "вставитьToolStripMenuItem1";
+            resources.ApplyResources(вставитьToolStripMenuItem1, "вставитьToolStripMenuItem1");
+            вставитьToolStripMenuItem1.Click += pasteTextFromTBButton;
             // 
             // выделитьВсёToolStripMenuItem1
             // 
-            this.выделитьВсёToolStripMenuItem1.Name = "выделитьВсёToolStripMenuItem1";
-            resources.ApplyResources(this.выделитьВсёToolStripMenuItem1, "выделитьВсёToolStripMenuItem1");
-            this.выделитьВсёToolStripMenuItem1.Click += new System.EventHandler(this.selectAllTextFromTBButton);
+            выделитьВсёToolStripMenuItem1.Name = "выделитьВсёToolStripMenuItem1";
+            resources.ApplyResources(выделитьВсёToolStripMenuItem1, "выделитьВсёToolStripMenuItem1");
+            выделитьВсёToolStripMenuItem1.Click += selectAllTextFromTBButton;
             // 
             // удалитьToolStripMenuItem
             // 
-            this.удалитьToolStripMenuItem.Image = global::TextPad_.Properties.Resources.DocumentDelete;
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
-            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.deleteTextFromTBButton);
+            удалитьToolStripMenuItem.Image = Properties.Resources.DocumentDelete;
+            удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            resources.ApplyResources(удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
+            удалитьToolStripMenuItem.Click += deleteTextFromTBButton;
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(toolStripSeparator4, "toolStripSeparator4");
             // 
             // отменитьToolStripMenuItem2
             // 
-            this.отменитьToolStripMenuItem2.Name = "отменитьToolStripMenuItem2";
-            resources.ApplyResources(this.отменитьToolStripMenuItem2, "отменитьToolStripMenuItem2");
-            this.отменитьToolStripMenuItem2.Click += new System.EventHandler(this.undoTextFromTBButton);
+            отменитьToolStripMenuItem2.Name = "отменитьToolStripMenuItem2";
+            resources.ApplyResources(отменитьToolStripMenuItem2, "отменитьToolStripMenuItem2");
+            отменитьToolStripMenuItem2.Click += undoTextFromTBButton;
             // 
             // вернутьToolStripMenuItem
             // 
-            this.вернутьToolStripMenuItem.Name = "вернутьToolStripMenuItem";
-            resources.ApplyResources(this.вернутьToolStripMenuItem, "вернутьToolStripMenuItem");
-            this.вернутьToolStripMenuItem.Click += new System.EventHandler(this.redoTextFromTBButton);
+            вернутьToolStripMenuItem.Name = "вернутьToolStripMenuItem";
+            resources.ApplyResources(вернутьToolStripMenuItem, "вернутьToolStripMenuItem");
+            вернутьToolStripMenuItem.Click += redoTextFromTBButton;
             // 
             // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "statusStrip");
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.textLabelStatus,
-            this.textLengthLabel,
-            this.toolStripStatusLabel1,
-            this.textLinesLabelStatus,
-            this.textLinesLabel});
-            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip.Name = "statusStrip";
+            resources.ApplyResources(statusStrip, "statusStrip");
+            statusStrip.Items.AddRange(new ToolStripItem[] { textLabelStatus, textLengthLabel, statusStripSep1, textLinesLabelStatus, textLinesLabel, statusStripSep2, statusStripEncodingLabel, encodingStatusLabel, encodingDropDownBtn });
+            statusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            statusStrip.Name = "statusStrip";
             // 
             // textLabelStatus
             // 
-            this.textLabelStatus.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.textLabelStatus, "textLabelStatus");
-            this.textLabelStatus.Name = "textLabelStatus";
+            textLabelStatus.BackColor = Color.Transparent;
+            resources.ApplyResources(textLabelStatus, "textLabelStatus");
+            textLabelStatus.Name = "textLabelStatus";
             // 
             // textLengthLabel
             // 
-            this.textLengthLabel.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.textLengthLabel, "textLengthLabel");
-            this.textLengthLabel.Name = "textLengthLabel";
+            textLengthLabel.BackColor = Color.Transparent;
+            resources.ApplyResources(textLengthLabel, "textLengthLabel");
+            textLengthLabel.Name = "textLengthLabel";
             // 
-            // toolStripStatusLabel1
+            // statusStripSep1
             // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            statusStripSep1.BackColor = Color.Transparent;
+            resources.ApplyResources(statusStripSep1, "statusStripSep1");
+            statusStripSep1.Name = "statusStripSep1";
             // 
             // textLinesLabelStatus
             // 
-            this.textLinesLabelStatus.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.textLinesLabelStatus, "textLinesLabelStatus");
-            this.textLinesLabelStatus.Name = "textLinesLabelStatus";
+            textLinesLabelStatus.BackColor = Color.Transparent;
+            resources.ApplyResources(textLinesLabelStatus, "textLinesLabelStatus");
+            textLinesLabelStatus.Name = "textLinesLabelStatus";
             // 
             // textLinesLabel
             // 
-            this.textLinesLabel.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.textLinesLabel, "textLinesLabel");
-            this.textLinesLabel.Name = "textLinesLabel";
+            textLinesLabel.BackColor = Color.Transparent;
+            resources.ApplyResources(textLinesLabel, "textLinesLabel");
+            textLinesLabel.Name = "textLinesLabel";
+            // 
+            // statusStripSep2
+            // 
+            resources.ApplyResources(statusStripSep2, "statusStripSep2");
+            statusStripSep2.Name = "statusStripSep2";
+            // 
+            // statusStripEncodingLabel
+            // 
+            resources.ApplyResources(statusStripEncodingLabel, "statusStripEncodingLabel");
+            statusStripEncodingLabel.Name = "statusStripEncodingLabel";
+            // 
+            // encodingStatusLabel
+            // 
+            resources.ApplyResources(encodingStatusLabel, "encodingStatusLabel");
+            encodingStatusLabel.Name = "encodingStatusLabel";
+            // 
+            // encodingDropDownBtn
+            // 
+            encodingDropDownBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            encodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { uTF16ToolStripMenuItem, unicodeToolStripMenuItem, uTF7ToolStripMenuItem, uTF8ToolStripMenuItem, aSCIIToolStripMenuItem });
+            resources.ApplyResources(encodingDropDownBtn, "encodingDropDownBtn");
+            encodingDropDownBtn.Name = "encodingDropDownBtn";
+            // 
+            // uTF16ToolStripMenuItem
+            // 
+            uTF16ToolStripMenuItem.Name = "uTF16ToolStripMenuItem";
+            resources.ApplyResources(uTF16ToolStripMenuItem, "uTF16ToolStripMenuItem");
+            uTF16ToolStripMenuItem.Click += ChangeToUTF32;
+            // 
+            // unicodeToolStripMenuItem
+            // 
+            unicodeToolStripMenuItem.Name = "unicodeToolStripMenuItem";
+            resources.ApplyResources(unicodeToolStripMenuItem, "unicodeToolStripMenuItem");
+            unicodeToolStripMenuItem.Click += ChangeToUTF16;
+            // 
+            // uTF7ToolStripMenuItem
+            // 
+            uTF7ToolStripMenuItem.Name = "uTF7ToolStripMenuItem";
+            resources.ApplyResources(uTF7ToolStripMenuItem, "uTF7ToolStripMenuItem");
+            uTF7ToolStripMenuItem.Click += ChangeToUTF8;
+            // 
+            // uTF8ToolStripMenuItem
+            // 
+            uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
+            resources.ApplyResources(uTF8ToolStripMenuItem, "uTF8ToolStripMenuItem");
+            uTF8ToolStripMenuItem.Click += ChangeToUTF7;
+            // 
+            // aSCIIToolStripMenuItem
+            // 
+            aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
+            resources.ApplyResources(aSCIIToolStripMenuItem, "aSCIIToolStripMenuItem");
+            aSCIIToolStripMenuItem.Click += ChangeToASCII;
             // 
             // toolsStrip
             // 
-            this.toolsStrip.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.toolsStrip, "toolsStrip");
-            this.toolsStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolsStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newTabToolStripItem,
-            this.closeTabToolStripItem,
-            this.toolStripSep1,
-            this.saveToolStripItem,
-            this.openToolStripItem,
-            this.toolStripSep2,
-            this.copyToolStripItem,
-            this.cutToolStripItem,
-            this.pasteToolStripItem,
-            this.deleteToolStripItem,
-            this.toolStripSep3,
-            this.undoToolStripItem,
-            this.redoToolStripItem,
-            this.toolStripSep4,
-            this.fontToolStripItem,
-            this.toolStripSep5,
-            this.searchToolStripItem});
-            this.toolsStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolsStrip.Name = "toolsStrip";
+            toolsStrip.BackColor = SystemColors.Control;
+            resources.ApplyResources(toolsStrip, "toolsStrip");
+            toolsStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolsStrip.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, searchToolStripItem });
+            toolsStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolsStrip.Name = "toolsStrip";
             // 
             // newTabToolStripItem
             // 
-            this.newTabToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.newTabToolStripItem, "newTabToolStripItem");
-            this.newTabToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentCreate;
-            this.newTabToolStripItem.Name = "newTabToolStripItem";
-            this.newTabToolStripItem.Click += new System.EventHandler(this.createTabClick);
+            newTabToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(newTabToolStripItem, "newTabToolStripItem");
+            newTabToolStripItem.Image = Properties.Resources.DocumentCreate;
+            newTabToolStripItem.Name = "newTabToolStripItem";
+            newTabToolStripItem.Click += createTabClick;
             // 
             // closeTabToolStripItem
             // 
-            this.closeTabToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.closeTabToolStripItem, "closeTabToolStripItem");
-            this.closeTabToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentClose;
-            this.closeTabToolStripItem.Name = "closeTabToolStripItem";
-            this.closeTabToolStripItem.Click += new System.EventHandler(this.CloseTab);
+            closeTabToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(closeTabToolStripItem, "closeTabToolStripItem");
+            closeTabToolStripItem.Image = Properties.Resources.DocumentClose;
+            closeTabToolStripItem.Name = "closeTabToolStripItem";
+            closeTabToolStripItem.Click += CloseTab;
             // 
             // toolStripSep1
             // 
-            this.toolStripSep1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.toolStripSep1.Name = "toolStripSep1";
-            resources.ApplyResources(this.toolStripSep1, "toolStripSep1");
+            toolStripSep1.ForeColor = SystemColors.ControlText;
+            toolStripSep1.Name = "toolStripSep1";
+            resources.ApplyResources(toolStripSep1, "toolStripSep1");
             // 
             // saveToolStripItem
             // 
-            this.saveToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.saveToolStripItem, "saveToolStripItem");
-            this.saveToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentSave;
-            this.saveToolStripItem.Name = "saveToolStripItem";
-            this.saveToolStripItem.Click += new System.EventHandler(this.saveFileButton);
+            saveToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(saveToolStripItem, "saveToolStripItem");
+            saveToolStripItem.Image = Properties.Resources.DocumentSave;
+            saveToolStripItem.Name = "saveToolStripItem";
+            saveToolStripItem.Click += saveFileButton;
             // 
             // openToolStripItem
             // 
-            this.openToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.openToolStripItem, "openToolStripItem");
-            this.openToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentOpen;
-            this.openToolStripItem.Name = "openToolStripItem";
-            this.openToolStripItem.Click += new System.EventHandler(this.openFileButton);
+            openToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(openToolStripItem, "openToolStripItem");
+            openToolStripItem.Image = Properties.Resources.DocumentOpen;
+            openToolStripItem.Name = "openToolStripItem";
+            openToolStripItem.Click += openFileButton;
             // 
             // toolStripSep2
             // 
-            this.toolStripSep2.Name = "toolStripSep2";
-            resources.ApplyResources(this.toolStripSep2, "toolStripSep2");
+            toolStripSep2.Name = "toolStripSep2";
+            resources.ApplyResources(toolStripSep2, "toolStripSep2");
             // 
             // copyToolStripItem
             // 
-            this.copyToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.copyToolStripItem, "copyToolStripItem");
-            this.copyToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentCopy;
-            this.copyToolStripItem.Name = "copyToolStripItem";
-            this.copyToolStripItem.Click += new System.EventHandler(this.copyTextFromTBButton);
+            copyToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(copyToolStripItem, "copyToolStripItem");
+            copyToolStripItem.Image = Properties.Resources.DocumentCopy;
+            copyToolStripItem.Name = "copyToolStripItem";
+            copyToolStripItem.Click += copyTextFromTBButton;
             // 
             // cutToolStripItem
             // 
-            this.cutToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.cutToolStripItem, "cutToolStripItem");
-            this.cutToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentCut;
-            this.cutToolStripItem.Name = "cutToolStripItem";
-            this.cutToolStripItem.Click += new System.EventHandler(this.cutTextFromTBButton);
+            cutToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(cutToolStripItem, "cutToolStripItem");
+            cutToolStripItem.Image = Properties.Resources.DocumentCut;
+            cutToolStripItem.Name = "cutToolStripItem";
+            cutToolStripItem.Click += cutTextFromTBButton;
             // 
             // pasteToolStripItem
             // 
-            this.pasteToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.pasteToolStripItem, "pasteToolStripItem");
-            this.pasteToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentPaste;
-            this.pasteToolStripItem.Name = "pasteToolStripItem";
-            this.pasteToolStripItem.Click += new System.EventHandler(this.pasteTextFromTBButton);
+            pasteToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(pasteToolStripItem, "pasteToolStripItem");
+            pasteToolStripItem.Image = Properties.Resources.DocumentPaste;
+            pasteToolStripItem.Name = "pasteToolStripItem";
+            pasteToolStripItem.Click += pasteTextFromTBButton;
             // 
             // deleteToolStripItem
             // 
-            this.deleteToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.deleteToolStripItem, "deleteToolStripItem");
-            this.deleteToolStripItem.Image = global::TextPad_.Properties.Resources.DocumentDelete;
-            this.deleteToolStripItem.Name = "deleteToolStripItem";
-            this.deleteToolStripItem.Click += new System.EventHandler(this.deleteTextFromTBButton);
+            deleteToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(deleteToolStripItem, "deleteToolStripItem");
+            deleteToolStripItem.Image = Properties.Resources.DocumentDelete;
+            deleteToolStripItem.Name = "deleteToolStripItem";
+            deleteToolStripItem.Click += deleteTextFromTBButton;
             // 
             // toolStripSep3
             // 
-            this.toolStripSep3.Name = "toolStripSep3";
-            resources.ApplyResources(this.toolStripSep3, "toolStripSep3");
+            toolStripSep3.Name = "toolStripSep3";
+            resources.ApplyResources(toolStripSep3, "toolStripSep3");
             // 
             // undoToolStripItem
             // 
-            this.undoToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.undoToolStripItem, "undoToolStripItem");
-            this.undoToolStripItem.Name = "undoToolStripItem";
-            this.undoToolStripItem.Click += new System.EventHandler(this.undoTextFromTBButton);
+            undoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(undoToolStripItem, "undoToolStripItem");
+            undoToolStripItem.Name = "undoToolStripItem";
+            undoToolStripItem.Click += undoTextFromTBButton;
             // 
             // redoToolStripItem
             // 
-            this.redoToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.redoToolStripItem, "redoToolStripItem");
-            this.redoToolStripItem.Name = "redoToolStripItem";
-            this.redoToolStripItem.Click += new System.EventHandler(this.redoTextFromTBButton);
+            redoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(redoToolStripItem, "redoToolStripItem");
+            redoToolStripItem.Name = "redoToolStripItem";
+            redoToolStripItem.Click += redoTextFromTBButton;
             // 
             // toolStripSep4
             // 
-            this.toolStripSep4.Name = "toolStripSep4";
-            resources.ApplyResources(this.toolStripSep4, "toolStripSep4");
+            toolStripSep4.Name = "toolStripSep4";
+            resources.ApplyResources(toolStripSep4, "toolStripSep4");
             // 
             // fontToolStripItem
             // 
-            this.fontToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.fontToolStripItem, "fontToolStripItem");
-            this.fontToolStripItem.Image = global::TextPad_.Properties.Resources.Font;
-            this.fontToolStripItem.Name = "fontToolStripItem";
-            this.fontToolStripItem.Click += new System.EventHandler(this.fontTextFromTBButton);
+            fontToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(fontToolStripItem, "fontToolStripItem");
+            fontToolStripItem.Image = Properties.Resources.Font;
+            fontToolStripItem.Name = "fontToolStripItem";
+            fontToolStripItem.Click += fontTextFromTBButton;
             // 
             // toolStripSep5
             // 
-            this.toolStripSep5.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripSep5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripSep5.Name = "toolStripSep5";
-            resources.ApplyResources(this.toolStripSep5, "toolStripSep5");
+            toolStripSep5.BackColor = SystemColors.Control;
+            toolStripSep5.ForeColor = SystemColors.ButtonHighlight;
+            toolStripSep5.Name = "toolStripSep5";
+            resources.ApplyResources(toolStripSep5, "toolStripSep5");
             // 
             // searchToolStripItem
             // 
-            this.searchToolStripItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.searchToolStripItem, "searchToolStripItem");
-            this.searchToolStripItem.Image = global::TextPad_.Properties.Resources.Search;
-            this.searchToolStripItem.Name = "searchToolStripItem";
-            this.searchToolStripItem.Click += new System.EventHandler(this.search);
+            searchToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(searchToolStripItem, "searchToolStripItem");
+            searchToolStripItem.Image = Properties.Resources.Search;
+            searchToolStripItem.Name = "searchToolStripItem";
+            searchToolStripItem.Click += search;
             // 
             // runFileToolStrip
             // 
-            this.runFileToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.runFileToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.startScriptCombobox,
-            this.startFileButton});
-            resources.ApplyResources(this.runFileToolStrip, "runFileToolStrip");
-            this.runFileToolStrip.Name = "runFileToolStrip";
+            runFileToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            runFileToolStrip.Items.AddRange(new ToolStripItem[] { toolStripLabel1, startScriptCombobox, startFileButton });
+            resources.ApplyResources(runFileToolStrip, "runFileToolStrip");
+            runFileToolStrip.Name = "runFileToolStrip";
             // 
             // toolStripLabel1
             // 
-            resources.ApplyResources(this.toolStripLabel1, "toolStripLabel1");
-            this.toolStripLabel1.Name = "toolStripLabel1";
+            resources.ApplyResources(toolStripLabel1, "toolStripLabel1");
+            toolStripLabel1.Name = "toolStripLabel1";
             // 
             // startScriptCombobox
             // 
-            this.startScriptCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.startScriptCombobox, "startScriptCombobox");
-            this.startScriptCombobox.Items.AddRange(new object[] {
-            resources.GetString("startScriptCombobox.Items"),
-            resources.GetString("startScriptCombobox.Items1"),
-            resources.GetString("startScriptCombobox.Items2")});
-            this.startScriptCombobox.Name = "startScriptCombobox";
+            startScriptCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(startScriptCombobox, "startScriptCombobox");
+            startScriptCombobox.Items.AddRange(new object[] { resources.GetString("startScriptCombobox.Items"), resources.GetString("startScriptCombobox.Items1"), resources.GetString("startScriptCombobox.Items2") });
+            startScriptCombobox.Name = "startScriptCombobox";
             // 
             // startFileButton
             // 
-            this.startFileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.startFileButton.Image = global::TextPad_.Properties.Resources.FileStart;
-            resources.ApplyResources(this.startFileButton, "startFileButton");
-            this.startFileButton.Name = "startFileButton";
-            this.startFileButton.Click += new System.EventHandler(this.RunScript);
+            startFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            startFileButton.Image = Properties.Resources.FileStart;
+            resources.ApplyResources(startFileButton, "startFileButton");
+            startFileButton.Name = "startFileButton";
+            startFileButton.Click += RunScript;
             // 
             // FilesListView
             // 
-            this.FilesListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FilesListView.ContextMenuStrip = this.explorerContextMenu;
-            resources.ApplyResources(this.FilesListView, "FilesListView");
-            this.FilesListView.FullRowSelect = true;
-            this.FilesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.FilesListView.LargeImageList = this.listViewImages;
-            this.FilesListView.MultiSelect = false;
-            this.FilesListView.Name = "FilesListView";
-            this.FilesListView.SmallImageList = this.listViewImages;
-            this.FilesListView.StateImageList = this.listViewImages;
-            this.FilesListView.UseCompatibleStateImageBehavior = false;
-            this.FilesListView.View = System.Windows.Forms.View.List;
-            this.FilesListView.DoubleClick += new System.EventHandler(this.FilesListViewDoubleClick);
+            FilesListView.BorderStyle = BorderStyle.FixedSingle;
+            FilesListView.ContextMenuStrip = explorerContextMenu;
+            resources.ApplyResources(FilesListView, "FilesListView");
+            FilesListView.FullRowSelect = true;
+            FilesListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            FilesListView.LargeImageList = listViewImages;
+            FilesListView.MultiSelect = false;
+            FilesListView.Name = "FilesListView";
+            FilesListView.SmallImageList = listViewImages;
+            FilesListView.StateImageList = listViewImages;
+            FilesListView.UseCompatibleStateImageBehavior = false;
+            FilesListView.View = View.List;
+            FilesListView.DoubleClick += FilesListViewDoubleClick;
             // 
             // explorerContextMenu
             // 
-            this.explorerContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.удалитьToolStripMenuItem1});
-            this.explorerContextMenu.Name = "explorerContextMenu";
-            resources.ApplyResources(this.explorerContextMenu, "explorerContextMenu");
+            explorerContextMenu.Items.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem1 });
+            explorerContextMenu.Name = "explorerContextMenu";
+            resources.ApplyResources(explorerContextMenu, "explorerContextMenu");
             // 
             // удалитьToolStripMenuItem1
             // 
-            this.удалитьToolStripMenuItem1.Image = global::TextPad_.Properties.Resources.DocumentDelete;
-            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            resources.ApplyResources(this.удалитьToolStripMenuItem1, "удалитьToolStripMenuItem1");
-            this.удалитьToolStripMenuItem1.Click += new System.EventHandler(this.deleteFileInExplorer);
+            удалитьToolStripMenuItem1.Image = Properties.Resources.DocumentDelete;
+            удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
+            resources.ApplyResources(удалитьToolStripMenuItem1, "удалитьToolStripMenuItem1");
+            удалитьToolStripMenuItem1.Click += deleteFileInExplorer;
             // 
             // listViewImages
             // 
-            this.listViewImages.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.listViewImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listViewImages.ImageStream")));
-            this.listViewImages.TransparentColor = System.Drawing.Color.Transparent;
-            this.listViewImages.Images.SetKeyName(0, "folder.png");
-            this.listViewImages.Images.SetKeyName(1, "file.png");
+            listViewImages.ColorDepth = ColorDepth.Depth8Bit;
+            listViewImages.ImageStream = (ImageListStreamer)resources.GetObject("listViewImages.ImageStream");
+            listViewImages.TransparentColor = Color.Transparent;
+            listViewImages.Images.SetKeyName(0, "folder.png");
+            listViewImages.Images.SetKeyName(1, "file.png");
             // 
             // folderToolStrip
             // 
-            resources.ApplyResources(this.folderToolStrip, "folderToolStrip");
-            this.folderToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.folderToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openFolderToolBtn,
-            this.refreshFolderToolBtn,
-            this.closeFolderToolBtn,
-            this.toolStripSeparator1,
-            this.aboveFolderBtn,
-            this.toolStripSeparator2,
-            this.upSizeListViewTool,
-            this.downSizeListViewTool});
-            this.folderToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.folderToolStrip.Name = "folderToolStrip";
-            this.folderToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            resources.ApplyResources(folderToolStrip, "folderToolStrip");
+            folderToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            folderToolStrip.Items.AddRange(new ToolStripItem[] { openFolderToolBtn, refreshFolderToolBtn, closeFolderToolBtn, toolStripSeparator1, aboveFolderBtn, toolStripSeparator2, upSizeListViewTool, downSizeListViewTool });
+            folderToolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            folderToolStrip.Name = "folderToolStrip";
+            folderToolStrip.RenderMode = ToolStripRenderMode.System;
             // 
             // openFolderToolBtn
             // 
-            this.openFolderToolBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openFolderToolBtn.Image = global::TextPad_.Properties.Resources.FolderOpen;
-            resources.ApplyResources(this.openFolderToolBtn, "openFolderToolBtn");
-            this.openFolderToolBtn.Name = "openFolderToolBtn";
-            this.openFolderToolBtn.Click += new System.EventHandler(this.OpenFolderBtnClick);
+            openFolderToolBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            openFolderToolBtn.Image = Properties.Resources.FolderOpen;
+            resources.ApplyResources(openFolderToolBtn, "openFolderToolBtn");
+            openFolderToolBtn.Name = "openFolderToolBtn";
+            openFolderToolBtn.Click += OpenFolderBtnClick;
             // 
             // refreshFolderToolBtn
             // 
-            this.refreshFolderToolBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshFolderToolBtn.Image = global::TextPad_.Properties.Resources.Refresh;
-            resources.ApplyResources(this.refreshFolderToolBtn, "refreshFolderToolBtn");
-            this.refreshFolderToolBtn.Name = "refreshFolderToolBtn";
-            this.refreshFolderToolBtn.Click += new System.EventHandler(this.RefreshFolder);
+            refreshFolderToolBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            refreshFolderToolBtn.Image = Properties.Resources.Refresh;
+            resources.ApplyResources(refreshFolderToolBtn, "refreshFolderToolBtn");
+            refreshFolderToolBtn.Name = "refreshFolderToolBtn";
+            refreshFolderToolBtn.Click += RefreshFolder;
             // 
             // closeFolderToolBtn
             // 
-            this.closeFolderToolBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.closeFolderToolBtn.Image = global::TextPad_.Properties.Resources.FolderClose;
-            resources.ApplyResources(this.closeFolderToolBtn, "closeFolderToolBtn");
-            this.closeFolderToolBtn.Name = "closeFolderToolBtn";
-            this.closeFolderToolBtn.Click += new System.EventHandler(this.closeFolderToolBtnClick);
+            closeFolderToolBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            closeFolderToolBtn.Image = Properties.Resources.FolderClose;
+            resources.ApplyResources(closeFolderToolBtn, "closeFolderToolBtn");
+            closeFolderToolBtn.Name = "closeFolderToolBtn";
+            closeFolderToolBtn.Click += closeFolderToolBtnClick;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
             // 
             // aboveFolderBtn
             // 
-            this.aboveFolderBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.aboveFolderBtn.Image = global::TextPad_.Properties.Resources.FolderAbove;
-            resources.ApplyResources(this.aboveFolderBtn, "aboveFolderBtn");
-            this.aboveFolderBtn.Name = "aboveFolderBtn";
-            this.aboveFolderBtn.Click += new System.EventHandler(this.AboveFolderBtnClick);
+            aboveFolderBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            aboveFolderBtn.Image = Properties.Resources.FolderAbove;
+            resources.ApplyResources(aboveFolderBtn, "aboveFolderBtn");
+            aboveFolderBtn.Name = "aboveFolderBtn";
+            aboveFolderBtn.Click += AboveFolderBtnClick;
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(toolStripSeparator2, "toolStripSeparator2");
             // 
             // upSizeListViewTool
             // 
-            this.upSizeListViewTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.upSizeListViewTool.Image = global::TextPad_.Properties.Resources.ArrowUp;
-            resources.ApplyResources(this.upSizeListViewTool, "upSizeListViewTool");
-            this.upSizeListViewTool.Name = "upSizeListViewTool";
-            this.upSizeListViewTool.Click += new System.EventHandler(this.UpSizeListView);
+            upSizeListViewTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            upSizeListViewTool.Image = Properties.Resources.ArrowUp;
+            resources.ApplyResources(upSizeListViewTool, "upSizeListViewTool");
+            upSizeListViewTool.Name = "upSizeListViewTool";
+            upSizeListViewTool.Click += UpSizeListView;
             // 
             // downSizeListViewTool
             // 
-            this.downSizeListViewTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.downSizeListViewTool.Image = global::TextPad_.Properties.Resources.ArrowDown;
-            resources.ApplyResources(this.downSizeListViewTool, "downSizeListViewTool");
-            this.downSizeListViewTool.Name = "downSizeListViewTool";
-            this.downSizeListViewTool.Click += new System.EventHandler(this.DownSizeListView);
+            downSizeListViewTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            downSizeListViewTool.Image = Properties.Resources.ArrowDown;
+            resources.ApplyResources(downSizeListViewTool, "downSizeListViewTool");
+            downSizeListViewTool.Name = "downSizeListViewTool";
+            downSizeListViewTool.Click += DownSizeListView;
             // 
             // folderExplorerPanel
             // 
-            this.folderExplorerPanel.BackColor = System.Drawing.Color.Transparent;
-            this.folderExplorerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.folderExplorerPanel.Controls.Add(this.FilesListView);
-            this.folderExplorerPanel.Controls.Add(this.workFolderLabel);
-            this.folderExplorerPanel.Controls.Add(this.folderToolStrip);
-            resources.ApplyResources(this.folderExplorerPanel, "folderExplorerPanel");
-            this.folderExplorerPanel.Name = "folderExplorerPanel";
+            folderExplorerPanel.BackColor = Color.Transparent;
+            folderExplorerPanel.BorderStyle = BorderStyle.FixedSingle;
+            folderExplorerPanel.Controls.Add(FilesListView);
+            folderExplorerPanel.Controls.Add(workFolderLabel);
+            folderExplorerPanel.Controls.Add(folderToolStrip);
+            resources.ApplyResources(folderExplorerPanel, "folderExplorerPanel");
+            folderExplorerPanel.Name = "folderExplorerPanel";
             // 
             // workFolderLabel
             // 
-            resources.ApplyResources(this.workFolderLabel, "workFolderLabel");
-            this.workFolderLabel.Name = "workFolderLabel";
+            resources.ApplyResources(workFolderLabel, "workFolderLabel");
+            workFolderLabel.Name = "workFolderLabel";
             // 
             // cTabControl
             // 
-            resources.ApplyResources(this.cTabControl, "cTabControl");
-            this.cTabControl.Name = "cTabControl";
-            this.cTabControl.SelectedIndex = 0;
-            this.cTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.cTabControlSelecting);
+            resources.ApplyResources(cTabControl, "cTabControl");
+            cTabControl.Name = "cTabControl";
+            cTabControl.SelectedIndex = 0;
+            cTabControl.Selecting += cTabControlSelecting;
             // 
             // MainUIPanel
             // 
-            this.MainUIPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MainUIPanel.Controls.Add(this.cTabControl);
-            this.MainUIPanel.Controls.Add(this.folderExplorerPanel);
-            this.MainUIPanel.Controls.Add(this.toolsStrip);
-            this.MainUIPanel.Controls.Add(this.statusStrip);
-            this.MainUIPanel.Controls.Add(this.runFileToolStrip);
-            this.MainUIPanel.Controls.Add(this.menuStrip);
-            resources.ApplyResources(this.MainUIPanel, "MainUIPanel");
-            this.MainUIPanel.Name = "MainUIPanel";
+            MainUIPanel.BackColor = Color.Transparent;
+            MainUIPanel.Controls.Add(cTabControl);
+            MainUIPanel.Controls.Add(folderExplorerPanel);
+            MainUIPanel.Controls.Add(toolsStrip);
+            MainUIPanel.Controls.Add(statusStrip);
+            MainUIPanel.Controls.Add(runFileToolStrip);
+            MainUIPanel.Controls.Add(menuStrip);
+            resources.ApplyResources(MainUIPanel, "MainUIPanel");
+            MainUIPanel.Name = "MainUIPanel";
             // 
             // SettingsUIPanel
             // 
-            this.SettingsUIPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SettingsUIPanel.Controls.Add(this.settingsTabControl);
-            this.SettingsUIPanel.Controls.Add(this.SettingsBottomUIPanel);
-            resources.ApplyResources(this.SettingsUIPanel, "SettingsUIPanel");
-            this.SettingsUIPanel.Name = "SettingsUIPanel";
+            SettingsUIPanel.BackColor = Color.Transparent;
+            SettingsUIPanel.Controls.Add(settingsTabControl);
+            SettingsUIPanel.Controls.Add(SettingsBottomUIPanel);
+            resources.ApplyResources(SettingsUIPanel, "SettingsUIPanel");
+            SettingsUIPanel.Name = "SettingsUIPanel";
             // 
             // settingsTabControl
             // 
-            this.settingsTabControl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            resources.ApplyResources(this.settingsTabControl, "settingsTabControl");
-            this.settingsTabControl.Controls.Add(this.settingsTabPage);
-            this.settingsTabControl.Controls.Add(this.infoTabPage);
-            this.settingsTabControl.Multiline = true;
-            this.settingsTabControl.Name = "settingsTabControl";
-            this.settingsTabControl.SelectedIndex = 0;
-            this.settingsTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            settingsTabControl.AccessibleRole = AccessibleRole.None;
+            resources.ApplyResources(settingsTabControl, "settingsTabControl");
+            settingsTabControl.Controls.Add(settingsTabPage);
+            settingsTabControl.Controls.Add(infoTabPage);
+            settingsTabControl.Multiline = true;
+            settingsTabControl.Name = "settingsTabControl";
+            settingsTabControl.SelectedIndex = 0;
+            settingsTabControl.SizeMode = TabSizeMode.Fixed;
             // 
             // settingsTabPage
             // 
-            this.settingsTabPage.Controls.Add(this.panel11);
-            this.settingsTabPage.Controls.Add(this.panel5);
-            this.settingsTabPage.Controls.Add(this.panel4);
-            this.settingsTabPage.Controls.Add(this.panel1);
-            this.settingsTabPage.Controls.Add(this.panel3);
-            this.settingsTabPage.Controls.Add(this.panel9);
-            this.settingsTabPage.Controls.Add(this.panel8);
-            this.settingsTabPage.Controls.Add(this.panel2);
-            this.settingsTabPage.Controls.Add(this.panel7);
-            this.settingsTabPage.Controls.Add(this.panel6);
-            resources.ApplyResources(this.settingsTabPage, "settingsTabPage");
-            this.settingsTabPage.Name = "settingsTabPage";
-            this.settingsTabPage.UseVisualStyleBackColor = true;
+            settingsTabPage.Controls.Add(panel10);
+            settingsTabPage.Controls.Add(panel11);
+            settingsTabPage.Controls.Add(panel5);
+            settingsTabPage.Controls.Add(panel4);
+            settingsTabPage.Controls.Add(panel1);
+            settingsTabPage.Controls.Add(panel3);
+            settingsTabPage.Controls.Add(panel9);
+            settingsTabPage.Controls.Add(panel8);
+            settingsTabPage.Controls.Add(panel2);
+            settingsTabPage.Controls.Add(panel7);
+            settingsTabPage.Controls.Add(panel6);
+            resources.ApplyResources(settingsTabPage, "settingsTabPage");
+            settingsTabPage.Name = "settingsTabPage";
+            settingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            panel10.BorderStyle = BorderStyle.FixedSingle;
+            panel10.Controls.Add(encodingComboBox);
+            panel10.Controls.Add(label25);
+            resources.ApplyResources(panel10, "panel10");
+            panel10.Name = "panel10";
+            // 
+            // encodingComboBox
+            // 
+            encodingComboBox.FormattingEnabled = true;
+            encodingComboBox.Items.AddRange(new object[] { resources.GetString("encodingComboBox.Items"), resources.GetString("encodingComboBox.Items1"), resources.GetString("encodingComboBox.Items2"), resources.GetString("encodingComboBox.Items3"), resources.GetString("encodingComboBox.Items4") });
+            resources.ApplyResources(encodingComboBox, "encodingComboBox");
+            encodingComboBox.Name = "encodingComboBox";
+            // 
+            // label25
+            // 
+            resources.ApplyResources(label25, "label25");
+            label25.Name = "label25";
             // 
             // panel11
             // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.exitWhenClosingLastTabCheckBox);
-            this.panel11.Controls.Add(this.label24);
-            resources.ApplyResources(this.panel11, "panel11");
-            this.panel11.Name = "panel11";
+            panel11.BorderStyle = BorderStyle.FixedSingle;
+            panel11.Controls.Add(exitWhenClosingLastTabCheckBox);
+            panel11.Controls.Add(label24);
+            resources.ApplyResources(panel11, "panel11");
+            panel11.Name = "panel11";
             // 
             // exitWhenClosingLastTabCheckBox
             // 
-            resources.ApplyResources(this.exitWhenClosingLastTabCheckBox, "exitWhenClosingLastTabCheckBox");
-            this.exitWhenClosingLastTabCheckBox.Name = "exitWhenClosingLastTabCheckBox";
-            this.exitWhenClosingLastTabCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(exitWhenClosingLastTabCheckBox, "exitWhenClosingLastTabCheckBox");
+            exitWhenClosingLastTabCheckBox.Name = "exitWhenClosingLastTabCheckBox";
+            exitWhenClosingLastTabCheckBox.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.Name = "label24";
+            resources.ApplyResources(label24, "label24");
+            label24.Name = "label24";
             // 
             // panel5
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.wordWarpCheckBox);
-            this.panel5.Controls.Add(this.label5);
-            resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Name = "panel5";
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(wordWarpCheckBox);
+            panel5.Controls.Add(label5);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
             // 
             // wordWarpCheckBox
             // 
-            resources.ApplyResources(this.wordWarpCheckBox, "wordWarpCheckBox");
-            this.wordWarpCheckBox.Name = "wordWarpCheckBox";
-            this.wordWarpCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(wordWarpCheckBox, "wordWarpCheckBox");
+            wordWarpCheckBox.Name = "wordWarpCheckBox";
+            wordWarpCheckBox.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // panel4
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.overWindowsCheckBox);
-            this.panel4.Controls.Add(this.label4);
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.Name = "panel4";
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(overWindowsCheckBox);
+            panel4.Controls.Add(label4);
+            resources.ApplyResources(panel4, "panel4");
+            panel4.Name = "panel4";
             // 
             // overWindowsCheckBox
             // 
-            resources.ApplyResources(this.overWindowsCheckBox, "overWindowsCheckBox");
-            this.overWindowsCheckBox.Name = "overWindowsCheckBox";
-            this.overWindowsCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(overWindowsCheckBox, "overWindowsCheckBox");
+            overWindowsCheckBox.Name = "overWindowsCheckBox";
+            overWindowsCheckBox.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.explorerCheckBox);
-            this.panel1.Controls.Add(this.label1);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(explorerCheckBox);
+            panel1.Controls.Add(label1);
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Name = "panel1";
             // 
             // explorerCheckBox
             // 
-            resources.ApplyResources(this.explorerCheckBox, "explorerCheckBox");
-            this.explorerCheckBox.Name = "explorerCheckBox";
-            this.explorerCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(explorerCheckBox, "explorerCheckBox");
+            explorerCheckBox.Name = "explorerCheckBox";
+            explorerCheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.comboBoxLanguage);
-            this.panel3.Controls.Add(this.label3);
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(comboBoxLanguage);
+            panel3.Controls.Add(label3);
+            resources.ApplyResources(panel3, "panel3");
+            panel3.Name = "panel3";
             // 
             // comboBoxLanguage
             // 
-            this.comboBoxLanguage.FormattingEnabled = true;
-            this.comboBoxLanguage.Items.AddRange(new object[] {
-            resources.GetString("comboBoxLanguage.Items"),
-            resources.GetString("comboBoxLanguage.Items1")});
-            resources.ApplyResources(this.comboBoxLanguage, "comboBoxLanguage");
-            this.comboBoxLanguage.Name = "comboBoxLanguage";
+            comboBoxLanguage.FormattingEnabled = true;
+            comboBoxLanguage.Items.AddRange(new object[] { resources.GetString("comboBoxLanguage.Items"), resources.GetString("comboBoxLanguage.Items1") });
+            resources.ApplyResources(comboBoxLanguage, "comboBoxLanguage");
+            comboBoxLanguage.Name = "comboBoxLanguage";
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
             // 
             // panel9
             // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.textBox3);
-            this.panel9.Controls.Add(this.FontTextBox);
-            this.panel9.Controls.Add(this.label9);
-            resources.ApplyResources(this.panel9, "panel9");
-            this.panel9.Name = "panel9";
+            panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(textBox3);
+            panel9.Controls.Add(FontTextBox);
+            panel9.Controls.Add(label9);
+            resources.ApplyResources(panel9, "panel9");
+            panel9.Name = "panel9";
             // 
             // textBox3
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(textBox3, "textBox3");
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
             // 
             // FontTextBox
             // 
-            this.FontTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.FontTextBox, "FontTextBox");
-            this.FontTextBox.Name = "FontTextBox";
-            this.FontTextBox.ReadOnly = true;
-            this.FontTextBox.Click += new System.EventHandler(this.fontSettings);
+            FontTextBox.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(FontTextBox, "FontTextBox");
+            FontTextBox.Name = "FontTextBox";
+            FontTextBox.ReadOnly = true;
+            FontTextBox.Click += fontSettings;
             // 
             // label9
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            resources.ApplyResources(label9, "label9");
+            label9.Name = "label9";
             // 
             // panel8
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.instrumentPanelCheckBox);
-            this.panel8.Controls.Add(this.label8);
-            resources.ApplyResources(this.panel8, "panel8");
-            this.panel8.Name = "panel8";
+            panel8.BorderStyle = BorderStyle.FixedSingle;
+            panel8.Controls.Add(instrumentPanelCheckBox);
+            panel8.Controls.Add(label8);
+            resources.ApplyResources(panel8, "panel8");
+            panel8.Name = "panel8";
             // 
             // instrumentPanelCheckBox
             // 
-            resources.ApplyResources(this.instrumentPanelCheckBox, "instrumentPanelCheckBox");
-            this.instrumentPanelCheckBox.Name = "instrumentPanelCheckBox";
-            this.instrumentPanelCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(instrumentPanelCheckBox, "instrumentPanelCheckBox");
+            instrumentPanelCheckBox.Name = "instrumentPanelCheckBox";
+            instrumentPanelCheckBox.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboTheme);
-            this.panel2.Controls.Add(this.label2);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(comboTheme);
+            panel2.Controls.Add(label2);
+            resources.ApplyResources(panel2, "panel2");
+            panel2.Name = "panel2";
             // 
             // comboTheme
             // 
-            this.comboTheme.FormattingEnabled = true;
-            this.comboTheme.Items.AddRange(new object[] {
-            resources.GetString("comboTheme.Items"),
-            resources.GetString("comboTheme.Items1")});
-            resources.ApplyResources(this.comboTheme, "comboTheme");
-            this.comboTheme.Name = "comboTheme";
+            comboTheme.FormattingEnabled = true;
+            comboTheme.Items.AddRange(new object[] { resources.GetString("comboTheme.Items"), resources.GetString("comboTheme.Items1") });
+            resources.ApplyResources(comboTheme, "comboTheme");
+            comboTheme.Name = "comboTheme";
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // panel7
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.statusStripCheckBox);
-            this.panel7.Controls.Add(this.label7);
-            resources.ApplyResources(this.panel7, "panel7");
-            this.panel7.Name = "panel7";
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(statusStripCheckBox);
+            panel7.Controls.Add(label7);
+            resources.ApplyResources(panel7, "panel7");
+            panel7.Name = "panel7";
             // 
             // statusStripCheckBox
             // 
-            resources.ApplyResources(this.statusStripCheckBox, "statusStripCheckBox");
-            this.statusStripCheckBox.Name = "statusStripCheckBox";
-            this.statusStripCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(statusStripCheckBox, "statusStripCheckBox");
+            statusStripCheckBox.Name = "statusStripCheckBox";
+            statusStripCheckBox.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
             // 
             // panel6
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.runFilesPanelCheckBox);
-            this.panel6.Controls.Add(this.label6);
-            resources.ApplyResources(this.panel6, "panel6");
-            this.panel6.Name = "panel6";
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(runFilesPanelCheckBox);
+            panel6.Controls.Add(label6);
+            resources.ApplyResources(panel6, "panel6");
+            panel6.Name = "panel6";
             // 
             // runFilesPanelCheckBox
             // 
-            resources.ApplyResources(this.runFilesPanelCheckBox, "runFilesPanelCheckBox");
-            this.runFilesPanelCheckBox.Name = "runFilesPanelCheckBox";
-            this.runFilesPanelCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(runFilesPanelCheckBox, "runFilesPanelCheckBox");
+            runFilesPanelCheckBox.Name = "runFilesPanelCheckBox";
+            runFilesPanelCheckBox.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
             // 
             // infoTabPage
             // 
-            this.infoTabPage.Controls.Add(this.tabControl);
-            resources.ApplyResources(this.infoTabPage, "infoTabPage");
-            this.infoTabPage.Name = "infoTabPage";
-            this.infoTabPage.UseVisualStyleBackColor = true;
+            infoTabPage.Controls.Add(tabControl);
+            resources.ApplyResources(infoTabPage, "infoTabPage");
+            infoTabPage.Name = "infoTabPage";
+            infoTabPage.UseVisualStyleBackColor = true;
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage4);
-            this.tabControl.Controls.Add(this.tabPage5);
-            resources.ApplyResources(this.tabControl, "tabControl");
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
+            tabControl.Controls.Add(tabPage4);
+            tabControl.Controls.Add(tabPage5);
+            resources.ApplyResources(tabControl, "tabControl");
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.programComponentsPanel);
-            this.tabPage4.Controls.Add(this.programDescriptionPanel);
-            this.tabPage4.Controls.Add(this.programInfoPanel);
-            this.tabPage4.Name = "tabPage4";
-            // 
-            // programComponentsPanel
-            // 
-            this.programComponentsPanel.BackColor = System.Drawing.Color.Transparent;
-            this.programComponentsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.programComponentsPanel.Controls.Add(this.programComponentsTitle);
-            this.programComponentsPanel.Controls.Add(this.componentsTable);
-            resources.ApplyResources(this.programComponentsPanel, "programComponentsPanel");
-            this.programComponentsPanel.Name = "programComponentsPanel";
-            // 
-            // programComponentsTitle
-            // 
-            resources.ApplyResources(this.programComponentsTitle, "programComponentsTitle");
-            this.programComponentsTitle.Name = "programComponentsTitle";
-            // 
-            // componentsTable
-            // 
-            resources.ApplyResources(this.componentsTable, "componentsTable");
-            this.componentsTable.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.componentsTable.Controls.Add(this.label10, 0, 4);
-            this.componentsTable.Controls.Add(this.label14, 2, 1);
-            this.componentsTable.Controls.Add(this.label16, 2, 3);
-            this.componentsTable.Controls.Add(this.LSVersionLabel, 1, 3);
-            this.componentsTable.Controls.Add(this.label19, 0, 1);
-            this.componentsTable.Controls.Add(this.label20, 1, 1);
-            this.componentsTable.Controls.Add(this.label12, 1, 0);
-            this.componentsTable.Controls.Add(this.label11, 0, 0);
-            this.componentsTable.Controls.Add(this.label13, 2, 0);
-            this.componentsTable.Controls.Add(this.CTCLabelVersion, 1, 2);
-            this.componentsTable.Controls.Add(this.label17, 2, 2);
-            this.componentsTable.Controls.Add(this.label18, 0, 2);
-            this.componentsTable.Controls.Add(this.label15, 0, 3);
-            this.componentsTable.Controls.Add(this.MTBVersionLabel, 1, 4);
-            this.componentsTable.Controls.Add(this.label26, 2, 4);
-            this.componentsTable.Name = "componentsTable";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
-            // 
-            // label16
-            // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
-            // 
-            // LSVersionLabel
-            // 
-            resources.ApplyResources(this.LSVersionLabel, "LSVersionLabel");
-            this.LSVersionLabel.Name = "LSVersionLabel";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.Name = "label20";
-            // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
-            // CTCLabelVersion
-            // 
-            resources.ApplyResources(this.CTCLabelVersion, "CTCLabelVersion");
-            this.CTCLabelVersion.Name = "CTCLabelVersion";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
-            // 
-            // label15
-            // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.Name = "label15";
-            // 
-            // MTBVersionLabel
-            // 
-            resources.ApplyResources(this.MTBVersionLabel, "MTBVersionLabel");
-            this.MTBVersionLabel.Name = "MTBVersionLabel";
-            // 
-            // label26
-            // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
-            // 
-            // programDescriptionPanel
-            // 
-            resources.ApplyResources(this.programDescriptionPanel, "programDescriptionPanel");
-            this.programDescriptionPanel.Controls.Add(this.infoTextBox);
-            this.programDescriptionPanel.Name = "programDescriptionPanel";
-            // 
-            // infoTextBox
-            // 
-            this.infoTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.infoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.infoTextBox, "infoTextBox");
-            this.infoTextBox.Name = "infoTextBox";
-            this.infoTextBox.ReadOnly = true;
+            resources.ApplyResources(tabPage4, "tabPage4");
+            tabPage4.BackColor = SystemColors.Control;
+            tabPage4.Controls.Add(programInfoPanel);
+            tabPage4.Controls.Add(infoTextBox);
+            tabPage4.Controls.Add(programComponentsPanel);
+            tabPage4.Name = "tabPage4";
             // 
             // programInfoPanel
             // 
-            this.programInfoPanel.BackColor = System.Drawing.Color.Transparent;
-            this.programInfoPanel.Controls.Add(this.ProgramNameLabel);
-            this.programInfoPanel.Controls.Add(this.pictureBox);
-            this.programInfoPanel.Controls.Add(this.label23);
-            this.programInfoPanel.Controls.Add(this.textBoxWebSiteUrl);
-            this.programInfoPanel.Controls.Add(this.DeveloperLabel);
-            this.programInfoPanel.Controls.Add(this.label22);
-            this.programInfoPanel.Controls.Add(this.DateOfReleaseLabel);
-            this.programInfoPanel.Controls.Add(this.label21);
-            this.programInfoPanel.Controls.Add(this.VersionLabel);
-            this.programInfoPanel.Controls.Add(this.labelWebSite);
-            this.programInfoPanel.Controls.Add(this.buttonWebsite);
-            resources.ApplyResources(this.programInfoPanel, "programInfoPanel");
-            this.programInfoPanel.Name = "programInfoPanel";
+            programInfoPanel.BackColor = Color.Transparent;
+            programInfoPanel.Controls.Add(ProgramNameLabel);
+            programInfoPanel.Controls.Add(pictureBox);
+            programInfoPanel.Controls.Add(label23);
+            programInfoPanel.Controls.Add(textBoxWebSiteUrl);
+            programInfoPanel.Controls.Add(DeveloperLabel);
+            programInfoPanel.Controls.Add(label22);
+            programInfoPanel.Controls.Add(DateOfReleaseLabel);
+            programInfoPanel.Controls.Add(label21);
+            programInfoPanel.Controls.Add(VersionLabel);
+            programInfoPanel.Controls.Add(labelWebSite);
+            programInfoPanel.Controls.Add(buttonWebsite);
+            resources.ApplyResources(programInfoPanel, "programInfoPanel");
+            programInfoPanel.Name = "programInfoPanel";
             // 
             // ProgramNameLabel
             // 
-            resources.ApplyResources(this.ProgramNameLabel, "ProgramNameLabel");
-            this.ProgramNameLabel.Name = "ProgramNameLabel";
+            resources.ApplyResources(ProgramNameLabel, "ProgramNameLabel");
+            ProgramNameLabel.Name = "ProgramNameLabel";
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = global::TextPad_.Properties.Resources.TextPad__Logo;
-            resources.ApplyResources(this.pictureBox, "pictureBox");
-            this.pictureBox.InitialImage = global::TextPad_.Properties.Resources.TextPad__Logo;
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.TabStop = false;
+            pictureBox.Image = Properties.Resources.TextPad__Logo;
+            resources.ApplyResources(pictureBox, "pictureBox");
+            pictureBox.InitialImage = Properties.Resources.TextPad__Logo;
+            pictureBox.Name = "pictureBox";
+            pictureBox.TabStop = false;
             // 
             // label23
             // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
+            resources.ApplyResources(label23, "label23");
+            label23.Name = "label23";
             // 
             // textBoxWebSiteUrl
             // 
-            this.textBoxWebSiteUrl.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxWebSiteUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBoxWebSiteUrl, "textBoxWebSiteUrl");
-            this.textBoxWebSiteUrl.Name = "textBoxWebSiteUrl";
-            this.textBoxWebSiteUrl.ReadOnly = true;
+            textBoxWebSiteUrl.BackColor = SystemColors.Control;
+            textBoxWebSiteUrl.BorderStyle = BorderStyle.None;
+            resources.ApplyResources(textBoxWebSiteUrl, "textBoxWebSiteUrl");
+            textBoxWebSiteUrl.Name = "textBoxWebSiteUrl";
+            textBoxWebSiteUrl.ReadOnly = true;
             // 
             // DeveloperLabel
             // 
-            resources.ApplyResources(this.DeveloperLabel, "DeveloperLabel");
-            this.DeveloperLabel.Name = "DeveloperLabel";
+            resources.ApplyResources(DeveloperLabel, "DeveloperLabel");
+            DeveloperLabel.Name = "DeveloperLabel";
             // 
             // label22
             // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.Name = "label22";
+            resources.ApplyResources(label22, "label22");
+            label22.Name = "label22";
             // 
             // DateOfReleaseLabel
             // 
-            resources.ApplyResources(this.DateOfReleaseLabel, "DateOfReleaseLabel");
-            this.DateOfReleaseLabel.Name = "DateOfReleaseLabel";
+            resources.ApplyResources(DateOfReleaseLabel, "DateOfReleaseLabel");
+            DateOfReleaseLabel.Name = "DateOfReleaseLabel";
             // 
             // label21
             // 
-            resources.ApplyResources(this.label21, "label21");
-            this.label21.Name = "label21";
+            resources.ApplyResources(label21, "label21");
+            label21.Name = "label21";
             // 
             // VersionLabel
             // 
-            resources.ApplyResources(this.VersionLabel, "VersionLabel");
-            this.VersionLabel.Name = "VersionLabel";
+            resources.ApplyResources(VersionLabel, "VersionLabel");
+            VersionLabel.Name = "VersionLabel";
             // 
             // labelWebSite
             // 
-            resources.ApplyResources(this.labelWebSite, "labelWebSite");
-            this.labelWebSite.Name = "labelWebSite";
+            resources.ApplyResources(labelWebSite, "labelWebSite");
+            labelWebSite.Name = "labelWebSite";
             // 
             // buttonWebsite
             // 
-            resources.ApplyResources(this.buttonWebsite, "buttonWebsite");
-            this.buttonWebsite.Name = "buttonWebsite";
-            this.buttonWebsite.UseVisualStyleBackColor = true;
-            this.buttonWebsite.Click += new System.EventHandler(this.openWebSite);
+            resources.ApplyResources(buttonWebsite, "buttonWebsite");
+            buttonWebsite.Name = "buttonWebsite";
+            buttonWebsite.UseVisualStyleBackColor = true;
+            buttonWebsite.Click += openWebSite;
+            // 
+            // infoTextBox
+            // 
+            resources.ApplyResources(infoTextBox, "infoTextBox");
+            infoTextBox.BackColor = SystemColors.Control;
+            infoTextBox.BorderStyle = BorderStyle.None;
+            infoTextBox.Name = "infoTextBox";
+            infoTextBox.ReadOnly = true;
+            // 
+            // programComponentsPanel
+            // 
+            resources.ApplyResources(programComponentsPanel, "programComponentsPanel");
+            programComponentsPanel.BackColor = Color.Transparent;
+            programComponentsPanel.BorderStyle = BorderStyle.FixedSingle;
+            programComponentsPanel.Controls.Add(programComponentsTitle);
+            programComponentsPanel.Controls.Add(componentsTable);
+            programComponentsPanel.Name = "programComponentsPanel";
+            // 
+            // programComponentsTitle
+            // 
+            resources.ApplyResources(programComponentsTitle, "programComponentsTitle");
+            programComponentsTitle.Name = "programComponentsTitle";
+            // 
+            // componentsTable
+            // 
+            resources.ApplyResources(componentsTable, "componentsTable");
+            componentsTable.BackColor = Color.WhiteSmoke;
+            componentsTable.Controls.Add(label10, 0, 4);
+            componentsTable.Controls.Add(label14, 2, 1);
+            componentsTable.Controls.Add(label16, 2, 3);
+            componentsTable.Controls.Add(LSVersionLabel, 1, 3);
+            componentsTable.Controls.Add(label19, 0, 1);
+            componentsTable.Controls.Add(label20, 1, 1);
+            componentsTable.Controls.Add(label12, 1, 0);
+            componentsTable.Controls.Add(label13, 2, 0);
+            componentsTable.Controls.Add(CTCLabelVersion, 1, 2);
+            componentsTable.Controls.Add(label17, 2, 2);
+            componentsTable.Controls.Add(label18, 0, 2);
+            componentsTable.Controls.Add(label15, 0, 3);
+            componentsTable.Controls.Add(MTBVersionLabel, 1, 4);
+            componentsTable.Controls.Add(label26, 2, 4);
+            componentsTable.Controls.Add(label11, 0, 0);
+            componentsTable.Name = "componentsTable";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(label10, "label10");
+            label10.Name = "label10";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(label14, "label14");
+            label14.Name = "label14";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(label16, "label16");
+            label16.Name = "label16";
+            // 
+            // LSVersionLabel
+            // 
+            resources.ApplyResources(LSVersionLabel, "LSVersionLabel");
+            LSVersionLabel.Name = "LSVersionLabel";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(label19, "label19");
+            label19.Name = "label19";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(label20, "label20");
+            label20.Name = "label20";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(label12, "label12");
+            label12.Name = "label12";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(label13, "label13");
+            label13.Name = "label13";
+            // 
+            // CTCLabelVersion
+            // 
+            resources.ApplyResources(CTCLabelVersion, "CTCLabelVersion");
+            CTCLabelVersion.Name = "CTCLabelVersion";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(label17, "label17");
+            label17.Name = "label17";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(label18, "label18");
+            label18.Name = "label18";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(label15, "label15");
+            label15.Name = "label15";
+            // 
+            // MTBVersionLabel
+            // 
+            resources.ApplyResources(MTBVersionLabel, "MTBVersionLabel");
+            MTBVersionLabel.Name = "MTBVersionLabel";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(label26, "label26");
+            label26.Name = "label26";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(label11, "label11");
+            label11.Name = "label11";
             // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.SystemColors.Window;
-            this.tabPage5.Controls.Add(this.textBox2);
-            resources.ApplyResources(this.tabPage5, "tabPage5");
-            this.tabPage5.Name = "tabPage5";
+            tabPage5.BackColor = SystemColors.Window;
+            tabPage5.Controls.Add(textBox2);
+            resources.ApplyResources(tabPage5, "tabPage5");
+            tabPage5.Name = "tabPage5";
             // 
             // textBox2
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(textBox2, "textBox2");
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             // 
             // SettingsBottomUIPanel
             // 
-            this.SettingsBottomUIPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SettingsBottomUIPanel.Controls.Add(this.checkUpdatesButton);
-            this.SettingsBottomUIPanel.Controls.Add(this.cancelBatton);
-            this.SettingsBottomUIPanel.Controls.Add(this.saveButton);
-            resources.ApplyResources(this.SettingsBottomUIPanel, "SettingsBottomUIPanel");
-            this.SettingsBottomUIPanel.Name = "SettingsBottomUIPanel";
+            SettingsBottomUIPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingsBottomUIPanel.Controls.Add(checkUpdatesButton);
+            SettingsBottomUIPanel.Controls.Add(cancelBatton);
+            SettingsBottomUIPanel.Controls.Add(saveButton);
+            resources.ApplyResources(SettingsBottomUIPanel, "SettingsBottomUIPanel");
+            SettingsBottomUIPanel.Name = "SettingsBottomUIPanel";
             // 
             // checkUpdatesButton
             // 
-            resources.ApplyResources(this.checkUpdatesButton, "checkUpdatesButton");
-            this.checkUpdatesButton.Name = "checkUpdatesButton";
-            this.checkUpdatesButton.UseVisualStyleBackColor = true;
-            this.checkUpdatesButton.Click += new System.EventHandler(this.getUpdate);
+            resources.ApplyResources(checkUpdatesButton, "checkUpdatesButton");
+            checkUpdatesButton.Name = "checkUpdatesButton";
+            checkUpdatesButton.UseVisualStyleBackColor = true;
+            checkUpdatesButton.Click += getUpdate;
             // 
             // cancelBatton
             // 
-            resources.ApplyResources(this.cancelBatton, "cancelBatton");
-            this.cancelBatton.Name = "cancelBatton";
-            this.cancelBatton.UseVisualStyleBackColor = true;
-            this.cancelBatton.Click += new System.EventHandler(this.closeSettings);
+            resources.ApplyResources(cancelBatton, "cancelBatton");
+            cancelBatton.Name = "cancelBatton";
+            cancelBatton.UseVisualStyleBackColor = true;
+            cancelBatton.Click += closeSettings;
             // 
             // saveButton
             // 
-            resources.ApplyResources(this.saveButton, "saveButton");
-            this.saveButton.Name = "saveButton";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveSettings);
+            resources.ApplyResources(saveButton, "saveButton");
+            saveButton.Name = "saveButton";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += saveSettings;
             // 
             // FormMainUI
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.SettingsUIPanel);
-            this.Controls.Add(this.MainUIPanel);
-            this.KeyPreview = true;
-            this.MainMenuStrip = this.menuStrip;
-            this.Name = "FormMainUI";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormClosing);
-            this.Load += new System.EventHandler(this.MainFormLoad);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.contextMenuStrip.ResumeLayout(false);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.toolsStrip.ResumeLayout(false);
-            this.toolsStrip.PerformLayout();
-            this.runFileToolStrip.ResumeLayout(false);
-            this.runFileToolStrip.PerformLayout();
-            this.explorerContextMenu.ResumeLayout(false);
-            this.folderToolStrip.ResumeLayout(false);
-            this.folderToolStrip.PerformLayout();
-            this.folderExplorerPanel.ResumeLayout(false);
-            this.folderExplorerPanel.PerformLayout();
-            this.MainUIPanel.ResumeLayout(false);
-            this.MainUIPanel.PerformLayout();
-            this.SettingsUIPanel.ResumeLayout(false);
-            this.settingsTabControl.ResumeLayout(false);
-            this.settingsTabPage.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.infoTabPage.ResumeLayout(false);
-            this.tabControl.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.programComponentsPanel.ResumeLayout(false);
-            this.componentsTable.ResumeLayout(false);
-            this.componentsTable.PerformLayout();
-            this.programDescriptionPanel.ResumeLayout(false);
-            this.programDescriptionPanel.PerformLayout();
-            this.programInfoPanel.ResumeLayout(false);
-            this.programInfoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.SettingsBottomUIPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(MainUIPanel);
+            Controls.Add(SettingsUIPanel);
+            KeyPreview = true;
+            MainMenuStrip = menuStrip;
+            Name = "FormMainUI";
+            FormClosing += MainFormClosing;
+            Load += MainFormLoad;
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            contextMenuStrip.ResumeLayout(false);
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
+            toolsStrip.ResumeLayout(false);
+            toolsStrip.PerformLayout();
+            runFileToolStrip.ResumeLayout(false);
+            runFileToolStrip.PerformLayout();
+            explorerContextMenu.ResumeLayout(false);
+            folderToolStrip.ResumeLayout(false);
+            folderToolStrip.PerformLayout();
+            folderExplorerPanel.ResumeLayout(false);
+            folderExplorerPanel.PerformLayout();
+            MainUIPanel.ResumeLayout(false);
+            MainUIPanel.PerformLayout();
+            SettingsUIPanel.ResumeLayout(false);
+            settingsTabControl.ResumeLayout(false);
+            settingsTabPage.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            infoTabPage.ResumeLayout(false);
+            tabControl.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            programInfoPanel.ResumeLayout(false);
+            programInfoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            programComponentsPanel.ResumeLayout(false);
+            programComponentsPanel.PerformLayout();
+            componentsTable.ResumeLayout(false);
+            componentsTable.PerformLayout();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            SettingsBottomUIPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem copyEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cutEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selectAllEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem копироватьToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem вырезатьToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem вставитьToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem выделитьВсёToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteEditMenuItem;
-        private System.Windows.Forms.ToolStripSeparator menuStripSep2;
-        private System.Windows.Forms.ToolStripMenuItem undoEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newWindowFileMenuItem;
-        private System.Windows.Forms.ToolStripSeparator menuStripSep3;
-        private System.Windows.Forms.ToolStripMenuItem dateEditMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem отменитьToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem вернутьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveCurrentFileMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsFileMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openFileMenuItem;
-        private System.Windows.Forms.ToolStripSeparator separator2FileMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitFileMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchEditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeTabFileMenuItem;
-        private System.Windows.Forms.ToolStripButton saveToolStripItem;
-        private System.Windows.Forms.ToolStripButton openToolStripItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSep2;
-        private System.Windows.Forms.ToolStripButton copyToolStripItem;
-        private System.Windows.Forms.ToolStripButton cutToolStripItem;
-        private System.Windows.Forms.ToolStripButton pasteToolStripItem;
-        private System.Windows.Forms.ToolStripButton deleteToolStripItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSep3;
-        private System.Windows.Forms.ToolStripButton undoToolStripItem;
-        private System.Windows.Forms.ToolStripButton redoToolStripItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSep4;
-        private System.Windows.Forms.ToolStripButton searchToolStripItem;
-        private System.Windows.Forms.ToolStripButton fontToolStripItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSep5;
-        private System.Windows.Forms.ToolStripButton newTabToolStripItem;
-        private System.Windows.Forms.ToolStripButton closeTabToolStripItem;
-        private System.Windows.Forms.ToolStripMenuItem pythonRunMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vbsRunMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem batRunMenuItem;
-        public System.Windows.Forms.StatusStrip statusStrip;
-        public System.Windows.Forms.ToolStrip runFileToolStrip;
-        private System.Windows.Forms.ToolStripStatusLabel textLabelStatus;
-        public System.Windows.Forms.ToolStrip toolsStrip;
-        private System.Windows.Forms.ToolStripMenuItem editMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem runMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createTabFileMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSep1;
-        internal System.Windows.Forms.ToolStripMenuItem fileMenuItem;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem copyEditMenuItem;
+        private ToolStripMenuItem cutEditMenuItem;
+        private ToolStripMenuItem pasteEditMenuItem;
+        private ToolStripMenuItem selectAllEditMenuItem;
+        private ToolStripMenuItem копироватьToolStripMenuItem1;
+        private ToolStripMenuItem вырезатьToolStripMenuItem1;
+        private ToolStripMenuItem вставитьToolStripMenuItem1;
+        private ToolStripMenuItem выделитьВсёToolStripMenuItem1;
+        private ToolStripMenuItem удалитьToolStripMenuItem;
+        private ToolStripMenuItem deleteEditMenuItem;
+        private ToolStripSeparator menuStripSep2;
+        private ToolStripMenuItem undoEditMenuItem;
+        private ToolStripMenuItem redoEditMenuItem;
+        private ToolStripMenuItem newWindowFileMenuItem;
+        private ToolStripSeparator menuStripSep3;
+        private ToolStripMenuItem dateEditMenuItem;
+        private ToolStripSeparator toolStripSeparator4;
+        private ToolStripMenuItem отменитьToolStripMenuItem2;
+        private ToolStripMenuItem вернутьToolStripMenuItem;
+        private ToolStripMenuItem saveCurrentFileMenuItem;
+        private ToolStripMenuItem saveAsFileMenuItem;
+        private ToolStripMenuItem openFileMenuItem;
+        private ToolStripSeparator separator2FileMenuItem;
+        private ToolStripMenuItem exitFileMenuItem;
+        private ToolStripMenuItem searchEditMenuItem;
+        private ToolStripMenuItem closeTabFileMenuItem;
+        private ToolStripButton saveToolStripItem;
+        private ToolStripButton openToolStripItem;
+        private ToolStripSeparator toolStripSep2;
+        private ToolStripButton copyToolStripItem;
+        private ToolStripButton cutToolStripItem;
+        private ToolStripButton pasteToolStripItem;
+        private ToolStripButton deleteToolStripItem;
+        private ToolStripSeparator toolStripSep3;
+        private ToolStripButton undoToolStripItem;
+        private ToolStripButton redoToolStripItem;
+        private ToolStripSeparator toolStripSep4;
+        private ToolStripButton searchToolStripItem;
+        private ToolStripButton fontToolStripItem;
+        private ToolStripSeparator toolStripSep5;
+        private ToolStripButton newTabToolStripItem;
+        private ToolStripButton closeTabToolStripItem;
+        private ToolStripMenuItem pythonRunMenuItem;
+        private ToolStripMenuItem vbsRunMenuItem;
+        private ToolStripMenuItem batRunMenuItem;
+        public StatusStrip statusStrip;
+        public ToolStrip runFileToolStrip;
+        private ToolStripStatusLabel textLabelStatus;
+        public ToolStrip toolsStrip;
+        private ToolStripMenuItem editMenuItem;
+        private ToolStripMenuItem runMenuItem;
+        private ToolStripMenuItem optionsMenuItem;
+        private ToolStripMenuItem createTabFileMenuItem;
+        private ToolStripSeparator toolStripSep1;
+        internal ToolStripMenuItem fileMenuItem;
         internal FontDialog fontDialog;
         internal ToolStripStatusLabel textLengthLabel;
         private ListView FilesListView;
@@ -1590,7 +1584,7 @@ namespace TextPad_
         internal Panel folderExplorerPanel;
         private ToolStripButton aboveFolderBtn;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel statusStripSep1;
         private ToolStripStatusLabel textLinesLabelStatus;
         private ToolStripStatusLabel textLinesLabel;
         private ContextMenuStrip explorerContextMenu;
@@ -1679,11 +1673,22 @@ namespace TextPad_
         private ToolStripMenuItem путьИИмяФайлаToolStripMenuItem;
         private ToolStripMenuItem имяФайлаToolStripMenuItem;
         internal OpenFileDialog openFileDialog;
-        private Panel programDescriptionPanel;
         internal ToolStripMenuItem deletFileFileMenuItem;
         private Label label10;
         private Label MTBVersionLabel;
         private Label label26;
+        private ToolStripStatusLabel statusStripSep2;
+        private ToolStripStatusLabel statusStripEncodingLabel;
+        private ToolStripDropDownButton encodingDropDownBtn;
+        private ToolStripMenuItem uTF16ToolStripMenuItem;
+        private ToolStripMenuItem uTF7ToolStripMenuItem;
+        private ToolStripMenuItem uTF8ToolStripMenuItem;
+        private ToolStripMenuItem aSCIIToolStripMenuItem;
+        private ToolStripMenuItem unicodeToolStripMenuItem;
+        private Panel panel10;
+        internal ComboBox encodingComboBox;
+        private Label label25;
+        internal ToolStripStatusLabel encodingStatusLabel;
     }
 }
 

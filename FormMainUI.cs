@@ -14,13 +14,15 @@ namespace TextPad_
         // Logger
         private readonly ILogger LS = new LogSystem($"{Application.StartupPath}\\logs");
 
+        // Окно установщика обновлений
+        public FormUpdaterUI UpdaterUI { get; private set; } = new();
+
         // Обработчик запуска файлов
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
         public string DateOfRelease { get; } = "DEVELOPEMENT";
         public string ProgramPath { get; } = Application.StartupPath;
-        public string UpdaterPath { get; } = Application.StartupPath + "Updater.exe";
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
         // Список открытых файлов
@@ -200,17 +202,6 @@ namespace TextPad_
                 return;
         }
 
-        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
-        {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-
-            //if (e.KeyChar == '(')
-            //{
-            //    rtb.SelectedText = ")";
-            //    e.Handled = true;
-            //}
-        }
-
         // Методы для настроек
         private void openSettings(object sender, EventArgs e)
         {
@@ -255,6 +246,25 @@ namespace TextPad_
                 comboBoxLanguage.SelectedItem = "English / Английский";
             }
 
+            switch (Properties.Settings.Default.DefaultEncoding)
+            {
+                case "ASCII":
+                    encodingComboBox.SelectedItem = "ASCII";
+                    break;
+                case "UTF-7":
+                    encodingComboBox.SelectedItem = "UTF-7";
+                    break;
+                case "UTF-8":
+                    encodingComboBox.SelectedItem = "UTF-8";
+                    break;
+                case "UTF-16 (Unicode)":
+                    encodingComboBox.SelectedItem = "UTF-16 (Unicode)";
+                    break;
+                case "UTF-32":
+                    encodingComboBox.SelectedItem = "UTF-32";
+                    break;
+            }
+
             FontTextBox.Text = Properties.Settings.Default.EditorFont.ToString();
         }
 
@@ -296,6 +306,26 @@ namespace TextPad_
                     break;
             }
 
+            // Проверка кодировки
+            switch (encodingComboBox.SelectedItem)
+            {
+                case "ASCII":
+                    Properties.Settings.Default.DefaultEncoding = "ASCII";
+                    break;
+                case "UTF-7":
+                    Properties.Settings.Default.DefaultEncoding = "UTF-7";
+                    break;
+                case "UTF-8":
+                    Properties.Settings.Default.DefaultEncoding = "UTF-8";
+                    break;
+                case "UTF-16 (Unicode)":
+                    Properties.Settings.Default.DefaultEncoding = "UTF-16 (Unicode)";
+                    break;
+                case "UTF-32":
+                    Properties.Settings.Default.DefaultEncoding = "UTF-32";
+                    break;
+            }
+
             // Проверка настроек строки состояния
             Program.mainUI.statusStrip.Visible = Program.mainUI.statusStripCheckBox.Checked;
             Properties.Settings.Default.StatusStripVisible = Program.mainUI.statusStripCheckBox.Checked;
@@ -329,6 +359,8 @@ namespace TextPad_
                 MessageBox.Show(Resources.Localization.SettingsLangChange, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 isLangChanged = false;
             }
+
+            Properties.Settings.Default.Save();
 
             Program.mainUI.SettingsUIPanel.Visible = false;
             Program.mainUI.MainUIPanel.Visible = true;
@@ -383,15 +415,7 @@ namespace TextPad_
 
         private void getUpdate(object sender, EventArgs e)
         {
-            try
-            {
-                Process.Start(UpdaterPath);
-            }
-            catch
-            {
-                MessageBox.Show(Resources.Localization.MSGErrorStartUpdater, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error("An error occurred while launching the update installer. Updater.exe is missing.");
-            }
+            UpdaterUI.ShowDialog(this);
         }
 
         // Методы для cTabControl
@@ -410,7 +434,6 @@ namespace TextPad_
             rtb.ContextMenuStrip = contextMenuStrip;
             rtb.Font = Properties.Settings.Default.EditorFont;
             rtb.TextChanged += (sender, args) => TextBoxTextChanged();
-            rtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress);
             rtb.AcceptsTab = true;
 
             tpage.Controls.Add(rtb);
@@ -436,6 +459,12 @@ namespace TextPad_
             {
                 fileFolderFileMenuItem.Enabled = true;
                 deletFileFileMenuItem.Enabled = true;
+            }
+
+            rtb.Encoding = Properties.Settings.Default.DefaultEncoding;
+            if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
+            {
+                encodingStatusLabel.Text = rtb.Encoding;
             }
         }
 
@@ -454,7 +483,6 @@ namespace TextPad_
             rtb.ContextMenuStrip = contextMenuStrip;
             rtb.Font = Properties.Settings.Default.EditorFont;
             rtb.TextChanged += (sender, args) => TextBoxTextChanged();
-            rtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress);
             rtb.AcceptsTab = true;
 
             tpage.Controls.Add(rtb);
@@ -480,6 +508,12 @@ namespace TextPad_
             {
                 fileFolderFileMenuItem.Enabled = true;
                 deletFileFileMenuItem.Enabled = true;
+            }
+
+            rtb.Encoding = Properties.Settings.Default.DefaultEncoding;
+            if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
+            {
+                encodingStatusLabel.Text = rtb.Encoding;
             }
         }
 
@@ -530,13 +564,7 @@ namespace TextPad_
             }
         }
 
-        // Метод для события в форме, потому с аргументами
         private void closeAllTabs(object sender, EventArgs e)
-        {
-            closeAllTabs();
-        }
-
-        private void closeAllTabs()
         {
             foreach (TabPage tab in cTabControl.TabPages)
             {
@@ -659,6 +687,7 @@ namespace TextPad_
                 }
 
                 checkFiles();
+                encodingStatusLabel.Text = rtb.Encoding;
 
                 switch (Properties.Settings.Default.Theme)
                 {
@@ -679,6 +708,7 @@ namespace TextPad_
                 textLengthLabel.Text = "0";
                 textLinesLabel.Text = "1";
             }
+
         }
 
         // Обработка события TextChanged для каждого rich text box'а
@@ -705,6 +735,38 @@ namespace TextPad_
             checkFiles();
 
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
+        }
+
+        // Выбор кодировки
+        private void ChangeToASCII(object sender, EventArgs e)
+        {
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            rtb.Encoding = "ASCII";
+            encodingStatusLabel.Text = rtb.Encoding.ToString();
+        }
+        private void ChangeToUTF7(object sender, EventArgs e)
+        {
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            rtb.Encoding = "UTF-7";
+            encodingStatusLabel.Text = rtb.Encoding.ToString();
+        }
+        private void ChangeToUTF8(object sender, EventArgs e)
+        {
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            rtb.Encoding = "UTF-8";
+            encodingStatusLabel.Text = rtb.Encoding.ToString();
+        }
+        private void ChangeToUTF16(object sender, EventArgs e)
+        {
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            rtb.Encoding = "UTF-16 (Unicode)";
+            encodingStatusLabel.Text = rtb.Encoding.ToString();
+        }
+        private void ChangeToUTF32(object sender, EventArgs e)
+        {
+            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            rtb.Encoding = "UTF-32";
+            encodingStatusLabel.Text = rtb.Encoding.ToString();
         }
 
         // Методы для кнопок панели проводника
@@ -1066,8 +1128,16 @@ namespace TextPad_
             catch { }
         }
 
-        private void SaveRecentFiles()
+        internal void SaveParsameters()
         {
+            // Сохранение настроек и недавних файлов
+            Properties.Settings.Default.MainWindowState = this.WindowState.ToString();
+            Properties.Settings.Default.FormWidth = this.Width;
+            Properties.Settings.Default.FormHeight = this.Height;
+            Properties.Settings.Default.StartScriptsConfig = startScriptCombobox.SelectedItem.ToString();
+            Properties.Settings.Default.ExplorerSize = folderExplorerPanel.Width;
+            Properties.Settings.Default.Save();
+
             Properties.RecentFiles.Default.element0 = "Missing";
             Properties.RecentFiles.Default.element1 = "Missing";
             Properties.RecentFiles.Default.element2 = "Missing";
@@ -1234,64 +1304,6 @@ namespace TextPad_
 
             checkFiles();
 
-            // Xml конфигурация
-            try
-            {
-                /*
-                 * В файле Config.xml есть корневой элемент configuration. В нм содержатся 2 элемента: program и web.
-                 * В первый элемент программа сама записывает инфу о себе, а во втором находятся неизменяемая информация о моём сайте (url адреса).
-                 */
-
-                // Загрузка Xml файла
-                XmlDocument xmlConfig = new XmlDocument();
-                xmlConfig.Load(Application.StartupPath + @"Config.xml");
-
-                // В корневом элементе (DocumentElement) загруженного файла (xmlConfig) идёт обзор элементов в корневом элементе.
-                foreach (XmlNode node in xmlConfig.DocumentElement)
-                {
-                    // Если один из двух элементов в корневом называется program, то в его атрибут name устанавливается название сборки проекта через метод GetAssemblyName();
-                    if (node.Name == "program")
-                    {
-                        node.Attributes.GetNamedItem("name").Value = GetAssemblyName();
-
-                        // обход дочерних узлов из узла node (program) и установка нужных значений
-                        foreach (XmlNode childNode in node.ChildNodes)
-                        {
-                            if (childNode.Name == "version")
-                            {
-                                childNode.InnerText = GetAssemblyVersion().ToString();
-                            }
-                            if (childNode.Name == "path")
-                            {
-                                childNode.InnerText = ProgramPath;
-                            }
-                            if (childNode.Name == "language")
-                            {
-                                childNode.InnerText = Properties.Settings.Default.Language;
-                            }
-                        }
-                    }
-
-                    if (node.Name == "web")
-                    {
-                        foreach (XmlNode childNode in node.ChildNodes)
-                        {
-                            if (childNode.Name == "site")
-                            {
-                                WebSite = childNode.InnerText;
-                            }
-                        }
-                    }
-                }
-                // Сохранение документа
-                xmlConfig.Save(Application.StartupPath + @"Config.xml");
-            }
-            catch (Exception ex)
-            {
-                LS.Error($"{ex} Missing configuration file");
-                MessageBox.Show(Resources.Localization.MissingXmlFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
             LS.Debug("Options loaded");
             LS.Debug($"Program path: {ProgramPath}");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
@@ -1299,17 +1311,49 @@ namespace TextPad_
 
         private void MainFormClosing(object sender, FormClosingEventArgs e)
         {
-            // Закрытие всех вкладок
-            closeAllTabs();
 
-            // Сохранение настроек и недавних файлов
-            Properties.Settings.Default.MainWindowState = this.WindowState.ToString();
-            Properties.Settings.Default.FormWidth = this.Width;
-            Properties.Settings.Default.FormHeight = this.Height;
-            Properties.Settings.Default.StartScriptsConfig = startScriptCombobox.SelectedItem.ToString();
-            Properties.Settings.Default.ExplorerSize = folderExplorerPanel.Width;
-            Properties.Settings.Default.Save();
-            SaveRecentFiles();
+            // Проверка статуса обновления
+            if (Program.isUpdating == true)
+            {
+                return;
+            }
+            else
+            {
+                // Закрытие всех вкладок
+                foreach (TabPage tab in cTabControl.TabPages)
+                {
+                    rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
+
+                    if (rtb.TextLength != 0)
+                    {
+                        DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                        if (dr == DialogResult.Yes)
+                        {
+                            TextEditor.SaveCurrentFile();
+
+                        }
+                        else if (dr == DialogResult.No)
+                        {
+                            OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                            cTabControl.TabPages.Remove(tab);
+
+                        }
+                        else if (dr == DialogResult.Cancel)
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
+                        cTabControl.TabPages.Remove(tab);
+                    }
+                }
+            }
+
+            SaveParsameters();
+            Process.GetCurrentProcess().Kill();
 
             LS.Info("Exiting the program and saving parameters");
             LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");

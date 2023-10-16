@@ -70,15 +70,6 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Отсутствует файл конфигурации..
-        /// </summary>
-        public static string MissingXmlFile {
-            get {
-                return ResourceManager.GetString("MissingXmlFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Не удалось удалить элемент.
         /// </summary>
         public static string MSGErrorCantDeleteFile {
@@ -129,15 +120,6 @@ namespace TextPad_.Resources {
         public static string MSGErrorRunVBSFile {
             get {
                 return ResourceManager.GetString("MSGErrorRunVBSFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка при запуске установщика обновлений. Отсутствует файл Updater.exe..
-        /// </summary>
-        public static string MSGErrorStartUpdater {
-            get {
-                return ResourceManager.GetString("MSGErrorStartUpdater", resourceCulture);
             }
         }
         
@@ -246,6 +228,69 @@ namespace TextPad_.Resources {
         public static string UnknownError {
             get {
                 return ResourceManager.GetString("UnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось проверить наличие обновлений. Проверьте подключение к интернету..
+        /// </summary>
+        public static string UPDATERErrorCantCheckUpdates {
+            get {
+                return ResourceManager.GetString("UPDATERErrorCantCheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка..
+        /// </summary>
+        public static string UPDATERErrorUnexpectedError {
+            get {
+                return ResourceManager.GetString("UPDATERErrorUnexpectedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на У вас установлена последняя версия программы.
+        /// </summary>
+        public static string UPDATERInfoLatestVersion {
+            get {
+                return ResourceManager.GetString("UPDATERInfoLatestVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Доступно обновление. Установить? Перед установкой обновления сохраните все данные в программе..
+        /// </summary>
+        public static string UPDATERInfoUpdateAvailable {
+            get {
+                return ResourceManager.GetString("UPDATERInfoUpdateAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Закрытие программы....
+        /// </summary>
+        public static string UPDATERStatusUpdateClosingProgram {
+            get {
+                return ResourceManager.GetString("UPDATERStatusUpdateClosingProgram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Удаление старой версии....
+        /// </summary>
+        public static string UPDATERStatusUpdateDeleteOldVersion {
+            get {
+                return ResourceManager.GetString("UPDATERStatusUpdateDeleteOldVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Скачивание и установка....
+        /// </summary>
+        public static string UPDATERStatusUpdateDownloadAndInstall {
+            get {
+                return ResourceManager.GetString("UPDATERStatusUpdateDownloadAndInstall", resourceCulture);
             }
         }
     }

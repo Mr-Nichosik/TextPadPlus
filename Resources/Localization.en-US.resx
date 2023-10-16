@@ -120,9 +120,6 @@
   <data name="LineNotFound" xml:space="preserve">
     <value>Nothing was found according to your request.</value>
   </data>
-  <data name="MissingXmlFile" xml:space="preserve">
-    <value>Missing configuration file.</value>
-  </data>
   <data name="MSGErrorCantDeleteFile" xml:space="preserve">
     <value>Failed to delete item</value>
   </data>
@@ -140,9 +137,6 @@
   </data>
   <data name="MSGErrorRunVBSFile" xml:space="preserve">
     <value>An error occurred while running the Visual Basic script file. Perhaps it was not saved correctly or the VBS core cscript.exe is missing in the directories of the C:\Windows\ folder.</value>
-  </data>
-  <data name="MSGErrorStartUpdater" xml:space="preserve">
-    <value>An error occurred while launching the update installer. Updater.exe is missing.</value>
   </data>
   <data name="MSGErrorWhenCheckingInternet" xml:space="preserve">
     <value>An error has occurred. Check your internet connection.</value>
@@ -179,5 +173,26 @@
   </data>
   <data name="UnknownError" xml:space="preserve">
     <value>Unknown error</value>
+  </data>
+  <data name="UPDATERErrorCantCheckUpdates" xml:space="preserve">
+    <value>Failed to check for updates. Check your internet connection.</value>
+  </data>
+  <data name="UPDATERErrorUnexpectedError" xml:space="preserve">
+    <value>Unexpected error.</value>
+  </data>
+  <data name="UPDATERInfoLatestVersion" xml:space="preserve">
+    <value>You have the latest version of the program installed</value>
+  </data>
+  <data name="UPDATERInfoUpdateAvailable" xml:space="preserve">
+    <value>An update is available. Do you want to install? Before installing the update, save all the data in the program.</value>
+  </data>
+  <data name="UPDATERStatusUpdateClosingProgram" xml:space="preserve">
+    <value>Closing the program...</value>
+  </data>
+  <data name="UPDATERStatusUpdateDeleteOldVersion" xml:space="preserve">
+    <value>Removing old version...</value>
+  </data>
+  <data name="UPDATERStatusUpdateDownloadAndInstall" xml:space="preserve">
+    <value>Download and install...</value>
   </data>
 </root>

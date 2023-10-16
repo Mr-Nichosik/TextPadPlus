@@ -120,9 +120,6 @@
   <data name="LineNotFound" xml:space="preserve">
     <value>По вашему запросу ничего не нашлось.</value>
   </data>
-  <data name="MissingXmlFile" xml:space="preserve">
-    <value>Отсутствует файл конфигурации.</value>
-  </data>
   <data name="MSGErrorCantDeleteFile" xml:space="preserve">
     <value>Не удалось удалить элемент</value>
   </data>
@@ -140,9 +137,6 @@
   </data>
   <data name="MSGErrorRunVBSFile" xml:space="preserve">
     <value>Ошибка при запуске файла сценария Visual Basic. Возможно, он неправильно сохранён или отсутствует ядро VBS cscript.exe в каталогах папки C:\Windows\ .</value>
-  </data>
-  <data name="MSGErrorStartUpdater" xml:space="preserve">
-    <value>Ошибка при запуске установщика обновлений. Отсутствует файл Updater.exe.</value>
   </data>
   <data name="MSGErrorWhenCheckingInternet" xml:space="preserve">
     <value>Произошла ошибка. Проверьте подключение к интернету.</value>
@@ -179,5 +173,26 @@
   </data>
   <data name="UnknownError" xml:space="preserve">
     <value>Неизвестная ошибка</value>
+  </data>
+  <data name="UPDATERErrorCantCheckUpdates" xml:space="preserve">
+    <value>Не удалось проверить наличие обновлений. Проверьте подключение к интернету.</value>
+  </data>
+  <data name="UPDATERErrorUnexpectedError" xml:space="preserve">
+    <value>Непредвиденная ошибка.</value>
+  </data>
+  <data name="UPDATERInfoLatestVersion" xml:space="preserve">
+    <value>У вас установлена последняя версия программы</value>
+  </data>
+  <data name="UPDATERInfoUpdateAvailable" xml:space="preserve">
+    <value>Доступно обновление. Установить? Перед установкой обновления сохраните все данные в программе.</value>
+  </data>
+  <data name="UPDATERStatusUpdateClosingProgram" xml:space="preserve">
+    <value>Закрытие программы...</value>
+  </data>
+  <data name="UPDATERStatusUpdateDeleteOldVersion" xml:space="preserve">
+    <value>Удаление старой версии...</value>
+  </data>
+  <data name="UPDATERStatusUpdateDownloadAndInstall" xml:space="preserve">
+    <value>Скачивание и установка...</value>
   </data>
 </root>

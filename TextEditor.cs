@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 namespace TextPad_
 {
     /// <summary>
@@ -29,10 +31,36 @@ namespace TextPad_
                     */
                     Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, Program.mainUI.saveFileDialog.FileName);
 
-                    // в файл сохраняется текст текущей вкладки по пути, указанному пользователем и ранее добавленного в список.
-                    StreamWriter fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false);
-                    fileWriter.Write(rtb.Text);
-                    fileWriter.Close();
+                    // в файл сохраняется текст текущей вкладки по пути, указанному пользователем и ранее добавленного в список, учитывая значение кодировки из rtb.
+                    StreamWriter fileWriter;
+                    switch (rtb.Encoding)
+                    {
+                        case "ASCII":
+                            fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.ASCII);
+                            fileWriter.Write(rtb.Text);
+                            fileWriter.Close();
+                            break;
+                        case "UTF-7":
+                            fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.UTF7);
+                            fileWriter.Write(rtb.Text);
+                            fileWriter.Close();
+                            break;
+                        case "UTF-8":
+                            fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.UTF8);
+                            fileWriter.Write(rtb.Text);
+                            fileWriter.Close();
+                            break;
+                        case "UTF-16 (Unicode)":
+                            fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.Unicode);
+                            fileWriter.Write(rtb.Text);
+                            fileWriter.Close();
+                            break;
+                        case "UTF-32":
+                            fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.UTF32);
+                            fileWriter.Write(rtb.Text);
+                            fileWriter.Close();
+                            break;
+                    }
 
                     // заголовком вкладки становится название файла, путь до которого взят из списка openedFiles с индексом этой вкладки
                     Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
@@ -40,7 +68,7 @@ namespace TextPad_
                     // Обновление статуса файла
                     rtb.IsFileSaved = true;
                     rtb.IsFileChanged = false;
-                    Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
+                    Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
 
                     // Внос файла в список недавних файлов
                     if (Program.mainUI.recentFilesMenuItem.DropDownItems.Count == 10)
@@ -73,7 +101,6 @@ namespace TextPad_
         {
             try
             {
-
                 rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 // если путь до файла с индексом открытой вкладки отсутствует (Missing)
@@ -87,15 +114,41 @@ namespace TextPad_
                 {
                     try
                     {
-                        // в файл сохраняется текст текущей вкладки по пути, указанному пользователем и ранее добавленного в список.
-                        StreamWriter fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false);
-                        fileWriter.Write(rtb.Text);
-                        fileWriter.Close();
+                        // в файл сохраняется текст текущей вкладки по пути, указанному пользователем и ранее добавленного в список, учитывая значение кодировки из rtb.
+                        StreamWriter fileWriter;
+                        switch (rtb.Encoding)
+                        {
+                            case "ASCII":
+                                fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.ASCII);
+                                fileWriter.Write(rtb.Text);
+                                fileWriter.Close();
+                                break;
+                            case "UTF-7":
+                                fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.UTF7);
+                                fileWriter.Write(rtb.Text);
+                                fileWriter.Close();
+                                break;
+                            case "UTF-8":
+                                fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.UTF8);
+                                fileWriter.Write(rtb.Text);
+                                fileWriter.Close();
+                                break;
+                            case "UTF-16 (Unicode)":
+                                fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.Unicode);
+                                fileWriter.Write(rtb.Text);
+                                fileWriter.Close();
+                                break;
+                            case "UTF-32":
+                                fileWriter = new StreamWriter(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), false, Encoding.UTF32);
+                                fileWriter.Write(rtb.Text);
+                                fileWriter.Close();
+                                break;
+                        }
 
                         // Обновление статуса файла
                         rtb.IsFileSaved = true;
                         rtb.IsFileChanged = false;
-                        Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
+                        Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
 
                         Program.mainUI.deletFileFileMenuItem.Enabled = true;
                     }
@@ -129,10 +182,51 @@ namespace TextPad_
                 // Вызываем openFileDialog и полученный путь до файла (fileName) записываем в список openedFiles в индекс текущей вкладки
                 Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, Program.mainUI.openFileDialog.FileName);
 
-                // Считываем текст этого файла, путь берём из того же списка
-                StreamReader fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
-                rtb.Text = fileReader.ReadToEnd();
-                fileReader.Close();
+                // Считываем текст этого файла, путь берём из того же списка. Проверяем кодировку
+                StreamReader fileReader;
+                switch (Properties.Settings.Default.DefaultEncoding)
+                {
+                    case "ASCII":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.ASCII);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "ASCII";
+                        rtb.Encoding = "ASCII";
+                        break;
+                    case "UTF-7":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.UTF7);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-7";
+                        rtb.Encoding = "UTF-7";
+                        break;
+                    case "UTF-8":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.UTF8);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-8";
+                        rtb.Encoding = "UTF-8";
+                        break;
+                    case "UTF-16 (Unicode)":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.Unicode);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-16 (Unicode)";
+                        rtb.Encoding = "UTF-16 (Unicode)";
+                        break;
+                    case "UTF-32":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.UTF32);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-32";
+                        rtb.Encoding = "UTF-32";
+                        break;
+                }
+
+                // Обновление статуса файла
+                rtb.IsFileSaved = true;
+                rtb.IsFileChanged = false;
+                Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
 
                 // Задаём заголовок вкладки с названием файла
                 Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
@@ -167,10 +261,50 @@ namespace TextPad_
                 // Вызываем openFileDialog и полученный путь до файла (fileName) записываем в список openedFiles в индекс текущей вкладки
                 Program.mainUI.OpenedFiles.Insert(Program.mainUI.cTabControl.SelectedIndex, fileName);
 
-                // Считываем текст этого файла, путь берём из того же списка
-                StreamReader fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
-                rtb.Text = fileReader.ReadToEnd();
-                fileReader.Close();
+                // Считываем текст этого файла, путь берём из того же списка. Проверяем кодировку
+                StreamReader fileReader;
+                switch (Properties.Settings.Default.DefaultEncoding)
+                {
+                    case "ASCII":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.ASCII);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "ASCII";
+                        rtb.Encoding = "ASCII";
+                        break;
+                    case "UTF-7":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.UTF7);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-7";
+                        rtb.Encoding = "UTF-7";
+                        break;
+                    case "UTF-8":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.UTF8);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-8";
+                        rtb.Encoding = "UTF-8";
+                        break;
+                    case "UTF-16 (Unicode)":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.Unicode);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-16 (Unicode)";
+                        rtb.Encoding = "UTF-16 (Unicode)";
+                        break;
+                    case "UTF-32":
+                        fileReader = new StreamReader(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex), Encoding.UTF32);
+                        rtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        Program.mainUI.encodingStatusLabel.Text = "UTF-32";
+                        rtb.Encoding = "UTF-32";
+                        break;
+                }
+
+                // Обновление статуса файла
+                rtb.IsFileSaved = true;
+                rtb.IsFileChanged = false;
 
                 // Задаём заголовок вкладки с названием файла
                 Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
