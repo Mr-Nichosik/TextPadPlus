@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <TargetFramework>net6.0-windows8.0</TargetFramework>
     <RootNamespace>TextPad_</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>True</UseWPF>
     <ImplicitUsings>disable</ImplicitUsings>
     <ApplicationIcon>Resources\Icons\Favicon.ico</ApplicationIcon>
     <PlatformTarget>x86</PlatformTarget>
@@ -17,7 +18,6 @@
     <Version>2.6.0</Version>
     <IncludeSymbols>False</IncludeSymbols>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <UseWPF>True</UseWPF>
     <StartupObject>TextPad_.Program</StartupObject>
   </PropertyGroup>
 

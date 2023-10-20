@@ -54,7 +54,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="DefaultEncoding" Type="System.String" Scope="User">
-      <Value Profile="(Default)">UTF8</Value>
+      <Value Profile="(Default)">UTF-8</Value>
     </Setting>
   </Settings>
 </SettingsFile>

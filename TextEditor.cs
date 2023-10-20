@@ -9,7 +9,7 @@ namespace TextPad_
     /// </summary>
     internal class TextEditor : IFileRunner
     {
-        private static readonly ILogger Ls = new LogSystem($"{Application.StartupPath}\\logs");
+        private static readonly ILogger LS = new LogSystem($"{Application.StartupPath}\\logs");
         private static MTextBox? rtb;
 
         // Метод сохранения файла "Сохранить как..."
@@ -80,18 +80,18 @@ namespace TextPad_
 
                     Program.mainUI.deletFileFileMenuItem.Enabled = true;
 
-                    Ls.Debug("Saving file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                    LS.Info("Saving file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
                 }
                 catch
                 {
                     MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Ls.Error("Handling an error when saving a file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                    LS.Error("Handling an error when saving a file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
                 }
 
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} by saving file.");
+                LS.Error($"{ex} by saving file.");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -155,15 +155,15 @@ namespace TextPad_
                     catch
                     {
                         MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Ls.Error("Error when saving an open file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                        LS.Error("Error when saving an open file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
                     }
                 }
 
-                Ls.Debug("Saving file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                LS.Info("Saving file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} by saving current file.");
+                LS.Error($"{ex} by saving current file.");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -239,11 +239,11 @@ namespace TextPad_
                 tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
                 Program.mainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
 
-                Ls.Debug("Opening file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                LS.Info("Opening file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} when opening an open file.");
+                LS.Error($"{ex} when opening an open file.");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenOpenFIle, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -309,11 +309,11 @@ namespace TextPad_
                 // Задаём заголовок вкладки с названием файла
                 Program.mainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
 
-                Ls.Debug("Opening file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                LS.Info("Opening file: " + Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} when opening an open file.");
+                LS.Error($"{ex} when opening an open file.");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenOpenFIle, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -411,7 +411,7 @@ namespace TextPad_
 
         public void PythonRun()
         {
-            Ls.Debug("Running a Python file");
+            LS.Info("Running a Python file");
             rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
@@ -428,16 +428,14 @@ namespace TextPad_
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} Error while running python file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
+                LS.Error($"{ex} Error while running python file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
         public void PythonRun(string path)
         {
-            Ls.Debug("Running a Python file");
+            LS.Info("Running a Python file");
             rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
@@ -454,16 +452,14 @@ namespace TextPad_
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} Error while running python file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
+                LS.Error($"{ex} Error while running python file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
         public void BatRun()
         {
-            Ls.Debug("Running a bat file");
+            LS.Info("Running a bat file");
 
             rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -481,15 +477,14 @@ namespace TextPad_
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} Error while running Windows Script: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
+                LS.Error($"{ex} Error while running Windows Script: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunBatFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
         public void VbsRun()
         {
-            Ls.Debug("Running a vbs file");
+            LS.Info("Running a vbs file");
 
             rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -501,16 +496,15 @@ namespace TextPad_
                     return;
                 }
 
-                TextEditor.SaveCurrentFile();
+                SaveCurrentFile();
 
                 Process.Start("wscript.exe", Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
             }
             catch (Exception ex)
             {
-                Ls.Error($"{ex} Error while running VBScript file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
+                LS.Error($"{ex} Error while running VBScript file: {Program.mainUI.OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunVBSFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Ls.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
     }
 }

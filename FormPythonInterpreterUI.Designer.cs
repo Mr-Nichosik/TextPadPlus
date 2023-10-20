@@ -29,75 +29,74 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPythonInterpreterUI));
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pathTextBox = new System.Windows.Forms.TextBox();
-            this.browseBtn = new System.Windows.Forms.Button();
-            this.doneBtn = new System.Windows.Forms.Button();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.SuspendLayout();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            label1 = new Label();
+            pathTextBox = new TextBox();
+            browseBtn = new Button();
+            doneBtn = new Button();
+            openFileDialog = new OpenFileDialog();
+            SuspendLayout();
             // 
             // radioButton1
             // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButtonCheckedChanged);
+            resources.ApplyResources(radioButton1, "radioButton1");
+            radioButton1.Name = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += radioButtonCheckedChanged;
             // 
             // radioButton2
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(radioButton2, "radioButton2");
+            radioButton2.Name = "radioButton2";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // pathTextBox
             // 
-            resources.ApplyResources(this.pathTextBox, "pathTextBox");
-            this.pathTextBox.Name = "pathTextBox";
+            resources.ApplyResources(pathTextBox, "pathTextBox");
+            pathTextBox.Name = "pathTextBox";
             // 
             // browseBtn
             // 
-            resources.ApplyResources(this.browseBtn, "browseBtn");
-            this.browseBtn.Name = "browseBtn";
-            this.browseBtn.UseVisualStyleBackColor = true;
-            this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
+            resources.ApplyResources(browseBtn, "browseBtn");
+            browseBtn.Name = "browseBtn";
+            browseBtn.UseVisualStyleBackColor = true;
+            browseBtn.Click += browseBtn_Click;
             // 
             // doneBtn
             // 
-            resources.ApplyResources(this.doneBtn, "doneBtn");
-            this.doneBtn.Name = "doneBtn";
-            this.doneBtn.UseVisualStyleBackColor = true;
-            this.doneBtn.Click += new System.EventHandler(this.doneBtn_Click);
+            resources.ApplyResources(doneBtn, "doneBtn");
+            doneBtn.Name = "doneBtn";
+            doneBtn.UseVisualStyleBackColor = true;
+            doneBtn.Click += doneBtn_Click;
             // 
             // openFileDialog
             // 
-            resources.ApplyResources(this.openFileDialog, "openFileDialog");
+            resources.ApplyResources(openFileDialog, "openFileDialog");
             // 
             // FormPythonInterpreterUI
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.doneBtn);
-            this.Controls.Add(this.browseBtn);
-            this.Controls.Add(this.pathTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormPythonInterpreterUI";
-            this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.FormPythonInterpreterUI_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(doneBtn);
+            Controls.Add(browseBtn);
+            Controls.Add(pathTextBox);
+            Controls.Add(label1);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormPythonInterpreterUI";
+            ShowInTaskbar = false;
+            Load += FormPythonInterpreterUI_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

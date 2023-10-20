@@ -229,7 +229,7 @@ namespace TextPad_.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("UTF8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("UTF-8")]
         public string DefaultEncoding {
             get {
                 return ((string)(this["DefaultEncoding"]));

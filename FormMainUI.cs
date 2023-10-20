@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -48,13 +49,12 @@ namespace TextPad_
                 System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
             }
 
-            LS.Info("Program Initialization");
+            LS.Info("MainUI Initialization");
             InitializeComponent();
 
             Program.mainUI = this;
 
-            LS.Info("Program launched successfully");
-            LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
+            LS.Debug("Program launched successfully");
         }
 
         // Переопределение OnKeyDown для добавления сочетаний клавиш
@@ -150,9 +150,9 @@ namespace TextPad_
             try
             {
                 if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
-                    Process.Start("explorer.exe", Path.GetDirectoryName(OpenedFiles.ElementAt(cTabControl.SelectedIndex)));
+                    Process.Start("explorer.exe", Path.GetDirectoryName(OpenedFiles.ElementAt(cTabControl.SelectedIndex))!);
             }
-            catch { return; }
+            catch { }
         }
 
         private void deleteFile(object sender, EventArgs e)
@@ -704,7 +704,7 @@ namespace TextPad_
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} Error while selecting tabs (?). Maybe not have any tabs open.");
+                LS.Error($"{ex} Error while selecting tabs (?). Maybe not have any tabs open. If nothing is broken, then ignore it.");
                 textLengthLabel.Text = "0";
                 textLinesLabel.Text = "1";
             }
@@ -733,8 +733,6 @@ namespace TextPad_
             }
 
             checkFiles();
-
-            LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
         }
 
         // Выбор кодировки
@@ -1049,7 +1047,7 @@ namespace TextPad_
             rtb.ForeColor = Color.Cyan;
         }
 
-        // Немного говнокода для сохранения в файл параметров список последних файлов
+        // Немного говнокода для сохранения загрузки списка последних файлов в файле Properties.RecentFiles
         private void LoadRecentFiles()
         {
             try
@@ -1128,6 +1126,7 @@ namespace TextPad_
             catch { }
         }
 
+        // Сохранение параметров программы
         internal void SaveParsameters()
         {
             // Сохранение настроек и недавних файлов
@@ -1195,6 +1194,7 @@ namespace TextPad_
             catch { }
 
             Properties.RecentFiles.Default.Save();
+            LS.Debug("Saving parameters");
         }
 
         #region Методы для получения информации о сборке
@@ -1305,8 +1305,7 @@ namespace TextPad_
             checkFiles();
 
             LS.Debug("Options loaded");
-            LS.Debug($"Program path: {ProgramPath}");
-            LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
+            LS.Info($"Program path: {ProgramPath}");
         }
 
         private void MainFormClosing(object sender, FormClosingEventArgs e)
@@ -1355,9 +1354,7 @@ namespace TextPad_
             SaveParsameters();
             Process.GetCurrentProcess().Kill();
 
-            LS.Info("Exiting the program and saving parameters");
-            LS.Debug($"Memory Consumed: {Process.GetProcessesByName("TextPad+")[0].WorkingSet64} Bytes");
-            LS.Debug("Total tabs: " + cTabControl.TabPages.Count.ToString());
+            LS.Debug("Exiting the program");
         }
     }
 }
