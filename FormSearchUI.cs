@@ -30,22 +30,22 @@ namespace TextPad_
         {
             try
             {
-                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                if (rtb.Text.Contains(FindTextBox.Text))
+                MTextBox mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                if (mtb.Text.Contains(FindTextBox.Text))
                 {
-                    int index = rtb.Text.IndexOf(FindTextBox.Text);
+                    int index = mtb.Text.IndexOf(FindTextBox.Text);
                     string str1, str2;
 
-                    str1 = rtb.Text.Substring(0, index);
-                    str2 = rtb.Text.Substring((index + FindTextBox.TextLength), (rtb.TextLength - (index + FindTextBox.TextLength)));
+                    str1 = mtb.Text.Substring(0, index);
+                    str2 = mtb.Text.Substring((index + FindTextBox.TextLength), (mtb.TextLength - (index + FindTextBox.TextLength)));
                     string result = str1 + ReplaceTextBox.Text + str2;
-                    rtb.Clear();
-                    rtb.AppendText(result);
-                    rtb.Select(index + findCutLength, ReplaceTextBox.TextLength);
-                    rtb.ScrollToCaret();
-                    rtb.Focus();
+                    mtb.Clear();
+                    mtb.AppendText(result);
+                    mtb.Select(index + findCutLength, ReplaceTextBox.TextLength);
+                    mtb.ScrollToCaret();
+                    mtb.Focus();
 
-                    Program.mainUI.textLengthLabel.Text = rtb.Text.Length.ToString();
+                    Program.mainUI.textLengthLabel.Text = mtb.Text.Length.ToString();
                 }
                 else
                 {
@@ -64,21 +64,21 @@ namespace TextPad_
         {
             try
             {
-                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                if (rtb.Text.Contains(FindTextBox.Text))
+                MTextBox mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                if (mtb.Text.Contains(FindTextBox.Text))
                 {
-                    while (rtb.Text.Contains(FindTextBox.Text))
+                    while (mtb.Text.Contains(FindTextBox.Text))
                     {
-                        int index = rtb.Text.IndexOf(FindTextBox.Text);
+                        int index = mtb.Text.IndexOf(FindTextBox.Text);
                         string str1, str2;
 
-                        str1 = rtb.Text.Substring(0, index);
-                        str2 = rtb.Text.Substring((index + FindTextBox.TextLength), (rtb.TextLength - (index + FindTextBox.TextLength)));
+                        str1 = mtb.Text.Substring(0, index);
+                        str2 = mtb.Text.Substring((index + FindTextBox.TextLength), (mtb.TextLength - (index + FindTextBox.TextLength)));
                         string result = str1 + ReplaceTextBox.Text + str2;
-                        rtb.Clear();
-                        rtb.AppendText(result);
+                        mtb.Clear();
+                        mtb.AppendText(result);
 
-                        Program.mainUI.textLengthLabel.Text = rtb.Text.Length.ToString();
+                        Program.mainUI.textLengthLabel.Text = mtb.Text.Length.ToString();
                     }
                 }
                 else
@@ -98,13 +98,13 @@ namespace TextPad_
         {
             try
             {
-                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                MTextBox mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 int lineNumber = Convert.ToInt32(numericLineNumber.Text);
-                if (lineNumber > 0 && lineNumber <= rtb.Lines.Count())
+                if (lineNumber > 0 && lineNumber <= mtb.Lines.Count())
                 {
-                    rtb.SelectionStart = rtb.GetFirstCharIndexFromLine(Convert.ToInt32(numericLineNumber.Text) - 1);
-                    rtb.ScrollToCaret();
+                    mtb.SelectionStart = mtb.GetFirstCharIndexFromLine(Convert.ToInt32(numericLineNumber.Text) - 1);
+                    mtb.ScrollToCaret();
                     this.Close();
                 }
                 else
@@ -129,19 +129,19 @@ namespace TextPad_
         {
             try
             {
-                MTextBox rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                MTextBox mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-                if (rtb.Text.ToLower().Contains(FindTextBox.Text.ToLower()))
+                if (mtb.Text.ToLower().Contains(FindTextBox.Text.ToLower()))
                 {
-                    string text = rtb.Text.ToLower();
+                    string text = mtb.Text.ToLower();
                     string nextText = text.Remove(0, findCutLength);
                     int resultPosition = nextText.IndexOf(FindTextBox.Text.ToLower());
 
                     if (resultPosition != -1)
                     {
-                        rtb.Select(resultPosition + findCutLength, FindTextBox.Text.Length);
-                        rtb.ScrollToCaret();
-                        rtb.Focus();
+                        mtb.Select(resultPosition + findCutLength, FindTextBox.Text.Length);
+                        mtb.ScrollToCaret();
+                        mtb.Focus();
                         findCutLength += FindTextBox.Text.Length + resultPosition;
                     }
                     else if (resultPosition == -1 && findCutLength != 0)

@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.VisualBasic.FileIO;
-using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -27,10 +26,10 @@ namespace TextPad_
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
         // Список открытых файлов
-        internal List<string> OpenedFiles { get; set; } = new();
+        //internal List<string> OpenedFiles { get; set; } = new();
 
         // Общее поле для Rich Text Box
-        private MTextBox? rtb;
+        private MTextBox? mtb;
 
         // Поле для настроек программы. Если isLangChanched = true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
         private static bool isLangChanged = false;
@@ -70,13 +69,13 @@ namespace TextPad_
 
             if (e.KeyCode == Keys.F && e.Control)
             {
-                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                if (rtb.TextLength > 0)
+                mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                if (mtb.TextLength > 0)
                 {
                     SearchUI search_ui = new SearchUI();
                     search_ui.ShowDialog(this);
 
-                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                    mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 }
                 e.Handled = true;
             }
@@ -149,8 +148,8 @@ namespace TextPad_
         {
             try
             {
-                if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
-                    Process.Start("explorer.exe", Path.GetDirectoryName(OpenedFiles.ElementAt(cTabControl.SelectedIndex))!);
+                if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName != "Missing")
+                    Process.Start("explorer.exe", Path.GetDirectoryName(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName)!);
             }
             catch { }
         }
@@ -159,11 +158,10 @@ namespace TextPad_
         {
             try
             {
-                if (File.Exists(OpenedFiles.ElementAt(cTabControl.SelectedIndex)))
+                if (File.Exists(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName))
                 {
-                    FileSystem.DeleteFile(OpenedFiles.ElementAt(cTabControl.SelectedIndex), UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    FileSystem.DeleteFile(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
 
-                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                     cTabControl.TabPages.Remove(cTabControl.TabPages[cTabControl.SelectedIndex]);
                     if (cTabControl.TabPages.Count == 0)
                     {
@@ -188,16 +186,16 @@ namespace TextPad_
 
         private void copyFullPath(object sender, EventArgs e)
         {
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
-                Clipboard.SetText(OpenedFiles.ElementAt(cTabControl.SelectedIndex));
+            if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName != "Missing")
+                Clipboard.SetText(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             else
                 return;
         }
 
         private void copyFileName(object sender, EventArgs e)
         {
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) != "Missing")
-                Clipboard.SetText(Path.GetFileName(OpenedFiles.ElementAt(cTabControl.SelectedIndex)));
+            if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName != "Missing")
+                Clipboard.SetText(Path.GetFileName(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName));
             else
                 return;
         }
@@ -270,7 +268,7 @@ namespace TextPad_
 
         private void saveSettings(object sender, EventArgs e)
         {
-            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            var mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             // Проверка настроек языка
             switch (Program.mainUI.comboBoxLanguage.SelectedItem)
@@ -340,7 +338,7 @@ namespace TextPad_
 
             // Проверка настроек переноса слов
             Properties.Settings.Default.WordWarp = Program.mainUI.wordWarpCheckBox.Checked;
-            rtb.WordWrap = Program.mainUI.wordWarpCheckBox.Checked;
+            mtb.WordWrap = Program.mainUI.wordWarpCheckBox.Checked;
 
             // Проверка настроек панели инструментов
             Properties.Settings.Default.InstrumentalPanel = Program.mainUI.instrumentPanelCheckBox.Checked;
@@ -380,8 +378,8 @@ namespace TextPad_
             Properties.Settings.Default.EditorFont = Program.mainUI.fontDialog.Font;
             Properties.Settings.Default.Save();
 
-            var rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            rtb.Font = Program.mainUI.fontDialog.Font;
+            var mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Font = Program.mainUI.fontDialog.Font;
         }
 
         private void openWebSite(object sender, EventArgs e)
@@ -421,36 +419,33 @@ namespace TextPad_
         // Методы для cTabControl
         internal void CreateTab()
         {
-            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый MTextBox (rtb, потому что раньше это был MTextBox, а мне лень менять названия),
-            * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
-            * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
-            * переноса слов.
+            /*
+             * Создаётся экземпляр вкладки, в mtb закидывается новоиспечённый MTextBox (mtb, потому что раньше это был MTextBox, а мне лень менять названия),
+             * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
+             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
+             * переноса слов.
             */
             TabPage tpage = new TabPage(Resources.Localization.newDocumentTitle);
-            var rtb = new MTextBox();
-            rtb.Dock = DockStyle.Fill;
-            rtb.BorderStyle = BorderStyle.None;
-            rtb.WordWrap = Properties.Settings.Default.WordWarp;
-            rtb.ContextMenuStrip = contextMenuStrip;
-            rtb.Font = Properties.Settings.Default.EditorFont;
-            rtb.TextChanged += (sender, args) => TextBoxTextChanged();
-            rtb.AcceptsTab = true;
+            var mtb = new MTextBox
+            {
+                Dock = DockStyle.Fill,
+                BorderStyle = BorderStyle.None,
+                WordWrap = Properties.Settings.Default.WordWarp,
+                ContextMenuStrip = contextMenuStrip,
+                Font = Properties.Settings.Default.EditorFont
+            };
+            mtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            mtb.AcceptsTab = true;
 
-            tpage.Controls.Add(rtb);
+            tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
 
-            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
-
             if (Properties.Settings.Default.Theme == "White")
-            {
                 colorThemeWhite();
-            }
             else
-            {
                 colorThemeDark();
-            }
 
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
             {
                 fileFolderFileMenuItem.Enabled = false;
                 deletFileFileMenuItem.Enabled = false;
@@ -461,34 +456,32 @@ namespace TextPad_
                 deletFileFileMenuItem.Enabled = true;
             }
 
-            rtb.Encoding = Properties.Settings.Default.DefaultEncoding;
+            mtb.Encoding = Properties.Settings.Default.DefaultEncoding;
             if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
-            {
-                encodingStatusLabel.Text = rtb.Encoding;
-            }
+                encodingStatusLabel.Text = mtb.Encoding;
         }
 
         internal void CreateTab(string tabName)
         {
-            /* Создаётся экземпляр вкладки, в rtb закидывается новоиспечённый MTextBox (rtb, потому что раньше это был MTextBox, а мне лень менять названия),
+            /* Создаётся экземпляр вкладки, в mtb закидывается новоиспечённый MTextBox (mtb, потому что раньше это был MTextBox, а мне лень менять названия),
             * задаются кое-какие параметры, затем в cTabControl, который накинут на форму впринципе, добавляется новая вкладка и кней автоматичсеки присваивается ивент TextChanged,
             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
             * переноса слов.
             */
             TabPage tpage = new TabPage(tabName);
-            var rtb = new MTextBox();
-            rtb.Dock = DockStyle.Fill;
-            rtb.BorderStyle = BorderStyle.None;
-            rtb.WordWrap = Properties.Settings.Default.WordWarp;
-            rtb.ContextMenuStrip = contextMenuStrip;
-            rtb.Font = Properties.Settings.Default.EditorFont;
-            rtb.TextChanged += (sender, args) => TextBoxTextChanged();
-            rtb.AcceptsTab = true;
+            var mtb = new MTextBox();
+            mtb.Dock = DockStyle.Fill;
+            mtb.BorderStyle = BorderStyle.None;
+            mtb.WordWrap = Properties.Settings.Default.WordWarp;
+            mtb.ContextMenuStrip = contextMenuStrip;
+            mtb.Font = Properties.Settings.Default.EditorFont;
+            mtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            mtb.AcceptsTab = true;
 
-            tpage.Controls.Add(rtb);
+            tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
 
-            OpenedFiles.Insert(cTabControl.TabPages.IndexOf(tpage), "Missing");
+            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = "Missing";
 
             if (Properties.Settings.Default.Theme == "White")
             {
@@ -499,7 +492,7 @@ namespace TextPad_
                 colorThemeDark();
             }
 
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
             {
                 fileFolderFileMenuItem.Enabled = false;
                 deletFileFileMenuItem.Enabled = false;
@@ -510,10 +503,10 @@ namespace TextPad_
                 deletFileFileMenuItem.Enabled = true;
             }
 
-            rtb.Encoding = Properties.Settings.Default.DefaultEncoding;
+            mtb.Encoding = Properties.Settings.Default.DefaultEncoding;
             if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
             {
-                encodingStatusLabel.Text = rtb.Encoding;
+                encodingStatusLabel.Text = mtb.Encoding;
             }
         }
 
@@ -524,10 +517,10 @@ namespace TextPad_
 
         private void CloseTab(object sender, EventArgs e)
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             TabPage tab = cTabControl.SelectedTab;
 
-            if (rtb.TextLength != 0)
+            if (mtb.TextLength != 0)
             {
                 DialogResult dr = MessageBox.Show($"Сохранить текст в файл \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
@@ -536,7 +529,6 @@ namespace TextPad_
                 }
                 else if (dr == DialogResult.No)
                 {
-                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                     cTabControl.TabPages.Remove(tab);
                 }
                 else if (dr == DialogResult.Cancel)
@@ -546,7 +538,6 @@ namespace TextPad_
             }
             else
             {
-                OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                 cTabControl.TabPages.Remove(tab);
             }
 
@@ -568,21 +559,19 @@ namespace TextPad_
         {
             foreach (TabPage tab in cTabControl.TabPages)
             {
-                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
+                mtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
-                if (rtb.IsFileSaved == false)
+                if (mtb.IsFileSaved == false)
                 {
                     DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
                         TextEditor.SaveCurrentFile();
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                         cTabControl.TabPages.Remove(tab);
 
                     }
                     else if (dr == DialogResult.No)
                     {
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                         cTabControl.TabPages.Remove(tab);
 
                     }
@@ -593,7 +582,6 @@ namespace TextPad_
                 }
                 else
                 {
-                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                     cTabControl.TabPages.Remove(tab);
                 }
             }
@@ -622,21 +610,19 @@ namespace TextPad_
                     continue;
                 }
 
-                rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
+                mtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
-                if (rtb.TextLength != 0)
+                if (mtb.TextLength != 0)
                 {
                     DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
                         TextEditor.SaveCurrentFile();
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                         cTabControl.TabPages.Remove(tab);
 
                     }
                     else if (dr == DialogResult.No)
                     {
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                         cTabControl.TabPages.Remove(tab);
 
                     }
@@ -647,7 +633,6 @@ namespace TextPad_
                 }
                 else
                 {
-                    OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                     cTabControl.TabPages.Remove(tab);
                 }
             }
@@ -672,22 +657,22 @@ namespace TextPad_
             // Этот метод нужен для того, что бы на каждой новой вкладке применялись заданные ранее параметры (вкл/выкл перенос слов, цвет текста, фона, шрифт и т.д.)
             try
             {
-                rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-                rtb.WordWrap = Properties.Settings.Default.WordWarp;
-                rtb.Font = Properties.Settings.Default.EditorFont;
-                textLengthLabel.Text = rtb.TextLength.ToString();
-                if (rtb.Lines.Length == 0)
+                mtb.WordWrap = Properties.Settings.Default.WordWarp;
+                mtb.Font = Properties.Settings.Default.EditorFont;
+                textLengthLabel.Text = mtb.TextLength.ToString();
+                if (mtb.Lines.Length == 0)
                 {
                     textLinesLabel.Text = "1";
                 }
                 else
                 {
-                    textLinesLabel.Text = rtb.Lines.Length.ToString();
+                    textLinesLabel.Text = mtb.Lines.Length.ToString();
                 }
 
                 checkFiles();
-                encodingStatusLabel.Text = rtb.Encoding;
+                encodingStatusLabel.Text = mtb.Encoding;
 
                 switch (Properties.Settings.Default.Theme)
                 {
@@ -714,22 +699,20 @@ namespace TextPad_
         // Обработка события TextChanged для каждого rich text box'а
         private void TextBoxTextChanged()
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            textLengthLabel.Text = rtb.Text.Length.ToString();
-            if (rtb.Lines.Length == 0)
-            {
-                textLinesLabel.Text = "1";
-            }
-            else
-            {
-                textLinesLabel.Text = rtb.Lines.Length.ToString();
-            }
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-            rtb.IsFileSaved = false;
-            if (rtb.IsFileChanged == false)
+            // Подсчёт количества строк и символов
+            textLengthLabel.Text = mtb.Text.Length.ToString();
+            if (mtb.Lines.Length == 0)
+                textLinesLabel.Text = "1";
+            else
+                textLinesLabel.Text = mtb.Lines.Length.ToString();
+
+            //mtb.IsFileSaved = false;
+            if (mtb.IsFileChanged == false)
             {
                 cTabControl.TabPages[cTabControl.SelectedIndex].Text += "*";
-                rtb.IsFileChanged = true;
+                mtb.IsFileChanged = true;
             }
 
             checkFiles();
@@ -738,33 +721,33 @@ namespace TextPad_
         // Выбор кодировки
         private void ChangeToASCII(object sender, EventArgs e)
         {
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            rtb.Encoding = "ASCII";
-            encodingStatusLabel.Text = rtb.Encoding.ToString();
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "ASCII";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF7(object sender, EventArgs e)
         {
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            rtb.Encoding = "UTF-7";
-            encodingStatusLabel.Text = rtb.Encoding.ToString();
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-7";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF8(object sender, EventArgs e)
         {
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            rtb.Encoding = "UTF-8";
-            encodingStatusLabel.Text = rtb.Encoding.ToString();
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-8";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF16(object sender, EventArgs e)
         {
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            rtb.Encoding = "UTF-16 (Unicode)";
-            encodingStatusLabel.Text = rtb.Encoding.ToString();
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-16 (Unicode)";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF32(object sender, EventArgs e)
         {
-            rtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            rtb.Encoding = "UTF-32";
-            encodingStatusLabel.Text = rtb.Encoding.ToString();
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-32";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
 
         // Методы для кнопок панели проводника
@@ -885,18 +868,18 @@ namespace TextPad_
             else if (File.Exists(path))
             {
                 CreateTab(new DirectoryInfo(path).Name);
-                OpenedFiles.Insert(cTabControl.TabPages.Count - 1, path);
+                cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<MTextBox>().First().FileName = path;
                 string fileText = File.ReadAllText(path);
 
-                rtb = cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<MTextBox>().First();
-                rtb.Text = fileText;
+                mtb = cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<MTextBox>().First();
+                mtb.Text = fileText;
 
                 cTabControl.SelectTab(cTabControl.TabPages[cTabControl.TabPages.Count - 1]);
 
                 if (recentFilesMenuItem.DropDownItems.Count == 10)
                     recentFilesMenuItem.DropDownItems.RemoveAt(0);
                 ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                tsmi.Text = OpenedFiles.ElementAt(cTabControl.SelectedIndex);
+                tsmi.Text = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
                 tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                 recentFilesMenuItem.DropDownItems.Add(tsmi);
             }
@@ -1002,8 +985,8 @@ namespace TextPad_
         // Прочие отдельные методы
         private void checkFiles()
         {
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            if (rtb.Text.Length == 0)
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            if (mtb.Text.Length == 0)
             {
                 searchEditMenuItem.Enabled = false;
                 searchToolStripItem.Enabled = false;
@@ -1013,7 +996,7 @@ namespace TextPad_
                 searchEditMenuItem.Enabled = true;
                 searchToolStripItem.Enabled = true;
             }
-            if (OpenedFiles.ElementAt(cTabControl.SelectedIndex) == "Missing")
+            if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
             {
                 fileFolderFileMenuItem.Enabled = false;
                 deletFileFileMenuItem.Enabled = false;
@@ -1028,23 +1011,23 @@ namespace TextPad_
         // Цветовые схемы
         internal void colorThemeWhite()
         {
-            // цвет rtb
+            // цвет mtb
             cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Transparent;
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-            rtb.ForeColor = Color.Black;
-            rtb.BackColor = SystemColors.Window;
-            rtb.ForeColor = SystemColors.ControlText;
+            mtb.ForeColor = Color.Black;
+            mtb.BackColor = SystemColors.Window;
+            mtb.ForeColor = SystemColors.ControlText;
         }
 
         internal void colorThemeDark()
         {
-            // цвет rtb
+            // цвет mtb
             cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Black;
-            rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-            rtb.BackColor = Color.FromArgb(64, 64, 64);
-            rtb.ForeColor = Color.Cyan;
+            mtb.BackColor = Color.FromArgb(64, 64, 64);
+            mtb.ForeColor = Color.Cyan;
         }
 
         // Немного говнокода для сохранения загрузки списка последних файлов в файле Properties.RecentFiles
@@ -1234,24 +1217,24 @@ namespace TextPad_
             {
                 try
                 {
-                    rtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                    // в список помещаем под индексом новой вкладки путь до файла
-                    OpenedFiles.Insert(cTabControl.SelectedIndex, args[1]);
-                    // в text box помещаем текст
-                    rtb.Text = File.ReadAllText(args[1]);
+                    mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                    // вв свойство TextBox'a FileName помещаем путь до файла
+                    cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = args[1];
+                    // помещаем текст
+                    mtb.Text = File.ReadAllText(args[1]);
                     // задаём даголовок вкладки
-                    cTabControl.SelectedTab.Text = Path.GetFileName(OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex));
+                    cTabControl.SelectedTab.Text = Path.GetFileName(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
 
                     if (recentFilesMenuItem.DropDownItems.Count == 10)
                         recentFilesMenuItem.DropDownItems.RemoveAt(0);
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = OpenedFiles.ElementAt(cTabControl.SelectedIndex);
+                    tsmi.Text = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
                 catch (Exception ex)
                 {
-                    LS.Error($"{ex} Error when trying to create a tab while running a program through a file: {OpenedFiles.ElementAt(Program.mainUI.cTabControl.SelectedIndex)}");
+                    LS.Error($"{ex} Error when trying to create a tab while running a program through a file: {cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName}");
                     MessageBox.Show(ex.Message, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -1321,9 +1304,9 @@ namespace TextPad_
                 // Закрытие всех вкладок
                 foreach (TabPage tab in cTabControl.TabPages)
                 {
-                    rtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
+                    mtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
-                    if (rtb.TextLength != 0)
+                    if (mtb.TextLength != 0)
                     {
                         DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (dr == DialogResult.Yes)
@@ -1333,7 +1316,6 @@ namespace TextPad_
                         }
                         else if (dr == DialogResult.No)
                         {
-                            OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                             cTabControl.TabPages.Remove(tab);
 
                         }
@@ -1345,7 +1327,6 @@ namespace TextPad_
                     }
                     else
                     {
-                        OpenedFiles.RemoveAt(cTabControl.SelectedIndex);
                         cTabControl.TabPages.Remove(tab);
                     }
                 }
