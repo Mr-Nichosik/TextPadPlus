@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.VisualBasic.FileIO;
-using System.Collections.Generic;
 using System.Reflection;
 
 namespace TextPad_
@@ -21,19 +20,15 @@ namespace TextPad_
         private IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "DEVELOPEMENT";
+        public string DateOfRelease { get; } = "29.10.2023";
         public string ProgramPath { get; } = Application.StartupPath;
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
-
-        // Список открытых файлов
-        //internal List<string> OpenedFiles { get; set; } = new();
 
         // Общее поле для Rich Text Box
         private MTextBox? mtb;
 
         // Поле для настроек программы. Если isLangChanched = true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
-        private static bool isLangChanged = false;
-
+        private static bool isLanguageChanged = false;
         // Запуск программы в обычном режиме
         public FormMainUI()
         {
@@ -210,20 +205,19 @@ namespace TextPad_
             ProgramNameLabel.Text = $"{GetAssemblyName()} {GetAssemblyVersion()}";
             VersionLabel.Text = GetAssemblyVersion();
             DateOfReleaseLabel.Text = DateOfRelease;
-            DeveloperLabel.Text = GetAssemblyCompany();
 
             LSVersionLabel.Text = LogSystem.GetAssemblyVersion();
             CTCLabelVersion.Text = CTabControl.GetAssemblyVersion();
             MTBVersionLabel.Text = MTextBox.GetAssemblyVersion();
 
             // Загрузка настроек
-            statusStripCheckBox.Checked = Properties.Settings.Default.StatusStripVisible;
-            overWindowsCheckBox.Checked = Properties.Settings.Default.Topmost;
-            runFilesPanelCheckBox.Checked = Properties.Settings.Default.RunFileToolbar;
-            wordWarpCheckBox.Checked = Properties.Settings.Default.WordWarp;
-            instrumentPanelCheckBox.Checked = Properties.Settings.Default.InstrumentalPanel;
-            wordWarpCheckBox.Checked = Properties.Settings.Default.WordWarp;
-            explorerCheckBox.Checked = Properties.Settings.Default.Explorer;
+            statusStripCheckBox.Checked = Properties.Settings.Default.StatusStrip_Visible;
+            overWindowsCheckBox.Checked = Properties.Settings.Default.FormMainUI_Topmost;
+            runFilesPanelCheckBox.Checked = Properties.Settings.Default.RunFileToolStrip_Visible;
+            wordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
+            instrumentPanelCheckBox.Checked = Properties.Settings.Default.ToolStrip_Visible;
+            wordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
+            explorerCheckBox.Checked = Properties.Settings.Default.FolderExplorerPanel_Visible;
             exitWhenClosingLastTabCheckBox.Checked = Properties.Settings.Default.ExitWhenClosingLastTab;
 
             if (Properties.Settings.Default.Theme == "Dark")
@@ -244,26 +238,7 @@ namespace TextPad_
                 comboBoxLanguage.SelectedItem = "English / Английский";
             }
 
-            switch (Properties.Settings.Default.DefaultEncoding)
-            {
-                case "ASCII":
-                    encodingComboBox.SelectedItem = "ASCII";
-                    break;
-                case "UTF-7":
-                    encodingComboBox.SelectedItem = "UTF-7";
-                    break;
-                case "UTF-8":
-                    encodingComboBox.SelectedItem = "UTF-8";
-                    break;
-                case "UTF-16 (Unicode)":
-                    encodingComboBox.SelectedItem = "UTF-16 (Unicode)";
-                    break;
-                case "UTF-32":
-                    encodingComboBox.SelectedItem = "UTF-32";
-                    break;
-            }
-
-            FontTextBox.Text = Properties.Settings.Default.EditorFont.ToString();
+            FontTextBox.Text = Properties.Settings.Default.ModifiedTextBox_Font.ToString();
         }
 
         private void saveSettings(object sender, EventArgs e)
@@ -275,13 +250,13 @@ namespace TextPad_
             {
                 case @"English / Английский":
                     if (Properties.Settings.Default.Language != "English")
-                        isLangChanged = true;
+                        isLanguageChanged = true;
 
                     Properties.Settings.Default.Language = "English";
                     break;
                 case @"Русский / Russian":
                     if (Properties.Settings.Default.Language != "Russian")
-                        isLangChanged = true;
+                        isLanguageChanged = true;
 
                     Properties.Settings.Default.Language = "Russian";
                     break;
@@ -304,58 +279,38 @@ namespace TextPad_
                     break;
             }
 
-            // Проверка кодировки
-            switch (encodingComboBox.SelectedItem)
-            {
-                case "ASCII":
-                    Properties.Settings.Default.DefaultEncoding = "ASCII";
-                    break;
-                case "UTF-7":
-                    Properties.Settings.Default.DefaultEncoding = "UTF-7";
-                    break;
-                case "UTF-8":
-                    Properties.Settings.Default.DefaultEncoding = "UTF-8";
-                    break;
-                case "UTF-16 (Unicode)":
-                    Properties.Settings.Default.DefaultEncoding = "UTF-16 (Unicode)";
-                    break;
-                case "UTF-32":
-                    Properties.Settings.Default.DefaultEncoding = "UTF-32";
-                    break;
-            }
-
             // Проверка настроек строки состояния
-            Program.mainUI.statusStrip.Visible = Program.mainUI.statusStripCheckBox.Checked;
-            Properties.Settings.Default.StatusStripVisible = Program.mainUI.statusStripCheckBox.Checked;
+            Program.mainUI.StatusStrip.Visible = Program.mainUI.statusStripCheckBox.Checked;
+            Properties.Settings.Default.StatusStrip_Visible = Program.mainUI.statusStripCheckBox.Checked;
 
             // Проверка настроек TopMost'а
             Program.mainUI.TopMost = Program.mainUI.overWindowsCheckBox.Checked;
-            Properties.Settings.Default.Topmost = Program.mainUI.overWindowsCheckBox.Checked;
+            Properties.Settings.Default.FormMainUI_Topmost = Program.mainUI.overWindowsCheckBox.Checked;
 
             // Проверка настроек панели запуска файлов
-            Program.mainUI.runFileToolStrip.Visible = Program.mainUI.runFilesPanelCheckBox.Checked;
-            Properties.Settings.Default.RunFileToolbar = Program.mainUI.runFilesPanelCheckBox.Checked;
+            Program.mainUI.RunFileToolStrip.Visible = Program.mainUI.runFilesPanelCheckBox.Checked;
+            Properties.Settings.Default.RunFileToolStrip_Visible = Program.mainUI.runFilesPanelCheckBox.Checked;
 
             // Проверка настроек переноса слов
-            Properties.Settings.Default.WordWarp = Program.mainUI.wordWarpCheckBox.Checked;
+            Properties.Settings.Default.ModifiedTextBox_WordWarp = Program.mainUI.wordWarpCheckBox.Checked;
             mtb.WordWrap = Program.mainUI.wordWarpCheckBox.Checked;
 
             // Проверка настроек панели инструментов
-            Properties.Settings.Default.InstrumentalPanel = Program.mainUI.instrumentPanelCheckBox.Checked;
-            Program.mainUI.toolsStrip.Visible = Program.mainUI.instrumentPanelCheckBox.Checked;
+            Properties.Settings.Default.ToolStrip_Visible = Program.mainUI.instrumentPanelCheckBox.Checked;
+            Program.mainUI.ToolStrip.Visible = Program.mainUI.instrumentPanelCheckBox.Checked;
 
             // Проверка настроек обозревателя папок
-            Properties.Settings.Default.Explorer = Program.mainUI.explorerCheckBox.Checked;
-            Program.mainUI.folderExplorerPanel.Visible = Program.mainUI.explorerCheckBox.Checked;
+            Properties.Settings.Default.FolderExplorerPanel_Visible = Program.mainUI.explorerCheckBox.Checked;
+            Program.mainUI.FolderExplorerPanel.Visible = Program.mainUI.explorerCheckBox.Checked;
 
             // Нужно ли закрывать программу при закрытии последней вкладки
             Properties.Settings.Default.ExitWhenClosingLastTab = Program.mainUI.exitWhenClosingLastTabCheckBox.Checked;
 
             // Сообщение о перезапуске программы
-            if (isLangChanged == true)
+            if (isLanguageChanged == true)
             {
                 MessageBox.Show(Resources.Localization.SettingsLangChange, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                isLangChanged = false;
+                isLanguageChanged = false;
             }
 
             Properties.Settings.Default.Save();
@@ -375,7 +330,7 @@ namespace TextPad_
             Program.mainUI.fontDialog.ShowDialog();
             Program.mainUI.FontTextBox.Text = Program.mainUI.fontDialog.Font.ToString();
 
-            Properties.Settings.Default.EditorFont = Program.mainUI.fontDialog.Font;
+            Properties.Settings.Default.ModifiedTextBox_Font = Program.mainUI.fontDialog.Font;
             Properties.Settings.Default.Save();
 
             var mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
@@ -430,9 +385,9 @@ namespace TextPad_
             {
                 Dock = DockStyle.Fill,
                 BorderStyle = BorderStyle.None,
-                WordWrap = Properties.Settings.Default.WordWarp,
+                WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp,
                 ContextMenuStrip = contextMenuStrip,
-                Font = Properties.Settings.Default.EditorFont
+                Font = Properties.Settings.Default.ModifiedTextBox_Font
             };
             mtb.TextChanged += (sender, args) => TextBoxTextChanged();
             mtb.AcceptsTab = true;
@@ -472,9 +427,9 @@ namespace TextPad_
             var mtb = new MTextBox();
             mtb.Dock = DockStyle.Fill;
             mtb.BorderStyle = BorderStyle.None;
-            mtb.WordWrap = Properties.Settings.Default.WordWarp;
+            mtb.WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp;
             mtb.ContextMenuStrip = contextMenuStrip;
-            mtb.Font = Properties.Settings.Default.EditorFont;
+            mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
             mtb.TextChanged += (sender, args) => TextBoxTextChanged();
             mtb.AcceptsTab = true;
 
@@ -659,8 +614,8 @@ namespace TextPad_
             {
                 mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-                mtb.WordWrap = Properties.Settings.Default.WordWarp;
-                mtb.Font = Properties.Settings.Default.EditorFont;
+                mtb.WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp;
+                mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
                 textLengthLabel.Text = mtb.TextLength.ToString();
                 if (mtb.Lines.Length == 0)
                 {
@@ -719,34 +674,40 @@ namespace TextPad_
         }
 
         // Выбор кодировки
-        private void ChangeToASCII(object sender, EventArgs e)
+        private void ChangeToUTF32BE(object sender, EventArgs e)
         {
             mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Encoding = "ASCII";
-            encodingStatusLabel.Text = mtb.Encoding.ToString();
-        }
-        private void ChangeToUTF7(object sender, EventArgs e)
-        {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Encoding = "UTF-7";
-            encodingStatusLabel.Text = mtb.Encoding.ToString();
-        }
-        private void ChangeToUTF8(object sender, EventArgs e)
-        {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Encoding = "UTF-8";
-            encodingStatusLabel.Text = mtb.Encoding.ToString();
-        }
-        private void ChangeToUTF16(object sender, EventArgs e)
-        {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Encoding = "UTF-16 (Unicode)";
+            mtb.Encoding = "UTF-32 BE";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF32(object sender, EventArgs e)
         {
             mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "UTF-32";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
+        }
+        private void ChangeToUTF16BE(object sender, EventArgs e)
+        {
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-16 BE";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
+        }
+        private void ChangeToUTF16(object sender, EventArgs e)
+        {
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-16";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
+        }
+        private void ChangeToUTFWindows1251(object sender, EventArgs e)
+        {
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "windows-1251";
+            encodingStatusLabel.Text = mtb.Encoding.ToString();
+        }
+        private void ChangeToUTF8(object sender, EventArgs e)
+        {
+            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "UTF-8";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
 
@@ -890,7 +851,7 @@ namespace TextPad_
             if (FilesListView.Width < 410)
             {
                 FilesListView.Width += 30;
-                folderExplorerPanel.Width += 30;
+                FolderExplorerPanel.Width += 30;
             }
         }
 
@@ -899,7 +860,7 @@ namespace TextPad_
             if (FilesListView.Width > 110)
             {
                 FilesListView.Width -= 30;
-                folderExplorerPanel.Width -= 30;
+                FolderExplorerPanel.Width -= 30;
             }
         }
 
@@ -983,6 +944,8 @@ namespace TextPad_
         #endregion
 
         // Прочие отдельные методы
+
+        // Проверяет некоторые свойства файла, что бы включить/выключить часть кнопок
         private void checkFiles()
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
@@ -1035,73 +998,73 @@ namespace TextPad_
         {
             try
             {
-                if (Properties.RecentFiles.Default.element0 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile0 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element0;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile0;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element1 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile1 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element1;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile1;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element2 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile2 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element2;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile2;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element3 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile3 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element3;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile3;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element4 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile4 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element4;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile4;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element5 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile5 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element5;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile5;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element6 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile6 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element6;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile6;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element7 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile7 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element7;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile7;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element8 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile8 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element8;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile8;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
-                if (Properties.RecentFiles.Default.element9 != "Missing")
+                if (Properties.RecentFiles.Default.RecentFile9 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                    tsmi.Text = Properties.RecentFiles.Default.element9;
+                    tsmi.Text = Properties.RecentFiles.Default.RecentFile9;
                     tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
                     recentFilesMenuItem.DropDownItems.Add(tsmi);
                 }
@@ -1113,65 +1076,72 @@ namespace TextPad_
         internal void SaveParsameters()
         {
             // Сохранение настроек и недавних файлов
-            Properties.Settings.Default.MainWindowState = this.WindowState.ToString();
-            Properties.Settings.Default.FormWidth = this.Width;
-            Properties.Settings.Default.FormHeight = this.Height;
-            Properties.Settings.Default.StartScriptsConfig = startScriptCombobox.SelectedItem.ToString();
-            Properties.Settings.Default.ExplorerSize = folderExplorerPanel.Width;
+            Properties.Settings.Default.FormMainUI_WindowState = this.WindowState.ToString();
+            switch (this.WindowState.ToString())
+            {
+                case "Maximized":
+                    break;
+                default:
+                    Properties.Settings.Default.FormMainUI_Width = this.Width;
+                    Properties.Settings.Default.FormMainUI_Height = this.Height;
+                    break;
+            }
+            Properties.Settings.Default.ScriptTypeToRun = startScriptCombobox.SelectedItem.ToString();
+            Properties.Settings.Default.FolderExplorerPanel_Size = FolderExplorerPanel.Width;
             Properties.Settings.Default.Save();
 
-            Properties.RecentFiles.Default.element0 = "Missing";
-            Properties.RecentFiles.Default.element1 = "Missing";
-            Properties.RecentFiles.Default.element2 = "Missing";
-            Properties.RecentFiles.Default.element3 = "Missing";
-            Properties.RecentFiles.Default.element4 = "Missing";
-            Properties.RecentFiles.Default.element5 = "Missing";
-            Properties.RecentFiles.Default.element6 = "Missing";
-            Properties.RecentFiles.Default.element7 = "Missing";
-            Properties.RecentFiles.Default.element8 = "Missing";
-            Properties.RecentFiles.Default.element9 = "Missing";
+            Properties.RecentFiles.Default.RecentFile0 = "Missing";
+            Properties.RecentFiles.Default.RecentFile1 = "Missing";
+            Properties.RecentFiles.Default.RecentFile2 = "Missing";
+            Properties.RecentFiles.Default.RecentFile3 = "Missing";
+            Properties.RecentFiles.Default.RecentFile4 = "Missing";
+            Properties.RecentFiles.Default.RecentFile5 = "Missing";
+            Properties.RecentFiles.Default.RecentFile6 = "Missing";
+            Properties.RecentFiles.Default.RecentFile7 = "Missing";
+            Properties.RecentFiles.Default.RecentFile8 = "Missing";
+            Properties.RecentFiles.Default.RecentFile9 = "Missing";
 
             try
             {
                 if (recentFilesMenuItem.DropDownItems[0] != null)
                 {
-                    Properties.RecentFiles.Default.element0 = recentFilesMenuItem.DropDownItems[0].Text;
+                    Properties.RecentFiles.Default.RecentFile0 = recentFilesMenuItem.DropDownItems[0].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[1] != null)
                 {
-                    Properties.RecentFiles.Default.element1 = recentFilesMenuItem.DropDownItems[1].Text;
+                    Properties.RecentFiles.Default.RecentFile1 = recentFilesMenuItem.DropDownItems[1].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[2] != null)
                 {
-                    Properties.RecentFiles.Default.element2 = recentFilesMenuItem.DropDownItems[2].Text;
+                    Properties.RecentFiles.Default.RecentFile2 = recentFilesMenuItem.DropDownItems[2].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[3] != null)
                 {
-                    Properties.RecentFiles.Default.element3 = recentFilesMenuItem.DropDownItems[3].Text;
+                    Properties.RecentFiles.Default.RecentFile3 = recentFilesMenuItem.DropDownItems[3].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[4] != null)
                 {
-                    Properties.RecentFiles.Default.element4 = recentFilesMenuItem.DropDownItems[4].Text;
+                    Properties.RecentFiles.Default.RecentFile4 = recentFilesMenuItem.DropDownItems[4].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[5] != null)
                 {
-                    Properties.RecentFiles.Default.element5 = recentFilesMenuItem.DropDownItems[5].Text;
+                    Properties.RecentFiles.Default.RecentFile5 = recentFilesMenuItem.DropDownItems[5].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[6] != null)
                 {
-                    Properties.RecentFiles.Default.element6 = recentFilesMenuItem.DropDownItems[6].Text;
+                    Properties.RecentFiles.Default.RecentFile6 = recentFilesMenuItem.DropDownItems[6].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[7] != null)
                 {
-                    Properties.RecentFiles.Default.element7 = recentFilesMenuItem.DropDownItems[7].Text;
+                    Properties.RecentFiles.Default.RecentFile7 = recentFilesMenuItem.DropDownItems[7].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[8] != null)
                 {
-                    Properties.RecentFiles.Default.element8 = recentFilesMenuItem.DropDownItems[8].Text;
+                    Properties.RecentFiles.Default.RecentFile8 = recentFilesMenuItem.DropDownItems[8].Text;
                 }
                 if (recentFilesMenuItem.DropDownItems[9] != null)
                 {
-                    Properties.RecentFiles.Default.element9 = recentFilesMenuItem.DropDownItems[9].Text;
+                    Properties.RecentFiles.Default.RecentFile9 = recentFilesMenuItem.DropDownItems[9].Text;
                 }
             }
             catch { }
@@ -1240,9 +1210,9 @@ namespace TextPad_
             }
 
             // Загрузка параметров из файла Propertis/Default/Settings.settings.
-            Width = Properties.Settings.Default.FormWidth;
-            Height = Properties.Settings.Default.FormHeight;
-            switch (Properties.Settings.Default.Topmost)
+            Width = Properties.Settings.Default.FormMainUI_Width;
+            Height = Properties.Settings.Default.FormMainUI_Height;
+            switch (Properties.Settings.Default.FormMainUI_Topmost)
             {
                 case true:
                     TopMost = true;
@@ -1251,12 +1221,12 @@ namespace TextPad_
                     TopMost = false;
                     break;
             }
-            toolsStrip.Visible = Properties.Settings.Default.InstrumentalPanel;
-            runFileToolStrip.Visible = Properties.Settings.Default.RunFileToolbar;
-            statusStrip.Visible = Properties.Settings.Default.StatusStripVisible;
-            folderExplorerPanel.Visible = Properties.Settings.Default.Explorer;
-            startScriptCombobox.SelectedItem = Properties.Settings.Default.StartScriptsConfig;
-            folderExplorerPanel.Width = Properties.Settings.Default.ExplorerSize;
+            ToolStrip.Visible = Properties.Settings.Default.ToolStrip_Visible;
+            RunFileToolStrip.Visible = Properties.Settings.Default.RunFileToolStrip_Visible;
+            StatusStrip.Visible = Properties.Settings.Default.StatusStrip_Visible;
+            FolderExplorerPanel.Visible = Properties.Settings.Default.FolderExplorerPanel_Visible;
+            startScriptCombobox.SelectedItem = Properties.Settings.Default.ScriptTypeToRun;
+            FolderExplorerPanel.Width = Properties.Settings.Default.FolderExplorerPanel_Size;
             switch (Properties.Settings.Default.Theme)
             {
                 case "White":
@@ -1269,7 +1239,7 @@ namespace TextPad_
                     colorThemeDark();
                     break;
             }
-            switch (Properties.Settings.Default.MainWindowState)
+            switch (Properties.Settings.Default.FormMainUI_WindowState)
             {
                 case "Normal":
                     this.WindowState = FormWindowState.Normal;

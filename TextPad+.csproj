@@ -19,6 +19,7 @@
     <IncludeSymbols>False</IncludeSymbols>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <StartupObject>TextPad_.Program</StartupObject>
+    <Company>TextPad+</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

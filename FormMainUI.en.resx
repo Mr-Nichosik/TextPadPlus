@@ -1,4 +1,64 @@
-﻿<root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -295,8 +355,38 @@
   <data name="textLinesLabelStatus.Text" xml:space="preserve">
     <value>Rows per tab:</value>
   </data>
-  <data name="toolsStrip.Text" xml:space="preserve">
-    <value>Toolbar</value>
+  <data name="statusStripEncodingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 17</value>
+  </data>
+  <data name="statusStripEncodingLabel.Text" xml:space="preserve">
+    <value>Current encoding:</value>
+  </data>
+  <data name="statusStripEncodingLabel.ToolTipText" xml:space="preserve">
+    <value>Encoding in which files will be opened and saved</value>
+  </data>
+  <data name="encodingStatusLabel.ToolTipText" xml:space="preserve">
+    <value>Encoding in which files will be opened and saved</value>
+  </data>
+  <data name="encodingDropDownBtn.ToolTipText" xml:space="preserve">
+    <value>Encoding in which files will be opened and saved</value>
+  </data>
+  <data name="utf32BEToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="uTF16ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="utf16BEToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="uft16ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="utf8ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="windwso1251ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
   </data>
   <data name="newTabToolStripItem.Text" xml:space="preserve">
     <value>Create</value>
@@ -363,9 +453,6 @@
   <data name="searchToolStripItem.Text" xml:space="preserve">
     <value>Search and replace</value>
   </data>
-  <data name="runFileToolStrip.Text" xml:space="preserve">
-    <value>Script Launcher</value>
-  </data>
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 22</value>
   </data>
@@ -386,7 +473,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAEYAQMBGAEDARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAFQAQMBUAEDARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -529,31 +616,6 @@
   <data name="tabPage4.Text" xml:space="preserve">
     <value>About program</value>
   </data>
-  <data name="programComponentsTitle.Text" xml:space="preserve">
-    <value>Program components:</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 21</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Version</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 21</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 21</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Developer</value>
-  </data>
-  <data name="infoTextBox.Text" xml:space="preserve">
-    <value>A free and open source program for quickly creating small text documents. Created in C# and its Windows Forms library.
-Powered by .NET 6.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet/6.0</value>
-  </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
@@ -581,23 +643,49 @@ Powered by .NET 6.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet
   <data name="buttonWebsite.Text" xml:space="preserve">
     <value>Go to site</value>
   </data>
+  <data name="infoTextBox.Text" xml:space="preserve">
+    <value>A free and open source program for quickly creating small text documents. Created in C# and its Windows Forms library.
+Powered by .NET 6.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet/6.0</value>
+  </data>
+  <data name="programComponentsTitle.Text" xml:space="preserve">
+    <value>Program components:</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 21</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 21</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Developer</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 21</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>Change log</value>
   </data>
   <data name="textBox2.Text" xml:space="preserve">
     <value>
-*TextPad+ 2.5.1
-
-Corrections:
-—Included new icons in English localization
-—Improved file reading and writing system
-—Unsaved files are marked *, and when closing tabs with them, the program offers to save
-
-*Update installer 1.8.0
+*TextPad+ 2.6.0
 
 Main changes:
-—When installing an update, the old version of the program will be deleted
-—Added a status bar with an installation progress bar
+—The update installer is built into the main program
+—Unsaved files are marked with a * symbol, and when closing tabs with them, the program offers to save
+—Added support for multiple UTF encodings: in the status bar you can select the encoding in which the file will be opened or saved. There is no automatic detection of the encoding of the opened file yet :(
+
+Corrections:
+—Included new icons in the English location
+—Improved file reading and writing system.
+—Minor interface fixes
+—Minor logging improvements
+_________________________________________________________________________________________________________________
 
 *TextPad+ 2.5.0
 

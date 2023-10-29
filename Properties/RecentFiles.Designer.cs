@@ -12,7 +12,7 @@ namespace TextPad_.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class RecentFiles : global::System.Configuration.ApplicationSettingsBase {
         
         private static RecentFiles defaultInstance = ((RecentFiles)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new RecentFiles())));
@@ -26,120 +26,120 @@ namespace TextPad_.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element0 {
+        public string RecentFile0 {
             get {
-                return ((string)(this["element0"]));
+                return ((string)(this["RecentFile0"]));
             }
             set {
-                this["element0"] = value;
+                this["RecentFile0"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element1 {
+        public string RecentFile1 {
             get {
-                return ((string)(this["element1"]));
+                return ((string)(this["RecentFile1"]));
             }
             set {
-                this["element1"] = value;
+                this["RecentFile1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element2 {
+        public string RecentFile2 {
             get {
-                return ((string)(this["element2"]));
+                return ((string)(this["RecentFile2"]));
             }
             set {
-                this["element2"] = value;
+                this["RecentFile2"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element3 {
+        public string RecentFile3 {
             get {
-                return ((string)(this["element3"]));
+                return ((string)(this["RecentFile3"]));
             }
             set {
-                this["element3"] = value;
+                this["RecentFile3"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element4 {
+        public string RecentFile4 {
             get {
-                return ((string)(this["element4"]));
+                return ((string)(this["RecentFile4"]));
             }
             set {
-                this["element4"] = value;
+                this["RecentFile4"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element5 {
+        public string RecentFile5 {
             get {
-                return ((string)(this["element5"]));
+                return ((string)(this["RecentFile5"]));
             }
             set {
-                this["element5"] = value;
+                this["RecentFile5"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element6 {
+        public string RecentFile6 {
             get {
-                return ((string)(this["element6"]));
+                return ((string)(this["RecentFile6"]));
             }
             set {
-                this["element6"] = value;
+                this["RecentFile6"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element7 {
+        public string RecentFile7 {
             get {
-                return ((string)(this["element7"]));
+                return ((string)(this["RecentFile7"]));
             }
             set {
-                this["element7"] = value;
+                this["RecentFile7"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element8 {
+        public string RecentFile8 {
             get {
-                return ((string)(this["element8"]));
+                return ((string)(this["RecentFile8"]));
             }
             set {
-                this["element8"] = value;
+                this["RecentFile8"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Missing")]
-        public string element9 {
+        public string RecentFile9 {
             get {
-                return ((string)(this["element9"]));
+                return ((string)(this["RecentFile9"]));
             }
             set {
-                this["element9"] = value;
+                this["RecentFile9"] = value;
             }
         }
     }

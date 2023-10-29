@@ -2,34 +2,34 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TextPad_.Properties" GeneratedClassName="RecentFiles">
   <Profiles />
   <Settings>
-    <Setting Name="element0" Type="System.String" Scope="User">
+    <Setting Name="RecentFile0" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element1" Type="System.String" Scope="User">
+    <Setting Name="RecentFile1" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element2" Type="System.String" Scope="User">
+    <Setting Name="RecentFile2" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element3" Type="System.String" Scope="User">
+    <Setting Name="RecentFile3" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element4" Type="System.String" Scope="User">
+    <Setting Name="RecentFile4" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element5" Type="System.String" Scope="User">
+    <Setting Name="RecentFile5" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element6" Type="System.String" Scope="User">
+    <Setting Name="RecentFile6" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element7" Type="System.String" Scope="User">
+    <Setting Name="RecentFile7" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element8" Type="System.String" Scope="User">
+    <Setting Name="RecentFile8" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
-    <Setting Name="element9" Type="System.String" Scope="User">
+    <Setting Name="RecentFile9" Type="System.String" Scope="User">
       <Value Profile="(Default)">Missing</Value>
     </Setting>
   </Settings>

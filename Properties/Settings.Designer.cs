@@ -38,60 +38,63 @@ namespace TextPad_.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("555")]
-        public int FormHeight {
+        public int FormMainUI_Height {
             get {
-                return ((int)(this["FormHeight"]));
+                return ((int)(this["FormMainUI_Height"]));
             }
             set {
-                this["FormHeight"] = value;
+                this["FormMainUI_Height"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1050")]
-        public int FormWidth {
+        public int FormMainUI_Width {
             get {
-                return ((int)(this["FormWidth"]));
+                return ((int)(this["FormMainUI_Width"]));
             }
             set {
-                this["FormWidth"] = value;
+                this["FormMainUI_Width"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public string FormBorder {
+        public string FormMainUI_WindowState
+        {
+            get
+            {
+                return ((string)(this["FormMainUI_WindowState"]));
+            }
+            set
+            {
+                this["FormMainUI_WindowState"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FormMainUI_Topmost {
             get {
-                return ((string)(this["FormBorder"]));
+                return ((bool)(this["FormMainUI_Topmost"]));
             }
             set {
-                this["FormBorder"] = value;
+                this["FormMainUI_Topmost"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Topmost {
+        public bool ModifiedTextBox_WordWarp {
             get {
-                return ((bool)(this["Topmost"]));
+                return ((bool)(this["ModifiedTextBox_WordWarp"]));
             }
             set {
-                this["Topmost"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool WordWarp {
-            get {
-                return ((bool)(this["WordWarp"]));
-            }
-            set {
-                this["WordWarp"] = value;
+                this["ModifiedTextBox_WordWarp"] = value;
             }
         }
         
@@ -110,108 +113,96 @@ namespace TextPad_.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool InstrumentalPanel {
+        public bool ToolStrip_Visible {
             get {
-                return ((bool)(this["InstrumentalPanel"]));
+                return ((bool)(this["ToolStrip_Visible"]));
             }
             set {
-                this["InstrumentalPanel"] = value;
+                this["ToolStrip_Visible"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 8.25pt")]
-        public global::System.Drawing.Font EditorFont {
+        public global::System.Drawing.Font ModifiedTextBox_Font {
             get {
-                return ((global::System.Drawing.Font)(this["EditorFont"]));
+                return ((global::System.Drawing.Font)(this["ModifiedTextBox_Font"]));
             }
             set {
-                this["EditorFont"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public string MainWindowState {
-            get {
-                return ((string)(this["MainWindowState"]));
-            }
-            set {
-                this["MainWindowState"] = value;
+                this["ModifiedTextBox_Font"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool RunFileToolbar {
+        public bool RunFileToolStrip_Visible {
             get {
-                return ((bool)(this["RunFileToolbar"]));
+                return ((bool)(this["RunFileToolStrip_Visible"]));
             }
             set {
-                this["RunFileToolbar"] = value;
+                this["RunFileToolStrip_Visible"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool StatusStripVisible {
+        public bool StatusStrip_Visible {
             get {
-                return ((bool)(this["StatusStripVisible"]));
+                return ((bool)(this["StatusStrip_Visible"]));
             }
             set {
-                this["StatusStripVisible"] = value;
+                this["StatusStrip_Visible"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Explorer {
+        public bool FolderExplorerPanel_Visible {
             get {
-                return ((bool)(this["Explorer"]));
+                return ((bool)(this["FolderExplorerPanel_Visible"]));
             }
             set {
-                this["Explorer"] = value;
+                this["FolderExplorerPanel_Visible"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Python File")]
-        public string StartScriptsConfig {
+        public string ScriptTypeToRun {
             get {
-                return ((string)(this["StartScriptsConfig"]));
+                return ((string)(this["ScriptTypeToRun"]));
             }
             set {
-                this["StartScriptsConfig"] = value;
+                this["ScriptTypeToRun"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("235")]
-        public int ExplorerSize {
+        public int FolderExplorerPanel_Size {
             get {
-                return ((int)(this["ExplorerSize"]));
+                return ((int)(this["FolderExplorerPanel_Size"]));
             }
             set {
-                this["ExplorerSize"] = value;
+                this["FolderExplorerPanel_Size"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Empty File")]
-        public string PythonInterpreter {
+        public string PythonInterpreterPath {
             get {
-                return ((string)(this["PythonInterpreter"]));
+                return ((string)(this["PythonInterpreterPath"]));
             }
             set {
-                this["PythonInterpreter"] = value;
+                this["PythonInterpreterPath"] = value;
             }
         }
         

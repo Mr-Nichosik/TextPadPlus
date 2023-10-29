@@ -5,49 +5,46 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">Russian</Value>
     </Setting>
-    <Setting Name="FormHeight" Type="System.Int32" Scope="User">
+    <Setting Name="FormMainUI_Height" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">555</Value>
     </Setting>
-    <Setting Name="FormWidth" Type="System.Int32" Scope="User">
+    <Setting Name="FormMainUI_Width" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1050</Value>
     </Setting>
-    <Setting Name="FormBorder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Normal</Value>
-    </Setting>
-    <Setting Name="Topmost" Type="System.Boolean" Scope="User">
+    <Setting Name="FormMainUI_Topmost" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="WordWarp" Type="System.Boolean" Scope="User">
+    <Setting Name="ModifiedTextBox_WordWarp" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Theme" Type="System.String" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
-    <Setting Name="InstrumentalPanel" Type="System.Boolean" Scope="User">
+    <Setting Name="ToolStrip_Visible" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="EditorFont" Type="System.Drawing.Font" Scope="User">
+    <Setting Name="ModifiedTextBox_Font" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Microsoft Sans Serif, 8.25pt</Value>
     </Setting>
-    <Setting Name="MainWindowState" Type="System.String" Scope="User">
+    <Setting Name="FormMainUI_WindowState" Type="System.String" Scope="User">
       <Value Profile="(Default)">Normal</Value>
     </Setting>
-    <Setting Name="RunFileToolbar" Type="System.Boolean" Scope="User">
+    <Setting Name="RunFileToolStrip_Visible" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="StatusStripVisible" Type="System.Boolean" Scope="User">
+    <Setting Name="StatusStrip_Visible" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Explorer" Type="System.Boolean" Scope="User">
+    <Setting Name="FolderExplorerPanel_Visible" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="StartScriptsConfig" Type="System.String" Scope="User">
+    <Setting Name="ScriptTypeToRun" Type="System.String" Scope="User">
       <Value Profile="(Default)">Python File</Value>
     </Setting>
-    <Setting Name="ExplorerSize" Type="System.Int32" Scope="User">
+    <Setting Name="FolderExplorerPanel_Size" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">235</Value>
     </Setting>
-    <Setting Name="PythonInterpreter" Type="System.String" Scope="User">
+    <Setting Name="PythonInterpreterPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">Empty File</Value>
     </Setting>
     <Setting Name="ExitWhenClosingLastTab" Type="System.Boolean" Scope="User">

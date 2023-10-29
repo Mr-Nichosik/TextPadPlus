@@ -422,11 +422,11 @@
   <data name="&gt;&gt;contextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>441, 18</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="statusStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="StatusStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="textLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
@@ -492,6 +492,9 @@
   <data name="statusStripEncodingLabel.Text" xml:space="preserve">
     <value>Текущая кодировка: </value>
   </data>
+  <data name="statusStripEncodingLabel.ToolTipText" xml:space="preserve">
+    <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
+  </data>
   <data name="encodingStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
@@ -501,35 +504,62 @@
   <data name="encodingStatusLabel.Text" xml:space="preserve">
     <value>—</value>
   </data>
+  <data name="encodingStatusLabel.ToolTipText" xml:space="preserve">
+    <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="utf32BEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="utf32BEToolStripMenuItem.Text" xml:space="preserve">
+    <value>UTF-32 BE</value>
+  </data>
+  <data name="utf32BEToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
   <data name="uTF16ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+    <value>153, 22</value>
   </data>
   <data name="uTF16ToolStripMenuItem.Text" xml:space="preserve">
     <value>UTF-32</value>
   </data>
-  <data name="unicodeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+  <data name="uTF16ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
-  <data name="unicodeToolStripMenuItem.Text" xml:space="preserve">
-    <value>UTF-16 (Unicode)</value>
+  <data name="utf16BEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
   </data>
-  <data name="uTF7ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+  <data name="utf16BEToolStripMenuItem.Text" xml:space="preserve">
+    <value>UTF-16 BE</value>
   </data>
-  <data name="uTF7ToolStripMenuItem.Text" xml:space="preserve">
+  <data name="utf16BEToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="uft16ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uft16ToolStripMenuItem.Text" xml:space="preserve">
+    <value>UTF-16</value>
+  </data>
+  <data name="uft16ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="utf8ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="utf8ToolStripMenuItem.Text" xml:space="preserve">
     <value>UTF-8</value>
   </data>
-  <data name="uTF8ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+  <data name="utf8ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
-  <data name="uTF8ToolStripMenuItem.Text" xml:space="preserve">
-    <value>UTF-7</value>
+  <data name="windwso1251ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
   </data>
-  <data name="aSCIIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 22</value>
+  <data name="windwso1251ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Windows-1251</value>
   </data>
-  <data name="aSCIIToolStripMenuItem.Text" xml:space="preserve">
-    <value>ASCII</value>
+  <data name="windwso1251ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
   <data name="encodingDropDownBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
@@ -544,36 +574,36 @@
     <value>Кодировка</value>
   </data>
   <data name="encodingDropDownBtn.ToolTipText" xml:space="preserve">
-    <value>№№№№№№№№№№№№№№№</value>
+    <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
   </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 508</value>
   </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="StatusStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>980, 22</value>
   </data>
-  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+  <data name="StatusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="statusStrip.Text" xml:space="preserve">
+  <data name="StatusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
   </data>
-  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
-    <value>statusStrip</value>
+  <data name="&gt;&gt;StatusStrip.Name" xml:space="preserve">
+    <value>StatusStrip</value>
   </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;StatusStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;StatusStrip.Parent" xml:space="preserve">
     <value>MainUIPanel</value>
   </data>
-  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="toolsStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>536, 20</value>
   </metadata>
-  <data name="toolsStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="ToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
   <data name="newTabToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
@@ -764,31 +794,31 @@
   <data name="searchToolStripItem.Text" xml:space="preserve">
     <value>Найти и заменить</value>
   </data>
-  <data name="toolsStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 49</value>
   </data>
-  <data name="toolsStrip.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 459</value>
   </data>
-  <data name="toolsStrip.TabIndex" type="System.Int32, mscorlib">
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="toolsStrip.Text" xml:space="preserve">
+  <data name="ToolStrip.Text" xml:space="preserve">
     <value>Панель инструментов</value>
   </data>
-  <data name="&gt;&gt;toolsStrip.Name" xml:space="preserve">
-    <value>toolsStrip</value>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
   </data>
-  <data name="&gt;&gt;toolsStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolsStrip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
     <value>MainUIPanel</value>
   </data>
-  <data name="&gt;&gt;toolsStrip.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="runFileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="RunFileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>639, 19</value>
   </metadata>
   <data name="toolStripLabel1.Font" type="System.Drawing.Font, System.Drawing">
@@ -830,32 +860,32 @@
   <data name="startFileButton.Text" xml:space="preserve">
     <value>Запустить</value>
   </data>
-  <data name="runFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RunFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="runFileToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="RunFileToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>12, 0, 0, 0</value>
   </data>
-  <data name="runFileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RunFileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>980, 25</value>
   </data>
-  <data name="runFileToolStrip.TabIndex" type="System.Int32, mscorlib">
+  <data name="RunFileToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="runFileToolStrip.Text" xml:space="preserve">
+  <data name="RunFileToolStrip.Text" xml:space="preserve">
     <value>toolStrip2</value>
   </data>
-  <data name="&gt;&gt;runFileToolStrip.Name" xml:space="preserve">
-    <value>runFileToolStrip</value>
+  <data name="&gt;&gt;RunFileToolStrip.Name" xml:space="preserve">
+    <value>RunFileToolStrip</value>
   </data>
-  <data name="&gt;&gt;runFileToolStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;RunFileToolStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;runFileToolStrip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RunFileToolStrip.Parent" xml:space="preserve">
     <value>MainUIPanel</value>
   </data>
-  <data name="&gt;&gt;runFileToolStrip.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RunFileToolStrip.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <metadata name="explorerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -887,7 +917,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAGoARYBqAEWARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAHEARkBxAEZARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -938,7 +968,7 @@
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;FilesListView.Parent" xml:space="preserve">
-    <value>folderExplorerPanel</value>
+    <value>FolderExplorerPanel</value>
   </data>
   <data name="&gt;&gt;FilesListView.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1028,7 +1058,7 @@
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;folderToolStrip.Parent" xml:space="preserve">
-    <value>folderExplorerPanel</value>
+    <value>FolderExplorerPanel</value>
   </data>
   <data name="&gt;&gt;folderToolStrip.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1067,33 +1097,33 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;workFolderLabel.Parent" xml:space="preserve">
-    <value>folderExplorerPanel</value>
+    <value>FolderExplorerPanel</value>
   </data>
   <data name="&gt;&gt;workFolderLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="folderExplorerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="FolderExplorerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="folderExplorerPanel.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="FolderExplorerPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>782, 49</value>
   </data>
-  <data name="folderExplorerPanel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FolderExplorerPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 459</value>
   </data>
-  <data name="folderExplorerPanel.TabIndex" type="System.Int32, mscorlib">
+  <data name="FolderExplorerPanel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.Name" xml:space="preserve">
-    <value>folderExplorerPanel</value>
+  <data name="&gt;&gt;FolderExplorerPanel.Name" xml:space="preserve">
+    <value>FolderExplorerPanel</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;FolderExplorerPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;FolderExplorerPanel.Parent" xml:space="preserve">
     <value>MainUIPanel</value>
   </data>
-  <data name="&gt;&gt;folderExplorerPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FolderExplorerPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="cTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1149,90 +1179,6 @@
   </data>
   <data name="settingsTabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Bottom</value>
-  </data>
-  <data name="encodingComboBox.Items" xml:space="preserve">
-    <value>ASCII</value>
-  </data>
-  <data name="encodingComboBox.Items1" xml:space="preserve">
-    <value>UTF-7</value>
-  </data>
-  <data name="encodingComboBox.Items2" xml:space="preserve">
-    <value>UTF-8</value>
-  </data>
-  <data name="encodingComboBox.Items3" xml:space="preserve">
-    <value>UTF-16 (Unicode)</value>
-  </data>
-  <data name="encodingComboBox.Items4" xml:space="preserve">
-    <value>UTF-32</value>
-  </data>
-  <data name="encodingComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 12</value>
-  </data>
-  <data name="encodingComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 23</value>
-  </data>
-  <data name="encodingComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;encodingComboBox.Name" xml:space="preserve">
-    <value>encodingComboBox</value>
-  </data>
-  <data name="&gt;&gt;encodingComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;encodingComboBox.Parent" xml:space="preserve">
-    <value>panel10</value>
-  </data>
-  <data name="&gt;&gt;encodingComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 9</value>
-  </data>
-  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 30</value>
-  </data>
-  <data name="label25.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label25.Text" xml:space="preserve">
-    <value>Кодировка, в которой открываются файлы:</value>
-  </data>
-  <data name="&gt;&gt;label25.Name" xml:space="preserve">
-    <value>label25</value>
-  </data>
-  <data name="&gt;&gt;label25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
-    <value>panel10</value>
-  </data>
-  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 7</value>
-  </data>
-  <data name="panel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 60</value>
-  </data>
-  <data name="panel10.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;panel10.Name" xml:space="preserve">
-    <value>panel10</value>
-  </data>
-  <data name="&gt;&gt;panel10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel10.Parent" xml:space="preserve">
-    <value>settingsTabPage</value>
-  </data>
-  <data name="&gt;&gt;panel10.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="exitWhenClosingLastTabCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1310,7 +1256,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="wordWarpCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1388,7 +1334,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="overWindowsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1466,7 +1412,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="explorerCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1544,7 +1490,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="comboBoxLanguage.Items" xml:space="preserve">
     <value>Русский / Russian</value>
@@ -1622,7 +1568,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
@@ -1727,7 +1673,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="instrumentPanelCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1805,7 +1751,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="comboTheme.Items" xml:space="preserve">
     <value>Белая / White</value>
@@ -1883,7 +1829,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="statusStripCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1961,7 +1907,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="runFilesPanelCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2039,7 +1985,7 @@
     <value>settingsTabPage</value>
   </data>
   <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="settingsTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
@@ -2210,13 +2156,13 @@
     <value>325, 118</value>
   </data>
   <data name="DeveloperLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 20</value>
+    <value>87, 20</value>
   </data>
   <data name="DeveloperLabel.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="DeveloperLabel.Text" xml:space="preserve">
-    <value>—</value>
+    <value>Mr Nichosik</value>
   </data>
   <data name="&gt;&gt;DeveloperLabel.Name" xml:space="preserve">
     <value>DeveloperLabel</value>
@@ -2495,6 +2441,480 @@
   <data name="programComponentsPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="componentsTable.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="componentsTable.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="componentsTable.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
+    <value>Single</value>
+  </data>
+  <data name="componentsTable.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 86</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 21</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>ModifiedTextBox</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 57</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 21</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Mr Nichosik</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LSVersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="LSVersionLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LSVersionLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="LSVersionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LSVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 57</value>
+  </data>
+  <data name="LSVersionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="LSVersionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LSVersionLabel.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;LSVersionLabel.Name" xml:space="preserve">
+    <value>LSVersionLabel</value>
+  </data>
+  <data name="&gt;&gt;LSVersionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LSVersionLabel.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;LSVersionLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 3</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 21</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Версия</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 3</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 21</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Разработчик</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CTCLabelVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="CTCLabelVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CTCLabelVersion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="CTCLabelVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CTCLabelVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 30</value>
+  </data>
+  <data name="CTCLabelVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="CTCLabelVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="CTCLabelVersion.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;CTCLabelVersion.Name" xml:space="preserve">
+    <value>CTCLabelVersion</value>
+  </data>
+  <data name="&gt;&gt;CTCLabelVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CTCLabelVersion.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;CTCLabelVersion.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 30</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 21</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Mr Nichosik</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 30</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 21</value>
+  </data>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Custom Tab Control</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label15.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 57</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 21</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Logging System</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="MTBVersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="MTBVersionLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MTBVersionLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="MTBVersionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MTBVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 86</value>
+  </data>
+  <data name="MTBVersionLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="MTBVersionLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="MTBVersionLabel.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;MTBVersionLabel.Name" xml:space="preserve">
+    <value>MTBVersionLabel</value>
+  </data>
+  <data name="&gt;&gt;MTBVersionLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MTBVersionLabel.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;MTBVersionLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label26.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label26.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 86</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 21</value>
+  </data>
+  <data name="label26.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Mr Nichosik</value>
+  </data>
+  <data name="&gt;&gt;label26.Name" xml:space="preserve">
+    <value>label26</value>
+  </data>
+  <data name="&gt;&gt;label26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="componentsTable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="componentsTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="componentsTable.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="componentsTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>954, 112</value>
+  </data>
+  <data name="componentsTable.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.Name" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.Parent" xml:space="preserve">
+    <value>programComponentsPanel</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="componentsTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LSVersionLabel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CTCLabelVersion" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MTBVersionLabel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label26" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,333336,Percent,33,333336" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="programComponentsTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -2532,589 +2952,7 @@
     <value>programComponentsPanel</value>
   </data>
   <data name="&gt;&gt;programComponentsTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="componentsTable.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="componentsTable.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="componentsTable.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
-    <value>Inset</value>
-  </data>
-  <data name="componentsTable.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 113</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 21</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>ModifiedTextBox</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label14.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 30</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 21</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Mr Nichosik</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 85</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 21</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Mr Nichosik</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LSVersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="LSVersionLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LSVersionLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="LSVersionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LSVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 85</value>
-  </data>
-  <data name="LSVersionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="LSVersionLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="LSVersionLabel.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.Name" xml:space="preserve">
-    <value>LSVersionLabel</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label19.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 30</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
-  </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>TextPad+ Updater</value>
-  </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 30</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 21</value>
-  </data>
-  <data name="label20.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>1.8.0</value>
-  </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 4</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 21</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Версия</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 4</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 21</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Разработчик</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="CTCLabelVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="CTCLabelVersion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CTCLabelVersion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="CTCLabelVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CTCLabelVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 57</value>
-  </data>
-  <data name="CTCLabelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="CTCLabelVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="CTCLabelVersion.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.Name" xml:space="preserve">
-    <value>CTCLabelVersion</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 57</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 21</value>
-  </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Mr Nichosik</value>
-  </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 57</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 21</value>
-  </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>Custom Tab Control</value>
-  </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="label15.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 85</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 21</value>
-  </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Logging System</value>
-  </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="MTBVersionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="MTBVersionLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="MTBVersionLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="MTBVersionLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="MTBVersionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 113</value>
-  </data>
-  <data name="MTBVersionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="MTBVersionLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="MTBVersionLabel.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.Name" xml:space="preserve">
-    <value>MTBVersionLabel</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="label26.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label26.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 113</value>
-  </data>
-  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 21</value>
-  </data>
-  <data name="label26.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="label26.Text" xml:space="preserve">
-    <value>Mr Nichosik</value>
-  </data>
-  <data name="&gt;&gt;label26.Name" xml:space="preserve">
-    <value>label26</value>
-  </data>
-  <data name="&gt;&gt;label26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Название</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="componentsTable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="componentsTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="componentsTable.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="componentsTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 139</value>
-  </data>
-  <data name="componentsTable.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Name" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Parent" xml:space="preserve">
-    <value>programComponentsPanel</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="componentsTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label10" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LSVersionLabel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label19" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label20" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CTCLabelVersion" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MTBVersionLabel" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label26" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,333332,Percent,33,333332,Percent,33,333332" /&gt;&lt;Rows Styles="Absolute,25,Absolute,24,Absolute,26,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="programComponentsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -3201,28 +3039,41 @@
 Основные изменения:
 —Установщик обновлений вшит в основную программу
 —Не сохранённые файлы помечаются символом *, а при закрытии вкладок с ними программа предлагает сохранить
+—Добавлена поддержка нескольких UTF кодировок: в строке состояния можно выбрать кодировку, в которой откроется файл или в которой сохранится. Автоматического определния кодировки открываемого файла пока нет :(
 
 Исправления:
 —Включены новые иконки в английской локализации
 —Улучшена система чтения и записи файлов
 —Мелкие исправления интерфейса
 —Мелкие улучшения логирования
-_______________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________
 
-*TextPad+ 2.5.1
+*TextPad+ 2.5.0
 
 Основные изменения:
-—Не сохранённые файла помечаются *, а при закрытии вкладок с ними программа предлагает сохранить
+—Добавлена возможность открыть папку с файлами из меню «Файл».
+—Некоторые пункты меню и панели инструментов отключаются, когда нет открытого файла.
+—Полностью перерисованы иконки и иконка программы
+—Окно настроек перенесено в главное окно
+—Удалено меню «Помощь». Теперь вы можете обновить или просмотреть информацию о программе в настройках.
+—Добавлена возможность закрыть все вкладки в меню «Файл».
+—При закрытии окна программа предлагает сохранить файлы со всех вкладок.
+—В настройках можно указать, выходить ли из программы после закрытия последней вкладки
+—Добавлена возможность закрыть все вкладки, кроме выбранной
+—Добавлена возможность удаления файла через меню
+—Добавлена возможность копирования пути и имени файла через меню «Правка».
+—Теперь доступна автономная версия программы, не требующая установки .NET-компонентов. Найти его можно на сайте программы.
 
 Исправления:
-—Включены новые иконки в английской локализации
-—Улучшена система чтения и записи файлов
+—Мелкие исправления и улучшения
 
-*Установщик обновлений 1.8.0
+*Установщик обновлений 1.7.0 (Только при переустановке)
 
 Основные изменения:
-—При установке обновления старая версия программы будет удаляться
-—Добавлена статусная строка с шкалой прогресса установки</value>
+—Добавлена возможность установки обновления вручную
+—Переработанная система установки обновлений
+—Обновления теперь устанавливаются по пути, указанному в файле конфигурации.
+Для корректной работы установщика обновлений переустановите программу.</value>
   </data>
   <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
     <value>textBox2</value>
@@ -3501,7 +3352,7 @@ ________________________________________________________________________________
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>55</value>
+    <value>63</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
@@ -4053,34 +3904,40 @@ ________________________________________________________________________________
   <data name="&gt;&gt;encodingDropDownBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;utf32BEToolStripMenuItem.Name" xml:space="preserve">
+    <value>utf32BEToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;utf32BEToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;uTF16ToolStripMenuItem.Name" xml:space="preserve">
     <value>uTF16ToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;uTF16ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;unicodeToolStripMenuItem.Name" xml:space="preserve">
-    <value>unicodeToolStripMenuItem</value>
+  <data name="&gt;&gt;utf16BEToolStripMenuItem.Name" xml:space="preserve">
+    <value>utf16BEToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;unicodeToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;utf16BEToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;uTF7ToolStripMenuItem.Name" xml:space="preserve">
-    <value>uTF7ToolStripMenuItem</value>
+  <data name="&gt;&gt;uft16ToolStripMenuItem.Name" xml:space="preserve">
+    <value>uft16ToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;uTF7ToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;uft16ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;uTF8ToolStripMenuItem.Name" xml:space="preserve">
-    <value>uTF8ToolStripMenuItem</value>
+  <data name="&gt;&gt;utf8ToolStripMenuItem.Name" xml:space="preserve">
+    <value>utf8ToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;uTF8ToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;utf8ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;aSCIIToolStripMenuItem.Name" xml:space="preserve">
-    <value>aSCIIToolStripMenuItem</value>
+  <data name="&gt;&gt;windwso1251ToolStripMenuItem.Name" xml:space="preserve">
+    <value>windwso1251ToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;aSCIIToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;windwso1251ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;newTabToolStripItem.Name" xml:space="preserve">

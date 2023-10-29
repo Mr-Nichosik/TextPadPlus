@@ -79,7 +79,7 @@ namespace TextPad_
             toolStripSeparator4 = new ToolStripSeparator();
             отменитьToolStripMenuItem2 = new ToolStripMenuItem();
             вернутьToolStripMenuItem = new ToolStripMenuItem();
-            statusStrip = new StatusStrip();
+            StatusStrip = new StatusStrip();
             textLabelStatus = new ToolStripStatusLabel();
             textLengthLabel = new ToolStripStatusLabel();
             statusStripSep1 = new ToolStripStatusLabel();
@@ -89,12 +89,13 @@ namespace TextPad_
             statusStripEncodingLabel = new ToolStripStatusLabel();
             encodingStatusLabel = new ToolStripStatusLabel();
             encodingDropDownBtn = new ToolStripDropDownButton();
+            utf32BEToolStripMenuItem = new ToolStripMenuItem();
             uTF16ToolStripMenuItem = new ToolStripMenuItem();
-            unicodeToolStripMenuItem = new ToolStripMenuItem();
-            uTF7ToolStripMenuItem = new ToolStripMenuItem();
-            uTF8ToolStripMenuItem = new ToolStripMenuItem();
-            aSCIIToolStripMenuItem = new ToolStripMenuItem();
-            toolsStrip = new ToolStrip();
+            utf16BEToolStripMenuItem = new ToolStripMenuItem();
+            uft16ToolStripMenuItem = new ToolStripMenuItem();
+            utf8ToolStripMenuItem = new ToolStripMenuItem();
+            windwso1251ToolStripMenuItem = new ToolStripMenuItem();
+            ToolStrip = new ToolStrip();
             newTabToolStripItem = new ToolStripButton();
             closeTabToolStripItem = new ToolStripButton();
             toolStripSep1 = new ToolStripSeparator();
@@ -112,7 +113,7 @@ namespace TextPad_
             fontToolStripItem = new ToolStripButton();
             toolStripSep5 = new ToolStripSeparator();
             searchToolStripItem = new ToolStripButton();
-            runFileToolStrip = new ToolStrip();
+            RunFileToolStrip = new ToolStrip();
             toolStripLabel1 = new ToolStripLabel();
             startScriptCombobox = new ToolStripComboBox();
             startFileButton = new ToolStripButton();
@@ -130,16 +131,13 @@ namespace TextPad_
             upSizeListViewTool = new ToolStripButton();
             downSizeListViewTool = new ToolStripButton();
             folderBrowserDialog = new FolderBrowserDialog();
-            folderExplorerPanel = new Panel();
+            FolderExplorerPanel = new Panel();
             workFolderLabel = new Label();
             cTabControl = new CTabControl();
             MainUIPanel = new Panel();
             SettingsUIPanel = new Panel();
             settingsTabControl = new TabControl();
             settingsTabPage = new TabPage();
-            panel10 = new Panel();
-            encodingComboBox = new ComboBox();
-            label25 = new Label();
             panel11 = new Panel();
             exitWhenClosingLastTabCheckBox = new CheckBox();
             label24 = new Label();
@@ -188,14 +186,10 @@ namespace TextPad_
             buttonWebsite = new Button();
             infoTextBox = new TextBox();
             programComponentsPanel = new Panel();
-            programComponentsTitle = new Label();
             componentsTable = new TableLayoutPanel();
             label10 = new Label();
-            label14 = new Label();
             label16 = new Label();
             LSVersionLabel = new Label();
-            label19 = new Label();
-            label20 = new Label();
             label12 = new Label();
             label13 = new Label();
             CTCLabelVersion = new Label();
@@ -205,6 +199,7 @@ namespace TextPad_
             MTBVersionLabel = new Label();
             label26 = new Label();
             label11 = new Label();
+            programComponentsTitle = new Label();
             tabPage5 = new TabPage();
             textBox2 = new TextBox();
             SettingsBottomUIPanel = new Panel();
@@ -213,17 +208,16 @@ namespace TextPad_
             saveButton = new Button();
             menuStrip.SuspendLayout();
             contextMenuStrip.SuspendLayout();
-            statusStrip.SuspendLayout();
-            toolsStrip.SuspendLayout();
-            runFileToolStrip.SuspendLayout();
+            StatusStrip.SuspendLayout();
+            ToolStrip.SuspendLayout();
+            RunFileToolStrip.SuspendLayout();
             explorerContextMenu.SuspendLayout();
             folderToolStrip.SuspendLayout();
-            folderExplorerPanel.SuspendLayout();
+            FolderExplorerPanel.SuspendLayout();
             MainUIPanel.SuspendLayout();
             SettingsUIPanel.SuspendLayout();
             settingsTabControl.SuspendLayout();
             settingsTabPage.SuspendLayout();
-            panel10.SuspendLayout();
             panel11.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -531,12 +525,12 @@ namespace TextPad_
             resources.ApplyResources(вернутьToolStripMenuItem, "вернутьToolStripMenuItem");
             вернутьToolStripMenuItem.Click += redoTextFromTBButton;
             // 
-            // statusStrip
+            // StatusStrip
             // 
-            resources.ApplyResources(statusStrip, "statusStrip");
-            statusStrip.Items.AddRange(new ToolStripItem[] { textLabelStatus, textLengthLabel, statusStripSep1, textLinesLabelStatus, textLinesLabel, statusStripSep2, statusStripEncodingLabel, encodingStatusLabel, encodingDropDownBtn });
-            statusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            statusStrip.Name = "statusStrip";
+            resources.ApplyResources(StatusStrip, "StatusStrip");
+            StatusStrip.Items.AddRange(new ToolStripItem[] { textLabelStatus, textLengthLabel, statusStripSep1, textLinesLabelStatus, textLinesLabel, statusStripSep2, statusStripEncodingLabel, encodingStatusLabel, encodingDropDownBtn });
+            StatusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            StatusStrip.Name = "StatusStrip";
             // 
             // textLabelStatus
             // 
@@ -586,9 +580,15 @@ namespace TextPad_
             // encodingDropDownBtn
             // 
             encodingDropDownBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            encodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { uTF16ToolStripMenuItem, unicodeToolStripMenuItem, uTF7ToolStripMenuItem, uTF8ToolStripMenuItem, aSCIIToolStripMenuItem });
+            encodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { utf32BEToolStripMenuItem, uTF16ToolStripMenuItem, utf16BEToolStripMenuItem, uft16ToolStripMenuItem, utf8ToolStripMenuItem, windwso1251ToolStripMenuItem });
             resources.ApplyResources(encodingDropDownBtn, "encodingDropDownBtn");
             encodingDropDownBtn.Name = "encodingDropDownBtn";
+            // 
+            // utf32BEToolStripMenuItem
+            // 
+            utf32BEToolStripMenuItem.Name = "utf32BEToolStripMenuItem";
+            resources.ApplyResources(utf32BEToolStripMenuItem, "utf32BEToolStripMenuItem");
+            utf32BEToolStripMenuItem.Click += ChangeToUTF32BE;
             // 
             // uTF16ToolStripMenuItem
             // 
@@ -596,38 +596,38 @@ namespace TextPad_
             resources.ApplyResources(uTF16ToolStripMenuItem, "uTF16ToolStripMenuItem");
             uTF16ToolStripMenuItem.Click += ChangeToUTF32;
             // 
-            // unicodeToolStripMenuItem
+            // utf16BEToolStripMenuItem
             // 
-            unicodeToolStripMenuItem.Name = "unicodeToolStripMenuItem";
-            resources.ApplyResources(unicodeToolStripMenuItem, "unicodeToolStripMenuItem");
-            unicodeToolStripMenuItem.Click += ChangeToUTF16;
+            utf16BEToolStripMenuItem.Name = "utf16BEToolStripMenuItem";
+            resources.ApplyResources(utf16BEToolStripMenuItem, "utf16BEToolStripMenuItem");
+            utf16BEToolStripMenuItem.Click += ChangeToUTF16BE;
             // 
-            // uTF7ToolStripMenuItem
+            // uft16ToolStripMenuItem
             // 
-            uTF7ToolStripMenuItem.Name = "uTF7ToolStripMenuItem";
-            resources.ApplyResources(uTF7ToolStripMenuItem, "uTF7ToolStripMenuItem");
-            uTF7ToolStripMenuItem.Click += ChangeToUTF8;
+            uft16ToolStripMenuItem.Name = "uft16ToolStripMenuItem";
+            resources.ApplyResources(uft16ToolStripMenuItem, "uft16ToolStripMenuItem");
+            uft16ToolStripMenuItem.Click += ChangeToUTF16;
             // 
-            // uTF8ToolStripMenuItem
+            // utf8ToolStripMenuItem
             // 
-            uTF8ToolStripMenuItem.Name = "uTF8ToolStripMenuItem";
-            resources.ApplyResources(uTF8ToolStripMenuItem, "uTF8ToolStripMenuItem");
-            uTF8ToolStripMenuItem.Click += ChangeToUTF7;
+            utf8ToolStripMenuItem.Name = "utf8ToolStripMenuItem";
+            resources.ApplyResources(utf8ToolStripMenuItem, "utf8ToolStripMenuItem");
+            utf8ToolStripMenuItem.Click += ChangeToUTF8;
             // 
-            // aSCIIToolStripMenuItem
+            // windwso1251ToolStripMenuItem
             // 
-            aSCIIToolStripMenuItem.Name = "aSCIIToolStripMenuItem";
-            resources.ApplyResources(aSCIIToolStripMenuItem, "aSCIIToolStripMenuItem");
-            aSCIIToolStripMenuItem.Click += ChangeToASCII;
+            windwso1251ToolStripMenuItem.Name = "windwso1251ToolStripMenuItem";
+            resources.ApplyResources(windwso1251ToolStripMenuItem, "windwso1251ToolStripMenuItem");
+            windwso1251ToolStripMenuItem.Click += ChangeToUTFWindows1251;
             // 
-            // toolsStrip
+            // ToolStrip
             // 
-            toolsStrip.BackColor = SystemColors.Control;
-            resources.ApplyResources(toolsStrip, "toolsStrip");
-            toolsStrip.GripStyle = ToolStripGripStyle.Hidden;
-            toolsStrip.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, searchToolStripItem });
-            toolsStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            toolsStrip.Name = "toolsStrip";
+            ToolStrip.BackColor = SystemColors.Control;
+            resources.ApplyResources(ToolStrip, "ToolStrip");
+            ToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            ToolStrip.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, searchToolStripItem });
+            ToolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            ToolStrip.Name = "ToolStrip";
             // 
             // newTabToolStripItem
             // 
@@ -751,12 +751,12 @@ namespace TextPad_
             searchToolStripItem.Name = "searchToolStripItem";
             searchToolStripItem.Click += search;
             // 
-            // runFileToolStrip
+            // RunFileToolStrip
             // 
-            runFileToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            runFileToolStrip.Items.AddRange(new ToolStripItem[] { toolStripLabel1, startScriptCombobox, startFileButton });
-            resources.ApplyResources(runFileToolStrip, "runFileToolStrip");
-            runFileToolStrip.Name = "runFileToolStrip";
+            RunFileToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            RunFileToolStrip.Items.AddRange(new ToolStripItem[] { toolStripLabel1, startScriptCombobox, startFileButton });
+            resources.ApplyResources(RunFileToolStrip, "RunFileToolStrip");
+            RunFileToolStrip.Name = "RunFileToolStrip";
             // 
             // toolStripLabel1
             // 
@@ -882,15 +882,15 @@ namespace TextPad_
             downSizeListViewTool.Name = "downSizeListViewTool";
             downSizeListViewTool.Click += DownSizeListView;
             // 
-            // folderExplorerPanel
+            // FolderExplorerPanel
             // 
-            folderExplorerPanel.BackColor = Color.Transparent;
-            folderExplorerPanel.BorderStyle = BorderStyle.FixedSingle;
-            folderExplorerPanel.Controls.Add(FilesListView);
-            folderExplorerPanel.Controls.Add(workFolderLabel);
-            folderExplorerPanel.Controls.Add(folderToolStrip);
-            resources.ApplyResources(folderExplorerPanel, "folderExplorerPanel");
-            folderExplorerPanel.Name = "folderExplorerPanel";
+            FolderExplorerPanel.BackColor = Color.Transparent;
+            FolderExplorerPanel.BorderStyle = BorderStyle.FixedSingle;
+            FolderExplorerPanel.Controls.Add(FilesListView);
+            FolderExplorerPanel.Controls.Add(workFolderLabel);
+            FolderExplorerPanel.Controls.Add(folderToolStrip);
+            resources.ApplyResources(FolderExplorerPanel, "FolderExplorerPanel");
+            FolderExplorerPanel.Name = "FolderExplorerPanel";
             // 
             // workFolderLabel
             // 
@@ -908,10 +908,10 @@ namespace TextPad_
             // 
             MainUIPanel.BackColor = Color.Transparent;
             MainUIPanel.Controls.Add(cTabControl);
-            MainUIPanel.Controls.Add(folderExplorerPanel);
-            MainUIPanel.Controls.Add(toolsStrip);
-            MainUIPanel.Controls.Add(statusStrip);
-            MainUIPanel.Controls.Add(runFileToolStrip);
+            MainUIPanel.Controls.Add(FolderExplorerPanel);
+            MainUIPanel.Controls.Add(ToolStrip);
+            MainUIPanel.Controls.Add(StatusStrip);
+            MainUIPanel.Controls.Add(RunFileToolStrip);
             MainUIPanel.Controls.Add(menuStrip);
             resources.ApplyResources(MainUIPanel, "MainUIPanel");
             MainUIPanel.Name = "MainUIPanel";
@@ -937,7 +937,6 @@ namespace TextPad_
             // 
             // settingsTabPage
             // 
-            settingsTabPage.Controls.Add(panel10);
             settingsTabPage.Controls.Add(panel11);
             settingsTabPage.Controls.Add(panel5);
             settingsTabPage.Controls.Add(panel4);
@@ -951,26 +950,6 @@ namespace TextPad_
             resources.ApplyResources(settingsTabPage, "settingsTabPage");
             settingsTabPage.Name = "settingsTabPage";
             settingsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // panel10
-            // 
-            panel10.BorderStyle = BorderStyle.FixedSingle;
-            panel10.Controls.Add(encodingComboBox);
-            panel10.Controls.Add(label25);
-            resources.ApplyResources(panel10, "panel10");
-            panel10.Name = "panel10";
-            // 
-            // encodingComboBox
-            // 
-            encodingComboBox.FormattingEnabled = true;
-            encodingComboBox.Items.AddRange(new object[] { resources.GetString("encodingComboBox.Items"), resources.GetString("encodingComboBox.Items1"), resources.GetString("encodingComboBox.Items2"), resources.GetString("encodingComboBox.Items3"), resources.GetString("encodingComboBox.Items4") });
-            resources.ApplyResources(encodingComboBox, "encodingComboBox");
-            encodingComboBox.Name = "encodingComboBox";
-            // 
-            // label25
-            // 
-            resources.ApplyResources(label25, "label25");
-            label25.Name = "label25";
             // 
             // panel11
             // 
@@ -1291,33 +1270,25 @@ namespace TextPad_
             resources.ApplyResources(programComponentsPanel, "programComponentsPanel");
             programComponentsPanel.BackColor = Color.Transparent;
             programComponentsPanel.BorderStyle = BorderStyle.FixedSingle;
-            programComponentsPanel.Controls.Add(programComponentsTitle);
             programComponentsPanel.Controls.Add(componentsTable);
+            programComponentsPanel.Controls.Add(programComponentsTitle);
             programComponentsPanel.Name = "programComponentsPanel";
-            // 
-            // programComponentsTitle
-            // 
-            resources.ApplyResources(programComponentsTitle, "programComponentsTitle");
-            programComponentsTitle.Name = "programComponentsTitle";
             // 
             // componentsTable
             // 
             resources.ApplyResources(componentsTable, "componentsTable");
             componentsTable.BackColor = Color.WhiteSmoke;
-            componentsTable.Controls.Add(label10, 0, 4);
-            componentsTable.Controls.Add(label14, 2, 1);
-            componentsTable.Controls.Add(label16, 2, 3);
-            componentsTable.Controls.Add(LSVersionLabel, 1, 3);
-            componentsTable.Controls.Add(label19, 0, 1);
-            componentsTable.Controls.Add(label20, 1, 1);
+            componentsTable.Controls.Add(label10, 0, 3);
+            componentsTable.Controls.Add(label16, 2, 2);
+            componentsTable.Controls.Add(LSVersionLabel, 1, 2);
             componentsTable.Controls.Add(label12, 1, 0);
             componentsTable.Controls.Add(label13, 2, 0);
-            componentsTable.Controls.Add(CTCLabelVersion, 1, 2);
-            componentsTable.Controls.Add(label17, 2, 2);
-            componentsTable.Controls.Add(label18, 0, 2);
-            componentsTable.Controls.Add(label15, 0, 3);
-            componentsTable.Controls.Add(MTBVersionLabel, 1, 4);
-            componentsTable.Controls.Add(label26, 2, 4);
+            componentsTable.Controls.Add(CTCLabelVersion, 1, 1);
+            componentsTable.Controls.Add(label17, 2, 1);
+            componentsTable.Controls.Add(label18, 0, 1);
+            componentsTable.Controls.Add(label15, 0, 2);
+            componentsTable.Controls.Add(MTBVersionLabel, 1, 3);
+            componentsTable.Controls.Add(label26, 2, 3);
             componentsTable.Controls.Add(label11, 0, 0);
             componentsTable.Name = "componentsTable";
             // 
@@ -1325,11 +1296,6 @@ namespace TextPad_
             // 
             resources.ApplyResources(label10, "label10");
             label10.Name = "label10";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(label14, "label14");
-            label14.Name = "label14";
             // 
             // label16
             // 
@@ -1340,16 +1306,6 @@ namespace TextPad_
             // 
             resources.ApplyResources(LSVersionLabel, "LSVersionLabel");
             LSVersionLabel.Name = "LSVersionLabel";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(label19, "label19");
-            label19.Name = "label19";
-            // 
-            // label20
-            // 
-            resources.ApplyResources(label20, "label20");
-            label20.Name = "label20";
             // 
             // label12
             // 
@@ -1395,6 +1351,11 @@ namespace TextPad_
             // 
             resources.ApplyResources(label11, "label11");
             label11.Name = "label11";
+            // 
+            // programComponentsTitle
+            // 
+            resources.ApplyResources(programComponentsTitle, "programComponentsTitle");
+            programComponentsTitle.Name = "programComponentsTitle";
             // 
             // tabPage5
             // 
@@ -1454,23 +1415,22 @@ namespace TextPad_
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             contextMenuStrip.ResumeLayout(false);
-            statusStrip.ResumeLayout(false);
-            statusStrip.PerformLayout();
-            toolsStrip.ResumeLayout(false);
-            toolsStrip.PerformLayout();
-            runFileToolStrip.ResumeLayout(false);
-            runFileToolStrip.PerformLayout();
+            StatusStrip.ResumeLayout(false);
+            StatusStrip.PerformLayout();
+            ToolStrip.ResumeLayout(false);
+            ToolStrip.PerformLayout();
+            RunFileToolStrip.ResumeLayout(false);
+            RunFileToolStrip.PerformLayout();
             explorerContextMenu.ResumeLayout(false);
             folderToolStrip.ResumeLayout(false);
             folderToolStrip.PerformLayout();
-            folderExplorerPanel.ResumeLayout(false);
-            folderExplorerPanel.PerformLayout();
+            FolderExplorerPanel.ResumeLayout(false);
+            FolderExplorerPanel.PerformLayout();
             MainUIPanel.ResumeLayout(false);
             MainUIPanel.PerformLayout();
             SettingsUIPanel.ResumeLayout(false);
             settingsTabControl.ResumeLayout(false);
             settingsTabPage.ResumeLayout(false);
-            panel10.ResumeLayout(false);
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             panel5.ResumeLayout(false);
@@ -1555,10 +1515,10 @@ namespace TextPad_
         private ToolStripMenuItem pythonRunMenuItem;
         private ToolStripMenuItem vbsRunMenuItem;
         private ToolStripMenuItem batRunMenuItem;
-        public StatusStrip statusStrip;
-        public ToolStrip runFileToolStrip;
+        public StatusStrip StatusStrip;
+        public ToolStrip RunFileToolStrip;
         private ToolStripStatusLabel textLabelStatus;
-        public ToolStrip toolsStrip;
+        public ToolStrip ToolStrip;
         private ToolStripMenuItem editMenuItem;
         private ToolStripMenuItem runMenuItem;
         private ToolStripMenuItem optionsMenuItem;
@@ -1581,7 +1541,7 @@ namespace TextPad_
         private ToolStripLabel toolStripLabel1;
         internal SaveFileDialog saveFileDialog;
         internal ToolStripComboBox startScriptCombobox;
-        internal Panel folderExplorerPanel;
+        internal Panel FolderExplorerPanel;
         private ToolStripButton aboveFolderBtn;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripStatusLabel statusStripSep1;
@@ -1627,14 +1587,8 @@ namespace TextPad_
         private Panel programComponentsPanel;
         private Label programComponentsTitle;
         private TableLayoutPanel componentsTable;
-        private Label label14;
         private Label label16;
         private Label LSVersionLabel;
-        private Label label19;
-        private Label label20;
-        private Label label12;
-        private Label label11;
-        private Label label13;
         private Label CTCLabelVersion;
         private Label label17;
         private Label label18;
@@ -1681,14 +1635,15 @@ namespace TextPad_
         private ToolStripStatusLabel statusStripEncodingLabel;
         private ToolStripDropDownButton encodingDropDownBtn;
         private ToolStripMenuItem uTF16ToolStripMenuItem;
-        private ToolStripMenuItem uTF7ToolStripMenuItem;
-        private ToolStripMenuItem uTF8ToolStripMenuItem;
-        private ToolStripMenuItem aSCIIToolStripMenuItem;
-        private ToolStripMenuItem unicodeToolStripMenuItem;
-        private Panel panel10;
-        internal ComboBox encodingComboBox;
-        private Label label25;
+        private ToolStripMenuItem utf8ToolStripMenuItem;
+        private ToolStripMenuItem uft16ToolStripMenuItem;
         internal ToolStripStatusLabel encodingStatusLabel;
+        private ToolStripMenuItem utf16BEToolStripMenuItem;
+        private ToolStripMenuItem utf32BEToolStripMenuItem;
+        private ToolStripMenuItem windwso1251ToolStripMenuItem;
+        private Label label12;
+        private Label label13;
+        private Label label11;
     }
 }
 
