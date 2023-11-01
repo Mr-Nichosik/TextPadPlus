@@ -58,22 +58,7 @@ namespace TextPad_.Properties {
                 this["FormMainUI_Width"] = value;
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public string FormMainUI_WindowState
-        {
-            get
-            {
-                return ((string)(this["FormMainUI_WindowState"]));
-            }
-            set
-            {
-                this["FormMainUI_WindowState"] = value;
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -131,6 +116,18 @@ namespace TextPad_.Properties {
             }
             set {
                 this["ModifiedTextBox_Font"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public string FormMainUI_WindowState {
+            get {
+                return ((string)(this["FormMainUI_WindowState"]));
+            }
+            set {
+                this["FormMainUI_WindowState"] = value;
             }
         }
         
@@ -227,6 +224,18 @@ namespace TextPad_.Properties {
             }
             set {
                 this["DefaultEncoding"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoCheckUpdate {
+            get {
+                return ((bool)(this["AutoCheckUpdate"]));
+            }
+            set {
+                this["AutoCheckUpdate"] = value;
             }
         }
     }

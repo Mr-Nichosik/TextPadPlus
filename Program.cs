@@ -16,8 +16,13 @@ namespace TextPad_
     /// </summary>
     internal static class Program
     {
-        public static FormMainUI mainUI = new FormMainUI();
-        public static bool isUpdating = false;
+        // Главное окно
+        public static FormMainUI MainUI = new();
+        // Окно установщика обновлений
+        public static FormUpdaterUI UpdaterUI = new();
+        // Статус обновления программы
+        // 0 - программа не обновляется; 1 - программа обновляется и зкарывать нельзя; 2 - программа обновляется и нуобходимо её закрыть
+        public static int UpdateStatus = 0;
 
         /// <summary>
         /// Точка входа в программу

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows8.0</TargetFramework>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <RootNamespace>TextPad_</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -15,9 +16,8 @@
     <Description>TextPad+ x86</Description>
     <PackageIcon>TextPad+ Logo.png</PackageIcon>
     <PackageProjectUrl>https://mr-nichosik.github.io/Main_Page/</PackageProjectUrl>
-    <Version>2.6.0</Version>
+    <Version>2.6.1</Version>
     <IncludeSymbols>False</IncludeSymbols>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <StartupObject>TextPad_.Program</StartupObject>
     <Company>TextPad+</Company>
   </PropertyGroup>
@@ -36,15 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="CustomTabControl">
-      <HintPath>..\CustomTabControl\bin\Release\net6.0-windows\CustomTabControl.dll</HintPath>
-    </Reference>
-    <Reference Include="LoggingSystem">
-      <HintPath>..\Logging System\bin\Release\net6.0\LoggingSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="ModifiedTextBox">
-      <HintPath>..\ModifiedTextBox\bin\Release\net6.0-windows\ModifiedTextBox.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\CustomTabControl\CustomTabControl.csproj" />
+    <ProjectReference Include="..\Logging System\LoggingSystem.csproj" />
+    <ProjectReference Include="..\ModifiedTextBox\ModifiedTextBox.csproj" />
   </ItemGroup>
 
   <ItemGroup>

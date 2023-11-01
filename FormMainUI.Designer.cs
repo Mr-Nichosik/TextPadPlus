@@ -80,12 +80,11 @@ namespace TextPad_
             отменитьToolStripMenuItem2 = new ToolStripMenuItem();
             вернутьToolStripMenuItem = new ToolStripMenuItem();
             StatusStrip = new StatusStrip();
+            StatusLabel = new ToolStripStatusLabel();
             textLabelStatus = new ToolStripStatusLabel();
             textLengthLabel = new ToolStripStatusLabel();
-            statusStripSep1 = new ToolStripStatusLabel();
             textLinesLabelStatus = new ToolStripStatusLabel();
             textLinesLabel = new ToolStripStatusLabel();
-            statusStripSep2 = new ToolStripStatusLabel();
             statusStripEncodingLabel = new ToolStripStatusLabel();
             encodingStatusLabel = new ToolStripStatusLabel();
             encodingDropDownBtn = new ToolStripDropDownButton();
@@ -138,37 +137,44 @@ namespace TextPad_
             SettingsUIPanel = new Panel();
             settingsTabControl = new TabControl();
             settingsTabPage = new TabPage();
+            SettingsEditorPanel = new Panel();
+            panel10 = new Panel();
+            autoUpdateCheckBox = new CheckBox();
+            label20 = new Label();
+            label19 = new Label();
+            panel2 = new Panel();
+            comboTheme = new ComboBox();
+            label2 = new Label();
             panel11 = new Panel();
             exitWhenClosingLastTabCheckBox = new CheckBox();
             label24 = new Label();
-            panel5 = new Panel();
-            wordWarpCheckBox = new CheckBox();
-            label5 = new Label();
-            panel4 = new Panel();
-            overWindowsCheckBox = new CheckBox();
-            label4 = new Label();
-            panel1 = new Panel();
-            explorerCheckBox = new CheckBox();
-            label1 = new Label();
             panel3 = new Panel();
             comboBoxLanguage = new ComboBox();
             label3 = new Label();
+            panel5 = new Panel();
+            wordWarpCheckBox = new CheckBox();
+            label5 = new Label();
             panel9 = new Panel();
             textBox3 = new TextBox();
             FontTextBox = new TextBox();
             label9 = new Label();
-            panel8 = new Panel();
-            instrumentPanelCheckBox = new CheckBox();
-            label8 = new Label();
-            panel2 = new Panel();
-            comboTheme = new ComboBox();
-            label2 = new Label();
-            panel7 = new Panel();
-            statusStripCheckBox = new CheckBox();
-            label7 = new Label();
+            panel4 = new Panel();
+            overWindowsCheckBox = new CheckBox();
+            label4 = new Label();
+            SettingsToolsPanel = new Panel();
+            label14 = new Label();
             panel6 = new Panel();
             runFilesPanelCheckBox = new CheckBox();
             label6 = new Label();
+            panel7 = new Panel();
+            statusStripCheckBox = new CheckBox();
+            label7 = new Label();
+            panel1 = new Panel();
+            explorerCheckBox = new CheckBox();
+            label1 = new Label();
+            panel8 = new Panel();
+            instrumentPanelCheckBox = new CheckBox();
+            label8 = new Label();
             infoTabPage = new TabPage();
             tabControl = new TabControl();
             tabPage4 = new TabPage();
@@ -218,16 +224,19 @@ namespace TextPad_
             SettingsUIPanel.SuspendLayout();
             settingsTabControl.SuspendLayout();
             settingsTabPage.SuspendLayout();
-            panel11.SuspendLayout();
-            panel5.SuspendLayout();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            panel9.SuspendLayout();
-            panel8.SuspendLayout();
+            SettingsEditorPanel.SuspendLayout();
+            panel10.SuspendLayout();
             panel2.SuspendLayout();
-            panel7.SuspendLayout();
+            panel11.SuspendLayout();
+            panel3.SuspendLayout();
+            panel5.SuspendLayout();
+            panel9.SuspendLayout();
+            panel4.SuspendLayout();
+            SettingsToolsPanel.SuspendLayout();
             panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            panel1.SuspendLayout();
+            panel8.SuspendLayout();
             infoTabPage.SuspendLayout();
             tabControl.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -528,9 +537,17 @@ namespace TextPad_
             // StatusStrip
             // 
             resources.ApplyResources(StatusStrip, "StatusStrip");
-            StatusStrip.Items.AddRange(new ToolStripItem[] { textLabelStatus, textLengthLabel, statusStripSep1, textLinesLabelStatus, textLinesLabel, statusStripSep2, statusStripEncodingLabel, encodingStatusLabel, encodingDropDownBtn });
+            StatusStrip.Items.AddRange(new ToolStripItem[] { StatusLabel, textLabelStatus, textLengthLabel, textLinesLabelStatus, textLinesLabel, statusStripEncodingLabel, encodingStatusLabel, encodingDropDownBtn });
             StatusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             StatusStrip.Name = "StatusStrip";
+            // 
+            // StatusLabel
+            // 
+            StatusLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
+            StatusLabel.BorderStyle = Border3DStyle.Bump;
+            StatusLabel.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(StatusLabel, "StatusLabel");
+            StatusLabel.Name = "StatusLabel";
             // 
             // textLabelStatus
             // 
@@ -541,14 +558,10 @@ namespace TextPad_
             // textLengthLabel
             // 
             textLengthLabel.BackColor = Color.Transparent;
+            textLengthLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
+            textLengthLabel.BorderStyle = Border3DStyle.Bump;
             resources.ApplyResources(textLengthLabel, "textLengthLabel");
             textLengthLabel.Name = "textLengthLabel";
-            // 
-            // statusStripSep1
-            // 
-            statusStripSep1.BackColor = Color.Transparent;
-            resources.ApplyResources(statusStripSep1, "statusStripSep1");
-            statusStripSep1.Name = "statusStripSep1";
             // 
             // textLinesLabelStatus
             // 
@@ -559,16 +572,14 @@ namespace TextPad_
             // textLinesLabel
             // 
             textLinesLabel.BackColor = Color.Transparent;
+            textLinesLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
+            textLinesLabel.BorderStyle = Border3DStyle.Bump;
             resources.ApplyResources(textLinesLabel, "textLinesLabel");
             textLinesLabel.Name = "textLinesLabel";
             // 
-            // statusStripSep2
-            // 
-            resources.ApplyResources(statusStripSep2, "statusStripSep2");
-            statusStripSep2.Name = "statusStripSep2";
-            // 
             // statusStripEncodingLabel
             // 
+            statusStripEncodingLabel.BorderStyle = Border3DStyle.Bump;
             resources.ApplyResources(statusStripEncodingLabel, "statusStripEncodingLabel");
             statusStripEncodingLabel.Name = "statusStripEncodingLabel";
             // 
@@ -899,10 +910,13 @@ namespace TextPad_
             // 
             // cTabControl
             // 
+            cTabControl.AllowDrop = true;
             resources.ApplyResources(cTabControl, "cTabControl");
             cTabControl.Name = "cTabControl";
             cTabControl.SelectedIndex = 0;
             cTabControl.Selecting += cTabControlSelecting;
+            cTabControl.DragDrop += FileDragDrop;
+            cTabControl.DragEnter += FileDragEnter;
             // 
             // MainUIPanel
             // 
@@ -937,19 +951,69 @@ namespace TextPad_
             // 
             // settingsTabPage
             // 
-            settingsTabPage.Controls.Add(panel11);
-            settingsTabPage.Controls.Add(panel5);
-            settingsTabPage.Controls.Add(panel4);
-            settingsTabPage.Controls.Add(panel1);
-            settingsTabPage.Controls.Add(panel3);
-            settingsTabPage.Controls.Add(panel9);
-            settingsTabPage.Controls.Add(panel8);
-            settingsTabPage.Controls.Add(panel2);
-            settingsTabPage.Controls.Add(panel7);
-            settingsTabPage.Controls.Add(panel6);
             resources.ApplyResources(settingsTabPage, "settingsTabPage");
+            settingsTabPage.Controls.Add(SettingsEditorPanel);
+            settingsTabPage.Controls.Add(SettingsToolsPanel);
             settingsTabPage.Name = "settingsTabPage";
             settingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SettingsEditorPanel
+            // 
+            SettingsEditorPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingsEditorPanel.Controls.Add(panel10);
+            SettingsEditorPanel.Controls.Add(label19);
+            SettingsEditorPanel.Controls.Add(panel2);
+            SettingsEditorPanel.Controls.Add(panel11);
+            SettingsEditorPanel.Controls.Add(panel3);
+            SettingsEditorPanel.Controls.Add(panel5);
+            SettingsEditorPanel.Controls.Add(panel9);
+            SettingsEditorPanel.Controls.Add(panel4);
+            resources.ApplyResources(SettingsEditorPanel, "SettingsEditorPanel");
+            SettingsEditorPanel.Name = "SettingsEditorPanel";
+            // 
+            // panel10
+            // 
+            panel10.BorderStyle = BorderStyle.FixedSingle;
+            panel10.Controls.Add(autoUpdateCheckBox);
+            panel10.Controls.Add(label20);
+            resources.ApplyResources(panel10, "panel10");
+            panel10.Name = "panel10";
+            // 
+            // autoUpdateCheckBox
+            // 
+            resources.ApplyResources(autoUpdateCheckBox, "autoUpdateCheckBox");
+            autoUpdateCheckBox.Name = "autoUpdateCheckBox";
+            autoUpdateCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            resources.ApplyResources(label20, "label20");
+            label20.Name = "label20";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(label19, "label19");
+            label19.Name = "label19";
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(comboTheme);
+            panel2.Controls.Add(label2);
+            resources.ApplyResources(panel2, "panel2");
+            panel2.Name = "panel2";
+            // 
+            // comboTheme
+            // 
+            comboTheme.FormattingEnabled = true;
+            comboTheme.Items.AddRange(new object[] { resources.GetString("comboTheme.Items"), resources.GetString("comboTheme.Items1") });
+            resources.ApplyResources(comboTheme, "comboTheme");
+            comboTheme.Name = "comboTheme";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // panel11
             // 
@@ -970,63 +1034,6 @@ namespace TextPad_
             resources.ApplyResources(label24, "label24");
             label24.Name = "label24";
             // 
-            // panel5
-            // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(wordWarpCheckBox);
-            panel5.Controls.Add(label5);
-            resources.ApplyResources(panel5, "panel5");
-            panel5.Name = "panel5";
-            // 
-            // wordWarpCheckBox
-            // 
-            resources.ApplyResources(wordWarpCheckBox, "wordWarpCheckBox");
-            wordWarpCheckBox.Name = "wordWarpCheckBox";
-            wordWarpCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
-            // 
-            // panel4
-            // 
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(overWindowsCheckBox);
-            panel4.Controls.Add(label4);
-            resources.ApplyResources(panel4, "panel4");
-            panel4.Name = "panel4";
-            // 
-            // overWindowsCheckBox
-            // 
-            resources.ApplyResources(overWindowsCheckBox, "overWindowsCheckBox");
-            overWindowsCheckBox.Name = "overWindowsCheckBox";
-            overWindowsCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
-            // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(explorerCheckBox);
-            panel1.Controls.Add(label1);
-            resources.ApplyResources(panel1, "panel1");
-            panel1.Name = "panel1";
-            // 
-            // explorerCheckBox
-            // 
-            resources.ApplyResources(explorerCheckBox, "explorerCheckBox");
-            explorerCheckBox.Name = "explorerCheckBox";
-            explorerCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
-            // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
@@ -1046,6 +1053,25 @@ namespace TextPad_
             // 
             resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
+            // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(wordWarpCheckBox);
+            panel5.Controls.Add(label5);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
+            // 
+            // wordWarpCheckBox
+            // 
+            resources.ApplyResources(wordWarpCheckBox, "wordWarpCheckBox");
+            wordWarpCheckBox.Name = "wordWarpCheckBox";
+            wordWarpCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // panel9
             // 
@@ -1076,44 +1102,59 @@ namespace TextPad_
             resources.ApplyResources(label9, "label9");
             label9.Name = "label9";
             // 
-            // panel8
+            // panel4
             // 
-            panel8.BorderStyle = BorderStyle.FixedSingle;
-            panel8.Controls.Add(instrumentPanelCheckBox);
-            panel8.Controls.Add(label8);
-            resources.ApplyResources(panel8, "panel8");
-            panel8.Name = "panel8";
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(overWindowsCheckBox);
+            panel4.Controls.Add(label4);
+            resources.ApplyResources(panel4, "panel4");
+            panel4.Name = "panel4";
             // 
-            // instrumentPanelCheckBox
+            // overWindowsCheckBox
             // 
-            resources.ApplyResources(instrumentPanelCheckBox, "instrumentPanelCheckBox");
-            instrumentPanelCheckBox.Name = "instrumentPanelCheckBox";
-            instrumentPanelCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(overWindowsCheckBox, "overWindowsCheckBox");
+            overWindowsCheckBox.Name = "overWindowsCheckBox";
+            overWindowsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // label4
             // 
-            resources.ApplyResources(label8, "label8");
-            label8.Name = "label8";
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
             // 
-            // panel2
+            // SettingsToolsPanel
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(comboTheme);
-            panel2.Controls.Add(label2);
-            resources.ApplyResources(panel2, "panel2");
-            panel2.Name = "panel2";
+            SettingsToolsPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingsToolsPanel.Controls.Add(label14);
+            SettingsToolsPanel.Controls.Add(panel6);
+            SettingsToolsPanel.Controls.Add(panel7);
+            SettingsToolsPanel.Controls.Add(panel1);
+            SettingsToolsPanel.Controls.Add(panel8);
+            resources.ApplyResources(SettingsToolsPanel, "SettingsToolsPanel");
+            SettingsToolsPanel.Name = "SettingsToolsPanel";
             // 
-            // comboTheme
+            // label14
             // 
-            comboTheme.FormattingEnabled = true;
-            comboTheme.Items.AddRange(new object[] { resources.GetString("comboTheme.Items"), resources.GetString("comboTheme.Items1") });
-            resources.ApplyResources(comboTheme, "comboTheme");
-            comboTheme.Name = "comboTheme";
+            resources.ApplyResources(label14, "label14");
+            label14.Name = "label14";
             // 
-            // label2
+            // panel6
             // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(runFilesPanelCheckBox);
+            panel6.Controls.Add(label6);
+            resources.ApplyResources(panel6, "panel6");
+            panel6.Name = "panel6";
+            // 
+            // runFilesPanelCheckBox
+            // 
+            resources.ApplyResources(runFilesPanelCheckBox, "runFilesPanelCheckBox");
+            runFilesPanelCheckBox.Name = "runFilesPanelCheckBox";
+            runFilesPanelCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
             // 
             // panel7
             // 
@@ -1134,24 +1175,43 @@ namespace TextPad_
             resources.ApplyResources(label7, "label7");
             label7.Name = "label7";
             // 
-            // panel6
+            // panel1
             // 
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(runFilesPanelCheckBox);
-            panel6.Controls.Add(label6);
-            resources.ApplyResources(panel6, "panel6");
-            panel6.Name = "panel6";
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(explorerCheckBox);
+            panel1.Controls.Add(label1);
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Name = "panel1";
             // 
-            // runFilesPanelCheckBox
+            // explorerCheckBox
             // 
-            resources.ApplyResources(runFilesPanelCheckBox, "runFilesPanelCheckBox");
-            runFilesPanelCheckBox.Name = "runFilesPanelCheckBox";
-            runFilesPanelCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(explorerCheckBox, "explorerCheckBox");
+            explorerCheckBox.Name = "explorerCheckBox";
+            explorerCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // label1
             // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            // 
+            // panel8
+            // 
+            panel8.BorderStyle = BorderStyle.FixedSingle;
+            panel8.Controls.Add(instrumentPanelCheckBox);
+            panel8.Controls.Add(label8);
+            resources.ApplyResources(panel8, "panel8");
+            panel8.Name = "panel8";
+            // 
+            // instrumentPanelCheckBox
+            // 
+            resources.ApplyResources(instrumentPanelCheckBox, "instrumentPanelCheckBox");
+            instrumentPanelCheckBox.Name = "instrumentPanelCheckBox";
+            instrumentPanelCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
             // 
             // infoTabPage
             // 
@@ -1405,8 +1465,8 @@ namespace TextPad_
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(SettingsUIPanel);
             Controls.Add(MainUIPanel);
+            Controls.Add(SettingsUIPanel);
             KeyPreview = true;
             MainMenuStrip = menuStrip;
             Name = "FormMainUI";
@@ -1431,26 +1491,32 @@ namespace TextPad_
             SettingsUIPanel.ResumeLayout(false);
             settingsTabControl.ResumeLayout(false);
             settingsTabPage.ResumeLayout(false);
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
+            SettingsEditorPanel.ResumeLayout(false);
+            SettingsEditorPanel.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            SettingsToolsPanel.ResumeLayout(false);
+            SettingsToolsPanel.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             infoTabPage.ResumeLayout(false);
             tabControl.ResumeLayout(false);
             tabPage4.ResumeLayout(false);
@@ -1544,7 +1610,6 @@ namespace TextPad_
         internal Panel FolderExplorerPanel;
         private ToolStripButton aboveFolderBtn;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripStatusLabel statusStripSep1;
         private ToolStripStatusLabel textLinesLabelStatus;
         private ToolStripStatusLabel textLinesLabel;
         private ContextMenuStrip explorerContextMenu;
@@ -1631,7 +1696,6 @@ namespace TextPad_
         private Label label10;
         private Label MTBVersionLabel;
         private Label label26;
-        private ToolStripStatusLabel statusStripSep2;
         private ToolStripStatusLabel statusStripEncodingLabel;
         private ToolStripDropDownButton encodingDropDownBtn;
         private ToolStripMenuItem uTF16ToolStripMenuItem;
@@ -1644,6 +1708,14 @@ namespace TextPad_
         private Label label12;
         private Label label13;
         private Label label11;
+        private Panel SettingsToolsPanel;
+        private Label label14;
+        private Panel SettingsEditorPanel;
+        private Panel panel10;
+        private Label label20;
+        private Label label19;
+        internal CheckBox autoUpdateCheckBox;
+        internal ToolStripStatusLabel StatusLabel;
     }
 }
 

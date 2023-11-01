@@ -123,6 +123,9 @@
   <data name="MSGErrorCantDeleteFile" xml:space="preserve">
     <value>Failed to delete item</value>
   </data>
+  <data name="MSGErrorFileNotFound" xml:space="preserve">
+    <value>File not found.</value>
+  </data>
   <data name="MSGErrorNoTabsOpen" xml:space="preserve">
     <value>No tabs open</value>
   </data>
@@ -194,5 +197,8 @@
   </data>
   <data name="UPDATERStatusUpdateDownloadAndInstall" xml:space="preserve">
     <value>Download and install...</value>
+  </data>
+  <data name="UPDATERTitle" xml:space="preserve">
+    <value>Update installer</value>
   </data>
 </root>

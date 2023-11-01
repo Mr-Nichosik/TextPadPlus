@@ -70,11 +70,20 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось удалить элемент.
+        ///   Ищет локализованную строку, похожую на Не удалось удалить элемент..
         /// </summary>
         public static string MSGErrorCantDeleteFile {
             get {
                 return ResourceManager.GetString("MSGErrorCantDeleteFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Файл не найден..
+        /// </summary>
+        public static string MSGErrorFileNotFound {
+            get {
+                return ResourceManager.GetString("MSGErrorFileNotFound", resourceCulture);
             }
         }
         
@@ -291,6 +300,15 @@ namespace TextPad_.Resources {
         public static string UPDATERStatusUpdateDownloadAndInstall {
             get {
                 return ResourceManager.GetString("UPDATERStatusUpdateDownloadAndInstall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Установщик обновлений.
+        /// </summary>
+        public static string UPDATERTitle {
+            get {
+                return ResourceManager.GetString("UPDATERTitle", resourceCulture);
             }
         }
     }

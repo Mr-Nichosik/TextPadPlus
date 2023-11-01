@@ -121,7 +121,7 @@
     <value>По вашему запросу ничего не нашлось.</value>
   </data>
   <data name="MSGErrorCantDeleteFile" xml:space="preserve">
-    <value>Не удалось удалить элемент</value>
+    <value>Не удалось удалить элемент.</value>
   </data>
   <data name="MSGErrorNoTabsOpen" xml:space="preserve">
     <value>Не открыто ни одной вкладки.</value>
@@ -149,6 +149,9 @@
   </data>
   <data name="MSGErrorWhenSaveFile" xml:space="preserve">
     <value>При сохранении файла возникла ошибка</value>
+  </data>
+  <data name="MSGErrorFileNotFound" xml:space="preserve">
+    <value>Файл не найден.</value>
   </data>
   <data name="MSGQestionMoveFileToTrash" xml:space="preserve">
     <value>Переместить элемент в корзину?</value>
@@ -194,5 +197,8 @@
   </data>
   <data name="UPDATERStatusUpdateDownloadAndInstall" xml:space="preserve">
     <value>Скачивание и установка...</value>
+  </data>
+  <data name="UPDATERTitle" xml:space="preserve">
+    <value>Установщик обновлений</value>
   </data>
 </root>

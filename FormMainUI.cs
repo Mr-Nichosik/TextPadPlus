@@ -13,14 +13,11 @@ namespace TextPad_
         // Logger
         private readonly ILogger LS = new LogSystem($"{Application.StartupPath}\\logs");
 
-        // Окно установщика обновлений
-        public FormUpdaterUI UpdaterUI { get; private set; } = new();
-
         // Обработчик запуска файлов
-        private IFileRunner FileRunner = new TextEditor();
+        private readonly IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "29.10.2023";
+        public string DateOfRelease { get; } = "DEVELOPEMENT";
         public string ProgramPath { get; } = Application.StartupPath;
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
@@ -46,7 +43,7 @@ namespace TextPad_
             LS.Info("MainUI Initialization");
             InitializeComponent();
 
-            Program.mainUI = this;
+            Program.MainUI = this;
 
             LS.Debug("Program launched successfully");
         }
@@ -219,6 +216,7 @@ namespace TextPad_
             wordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
             explorerCheckBox.Checked = Properties.Settings.Default.FolderExplorerPanel_Visible;
             exitWhenClosingLastTabCheckBox.Checked = Properties.Settings.Default.ExitWhenClosingLastTab;
+            autoUpdateCheckBox.Checked = Properties.Settings.Default.AutoCheckUpdate;
 
             if (Properties.Settings.Default.Theme == "Dark")
             {
@@ -243,10 +241,10 @@ namespace TextPad_
 
         private void saveSettings(object sender, EventArgs e)
         {
-            var mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            var mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             // Проверка настроек языка
-            switch (Program.mainUI.comboBoxLanguage.SelectedItem)
+            switch (comboBoxLanguage.SelectedItem)
             {
                 case @"English / Английский":
                     if (Properties.Settings.Default.Language != "English")
@@ -263,48 +261,51 @@ namespace TextPad_
             }
 
             // Проверка настроек цветовой схемы
-            switch (Program.mainUI.comboTheme.SelectedItem)
+            switch (comboTheme.SelectedItem)
             {
                 case "Белая / White":
                     Properties.Settings.Default.Theme = "White";
 
                     // на текущей вкладке
-                    Program.mainUI.colorThemeWhite();
+                    colorThemeWhite();
                     break;
                 case "Тёмная / Dark":
                     Properties.Settings.Default.Theme = "Dark";
 
                     // на текущей вкладке
-                    Program.mainUI.colorThemeDark();
+                    colorThemeDark();
                     break;
             }
 
             // Проверка настроек строки состояния
-            Program.mainUI.StatusStrip.Visible = Program.mainUI.statusStripCheckBox.Checked;
-            Properties.Settings.Default.StatusStrip_Visible = Program.mainUI.statusStripCheckBox.Checked;
+            StatusStrip.Visible = statusStripCheckBox.Checked;
+            Properties.Settings.Default.StatusStrip_Visible = statusStripCheckBox.Checked;
 
             // Проверка настроек TopMost'а
-            Program.mainUI.TopMost = Program.mainUI.overWindowsCheckBox.Checked;
-            Properties.Settings.Default.FormMainUI_Topmost = Program.mainUI.overWindowsCheckBox.Checked;
+            TopMost = overWindowsCheckBox.Checked;
+            Properties.Settings.Default.FormMainUI_Topmost = overWindowsCheckBox.Checked;
 
             // Проверка настроек панели запуска файлов
-            Program.mainUI.RunFileToolStrip.Visible = Program.mainUI.runFilesPanelCheckBox.Checked;
-            Properties.Settings.Default.RunFileToolStrip_Visible = Program.mainUI.runFilesPanelCheckBox.Checked;
+            RunFileToolStrip.Visible = runFilesPanelCheckBox.Checked;
+            Properties.Settings.Default.RunFileToolStrip_Visible = runFilesPanelCheckBox.Checked;
 
             // Проверка настроек переноса слов
-            Properties.Settings.Default.ModifiedTextBox_WordWarp = Program.mainUI.wordWarpCheckBox.Checked;
-            mtb.WordWrap = Program.mainUI.wordWarpCheckBox.Checked;
+            Properties.Settings.Default.ModifiedTextBox_WordWarp = wordWarpCheckBox.Checked;
+            mtb.WordWrap = wordWarpCheckBox.Checked;
 
             // Проверка настроек панели инструментов
-            Properties.Settings.Default.ToolStrip_Visible = Program.mainUI.instrumentPanelCheckBox.Checked;
-            Program.mainUI.ToolStrip.Visible = Program.mainUI.instrumentPanelCheckBox.Checked;
+            Properties.Settings.Default.ToolStrip_Visible = instrumentPanelCheckBox.Checked;
+            ToolStrip.Visible = instrumentPanelCheckBox.Checked;
 
             // Проверка настроек обозревателя папок
-            Properties.Settings.Default.FolderExplorerPanel_Visible = Program.mainUI.explorerCheckBox.Checked;
-            Program.mainUI.FolderExplorerPanel.Visible = Program.mainUI.explorerCheckBox.Checked;
+            Properties.Settings.Default.FolderExplorerPanel_Visible = explorerCheckBox.Checked;
+            FolderExplorerPanel.Visible = explorerCheckBox.Checked;
 
             // Нужно ли закрывать программу при закрытии последней вкладки
-            Properties.Settings.Default.ExitWhenClosingLastTab = Program.mainUI.exitWhenClosingLastTabCheckBox.Checked;
+            Properties.Settings.Default.ExitWhenClosingLastTab = exitWhenClosingLastTabCheckBox.Checked;
+
+            // Нужно ли проверять наличие обновлений при входе
+            Properties.Settings.Default.AutoCheckUpdate = autoUpdateCheckBox.Checked;
 
             // Сообщение о перезапуске программы
             if (isLanguageChanged == true)
@@ -315,8 +316,8 @@ namespace TextPad_
 
             Properties.Settings.Default.Save();
 
-            Program.mainUI.SettingsUIPanel.Visible = false;
-            Program.mainUI.MainUIPanel.Visible = true;
+            SettingsUIPanel.Visible = false;
+            MainUIPanel.Visible = true;
         }
 
         private void closeSettings(object sender, EventArgs e)
@@ -327,14 +328,14 @@ namespace TextPad_
 
         private void fontSettings(object sender, EventArgs e)
         {
-            Program.mainUI.fontDialog.ShowDialog();
-            Program.mainUI.FontTextBox.Text = Program.mainUI.fontDialog.Font.ToString();
+            fontDialog.ShowDialog();
+            FontTextBox.Text = fontDialog.Font.ToString();
 
-            Properties.Settings.Default.ModifiedTextBox_Font = Program.mainUI.fontDialog.Font;
+            Properties.Settings.Default.ModifiedTextBox_Font = fontDialog.Font;
             Properties.Settings.Default.Save();
 
-            var mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Font = Program.mainUI.fontDialog.Font;
+            var mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Font = fontDialog.Font;
         }
 
         private void openWebSite(object sender, EventArgs e)
@@ -343,7 +344,7 @@ namespace TextPad_
             {
                 Process websiteProcess = new Process();
                 websiteProcess.StartInfo.UseShellExecute = true;
-                websiteProcess.StartInfo.FileName = Program.mainUI.WebSite;
+                websiteProcess.StartInfo.FileName = WebSite;
                 websiteProcess.Start();
             }
             catch (Exception ex)
@@ -368,7 +369,7 @@ namespace TextPad_
 
         private void getUpdate(object sender, EventArgs e)
         {
-            UpdaterUI.ShowDialog(this);
+            Program.UpdaterUI.ShowDialog(this);
         }
 
         // Методы для cTabControl
@@ -383,6 +384,8 @@ namespace TextPad_
             TabPage tpage = new TabPage(Resources.Localization.newDocumentTitle);
             var mtb = new MTextBox
             {
+                AllowDrop = true,
+                EnableAutoDragDrop = false,
                 Dock = DockStyle.Fill,
                 BorderStyle = BorderStyle.None,
                 WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp,
@@ -391,6 +394,9 @@ namespace TextPad_
             };
             mtb.TextChanged += (sender, args) => TextBoxTextChanged();
             mtb.AcceptsTab = true;
+            mtb.DragEnter += new DragEventHandler(FileDragEnter!);
+            mtb.DragDrop += new DragEventHandler(FileDragDrop!);
+            mtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress!);
 
             tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
@@ -424,14 +430,21 @@ namespace TextPad_
             * переноса слов.
             */
             TabPage tpage = new TabPage(tabName);
-            var mtb = new MTextBox();
-            mtb.Dock = DockStyle.Fill;
-            mtb.BorderStyle = BorderStyle.None;
-            mtb.WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp;
-            mtb.ContextMenuStrip = contextMenuStrip;
-            mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
+            var mtb = new MTextBox
+            {
+                AllowDrop = true,
+                EnableAutoDragDrop = false,
+                Dock = DockStyle.Fill,
+                BorderStyle = BorderStyle.None,
+                WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp,
+                ContextMenuStrip = contextMenuStrip,
+                Font = Properties.Settings.Default.ModifiedTextBox_Font
+            };
             mtb.TextChanged += (sender, args) => TextBoxTextChanged();
             mtb.AcceptsTab = true;
+            mtb.DragEnter += new DragEventHandler(FileDragEnter!);
+            mtb.DragDrop += new DragEventHandler(FileDragDrop!);
+            mtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress!);
 
             tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
@@ -651,7 +664,7 @@ namespace TextPad_
 
         }
 
-        // Обработка события TextChanged для каждого rich text box'а
+        // Изменение текста в Modified TextBox
         private void TextBoxTextChanged()
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
@@ -673,40 +686,69 @@ namespace TextPad_
             checkFiles();
         }
 
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        // Методы для перетаскивания и скидывания файлов и текста
+        private void FileDragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+                e.Effect = DragDropEffects.Copy;
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+        }
+
+        private void FileDragDrop(object sender, DragEventArgs e)
+        {
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
+            if (e.Data.GetDataPresent(DataFormats.Text))
+                mtb.Text += e.Data.GetData(DataFormats.Text);
+
+            else if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                TextEditor.OpenFile(files[0]);
+            }
+        }
+
         // Выбор кодировки
         private void ChangeToUTF32BE(object sender, EventArgs e)
         {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "UTF-32 BE";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF32(object sender, EventArgs e)
         {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "UTF-32";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF16BE(object sender, EventArgs e)
         {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "UTF-16 BE";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF16(object sender, EventArgs e)
         {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "UTF-16";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTFWindows1251(object sender, EventArgs e)
         {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "windows-1251";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
         private void ChangeToUTF8(object sender, EventArgs e)
         {
-            mtb = Program.mainUI.cTabControl.TabPages[Program.mainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Encoding = "UTF-8";
             encodingStatusLabel.Text = mtb.Encoding.ToString();
         }
@@ -811,7 +853,7 @@ namespace TextPad_
                 // Папки
                 foreach (string item in Directory.GetDirectories(path))
                 {
-                    ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 0);
+                    ListViewItem lvi = new(new DirectoryInfo(item).Name, 0);
                     lvi.ToolTipText = item;
                     FilesListView.Items.Add(lvi);
 
@@ -820,7 +862,7 @@ namespace TextPad_
                 // Файлы
                 foreach (string item in Directory.GetFiles(path))
                 {
-                    ListViewItem lvi = new ListViewItem(new DirectoryInfo(item).Name, 1);
+                    ListViewItem lvi = new(new DirectoryInfo(item).Name, 1);
                     lvi.ToolTipText = item;
                     FilesListView.Items.Add(lvi);
                 }
@@ -828,21 +870,7 @@ namespace TextPad_
 
             else if (File.Exists(path))
             {
-                CreateTab(new DirectoryInfo(path).Name);
-                cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<MTextBox>().First().FileName = path;
-                string fileText = File.ReadAllText(path);
-
-                mtb = cTabControl.TabPages[cTabControl.TabPages.Count - 1].Controls.OfType<MTextBox>().First();
-                mtb.Text = fileText;
-
-                cTabControl.SelectTab(cTabControl.TabPages[cTabControl.TabPages.Count - 1]);
-
-                if (recentFilesMenuItem.DropDownItems.Count == 10)
-                    recentFilesMenuItem.DropDownItems.RemoveAt(0);
-                ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                tsmi.Text = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
-                tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
-                recentFilesMenuItem.DropDownItems.Add(tsmi);
+                TextEditor.OpenFile(path);
             }
         }
 
@@ -921,8 +949,8 @@ namespace TextPad_
 
         private void PythonRun(object sender, EventArgs e)
         {
-            FormPythonInterpreterUI pythonInterpreterUI = new FormPythonInterpreterUI();
-            pythonInterpreterUI.ShowDialog(Program.mainUI);
+            FormPythonInterpreterUI pythonInterpreterUI = new();
+            pythonInterpreterUI.ShowDialog(this);
         }
 
         private void BatRun(object sender, EventArgs e)
@@ -993,7 +1021,7 @@ namespace TextPad_
             mtb.ForeColor = Color.Cyan;
         }
 
-        // Немного говнокода для сохранения загрузки списка последних файлов в файле Properties.RecentFiles
+        // Немного говнокода для загрузки списка последних файлов в файле Properties.RecentFiles
         private void LoadRecentFiles()
         {
             try
@@ -1178,6 +1206,8 @@ namespace TextPad_
         {
             LS.Debug("Loading parameters");
 
+            StatusLabel.Text = "Загрузка...";
+
             CreateTab();
             LoadRecentFiles();
 
@@ -1254,8 +1284,18 @@ namespace TextPad_
                     this.WindowState = FormWindowState.Normal;
                     break;
             }
+            if (Properties.Settings.Default.AutoCheckUpdate == true)
+            {
+                StatusLabel.Text = "Проверка обновлений...";
+                Updater.GetUpdateQuiet(Program.UpdaterUI.UpdateIatestVerL, Program.UpdaterUI.UpdateInfoTextBox, Program.UpdaterUI.UpdateStatusLabel, Program.UpdaterUI.UpdateStatusProgressBar);
+            }
 
             checkFiles();
+
+            if (Program.UpdateStatus > 0)
+                StatusLabel.Text = "Выполняется обновление...";
+            else
+                StatusLabel.Text = "Готово";
 
             LS.Debug("Options loaded");
             LS.Info($"Program path: {ProgramPath}");
@@ -1265,9 +1305,20 @@ namespace TextPad_
         {
 
             // Проверка статуса обновления
-            if (Program.isUpdating == true)
+            if (Program.UpdateStatus == 1)
             {
-                return;
+                if (MessageBox.Show("Прервать установку обновления?", Resources.Localization.UPDATERTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    return;
+                else
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+            }
+            else if (Program.UpdateStatus == 2)
+            {
+                Process.GetCurrentProcess().Kill();
             }
             else
             {

@@ -10,20 +10,31 @@ namespace TextPad_
 
         private void CheckForUpdates(object sender, EventArgs e)
         {
-            Updater.Updater.GetUpdate(UpdateIatestVerL, UpdateInfoTextBox, UpdateStatusLabel, UpdateStatusProgressBar);
+            Updater.GetUpdate(UpdateIatestVerL, UpdateInfoTextBox, UpdateStatusLabel, UpdateStatusProgressBar);
         }
 
         private void InstallUpdateManually(object sender, EventArgs e)
         {
-            Updater.Updater.OpenUpdatesSite();
+            Updater.OpenUpdatesSite();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void FormUpdaterUILoad(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            ProgramPathTextBox.Text = Program.mainUI.ProgramPath;
-            UpdateInstalledVerL.Text = Program.mainUI.GetAssemblyVersion();
+            ProgramPathTextBox.Text = Program.MainUI.ProgramPath;
+            UpdateInstalledVerL.Text = Program.MainUI.GetAssemblyVersion();
+        }
+
+        private void FormUpdaterUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (Program.isUpdating == true)
+            //{
+            //    if (MessageBox.Show("Прервать установку обновления?", Resources.Localization.UPDATERTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            //        return;
+            //    else
+            //        e.Cancel = true;
+            //}
         }
     }
 }

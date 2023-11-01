@@ -1,10 +1,20 @@
 # TextPad+
 
 Это простой текстовый редактор, сделанный на C# WinForms.
-Зависимости: Сборка(Не проект!) моей системы логирования Logging System https://github.com/Mr-Nichosik/LoggingSystem;
-Сборка Custom TabControl, который я только начал разрабатывать https://github.com/Mr-Nichosik/CustomTabControl;
-Сборка MTextBox - модифицированного мною текстового поля RichTextBox https://github.com/Mr-Nichosik/ModifiedTextBox.
+
+Зависимости
+-----------
+
+Основной файл решщения (TextPad+.sln) включает в себя 4 проекта: 
+
+* TextPad+, он же в этом репозитории
+* Проект моей системы логирования Logging System https://github.com/Mr-Nichosik/LoggingSystem;
+* Проект Custom TabControl, который я только начал разрабатывать https://github.com/Mr-Nichosik/CustomTabControl;
+* Проект Modified TextBox - модифицированного мною текстового поля RichTextBox https://github.com/Mr-Nichosik/ModifiedTextBox.
 В релизах в этих репозиториях есть архивы с уже собранными файлами этих проектов, их нужно скачать и указать к ним путь в студии.
+
+TextPad+.csproj
+---------------
 
 Я сделал в нём несколько классов: 4 класса с формами, основной класс Program и класс с логикой работы TextEditor.
 Все формы имеют две локализации: стандартную - она же русская (файлы Form.resx), и английскую (файлы Form.en.resx)
