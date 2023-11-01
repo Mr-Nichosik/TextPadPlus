@@ -5,13 +5,12 @@
 Зависимости
 -----------
 
-Основной файл решщения (TextPad+.sln) включает в себя 4 проекта: 
+Основной файл решения (TextPad+.sln) включает в себя 4 проекта: 
 
 * TextPad+, он же в этом репозитории
 * Проект моей системы логирования Logging System https://github.com/Mr-Nichosik/LoggingSystem;
 * Проект Custom TabControl, который я только начал разрабатывать https://github.com/Mr-Nichosik/CustomTabControl;
 * Проект Modified TextBox - модифицированного мною текстового поля RichTextBox https://github.com/Mr-Nichosik/ModifiedTextBox.
-В релизах в этих репозиториях есть архивы с уже собранными файлами этих проектов, их нужно скачать и указать к ним путь в студии.
 
 TextPad+.csproj
 ---------------
