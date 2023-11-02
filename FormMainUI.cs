@@ -17,7 +17,7 @@ namespace TextPad_
         private readonly IFileRunner FileRunner = new TextEditor();
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "DEVELOPEMENT";
+        public string DateOfRelease { get; } = "2.11.2023";
         public string ProgramPath { get; } = Application.StartupPath;
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
@@ -392,8 +392,8 @@ namespace TextPad_
                 ContextMenuStrip = contextMenuStrip,
                 Font = Properties.Settings.Default.ModifiedTextBox_Font
             };
-            mtb.TextChanged += (sender, args) => TextBoxTextChanged();
             mtb.AcceptsTab = true;
+            mtb.TextChanged += new EventHandler(TextBoxTextChanged!);
             mtb.DragEnter += new DragEventHandler(FileDragEnter!);
             mtb.DragDrop += new DragEventHandler(FileDragDrop!);
             mtb.KeyPress += new KeyPressEventHandler(TextBoxKeyPress!);
@@ -429,7 +429,7 @@ namespace TextPad_
             * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
             * переноса слов.
             */
-            TabPage tpage = new TabPage(tabName);
+            TabPage tpage = new(tabName);
             var mtb = new MTextBox
             {
                 AllowDrop = true,
@@ -440,7 +440,7 @@ namespace TextPad_
                 ContextMenuStrip = contextMenuStrip,
                 Font = Properties.Settings.Default.ModifiedTextBox_Font
             };
-            mtb.TextChanged += (sender, args) => TextBoxTextChanged();
+            mtb.TextChanged += new EventHandler(TextBoxTextChanged!);
             mtb.AcceptsTab = true;
             mtb.DragEnter += new DragEventHandler(FileDragEnter!);
             mtb.DragDrop += new DragEventHandler(FileDragDrop!);
@@ -529,7 +529,7 @@ namespace TextPad_
             {
                 mtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
-                if (mtb.IsFileSaved == false)
+                if (mtb.IsFileChanged == true)
                 {
                     DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
@@ -665,7 +665,7 @@ namespace TextPad_
         }
 
         // Изменение текста в Modified TextBox
-        private void TextBoxTextChanged()
+        private void TextBoxTextChanged(object sender, EventArgs e)
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -1206,7 +1206,7 @@ namespace TextPad_
         {
             LS.Debug("Loading parameters");
 
-            StatusLabel.Text = "Загрузка...";
+            StatusLabel.Text = Resources.Localization.PROGRAMStatusLoading;
 
             CreateTab();
             LoadRecentFiles();
@@ -1286,16 +1286,16 @@ namespace TextPad_
             }
             if (Properties.Settings.Default.AutoCheckUpdate == true)
             {
-                StatusLabel.Text = "Проверка обновлений...";
+                StatusLabel.Text = Resources.Localization.PROGRAMStatusCheckForUpdates;
                 Updater.GetUpdateQuiet(Program.UpdaterUI.UpdateIatestVerL, Program.UpdaterUI.UpdateInfoTextBox, Program.UpdaterUI.UpdateStatusLabel, Program.UpdaterUI.UpdateStatusProgressBar);
             }
 
             checkFiles();
 
             if (Program.UpdateStatus > 0)
-                StatusLabel.Text = "Выполняется обновление...";
+                StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
             else
-                StatusLabel.Text = "Готово";
+                StatusLabel.Text = Resources.Localization.PROGRAMStatusReady;
 
             LS.Debug("Options loaded");
             LS.Info($"Program path: {ProgramPath}");
@@ -1327,7 +1327,7 @@ namespace TextPad_
                 {
                     mtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
-                    if (mtb.TextLength != 0)
+                    if (mtb.IsFileChanged == true)
                     {
                         DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (dr == DialogResult.Yes)

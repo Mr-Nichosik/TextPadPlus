@@ -165,6 +165,18 @@
   <data name="openFileDialogFilter" xml:space="preserve">
     <value>All files (*.*)|*.*|Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files(*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js</value>
   </data>
+  <data name="PROGRAMStatusCheckForUpdates" xml:space="preserve">
+    <value>Checking for updates...</value>
+  </data>
+  <data name="PROGRAMStatusLoading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="PROGRAMStatusReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="PROGRAMStatusUpdating" xml:space="preserve">
+    <value>Updating...</value>
+  </data>
   <data name="saveFileDialogFilter" xml:space="preserve">
     <value>Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files (*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|All files (*.*)|*.*</value>
   </data>

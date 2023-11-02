@@ -72,13 +72,13 @@ namespace TextPad_
                         LS.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
-                        Program.MainUI.StatusLabel.Text = "Выполняется обновление...";
+                        Program.MainUI.StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
 
                         Program.MainUI.SaveParsameters();
                         StartUninstaller();
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
                         UpdateStatusProgressBar.Value = 25;
-                        UpdateStatusLabel.ToolTipText = "Выполняется обновление...";
+                        UpdateStatusLabel.ToolTipText = Resources.Localization.PROGRAMStatusUpdating;
 
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDownloadAndInstall;
                         UpdateStatusProgressBar.Value = 50;

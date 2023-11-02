@@ -205,6 +205,42 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверка наличия обновлений....
+        /// </summary>
+        public static string PROGRAMStatusCheckForUpdates {
+            get {
+                return ResourceManager.GetString("PROGRAMStatusCheckForUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Загрузка....
+        /// </summary>
+        public static string PROGRAMStatusLoading {
+            get {
+                return ResourceManager.GetString("PROGRAMStatusLoading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Готово.
+        /// </summary>
+        public static string PROGRAMStatusReady {
+            get {
+                return ResourceManager.GetString("PROGRAMStatusReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идёт обновление....
+        /// </summary>
+        public static string PROGRAMStatusUpdating {
+            get {
+                return ResourceManager.GetString("PROGRAMStatusUpdating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|Все файлы (*.*)|*.*.
         /// </summary>
         public static string saveFileDialogFilter {

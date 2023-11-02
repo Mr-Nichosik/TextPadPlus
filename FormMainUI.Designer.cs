@@ -132,8 +132,8 @@ namespace TextPad_
             folderBrowserDialog = new FolderBrowserDialog();
             FolderExplorerPanel = new Panel();
             workFolderLabel = new Label();
-            cTabControl = new CTabControl();
             MainUIPanel = new Panel();
+            cTabControl = new CTabControl();
             SettingsUIPanel = new Panel();
             settingsTabControl = new TabControl();
             settingsTabPage = new TabPage();
@@ -908,16 +908,6 @@ namespace TextPad_
             resources.ApplyResources(workFolderLabel, "workFolderLabel");
             workFolderLabel.Name = "workFolderLabel";
             // 
-            // cTabControl
-            // 
-            cTabControl.AllowDrop = true;
-            resources.ApplyResources(cTabControl, "cTabControl");
-            cTabControl.Name = "cTabControl";
-            cTabControl.SelectedIndex = 0;
-            cTabControl.Selecting += cTabControlSelecting;
-            cTabControl.DragDrop += FileDragDrop;
-            cTabControl.DragEnter += FileDragEnter;
-            // 
             // MainUIPanel
             // 
             MainUIPanel.BackColor = Color.Transparent;
@@ -929,6 +919,13 @@ namespace TextPad_
             MainUIPanel.Controls.Add(menuStrip);
             resources.ApplyResources(MainUIPanel, "MainUIPanel");
             MainUIPanel.Name = "MainUIPanel";
+            // 
+            // cTabControl
+            // 
+            resources.ApplyResources(cTabControl, "cTabControl");
+            cTabControl.Name = "cTabControl";
+            cTabControl.SelectedIndex = 0;
+            cTabControl.Selecting += cTabControlSelecting;
             // 
             // SettingsUIPanel
             // 
@@ -1465,8 +1462,8 @@ namespace TextPad_
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(MainUIPanel);
             Controls.Add(SettingsUIPanel);
+            Controls.Add(MainUIPanel);
             KeyPreview = true;
             MainMenuStrip = menuStrip;
             Name = "FormMainUI";
@@ -1617,7 +1614,6 @@ namespace TextPad_
         private ContextMenuStrip contextMenuStrip;
         private ToolStripSeparator separator1FileMenuItem;
         internal ToolStripMenuItem recentFilesMenuItem;
-        internal CTabControl cTabControl;
         private ToolStripMenuItem fileFolderFileMenuItem;
         private TabControl settingsTabControl;
         private TabPage settingsTabPage;
@@ -1716,6 +1712,8 @@ namespace TextPad_
         private Label label19;
         internal CheckBox autoUpdateCheckBox;
         internal ToolStripStatusLabel StatusLabel;
+        internal CTabControl cTabControl;
+        internal CTabControl cTabControl1;
     }
 }
 
