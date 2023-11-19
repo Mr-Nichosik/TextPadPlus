@@ -7,7 +7,7 @@ namespace TextPad_
 
     public partial class SearchUI : Form
     {
-        private readonly ILogger LS = new LogSystem("logs");
+        private readonly ILogger Logger = new LogSystem("logs");
         private int findCutLength = 0;
 
         public SearchUI()
@@ -26,7 +26,7 @@ namespace TextPad_
             InitializeComponent();
         }
 
-        private void replaceClick(object sender, EventArgs e)
+        private void Replace(object sender, EventArgs e)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace TextPad_
                     string str1, str2;
 
                     str1 = mtb.Text.Substring(0, index);
-                    str2 = mtb.Text.Substring((index + FindTextBox.TextLength), (mtb.TextLength - (index + FindTextBox.TextLength)));
+                    str2 = mtb.Text.Substring(index + FindTextBox.TextLength, mtb.TextLength - (index + FindTextBox.TextLength));
                     string result = str1 + ReplaceTextBox.Text + str2;
                     mtb.Clear();
                     mtb.AppendText(result);
@@ -45,7 +45,7 @@ namespace TextPad_
                     mtb.ScrollToCaret();
                     mtb.Focus();
 
-                    Program.MainUI.textLengthLabel.Text = mtb.Text.Length.ToString();
+                    Program.MainUI.TextLengthLabel.Text = mtb.Text.Length.ToString();
                 }
                 else
                 {
@@ -55,12 +55,12 @@ namespace TextPad_
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Localization.MSGErrorNoTabsOpen, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error($"{ex} Replace text error.");
+                Logger.Error($"{ex} Replace text error.");
                 return;
             }
         }
 
-        private void ReplaceAllButton_Click(object sender, EventArgs e)
+        private void ReplaceAll(object sender, EventArgs e)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace TextPad_
                         mtb.Clear();
                         mtb.AppendText(result);
 
-                        Program.MainUI.textLengthLabel.Text = mtb.Text.Length.ToString();
+                        Program.MainUI.TextLengthLabel.Text = mtb.Text.Length.ToString();
                     }
                 }
                 else
@@ -89,19 +89,19 @@ namespace TextPad_
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Localization.MSGErrorNoTabsOpen, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error($"{ex} Replace all text error.");
+                Logger.Error($"{ex} Replace all text error.");
                 return;
             }
         }
 
-        private void gotoBtnClick(object sender, EventArgs e)
+        private void GoToLine(object sender, EventArgs e)
         {
             try
             {
                 MTextBox mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 int lineNumber = Convert.ToInt32(numericLineNumber.Text);
-                if (lineNumber > 0 && lineNumber <= mtb.Lines.Count())
+                if (lineNumber > 0 && lineNumber <= mtb.Lines.Length)
                 {
                     mtb.SelectionStart = mtb.GetFirstCharIndexFromLine(Convert.ToInt32(numericLineNumber.Text) - 1);
                     mtb.ScrollToCaret();
@@ -115,17 +115,17 @@ namespace TextPad_
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Localization.MSGErrorNoTabsOpen, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error($"{ex} Go to line error.");
+                Logger.Error($"{ex} Go to line error.");
                 return;
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void Search(object sender, EventArgs e)
         {
-            findText(ref findCutLength);
+            Search(ref findCutLength);
         }
 
-        private void findText(ref int findCutLength)
+        private void Search(ref int findCutLength)
         {
             try
             {
@@ -158,7 +158,7 @@ namespace TextPad_
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Localization.MSGErrorNoTabsOpen, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error($"{ex} Find text error.");
+                Logger.Error($"{ex} Find text error.");
                 return;
             }
         }

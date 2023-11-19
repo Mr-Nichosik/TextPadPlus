@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows8.0</TargetFramework>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <RootNamespace>TextPad_</RootNamespace>
     <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <UseWPF>False</UseWPF>
     <ImplicitUsings>disable</ImplicitUsings>
     <ApplicationIcon>Resources\Icons\Favicon.ico</ApplicationIcon>
     <PlatformTarget>x86</PlatformTarget>
@@ -16,7 +16,7 @@
     <Description>TextPad+ x86</Description>
     <PackageIcon>TextPad+ Logo.png</PackageIcon>
     <PackageProjectUrl>https://mr-nichosik.github.io/Main_Page/</PackageProjectUrl>
-    <Version>2.6.1</Version>
+    <Version>2.7.0</Version>
     <IncludeSymbols>False</IncludeSymbols>
     <StartupObject>TextPad_.Program</StartupObject>
     <Company>TextPad+</Company>

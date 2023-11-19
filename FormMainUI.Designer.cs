@@ -32,38 +32,45 @@ namespace TextPad_
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainUI));
             menuStrip = new MenuStrip();
-            fileMenuItem = new ToolStripMenuItem();
-            createTabFileMenuItem = new ToolStripMenuItem();
-            closeTabFileMenuItem = new ToolStripMenuItem();
-            closeAllTabsFileMenuItem = new ToolStripMenuItem();
-            closeWithoutCurrentTabsFileMenuItem = new ToolStripMenuItem();
-            newWindowFileMenuItem = new ToolStripMenuItem();
-            saveCurrentFileMenuItem = new ToolStripMenuItem();
-            saveAsFileMenuItem = new ToolStripMenuItem();
-            openFileMenuItem = new ToolStripMenuItem();
-            deletFileFileMenuItem = new ToolStripMenuItem();
+            FileMenuItem = new ToolStripMenuItem();
+            CreateTabFileMenuItem = new ToolStripMenuItem();
+            CloseTabFileMenuItem = new ToolStripMenuItem();
+            CloseAllTabsFileMenuItem = new ToolStripMenuItem();
+            CloseWithoutCurrentTabFileMenuItem = new ToolStripMenuItem();
+            NewWindowFileMenuItem = new ToolStripMenuItem();
+            SaveFileMenuItem = new ToolStripMenuItem();
+            SaveAsFileMenuItem = new ToolStripMenuItem();
+            OpenFileMenuItem = new ToolStripMenuItem();
+            ReopenFileMenuItem = new ToolStripMenuItem();
+            DeleteFileMenuItem = new ToolStripMenuItem();
             separator1FileMenuItem = new ToolStripSeparator();
-            fileFolderFileMenuItem = new ToolStripMenuItem();
-            recentFilesMenuItem = new ToolStripMenuItem();
+            OpenFileFolderFileMenuItem = new ToolStripMenuItem();
+            OpenFolderAsProjectMenuFileItem = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
+            RecentFilesListFileItem = new ToolStripMenuItem();
+            ClearRecentFilesListFileMenuItem = new ToolStripMenuItem();
             separator2FileMenuItem = new ToolStripSeparator();
-            exitFileMenuItem = new ToolStripMenuItem();
-            editMenuItem = new ToolStripMenuItem();
-            copyEditMenuItem = new ToolStripMenuItem();
-            cutEditMenuItem = new ToolStripMenuItem();
-            pasteEditMenuItem = new ToolStripMenuItem();
-            selectAllEditMenuItem = new ToolStripMenuItem();
-            deleteEditMenuItem = new ToolStripMenuItem();
+            ExitFileMenuItem = new ToolStripMenuItem();
+            EditMenuItem = new ToolStripMenuItem();
+            CopyEditMenuItem = new ToolStripMenuItem();
+            CutEditMenuItem = new ToolStripMenuItem();
+            PasteEditMenuItem = new ToolStripMenuItem();
+            SelectAllEditMenuItem = new ToolStripMenuItem();
+            DeleteEditMenuItem = new ToolStripMenuItem();
+            RegisterEditMenuItem = new ToolStripMenuItem();
+            ToUpperEditMenuItem = new ToolStripMenuItem();
+            ToLowerEditMenuItem = new ToolStripMenuItem();
             menuStripSep2 = new ToolStripSeparator();
-            undoEditMenuItem = new ToolStripMenuItem();
-            redoEditMenuItem = new ToolStripMenuItem();
+            UndoEditMenuItem = new ToolStripMenuItem();
+            RedoEditMenuItem = new ToolStripMenuItem();
             menuStripSep3 = new ToolStripSeparator();
-            dateEditMenuItem = new ToolStripMenuItem();
-            copyToClipboardEditMenuItem = new ToolStripMenuItem();
-            путьИИмяФайлаToolStripMenuItem = new ToolStripMenuItem();
-            имяФайлаToolStripMenuItem = new ToolStripMenuItem();
-            searchEditMenuItem = new ToolStripMenuItem();
-            optionsMenuItem = new ToolStripMenuItem();
-            runMenuItem = new ToolStripMenuItem();
+            DateEditMenuItem = new ToolStripMenuItem();
+            CopyToClipboardEditMenuItem = new ToolStripMenuItem();
+            CopyPathAndFileNameEditrMenuItem = new ToolStripMenuItem();
+            CopyFileNameEditMenuItem = new ToolStripMenuItem();
+            SearchEditMenuItem = new ToolStripMenuItem();
+            SettingsMenuItem = new ToolStripMenuItem();
+            RunMenuItem = new ToolStripMenuItem();
             pythonRunMenuItem = new ToolStripMenuItem();
             vbsRunMenuItem = new ToolStripMenuItem();
             batRunMenuItem = new ToolStripMenuItem();
@@ -81,19 +88,23 @@ namespace TextPad_
             вернутьToolStripMenuItem = new ToolStripMenuItem();
             StatusStrip = new StatusStrip();
             StatusLabel = new ToolStripStatusLabel();
-            textLabelStatus = new ToolStripStatusLabel();
-            textLengthLabel = new ToolStripStatusLabel();
-            textLinesLabelStatus = new ToolStripStatusLabel();
-            textLinesLabel = new ToolStripStatusLabel();
-            statusStripEncodingLabel = new ToolStripStatusLabel();
-            encodingStatusLabel = new ToolStripStatusLabel();
-            encodingDropDownBtn = new ToolStripDropDownButton();
+            TextLabelStatus = new ToolStripStatusLabel();
+            TextLengthLabel = new ToolStripStatusLabel();
+            TextLinesLabelStatus = new ToolStripStatusLabel();
+            TextLinesLabel = new ToolStripStatusLabel();
+            StatusStripEncodingLabel = new ToolStripStatusLabel();
+            EncodingStatusLabel = new ToolStripStatusLabel();
+            EncodingDropDownBtn = new ToolStripDropDownButton();
             utf32BEToolStripMenuItem = new ToolStripMenuItem();
             uTF16ToolStripMenuItem = new ToolStripMenuItem();
             utf16BEToolStripMenuItem = new ToolStripMenuItem();
             uft16ToolStripMenuItem = new ToolStripMenuItem();
+            UTF8BOMToolStripMenuItem = new ToolStripMenuItem();
             utf8ToolStripMenuItem = new ToolStripMenuItem();
+            ASCIIToolStripMenuItem = new ToolStripMenuItem();
             windwso1251ToolStripMenuItem = new ToolStripMenuItem();
+            KOI8RToolStripMenuItem = new ToolStripMenuItem();
+            kOI8UToolStripMenuItem = new ToolStripMenuItem();
             ToolStrip = new ToolStrip();
             newTabToolStripItem = new ToolStripButton();
             closeTabToolStripItem = new ToolStripButton();
@@ -111,11 +122,11 @@ namespace TextPad_
             toolStripSep4 = new ToolStripSeparator();
             fontToolStripItem = new ToolStripButton();
             toolStripSep5 = new ToolStripSeparator();
-            searchToolStripItem = new ToolStripButton();
+            SearchToolStripItem = new ToolStripButton();
             RunFileToolStrip = new ToolStrip();
-            toolStripLabel1 = new ToolStripLabel();
-            startScriptCombobox = new ToolStripComboBox();
-            startFileButton = new ToolStripButton();
+            RunAsToolsStripLabel = new ToolStripLabel();
+            RunScriptCombobox = new ToolStripComboBox();
+            RunScriptButton = new ToolStripButton();
             FilesListView = new ListView();
             explorerContextMenu = new ContextMenuStrip(components);
             удалитьToolStripMenuItem1 = new ToolStripMenuItem();
@@ -207,7 +218,7 @@ namespace TextPad_
             label11 = new Label();
             programComponentsTitle = new Label();
             tabPage5 = new TabPage();
-            textBox2 = new TextBox();
+            ChangeLogTextBox = new TextBox();
             SettingsBottomUIPanel = new Panel();
             checkUpdatesButton = new Button();
             cancelBatton = new Button();
@@ -251,226 +262,267 @@ namespace TextPad_
             // menuStrip
             // 
             menuStrip.BackColor = SystemColors.Control;
-            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenuItem, editMenuItem, optionsMenuItem, runMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { FileMenuItem, EditMenuItem, SettingsMenuItem, RunMenuItem });
             resources.ApplyResources(menuStrip, "menuStrip");
             menuStrip.Name = "menuStrip";
             // 
-            // fileMenuItem
+            // FileMenuItem
             // 
-            fileMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createTabFileMenuItem, closeTabFileMenuItem, closeAllTabsFileMenuItem, closeWithoutCurrentTabsFileMenuItem, newWindowFileMenuItem, saveCurrentFileMenuItem, saveAsFileMenuItem, openFileMenuItem, deletFileFileMenuItem, separator1FileMenuItem, fileFolderFileMenuItem, recentFilesMenuItem, separator2FileMenuItem, exitFileMenuItem });
-            resources.ApplyResources(fileMenuItem, "fileMenuItem");
-            fileMenuItem.Name = "fileMenuItem";
+            FileMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CreateTabFileMenuItem, CloseTabFileMenuItem, CloseAllTabsFileMenuItem, CloseWithoutCurrentTabFileMenuItem, NewWindowFileMenuItem, SaveFileMenuItem, SaveAsFileMenuItem, OpenFileMenuItem, ReopenFileMenuItem, DeleteFileMenuItem, separator1FileMenuItem, OpenFileFolderFileMenuItem, OpenFolderAsProjectMenuFileItem, toolStripSeparator3, RecentFilesListFileItem, ClearRecentFilesListFileMenuItem, separator2FileMenuItem, ExitFileMenuItem });
+            resources.ApplyResources(FileMenuItem, "FileMenuItem");
+            FileMenuItem.Name = "FileMenuItem";
             // 
-            // createTabFileMenuItem
+            // CreateTabFileMenuItem
             // 
-            createTabFileMenuItem.Image = Properties.Resources.DocumentCreate;
-            createTabFileMenuItem.Name = "createTabFileMenuItem";
-            resources.ApplyResources(createTabFileMenuItem, "createTabFileMenuItem");
-            createTabFileMenuItem.Click += createTabClick;
+            CreateTabFileMenuItem.Image = Properties.Resources.DocumentCreate;
+            CreateTabFileMenuItem.Name = "CreateTabFileMenuItem";
+            resources.ApplyResources(CreateTabFileMenuItem, "CreateTabFileMenuItem");
+            CreateTabFileMenuItem.Click += CreateTab;
             // 
-            // closeTabFileMenuItem
+            // CloseTabFileMenuItem
             // 
-            closeTabFileMenuItem.Image = Properties.Resources.DocumentClose;
-            closeTabFileMenuItem.Name = "closeTabFileMenuItem";
-            resources.ApplyResources(closeTabFileMenuItem, "closeTabFileMenuItem");
-            closeTabFileMenuItem.Click += CloseTab;
+            CloseTabFileMenuItem.Image = Properties.Resources.DocumentClose;
+            CloseTabFileMenuItem.Name = "CloseTabFileMenuItem";
+            resources.ApplyResources(CloseTabFileMenuItem, "CloseTabFileMenuItem");
+            CloseTabFileMenuItem.Click += CloseTab;
             // 
-            // closeAllTabsFileMenuItem
+            // CloseAllTabsFileMenuItem
             // 
-            closeAllTabsFileMenuItem.Name = "closeAllTabsFileMenuItem";
-            resources.ApplyResources(closeAllTabsFileMenuItem, "closeAllTabsFileMenuItem");
-            closeAllTabsFileMenuItem.Click += closeAllTabs;
+            CloseAllTabsFileMenuItem.Name = "CloseAllTabsFileMenuItem";
+            resources.ApplyResources(CloseAllTabsFileMenuItem, "CloseAllTabsFileMenuItem");
+            CloseAllTabsFileMenuItem.Click += CloseAllTabs;
             // 
-            // closeWithoutCurrentTabsFileMenuItem
+            // CloseWithoutCurrentTabFileMenuItem
             // 
-            closeWithoutCurrentTabsFileMenuItem.Name = "closeWithoutCurrentTabsFileMenuItem";
-            resources.ApplyResources(closeWithoutCurrentTabsFileMenuItem, "closeWithoutCurrentTabsFileMenuItem");
-            closeWithoutCurrentTabsFileMenuItem.Click += closeAllWithoutCurrentTab;
+            CloseWithoutCurrentTabFileMenuItem.Name = "CloseWithoutCurrentTabFileMenuItem";
+            resources.ApplyResources(CloseWithoutCurrentTabFileMenuItem, "CloseWithoutCurrentTabFileMenuItem");
+            CloseWithoutCurrentTabFileMenuItem.Click += CloseAllWithoutCurrentTab;
             // 
-            // newWindowFileMenuItem
+            // NewWindowFileMenuItem
             // 
-            newWindowFileMenuItem.Name = "newWindowFileMenuItem";
-            resources.ApplyResources(newWindowFileMenuItem, "newWindowFileMenuItem");
-            newWindowFileMenuItem.Click += newWindow;
+            NewWindowFileMenuItem.Name = "NewWindowFileMenuItem";
+            resources.ApplyResources(NewWindowFileMenuItem, "NewWindowFileMenuItem");
+            NewWindowFileMenuItem.Click += NewWindow;
             // 
-            // saveCurrentFileMenuItem
+            // SaveFileMenuItem
             // 
-            saveCurrentFileMenuItem.Image = Properties.Resources.DocumentSave;
-            saveCurrentFileMenuItem.Name = "saveCurrentFileMenuItem";
-            resources.ApplyResources(saveCurrentFileMenuItem, "saveCurrentFileMenuItem");
-            saveCurrentFileMenuItem.Click += saveFileButton;
+            SaveFileMenuItem.Image = Properties.Resources.DocumentSave;
+            SaveFileMenuItem.Name = "SaveFileMenuItem";
+            resources.ApplyResources(SaveFileMenuItem, "SaveFileMenuItem");
+            SaveFileMenuItem.Click += SaveFile;
             // 
-            // saveAsFileMenuItem
+            // SaveAsFileMenuItem
             // 
-            saveAsFileMenuItem.Image = Properties.Resources.DocumentSaveAs;
-            saveAsFileMenuItem.Name = "saveAsFileMenuItem";
-            resources.ApplyResources(saveAsFileMenuItem, "saveAsFileMenuItem");
-            saveAsFileMenuItem.Click += saveAsFileButton;
+            SaveAsFileMenuItem.Image = Properties.Resources.DocumentSaveAs;
+            SaveAsFileMenuItem.Name = "SaveAsFileMenuItem";
+            resources.ApplyResources(SaveAsFileMenuItem, "SaveAsFileMenuItem");
+            SaveAsFileMenuItem.Click += SaveAsFile;
             // 
-            // openFileMenuItem
+            // OpenFileMenuItem
             // 
-            openFileMenuItem.Image = Properties.Resources.DocumentOpen;
-            openFileMenuItem.Name = "openFileMenuItem";
-            resources.ApplyResources(openFileMenuItem, "openFileMenuItem");
-            openFileMenuItem.Click += openFileButton;
+            OpenFileMenuItem.Image = Properties.Resources.DocumentOpen;
+            OpenFileMenuItem.Name = "OpenFileMenuItem";
+            resources.ApplyResources(OpenFileMenuItem, "OpenFileMenuItem");
+            OpenFileMenuItem.Click += OpenFile;
             // 
-            // deletFileFileMenuItem
+            // ReopenFileMenuItem
             // 
-            deletFileFileMenuItem.Image = Properties.Resources.DocumentDelete;
-            deletFileFileMenuItem.Name = "deletFileFileMenuItem";
-            resources.ApplyResources(deletFileFileMenuItem, "deletFileFileMenuItem");
-            deletFileFileMenuItem.Click += deleteFile;
+            ReopenFileMenuItem.Name = "ReopenFileMenuItem";
+            resources.ApplyResources(ReopenFileMenuItem, "ReopenFileMenuItem");
+            ReopenFileMenuItem.Click += ReopenFile;
+            // 
+            // DeleteFileMenuItem
+            // 
+            DeleteFileMenuItem.Image = Properties.Resources.DocumentDelete;
+            DeleteFileMenuItem.Name = "DeleteFileMenuItem";
+            resources.ApplyResources(DeleteFileMenuItem, "DeleteFileMenuItem");
+            DeleteFileMenuItem.Click += DeleteFile;
             // 
             // separator1FileMenuItem
             // 
             separator1FileMenuItem.Name = "separator1FileMenuItem";
             resources.ApplyResources(separator1FileMenuItem, "separator1FileMenuItem");
             // 
-            // fileFolderFileMenuItem
+            // OpenFileFolderFileMenuItem
             // 
-            fileFolderFileMenuItem.Image = Properties.Resources.FolderOpen;
-            fileFolderFileMenuItem.Name = "fileFolderFileMenuItem";
-            resources.ApplyResources(fileFolderFileMenuItem, "fileFolderFileMenuItem");
-            fileFolderFileMenuItem.Click += openFileFolder;
+            OpenFileFolderFileMenuItem.Image = Properties.Resources.FolderOpen;
+            OpenFileFolderFileMenuItem.Name = "OpenFileFolderFileMenuItem";
+            resources.ApplyResources(OpenFileFolderFileMenuItem, "OpenFileFolderFileMenuItem");
+            OpenFileFolderFileMenuItem.Click += OpenFileFolder;
             // 
-            // recentFilesMenuItem
+            // OpenFolderAsProjectMenuFileItem
             // 
-            recentFilesMenuItem.Name = "recentFilesMenuItem";
-            resources.ApplyResources(recentFilesMenuItem, "recentFilesMenuItem");
+            OpenFolderAsProjectMenuFileItem.Name = "OpenFolderAsProjectMenuFileItem";
+            resources.ApplyResources(OpenFolderAsProjectMenuFileItem, "OpenFolderAsProjectMenuFileItem");
+            OpenFolderAsProjectMenuFileItem.Click += OpenFileFolderAsProject;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // RecentFilesListFileItem
+            // 
+            RecentFilesListFileItem.Name = "RecentFilesListFileItem";
+            resources.ApplyResources(RecentFilesListFileItem, "RecentFilesListFileItem");
+            // 
+            // ClearRecentFilesListFileMenuItem
+            // 
+            ClearRecentFilesListFileMenuItem.Name = "ClearRecentFilesListFileMenuItem";
+            resources.ApplyResources(ClearRecentFilesListFileMenuItem, "ClearRecentFilesListFileMenuItem");
+            ClearRecentFilesListFileMenuItem.Click += ClearRecentFilesList;
             // 
             // separator2FileMenuItem
             // 
             separator2FileMenuItem.Name = "separator2FileMenuItem";
             resources.ApplyResources(separator2FileMenuItem, "separator2FileMenuItem");
             // 
-            // exitFileMenuItem
+            // ExitFileMenuItem
             // 
-            exitFileMenuItem.Name = "exitFileMenuItem";
-            resources.ApplyResources(exitFileMenuItem, "exitFileMenuItem");
-            exitFileMenuItem.Click += exit;
+            ExitFileMenuItem.Name = "ExitFileMenuItem";
+            resources.ApplyResources(ExitFileMenuItem, "ExitFileMenuItem");
+            ExitFileMenuItem.Click += Exit;
             // 
-            // editMenuItem
+            // EditMenuItem
             // 
-            editMenuItem.DropDownItems.AddRange(new ToolStripItem[] { copyEditMenuItem, cutEditMenuItem, pasteEditMenuItem, selectAllEditMenuItem, deleteEditMenuItem, menuStripSep2, undoEditMenuItem, redoEditMenuItem, menuStripSep3, dateEditMenuItem, copyToClipboardEditMenuItem, searchEditMenuItem });
-            resources.ApplyResources(editMenuItem, "editMenuItem");
-            editMenuItem.Name = "editMenuItem";
+            EditMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CopyEditMenuItem, CutEditMenuItem, PasteEditMenuItem, SelectAllEditMenuItem, DeleteEditMenuItem, RegisterEditMenuItem, menuStripSep2, UndoEditMenuItem, RedoEditMenuItem, menuStripSep3, DateEditMenuItem, CopyToClipboardEditMenuItem, SearchEditMenuItem });
+            resources.ApplyResources(EditMenuItem, "EditMenuItem");
+            EditMenuItem.Name = "EditMenuItem";
             // 
-            // copyEditMenuItem
+            // CopyEditMenuItem
             // 
-            copyEditMenuItem.Image = Properties.Resources.DocumentCopy;
-            copyEditMenuItem.Name = "copyEditMenuItem";
-            resources.ApplyResources(copyEditMenuItem, "copyEditMenuItem");
-            copyEditMenuItem.Click += copyTextFromTBButton;
+            CopyEditMenuItem.Image = Properties.Resources.DocumentCopy;
+            CopyEditMenuItem.Name = "CopyEditMenuItem";
+            resources.ApplyResources(CopyEditMenuItem, "CopyEditMenuItem");
+            CopyEditMenuItem.Click += MTextBoxCopy;
             // 
-            // cutEditMenuItem
+            // CutEditMenuItem
             // 
-            cutEditMenuItem.Image = Properties.Resources.DocumentCut;
-            cutEditMenuItem.Name = "cutEditMenuItem";
-            resources.ApplyResources(cutEditMenuItem, "cutEditMenuItem");
-            cutEditMenuItem.Click += cutTextFromTBButton;
+            CutEditMenuItem.Image = Properties.Resources.DocumentCut;
+            CutEditMenuItem.Name = "CutEditMenuItem";
+            resources.ApplyResources(CutEditMenuItem, "CutEditMenuItem");
+            CutEditMenuItem.Click += MTextBoxCut;
             // 
-            // pasteEditMenuItem
+            // PasteEditMenuItem
             // 
-            pasteEditMenuItem.Image = Properties.Resources.DocumentPaste;
-            pasteEditMenuItem.Name = "pasteEditMenuItem";
-            resources.ApplyResources(pasteEditMenuItem, "pasteEditMenuItem");
-            pasteEditMenuItem.Click += pasteTextFromTBButton;
+            PasteEditMenuItem.Image = Properties.Resources.DocumentPaste;
+            PasteEditMenuItem.Name = "PasteEditMenuItem";
+            resources.ApplyResources(PasteEditMenuItem, "PasteEditMenuItem");
+            PasteEditMenuItem.Click += MTextBoxPaste;
             // 
-            // selectAllEditMenuItem
+            // SelectAllEditMenuItem
             // 
-            selectAllEditMenuItem.Name = "selectAllEditMenuItem";
-            resources.ApplyResources(selectAllEditMenuItem, "selectAllEditMenuItem");
-            selectAllEditMenuItem.Click += selectAllTextFromTBButton;
+            SelectAllEditMenuItem.Name = "SelectAllEditMenuItem";
+            resources.ApplyResources(SelectAllEditMenuItem, "SelectAllEditMenuItem");
+            SelectAllEditMenuItem.Click += MTextBoxSelectAllText;
             // 
-            // deleteEditMenuItem
+            // DeleteEditMenuItem
             // 
-            deleteEditMenuItem.Image = Properties.Resources.DocumentDelete;
-            deleteEditMenuItem.Name = "deleteEditMenuItem";
-            resources.ApplyResources(deleteEditMenuItem, "deleteEditMenuItem");
-            deleteEditMenuItem.Click += deleteTextFromTBButton;
+            DeleteEditMenuItem.Image = Properties.Resources.DocumentDelete;
+            DeleteEditMenuItem.Name = "DeleteEditMenuItem";
+            resources.ApplyResources(DeleteEditMenuItem, "DeleteEditMenuItem");
+            DeleteEditMenuItem.Click += MTextBoxDeleteText;
+            // 
+            // RegisterEditMenuItem
+            // 
+            RegisterEditMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ToUpperEditMenuItem, ToLowerEditMenuItem });
+            RegisterEditMenuItem.Name = "RegisterEditMenuItem";
+            resources.ApplyResources(RegisterEditMenuItem, "RegisterEditMenuItem");
+            // 
+            // ToUpperEditMenuItem
+            // 
+            ToUpperEditMenuItem.Name = "ToUpperEditMenuItem";
+            resources.ApplyResources(ToUpperEditMenuItem, "ToUpperEditMenuItem");
+            ToUpperEditMenuItem.Click += RegisterToUpper;
+            // 
+            // ToLowerEditMenuItem
+            // 
+            ToLowerEditMenuItem.Name = "ToLowerEditMenuItem";
+            resources.ApplyResources(ToLowerEditMenuItem, "ToLowerEditMenuItem");
+            ToLowerEditMenuItem.Click += RegisterToLower;
             // 
             // menuStripSep2
             // 
             menuStripSep2.Name = "menuStripSep2";
             resources.ApplyResources(menuStripSep2, "menuStripSep2");
             // 
-            // undoEditMenuItem
+            // UndoEditMenuItem
             // 
-            undoEditMenuItem.Name = "undoEditMenuItem";
-            resources.ApplyResources(undoEditMenuItem, "undoEditMenuItem");
-            undoEditMenuItem.Click += undoTextFromTBButton;
+            UndoEditMenuItem.Name = "UndoEditMenuItem";
+            resources.ApplyResources(UndoEditMenuItem, "UndoEditMenuItem");
+            UndoEditMenuItem.Click += MTextBoxUndo;
             // 
-            // redoEditMenuItem
+            // RedoEditMenuItem
             // 
-            redoEditMenuItem.Name = "redoEditMenuItem";
-            resources.ApplyResources(redoEditMenuItem, "redoEditMenuItem");
-            redoEditMenuItem.Click += redoTextFromTBButton;
+            RedoEditMenuItem.Name = "RedoEditMenuItem";
+            resources.ApplyResources(RedoEditMenuItem, "RedoEditMenuItem");
+            RedoEditMenuItem.Click += MTextBoxRedo;
             // 
             // menuStripSep3
             // 
             menuStripSep3.Name = "menuStripSep3";
             resources.ApplyResources(menuStripSep3, "menuStripSep3");
             // 
-            // dateEditMenuItem
+            // DateEditMenuItem
             // 
-            dateEditMenuItem.Name = "dateEditMenuItem";
-            resources.ApplyResources(dateEditMenuItem, "dateEditMenuItem");
-            dateEditMenuItem.Click += dateAndTime;
+            DateEditMenuItem.Name = "DateEditMenuItem";
+            resources.ApplyResources(DateEditMenuItem, "DateEditMenuItem");
+            DateEditMenuItem.Click += MTextBoxInsertDateAndTime;
             // 
-            // copyToClipboardEditMenuItem
+            // CopyToClipboardEditMenuItem
             // 
-            copyToClipboardEditMenuItem.DropDownItems.AddRange(new ToolStripItem[] { путьИИмяФайлаToolStripMenuItem, имяФайлаToolStripMenuItem });
-            copyToClipboardEditMenuItem.Name = "copyToClipboardEditMenuItem";
-            resources.ApplyResources(copyToClipboardEditMenuItem, "copyToClipboardEditMenuItem");
+            CopyToClipboardEditMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CopyPathAndFileNameEditrMenuItem, CopyFileNameEditMenuItem });
+            CopyToClipboardEditMenuItem.Name = "CopyToClipboardEditMenuItem";
+            resources.ApplyResources(CopyToClipboardEditMenuItem, "CopyToClipboardEditMenuItem");
             // 
-            // путьИИмяФайлаToolStripMenuItem
+            // CopyPathAndFileNameEditrMenuItem
             // 
-            путьИИмяФайлаToolStripMenuItem.Name = "путьИИмяФайлаToolStripMenuItem";
-            resources.ApplyResources(путьИИмяФайлаToolStripMenuItem, "путьИИмяФайлаToolStripMenuItem");
-            путьИИмяФайлаToolStripMenuItem.Click += copyFullPath;
+            CopyPathAndFileNameEditrMenuItem.Name = "CopyPathAndFileNameEditrMenuItem";
+            resources.ApplyResources(CopyPathAndFileNameEditrMenuItem, "CopyPathAndFileNameEditrMenuItem");
+            CopyPathAndFileNameEditrMenuItem.Click += CopyFullPath;
             // 
-            // имяФайлаToolStripMenuItem
+            // CopyFileNameEditMenuItem
             // 
-            имяФайлаToolStripMenuItem.Name = "имяФайлаToolStripMenuItem";
-            resources.ApplyResources(имяФайлаToolStripMenuItem, "имяФайлаToolStripMenuItem");
-            имяФайлаToolStripMenuItem.Click += copyFileName;
+            CopyFileNameEditMenuItem.Name = "CopyFileNameEditMenuItem";
+            resources.ApplyResources(CopyFileNameEditMenuItem, "CopyFileNameEditMenuItem");
+            CopyFileNameEditMenuItem.Click += CopyFileName;
             // 
-            // searchEditMenuItem
+            // SearchEditMenuItem
             // 
-            searchEditMenuItem.Image = Properties.Resources.Search;
-            searchEditMenuItem.Name = "searchEditMenuItem";
-            resources.ApplyResources(searchEditMenuItem, "searchEditMenuItem");
-            searchEditMenuItem.Click += search;
+            SearchEditMenuItem.Image = Properties.Resources.Search;
+            SearchEditMenuItem.Name = "SearchEditMenuItem";
+            resources.ApplyResources(SearchEditMenuItem, "SearchEditMenuItem");
+            SearchEditMenuItem.Click += SearchWindow;
             // 
-            // optionsMenuItem
+            // SettingsMenuItem
             // 
-            resources.ApplyResources(optionsMenuItem, "optionsMenuItem");
-            optionsMenuItem.Name = "optionsMenuItem";
-            optionsMenuItem.Click += openSettings;
+            resources.ApplyResources(SettingsMenuItem, "SettingsMenuItem");
+            SettingsMenuItem.Name = "SettingsMenuItem";
+            SettingsMenuItem.Click += OpenSettings;
             // 
-            // runMenuItem
+            // RunMenuItem
             // 
-            runMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pythonRunMenuItem, vbsRunMenuItem, batRunMenuItem });
-            resources.ApplyResources(runMenuItem, "runMenuItem");
-            runMenuItem.Name = "runMenuItem";
+            RunMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pythonRunMenuItem, vbsRunMenuItem, batRunMenuItem });
+            resources.ApplyResources(RunMenuItem, "RunMenuItem");
+            RunMenuItem.Name = "RunMenuItem";
             // 
             // pythonRunMenuItem
             // 
             pythonRunMenuItem.Name = "pythonRunMenuItem";
             resources.ApplyResources(pythonRunMenuItem, "pythonRunMenuItem");
-            pythonRunMenuItem.Click += PythonRun;
+            pythonRunMenuItem.Click += RunPythonScript;
             // 
             // vbsRunMenuItem
             // 
             vbsRunMenuItem.Name = "vbsRunMenuItem";
             resources.ApplyResources(vbsRunMenuItem, "vbsRunMenuItem");
-            vbsRunMenuItem.Click += VbsRun;
+            vbsRunMenuItem.Click += RunVbsScript;
             // 
             // batRunMenuItem
             // 
             batRunMenuItem.Name = "batRunMenuItem";
             resources.ApplyResources(batRunMenuItem, "batRunMenuItem");
-            batRunMenuItem.Click += BatRun;
+            batRunMenuItem.Click += RunBatScript;
             // 
             // fontDialog
             // 
@@ -488,34 +540,34 @@ namespace TextPad_
             копироватьToolStripMenuItem1.Image = Properties.Resources.DocumentCopy;
             копироватьToolStripMenuItem1.Name = "копироватьToolStripMenuItem1";
             resources.ApplyResources(копироватьToolStripMenuItem1, "копироватьToolStripMenuItem1");
-            копироватьToolStripMenuItem1.Click += copyTextFromTBButton;
+            копироватьToolStripMenuItem1.Click += MTextBoxCopy;
             // 
             // вырезатьToolStripMenuItem1
             // 
             вырезатьToolStripMenuItem1.Image = Properties.Resources.DocumentCut;
             вырезатьToolStripMenuItem1.Name = "вырезатьToolStripMenuItem1";
             resources.ApplyResources(вырезатьToolStripMenuItem1, "вырезатьToolStripMenuItem1");
-            вырезатьToolStripMenuItem1.Click += cutTextFromTBButton;
+            вырезатьToolStripMenuItem1.Click += MTextBoxCut;
             // 
             // вставитьToolStripMenuItem1
             // 
             вставитьToolStripMenuItem1.Image = Properties.Resources.DocumentPaste;
             вставитьToolStripMenuItem1.Name = "вставитьToolStripMenuItem1";
             resources.ApplyResources(вставитьToolStripMenuItem1, "вставитьToolStripMenuItem1");
-            вставитьToolStripMenuItem1.Click += pasteTextFromTBButton;
+            вставитьToolStripMenuItem1.Click += MTextBoxPaste;
             // 
             // выделитьВсёToolStripMenuItem1
             // 
             выделитьВсёToolStripMenuItem1.Name = "выделитьВсёToolStripMenuItem1";
             resources.ApplyResources(выделитьВсёToolStripMenuItem1, "выделитьВсёToolStripMenuItem1");
-            выделитьВсёToolStripMenuItem1.Click += selectAllTextFromTBButton;
+            выделитьВсёToolStripMenuItem1.Click += MTextBoxSelectAllText;
             // 
             // удалитьToolStripMenuItem
             // 
             удалитьToolStripMenuItem.Image = Properties.Resources.DocumentDelete;
             удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             resources.ApplyResources(удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
-            удалитьToolStripMenuItem.Click += deleteTextFromTBButton;
+            удалитьToolStripMenuItem.Click += MTextBoxDeleteText;
             // 
             // toolStripSeparator4
             // 
@@ -526,18 +578,18 @@ namespace TextPad_
             // 
             отменитьToolStripMenuItem2.Name = "отменитьToolStripMenuItem2";
             resources.ApplyResources(отменитьToolStripMenuItem2, "отменитьToolStripMenuItem2");
-            отменитьToolStripMenuItem2.Click += undoTextFromTBButton;
+            отменитьToolStripMenuItem2.Click += MTextBoxUndo;
             // 
             // вернутьToolStripMenuItem
             // 
             вернутьToolStripMenuItem.Name = "вернутьToolStripMenuItem";
             resources.ApplyResources(вернутьToolStripMenuItem, "вернутьToolStripMenuItem");
-            вернутьToolStripMenuItem.Click += redoTextFromTBButton;
+            вернутьToolStripMenuItem.Click += MTextBoxRedo;
             // 
             // StatusStrip
             // 
             resources.ApplyResources(StatusStrip, "StatusStrip");
-            StatusStrip.Items.AddRange(new ToolStripItem[] { StatusLabel, textLabelStatus, textLengthLabel, textLinesLabelStatus, textLinesLabel, statusStripEncodingLabel, encodingStatusLabel, encodingDropDownBtn });
+            StatusStrip.Items.AddRange(new ToolStripItem[] { StatusLabel, TextLabelStatus, TextLengthLabel, TextLinesLabelStatus, TextLinesLabel, StatusStripEncodingLabel, EncodingStatusLabel, EncodingDropDownBtn });
             StatusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             StatusStrip.Name = "StatusStrip";
             // 
@@ -549,94 +601,118 @@ namespace TextPad_
             resources.ApplyResources(StatusLabel, "StatusLabel");
             StatusLabel.Name = "StatusLabel";
             // 
-            // textLabelStatus
+            // TextLabelStatus
             // 
-            textLabelStatus.BackColor = Color.Transparent;
-            resources.ApplyResources(textLabelStatus, "textLabelStatus");
-            textLabelStatus.Name = "textLabelStatus";
+            TextLabelStatus.BackColor = Color.Transparent;
+            resources.ApplyResources(TextLabelStatus, "TextLabelStatus");
+            TextLabelStatus.Name = "TextLabelStatus";
             // 
-            // textLengthLabel
+            // TextLengthLabel
             // 
-            textLengthLabel.BackColor = Color.Transparent;
-            textLengthLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
-            textLengthLabel.BorderStyle = Border3DStyle.Bump;
-            resources.ApplyResources(textLengthLabel, "textLengthLabel");
-            textLengthLabel.Name = "textLengthLabel";
+            TextLengthLabel.BackColor = Color.Transparent;
+            TextLengthLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
+            TextLengthLabel.BorderStyle = Border3DStyle.Bump;
+            resources.ApplyResources(TextLengthLabel, "TextLengthLabel");
+            TextLengthLabel.Name = "TextLengthLabel";
             // 
-            // textLinesLabelStatus
+            // TextLinesLabelStatus
             // 
-            textLinesLabelStatus.BackColor = Color.Transparent;
-            resources.ApplyResources(textLinesLabelStatus, "textLinesLabelStatus");
-            textLinesLabelStatus.Name = "textLinesLabelStatus";
+            TextLinesLabelStatus.BackColor = Color.Transparent;
+            resources.ApplyResources(TextLinesLabelStatus, "TextLinesLabelStatus");
+            TextLinesLabelStatus.Name = "TextLinesLabelStatus";
             // 
-            // textLinesLabel
+            // TextLinesLabel
             // 
-            textLinesLabel.BackColor = Color.Transparent;
-            textLinesLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
-            textLinesLabel.BorderStyle = Border3DStyle.Bump;
-            resources.ApplyResources(textLinesLabel, "textLinesLabel");
-            textLinesLabel.Name = "textLinesLabel";
+            TextLinesLabel.BackColor = Color.Transparent;
+            TextLinesLabel.BorderSides = ToolStripStatusLabelBorderSides.Right;
+            TextLinesLabel.BorderStyle = Border3DStyle.Bump;
+            resources.ApplyResources(TextLinesLabel, "TextLinesLabel");
+            TextLinesLabel.Name = "TextLinesLabel";
             // 
-            // statusStripEncodingLabel
+            // StatusStripEncodingLabel
             // 
-            statusStripEncodingLabel.BorderStyle = Border3DStyle.Bump;
-            resources.ApplyResources(statusStripEncodingLabel, "statusStripEncodingLabel");
-            statusStripEncodingLabel.Name = "statusStripEncodingLabel";
+            StatusStripEncodingLabel.BorderStyle = Border3DStyle.Bump;
+            resources.ApplyResources(StatusStripEncodingLabel, "StatusStripEncodingLabel");
+            StatusStripEncodingLabel.Name = "StatusStripEncodingLabel";
             // 
-            // encodingStatusLabel
+            // EncodingStatusLabel
             // 
-            resources.ApplyResources(encodingStatusLabel, "encodingStatusLabel");
-            encodingStatusLabel.Name = "encodingStatusLabel";
+            resources.ApplyResources(EncodingStatusLabel, "EncodingStatusLabel");
+            EncodingStatusLabel.Name = "EncodingStatusLabel";
             // 
-            // encodingDropDownBtn
+            // EncodingDropDownBtn
             // 
-            encodingDropDownBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            encodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { utf32BEToolStripMenuItem, uTF16ToolStripMenuItem, utf16BEToolStripMenuItem, uft16ToolStripMenuItem, utf8ToolStripMenuItem, windwso1251ToolStripMenuItem });
-            resources.ApplyResources(encodingDropDownBtn, "encodingDropDownBtn");
-            encodingDropDownBtn.Name = "encodingDropDownBtn";
+            EncodingDropDownBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            EncodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { utf32BEToolStripMenuItem, uTF16ToolStripMenuItem, utf16BEToolStripMenuItem, uft16ToolStripMenuItem, UTF8BOMToolStripMenuItem, utf8ToolStripMenuItem, ASCIIToolStripMenuItem, windwso1251ToolStripMenuItem, KOI8RToolStripMenuItem, kOI8UToolStripMenuItem });
+            resources.ApplyResources(EncodingDropDownBtn, "EncodingDropDownBtn");
+            EncodingDropDownBtn.Name = "EncodingDropDownBtn";
             // 
             // utf32BEToolStripMenuItem
             // 
             utf32BEToolStripMenuItem.Name = "utf32BEToolStripMenuItem";
             resources.ApplyResources(utf32BEToolStripMenuItem, "utf32BEToolStripMenuItem");
-            utf32BEToolStripMenuItem.Click += ChangeToUTF32BE;
+            utf32BEToolStripMenuItem.Click += ChangeEncodingToUTF32BE;
             // 
             // uTF16ToolStripMenuItem
             // 
             uTF16ToolStripMenuItem.Name = "uTF16ToolStripMenuItem";
             resources.ApplyResources(uTF16ToolStripMenuItem, "uTF16ToolStripMenuItem");
-            uTF16ToolStripMenuItem.Click += ChangeToUTF32;
+            uTF16ToolStripMenuItem.Click += ChangeEncodingToUTF32;
             // 
             // utf16BEToolStripMenuItem
             // 
             utf16BEToolStripMenuItem.Name = "utf16BEToolStripMenuItem";
             resources.ApplyResources(utf16BEToolStripMenuItem, "utf16BEToolStripMenuItem");
-            utf16BEToolStripMenuItem.Click += ChangeToUTF16BE;
+            utf16BEToolStripMenuItem.Click += ChangeEncodingToUTF16BE;
             // 
             // uft16ToolStripMenuItem
             // 
             uft16ToolStripMenuItem.Name = "uft16ToolStripMenuItem";
             resources.ApplyResources(uft16ToolStripMenuItem, "uft16ToolStripMenuItem");
-            uft16ToolStripMenuItem.Click += ChangeToUTF16;
+            uft16ToolStripMenuItem.Click += ChangeEncodingToUTF16;
+            // 
+            // UTF8BOMToolStripMenuItem
+            // 
+            UTF8BOMToolStripMenuItem.Name = "UTF8BOMToolStripMenuItem";
+            resources.ApplyResources(UTF8BOMToolStripMenuItem, "UTF8BOMToolStripMenuItem");
+            UTF8BOMToolStripMenuItem.Click += ChangeEncodingToUTF8BOM;
             // 
             // utf8ToolStripMenuItem
             // 
             utf8ToolStripMenuItem.Name = "utf8ToolStripMenuItem";
             resources.ApplyResources(utf8ToolStripMenuItem, "utf8ToolStripMenuItem");
-            utf8ToolStripMenuItem.Click += ChangeToUTF8;
+            utf8ToolStripMenuItem.Click += ChangeEncodingToUTF8;
+            // 
+            // ASCIIToolStripMenuItem
+            // 
+            ASCIIToolStripMenuItem.Name = "ASCIIToolStripMenuItem";
+            resources.ApplyResources(ASCIIToolStripMenuItem, "ASCIIToolStripMenuItem");
+            ASCIIToolStripMenuItem.Click += ChangeEncodingToASCII;
             // 
             // windwso1251ToolStripMenuItem
             // 
             windwso1251ToolStripMenuItem.Name = "windwso1251ToolStripMenuItem";
             resources.ApplyResources(windwso1251ToolStripMenuItem, "windwso1251ToolStripMenuItem");
-            windwso1251ToolStripMenuItem.Click += ChangeToUTFWindows1251;
+            windwso1251ToolStripMenuItem.Click += ChangeEncodingToWindows1251;
+            // 
+            // KOI8RToolStripMenuItem
+            // 
+            KOI8RToolStripMenuItem.Name = "KOI8RToolStripMenuItem";
+            resources.ApplyResources(KOI8RToolStripMenuItem, "KOI8RToolStripMenuItem");
+            KOI8RToolStripMenuItem.Click += ChangeEncodingToKOI8R;
+            // 
+            // kOI8UToolStripMenuItem
+            // 
+            kOI8UToolStripMenuItem.Name = "kOI8UToolStripMenuItem";
+            resources.ApplyResources(kOI8UToolStripMenuItem, "kOI8UToolStripMenuItem");
+            kOI8UToolStripMenuItem.Click += ChangeEncodingToKOI8U;
             // 
             // ToolStrip
             // 
             ToolStrip.BackColor = SystemColors.Control;
             resources.ApplyResources(ToolStrip, "ToolStrip");
             ToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            ToolStrip.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, searchToolStripItem });
+            ToolStrip.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, SearchToolStripItem });
             ToolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             ToolStrip.Name = "ToolStrip";
             // 
@@ -646,7 +722,7 @@ namespace TextPad_
             resources.ApplyResources(newTabToolStripItem, "newTabToolStripItem");
             newTabToolStripItem.Image = Properties.Resources.DocumentCreate;
             newTabToolStripItem.Name = "newTabToolStripItem";
-            newTabToolStripItem.Click += createTabClick;
+            newTabToolStripItem.Click += CreateTab;
             // 
             // closeTabToolStripItem
             // 
@@ -668,7 +744,7 @@ namespace TextPad_
             resources.ApplyResources(saveToolStripItem, "saveToolStripItem");
             saveToolStripItem.Image = Properties.Resources.DocumentSave;
             saveToolStripItem.Name = "saveToolStripItem";
-            saveToolStripItem.Click += saveFileButton;
+            saveToolStripItem.Click += SaveFile;
             // 
             // openToolStripItem
             // 
@@ -676,7 +752,7 @@ namespace TextPad_
             resources.ApplyResources(openToolStripItem, "openToolStripItem");
             openToolStripItem.Image = Properties.Resources.DocumentOpen;
             openToolStripItem.Name = "openToolStripItem";
-            openToolStripItem.Click += openFileButton;
+            openToolStripItem.Click += OpenFile;
             // 
             // toolStripSep2
             // 
@@ -689,7 +765,7 @@ namespace TextPad_
             resources.ApplyResources(copyToolStripItem, "copyToolStripItem");
             copyToolStripItem.Image = Properties.Resources.DocumentCopy;
             copyToolStripItem.Name = "copyToolStripItem";
-            copyToolStripItem.Click += copyTextFromTBButton;
+            copyToolStripItem.Click += MTextBoxCopy;
             // 
             // cutToolStripItem
             // 
@@ -697,7 +773,7 @@ namespace TextPad_
             resources.ApplyResources(cutToolStripItem, "cutToolStripItem");
             cutToolStripItem.Image = Properties.Resources.DocumentCut;
             cutToolStripItem.Name = "cutToolStripItem";
-            cutToolStripItem.Click += cutTextFromTBButton;
+            cutToolStripItem.Click += MTextBoxCut;
             // 
             // pasteToolStripItem
             // 
@@ -705,7 +781,7 @@ namespace TextPad_
             resources.ApplyResources(pasteToolStripItem, "pasteToolStripItem");
             pasteToolStripItem.Image = Properties.Resources.DocumentPaste;
             pasteToolStripItem.Name = "pasteToolStripItem";
-            pasteToolStripItem.Click += pasteTextFromTBButton;
+            pasteToolStripItem.Click += MTextBoxPaste;
             // 
             // deleteToolStripItem
             // 
@@ -713,7 +789,7 @@ namespace TextPad_
             resources.ApplyResources(deleteToolStripItem, "deleteToolStripItem");
             deleteToolStripItem.Image = Properties.Resources.DocumentDelete;
             deleteToolStripItem.Name = "deleteToolStripItem";
-            deleteToolStripItem.Click += deleteTextFromTBButton;
+            deleteToolStripItem.Click += MTextBoxDeleteText;
             // 
             // toolStripSep3
             // 
@@ -725,14 +801,14 @@ namespace TextPad_
             undoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(undoToolStripItem, "undoToolStripItem");
             undoToolStripItem.Name = "undoToolStripItem";
-            undoToolStripItem.Click += undoTextFromTBButton;
+            undoToolStripItem.Click += MTextBoxUndo;
             // 
             // redoToolStripItem
             // 
             redoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(redoToolStripItem, "redoToolStripItem");
             redoToolStripItem.Name = "redoToolStripItem";
-            redoToolStripItem.Click += redoTextFromTBButton;
+            redoToolStripItem.Click += MTextBoxRedo;
             // 
             // toolStripSep4
             // 
@@ -745,7 +821,7 @@ namespace TextPad_
             resources.ApplyResources(fontToolStripItem, "fontToolStripItem");
             fontToolStripItem.Image = Properties.Resources.Font;
             fontToolStripItem.Name = "fontToolStripItem";
-            fontToolStripItem.Click += fontTextFromTBButton;
+            fontToolStripItem.Click += MTextBoxSelectFont;
             // 
             // toolStripSep5
             // 
@@ -754,40 +830,40 @@ namespace TextPad_
             toolStripSep5.Name = "toolStripSep5";
             resources.ApplyResources(toolStripSep5, "toolStripSep5");
             // 
-            // searchToolStripItem
+            // SearchToolStripItem
             // 
-            searchToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(searchToolStripItem, "searchToolStripItem");
-            searchToolStripItem.Image = Properties.Resources.Search;
-            searchToolStripItem.Name = "searchToolStripItem";
-            searchToolStripItem.Click += search;
+            SearchToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(SearchToolStripItem, "SearchToolStripItem");
+            SearchToolStripItem.Image = Properties.Resources.Search;
+            SearchToolStripItem.Name = "SearchToolStripItem";
+            SearchToolStripItem.Click += SearchWindow;
             // 
             // RunFileToolStrip
             // 
             RunFileToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            RunFileToolStrip.Items.AddRange(new ToolStripItem[] { toolStripLabel1, startScriptCombobox, startFileButton });
+            RunFileToolStrip.Items.AddRange(new ToolStripItem[] { RunAsToolsStripLabel, RunScriptCombobox, RunScriptButton });
             resources.ApplyResources(RunFileToolStrip, "RunFileToolStrip");
             RunFileToolStrip.Name = "RunFileToolStrip";
             // 
-            // toolStripLabel1
+            // RunAsToolsStripLabel
             // 
-            resources.ApplyResources(toolStripLabel1, "toolStripLabel1");
-            toolStripLabel1.Name = "toolStripLabel1";
+            resources.ApplyResources(RunAsToolsStripLabel, "RunAsToolsStripLabel");
+            RunAsToolsStripLabel.Name = "RunAsToolsStripLabel";
             // 
-            // startScriptCombobox
+            // RunScriptCombobox
             // 
-            startScriptCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
-            resources.ApplyResources(startScriptCombobox, "startScriptCombobox");
-            startScriptCombobox.Items.AddRange(new object[] { resources.GetString("startScriptCombobox.Items"), resources.GetString("startScriptCombobox.Items1"), resources.GetString("startScriptCombobox.Items2") });
-            startScriptCombobox.Name = "startScriptCombobox";
+            RunScriptCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(RunScriptCombobox, "RunScriptCombobox");
+            RunScriptCombobox.Items.AddRange(new object[] { resources.GetString("RunScriptCombobox.Items"), resources.GetString("RunScriptCombobox.Items1"), resources.GetString("RunScriptCombobox.Items2") });
+            RunScriptCombobox.Name = "RunScriptCombobox";
             // 
-            // startFileButton
+            // RunScriptButton
             // 
-            startFileButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            startFileButton.Image = Properties.Resources.FileStart;
-            resources.ApplyResources(startFileButton, "startFileButton");
-            startFileButton.Name = "startFileButton";
-            startFileButton.Click += RunScript;
+            RunScriptButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            RunScriptButton.Image = Properties.Resources.FileStart;
+            resources.ApplyResources(RunScriptButton, "RunScriptButton");
+            RunScriptButton.Name = "RunScriptButton";
+            RunScriptButton.Click += RunScript;
             // 
             // FilesListView
             // 
@@ -799,6 +875,7 @@ namespace TextPad_
             FilesListView.LargeImageList = listViewImages;
             FilesListView.MultiSelect = false;
             FilesListView.Name = "FilesListView";
+            FilesListView.ShowItemToolTips = true;
             FilesListView.SmallImageList = listViewImages;
             FilesListView.StateImageList = listViewImages;
             FilesListView.UseCompatibleStateImageBehavior = false;
@@ -816,7 +893,7 @@ namespace TextPad_
             удалитьToolStripMenuItem1.Image = Properties.Resources.DocumentDelete;
             удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
             resources.ApplyResources(удалитьToolStripMenuItem1, "удалитьToolStripMenuItem1");
-            удалитьToolStripMenuItem1.Click += deleteFileInExplorer;
+            удалитьToolStripMenuItem1.Click += DeleteFileInExplorer;
             // 
             // listViewImages
             // 
@@ -841,7 +918,7 @@ namespace TextPad_
             openFolderToolBtn.Image = Properties.Resources.FolderOpen;
             resources.ApplyResources(openFolderToolBtn, "openFolderToolBtn");
             openFolderToolBtn.Name = "openFolderToolBtn";
-            openFolderToolBtn.Click += OpenFolderBtnClick;
+            openFolderToolBtn.Click += OpenFolder;
             // 
             // refreshFolderToolBtn
             // 
@@ -857,7 +934,7 @@ namespace TextPad_
             closeFolderToolBtn.Image = Properties.Resources.FolderClose;
             resources.ApplyResources(closeFolderToolBtn, "closeFolderToolBtn");
             closeFolderToolBtn.Name = "closeFolderToolBtn";
-            closeFolderToolBtn.Click += closeFolderToolBtnClick;
+            closeFolderToolBtn.Click += CloseFolder;
             // 
             // toolStripSeparator1
             // 
@@ -870,7 +947,7 @@ namespace TextPad_
             aboveFolderBtn.Image = Properties.Resources.FolderAbove;
             resources.ApplyResources(aboveFolderBtn, "aboveFolderBtn");
             aboveFolderBtn.Name = "aboveFolderBtn";
-            aboveFolderBtn.Click += AboveFolderBtnClick;
+            aboveFolderBtn.Click += AboveFolder;
             // 
             // toolStripSeparator2
             // 
@@ -925,7 +1002,7 @@ namespace TextPad_
             resources.ApplyResources(cTabControl, "cTabControl");
             cTabControl.Name = "cTabControl";
             cTabControl.SelectedIndex = 0;
-            cTabControl.Selecting += cTabControlSelecting;
+            cTabControl.Selecting += CTabControlSelecting;
             // 
             // SettingsUIPanel
             // 
@@ -1092,7 +1169,7 @@ namespace TextPad_
             resources.ApplyResources(FontTextBox, "FontTextBox");
             FontTextBox.Name = "FontTextBox";
             FontTextBox.ReadOnly = true;
-            FontTextBox.Click += fontSettings;
+            FontTextBox.Click += ChangeFont;
             // 
             // label9
             // 
@@ -1312,7 +1389,7 @@ namespace TextPad_
             resources.ApplyResources(buttonWebsite, "buttonWebsite");
             buttonWebsite.Name = "buttonWebsite";
             buttonWebsite.UseVisualStyleBackColor = true;
-            buttonWebsite.Click += openWebSite;
+            buttonWebsite.Click += OpenWebSite;
             // 
             // infoTextBox
             // 
@@ -1417,16 +1494,16 @@ namespace TextPad_
             // tabPage5
             // 
             tabPage5.BackColor = SystemColors.Window;
-            tabPage5.Controls.Add(textBox2);
+            tabPage5.Controls.Add(ChangeLogTextBox);
             resources.ApplyResources(tabPage5, "tabPage5");
             tabPage5.Name = "tabPage5";
             // 
-            // textBox2
+            // ChangeLogTextBox
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            resources.ApplyResources(textBox2, "textBox2");
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
+            ChangeLogTextBox.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(ChangeLogTextBox, "ChangeLogTextBox");
+            ChangeLogTextBox.Name = "ChangeLogTextBox";
+            ChangeLogTextBox.ReadOnly = true;
             // 
             // SettingsBottomUIPanel
             // 
@@ -1442,21 +1519,21 @@ namespace TextPad_
             resources.ApplyResources(checkUpdatesButton, "checkUpdatesButton");
             checkUpdatesButton.Name = "checkUpdatesButton";
             checkUpdatesButton.UseVisualStyleBackColor = true;
-            checkUpdatesButton.Click += getUpdate;
+            checkUpdatesButton.Click += GetUpdate;
             // 
             // cancelBatton
             // 
             resources.ApplyResources(cancelBatton, "cancelBatton");
             cancelBatton.Name = "cancelBatton";
             cancelBatton.UseVisualStyleBackColor = true;
-            cancelBatton.Click += closeSettings;
+            cancelBatton.Click += CloseSettings;
             // 
             // saveButton
             // 
             resources.ApplyResources(saveButton, "saveButton");
             saveButton.Name = "saveButton";
             saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveSettings;
+            saveButton.Click += SaveSettings;
             // 
             // FormMainUI
             // 
@@ -1533,32 +1610,32 @@ namespace TextPad_
 
         #endregion
         private MenuStrip menuStrip;
-        private ToolStripMenuItem copyEditMenuItem;
-        private ToolStripMenuItem cutEditMenuItem;
-        private ToolStripMenuItem pasteEditMenuItem;
-        private ToolStripMenuItem selectAllEditMenuItem;
+        private ToolStripMenuItem CopyEditMenuItem;
+        private ToolStripMenuItem CutEditMenuItem;
+        private ToolStripMenuItem PasteEditMenuItem;
+        private ToolStripMenuItem SelectAllEditMenuItem;
         private ToolStripMenuItem копироватьToolStripMenuItem1;
         private ToolStripMenuItem вырезатьToolStripMenuItem1;
         private ToolStripMenuItem вставитьToolStripMenuItem1;
         private ToolStripMenuItem выделитьВсёToolStripMenuItem1;
         private ToolStripMenuItem удалитьToolStripMenuItem;
-        private ToolStripMenuItem deleteEditMenuItem;
+        private ToolStripMenuItem DeleteEditMenuItem;
         private ToolStripSeparator menuStripSep2;
-        private ToolStripMenuItem undoEditMenuItem;
-        private ToolStripMenuItem redoEditMenuItem;
-        private ToolStripMenuItem newWindowFileMenuItem;
+        private ToolStripMenuItem UndoEditMenuItem;
+        private ToolStripMenuItem RedoEditMenuItem;
+        private ToolStripMenuItem NewWindowFileMenuItem;
         private ToolStripSeparator menuStripSep3;
-        private ToolStripMenuItem dateEditMenuItem;
+        private ToolStripMenuItem DateEditMenuItem;
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem отменитьToolStripMenuItem2;
         private ToolStripMenuItem вернутьToolStripMenuItem;
-        private ToolStripMenuItem saveCurrentFileMenuItem;
-        private ToolStripMenuItem saveAsFileMenuItem;
-        private ToolStripMenuItem openFileMenuItem;
+        private ToolStripMenuItem SaveFileMenuItem;
+        private ToolStripMenuItem SaveAsFileMenuItem;
+        private ToolStripMenuItem OpenFileMenuItem;
         private ToolStripSeparator separator2FileMenuItem;
-        private ToolStripMenuItem exitFileMenuItem;
-        private ToolStripMenuItem searchEditMenuItem;
-        private ToolStripMenuItem closeTabFileMenuItem;
+        private ToolStripMenuItem ExitFileMenuItem;
+        private ToolStripMenuItem SearchEditMenuItem;
+        private ToolStripMenuItem CloseTabFileMenuItem;
         private ToolStripButton saveToolStripItem;
         private ToolStripButton openToolStripItem;
         private ToolStripSeparator toolStripSep2;
@@ -1570,7 +1647,7 @@ namespace TextPad_
         private ToolStripButton undoToolStripItem;
         private ToolStripButton redoToolStripItem;
         private ToolStripSeparator toolStripSep4;
-        private ToolStripButton searchToolStripItem;
+        private ToolStripButton SearchToolStripItem;
         private ToolStripButton fontToolStripItem;
         private ToolStripSeparator toolStripSep5;
         private ToolStripButton newTabToolStripItem;
@@ -1580,16 +1657,16 @@ namespace TextPad_
         private ToolStripMenuItem batRunMenuItem;
         public StatusStrip StatusStrip;
         public ToolStrip RunFileToolStrip;
-        private ToolStripStatusLabel textLabelStatus;
+        private ToolStripStatusLabel TextLabelStatus;
         public ToolStrip ToolStrip;
-        private ToolStripMenuItem editMenuItem;
-        private ToolStripMenuItem runMenuItem;
-        private ToolStripMenuItem optionsMenuItem;
-        private ToolStripMenuItem createTabFileMenuItem;
+        private ToolStripMenuItem EditMenuItem;
+        private ToolStripMenuItem RunMenuItem;
+        private ToolStripMenuItem SettingsMenuItem;
+        private ToolStripMenuItem CreateTabFileMenuItem;
         private ToolStripSeparator toolStripSep1;
-        internal ToolStripMenuItem fileMenuItem;
+        internal ToolStripMenuItem FileMenuItem;
         internal FontDialog fontDialog;
-        internal ToolStripStatusLabel textLengthLabel;
+        internal ToolStripStatusLabel TextLengthLabel;
         private ListView FilesListView;
         private ToolStrip folderToolStrip;
         private ToolStripButton openFolderToolBtn;
@@ -1601,20 +1678,20 @@ namespace TextPad_
         private ToolStripButton refreshFolderToolBtn;
         private Label workFolderLabel;
         private ToolStripButton closeFolderToolBtn;
-        private ToolStripLabel toolStripLabel1;
+        private ToolStripLabel RunAsToolsStripLabel;
         internal SaveFileDialog saveFileDialog;
-        internal ToolStripComboBox startScriptCombobox;
+        internal ToolStripComboBox RunScriptCombobox;
         internal Panel FolderExplorerPanel;
         private ToolStripButton aboveFolderBtn;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripStatusLabel textLinesLabelStatus;
-        private ToolStripStatusLabel textLinesLabel;
+        private ToolStripStatusLabel TextLinesLabelStatus;
+        private ToolStripStatusLabel TextLinesLabel;
         private ContextMenuStrip explorerContextMenu;
         private ToolStripMenuItem удалитьToolStripMenuItem1;
         private ContextMenuStrip contextMenuStrip;
         private ToolStripSeparator separator1FileMenuItem;
-        internal ToolStripMenuItem recentFilesMenuItem;
-        private ToolStripMenuItem fileFolderFileMenuItem;
+        internal ToolStripMenuItem RecentFilesListFileItem;
+        private ToolStripMenuItem OpenFileFolderFileMenuItem;
         private TabControl settingsTabControl;
         private TabPage settingsTabPage;
         private Panel panel1;
@@ -1667,9 +1744,9 @@ namespace TextPad_
         private Label labelWebSite;
         private Label ProgramNameLabel;
         private TabPage tabPage5;
-        private TextBox textBox2;
+        private TextBox ChangeLogTextBox;
         internal TextBox textBox3;
-        private ToolStripButton startFileButton;
+        private ToolStripButton RunScriptButton;
         private Panel panel5;
         internal CheckBox wordWarpCheckBox;
         private Label label5;
@@ -1681,23 +1758,23 @@ namespace TextPad_
         private Panel panel11;
         internal CheckBox exitWhenClosingLastTabCheckBox;
         private Label label24;
-        private ToolStripMenuItem closeAllTabsFileMenuItem;
+        private ToolStripMenuItem CloseAllTabsFileMenuItem;
         private Button checkUpdatesButton;
-        private ToolStripMenuItem copyToClipboardEditMenuItem;
-        private ToolStripMenuItem closeWithoutCurrentTabsFileMenuItem;
-        private ToolStripMenuItem путьИИмяФайлаToolStripMenuItem;
-        private ToolStripMenuItem имяФайлаToolStripMenuItem;
+        private ToolStripMenuItem CopyToClipboardEditMenuItem;
+        private ToolStripMenuItem CloseWithoutCurrentTabFileMenuItem;
+        private ToolStripMenuItem CopyPathAndFileNameEditrMenuItem;
+        private ToolStripMenuItem CopyFileNameEditMenuItem;
         internal OpenFileDialog openFileDialog;
-        internal ToolStripMenuItem deletFileFileMenuItem;
+        internal ToolStripMenuItem DeleteFileMenuItem;
         private Label label10;
         private Label MTBVersionLabel;
         private Label label26;
-        private ToolStripStatusLabel statusStripEncodingLabel;
-        private ToolStripDropDownButton encodingDropDownBtn;
+        private ToolStripStatusLabel StatusStripEncodingLabel;
+        private ToolStripDropDownButton EncodingDropDownBtn;
         private ToolStripMenuItem uTF16ToolStripMenuItem;
         private ToolStripMenuItem utf8ToolStripMenuItem;
         private ToolStripMenuItem uft16ToolStripMenuItem;
-        internal ToolStripStatusLabel encodingStatusLabel;
+        internal ToolStripStatusLabel EncodingStatusLabel;
         private ToolStripMenuItem utf16BEToolStripMenuItem;
         private ToolStripMenuItem utf32BEToolStripMenuItem;
         private ToolStripMenuItem windwso1251ToolStripMenuItem;
@@ -1713,7 +1790,17 @@ namespace TextPad_
         internal CheckBox autoUpdateCheckBox;
         internal ToolStripStatusLabel StatusLabel;
         internal CTabControl cTabControl;
-        internal CTabControl cTabControl1;
+        private ToolStripMenuItem OpenFolderAsProjectMenuFileItem;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem ClearRecentFilesListFileMenuItem;
+        private ToolStripMenuItem RegisterEditMenuItem;
+        private ToolStripMenuItem ToUpperEditMenuItem;
+        private ToolStripMenuItem ToLowerEditMenuItem;
+        private ToolStripMenuItem ReopenFileMenuItem;
+        private ToolStripMenuItem ASCIIToolStripMenuItem;
+        private ToolStripMenuItem KOI8RToolStripMenuItem;
+        private ToolStripMenuItem kOI8UToolStripMenuItem;
+        private ToolStripMenuItem UTF8BOMToolStripMenuItem;
     }
 }
 

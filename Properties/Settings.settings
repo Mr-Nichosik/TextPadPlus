@@ -23,9 +23,6 @@
     <Setting Name="ToolStrip_Visible" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ModifiedTextBox_Font" Type="System.Drawing.Font" Scope="User">
-      <Value Profile="(Default)">Microsoft Sans Serif, 8.25pt</Value>
-    </Setting>
     <Setting Name="FormMainUI_WindowState" Type="System.String" Scope="User">
       <Value Profile="(Default)">Normal</Value>
     </Setting>
@@ -55,6 +52,9 @@
     </Setting>
     <Setting Name="AutoCheckUpdate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ModifiedTextBox_Font" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Segoe UI, 10pt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

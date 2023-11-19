@@ -67,28 +67,28 @@ namespace TextPad_
             resources.ApplyResources(this.SearchButton, "SearchButton");
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.SearchButton.Click += new System.EventHandler(this.Search);
             // 
             // ReplcaeButton
             // 
             resources.ApplyResources(this.ReplcaeButton, "ReplcaeButton");
             this.ReplcaeButton.Name = "ReplcaeButton";
             this.ReplcaeButton.UseVisualStyleBackColor = true;
-            this.ReplcaeButton.Click += new System.EventHandler(this.replaceClick);
+            this.ReplcaeButton.Click += new System.EventHandler(this.Replace);
             // 
             // ReplaceAllButton
             // 
             resources.ApplyResources(this.ReplaceAllButton, "ReplaceAllButton");
             this.ReplaceAllButton.Name = "ReplaceAllButton";
             this.ReplaceAllButton.UseVisualStyleBackColor = true;
-            this.ReplaceAllButton.Click += new System.EventHandler(this.ReplaceAllButton_Click);
+            this.ReplaceAllButton.Click += new System.EventHandler(this.ReplaceAll);
             // 
             // GoToLineBtn
             // 
             resources.ApplyResources(this.GoToLineBtn, "GoToLineBtn");
             this.GoToLineBtn.Name = "GoToLineBtn";
             this.GoToLineBtn.UseVisualStyleBackColor = true;
-            this.GoToLineBtn.Click += new System.EventHandler(this.gotoBtnClick);
+            this.GoToLineBtn.Click += new System.EventHandler(this.GoToLine);
             // 
             // numericLineNumber
             // 

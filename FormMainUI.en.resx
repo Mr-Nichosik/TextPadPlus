@@ -118,182 +118,221 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
-  <data name="fileMenuItem.Text" xml:space="preserve">
+  <data name="FileMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 20</value>
   </data>
-  <data name="editMenuItem.Text" xml:space="preserve">
+  <data name="EditMenuItem.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SettingsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
   </data>
-  <data name="optionsMenuItem.Text" xml:space="preserve">
+  <data name="SettingsMenuItem.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+  <data name="RunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
   </data>
-  <data name="runMenuItem.Text" xml:space="preserve">
-    <value>Run</value>
+  <data name="RunMenuItem.Text" xml:space="preserve">
+    <value>Run as</value>
   </data>
   <data name="menuStrip.Text" xml:space="preserve">
     <value>Menu</value>
   </data>
-  <data name="createTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="CreateTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="createTabFileMenuItem.Text" xml:space="preserve">
-    <value>Create</value>
+  <data name="CreateTabFileMenuItem.Text" xml:space="preserve">
+    <value>New</value>
   </data>
-  <data name="closeTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="CloseTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="closeTabFileMenuItem.Text" xml:space="preserve">
+  <data name="CloseTabFileMenuItem.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="closeAllTabsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="CloseAllTabsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="closeAllTabsFileMenuItem.Text" xml:space="preserve">
+  <data name="CloseAllTabsFileMenuItem.Text" xml:space="preserve">
     <value>Close all</value>
   </data>
-  <data name="closeWithoutCurrentTabsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="CloseWithoutCurrentTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="closeWithoutCurrentTabsFileMenuItem.Text" xml:space="preserve">
-    <value>Close all but the selected one</value>
+  <data name="CloseWithoutCurrentTabFileMenuItem.Text" xml:space="preserve">
+    <value>Close all except the selected one</value>
   </data>
-  <data name="newWindowFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="NewWindowFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="newWindowFileMenuItem.Text" xml:space="preserve">
+  <data name="NewWindowFileMenuItem.Text" xml:space="preserve">
     <value>New window</value>
   </data>
-  <data name="saveCurrentFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="SaveFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="saveCurrentFileMenuItem.Text" xml:space="preserve">
+  <data name="SaveFileMenuItem.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="saveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="SaveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="saveAsFileMenuItem.Text" xml:space="preserve">
+  <data name="SaveAsFileMenuItem.Text" xml:space="preserve">
     <value>Save as</value>
   </data>
-  <data name="openFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="OpenFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="openFileMenuItem.Text" xml:space="preserve">
+  <data name="OpenFileMenuItem.Text" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="deletFileFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="ReopenFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="deletFileFileMenuItem.Text" xml:space="preserve">
-    <value>Delete (Add to recycle bin)</value>
+  <data name="ReopenFileMenuItem.Text" xml:space="preserve">
+    <value>Reopen</value>
+  </data>
+  <data name="DeleteFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="DeleteFileMenuItem.Text" xml:space="preserve">
+    <value>Delete (To recycle bin)</value>
   </data>
   <data name="separator1FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
+    <value>241, 6</value>
   </data>
-  <data name="fileFolderFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="OpenFileFolderFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="fileFolderFileMenuItem.Text" xml:space="preserve">
+  <data name="OpenFileFolderFileMenuItem.Text" xml:space="preserve">
     <value>Open file folder</value>
   </data>
-  <data name="recentFilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="OpenFolderAsProjectMenuFileItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="recentFilesMenuItem.Text" xml:space="preserve">
-    <value>Latest Files</value>
+  <data name="OpenFolderAsProjectMenuFileItem.Text" xml:space="preserve">
+    <value>Open file folder as project</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 6</value>
+  </data>
+  <data name="RecentFilesListFileItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="RecentFilesListFileItem.Text" xml:space="preserve">
+    <value>Recent files</value>
+  </data>
+  <data name="ClearRecentFilesListFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="ClearRecentFilesListFileMenuItem.Text" xml:space="preserve">
+    <value>Clear recent files</value>
   </data>
   <data name="separator2FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 6</value>
+    <value>241, 6</value>
   </data>
-  <data name="exitFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 22</value>
+  <data name="ExitFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
   </data>
-  <data name="exitFileMenuItem.Text" xml:space="preserve">
+  <data name="ExitFileMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="copyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CopyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="copyEditMenuItem.Text" xml:space="preserve">
+  <data name="CopyEditMenuItem.Text" xml:space="preserve">
     <value>Copy                              CTRL + C</value>
   </data>
-  <data name="cutEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CutEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="cutEditMenuItem.Text" xml:space="preserve">
+  <data name="CutEditMenuItem.Text" xml:space="preserve">
     <value>Cut                                 CTRL + X</value>
   </data>
-  <data name="pasteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PasteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="pasteEditMenuItem.Text" xml:space="preserve">
+  <data name="PasteEditMenuItem.Text" xml:space="preserve">
     <value>Paste                              CTRL + V</value>
   </data>
-  <data name="selectAllEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectAllEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="selectAllEditMenuItem.Text" xml:space="preserve">
-    <value>Selecr all                        CTRL + A</value>
+  <data name="SelectAllEditMenuItem.Text" xml:space="preserve">
+    <value>Select all                        CTRL + A</value>
   </data>
-  <data name="deleteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DeleteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="deleteEditMenuItem.Text" xml:space="preserve">
-    <value>Delete                            Delete</value>
+  <data name="DeleteEditMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="RegisterEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="RegisterEditMenuItem.Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="ToUpperEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="ToUpperEditMenuItem.Text" xml:space="preserve">
+    <value>UPPER</value>
+  </data>
+  <data name="ToLowerEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="ToLowerEditMenuItem.Text" xml:space="preserve">
+    <value>lower</value>
   </data>
   <data name="menuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 6</value>
   </data>
-  <data name="undoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="UndoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="undoEditMenuItem.Text" xml:space="preserve">
+  <data name="UndoEditMenuItem.Text" xml:space="preserve">
     <value>Undo                              CTRL + Z</value>
   </data>
-  <data name="redoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RedoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="redoEditMenuItem.Text" xml:space="preserve">
+  <data name="RedoEditMenuItem.Text" xml:space="preserve">
     <value>Redo                               CTRL + SHIFT + Z</value>
   </data>
   <data name="menuStripSep3.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 6</value>
   </data>
-  <data name="dateEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DateEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="dateEditMenuItem.Text" xml:space="preserve">
+  <data name="DateEditMenuItem.Text" xml:space="preserve">
     <value>Date and time</value>
   </data>
-  <data name="copyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CopyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="copyToClipboardEditMenuItem.Text" xml:space="preserve">
+  <data name="CopyToClipboardEditMenuItem.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
   </data>
-  <data name="путьИИмяФайлаToolStripMenuItem.Text" xml:space="preserve">
+  <data name="CopyPathAndFileNameEditrMenuItem.Text" xml:space="preserve">
     <value>Path and file name</value>
   </data>
-  <data name="имяФайлаToolStripMenuItem.Text" xml:space="preserve">
+  <data name="CopyFileNameEditMenuItem.Text" xml:space="preserve">
     <value>File name</value>
   </data>
-  <data name="searchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SearchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
-  <data name="searchEditMenuItem.Text" xml:space="preserve">
-    <value>Find and replace...        CTRL + F</value>
+  <data name="SearchEditMenuItem.Text" xml:space="preserve">
+    <value>Find and replace            CTRL + F</value>
   </data>
   <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 164</value>
@@ -343,32 +382,23 @@
   <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
     <value>Redo</value>
   </data>
-  <data name="textLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 21</value>
+  <data name="TextLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 21</value>
   </data>
-  <data name="textLabelStatus.Text" xml:space="preserve">
-    <value>Text length: </value>
+  <data name="TextLabelStatus.Text" xml:space="preserve">
+    <value>Characters per tab: </value>
   </data>
-  <data name="textLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
+  <data name="TextLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 21</value>
   </data>
-  <data name="textLinesLabelStatus.Text" xml:space="preserve">
-    <value>Rows per tab:</value>
+  <data name="TextLinesLabelStatus.Text" xml:space="preserve">
+    <value>Lines on the tab: </value>
   </data>
-  <data name="statusStripEncodingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 21</value>
+  <data name="StatusStripEncodingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 21</value>
   </data>
-  <data name="statusStripEncodingLabel.Text" xml:space="preserve">
-    <value>Current encoding:</value>
-  </data>
-  <data name="statusStripEncodingLabel.ToolTipText" xml:space="preserve">
-    <value>Encoding in which files will be opened and saved</value>
-  </data>
-  <data name="encodingStatusLabel.ToolTipText" xml:space="preserve">
-    <value>Encoding in which files will be opened and saved</value>
-  </data>
-  <data name="encodingDropDownBtn.ToolTipText" xml:space="preserve">
-    <value>Encoding in which files will be opened and saved</value>
+  <data name="StatusStripEncodingLabel.Text" xml:space="preserve">
+    <value>Current encoding: </value>
   </data>
   <data name="utf32BEToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
@@ -382,10 +412,22 @@
   <data name="uft16ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
   </data>
+  <data name="UTF8BOMToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
   <data name="utf8ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
   </data>
+  <data name="ASCIIToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
   <data name="windwso1251ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="KOI8RToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="kOI8UToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
   </data>
   <data name="newTabToolStripItem.Text" xml:space="preserve">
@@ -450,20 +492,11 @@
   <data name="fontToolStripItem.Text" xml:space="preserve">
     <value>Font</value>
   </data>
-  <data name="searchToolStripItem.Text" xml:space="preserve">
-    <value>Search and replace</value>
+  <data name="RunAsToolsStripLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 22</value>
   </data>
-  <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 22</value>
-  </data>
-  <data name="toolStripLabel1.Text" xml:space="preserve">
-    <value>Run as</value>
-  </data>
-  <data name="startScriptCombobox.ToolTipText" xml:space="preserve">
-    <value>Select the type of script you want to run</value>
-  </data>
-  <data name="startFileButton.Text" xml:space="preserve">
-    <value>Start</value>
+  <data name="RunAsToolsStripLabel.Text" xml:space="preserve">
+    <value>Run as </value>
   </data>
   <data name="explorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 26</value>
@@ -473,7 +506,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAGAAQMBgAEDARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAGQAQMBkAEDARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -662,7 +695,7 @@
   </data>
   <data name="infoTextBox.Text" xml:space="preserve">
     <value>A free and open source program for quickly creating small text documents. Created in C# and its Windows Forms library.
-Powered by .NET 6.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet/6.0</value>
+Powered by .NET 8.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet/8.0</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 21</value>
@@ -688,20 +721,21 @@ Powered by .NET 6.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet
   <data name="tabPage5.Text" xml:space="preserve">
     <value>Change log</value>
   </data>
-  <data name="textBox2.Text" xml:space="preserve">
-    <value>
-*TextPad+ 2.6.1
+  <data name="ChangeLogTextBox.Text" xml:space="preserve">
+    <value>TextPad+ 2.7.0
 
 Main changes:
-—Added the ability to drag and drop files into the program
-—Added the ability to drag selected text from another window into the editor
-—Updated settings interface
+—Updating the platform version from .NET 6 to .NET 8
+—Added the ability to re-open a file through the "File" menu
+—Added the ability to open the current file folder as a project folder in Explorer
+—Added the ability to clear the list of recent files
+—Added the ability to change the case of selected text in the "Edit" menu
+—Added support for multiple encodings
 
 Corrections:
-—The list of recent files and Explorer have been improved: if the file to be opened is already in this list, it will not be added to it
-—Opening a file from the recent list and Explorer: if there is no text on the current tab or there is no file open in it, then the recent file will open in it
-—Correction of minor errors
-—Minor improvements to the update installer</value>
+—When saving and opening a file, the "Open file folder" button is no longer blocked
+—Correction of minor bugs in the explorer
+— Improved update checking system</value>
   </data>
   <data name="checkUpdatesButton.Text" xml:space="preserve">
     <value>Check for updates</value>

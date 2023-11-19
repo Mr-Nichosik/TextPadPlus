@@ -19,7 +19,7 @@ namespace TextPad_
         // Главное окно
         public static FormMainUI MainUI = new();
         // Окно установщика обновлений
-        public static FormUpdaterUI UpdaterUI = new();
+        public static Updater.FormUpdaterUI UpdaterUI = new();
         // Статус обновления программы
         // 0 - программа не обновляется; 1 - программа обновляется и зкарывать нельзя; 2 - программа обновляется и нуобходимо её закрыть
         public static int UpdateStatus = 0;
@@ -28,7 +28,7 @@ namespace TextPad_
         /// Точка входа в программу
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new FormMainUI());

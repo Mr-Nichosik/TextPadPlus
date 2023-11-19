@@ -29,51 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPythonInterpreterUI));
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            AutoSearchRadioButton = new RadioButton();
+            ManuallySearchRadioButton = new RadioButton();
             label1 = new Label();
-            pathTextBox = new TextBox();
-            browseBtn = new Button();
-            doneBtn = new Button();
+            PathTextBox = new TextBox();
+            BrowseBtn = new Button();
+            DoneBtn = new Button();
             openFileDialog = new OpenFileDialog();
             SuspendLayout();
             // 
-            // radioButton1
+            // AutoSearchRadioButton
             // 
-            resources.ApplyResources(radioButton1, "radioButton1");
-            radioButton1.Name = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButtonCheckedChanged;
+            resources.ApplyResources(AutoSearchRadioButton, "AutoSearchRadioButton");
+            AutoSearchRadioButton.Name = "AutoSearchRadioButton";
+            AutoSearchRadioButton.UseVisualStyleBackColor = true;
+            AutoSearchRadioButton.CheckedChanged += RadioButtonCheckedChanged;
             // 
-            // radioButton2
+            // ManuallySearchRadioButton
             // 
-            resources.ApplyResources(radioButton2, "radioButton2");
-            radioButton2.Name = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(ManuallySearchRadioButton, "ManuallySearchRadioButton");
+            ManuallySearchRadioButton.Name = "ManuallySearchRadioButton";
+            ManuallySearchRadioButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
             // 
-            // pathTextBox
+            // PathTextBox
             // 
-            resources.ApplyResources(pathTextBox, "pathTextBox");
-            pathTextBox.Name = "pathTextBox";
+            resources.ApplyResources(PathTextBox, "PathTextBox");
+            PathTextBox.Name = "PathTextBox";
             // 
-            // browseBtn
+            // BrowseBtn
             // 
-            resources.ApplyResources(browseBtn, "browseBtn");
-            browseBtn.Name = "browseBtn";
-            browseBtn.UseVisualStyleBackColor = true;
-            browseBtn.Click += browseBtn_Click;
+            resources.ApplyResources(BrowseBtn, "BrowseBtn");
+            BrowseBtn.Name = "BrowseBtn";
+            BrowseBtn.UseVisualStyleBackColor = true;
+            BrowseBtn.Click += Browse;
             // 
-            // doneBtn
+            // DoneBtn
             // 
-            resources.ApplyResources(doneBtn, "doneBtn");
-            doneBtn.Name = "doneBtn";
-            doneBtn.UseVisualStyleBackColor = true;
-            doneBtn.Click += doneBtn_Click;
+            resources.ApplyResources(DoneBtn, "DoneBtn");
+            DoneBtn.Name = "DoneBtn";
+            DoneBtn.UseVisualStyleBackColor = true;
+            DoneBtn.Click += Start;
             // 
             // openFileDialog
             // 
@@ -83,30 +83,30 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(doneBtn);
-            Controls.Add(browseBtn);
-            Controls.Add(pathTextBox);
+            Controls.Add(DoneBtn);
+            Controls.Add(BrowseBtn);
+            Controls.Add(PathTextBox);
             Controls.Add(label1);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
+            Controls.Add(ManuallySearchRadioButton);
+            Controls.Add(AutoSearchRadioButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormPythonInterpreterUI";
             ShowInTaskbar = false;
-            Load += FormPythonInterpreterUI_Load;
+            Load += FormPythonInterpreterUILoad;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton AutoSearchRadioButton;
+        private RadioButton ManuallySearchRadioButton;
         private Label label1;
-        private TextBox pathTextBox;
-        private Button browseBtn;
-        private Button doneBtn;
+        private TextBox PathTextBox;
+        private Button BrowseBtn;
+        private Button DoneBtn;
         private OpenFileDialog openFileDialog;
     }
 }

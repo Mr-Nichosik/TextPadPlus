@@ -121,187 +121,226 @@
     <value>11, 18</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="createTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="CreateTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="createTabFileMenuItem.Text" xml:space="preserve">
+  <data name="CreateTabFileMenuItem.Text" xml:space="preserve">
     <value>Создать</value>
   </data>
-  <data name="closeTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="CloseTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="closeTabFileMenuItem.Text" xml:space="preserve">
+  <data name="CloseTabFileMenuItem.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="closeAllTabsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="CloseAllTabsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="closeAllTabsFileMenuItem.Text" xml:space="preserve">
+  <data name="CloseAllTabsFileMenuItem.Text" xml:space="preserve">
     <value>Закрыть все</value>
   </data>
-  <data name="closeWithoutCurrentTabsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="CloseWithoutCurrentTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="closeWithoutCurrentTabsFileMenuItem.Text" xml:space="preserve">
+  <data name="CloseWithoutCurrentTabFileMenuItem.Text" xml:space="preserve">
     <value>Закрыть все, кроме выбранной</value>
   </data>
-  <data name="newWindowFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="NewWindowFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="newWindowFileMenuItem.Text" xml:space="preserve">
+  <data name="NewWindowFileMenuItem.Text" xml:space="preserve">
     <value>Новое окно</value>
   </data>
-  <data name="saveCurrentFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="SaveFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="saveCurrentFileMenuItem.Text" xml:space="preserve">
+  <data name="SaveFileMenuItem.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
-  <data name="saveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="SaveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="saveAsFileMenuItem.Text" xml:space="preserve">
+  <data name="SaveAsFileMenuItem.Text" xml:space="preserve">
     <value>Сохранить как</value>
   </data>
-  <data name="openFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="OpenFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="openFileMenuItem.Text" xml:space="preserve">
+  <data name="OpenFileMenuItem.Text" xml:space="preserve">
     <value>Открыть</value>
   </data>
-  <data name="deletFileFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="ReopenFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="deletFileFileMenuItem.Text" xml:space="preserve">
+  <data name="ReopenFileMenuItem.Text" xml:space="preserve">
+    <value>Открыть повторно</value>
+  </data>
+  <data name="DeleteFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
+  </data>
+  <data name="DeleteFileMenuItem.Text" xml:space="preserve">
     <value>Удалить (В корзину)</value>
   </data>
   <data name="separator1FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>274, 6</value>
   </data>
-  <data name="fileFolderFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="OpenFileFolderFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="fileFolderFileMenuItem.Text" xml:space="preserve">
+  <data name="OpenFileFolderFileMenuItem.Text" xml:space="preserve">
     <value>Открыть папку файла</value>
   </data>
-  <data name="recentFilesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="OpenFolderAsProjectMenuFileItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="recentFilesMenuItem.Text" xml:space="preserve">
+  <data name="OpenFolderAsProjectMenuFileItem.Text" xml:space="preserve">
+    <value>Открыть папку как проект</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 6</value>
+  </data>
+  <data name="RecentFilesListFileItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
+  </data>
+  <data name="RecentFilesListFileItem.Text" xml:space="preserve">
     <value>Последние файлы</value>
   </data>
+  <data name="ClearRecentFilesListFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
+  </data>
+  <data name="ClearRecentFilesListFileMenuItem.Text" xml:space="preserve">
+    <value>Очистить список последних файлов</value>
+  </data>
   <data name="separator2FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>274, 6</value>
   </data>
-  <data name="exitFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+  <data name="ExitFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
   </data>
-  <data name="exitFileMenuItem.Text" xml:space="preserve">
+  <data name="ExitFileMenuItem.Text" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="fileMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="FileMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="fileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
-  <data name="fileMenuItem.Text" xml:space="preserve">
+  <data name="FileMenuItem.Text" xml:space="preserve">
     <value>Файл</value>
   </data>
-  <data name="copyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CopyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="copyEditMenuItem.Text" xml:space="preserve">
+  <data name="CopyEditMenuItem.Text" xml:space="preserve">
     <value>Копировать                 CTRL + C</value>
   </data>
-  <data name="cutEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CutEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="cutEditMenuItem.Text" xml:space="preserve">
+  <data name="CutEditMenuItem.Text" xml:space="preserve">
     <value>Вырезать                      CTRL + X</value>
   </data>
-  <data name="pasteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PasteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="pasteEditMenuItem.Text" xml:space="preserve">
+  <data name="PasteEditMenuItem.Text" xml:space="preserve">
     <value>Вставить                       CTRL + V</value>
   </data>
-  <data name="selectAllEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SelectAllEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="selectAllEditMenuItem.Text" xml:space="preserve">
+  <data name="SelectAllEditMenuItem.Text" xml:space="preserve">
     <value>Выделить всё              CTRL + A</value>
   </data>
-  <data name="deleteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DeleteEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="deleteEditMenuItem.Text" xml:space="preserve">
-    <value>Удалить                        Delete</value>
+  <data name="DeleteEditMenuItem.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ToUpperEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="ToUpperEditMenuItem.Text" xml:space="preserve">
+    <value>ЗАГЛАВНЫЕ</value>
+  </data>
+  <data name="ToLowerEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="ToLowerEditMenuItem.Text" xml:space="preserve">
+    <value>строчные</value>
+  </data>
+  <data name="RegisterEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="RegisterEditMenuItem.Text" xml:space="preserve">
+    <value>Регистер</value>
   </data>
   <data name="menuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 6</value>
   </data>
-  <data name="undoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="UndoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="undoEditMenuItem.Text" xml:space="preserve">
+  <data name="UndoEditMenuItem.Text" xml:space="preserve">
     <value>Отменить                     CTRL + Z</value>
   </data>
-  <data name="redoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RedoEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="redoEditMenuItem.Text" xml:space="preserve">
+  <data name="RedoEditMenuItem.Text" xml:space="preserve">
     <value>Вернуть                        CTRL + SHIFT + Z</value>
   </data>
   <data name="menuStripSep3.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 6</value>
   </data>
-  <data name="dateEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DateEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="dateEditMenuItem.Text" xml:space="preserve">
+  <data name="DateEditMenuItem.Text" xml:space="preserve">
     <value>Дата и время</value>
   </data>
-  <data name="путьИИмяФайлаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CopyPathAndFileNameEditrMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
-  <data name="путьИИмяФайлаToolStripMenuItem.Text" xml:space="preserve">
+  <data name="CopyPathAndFileNameEditrMenuItem.Text" xml:space="preserve">
     <value>Путь и имя файла</value>
   </data>
-  <data name="имяФайлаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CopyFileNameEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
-  <data name="имяФайлаToolStripMenuItem.Text" xml:space="preserve">
+  <data name="CopyFileNameEditMenuItem.Text" xml:space="preserve">
     <value>Имя файла</value>
   </data>
-  <data name="copyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CopyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="copyToClipboardEditMenuItem.Text" xml:space="preserve">
+  <data name="CopyToClipboardEditMenuItem.Text" xml:space="preserve">
     <value>Копировать в буфер обмена</value>
   </data>
-  <data name="searchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SearchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
-  <data name="searchEditMenuItem.Text" xml:space="preserve">
-    <value>Найти и заменить...   CTRL + F</value>
+  <data name="SearchEditMenuItem.Text" xml:space="preserve">
+    <value>Найти и заменить       CTRL + F</value>
   </data>
-  <data name="editMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EditMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="editMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
   </data>
-  <data name="editMenuItem.Text" xml:space="preserve">
+  <data name="EditMenuItem.Text" xml:space="preserve">
     <value>Правка</value>
   </data>
-  <data name="optionsMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SettingsMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="optionsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SettingsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 20</value>
   </data>
-  <data name="optionsMenuItem.Text" xml:space="preserve">
+  <data name="SettingsMenuItem.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
   <data name="pythonRunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -322,13 +361,13 @@
   <data name="batRunMenuItem.Text" xml:space="preserve">
     <value>Windows Bat</value>
   </data>
-  <data name="runMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="RunMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="runMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 20</value>
   </data>
-  <data name="runMenuItem.Text" xml:space="preserve">
+  <data name="RunMenuItem.Text" xml:space="preserve">
     <value>Запустить как</value>
   </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -441,64 +480,64 @@
   <data name="StatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="textLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TextLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="textLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TextLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 21</value>
   </data>
-  <data name="textLabelStatus.Text" xml:space="preserve">
+  <data name="TextLabelStatus.Text" xml:space="preserve">
     <value>Символов на вкладке: </value>
   </data>
-  <data name="textLengthLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TextLengthLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
   </data>
-  <data name="textLengthLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TextLengthLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 21</value>
   </data>
-  <data name="textLengthLabel.Text" xml:space="preserve">
+  <data name="TextLengthLabel.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textLinesLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TextLinesLabelStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="textLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TextLinesLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 21</value>
   </data>
-  <data name="textLinesLabelStatus.Text" xml:space="preserve">
+  <data name="TextLinesLabelStatus.Text" xml:space="preserve">
     <value>Строк на вкладке: </value>
   </data>
-  <data name="textLinesLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TextLinesLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="textLinesLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TextLinesLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 21</value>
   </data>
-  <data name="textLinesLabel.Text" xml:space="preserve">
+  <data name="TextLinesLabel.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="statusStripEncodingLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="StatusStripEncodingLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="statusStripEncodingLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="StatusStripEncodingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 21</value>
   </data>
-  <data name="statusStripEncodingLabel.Text" xml:space="preserve">
+  <data name="StatusStripEncodingLabel.Text" xml:space="preserve">
     <value>Текущая кодировка: </value>
   </data>
-  <data name="statusStripEncodingLabel.ToolTipText" xml:space="preserve">
+  <data name="StatusStripEncodingLabel.ToolTipText" xml:space="preserve">
     <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
   </data>
-  <data name="encodingStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="EncodingStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="encodingStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EncodingStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 21</value>
   </data>
-  <data name="encodingStatusLabel.Text" xml:space="preserve">
+  <data name="EncodingStatusLabel.Text" xml:space="preserve">
     <value>—</value>
   </data>
-  <data name="encodingStatusLabel.ToolTipText" xml:space="preserve">
+  <data name="EncodingStatusLabel.ToolTipText" xml:space="preserve">
     <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
   </data>
   <data name="utf32BEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -537,6 +576,12 @@
   <data name="uft16ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
+  <data name="UTF8BOMToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="UTF8BOMToolStripMenuItem.Text" xml:space="preserve">
+    <value>UTF-8 BOM</value>
+  </data>
   <data name="utf8ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 22</value>
   </data>
@@ -544,6 +589,15 @@
     <value>UTF-8</value>
   </data>
   <data name="utf8ToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="ASCIIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="ASCIIToolStripMenuItem.Text" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="ASCIIToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
   <data name="windwso1251ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -555,19 +609,37 @@
   <data name="windwso1251ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
-  <data name="encodingDropDownBtn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="KOI8RToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="KOI8RToolStripMenuItem.Text" xml:space="preserve">
+    <value>KOI8-R</value>
+  </data>
+  <data name="KOI8RToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="kOI8UToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="kOI8UToolStripMenuItem.Text" xml:space="preserve">
+    <value>KOI8-U</value>
+  </data>
+  <data name="kOI8UToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="EncodingDropDownBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="encodingDropDownBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="EncodingDropDownBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="encodingDropDownBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EncodingDropDownBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 24</value>
   </data>
-  <data name="encodingDropDownBtn.Text" xml:space="preserve">
+  <data name="EncodingDropDownBtn.Text" xml:space="preserve">
     <value>Кодировка</value>
   </data>
-  <data name="encodingDropDownBtn.ToolTipText" xml:space="preserve">
+  <data name="EncodingDropDownBtn.ToolTipText" xml:space="preserve">
     <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
   </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -776,16 +848,16 @@
   <data name="toolStripSep5.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 6</value>
   </data>
-  <data name="searchToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="SearchToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="searchToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="SearchToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="searchToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SearchToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 20</value>
   </data>
-  <data name="searchToolStripItem.Text" xml:space="preserve">
+  <data name="SearchToolStripItem.Text" xml:space="preserve">
     <value>Найти и заменить</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -815,43 +887,43 @@
   <metadata name="RunFileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>639, 19</value>
   </metadata>
-  <data name="toolStripLabel1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="RunAsToolsStripLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RunAsToolsStripLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 22</value>
   </data>
-  <data name="toolStripLabel1.Text" xml:space="preserve">
+  <data name="RunAsToolsStripLabel.Text" xml:space="preserve">
     <value>Запустить как</value>
   </data>
-  <data name="startScriptCombobox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="RunScriptCombobox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
   </data>
-  <data name="startScriptCombobox.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="RunScriptCombobox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="startScriptCombobox.Items" xml:space="preserve">
+  <data name="RunScriptCombobox.Items" xml:space="preserve">
     <value>Python File</value>
   </data>
-  <data name="startScriptCombobox.Items1" xml:space="preserve">
+  <data name="RunScriptCombobox.Items1" xml:space="preserve">
     <value>Windows Bat</value>
   </data>
-  <data name="startScriptCombobox.Items2" xml:space="preserve">
+  <data name="RunScriptCombobox.Items2" xml:space="preserve">
     <value>VBScript</value>
   </data>
-  <data name="startScriptCombobox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RunScriptCombobox.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 25</value>
   </data>
-  <data name="startScriptCombobox.ToolTipText" xml:space="preserve">
+  <data name="RunScriptCombobox.ToolTipText" xml:space="preserve">
     <value>Выберит тип скрипта, который хотите запустить</value>
   </data>
-  <data name="startFileButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="RunScriptButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="startFileButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RunScriptButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="startFileButton.Text" xml:space="preserve">
+  <data name="RunScriptButton.Text" xml:space="preserve">
     <value>Запустить</value>
   </data>
   <data name="RunFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -911,7 +983,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAE8AR4BPAEeARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAE0ASEBNAEhARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -1784,7 +1856,7 @@
     <value>7</value>
   </data>
   <data name="SettingsEditorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 225</value>
+    <value>20, 20</value>
   </data>
   <data name="SettingsEditorPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>396, 380</value>
@@ -1811,7 +1883,7 @@
     <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 12</value>
+    <value>150, 12</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 17</value>
@@ -2147,7 +2219,7 @@
     <value>4</value>
   </data>
   <data name="SettingsToolsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
+    <value>439, 20</value>
   </data>
   <data name="SettingsToolsPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>396, 199</value>
@@ -2603,8 +2675,8 @@
     <value>21</value>
   </data>
   <data name="infoTextBox.Text" xml:space="preserve">
-    <value>Бесплатная программа с открытым исходным кодом для быстрого создания небольших текстовых документов. Создана на языке C# и его библиотеке Windows Forms.
-Работает на основе платформы .NET 6.0: https://dotnet.microsoft.com/en-us/download/dotnet/6.0</value>
+    <value>Бесплатная программа с открытым исходным кодом для быстрого создания небольших текстовых документов. Создана на языке C# и его платформе Windows Forms.
+Работает на основе платформы .NET 8.0: https://dotnet.microsoft.com/en-us/download/dotnet/8.0</value>
   </data>
   <data name="&gt;&gt;infoTextBox.Name" xml:space="preserve">
     <value>infoTextBox</value>
@@ -3191,29 +3263,45 @@
   <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="ChangeLogTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textBox2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ChangeLogTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ChangeLogTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 3</value>
   </data>
-  <data name="textBox2.Multiline" type="System.Boolean, mscorlib">
+  <data name="ChangeLogTextBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="textBox2.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+  <data name="ChangeLogTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
   </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ChangeLogTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>956, 426</value>
   </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="ChangeLogTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="textBox2.Text" xml:space="preserve">
-    <value>
+  <data name="ChangeLogTextBox.Text" xml:space="preserve">
+    <value>TextPad+ 2.7.0
+
+Основные изменени:
+—Обновление версии платформы с .NET 6 до .NET 8
+—Добавлена возможность повторно открыть файл через меню "Файл"
+—Добавлена возможность открыть папку текущего файла как папку проекта в проводнике
+—Добавлена возможность очистить список последних файлов
+—Добавлена возможность в меню "Правка" изменить регистр выделенного текста
+—Добавлена поддержка нескольких кодировок
+
+Исправления:
+—При сохранении и открытии файла кнопка "Открыть папку файла" больше не блокируется
+—Исправление мелких ошибок в работе проводника
+—Доработана система проверки обновлений
+—Исправление небольших ошибок
+_________________________________________________________________________________________________________________
+
 *TextPad+ 2.6.1
 
 Основные изменения:
@@ -3225,33 +3313,18 @@
 —Дорабатан список последних файлов и проводник: если открываемый файл уже есть в этом списке, то он в него не добавится
 —Открытие файла из списка недавних  и проводника: если на текущей вкладке нет текста или в ней не открыт файл, то ндавний файл откроется в ней
 —Исправление мелких ошибок
-—Небольшие улучшения установщика обновлений
-
-_________________________________________________________________________________________________________________
-
-*TextPad+ 2.6.0
-
-Основные изменения:
-—Установщик обновлений вшит в основную программу
-—Не сохранённые файлы помечаются символом *, а при закрытии вкладок с ними программа предлагает сохранить
-—Добавлена поддержка нескольких UTF кодировок: в строке состояния можно выбрать кодировку, в которой откроется файл или в которой сохранится. Автоматического определния кодировки открываемого файла пока нет :(
-
-Исправления:
-—Включены новые иконки в английской локализации
-—Улучшена система чтения и записи файлов
-—Мелкие исправления интерфейса
-—Мелкие улучшения логирования</value>
+—Небольшие улучшения установщика обновлений</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
+  <data name="&gt;&gt;ChangeLogTextBox.Name" xml:space="preserve">
+    <value>ChangeLogTextBox</value>
   </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;ChangeLogTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ChangeLogTextBox.Parent" xml:space="preserve">
     <value>tabPage5</value>
   </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ChangeLogTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage5.Font" type="System.Drawing.Font, System.Drawing">
@@ -3741,64 +3814,70 @@ ________________________________________________________________________________
   <data name="$this.Text" xml:space="preserve">
     <value>TextPad+</value>
   </data>
-  <data name="&gt;&gt;fileMenuItem.Name" xml:space="preserve">
-    <value>fileMenuItem</value>
+  <data name="&gt;&gt;FileMenuItem.Name" xml:space="preserve">
+    <value>FileMenuItem</value>
   </data>
-  <data name="&gt;&gt;fileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;FileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;createTabFileMenuItem.Name" xml:space="preserve">
-    <value>createTabFileMenuItem</value>
+  <data name="&gt;&gt;CreateTabFileMenuItem.Name" xml:space="preserve">
+    <value>CreateTabFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;createTabFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CreateTabFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;closeTabFileMenuItem.Name" xml:space="preserve">
-    <value>closeTabFileMenuItem</value>
+  <data name="&gt;&gt;CloseTabFileMenuItem.Name" xml:space="preserve">
+    <value>CloseTabFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;closeTabFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CloseTabFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;closeAllTabsFileMenuItem.Name" xml:space="preserve">
-    <value>closeAllTabsFileMenuItem</value>
+  <data name="&gt;&gt;CloseAllTabsFileMenuItem.Name" xml:space="preserve">
+    <value>CloseAllTabsFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;closeAllTabsFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CloseAllTabsFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;closeWithoutCurrentTabsFileMenuItem.Name" xml:space="preserve">
-    <value>closeWithoutCurrentTabsFileMenuItem</value>
+  <data name="&gt;&gt;CloseWithoutCurrentTabFileMenuItem.Name" xml:space="preserve">
+    <value>CloseWithoutCurrentTabFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;closeWithoutCurrentTabsFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CloseWithoutCurrentTabFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newWindowFileMenuItem.Name" xml:space="preserve">
-    <value>newWindowFileMenuItem</value>
+  <data name="&gt;&gt;NewWindowFileMenuItem.Name" xml:space="preserve">
+    <value>NewWindowFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;newWindowFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;NewWindowFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveCurrentFileMenuItem.Name" xml:space="preserve">
-    <value>saveCurrentFileMenuItem</value>
+  <data name="&gt;&gt;SaveFileMenuItem.Name" xml:space="preserve">
+    <value>SaveFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;saveCurrentFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveAsFileMenuItem.Name" xml:space="preserve">
-    <value>saveAsFileMenuItem</value>
+  <data name="&gt;&gt;SaveAsFileMenuItem.Name" xml:space="preserve">
+    <value>SaveAsFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;saveAsFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveAsFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openFileMenuItem.Name" xml:space="preserve">
-    <value>openFileMenuItem</value>
+  <data name="&gt;&gt;OpenFileMenuItem.Name" xml:space="preserve">
+    <value>OpenFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;openFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deletFileFileMenuItem.Name" xml:space="preserve">
-    <value>deletFileFileMenuItem</value>
+  <data name="&gt;&gt;ReopenFileMenuItem.Name" xml:space="preserve">
+    <value>ReopenFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;deletFileFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ReopenFileMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteFileMenuItem.Name" xml:space="preserve">
+    <value>DeleteFileMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DeleteFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;separator1FileMenuItem.Name" xml:space="preserve">
@@ -3807,16 +3886,34 @@ ________________________________________________________________________________
   <data name="&gt;&gt;separator1FileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fileFolderFileMenuItem.Name" xml:space="preserve">
-    <value>fileFolderFileMenuItem</value>
+  <data name="&gt;&gt;OpenFileFolderFileMenuItem.Name" xml:space="preserve">
+    <value>OpenFileFolderFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;fileFolderFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenFileFolderFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;recentFilesMenuItem.Name" xml:space="preserve">
-    <value>recentFilesMenuItem</value>
+  <data name="&gt;&gt;OpenFolderAsProjectMenuFileItem.Name" xml:space="preserve">
+    <value>OpenFolderAsProjectMenuFileItem</value>
   </data>
-  <data name="&gt;&gt;recentFilesMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenFolderAsProjectMenuFileItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RecentFilesListFileItem.Name" xml:space="preserve">
+    <value>RecentFilesListFileItem</value>
+  </data>
+  <data name="&gt;&gt;RecentFilesListFileItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClearRecentFilesListFileMenuItem.Name" xml:space="preserve">
+    <value>ClearRecentFilesListFileMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ClearRecentFilesListFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;separator2FileMenuItem.Name" xml:space="preserve">
@@ -3825,46 +3922,64 @@ ________________________________________________________________________________
   <data name="&gt;&gt;separator2FileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;exitFileMenuItem.Name" xml:space="preserve">
-    <value>exitFileMenuItem</value>
+  <data name="&gt;&gt;ExitFileMenuItem.Name" xml:space="preserve">
+    <value>ExitFileMenuItem</value>
   </data>
-  <data name="&gt;&gt;exitFileMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ExitFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;editMenuItem.Name" xml:space="preserve">
-    <value>editMenuItem</value>
+  <data name="&gt;&gt;EditMenuItem.Name" xml:space="preserve">
+    <value>EditMenuItem</value>
   </data>
-  <data name="&gt;&gt;editMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;EditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;copyEditMenuItem.Name" xml:space="preserve">
-    <value>copyEditMenuItem</value>
+  <data name="&gt;&gt;CopyEditMenuItem.Name" xml:space="preserve">
+    <value>CopyEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;copyEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CopyEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cutEditMenuItem.Name" xml:space="preserve">
-    <value>cutEditMenuItem</value>
+  <data name="&gt;&gt;CutEditMenuItem.Name" xml:space="preserve">
+    <value>CutEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;cutEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CutEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pasteEditMenuItem.Name" xml:space="preserve">
-    <value>pasteEditMenuItem</value>
+  <data name="&gt;&gt;PasteEditMenuItem.Name" xml:space="preserve">
+    <value>PasteEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;pasteEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;PasteEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;selectAllEditMenuItem.Name" xml:space="preserve">
-    <value>selectAllEditMenuItem</value>
+  <data name="&gt;&gt;SelectAllEditMenuItem.Name" xml:space="preserve">
+    <value>SelectAllEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;selectAllEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectAllEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deleteEditMenuItem.Name" xml:space="preserve">
-    <value>deleteEditMenuItem</value>
+  <data name="&gt;&gt;DeleteEditMenuItem.Name" xml:space="preserve">
+    <value>DeleteEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;deleteEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeleteEditMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RegisterEditMenuItem.Name" xml:space="preserve">
+    <value>RegisterEditMenuItem</value>
+  </data>
+  <data name="&gt;&gt;RegisterEditMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToUpperEditMenuItem.Name" xml:space="preserve">
+    <value>ToUpperEditMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ToUpperEditMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToLowerEditMenuItem.Name" xml:space="preserve">
+    <value>ToLowerEditMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ToLowerEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuStripSep2.Name" xml:space="preserve">
@@ -3873,16 +3988,16 @@ ________________________________________________________________________________
   <data name="&gt;&gt;menuStripSep2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;undoEditMenuItem.Name" xml:space="preserve">
-    <value>undoEditMenuItem</value>
+  <data name="&gt;&gt;UndoEditMenuItem.Name" xml:space="preserve">
+    <value>UndoEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;undoEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;UndoEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;redoEditMenuItem.Name" xml:space="preserve">
-    <value>redoEditMenuItem</value>
+  <data name="&gt;&gt;RedoEditMenuItem.Name" xml:space="preserve">
+    <value>RedoEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;redoEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;RedoEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuStripSep3.Name" xml:space="preserve">
@@ -3891,46 +4006,46 @@ ________________________________________________________________________________
   <data name="&gt;&gt;menuStripSep3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dateEditMenuItem.Name" xml:space="preserve">
-    <value>dateEditMenuItem</value>
+  <data name="&gt;&gt;DateEditMenuItem.Name" xml:space="preserve">
+    <value>DateEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;dateEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;DateEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;copyToClipboardEditMenuItem.Name" xml:space="preserve">
-    <value>copyToClipboardEditMenuItem</value>
+  <data name="&gt;&gt;CopyToClipboardEditMenuItem.Name" xml:space="preserve">
+    <value>CopyToClipboardEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;copyToClipboardEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CopyToClipboardEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;путьИИмяФайлаToolStripMenuItem.Name" xml:space="preserve">
-    <value>путьИИмяФайлаToolStripMenuItem</value>
+  <data name="&gt;&gt;CopyPathAndFileNameEditrMenuItem.Name" xml:space="preserve">
+    <value>CopyPathAndFileNameEditrMenuItem</value>
   </data>
-  <data name="&gt;&gt;путьИИмяФайлаToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CopyPathAndFileNameEditrMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;имяФайлаToolStripMenuItem.Name" xml:space="preserve">
-    <value>имяФайлаToolStripMenuItem</value>
+  <data name="&gt;&gt;CopyFileNameEditMenuItem.Name" xml:space="preserve">
+    <value>CopyFileNameEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;имяФайлаToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CopyFileNameEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;searchEditMenuItem.Name" xml:space="preserve">
-    <value>searchEditMenuItem</value>
+  <data name="&gt;&gt;SearchEditMenuItem.Name" xml:space="preserve">
+    <value>SearchEditMenuItem</value>
   </data>
-  <data name="&gt;&gt;searchEditMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SearchEditMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;optionsMenuItem.Name" xml:space="preserve">
-    <value>optionsMenuItem</value>
+  <data name="&gt;&gt;SettingsMenuItem.Name" xml:space="preserve">
+    <value>SettingsMenuItem</value>
   </data>
-  <data name="&gt;&gt;optionsMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SettingsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;runMenuItem.Name" xml:space="preserve">
-    <value>runMenuItem</value>
+  <data name="&gt;&gt;RunMenuItem.Name" xml:space="preserve">
+    <value>RunMenuItem</value>
   </data>
-  <data name="&gt;&gt;runMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;RunMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pythonRunMenuItem.Name" xml:space="preserve">
@@ -4023,46 +4138,46 @@ ________________________________________________________________________________
   <data name="&gt;&gt;StatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textLabelStatus.Name" xml:space="preserve">
-    <value>textLabelStatus</value>
+  <data name="&gt;&gt;TextLabelStatus.Name" xml:space="preserve">
+    <value>TextLabelStatus</value>
   </data>
-  <data name="&gt;&gt;textLabelStatus.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextLabelStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textLengthLabel.Name" xml:space="preserve">
-    <value>textLengthLabel</value>
+  <data name="&gt;&gt;TextLengthLabel.Name" xml:space="preserve">
+    <value>TextLengthLabel</value>
   </data>
-  <data name="&gt;&gt;textLengthLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextLengthLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textLinesLabelStatus.Name" xml:space="preserve">
-    <value>textLinesLabelStatus</value>
+  <data name="&gt;&gt;TextLinesLabelStatus.Name" xml:space="preserve">
+    <value>TextLinesLabelStatus</value>
   </data>
-  <data name="&gt;&gt;textLinesLabelStatus.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextLinesLabelStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textLinesLabel.Name" xml:space="preserve">
-    <value>textLinesLabel</value>
+  <data name="&gt;&gt;TextLinesLabel.Name" xml:space="preserve">
+    <value>TextLinesLabel</value>
   </data>
-  <data name="&gt;&gt;textLinesLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextLinesLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;statusStripEncodingLabel.Name" xml:space="preserve">
-    <value>statusStripEncodingLabel</value>
+  <data name="&gt;&gt;StatusStripEncodingLabel.Name" xml:space="preserve">
+    <value>StatusStripEncodingLabel</value>
   </data>
-  <data name="&gt;&gt;statusStripEncodingLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;StatusStripEncodingLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;encodingStatusLabel.Name" xml:space="preserve">
-    <value>encodingStatusLabel</value>
+  <data name="&gt;&gt;EncodingStatusLabel.Name" xml:space="preserve">
+    <value>EncodingStatusLabel</value>
   </data>
-  <data name="&gt;&gt;encodingStatusLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;EncodingStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;encodingDropDownBtn.Name" xml:space="preserve">
-    <value>encodingDropDownBtn</value>
+  <data name="&gt;&gt;EncodingDropDownBtn.Name" xml:space="preserve">
+    <value>EncodingDropDownBtn</value>
   </data>
-  <data name="&gt;&gt;encodingDropDownBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;EncodingDropDownBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;utf32BEToolStripMenuItem.Name" xml:space="preserve">
@@ -4089,16 +4204,40 @@ ________________________________________________________________________________
   <data name="&gt;&gt;uft16ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;UTF8BOMToolStripMenuItem.Name" xml:space="preserve">
+    <value>UTF8BOMToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;UTF8BOMToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;utf8ToolStripMenuItem.Name" xml:space="preserve">
     <value>utf8ToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;utf8ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ASCIIToolStripMenuItem.Name" xml:space="preserve">
+    <value>ASCIIToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ASCIIToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;windwso1251ToolStripMenuItem.Name" xml:space="preserve">
     <value>windwso1251ToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;windwso1251ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;KOI8RToolStripMenuItem.Name" xml:space="preserve">
+    <value>KOI8RToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;KOI8RToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kOI8UToolStripMenuItem.Name" xml:space="preserve">
+    <value>kOI8UToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;kOI8UToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;newTabToolStripItem.Name" xml:space="preserve">
@@ -4197,28 +4336,28 @@ ________________________________________________________________________________
   <data name="&gt;&gt;toolStripSep5.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;searchToolStripItem.Name" xml:space="preserve">
-    <value>searchToolStripItem</value>
+  <data name="&gt;&gt;SearchToolStripItem.Name" xml:space="preserve">
+    <value>SearchToolStripItem</value>
   </data>
-  <data name="&gt;&gt;searchToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SearchToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripLabel1.Name" xml:space="preserve">
-    <value>toolStripLabel1</value>
+  <data name="&gt;&gt;RunAsToolsStripLabel.Name" xml:space="preserve">
+    <value>RunAsToolsStripLabel</value>
   </data>
-  <data name="&gt;&gt;toolStripLabel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;RunAsToolsStripLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;startScriptCombobox.Name" xml:space="preserve">
-    <value>startScriptCombobox</value>
+  <data name="&gt;&gt;RunScriptCombobox.Name" xml:space="preserve">
+    <value>RunScriptCombobox</value>
   </data>
-  <data name="&gt;&gt;startScriptCombobox.Type" xml:space="preserve">
+  <data name="&gt;&gt;RunScriptCombobox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;startFileButton.Name" xml:space="preserve">
-    <value>startFileButton</value>
+  <data name="&gt;&gt;RunScriptButton.Name" xml:space="preserve">
+    <value>RunScriptButton</value>
   </data>
-  <data name="&gt;&gt;startFileButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;RunScriptButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;удалитьToolStripMenuItem1.Name" xml:space="preserve">

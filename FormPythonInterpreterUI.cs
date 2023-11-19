@@ -3,69 +3,67 @@ namespace TextPad_
 {
     public partial class FormPythonInterpreterUI : Form
     {
-        private readonly IFileRunner FileRunner = new TextEditor();
-
         public FormPythonInterpreterUI()
         {
             InitializeComponent();
         }
 
-        private void doneBtn_Click(object sender, EventArgs e)
+        private void Start(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true)
+            if (AutoSearchRadioButton.Checked == true)
             {
-                FileRunner.PythonRun();
+                FileRunner.RunPythonScript();
             }
-            else if (radioButton2.Checked == true)
+            else if (ManuallySearchRadioButton.Checked == true)
             {
-                if (pathTextBox.Text == "")
+                if (PathTextBox.Text == "")
                 {
                     MessageBox.Show(Resources.Localization.MSGErrorPythonInterPath, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                FileRunner.PythonRun(pathTextBox.Text);
+                FileRunner.RunPythonScript(PathTextBox.Text);
             }
 
             this.Close();
         }
 
-        private void browseBtn_Click(object sender, EventArgs e)
+        private void Browse(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.Cancel)
             {
                 return;
             }
 
-            pathTextBox.Text = openFileDialog.FileName;
+            PathTextBox.Text = openFileDialog.FileName;
             Properties.Settings.Default.PythonInterpreterPath = openFileDialog.FileName;
         }
 
-        private void radioButtonCheckedChanged(object sender, EventArgs e)
+        private void RadioButtonCheckedChanged(object sender, EventArgs e)
         {
-            switch (radioButton1.Checked)
+            switch (AutoSearchRadioButton.Checked)
             {
                 case true:
-                    pathTextBox.Enabled = false;
-                    browseBtn.Enabled = false;
+                    PathTextBox.Enabled = false;
+                    BrowseBtn.Enabled = false;
                     break;
                 case false:
-                    pathTextBox.Enabled = true;
-                    browseBtn.Enabled = true;
+                    PathTextBox.Enabled = true;
+                    BrowseBtn.Enabled = true;
                     break;
             }
 
         }
 
-        private void FormPythonInterpreterUI_Load(object sender, EventArgs e)
+        private void FormPythonInterpreterUILoad(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.PythonInterpreterPath != "Empty File")
             {
-                radioButton2.Checked = true;
-                pathTextBox.Text = Properties.Settings.Default.PythonInterpreterPath;
+                ManuallySearchRadioButton.Checked = true;
+                PathTextBox.Text = Properties.Settings.Default.PythonInterpreterPath;
             }
             else
             {
-                radioButton1.Checked = true;
+                AutoSearchRadioButton.Checked = true;
             }
 
             openFileDialog.Filter = "*.exe|*.exe";

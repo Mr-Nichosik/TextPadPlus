@@ -1,4 +1,4 @@
-﻿namespace TextPad_
+﻿namespace TextPad_.Updater
 {
     partial class FormUpdaterUI
     {
@@ -32,7 +32,7 @@
             UpdaterInfoPanel = new Panel();
             ProgramPathTextBox = new TextBox();
             UpdatePathLabel = new Label();
-            UpdateIatestVerL = new Label();
+            UpdateLatestVerL = new Label();
             UpdateIatestVerLabel = new Label();
             UpdateInstalledVerL = new Label();
             UpdateInstalledVerLabel = new Label();
@@ -49,152 +49,96 @@
             // 
             // UpdaterInfoPanel
             // 
-            UpdaterInfoPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            resources.ApplyResources(UpdaterInfoPanel, "UpdaterInfoPanel");
             UpdaterInfoPanel.BorderStyle = BorderStyle.FixedSingle;
             UpdaterInfoPanel.Controls.Add(ProgramPathTextBox);
             UpdaterInfoPanel.Controls.Add(UpdatePathLabel);
-            UpdaterInfoPanel.Controls.Add(UpdateIatestVerL);
+            UpdaterInfoPanel.Controls.Add(UpdateLatestVerL);
             UpdaterInfoPanel.Controls.Add(UpdateIatestVerLabel);
             UpdaterInfoPanel.Controls.Add(UpdateInstalledVerL);
             UpdaterInfoPanel.Controls.Add(UpdateInstalledVerLabel);
-            UpdaterInfoPanel.Location = new Point(26, 27);
             UpdaterInfoPanel.Name = "UpdaterInfoPanel";
-            UpdaterInfoPanel.Size = new Size(627, 141);
-            UpdaterInfoPanel.TabIndex = 0;
             // 
             // ProgramPathTextBox
             // 
+            resources.ApplyResources(ProgramPathTextBox, "ProgramPathTextBox");
             ProgramPathTextBox.BackColor = SystemColors.Control;
             ProgramPathTextBox.BorderStyle = BorderStyle.FixedSingle;
-            ProgramPathTextBox.Location = new Point(173, 89);
             ProgramPathTextBox.Name = "ProgramPathTextBox";
             ProgramPathTextBox.ReadOnly = true;
-            ProgramPathTextBox.Size = new Size(449, 23);
-            ProgramPathTextBox.TabIndex = 5;
             // 
             // UpdatePathLabel
             // 
-            UpdatePathLabel.AutoSize = true;
-            UpdatePathLabel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UpdatePathLabel.Location = new Point(16, 95);
+            resources.ApplyResources(UpdatePathLabel, "UpdatePathLabel");
             UpdatePathLabel.Name = "UpdatePathLabel";
-            UpdatePathLabel.Size = new Size(103, 17);
-            UpdatePathLabel.TabIndex = 4;
-            UpdatePathLabel.Text = "Расположение:";
             // 
-            // UpdateIatestVerL
+            // UpdateLatestVerL
             // 
-            UpdateIatestVerL.AutoSize = true;
-            UpdateIatestVerL.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UpdateIatestVerL.Location = new Point(173, 51);
-            UpdateIatestVerL.Name = "UpdateIatestVerL";
-            UpdateIatestVerL.Size = new Size(21, 17);
-            UpdateIatestVerL.TabIndex = 3;
-            UpdateIatestVerL.Text = "—";
+            resources.ApplyResources(UpdateLatestVerL, "UpdateLatestVerL");
+            UpdateLatestVerL.Name = "UpdateLatestVerL";
             // 
             // UpdateIatestVerLabel
             // 
-            UpdateIatestVerLabel.AutoSize = true;
-            UpdateIatestVerLabel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UpdateIatestVerLabel.Location = new Point(16, 51);
+            resources.ApplyResources(UpdateIatestVerLabel, "UpdateIatestVerLabel");
             UpdateIatestVerLabel.Name = "UpdateIatestVerLabel";
-            UpdateIatestVerLabel.Size = new Size(126, 17);
-            UpdateIatestVerLabel.TabIndex = 2;
-            UpdateIatestVerLabel.Text = "Последняя версия:";
             // 
             // UpdateInstalledVerL
             // 
-            UpdateInstalledVerL.AutoSize = true;
-            UpdateInstalledVerL.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UpdateInstalledVerL.Location = new Point(173, 22);
+            resources.ApplyResources(UpdateInstalledVerL, "UpdateInstalledVerL");
             UpdateInstalledVerL.Name = "UpdateInstalledVerL";
-            UpdateInstalledVerL.Size = new Size(21, 17);
-            UpdateInstalledVerL.TabIndex = 1;
-            UpdateInstalledVerL.Text = "—";
             // 
             // UpdateInstalledVerLabel
             // 
-            UpdateInstalledVerLabel.AutoSize = true;
-            UpdateInstalledVerLabel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UpdateInstalledVerLabel.Location = new Point(16, 22);
+            resources.ApplyResources(UpdateInstalledVerLabel, "UpdateInstalledVerLabel");
             UpdateInstalledVerLabel.Name = "UpdateInstalledVerLabel";
-            UpdateInstalledVerLabel.Size = new Size(151, 17);
-            UpdateInstalledVerLabel.TabIndex = 0;
-            UpdateInstalledVerLabel.Text = "Установленная версия:";
             // 
             // updateStatusStrip
             // 
+            resources.ApplyResources(updateStatusStrip, "updateStatusStrip");
             updateStatusStrip.Items.AddRange(new ToolStripItem[] { UpdateStatusLabel, UpdateStatusProgressBar });
-            updateStatusStrip.Location = new Point(0, 454);
             updateStatusStrip.Name = "updateStatusStrip";
             updateStatusStrip.ShowItemToolTips = true;
-            updateStatusStrip.Size = new Size(681, 22);
-            updateStatusStrip.TabIndex = 1;
             // 
             // UpdateStatusLabel
             // 
-            UpdateStatusLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            resources.ApplyResources(UpdateStatusLabel, "UpdateStatusLabel");
             UpdateStatusLabel.Name = "UpdateStatusLabel";
-            UpdateStatusLabel.Size = new Size(45, 17);
-            UpdateStatusLabel.Text = "Готово";
-            UpdateStatusLabel.ToolTipText = "Фоновые задачи не выполняются.";
             // 
             // UpdateStatusProgressBar
             // 
+            resources.ApplyResources(UpdateStatusProgressBar, "UpdateStatusProgressBar");
             UpdateStatusProgressBar.Name = "UpdateStatusProgressBar";
-            UpdateStatusProgressBar.Size = new Size(100, 16);
             UpdateStatusProgressBar.Style = ProgressBarStyle.Continuous;
             // 
             // UpdateInfoTextBox
             // 
-            UpdateInfoTextBox.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UpdateInfoTextBox.ImeMode = ImeMode.Off;
-            UpdateInfoTextBox.Location = new Point(26, 216);
-            UpdateInfoTextBox.Multiline = true;
+            resources.ApplyResources(UpdateInfoTextBox, "UpdateInfoTextBox");
             UpdateInfoTextBox.Name = "UpdateInfoTextBox";
-            UpdateInfoTextBox.PlaceholderText = "Здесь будут отображаться изменения в новой версии";
             UpdateInfoTextBox.ReadOnly = true;
-            UpdateInfoTextBox.ScrollBars = ScrollBars.Vertical;
-            UpdateInfoTextBox.Size = new Size(627, 196);
-            UpdateInfoTextBox.TabIndex = 2;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(26, 180);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(92, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Что нового:";
             // 
             // CheckForUpdatesBtn
             // 
-            CheckForUpdatesBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            CheckForUpdatesBtn.Location = new Point(26, 418);
+            resources.ApplyResources(CheckForUpdatesBtn, "CheckForUpdatesBtn");
             CheckForUpdatesBtn.Name = "CheckForUpdatesBtn";
-            CheckForUpdatesBtn.Size = new Size(245, 28);
-            CheckForUpdatesBtn.TabIndex = 4;
-            CheckForUpdatesBtn.Text = "Проверить наличие обновлений";
             CheckForUpdatesBtn.UseVisualStyleBackColor = true;
             CheckForUpdatesBtn.Click += CheckForUpdates;
             // 
             // InstallUpdateManuallyBtn
             // 
-            InstallUpdateManuallyBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            InstallUpdateManuallyBtn.Location = new Point(408, 418);
+            resources.ApplyResources(InstallUpdateManuallyBtn, "InstallUpdateManuallyBtn");
             InstallUpdateManuallyBtn.Name = "InstallUpdateManuallyBtn";
-            InstallUpdateManuallyBtn.Size = new Size(245, 28);
-            InstallUpdateManuallyBtn.TabIndex = 5;
-            InstallUpdateManuallyBtn.Text = "Установить обновление вручную";
             InstallUpdateManuallyBtn.UseVisualStyleBackColor = true;
             InstallUpdateManuallyBtn.Click += InstallUpdateManually;
             // 
             // FormUpdaterUI
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(681, 476);
             Controls.Add(InstallUpdateManuallyBtn);
             Controls.Add(CheckForUpdatesBtn);
             Controls.Add(label1);
@@ -202,10 +146,8 @@
             Controls.Add(updateStatusStrip);
             Controls.Add(UpdaterInfoPanel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormUpdaterUI";
-            Text = "Обновить программу";
             TopMost = true;
             FormClosing += FormUpdaterUI_FormClosing;
             Load += FormUpdaterUILoad;
@@ -228,7 +170,7 @@
         internal TextBox UpdateInfoTextBox;
         internal ToolStripStatusLabel UpdateStatusLabel;
         internal Label UpdateInstalledVerL;
-        internal Label UpdateIatestVerL;
+        internal Label UpdateLatestVerL;
         private Button CheckForUpdatesBtn;
         private Button InstallUpdateManuallyBtn;
         internal ToolStripProgressBar UpdateStatusProgressBar;

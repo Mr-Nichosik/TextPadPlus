@@ -213,4 +213,7 @@
   <data name="PROGRAMStatusUpdating" xml:space="preserve">
     <value>Идёт обновление...</value>
   </data>
+  <data name="UPDATERAbortUpdate" xml:space="preserve">
+    <value>Прервать установку обновления?</value>
+  </data>
 </root>

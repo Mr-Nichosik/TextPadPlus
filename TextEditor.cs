@@ -7,9 +7,9 @@ namespace TextPad_
     /// Класс, созданный для того, что бы обрабатывать всю логику работы текстового редактора. Пока что работает только исключительно с MTextBox.
     /// Его методы вызываются из класса главного окна программы (MainForm).
     /// </summary>
-    internal class TextEditor : IFileRunner
+    internal static class TextEditor
     {
-        private static readonly ILogger LS = new LogSystem($"{Application.StartupPath}\\logs");
+        private static readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
         private static MTextBox? mtb;
 
         // Метод сохранения файла "Сохранить как..."
@@ -17,77 +17,95 @@ namespace TextPad_
         {
             try
             {
+                // ModifiedTextBox на выбранной вкладке и фльтра для диалога
                 mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 Program.MainUI.saveFileDialog.Filter = Program.MainUI.saveFileDialog.Filter = Resources.Localization.saveFileDialogFilter;
-
                 if (Program.MainUI.saveFileDialog.ShowDialog() == DialogResult.Cancel)
                     return;
+                mtb.FileName = Program.MainUI.saveFileDialog.FileName;
 
-                // В свойство FileName моего Modified TextBox добавляется путь до файла, выбранного пользователем при сохранеyии.
-                Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = Program.MainUI.saveFileDialog.FileName;
-
-                // В файл сохраняется текст текущей вкладки по пути, указанному в FileName, учитывая значение кодировки из mtb.
+                // В файл сохраняется текст mtb по пути, указанному в FileName, учитывая значение кодировки из mtb.
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
                 StreamWriter fileWriter;
                 switch (mtb.Encoding)
                 {
-                    case "windows-1251":
-                        fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(1251));
+                    case "KOI8-U":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(21866));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "KOI8-R":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(20866));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "ASCII":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(20127));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "Windows-1251":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(1251));
                         fileWriter.Write(mtb.Text);
                         fileWriter.Close();
                         break;
                     case "UTF-8":
-                        fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false);
+                        fileWriter = new StreamWriter(mtb.FileName, false);
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-8 BOM":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(65001));
                         fileWriter.Write(mtb.Text);
                         fileWriter.Close();
                         break;
                     case "UTF-16":
-                        fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(1200));
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(1200));
                         fileWriter.Write(mtb.Text);
                         fileWriter.Close();
                         break;
                     case "UTF-16 BE":
-                        fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(1201));
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(1201));
                         fileWriter.Write(mtb.Text);
                         fileWriter.Close();
                         break;
                     case "UTF-32":
-                        fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(12000));
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(12000));
                         fileWriter.Write(mtb.Text);
                         fileWriter.Close();
                         break;
                     case "UTF-32 BE":
-                        fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(12001));
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(12001));
                         fileWriter.Write(mtb.Text);
                         fileWriter.Close();
                         break;
                 }
 
-                // заголовком вкладки становится название файла
-                Program.MainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
-
-                // Обновление статуса файла
+                // Изменение заголовка вкладки и обновление статуса файла
+                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
                 mtb.IsFileChanged = false;
-                Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Text = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
+                Program.MainUI.CheckFile();
+
+                // Лог
+                Logger.Info("Saving file: " + mtb.FileName);
 
                 // Внос файла в список недавних файлов
-                if (Program.MainUI.recentFilesMenuItem.DropDownItems.Count == 10)
-                    Program.MainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
-                ToolStripMenuItem tsmi = new ToolStripMenuItem();
-                tsmi.Text = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
+                foreach (ToolStripMenuItem rfmdi in Program.MainUI.RecentFilesListFileItem.DropDownItems)
+                {
+                    if (rfmdi.Text == mtb.FileName)
+                        return;
+                }
+                if (Program.MainUI.RecentFilesListFileItem.DropDownItems.Count == 10)
+                    Program.MainUI.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
+                ToolStripMenuItem tsmi = new();
+                tsmi.Text = mtb.FileName;
                 tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                Program.MainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
-
-                Program.MainUI.deletFileFileMenuItem.Enabled = true;
-
-                LS.Info("Saving file: " + Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
-
+                Program.MainUI.RecentFilesListFileItem.DropDownItems.Add(tsmi);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //LS.Error($"{ex} by saving file.");
-                //MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Error($"Error when saving a file through the dialog box. \n{ex}");
+                MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,60 +114,84 @@ namespace TextPad_
         {
             try
             {
+                // ModifiedTextBox на выбранной вкладке
                 mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-                // если путь до файла отсутствует (Missing)
-                if (Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
+                // Если путь до файла отсутствует (Missing)
+                if (mtb.FileName == "Missing")
                 {
-                    // то вызываем обычный saveAsFile метод, где используется saveFileDialog и добавляется в список под индексом вкладки выранный путь.
+                    // Вызываем обычный SaveAsFile метод, с saveFileDialog и завершаем работу
                     SaveAsFile();
+                    return;
                 }
-                // если нет, то значит путь до файла в списке найден, а значит сохраняем через этот самый путь как обычно.
-                else
+
+                // Если нет, то значит путь до файла файл есть, поэтому сохраняем по пути как обычно
+                // В файл сохраняется текст текущей вкладки по пути, указанному в FileName, учитывая значение кодировки из mtb.
+                StreamWriter fileWriter;
+                switch (mtb.Encoding)
                 {
-                    // В файл сохраняется текст текущей вкладки по пути, указанному в FileName, учитывая значение кодировки из mtb.
-                    StreamWriter fileWriter;
-                    switch (mtb.Encoding)
-                    {
-                        case "UTF-8":
-                            fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false);
-                            fileWriter.Write(mtb.Text);
-                            fileWriter.Close();
-                            break;
-                        case "UTF-16":
-                            fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(1200));
-                            fileWriter.Write(mtb.Text);
-                            fileWriter.Close();
-                            break;
-                        case "UTF-16 BE":
-                            fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(1201));
-                            fileWriter.Write(mtb.Text);
-                            fileWriter.Close();
-                            break;
-                        case "UTF-32":
-                            fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(12000));
-                            fileWriter.Write(mtb.Text);
-                            fileWriter.Close();
-                            break;
-                        case "UTF-32 BE":
-                            fileWriter = new StreamWriter(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, false, Encoding.GetEncoding(12001));
-                            fileWriter.Write(mtb.Text);
-                            fileWriter.Close();
-                            break;
-                    }
-
-                    // Обновление статуса файла
-                    mtb.IsFileChanged = false;
-                    Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Text = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
-
-                    Program.MainUI.deletFileFileMenuItem.Enabled = true;
+                    case "KOI8-U":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(21866));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "KOI8-R":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(20866));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "ASCII":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(20127));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "Windows-1251":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(1251));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-8":
+                        fileWriter = new StreamWriter(mtb.FileName, false);
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-8 BOM":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(65001));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-16":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(1200));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-16 BE":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(1201));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-32":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(12000));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
+                    case "UTF-32 BE":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(12001));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
                 }
 
-                LS.Info("Saving file: " + Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                // Обновление статуса файла
+                mtb.IsFileChanged = false;
+                //mtb.Text = mtb.Text.TrimEnd('*');
+                Program.MainUI.CheckFile();
+
+                Logger.Info("Saving file: " + mtb.FileName);
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} by saving current file.");
+                Logger.Error($"An error occurred while saving an existing file. \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenSaveFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -157,73 +199,97 @@ namespace TextPad_
         // Открытие файла
         public static void OpenFile()
         {
-            Program.MainUI.openFileDialog.Filter = Resources.Localization.openFileDialogFilter;
-            if (Program.MainUI.openFileDialog.ShowDialog() == DialogResult.Cancel)
-                return;
-
             try
             {
+                // Вызов openFileDialog
+                Program.MainUI.openFileDialog.Filter = Resources.Localization.openFileDialogFilter;
+                if (Program.MainUI.openFileDialog.ShowDialog() == DialogResult.Cancel)
+                    return;
+
+                // ModifiedTextBox на выбранной вкладке и фльтра для диалога
                 mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                mtb.FileName = Program.MainUI.openFileDialog.FileName;
 
-                // Вызываем openFileDialog и полученный путь до файла (fileName) записываем в свойство MTextBox'а FileName
-                Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = Program.MainUI.openFileDialog.FileName;
-
-                // Считываем текст этого файла, путь берём из того же свойства. Проверяем кодировку
+                // Считываем текст этого файла, путь берём из того же свойства, проверяем кодировку
                 StreamReader fileReader;
                 switch (mtb.Encoding)
                 {
+                    case "KOI8-U":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(21866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "KOI8-R":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(20866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "ASCII":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(20127));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "Windows-1251":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(1251));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
                     case "UTF-8":
-                        fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                        fileReader = new StreamReader(mtb.FileName);
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-8 BOM":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(65001));
                         mtb.Text = fileReader.ReadToEnd();
                         fileReader.Close();
                         break;
                     case "UTF-16":
-                        fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(1200));
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(1200));
                         mtb.Text = fileReader.ReadToEnd();
                         fileReader.Close();
                         break;
                     case "UTF-16 BE":
-                        fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(1201));
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(1201));
                         mtb.Text = fileReader.ReadToEnd();
                         fileReader.Close();
                         break;
                     case "UTF-32":
-                        fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(12000));
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(12000));
                         mtb.Text = fileReader.ReadToEnd();
                         fileReader.Close();
                         break;
                     case "UTF-32 BE":
-                        fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(12001));
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(12001));
                         mtb.Text = fileReader.ReadToEnd();
                         fileReader.Close();
                         break;
                 }
-                // Обновление статуса файла
-                mtb.IsFileChanged = false;
-                Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Text = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Text.TrimEnd('*');
 
-                // Задаём заголовок вкладки с названием файла
-                Program.MainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                // Изменение заголовка вкладки и обновление статуса файла
+                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
+                mtb.IsFileChanged = false;
+                Program.MainUI.CheckFile();
+
+                // Лог
+                Logger.Info("Opening file: " + mtb.FileName);
 
                 // Внос файла в список недавних файлов
-                foreach (ToolStripMenuItem rfmdi in Program.MainUI.recentFilesMenuItem.DropDownItems)
+                foreach (ToolStripMenuItem rftsmi in Program.MainUI.RecentFilesListFileItem.DropDownItems)
                 {
-                    if (rfmdi.Text == Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName)
+                    if (rftsmi.Text == mtb.FileName)
                         return;
                 }
-
-                if (Program.MainUI.recentFilesMenuItem.DropDownItems.Count == 10)
-                    Program.MainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
+                if (Program.MainUI.RecentFilesListFileItem.DropDownItems.Count == 10)
+                    Program.MainUI.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
                 ToolStripMenuItem tsmi = new();
-                tsmi.Text = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
+                tsmi.Text = mtb.FileName;
                 tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                Program.MainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
-
-                LS.Info("Opening file: " + Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                Program.MainUI.RecentFilesListFileItem.DropDownItems.Add(tsmi);
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} when opening an open file.");
+                Logger.Error($"An error occurred while opening the file. \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenOpenFIle, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -233,178 +299,223 @@ namespace TextPad_
         {
             try
             {
-                if (File.Exists(fileName))
+                if (File.Exists(fileName) == false)
                 {
-                    mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-
-                    if (mtb.FileName != "Missing" || mtb.Text.Length != 0)
-                    {
-                        Program.MainUI.CreateTab();
-                        Program.MainUI.cTabControl.SelectTab(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.TabPages.Count - 1]);
-                    }
-
-                    mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-
-                    // В свойство FileName записываем путь до файла, который передаётся методу
-                    Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = fileName;
-
-                    // Считываем текст этого файла, путь берём из того же свойства. Проверяем кодировку
-                    StreamReader fileReader;
-                    switch (mtb.Encoding)
-                    {
-                        case "UTF-8":
-                            fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
-                            mtb.Text = fileReader.ReadToEnd();
-                            fileReader.Close();
-                            break;
-                        case "UTF-16":
-                            fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(1200));
-                            mtb.Text = fileReader.ReadToEnd();
-                            fileReader.Close();
-                            break;
-                        case "UTF-16 BE":
-                            fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(1201));
-                            mtb.Text = fileReader.ReadToEnd();
-                            fileReader.Close();
-                            break;
-                        case "UTF-32":
-                            fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(12000));
-                            mtb.Text = fileReader.ReadToEnd();
-                            fileReader.Close();
-                            break;
-                        case "UTF-32 BE":
-                            fileReader = new StreamReader(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName, Encoding.GetEncoding(12001));
-                            mtb.Text = fileReader.ReadToEnd();
-                            fileReader.Close();
-                            break;
-                    }
-
-                    // Обновление статуса файла
-                    mtb.IsFileChanged = false;
-
-                    // Задаём заголовок вкладки с названием файла
-                    Program.MainUI.cTabControl.SelectedTab.Text = Path.GetFileName(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
-
-                    // Внос файла в список недавних файлов
-                    foreach (ToolStripMenuItem rfmdi in Program.MainUI.recentFilesMenuItem.DropDownItems)
-                    {
-                        if (rfmdi.Text == Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName)
-                            return;
-                    }
-
-                    if (Program.MainUI.recentFilesMenuItem.DropDownItems.Count == 10)
-                        Program.MainUI.recentFilesMenuItem.DropDownItems.RemoveAt(0);
-                    ToolStripMenuItem tsmi = new();
-                    tsmi.Text = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
-                    tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                    Program.MainUI.recentFilesMenuItem.DropDownItems.Add(tsmi);
-                }
-                else
                     MessageBox.Show(Resources.Localization.MSGErrorFileNotFound, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
 
-                LS.Info("Opening file: " + Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
+                // Если текущая вкладка пуста, открываем в ней файл, а если нет, то создаём новую
+                if (mtb.FileName != "Missing" || mtb.Text.Length > 0)
+                {
+                    Program.MainUI.CreateTab();
+                    Program.MainUI.cTabControl.SelectTab(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.TabPages.Count - 1]);
+                    mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                }
+
+                // В свойство FileName записываем путь до файла, который передаётся методу
+                mtb.FileName = fileName;
+
+                // Считываем текст этого файла, проверяем кодировку
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                StreamReader fileReader;
+                switch (mtb.Encoding)
+                {
+                    case "KOI8-U":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(21866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "KOI8-R":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(20866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "ASCII":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(20127));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "Windows-1251":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(1251));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-8":
+                        fileReader = new StreamReader(fileName);
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-8 BOM":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(65001));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-16":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(1200));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-16 BE":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(1201));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-32":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(12000));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-32 BE":
+                        fileReader = new StreamReader(fileName, Encoding.GetEncoding(12001));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                }
+
+                // Изменение заголовка вкладки и обновление статуса файла
+                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
+                mtb.IsFileChanged = false;
+                Program.MainUI.CheckFile();
+
+                // Лог
+                Logger.Info("Opening file: " + mtb.FileName);
+
+                // Внос файла в список недавних файлов
+                foreach (ToolStripMenuItem rfmdi in Program.MainUI.RecentFilesListFileItem.DropDownItems)
+                {
+                    if (rfmdi.Text == mtb.FileName)
+                        return;
+                }
+                if (Program.MainUI.RecentFilesListFileItem.DropDownItems.Count == 10)
+                    Program.MainUI.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
+                ToolStripMenuItem tsmi = new();
+                tsmi.Text = mtb.FileName;
+                tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
+                Program.MainUI.RecentFilesListFileItem.DropDownItems.Add(tsmi);
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} when opening an open file.");
+                Logger.Error($"An error occurred while opening a file at the specified path. \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenOpenFIle, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        #region Стандартные функции для правки текста, по названиям понятно, чё он делают.
-        public static void copyTextFromTB(CTabControl cTabControl)
+        // Повторное открытие файла
+        public static void ReopenFile()
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            if (mtb.TextLength > 0)
+            try
             {
-                mtb.Copy();
+                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
+                if (File.Exists(mtb.FileName) == false)
+                {
+                    MessageBox.Show(Resources.Localization.MSGErrorFileNotFound, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                // Считываем текст этого файла, путь берём из того же свойства. Проверяем кодировку
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                StreamReader fileReader;
+                switch (mtb.Encoding)
+                {
+                    case "KOI8-U":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(21866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "KOI8-R":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(20866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "ASCII":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(20127));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "Windows-1251":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(1251));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-8":
+                        fileReader = new StreamReader(mtb.FileName);
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-8 BOM":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(65001));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-16":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(1200));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-16 BE":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(1201));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-32":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(12000));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                    case "UTF-32 BE":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(12001));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
+                }
+                Program.MainUI.CheckFile();
+
+                // Изменение заголовка вкладки и обновление статуса файла
+                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
+                mtb.IsFileChanged = false;
+                Program.MainUI.CheckFile();
+
+                Logger.Info("Reopening file: " + Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"An error occurred while reopening a file. \n{ex}");
+                MessageBox.Show(Resources.Localization.MSGErrorWhenOpenFIle, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+    }
 
-        public static void cutTextFromTB(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            if (mtb.TextLength > 0)
-            {
-                mtb.Cut();
-            }
-        }
-
-        public static void pasteTextFromTB(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Paste();
-            string newText = mtb.Text;
-            mtb.Text = newText.ToString();
-            mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
-        }
-
-        public static void fontTextFromTB(CTabControl cTabControl, FontDialog fontDialog)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            fontDialog.ShowDialog();
-            mtb.Font = fontDialog.Font;
-            Properties.Settings.Default.ModifiedTextBox_Font = fontDialog.Font;
-        }
-
-        public static void selectAllTextFromTB(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            if (mtb.TextLength > 0)
-            {
-                mtb.SelectAll();
-            }
-        }
-
-        public static void redoTextFromTB(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Redo();
-        }
-
-        public static void undoTextFromTB(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Undo();
-        }
-
-        public static void deleteTextFromTB(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            if (mtb.TextLength > 0)
-            {
-                mtb.SelectedText = string.Empty;
-            }
-        }
-
-        public static void dateTime(CTabControl cTabControl)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.AppendText(Convert.ToString(DateTime.Now));
-        }
-        #endregion
+    // Структура с методами запуска файлов
+    internal struct FileRunner
+    {
+        private static readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
+        private static MTextBox? mtb;
 
         // Методы запуска файлов
-        public void RunScript()
+        public static void RunScript()
         {
-            if (Program.MainUI.startScriptCombobox.SelectedIndex == 0)
+            if (Program.MainUI.RunScriptCombobox.SelectedIndex == 0)
             {
                 FormPythonInterpreterUI pythonInterpreterUI = new FormPythonInterpreterUI();
                 pythonInterpreterUI.ShowDialog(Program.MainUI);
             }
-            else if (Program.MainUI.startScriptCombobox.SelectedIndex == 1)
+            else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 1)
             {
-                BatRun();
+                RunBatScript();
             }
-            else if (Program.MainUI.startScriptCombobox.SelectedIndex == 2)
+            else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 2)
             {
-                VbsRun();
+                RunVbsScript();
             }
         }
 
-        public void PythonRun()
+        public static void RunPythonScript()
         {
-            LS.Info("Running a Python file");
+            Logger.Info("Running a Python file");
             mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
@@ -415,7 +526,7 @@ namespace TextPad_
                     return;
                 }
 
-                SaveCurrentFile();
+                TextEditor.SaveCurrentFile();
 
                 if (Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
                     return;
@@ -424,14 +535,14 @@ namespace TextPad_
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} Error while running python file: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName}");
+                Logger.Error($"An error occurred while running the Python script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void PythonRun(string path)
+        public static void RunPythonScript(string path)
         {
-            LS.Info("Running a Python file");
+            Logger.Info("Running a Python file");
             mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
@@ -442,7 +553,7 @@ namespace TextPad_
                     return;
                 }
 
-                SaveCurrentFile();
+                TextEditor.SaveCurrentFile();
 
                 if (Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
                     return;
@@ -451,14 +562,14 @@ namespace TextPad_
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} Error while running python file: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName}");
+                Logger.Error($"An error occurred while running the Python script at the specified path: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void BatRun()
+        public static void RunBatScript()
         {
-            LS.Info("Running a bat file");
+            Logger.Info("Running a bat file");
 
             mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -470,20 +581,20 @@ namespace TextPad_
                     return;
                 }
 
-                SaveCurrentFile();
+                TextEditor.SaveCurrentFile();
 
                 Process.Start(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} Error while running Windows Script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName}");
+                Logger.Error($"Error while running Windows script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunBatFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void VbsRun()
+        public static void RunVbsScript()
         {
-            LS.Info("Running a vbs file");
+            Logger.Info("Running a vbs file");
 
             mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -495,13 +606,13 @@ namespace TextPad_
                     return;
                 }
 
-                SaveCurrentFile();
+                TextEditor.SaveCurrentFile();
 
                 Process.Start("wscript.exe", Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} Error while running VBScript file: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName}");
+                Logger.Error($"Error while running VBScript file: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunVBSFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -1,16 +1,27 @@
 ﻿
-namespace TextPad_
+namespace TextPad_.Updater
 {
     public partial class FormUpdaterUI : Form
     {
         public FormUpdaterUI()
         {
+            if (Properties.Settings.Default.Language == "English")
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            }
+            else if (Properties.Settings.Default.Language == "Russian")
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
+            }
+
             InitializeComponent();
         }
 
         private void CheckForUpdates(object sender, EventArgs e)
         {
-            Updater.GetUpdate(UpdateIatestVerL, UpdateInfoTextBox, UpdateStatusLabel, UpdateStatusProgressBar);
+            Updater.GetUpdate(UpdateLatestVerL, UpdateInfoTextBox, UpdateStatusLabel, UpdateStatusProgressBar);
         }
 
         private void InstallUpdateManually(object sender, EventArgs e)
@@ -23,7 +34,7 @@ namespace TextPad_
         {
             this.WindowState = FormWindowState.Normal;
             ProgramPathTextBox.Text = Program.MainUI.ProgramPath;
-            UpdateInstalledVerL.Text = Program.MainUI.GetAssemblyVersion();
+            UpdateInstalledVerL.Text = FormMainUI.GetAssemblyVersion();
         }
 
         private void FormUpdaterUI_FormClosing(object sender, FormClosingEventArgs e)

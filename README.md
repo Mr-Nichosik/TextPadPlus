@@ -20,4 +20,4 @@ TextPad+.csproj
 
 Для локализации MessageBox'ов и некоторых других элементов, которые напрямую в форму не запихнуть, я сделал 2 файла: Localization.resx и Localization.en-US.resx.
 
-Работает на .NET 6.
+Работает на .NET 8.

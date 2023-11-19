@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AutoSearchRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 21</value>
   </data>
-  <data name="radioButton1.Text" xml:space="preserve">
+  <data name="AutoSearchRadioButton.Text" xml:space="preserve">
     <value>Automatic search</value>
   </data>
-  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ManuallySearchRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 21</value>
   </data>
-  <data name="radioButton2.Text" xml:space="preserve">
+  <data name="ManuallySearchRadioButton.Text" xml:space="preserve">
     <value>Specify the path manually</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
@@ -136,11 +136,11 @@
   <data name="label1.Text" xml:space="preserve">
     <value>The program will try to automatically find an interpreter for Python</value>
   </data>
-  <data name="browseBtn.Text" xml:space="preserve">
-    <value>Specify</value>
+  <data name="BrowseBtn.Text" xml:space="preserve">
+    <value>Browse</value>
   </data>
-  <data name="doneBtn.Text" xml:space="preserve">
-    <value>Ready</value>
+  <data name="DoneBtn.Text" xml:space="preserve">
+    <value>Done</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

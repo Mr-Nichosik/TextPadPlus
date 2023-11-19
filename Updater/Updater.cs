@@ -1,29 +1,34 @@
 ﻿
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace TextPad_
+namespace TextPad_.Updater
 {
     internal class Updater
     {
 
         // Logger
-        private static readonly ILogger LS = new LogSystem($"{Application.StartupPath}\\logs");
+        private static readonly LogSystem Logger = new LogSystem($"{Application.StartupPath}\\logs");
 
         // Свойства с сыллками
-        public static string ProgramVersion { get; set; } = Program.MainUI.GetAssemblyVersion();
+        public static string ProgramVersion { get; set; } = FormMainUI.GetAssemblyVersion();
         public static string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
         public static string TextPadVersionSite { get; private set; } = "https://mr-nichosik.github.io/TextPadVersion/";
         public static string TextPadUpdateInstallerSite { get; private set; } = "https://github.com/Mr-Nichosik/TextPadPlus/releases/download/vCurrent/Setup.exe";
         public static string TextPadNewUpdateRuSite { get; private set; } = "https://mr-nichosik.github.io/TextPadNewUpdateRu/";
         public static string TextPadNewUpdateEnSite { get; private set; } = "https://mr-nichosik.github.io/TextPadNewUpdateEn/";
 
+        // Новая версия с ервера
+        private static string ServerVersion = "";
+
+        // Веб-фигня
+        private static readonly WebClient UpdaterClient = new();
+
         public static void OpenUpdatesSite()
         {
             try
             {
-                Process websiteProcess = new Process();
+                Process websiteProcess = new();
                 websiteProcess.StartInfo.UseShellExecute = true;
                 websiteProcess.StartInfo.FileName = WebSite;
                 websiteProcess.Start();
@@ -31,26 +36,25 @@ namespace TextPad_
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Localization.UPDATERErrorCantCheckUpdates, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LS.Error($"{ex} when starting web site from InfoUI window.");
+                Logger.Error($"{ex} when starting web site from InfoUI window.");
             }
         }
-
-        // Веб-фигня
-        private static readonly WebClient UpdaterClient = new();
 
         public static async void GetUpdate(Label UpdateIatestVerL, TextBox UpdateInfoTextBox, ToolStripStatusLabel UpdateStatusLabel, ToolStripProgressBar UpdateStatusProgressBar)
         {
             //Соответствует ли версия программы версии на сервере?
-            LS.Info("Checking the program version");
+            Logger.Info("Checking the program version");
 
             try
             {
                 // соответствует
-                string latestVer = UpdaterClient.DownloadString(TextPadVersionSite);
+                ServerVersion = UpdaterClient.DownloadString(TextPadVersionSite);
 
-                if (UpdaterClient.DownloadString(TextPadVersionSite).Contains(ProgramVersion))
+                if (ServerVersion.Contains(ProgramVersion))
                 {
-                    LS.Debug("The latest version of the program is installed, the test was successful");
+                    Logger.Debug("The latest version of the program is installed, the test was successful");
+
+                    UpdateIatestVerL.Text = ServerVersion;
                     MessageBox.Show(Resources.Localization.UPDATERInfoLatestVersion, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
@@ -58,10 +62,11 @@ namespace TextPad_
                 else
                 {
                     // Выводим это на в интерфейс
-                    UpdateIatestVerL.Text = latestVer;
+                    UpdateIatestVerL.Text = ServerVersion;
+                    UpdateIatestVerL.Text = ServerVersion;
 
                     // пробуем получить список изменений
-                    if (GetChangelog(UpdateInfoTextBox) == 1)
+                    if (GetChangelog(ref UpdateInfoTextBox) == 1)
                         return;
 
                     // спрашиваем пользователя, надо ли оно ему
@@ -69,12 +74,12 @@ namespace TextPad_
                     // надо
                     if (MessageBox.Show(Resources.Localization.UPDATERInfoUpdateAvailable, Resources.Localization.UPDATERTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        LS.Debug("Closing the program, downloading the update");
+                        Logger.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
                         Program.MainUI.StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
 
-                        Program.MainUI.SaveParsameters();
+                        Program.MainUI.SaveParameters();
                         StartUninstaller();
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
                         UpdateStatusProgressBar.Value = 25;
@@ -89,7 +94,7 @@ namespace TextPad_
             }
             catch
             {
-                LS.Error("Error checking update");
+                Logger.Error("Error checking update");
                 MessageBox.Show(Resources.Localization.UPDATERErrorCantCheckUpdates, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -97,26 +102,29 @@ namespace TextPad_
         public static async void GetUpdateQuiet(Label UpdateIatestVerL, TextBox UpdateInfoTextBox, ToolStripStatusLabel UpdateStatusLabel, ToolStripProgressBar UpdateStatusProgressBar)
         {
             //Соответствует ли версия программы версии на сервере?
-            LS.Info("Checking the program version quiet");
+            Logger.Info("Checking the program version quiet");
 
             try
             {
-                // соответствует
-                string latestVer = UpdaterClient.DownloadString(TextPadVersionSite);
+                if (await Task.Run(() => CheckProgramVersion()) == 1)
+                    throw new Exception("Не удалось проверить наличие обновлений");
 
-                if (UpdaterClient.DownloadString(TextPadVersionSite).Contains(ProgramVersion))
+                // соответствует
+                if (ServerVersion.Contains(ProgramVersion))
                 {
-                    LS.Debug("The latest version of the program is installed, the test was successful");
+                    Logger.Debug("The latest version of the program is installed, the test was successful");
+
+                    UpdateIatestVerL.Text = ServerVersion;
                     return;
                 }
                 // не соответствует (можно обновлять)
                 else
                 {
-                    // Выводим это на в интерфейс
-                    UpdateIatestVerL.Text = latestVer;
+                    // Выводим это в интерфейс
+                    UpdateIatestVerL.Text = ServerVersion;
 
                     // пробуем получить список изменений
-                    if (GetChangelog(UpdateInfoTextBox) == 1)
+                    if (GetChangelog(ref UpdateInfoTextBox) == 1)
                         return;
 
                     // спрашиваем пользователя, надо ли оно ему
@@ -124,10 +132,10 @@ namespace TextPad_
                     // надо
                     if (MessageBox.Show(Resources.Localization.UPDATERInfoUpdateAvailable, Resources.Localization.UPDATERTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        LS.Debug("Closing the program, downloading the update");
+                        Logger.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
-                        Program.MainUI.SaveParsameters();
+                        Program.MainUI.SaveParameters();
                         StartUninstaller();
                         UpdateStatusLabel.ToolTipText = "Выполняется обновление...";
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
@@ -142,16 +150,30 @@ namespace TextPad_
             }
             catch
             {
-                LS.Error("Error checking update");
+                Logger.Error("Error checking update");
                 MessageBox.Show(Resources.Localization.UPDATERErrorCantCheckUpdates, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private static int GetChangelog(TextBox UpdateInfoTextBox)
+        private static byte CheckProgramVersion()
         {
             try
             {
-                LS.Debug("Not the latest version of the program is installed, the check was successful");
+                ServerVersion = UpdaterClient.DownloadString(TextPadVersionSite);
+            }
+            catch
+            {
+                return 1;
+            }
+
+            return 0;
+        }
+
+        private static int GetChangelog(ref TextBox UpdateInfoTextBox)
+        {
+            try
+            {
+                Logger.Debug("Not the latest version of the program is installed, the check was successful");
                 // Проверяем текущий язык
                 switch (Properties.Settings.Default.Language)
                 {
@@ -164,13 +186,13 @@ namespace TextPad_
                         UpdateInfoTextBox.Text = UpdaterClient.DownloadString(TextPadNewUpdateEnSite);
                         break;
                 }
-                LS.Debug("Received update information");
+                Logger.Debug("Received update information");
 
                 return 0;
             }
             catch (Exception ex)
             {
-                LS.Error($"{ex} error getting update information");
+                Logger.Error($"{ex} error getting update information");
                 MessageBox.Show(Resources.Localization.UPDATERErrorCantCheckUpdates, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return 1;
@@ -187,7 +209,7 @@ namespace TextPad_
         {
             try
             {
-                LS.Info("Update download starts");
+                Logger.Info("Update download starts");
                 Directory.CreateDirectory($"{Program.MainUI.ProgramPath}Update\\");
 
                 UpdaterClient.DownloadFile(TextPadUpdateInstallerSite, $"{Program.MainUI.ProgramPath}Update\\Setup.exe");
@@ -199,7 +221,7 @@ namespace TextPad_
             }
             catch
             {
-                LS.Error("Error downloading update");
+                Logger.Error("Error downloading update");
                 MessageBox.Show(Resources.Localization.UPDATERErrorCantCheckUpdates, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -277,6 +277,15 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Прервать установку обновления?.
+        /// </summary>
+        public static string UPDATERAbortUpdate {
+            get {
+                return ResourceManager.GetString("UPDATERAbortUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не удалось проверить наличие обновлений. Проверьте подключение к интернету..
         /// </summary>
         public static string UPDATERErrorCantCheckUpdates {
