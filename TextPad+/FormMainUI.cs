@@ -14,7 +14,7 @@ namespace TextPad_
         private readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "19.11.2023";
+        public string DateOfRelease { get; } = "Dev";
         public string ProgramPath { get; } = Application.StartupPath;
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
@@ -118,7 +118,12 @@ namespace TextPad_
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Paste();
             // Это делается для того, что бы текст встал без форматирования
-            mtb.Text = mtb.Text.ToString();
+            
+            
+            
+            
+            
+            mtb.Text.ToString();
             mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
         }
 
@@ -419,7 +424,6 @@ namespace TextPad_
         }
 
         // Открытие окон и нажатия на кнопки в настройках
-
         private void NewWindow(object sender, EventArgs e)
         {
             Process.Start("TextPad+.exe");
@@ -464,7 +468,6 @@ namespace TextPad_
 
             tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
-            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = "Missing";
 
             if (Properties.Settings.Default.Theme == "White")
                 ColorThemeWhite();
@@ -1057,6 +1060,8 @@ namespace TextPad_
                 OpenFolderAsProjectMenuFileItem.Enabled = true;
                 ReopenFileMenuItem.Enabled = true;
             }
+
+            FileNameToolTextBox.Text = mtb.FileName == "Missing" ? "" : mtb.FileName;
         }
 
         // Цветовые схемы
@@ -1284,7 +1289,7 @@ namespace TextPad_
                     // вв свойство TextBox'a FileName помещаем путь до файла
                     cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = args[1];
                     // помещаем текст
-                    mtb.Text = File.ReadAllText(args[1]);
+                    File.ReadAllText(args[1]);
                     // задаём даголовок вкладки
                     cTabControl.SelectedTab!.Text = Path.GetFileName(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
 
@@ -1360,6 +1365,9 @@ namespace TextPad_
             else
                 StatusLabel.Text = Resources.Localization.PROGRAMStatusReady;
 
+            if (this.Width >= 900)
+                FileNameToolTextBox.Width = 610;
+
             Logger.Info($"Program path: {ProgramPath}");
             Logger.Debug("loading is complete");
         }
@@ -1420,6 +1428,12 @@ namespace TextPad_
             SaveParameters();
 
             Logger.Debug("Exit completed");
+        }
+
+        private void FormMainUiSizeChanged(object sender, EventArgs e)
+        {
+            if (this.Width < 900)
+                FileNameToolTextBox.Width = this.Width - 285;
         }
     }
 }

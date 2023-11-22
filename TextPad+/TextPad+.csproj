@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows8.0</TargetFramework>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <RootNamespace>TextPad_</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>True</UseWindowsForms>
@@ -20,6 +19,7 @@
     <IncludeSymbols>False</IncludeSymbols>
     <StartupObject>TextPad_.Program</StartupObject>
     <Company>TextPad+</Company>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

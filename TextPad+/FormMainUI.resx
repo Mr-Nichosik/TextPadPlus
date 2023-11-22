@@ -582,6 +582,9 @@
   <data name="UTF8BOMToolStripMenuItem.Text" xml:space="preserve">
     <value>UTF-8 BOM</value>
   </data>
+  <data name="UTF8BOMToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>В этой кодировке будут открываться и сохраняться файлы</value>
+  </data>
   <data name="utf8ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 22</value>
   </data>
@@ -926,6 +929,15 @@
   <data name="RunScriptButton.Text" xml:space="preserve">
     <value>Запустить</value>
   </data>
+  <data name="FileNameToolTextBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="FileNameToolTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="FileNameToolTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 23</value>
+  </data>
   <data name="RunFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
@@ -983,7 +995,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAE0ASEBNAEhARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAHMASIBzAEiARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -3285,9 +3297,18 @@
     <value>5</value>
   </data>
   <data name="ChangeLogTextBox.Text" xml:space="preserve">
-    <value>TextPad+ 2.7.0
+    <value>TextPad+ 2.x.x
 
-Основные изменени:
+Основные изменения:
+—В панель запуска скрипта добавлено поле с полным путём до выбранного файла
+
+Исправления:
+—Исправлена ошибка, из-за которой после создания новой вкладки, путь файла из выбранной стирался
+_________________________________________________________________________________________________________________
+
+TextPad+ 2.7.0
+
+Основные изменения:
 —Обновление версии платформы с .NET 6 до .NET 8
 —Добавлена возможность повторно открыть файл через меню "Файл"
 —Добавлена возможность открыть папку текущего файла как папку проекта в проводнике
@@ -3299,21 +3320,7 @@
 —При сохранении и открытии файла кнопка "Открыть папку файла" больше не блокируется
 —Исправление мелких ошибок в работе проводника
 —Доработана система проверки обновлений
-—Исправление небольших ошибок
-_________________________________________________________________________________________________________________
-
-*TextPad+ 2.6.1
-
-Основные изменения:
-—Добавлена возможность перетаскивать в программу файлы
-—Добавлена возможность перетаскивать выделенный текст из другого окна в редактор
-—Обновлён интерфейс настроек
-
-Исправления:
-—Дорабатан список последних файлов и проводник: если открываемый файл уже есть в этом списке, то он в него не добавится
-—Открытие файла из списка недавних  и проводника: если на текущей вкладке нет текста или в ней не открыт файл, то ндавний файл откроется в ней
-—Исправление мелких ошибок
-—Небольшие улучшения установщика обновлений</value>
+—Исправление небольших ошибок</value>
   </data>
   <data name="&gt;&gt;ChangeLogTextBox.Name" xml:space="preserve">
     <value>ChangeLogTextBox</value>
@@ -4359,6 +4366,12 @@ ________________________________________________________________________________
   </data>
   <data name="&gt;&gt;RunScriptButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FileNameToolTextBox.Name" xml:space="preserve">
+    <value>FileNameToolTextBox</value>
+  </data>
+  <data name="&gt;&gt;FileNameToolTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;удалитьToolStripMenuItem1.Name" xml:space="preserve">
     <value>удалитьToolStripMenuItem1</value>

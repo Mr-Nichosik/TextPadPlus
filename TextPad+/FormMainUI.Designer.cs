@@ -127,6 +127,7 @@ namespace TextPad_
             RunAsToolsStripLabel = new ToolStripLabel();
             RunScriptCombobox = new ToolStripComboBox();
             RunScriptButton = new ToolStripButton();
+            FileNameToolTextBox = new ToolStripTextBox();
             FilesListView = new ListView();
             explorerContextMenu = new ContextMenuStrip(components);
             удалитьToolStripMenuItem1 = new ToolStripMenuItem();
@@ -841,7 +842,7 @@ namespace TextPad_
             // RunFileToolStrip
             // 
             RunFileToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            RunFileToolStrip.Items.AddRange(new ToolStripItem[] { RunAsToolsStripLabel, RunScriptCombobox, RunScriptButton });
+            RunFileToolStrip.Items.AddRange(new ToolStripItem[] { RunAsToolsStripLabel, RunScriptCombobox, RunScriptButton, FileNameToolTextBox });
             resources.ApplyResources(RunFileToolStrip, "RunFileToolStrip");
             RunFileToolStrip.Name = "RunFileToolStrip";
             // 
@@ -864,6 +865,13 @@ namespace TextPad_
             resources.ApplyResources(RunScriptButton, "RunScriptButton");
             RunScriptButton.Name = "RunScriptButton";
             RunScriptButton.Click += RunScript;
+            // 
+            // FileNameToolTextBox
+            // 
+            resources.ApplyResources(FileNameToolTextBox, "FileNameToolTextBox");
+            FileNameToolTextBox.BorderStyle = BorderStyle.FixedSingle;
+            FileNameToolTextBox.Name = "FileNameToolTextBox";
+            FileNameToolTextBox.ReadOnly = true;
             // 
             // FilesListView
             // 
@@ -1546,6 +1554,7 @@ namespace TextPad_
             Name = "FormMainUI";
             FormClosing += MainFormClosing;
             Load += MainFormLoad;
+            SizeChanged += FormMainUiSizeChanged;
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             contextMenuStrip.ResumeLayout(false);
@@ -1789,7 +1798,6 @@ namespace TextPad_
         private Label label19;
         internal CheckBox autoUpdateCheckBox;
         internal ToolStripStatusLabel StatusLabel;
-        internal CTabControl cTabControl;
         private ToolStripMenuItem OpenFolderAsProjectMenuFileItem;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem ClearRecentFilesListFileMenuItem;
@@ -1801,6 +1809,8 @@ namespace TextPad_
         private ToolStripMenuItem KOI8RToolStripMenuItem;
         private ToolStripMenuItem kOI8UToolStripMenuItem;
         private ToolStripMenuItem UTF8BOMToolStripMenuItem;
+        internal CTabControl cTabControl;
+        private ToolStripTextBox FileNameToolTextBox;
     }
 }
 
