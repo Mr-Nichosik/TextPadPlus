@@ -24,7 +24,7 @@ namespace TextPad_
         // Поле для настроек программы. Если isLangChanched = true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
         private static bool isLanguageChanged = false;
 
-        // Запуск программы
+        // Конструктор окна
         public FormMainUI()
         {
             if (Properties.Settings.Default.Language == "English")
@@ -118,11 +118,6 @@ namespace TextPad_
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             mtb.Paste();
             // Это делается для того, что бы текст встал без форматирования
-            
-            
-            
-            
-            
             mtb.Text.ToString();
             mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
         }
@@ -135,9 +130,9 @@ namespace TextPad_
         private void MTextBoxSelectFont(object sender, EventArgs e)
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            fontDialog.ShowDialog();
-            mtb.Font = fontDialog.Font;
-            Properties.Settings.Default.ModifiedTextBox_Font = fontDialog.Font;
+            FontDialog_.ShowDialog();
+            mtb.Font = FontDialog_.Font;
+            Properties.Settings.Default.ModifiedTextBox_Font = FontDialog_.Font;
         }
 
         private void MTextBoxSelectAllText(object sender, EventArgs e)
@@ -277,111 +272,102 @@ namespace TextPad_
             MTBVersionLabel.Text = MTextBox.GetAssemblyVersion();
 
             // Загрузка настроек
-            statusStripCheckBox.Checked = Properties.Settings.Default.StatusStrip_Visible;
-            overWindowsCheckBox.Checked = Properties.Settings.Default.FormMainUI_Topmost;
-            runFilesPanelCheckBox.Checked = Properties.Settings.Default.RunFileToolStrip_Visible;
-            wordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
-            instrumentPanelCheckBox.Checked = Properties.Settings.Default.ToolStrip_Visible;
-            wordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
-            explorerCheckBox.Checked = Properties.Settings.Default.FolderExplorerPanel_Visible;
-            exitWhenClosingLastTabCheckBox.Checked = Properties.Settings.Default.ExitWhenClosingLastTab;
-            autoUpdateCheckBox.Checked = Properties.Settings.Default.AutoCheckUpdate;
-
-            if (Properties.Settings.Default.Theme == "Dark")
-            {
-                comboTheme.SelectedItem = "Тёмная / Dark";
-            }
-            else
-            {
-                comboTheme.SelectedItem = "Белая / White";
-            }
-
-            if (Properties.Settings.Default.Language == "Russian")
-            {
-                comboBoxLanguage.SelectedItem = "Русский / Russian";
-            }
-            else if (Properties.Settings.Default.Language == "English")
-            {
-                comboBoxLanguage.SelectedItem = "English / Английский";
-            }
-
+            StatusBarCheckBox.Checked = Properties.Settings.Default.StatusStrip_Visible;
+            TopmostCheckBox.Checked = Properties.Settings.Default.FormMainUI_Topmost;
+            RunFileToolBarCheckBox.Checked = Properties.Settings.Default.RunFileToolStrip_Visible;
+            WordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
+            ToolBarCheckBox.Checked = Properties.Settings.Default.ToolStrip_Visible;
+            WordWarpCheckBox.Checked = Properties.Settings.Default.ModifiedTextBox_WordWarp;
+            ExplorerCheckBox.Checked = Properties.Settings.Default.FolderExplorerPanel_Visible;
+            ExitWhenClosingLastTabCheckBox.Checked = Properties.Settings.Default.ExitWhenClosingLastTab;
+            AutoChekUpdateCheckBox.Checked = Properties.Settings.Default.AutoCheckUpdate;
+            AutoSubstitutionCheckBox.Checked = Properties.Settings.Default.AutoSubstitutionOfClosingCharacters;
             FontTextBox.Text = Properties.Settings.Default.ModifiedTextBox_Font.ToString();
+            FontDialog_.Font = Properties.Settings.Default.ModifiedTextBox_Font;
+
+            ColorThemeComboBox.SelectedItem = Properties.Settings.Default.Theme switch
+            {
+                "Dark" => "Тёмная / Dark",
+                _ => "Белая / White",
+            };
+
+            LanguageComboBox.SelectedItem = Properties.Settings.Default.Language switch
+            {
+                "English" => "English / Английский",
+                _ => "Русский / Russian"
+            };
         }
 
         private void SaveSettings(object sender, EventArgs e)
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-            // Проверка настроек языка
-            switch (comboBoxLanguage.SelectedItem)
+            // Языка
+            switch (LanguageComboBox.SelectedItem)
             {
                 case @"English / Английский":
                     if (Properties.Settings.Default.Language != "English")
                         isLanguageChanged = true;
-
                     Properties.Settings.Default.Language = "English";
                     break;
                 case @"Русский / Russian":
                     if (Properties.Settings.Default.Language != "Russian")
                         isLanguageChanged = true;
-
                     Properties.Settings.Default.Language = "Russian";
                     break;
             }
 
-            // Проверка настроек цветовой схемы
-            switch (comboTheme.SelectedItem)
+            // Цветовая схема
+            switch (ColorThemeComboBox.SelectedItem)
             {
                 case "Белая / White":
                     Properties.Settings.Default.Theme = "White";
-
-                    // на текущей вкладке
                     ColorThemeWhite();
                     break;
                 case "Тёмная / Dark":
                     Properties.Settings.Default.Theme = "Dark";
-
-                    // на текущей вкладке
                     ColorThemeDark();
                     break;
             }
 
             // Шрифт
-            FontTextBox.Text = fontDialog.Font.ToString();
-            Properties.Settings.Default.ModifiedTextBox_Font = fontDialog.Font;
+            FontTextBox.Text = FontDialog_.Font.ToString();
+            Properties.Settings.Default.ModifiedTextBox_Font = FontDialog_.Font;
             Properties.Settings.Default.Save();
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Font = fontDialog.Font;
+            mtb.Font = FontDialog_.Font;
 
-            // Проверка настроек строки состояния
-            StatusStrip.Visible = statusStripCheckBox.Checked;
-            Properties.Settings.Default.StatusStrip_Visible = statusStripCheckBox.Checked;
+            // Стркоа состояния
+            StatusBar.Visible = StatusBarCheckBox.Checked;
+            Properties.Settings.Default.StatusStrip_Visible = StatusBarCheckBox.Checked;
 
-            // Проверка настроек TopMost'а
-            TopMost = overWindowsCheckBox.Checked;
-            Properties.Settings.Default.FormMainUI_Topmost = overWindowsCheckBox.Checked;
+            // Topmost
+            TopMost = TopmostCheckBox.Checked;
+            Properties.Settings.Default.FormMainUI_Topmost = TopmostCheckBox.Checked;
 
-            // Проверка настроек панели запуска файлов
-            RunFileToolStrip.Visible = runFilesPanelCheckBox.Checked;
-            Properties.Settings.Default.RunFileToolStrip_Visible = runFilesPanelCheckBox.Checked;
+            // Панель запуска файлов
+            RunFileToolStrip.Visible = RunFileToolBarCheckBox.Checked;
+            Properties.Settings.Default.RunFileToolStrip_Visible = RunFileToolBarCheckBox.Checked;
 
-            // Проверка настроек переноса слов
-            Properties.Settings.Default.ModifiedTextBox_WordWarp = wordWarpCheckBox.Checked;
-            mtb.WordWrap = wordWarpCheckBox.Checked;
+            // Перенос слов
+            Properties.Settings.Default.ModifiedTextBox_WordWarp = WordWarpCheckBox.Checked;
+            mtb.WordWrap = WordWarpCheckBox.Checked;
 
-            // Проверка настроек панели инструментов
-            Properties.Settings.Default.ToolStrip_Visible = instrumentPanelCheckBox.Checked;
-            ToolStrip.Visible = instrumentPanelCheckBox.Checked;
+            // Панель инструментов
+            Properties.Settings.Default.ToolStrip_Visible = ToolBarCheckBox.Checked;
+            ToolBar.Visible = ToolBarCheckBox.Checked;
 
-            // Проверка настроек обозревателя папок
-            Properties.Settings.Default.FolderExplorerPanel_Visible = explorerCheckBox.Checked;
-            FolderExplorerPanel.Visible = explorerCheckBox.Checked;
+            // Проводник
+            Properties.Settings.Default.FolderExplorerPanel_Visible = ExplorerCheckBox.Checked;
+            FolderExplorerPanel.Visible = ExplorerCheckBox.Checked;
 
             // Нужно ли закрывать программу при закрытии последней вкладки
-            Properties.Settings.Default.ExitWhenClosingLastTab = exitWhenClosingLastTabCheckBox.Checked;
+            Properties.Settings.Default.ExitWhenClosingLastTab = ExitWhenClosingLastTabCheckBox.Checked;
 
             // Нужно ли проверять наличие обновлений при входе
-            Properties.Settings.Default.AutoCheckUpdate = autoUpdateCheckBox.Checked;
+            Properties.Settings.Default.AutoCheckUpdate = AutoChekUpdateCheckBox.Checked;
+
+            // Нужно ли подставлять закрывающие символы
+            Properties.Settings.Default.AutoSubstitutionOfClosingCharacters = AutoSubstitutionCheckBox.Checked;
 
             // Сообщение о перезапуске программы
             if (isLanguageChanged == true)
@@ -404,7 +390,7 @@ namespace TextPad_
 
         private void ChangeFont(object sender, EventArgs e)
         {
-            fontDialog.ShowDialog();
+            FontDialog_.ShowDialog();
         }
 
         private void OpenWebSite(object sender, EventArgs e)
@@ -450,14 +436,14 @@ namespace TextPad_
              * переноса слов.
             */
             TabPage tpage = new(Resources.Localization.newDocumentTitle);
-            var mtb = new MTextBox
+            MTextBox mtb = new MTextBox
             {
                 AllowDrop = true,
                 EnableAutoDragDrop = false,
                 Dock = DockStyle.Fill,
                 BorderStyle = BorderStyle.None,
                 WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp,
-                ContextMenuStrip = contextMenuStrip,
+                ContextMenuStrip = ContextMenu,
                 Font = Properties.Settings.Default.ModifiedTextBox_Font,
                 AcceptsTab = true
             };
@@ -664,7 +650,7 @@ namespace TextPad_
         // Изменение текста в Modified TextBox
         internal void MTextBoxTextChanged(object sender, EventArgs e)
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = (MTextBox)sender;
 
             // Подсчёт количества строк и символов
             TextLengthLabel.Text = mtb.Text.Length.ToString();
@@ -674,17 +660,50 @@ namespace TextPad_
                 TextLinesLabel.Text = mtb.Lines.Length.ToString();
 
             if (mtb.IsFileChanged == false)
-            {
                 cTabControl.TabPages[cTabControl.SelectedIndex].Text += "*";
-                mtb.IsFileChanged = true;
-            }
+            mtb.IsFileChanged = true;
 
             CheckFile();
         }
 
         private void MTextBoxKeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (Properties.Settings.Default.AutoSubstitutionOfClosingCharacters == true)
+            {
+                switch (e.KeyChar)
+                {
+                    case '(':
+                        e.Handled = true;
+                        mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                        mtb.SelectedText = "()";
+                        mtb.SelectionStart--;
+                        break;
+                    case '"':
+                        e.Handled = true;
+                        mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                        mtb.SelectedText = "\"\"";
+                        mtb.SelectionStart--;
+                        break;
+                    case '[':
+                        e.Handled = true;
+                        mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                        mtb.SelectedText = "[]";
+                        mtb.SelectionStart--;
+                        break;
+                    case '{':
+                        e.Handled = true;
+                        mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                        mtb.SelectedText = "{}";
+                        mtb.SelectionStart--;
+                        break;
+                    case '\'':
+                        e.Handled = true;
+                        mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                        mtb.SelectedText = "\'\'";
+                        mtb.SelectionStart--;
+                        break;
+                }
+            }
         }
 
         // Методы для перетаскивания и скидывания файлов и текста
@@ -706,7 +725,7 @@ namespace TextPad_
 
             else if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop)!;
                 TextEditor.OpenFile(files[0]);
             }
         }
@@ -772,20 +791,26 @@ namespace TextPad_
             mtb.Encoding = "KOI8-U";
             EncodingStatusLabel.Text = mtb.Encoding.ToString();
         }
+        private void ChangeEncodingToCP866(object sender, EventArgs e)
+        {
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb.Encoding = "CP866";
+            EncodingStatusLabel.Text = mtb.Encoding.ToString();
+        }
 
         // Методы для кнопок панели проводника
         private void OpenFolder(object sender, EventArgs e)
         {
-            if (folderBrowserDialog.ShowDialog() == DialogResult.Cancel)
+            if (FolderBrowserDialog_.ShowDialog() == DialogResult.Cancel)
             {
                 return;
             }
 
-            workFolderLabel.Text = new DirectoryInfo(folderBrowserDialog.SelectedPath).Name;
+            workFolderLabel.Text = new DirectoryInfo(FolderBrowserDialog_.SelectedPath).Name;
             FilesListView.Clear();
 
             // Папки
-            foreach (string item in Directory.GetDirectories(folderBrowserDialog.SelectedPath))
+            foreach (string item in Directory.GetDirectories(FolderBrowserDialog_.SelectedPath))
             {
                 ListViewItem lvi = new(new DirectoryInfo(item).Name, 0);
                 lvi.ToolTipText = item;
@@ -794,7 +819,7 @@ namespace TextPad_
             }
 
             // Файлы
-            foreach (string item in Directory.GetFiles(folderBrowserDialog.SelectedPath))
+            foreach (string item in Directory.GetFiles(FolderBrowserDialog_.SelectedPath))
             {
                 ListViewItem lvi = new(new DirectoryInfo(item).Name, 1);
                 lvi.ToolTipText = item;
@@ -834,13 +859,13 @@ namespace TextPad_
         {
             try
             {
-                string parentDirectory = Directory.GetParent(folderBrowserDialog.SelectedPath).ToString();
+                string parentDirectory = Directory.GetParent(FolderBrowserDialog_.SelectedPath)!.ToString();
                 if (!Directory.Exists(parentDirectory))
                 {
                     return;
                 }
 
-                folderBrowserDialog.SelectedPath = parentDirectory;
+                FolderBrowserDialog_.SelectedPath = parentDirectory;
 
                 workFolderLabel.Text = new DirectoryInfo(parentDirectory).Name;
                 FilesListView.Clear();
@@ -869,7 +894,7 @@ namespace TextPad_
         {
             try
             {
-                if (!Directory.Exists(folderBrowserDialog.SelectedPath))
+                if (!Directory.Exists(FolderBrowserDialog_.SelectedPath))
                 {
                     return;
                 }
@@ -877,7 +902,7 @@ namespace TextPad_
                 FilesListView.Clear();
 
                 // Папки
-                foreach (string item in Directory.GetDirectories(folderBrowserDialog.SelectedPath))
+                foreach (string item in Directory.GetDirectories(FolderBrowserDialog_.SelectedPath))
                 {
                     ListViewItem lvi = new(new DirectoryInfo(item).Name, 0);
                     lvi.ToolTipText = item;
@@ -885,7 +910,7 @@ namespace TextPad_
                 }
 
                 // Файлы
-                foreach (string item in Directory.GetFiles(folderBrowserDialog.SelectedPath))
+                foreach (string item in Directory.GetFiles(FolderBrowserDialog_.SelectedPath))
                 {
                     ListViewItem lvi = new(new DirectoryInfo(item).Name, 1);
                     lvi.ToolTipText = item;
@@ -901,12 +926,12 @@ namespace TextPad_
 
         private void FilesListViewDoubleClick(object sender, EventArgs e)
         {
-            string path = FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText;
+            string path = FilesListView.Items[FilesListView.FocusedItem!.Index].ToolTipText;
 
             //Проверка существования файла
             if (Directory.Exists(path))
             {
-                folderBrowserDialog.SelectedPath = path;
+                FolderBrowserDialog_.SelectedPath = path;
 
                 workFolderLabel.Text = new DirectoryInfo(path).Name;
                 FilesListView.Clear();
@@ -935,24 +960,6 @@ namespace TextPad_
             }
         }
 
-        private void UpSizeListView(object sender, EventArgs e)
-        {
-            if (FilesListView.Width < 410)
-            {
-                FilesListView.Width += 30;
-                FolderExplorerPanel.Width += 30;
-            }
-        }
-
-        private void DownSizeListView(object sender, EventArgs e)
-        {
-            if (FilesListView.Width > 110)
-            {
-                FilesListView.Width -= 30;
-                FolderExplorerPanel.Width -= 30;
-            }
-        }
-
         private void CloseFolder(object sender, EventArgs e)
         {
             FilesListView.Clear();
@@ -975,7 +982,7 @@ namespace TextPad_
 
             try
             {
-                if (File.Exists(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText))
+                if (File.Exists(FilesListView.Items[FilesListView.FocusedItem!.Index].ToolTipText))
                 {
                     if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     {
@@ -1014,14 +1021,19 @@ namespace TextPad_
             pythonInterpreterUI.ShowDialog(this);
         }
 
-        private void RunBatScript(object sender, EventArgs e)
+        private void RunWindowsScript(object sender, EventArgs e)
         {
-            FileRunner.RunBatScript();
+            FileRunner.RunWindowsScript();
         }
 
-        private void RunVbsScript(object sender, EventArgs e)
+        private void RunVbsJsScript(object sender, EventArgs e)
         {
-            FileRunner.RunVbsScript();
+            FileRunner.RunVbsJsScript();
+        }
+
+        private void RunHTMLPage(object sender, EventArgs e)
+        {
+            FileRunner.RunHTMLPage();
         }
 
         // Просто выход
@@ -1319,9 +1331,9 @@ namespace TextPad_
                     TopMost = false;
                     break;
             }
-            ToolStrip.Visible = Properties.Settings.Default.ToolStrip_Visible;
+            ToolBar.Visible = Properties.Settings.Default.ToolStrip_Visible;
             RunFileToolStrip.Visible = Properties.Settings.Default.RunFileToolStrip_Visible;
-            StatusStrip.Visible = Properties.Settings.Default.StatusStrip_Visible;
+            StatusBar.Visible = Properties.Settings.Default.StatusStrip_Visible;
             FolderExplorerPanel.Visible = Properties.Settings.Default.FolderExplorerPanel_Visible;
             RunScriptCombobox.SelectedItem = Properties.Settings.Default.ScriptTypeToRun;
             FolderExplorerPanel.Width = Properties.Settings.Default.FolderExplorerPanel_Size;
@@ -1337,21 +1349,13 @@ namespace TextPad_
                     ColorThemeDark();
                     break;
             }
-            switch (Properties.Settings.Default.FormMainUI_WindowState)
+            this.WindowState = Properties.Settings.Default.FormMainUI_WindowState switch
             {
-                case "Normal":
-                    this.WindowState = FormWindowState.Normal;
-                    break;
-                case "Maximized":
-                    this.WindowState = FormWindowState.Maximized;
-                    break;
-                case "Minimized":
-                    this.WindowState = FormWindowState.Normal;
-                    break;
-                default:
-                    this.WindowState = FormWindowState.Normal;
-                    break;
-            }
+                "Normal" => FormWindowState.Normal,
+                "Maximized" => FormWindowState.Maximized,
+                "Minimized" => FormWindowState.Normal,
+                _ => FormWindowState.Normal,
+            };
             if (Properties.Settings.Default.AutoCheckUpdate == true)
             {
                 StatusLabel.Text = Resources.Localization.PROGRAMStatusCheckForUpdates;
@@ -1433,7 +1437,7 @@ namespace TextPad_
         private void FormMainUiSizeChanged(object sender, EventArgs e)
         {
             if (this.Width < 900)
-                FileNameToolTextBox.Width = this.Width - 285;
+                FileNameToolTextBox.Width = this.Width - 295;
         }
     }
 }

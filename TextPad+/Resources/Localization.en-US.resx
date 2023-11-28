@@ -132,14 +132,14 @@
   <data name="MSGErrorPythonInterPath" xml:space="preserve">
     <value>You must specify the path to the Python interpreter.</value>
   </data>
-  <data name="MSGErrorRunBatFile" xml:space="preserve">
-    <value>An error occurred while running the command line script. It may not have been saved correctly or the cmd.exe file is missing from the directories of the C:\Windows\ folder.</value>
+  <data name="MSGErrorRunBatCmdFile" xml:space="preserve">
+    <value>An error occurred while running the command line script. It may not have been saved correctly or the C:\Windows\ folder cmd.exe file is missing.</value>
   </data>
   <data name="MSGErrorRunPythonFile" xml:space="preserve">
     <value>Error when starting the program on Python.</value>
   </data>
-  <data name="MSGErrorRunVBSFile" xml:space="preserve">
-    <value>An error occurred while running the Visual Basic script file. Perhaps it was not saved correctly or the VBS core cscript.exe is missing in the directories of the C:\Windows\ folder.</value>
+  <data name="MSGErrorRunVBSJSFile" xml:space="preserve">
+    <value>Error running Visual Basic/JScript script file. It may be saved incorrectly or the Windows Based Host Script C:\Windows\System32\wscript.exe program is missing.</value>
   </data>
   <data name="MSGErrorWhenCheckingInternet" xml:space="preserve">
     <value>An error has occurred. Check your internet connection.</value>
@@ -163,7 +163,7 @@
     <value>New document</value>
   </data>
   <data name="openFileDialogFilter" xml:space="preserve">
-    <value>All files (*.*)|*.*|Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files(*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js</value>
+    <value>Text Documents (*.txt)|*.txt|TextPad File*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|DOS Batch File (*.bat)|*.bat|Batch Windows file (*.cmd)|*.cmd|PowerShell script (*.ps1)|*.ps1|Python files (*.py)|*.py|Web page (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI configuration (*.ini)|*.ini|XML configuration (*.xml)|*.xml|All files (*.*)|*.*</value>
   </data>
   <data name="PROGRAMStatusCheckForUpdates" xml:space="preserve">
     <value>Checking for updates...</value>
@@ -178,7 +178,7 @@
     <value>Updating...</value>
   </data>
   <data name="saveFileDialogFilter" xml:space="preserve">
-    <value>Text documents (*.txt)|*.txt|TextPad File (*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|Windows bat file (*.bat)|*.bat|Python files (*.py)|*.py|Webpage (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|All files (*.*)|*.*</value>
+    <value>Text Documents (*.txt)|*.txt|TextPad File*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|DOS Batch File (*.bat)|*.bat|Batch Windows file (*.cmd)|*.cmd|PowerShell script (*.ps1)|*.ps1|Python files (*.py)|*.py|Web page (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI configuration (*.ini)|*.ini|XML configuration (*.xml)|*.xml|All files (*.*)|*.*</value>
   </data>
   <data name="SearchUINoFoundWord" xml:space="preserve">
     <value>No such word found</value>

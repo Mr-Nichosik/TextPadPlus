@@ -7,7 +7,7 @@ namespace TextPad_
 
     public partial class SearchUI : Form
     {
-        private readonly ILogger Logger = new LogSystem("logs");
+        private readonly LogSystem Logger = new LogSystem("logs");
         private int findCutLength = 0;
 
         public SearchUI()
@@ -34,11 +34,11 @@ namespace TextPad_
                 if (mtb.Text.Contains(FindTextBox.Text))
                 {
                     int index = mtb.Text.IndexOf(FindTextBox.Text);
-                    string str1, str2;
+                    string TextBeforeIndex, TextAfterIndex;
 
-                    str1 = mtb.Text.Substring(0, index);
-                    str2 = mtb.Text.Substring(index + FindTextBox.TextLength, mtb.TextLength - (index + FindTextBox.TextLength));
-                    string result = str1 + ReplaceTextBox.Text + str2;
+                    TextBeforeIndex = mtb.Text.Substring(0, index);
+                    TextAfterIndex = mtb.Text.Substring(index + FindTextBox.TextLength, mtb.TextLength - (index + FindTextBox.TextLength));
+                    string result = TextBeforeIndex + ReplaceTextBox.Text + TextAfterIndex;
                     mtb.Clear();
                     mtb.AppendText(result);
                     mtb.Select(index + findCutLength, ReplaceTextBox.TextLength);
@@ -70,11 +70,11 @@ namespace TextPad_
                     while (mtb.Text.Contains(FindTextBox.Text))
                     {
                         int index = mtb.Text.IndexOf(FindTextBox.Text);
-                        string str1, str2;
+                        string TextBeforeIndex, TextAfterIndex;
 
-                        str1 = mtb.Text.Substring(0, index);
-                        str2 = mtb.Text.Substring((index + FindTextBox.TextLength), (mtb.TextLength - (index + FindTextBox.TextLength)));
-                        string result = str1 + ReplaceTextBox.Text + str2;
+                        TextBeforeIndex = mtb.Text.Substring(0, index);
+                        TextAfterIndex = mtb.Text.Substring(index + FindTextBox.TextLength, (mtb.TextLength - (index + FindTextBox.TextLength)));
+                        string result = TextBeforeIndex + ReplaceTextBox.Text + TextAfterIndex;
                         mtb.Clear();
                         mtb.AppendText(result);
 

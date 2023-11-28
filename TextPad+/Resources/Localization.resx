@@ -129,14 +129,14 @@
   <data name="MSGErrorPythonInterPath" xml:space="preserve">
     <value>Необходимо указать путь до интерпретатора Python.</value>
   </data>
-  <data name="MSGErrorRunBatFile" xml:space="preserve">
-    <value>Ошибка при запуске сценария командной строки. Возможно, он неправильно сохранён или отсутствует файл cmd.exe в каталогах папки C:\Windows\ .</value>
+  <data name="MSGErrorRunBatCmdFile" xml:space="preserve">
+    <value>Ошибка при запуске сценария командной строки. Возможно, он неправильно сохранён или отсутствует файл C:\Windows\cmd.exe.</value>
   </data>
   <data name="MSGErrorRunPythonFile" xml:space="preserve">
     <value>Ошибка при запуске Python программы.</value>
   </data>
-  <data name="MSGErrorRunVBSFile" xml:space="preserve">
-    <value>Ошибка при запуске файла сценария Visual Basic. Возможно, он неправильно сохранён или отсутствует ядро VBS cscript.exe в каталогах папки C:\Windows\ .</value>
+  <data name="MSGErrorRunVBSJSFile" xml:space="preserve">
+    <value>Ошибка при запуске файла сценария Visual Basic / JScript. Возможно, он неправильно сохранён или отсутствует программа Windows Based Host Script C:\Windows\System32\wscript.exe .</value>
   </data>
   <data name="MSGErrorWhenCheckingInternet" xml:space="preserve">
     <value>Произошла ошибка. Проверьте подключение к интернету.</value>
@@ -163,10 +163,10 @@
     <value>Новый документ</value>
   </data>
   <data name="openFileDialogFilter" xml:space="preserve">
-    <value>Все файлы(*.*)|*.*|Текстовые документы (*.txt)|*.txt|Файл TextPad (*.tpf)|*.tpf|Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js</value>
+    <value>Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*</value>
   </data>
   <data name="saveFileDialogFilter" xml:space="preserve">
-    <value>Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|Все файлы (*.*)|*.*</value>
+    <value>Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*</value>
   </data>
   <data name="SearchUINoFoundWord" xml:space="preserve">
     <value>Не найдено такого слова.</value>

@@ -8,7 +8,7 @@ namespace TextPad_.Updater
     {
 
         // Logger
-        private static readonly LogSystem Logger = new LogSystem($"{Application.StartupPath}\\logs");
+        private static readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
 
         // Свойства с сыллками
         public static string ProgramVersion { get; set; } = FormMainUI.GetAssemblyVersion();

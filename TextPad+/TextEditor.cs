@@ -19,16 +19,21 @@ namespace TextPad_
             {
                 // ModifiedTextBox на выбранной вкладке и фльтра для диалога
                 mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                Program.MainUI.saveFileDialog.Filter = Program.MainUI.saveFileDialog.Filter = Resources.Localization.saveFileDialogFilter;
-                if (Program.MainUI.saveFileDialog.ShowDialog() == DialogResult.Cancel)
+                Program.MainUI.SaveFileDialog_.Filter = Program.MainUI.SaveFileDialog_.Filter = Resources.Localization.saveFileDialogFilter;
+                if (Program.MainUI.SaveFileDialog_.ShowDialog() == DialogResult.Cancel)
                     return;
-                mtb.FileName = Program.MainUI.saveFileDialog.FileName;
+                mtb.FileName = Program.MainUI.SaveFileDialog_.FileName;
 
                 // В файл сохраняется текст mtb по пути, указанному в FileName, учитывая значение кодировки из mtb.
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                 StreamWriter fileWriter;
                 switch (mtb.Encoding)
                 {
+                    case "CP866":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(866));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
                     case "KOI8-U":
                         fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(21866));
                         fileWriter.Write(mtb.Text);
@@ -82,8 +87,8 @@ namespace TextPad_
                 }
 
                 // Изменение заголовка вкладки и обновление статуса файла
-                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
                 mtb.IsFileChanged = false;
+                Program.MainUI.cTabControl.SelectedTab!.Text = Program.MainUI.cTabControl.SelectedTab!.Text.TrimEnd('*');
                 Program.MainUI.CheckFile();
 
                 // Лог
@@ -130,6 +135,11 @@ namespace TextPad_
                 StreamWriter fileWriter;
                 switch (mtb.Encoding)
                 {
+                    case "CP866":
+                        fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(866));
+                        fileWriter.Write(mtb.Text);
+                        fileWriter.Close();
+                        break;
                     case "KOI8-U":
                         fileWriter = new StreamWriter(mtb.FileName, false, Encoding.GetEncoding(21866));
                         fileWriter.Write(mtb.Text);
@@ -184,7 +194,7 @@ namespace TextPad_
 
                 // Обновление статуса файла
                 mtb.IsFileChanged = false;
-                //mtb.Text = mtb.Text.TrimEnd('*');
+                Program.MainUI.cTabControl.SelectedTab!.Text = Program.MainUI.cTabControl.SelectedTab!.Text.TrimEnd('*');
                 Program.MainUI.CheckFile();
 
                 Logger.Info("Saving file: " + mtb.FileName);
@@ -202,18 +212,23 @@ namespace TextPad_
             try
             {
                 // Вызов openFileDialog
-                Program.MainUI.openFileDialog.Filter = Resources.Localization.openFileDialogFilter;
-                if (Program.MainUI.openFileDialog.ShowDialog() == DialogResult.Cancel)
+                Program.MainUI.OpenFileDialog_.Filter = Resources.Localization.openFileDialogFilter;
+                if (Program.MainUI.OpenFileDialog_.ShowDialog() == DialogResult.Cancel)
                     return;
 
                 // ModifiedTextBox на выбранной вкладке и фльтра для диалога
                 mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                mtb.FileName = Program.MainUI.openFileDialog.FileName;
+                mtb.FileName = Program.MainUI.OpenFileDialog_.FileName;
 
                 // Считываем текст этого файла, путь берём из того же свойства, проверяем кодировку
                 StreamReader fileReader;
                 switch (mtb.Encoding)
                 {
+                    case "CP866":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
                     case "KOI8-U":
                         fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(21866));
                         mtb.Text = fileReader.ReadToEnd();
@@ -323,6 +338,11 @@ namespace TextPad_
                 StreamReader fileReader;
                 switch (mtb.Encoding)
                 {
+                    case "CP866":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
                     case "KOI8-U":
                         fileReader = new StreamReader(fileName, Encoding.GetEncoding(21866));
                         mtb.Text = fileReader.ReadToEnd();
@@ -421,6 +441,11 @@ namespace TextPad_
                 StreamReader fileReader;
                 switch (mtb.Encoding)
                 {
+                    case "CP866":
+                        fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(866));
+                        mtb.Text = fileReader.ReadToEnd();
+                        fileReader.Close();
+                        break;
                     case "KOI8-U":
                         fileReader = new StreamReader(mtb.FileName, Encoding.GetEncoding(21866));
                         mtb.Text = fileReader.ReadToEnd();
@@ -500,16 +525,20 @@ namespace TextPad_
         {
             if (Program.MainUI.RunScriptCombobox.SelectedIndex == 0)
             {
-                FormPythonInterpreterUI pythonInterpreterUI = new FormPythonInterpreterUI();
+                FormPythonInterpreterUI pythonInterpreterUI = new();
                 pythonInterpreterUI.ShowDialog(Program.MainUI);
             }
             else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 1)
             {
-                RunBatScript();
+                RunWindowsScript();
             }
             else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 2)
             {
-                RunVbsScript();
+                RunVbsJsScript();
+            }
+            else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 3)
+            {
+                RunHTMLPage();
             }
         }
 
@@ -567,9 +596,9 @@ namespace TextPad_
             }
         }
 
-        public static void RunBatScript()
+        public static void RunWindowsScript()
         {
-            Logger.Info("Running a bat file");
+            Logger.Info("Running a bat/cmd file");
 
             mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -588,13 +617,13 @@ namespace TextPad_
             catch (Exception ex)
             {
                 Logger.Error($"Error while running Windows script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
-                MessageBox.Show(Resources.Localization.MSGErrorRunBatFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.Localization.MSGErrorRunBatCmdFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void RunVbsScript()
+        public static void RunVbsJsScript()
         {
-            Logger.Info("Running a vbs file");
+            Logger.Info("Running a VBS / JS script");
 
             mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -608,13 +637,23 @@ namespace TextPad_
 
                 TextEditor.SaveCurrentFile();
 
-                Process.Start("wscript.exe", Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                Process.Start("wscript.exe", mtb.FileName);
             }
             catch (Exception ex)
             {
-                Logger.Error($"Error while running VBScript file: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
-                MessageBox.Show(Resources.Localization.MSGErrorRunVBSFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Error($"Error while running VBS / JS script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
+                MessageBox.Show(Resources.Localization.MSGErrorRunVBSJSFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public static void RunHTMLPage()
+        {
+            mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+
+            Process websiteProcess = new();
+            websiteProcess.StartInfo.UseShellExecute = true;
+            websiteProcess.StartInfo.FileName = mtb.FileName;
+            websiteProcess.Start();
         }
     }
 }

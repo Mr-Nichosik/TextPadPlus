@@ -31,7 +31,7 @@ namespace TextPad_
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainUI));
-            menuStrip = new MenuStrip();
+            MenuBar = new MenuStrip();
             FileMenuItem = new ToolStripMenuItem();
             CreateTabFileMenuItem = new ToolStripMenuItem();
             CloseTabFileMenuItem = new ToolStripMenuItem();
@@ -71,13 +71,14 @@ namespace TextPad_
             SearchEditMenuItem = new ToolStripMenuItem();
             SettingsMenuItem = new ToolStripMenuItem();
             RunMenuItem = new ToolStripMenuItem();
-            pythonRunMenuItem = new ToolStripMenuItem();
-            vbsRunMenuItem = new ToolStripMenuItem();
-            batRunMenuItem = new ToolStripMenuItem();
-            saveFileDialog = new SaveFileDialog();
-            openFileDialog = new OpenFileDialog();
-            fontDialog = new FontDialog();
-            contextMenuStrip = new ContextMenuStrip(components);
+            PythonRunMenuItem = new ToolStripMenuItem();
+            PowerShellScriptToolStripMenuItem = new ToolStripMenuItem();
+            VBSRunMenuItem = new ToolStripMenuItem();
+            hTMLToolStripMenuItem = new ToolStripMenuItem();
+            SaveFileDialog_ = new SaveFileDialog();
+            OpenFileDialog_ = new OpenFileDialog();
+            FontDialog_ = new FontDialog();
+            ContextMenu = new ContextMenuStrip(components);
             копироватьToolStripMenuItem1 = new ToolStripMenuItem();
             вырезатьToolStripMenuItem1 = new ToolStripMenuItem();
             вставитьToolStripMenuItem1 = new ToolStripMenuItem();
@@ -86,7 +87,7 @@ namespace TextPad_
             toolStripSeparator4 = new ToolStripSeparator();
             отменитьToolStripMenuItem2 = new ToolStripMenuItem();
             вернутьToolStripMenuItem = new ToolStripMenuItem();
-            StatusStrip = new StatusStrip();
+            StatusBar = new StatusStrip();
             StatusLabel = new ToolStripStatusLabel();
             TextLabelStatus = new ToolStripStatusLabel();
             TextLengthLabel = new ToolStripStatusLabel();
@@ -105,7 +106,8 @@ namespace TextPad_
             windwso1251ToolStripMenuItem = new ToolStripMenuItem();
             KOI8RToolStripMenuItem = new ToolStripMenuItem();
             kOI8UToolStripMenuItem = new ToolStripMenuItem();
-            ToolStrip = new ToolStrip();
+            CP866ToolStripMenuItem = new ToolStripMenuItem();
+            ToolBar = new ToolStrip();
             newTabToolStripItem = new ToolStripButton();
             closeTabToolStripItem = new ToolStripButton();
             toolStripSep1 = new ToolStripSeparator();
@@ -129,63 +131,64 @@ namespace TextPad_
             RunScriptButton = new ToolStripButton();
             FileNameToolTextBox = new ToolStripTextBox();
             FilesListView = new ListView();
-            explorerContextMenu = new ContextMenuStrip(components);
+            ExplorerContextMenu = new ContextMenuStrip(components);
             удалитьToolStripMenuItem1 = new ToolStripMenuItem();
-            listViewImages = new ImageList(components);
-            folderToolStrip = new ToolStrip();
+            ExplorerImagesList = new ImageList(components);
+            FolderToolBar = new ToolStrip();
             openFolderToolBtn = new ToolStripButton();
             refreshFolderToolBtn = new ToolStripButton();
             closeFolderToolBtn = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             aboveFolderBtn = new ToolStripButton();
-            toolStripSeparator2 = new ToolStripSeparator();
-            upSizeListViewTool = new ToolStripButton();
-            downSizeListViewTool = new ToolStripButton();
-            folderBrowserDialog = new FolderBrowserDialog();
+            FolderBrowserDialog_ = new FolderBrowserDialog();
             FolderExplorerPanel = new Panel();
             workFolderLabel = new Label();
             MainUIPanel = new Panel();
+            ExplorerSplitter = new Splitter();
             cTabControl = new CTabControl();
             SettingsUIPanel = new Panel();
             settingsTabControl = new TabControl();
             settingsTabPage = new TabPage();
             SettingsEditorPanel = new Panel();
             panel10 = new Panel();
-            autoUpdateCheckBox = new CheckBox();
+            AutoChekUpdateCheckBox = new CheckBox();
             label20 = new Label();
             label19 = new Label();
             panel2 = new Panel();
-            comboTheme = new ComboBox();
+            ColorThemeComboBox = new ComboBox();
             label2 = new Label();
             panel11 = new Panel();
-            exitWhenClosingLastTabCheckBox = new CheckBox();
+            ExitWhenClosingLastTabCheckBox = new CheckBox();
             label24 = new Label();
             panel3 = new Panel();
-            comboBoxLanguage = new ComboBox();
+            LanguageComboBox = new ComboBox();
             label3 = new Label();
             panel5 = new Panel();
-            wordWarpCheckBox = new CheckBox();
+            WordWarpCheckBox = new CheckBox();
             label5 = new Label();
             panel9 = new Panel();
             textBox3 = new TextBox();
             FontTextBox = new TextBox();
             label9 = new Label();
             panel4 = new Panel();
-            overWindowsCheckBox = new CheckBox();
+            TopmostCheckBox = new CheckBox();
             label4 = new Label();
             SettingsToolsPanel = new Panel();
+            panel12 = new Panel();
+            AutoSubstitutionCheckBox = new CheckBox();
+            label25 = new Label();
             label14 = new Label();
             panel6 = new Panel();
-            runFilesPanelCheckBox = new CheckBox();
+            RunFileToolBarCheckBox = new CheckBox();
             label6 = new Label();
             panel7 = new Panel();
-            statusStripCheckBox = new CheckBox();
+            StatusBarCheckBox = new CheckBox();
             label7 = new Label();
             panel1 = new Panel();
-            explorerCheckBox = new CheckBox();
+            ExplorerCheckBox = new CheckBox();
             label1 = new Label();
             panel8 = new Panel();
-            instrumentPanelCheckBox = new CheckBox();
+            ToolBarCheckBox = new CheckBox();
             label8 = new Label();
             infoTabPage = new TabPage();
             tabControl = new TabControl();
@@ -224,13 +227,13 @@ namespace TextPad_
             checkUpdatesButton = new Button();
             cancelBatton = new Button();
             saveButton = new Button();
-            menuStrip.SuspendLayout();
-            contextMenuStrip.SuspendLayout();
-            StatusStrip.SuspendLayout();
-            ToolStrip.SuspendLayout();
+            MenuBar.SuspendLayout();
+            ContextMenu.SuspendLayout();
+            StatusBar.SuspendLayout();
+            ToolBar.SuspendLayout();
             RunFileToolStrip.SuspendLayout();
-            explorerContextMenu.SuspendLayout();
-            folderToolStrip.SuspendLayout();
+            ExplorerContextMenu.SuspendLayout();
+            FolderToolBar.SuspendLayout();
             FolderExplorerPanel.SuspendLayout();
             MainUIPanel.SuspendLayout();
             SettingsUIPanel.SuspendLayout();
@@ -245,6 +248,7 @@ namespace TextPad_
             panel9.SuspendLayout();
             panel4.SuspendLayout();
             SettingsToolsPanel.SuspendLayout();
+            panel12.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel1.SuspendLayout();
@@ -260,12 +264,12 @@ namespace TextPad_
             SettingsBottomUIPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip
+            // MenuBar
             // 
-            menuStrip.BackColor = SystemColors.Control;
-            menuStrip.Items.AddRange(new ToolStripItem[] { FileMenuItem, EditMenuItem, SettingsMenuItem, RunMenuItem });
-            resources.ApplyResources(menuStrip, "menuStrip");
-            menuStrip.Name = "menuStrip";
+            MenuBar.BackColor = SystemColors.Control;
+            MenuBar.Items.AddRange(new ToolStripItem[] { FileMenuItem, EditMenuItem, SettingsMenuItem, RunMenuItem });
+            resources.ApplyResources(MenuBar, "MenuBar");
+            MenuBar.Name = "MenuBar";
             // 
             // FileMenuItem
             // 
@@ -503,38 +507,42 @@ namespace TextPad_
             // 
             // RunMenuItem
             // 
-            RunMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pythonRunMenuItem, vbsRunMenuItem, batRunMenuItem });
+            RunMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PythonRunMenuItem, PowerShellScriptToolStripMenuItem, VBSRunMenuItem, hTMLToolStripMenuItem });
             resources.ApplyResources(RunMenuItem, "RunMenuItem");
             RunMenuItem.Name = "RunMenuItem";
             // 
-            // pythonRunMenuItem
+            // PythonRunMenuItem
             // 
-            pythonRunMenuItem.Name = "pythonRunMenuItem";
-            resources.ApplyResources(pythonRunMenuItem, "pythonRunMenuItem");
-            pythonRunMenuItem.Click += RunPythonScript;
+            PythonRunMenuItem.Name = "PythonRunMenuItem";
+            resources.ApplyResources(PythonRunMenuItem, "PythonRunMenuItem");
+            PythonRunMenuItem.Click += RunPythonScript;
             // 
-            // vbsRunMenuItem
+            // PowerShellScriptToolStripMenuItem
             // 
-            vbsRunMenuItem.Name = "vbsRunMenuItem";
-            resources.ApplyResources(vbsRunMenuItem, "vbsRunMenuItem");
-            vbsRunMenuItem.Click += RunVbsScript;
+            PowerShellScriptToolStripMenuItem.Name = "PowerShellScriptToolStripMenuItem";
+            resources.ApplyResources(PowerShellScriptToolStripMenuItem, "PowerShellScriptToolStripMenuItem");
             // 
-            // batRunMenuItem
+            // VBSRunMenuItem
             // 
-            batRunMenuItem.Name = "batRunMenuItem";
-            resources.ApplyResources(batRunMenuItem, "batRunMenuItem");
-            batRunMenuItem.Click += RunBatScript;
+            VBSRunMenuItem.Name = "VBSRunMenuItem";
+            resources.ApplyResources(VBSRunMenuItem, "VBSRunMenuItem");
+            VBSRunMenuItem.Click += RunVbsJsScript;
             // 
-            // fontDialog
+            // hTMLToolStripMenuItem
             // 
-            fontDialog.FontMustExist = true;
-            fontDialog.ShowApply = true;
+            hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
+            resources.ApplyResources(hTMLToolStripMenuItem, "hTMLToolStripMenuItem");
             // 
-            // contextMenuStrip
+            // FontDialog_
             // 
-            contextMenuStrip.Items.AddRange(new ToolStripItem[] { копироватьToolStripMenuItem1, вырезатьToolStripMenuItem1, вставитьToolStripMenuItem1, выделитьВсёToolStripMenuItem1, удалитьToolStripMenuItem, toolStripSeparator4, отменитьToolStripMenuItem2, вернутьToolStripMenuItem });
-            contextMenuStrip.Name = "contextMenuStrip1";
-            resources.ApplyResources(contextMenuStrip, "contextMenuStrip");
+            FontDialog_.FontMustExist = true;
+            FontDialog_.ShowApply = true;
+            // 
+            // ContextMenu
+            // 
+            ContextMenu.Items.AddRange(new ToolStripItem[] { копироватьToolStripMenuItem1, вырезатьToolStripMenuItem1, вставитьToolStripMenuItem1, выделитьВсёToolStripMenuItem1, удалитьToolStripMenuItem, toolStripSeparator4, отменитьToolStripMenuItem2, вернутьToolStripMenuItem });
+            ContextMenu.Name = "contextMenuStrip1";
+            resources.ApplyResources(ContextMenu, "ContextMenu");
             // 
             // копироватьToolStripMenuItem1
             // 
@@ -587,12 +595,12 @@ namespace TextPad_
             resources.ApplyResources(вернутьToolStripMenuItem, "вернутьToolStripMenuItem");
             вернутьToolStripMenuItem.Click += MTextBoxRedo;
             // 
-            // StatusStrip
+            // StatusBar
             // 
-            resources.ApplyResources(StatusStrip, "StatusStrip");
-            StatusStrip.Items.AddRange(new ToolStripItem[] { StatusLabel, TextLabelStatus, TextLengthLabel, TextLinesLabelStatus, TextLinesLabel, StatusStripEncodingLabel, EncodingStatusLabel, EncodingDropDownBtn });
-            StatusStrip.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            StatusStrip.Name = "StatusStrip";
+            resources.ApplyResources(StatusBar, "StatusBar");
+            StatusBar.Items.AddRange(new ToolStripItem[] { StatusLabel, TextLabelStatus, TextLengthLabel, TextLinesLabelStatus, TextLinesLabel, StatusStripEncodingLabel, EncodingStatusLabel, EncodingDropDownBtn });
+            StatusBar.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            StatusBar.Name = "StatusBar";
             // 
             // StatusLabel
             // 
@@ -644,7 +652,7 @@ namespace TextPad_
             // EncodingDropDownBtn
             // 
             EncodingDropDownBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            EncodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { utf32BEToolStripMenuItem, uTF16ToolStripMenuItem, utf16BEToolStripMenuItem, uft16ToolStripMenuItem, UTF8BOMToolStripMenuItem, utf8ToolStripMenuItem, ASCIIToolStripMenuItem, windwso1251ToolStripMenuItem, KOI8RToolStripMenuItem, kOI8UToolStripMenuItem });
+            EncodingDropDownBtn.DropDownItems.AddRange(new ToolStripItem[] { utf32BEToolStripMenuItem, uTF16ToolStripMenuItem, utf16BEToolStripMenuItem, uft16ToolStripMenuItem, UTF8BOMToolStripMenuItem, utf8ToolStripMenuItem, ASCIIToolStripMenuItem, windwso1251ToolStripMenuItem, KOI8RToolStripMenuItem, kOI8UToolStripMenuItem, CP866ToolStripMenuItem });
             resources.ApplyResources(EncodingDropDownBtn, "EncodingDropDownBtn");
             EncodingDropDownBtn.Name = "EncodingDropDownBtn";
             // 
@@ -708,14 +716,20 @@ namespace TextPad_
             resources.ApplyResources(kOI8UToolStripMenuItem, "kOI8UToolStripMenuItem");
             kOI8UToolStripMenuItem.Click += ChangeEncodingToKOI8U;
             // 
-            // ToolStrip
+            // CP866ToolStripMenuItem
             // 
-            ToolStrip.BackColor = SystemColors.Control;
-            resources.ApplyResources(ToolStrip, "ToolStrip");
-            ToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            ToolStrip.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, SearchToolStripItem });
-            ToolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            ToolStrip.Name = "ToolStrip";
+            CP866ToolStripMenuItem.Name = "CP866ToolStripMenuItem";
+            resources.ApplyResources(CP866ToolStripMenuItem, "CP866ToolStripMenuItem");
+            CP866ToolStripMenuItem.Click += ChangeEncodingToCP866;
+            // 
+            // ToolBar
+            // 
+            ToolBar.BackColor = SystemColors.Control;
+            resources.ApplyResources(ToolBar, "ToolBar");
+            ToolBar.GripStyle = ToolStripGripStyle.Hidden;
+            ToolBar.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, SearchToolStripItem });
+            ToolBar.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            ToolBar.Name = "ToolBar";
             // 
             // newTabToolStripItem
             // 
@@ -855,7 +869,7 @@ namespace TextPad_
             // 
             RunScriptCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
             resources.ApplyResources(RunScriptCombobox, "RunScriptCombobox");
-            RunScriptCombobox.Items.AddRange(new object[] { resources.GetString("RunScriptCombobox.Items"), resources.GetString("RunScriptCombobox.Items1"), resources.GetString("RunScriptCombobox.Items2") });
+            RunScriptCombobox.Items.AddRange(new object[] { resources.GetString("RunScriptCombobox.Items"), resources.GetString("RunScriptCombobox.Items1"), resources.GetString("RunScriptCombobox.Items2"), resources.GetString("RunScriptCombobox.Items3") });
             RunScriptCombobox.Name = "RunScriptCombobox";
             // 
             // RunScriptButton
@@ -876,25 +890,25 @@ namespace TextPad_
             // FilesListView
             // 
             FilesListView.BorderStyle = BorderStyle.FixedSingle;
-            FilesListView.ContextMenuStrip = explorerContextMenu;
+            FilesListView.ContextMenuStrip = ExplorerContextMenu;
             resources.ApplyResources(FilesListView, "FilesListView");
             FilesListView.FullRowSelect = true;
             FilesListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-            FilesListView.LargeImageList = listViewImages;
+            FilesListView.LargeImageList = ExplorerImagesList;
             FilesListView.MultiSelect = false;
             FilesListView.Name = "FilesListView";
             FilesListView.ShowItemToolTips = true;
-            FilesListView.SmallImageList = listViewImages;
-            FilesListView.StateImageList = listViewImages;
+            FilesListView.SmallImageList = ExplorerImagesList;
+            FilesListView.StateImageList = ExplorerImagesList;
             FilesListView.UseCompatibleStateImageBehavior = false;
             FilesListView.View = View.List;
             FilesListView.DoubleClick += FilesListViewDoubleClick;
             // 
-            // explorerContextMenu
+            // ExplorerContextMenu
             // 
-            explorerContextMenu.Items.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem1 });
-            explorerContextMenu.Name = "explorerContextMenu";
-            resources.ApplyResources(explorerContextMenu, "explorerContextMenu");
+            ExplorerContextMenu.Items.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem1 });
+            ExplorerContextMenu.Name = "explorerContextMenu";
+            resources.ApplyResources(ExplorerContextMenu, "ExplorerContextMenu");
             // 
             // удалитьToolStripMenuItem1
             // 
@@ -903,22 +917,22 @@ namespace TextPad_
             resources.ApplyResources(удалитьToolStripMenuItem1, "удалитьToolStripMenuItem1");
             удалитьToolStripMenuItem1.Click += DeleteFileInExplorer;
             // 
-            // listViewImages
+            // ExplorerImagesList
             // 
-            listViewImages.ColorDepth = ColorDepth.Depth8Bit;
-            listViewImages.ImageStream = (ImageListStreamer)resources.GetObject("listViewImages.ImageStream");
-            listViewImages.TransparentColor = Color.Transparent;
-            listViewImages.Images.SetKeyName(0, "folder.png");
-            listViewImages.Images.SetKeyName(1, "file.png");
+            ExplorerImagesList.ColorDepth = ColorDepth.Depth8Bit;
+            ExplorerImagesList.ImageStream = (ImageListStreamer)resources.GetObject("ExplorerImagesList.ImageStream");
+            ExplorerImagesList.TransparentColor = Color.Transparent;
+            ExplorerImagesList.Images.SetKeyName(0, "folder.png");
+            ExplorerImagesList.Images.SetKeyName(1, "file.png");
             // 
-            // folderToolStrip
+            // FolderToolBar
             // 
-            resources.ApplyResources(folderToolStrip, "folderToolStrip");
-            folderToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            folderToolStrip.Items.AddRange(new ToolStripItem[] { openFolderToolBtn, refreshFolderToolBtn, closeFolderToolBtn, toolStripSeparator1, aboveFolderBtn, toolStripSeparator2, upSizeListViewTool, downSizeListViewTool });
-            folderToolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            folderToolStrip.Name = "folderToolStrip";
-            folderToolStrip.RenderMode = ToolStripRenderMode.System;
+            resources.ApplyResources(FolderToolBar, "FolderToolBar");
+            FolderToolBar.GripStyle = ToolStripGripStyle.Hidden;
+            FolderToolBar.Items.AddRange(new ToolStripItem[] { openFolderToolBtn, refreshFolderToolBtn, closeFolderToolBtn, toolStripSeparator1, aboveFolderBtn });
+            FolderToolBar.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            FolderToolBar.Name = "FolderToolBar";
+            FolderToolBar.RenderMode = ToolStripRenderMode.System;
             // 
             // openFolderToolBtn
             // 
@@ -957,34 +971,13 @@ namespace TextPad_
             aboveFolderBtn.Name = "aboveFolderBtn";
             aboveFolderBtn.Click += AboveFolder;
             // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(toolStripSeparator2, "toolStripSeparator2");
-            // 
-            // upSizeListViewTool
-            // 
-            upSizeListViewTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            upSizeListViewTool.Image = Properties.Resources.ArrowUp;
-            resources.ApplyResources(upSizeListViewTool, "upSizeListViewTool");
-            upSizeListViewTool.Name = "upSizeListViewTool";
-            upSizeListViewTool.Click += UpSizeListView;
-            // 
-            // downSizeListViewTool
-            // 
-            downSizeListViewTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            downSizeListViewTool.Image = Properties.Resources.ArrowDown;
-            resources.ApplyResources(downSizeListViewTool, "downSizeListViewTool");
-            downSizeListViewTool.Name = "downSizeListViewTool";
-            downSizeListViewTool.Click += DownSizeListView;
-            // 
             // FolderExplorerPanel
             // 
             FolderExplorerPanel.BackColor = Color.Transparent;
             FolderExplorerPanel.BorderStyle = BorderStyle.FixedSingle;
             FolderExplorerPanel.Controls.Add(FilesListView);
             FolderExplorerPanel.Controls.Add(workFolderLabel);
-            FolderExplorerPanel.Controls.Add(folderToolStrip);
+            FolderExplorerPanel.Controls.Add(FolderToolBar);
             resources.ApplyResources(FolderExplorerPanel, "FolderExplorerPanel");
             FolderExplorerPanel.Name = "FolderExplorerPanel";
             // 
@@ -996,18 +989,26 @@ namespace TextPad_
             // MainUIPanel
             // 
             MainUIPanel.BackColor = Color.Transparent;
+            MainUIPanel.Controls.Add(ExplorerSplitter);
             MainUIPanel.Controls.Add(cTabControl);
             MainUIPanel.Controls.Add(FolderExplorerPanel);
-            MainUIPanel.Controls.Add(ToolStrip);
-            MainUIPanel.Controls.Add(StatusStrip);
+            MainUIPanel.Controls.Add(ToolBar);
+            MainUIPanel.Controls.Add(StatusBar);
             MainUIPanel.Controls.Add(RunFileToolStrip);
-            MainUIPanel.Controls.Add(menuStrip);
+            MainUIPanel.Controls.Add(MenuBar);
             resources.ApplyResources(MainUIPanel, "MainUIPanel");
             MainUIPanel.Name = "MainUIPanel";
+            // 
+            // ExplorerSplitter
+            // 
+            resources.ApplyResources(ExplorerSplitter, "ExplorerSplitter");
+            ExplorerSplitter.Name = "ExplorerSplitter";
+            ExplorerSplitter.TabStop = false;
             // 
             // cTabControl
             // 
             resources.ApplyResources(cTabControl, "cTabControl");
+            cTabControl.EnabneTestFeatures = false;
             cTabControl.Name = "cTabControl";
             cTabControl.SelectedIndex = 0;
             cTabControl.Selecting += CTabControlSelecting;
@@ -1056,16 +1057,16 @@ namespace TextPad_
             // panel10
             // 
             panel10.BorderStyle = BorderStyle.FixedSingle;
-            panel10.Controls.Add(autoUpdateCheckBox);
+            panel10.Controls.Add(AutoChekUpdateCheckBox);
             panel10.Controls.Add(label20);
             resources.ApplyResources(panel10, "panel10");
             panel10.Name = "panel10";
             // 
-            // autoUpdateCheckBox
+            // AutoChekUpdateCheckBox
             // 
-            resources.ApplyResources(autoUpdateCheckBox, "autoUpdateCheckBox");
-            autoUpdateCheckBox.Name = "autoUpdateCheckBox";
-            autoUpdateCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(AutoChekUpdateCheckBox, "AutoChekUpdateCheckBox");
+            AutoChekUpdateCheckBox.Name = "AutoChekUpdateCheckBox";
+            AutoChekUpdateCheckBox.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -1080,17 +1081,17 @@ namespace TextPad_
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(comboTheme);
+            panel2.Controls.Add(ColorThemeComboBox);
             panel2.Controls.Add(label2);
             resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
-            // comboTheme
+            // ColorThemeComboBox
             // 
-            comboTheme.FormattingEnabled = true;
-            comboTheme.Items.AddRange(new object[] { resources.GetString("comboTheme.Items"), resources.GetString("comboTheme.Items1") });
-            resources.ApplyResources(comboTheme, "comboTheme");
-            comboTheme.Name = "comboTheme";
+            ColorThemeComboBox.FormattingEnabled = true;
+            ColorThemeComboBox.Items.AddRange(new object[] { resources.GetString("ColorThemeComboBox.Items"), resources.GetString("ColorThemeComboBox.Items1") });
+            resources.ApplyResources(ColorThemeComboBox, "ColorThemeComboBox");
+            ColorThemeComboBox.Name = "ColorThemeComboBox";
             // 
             // label2
             // 
@@ -1100,16 +1101,16 @@ namespace TextPad_
             // panel11
             // 
             panel11.BorderStyle = BorderStyle.FixedSingle;
-            panel11.Controls.Add(exitWhenClosingLastTabCheckBox);
+            panel11.Controls.Add(ExitWhenClosingLastTabCheckBox);
             panel11.Controls.Add(label24);
             resources.ApplyResources(panel11, "panel11");
             panel11.Name = "panel11";
             // 
-            // exitWhenClosingLastTabCheckBox
+            // ExitWhenClosingLastTabCheckBox
             // 
-            resources.ApplyResources(exitWhenClosingLastTabCheckBox, "exitWhenClosingLastTabCheckBox");
-            exitWhenClosingLastTabCheckBox.Name = "exitWhenClosingLastTabCheckBox";
-            exitWhenClosingLastTabCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(ExitWhenClosingLastTabCheckBox, "ExitWhenClosingLastTabCheckBox");
+            ExitWhenClosingLastTabCheckBox.Name = "ExitWhenClosingLastTabCheckBox";
+            ExitWhenClosingLastTabCheckBox.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -1119,17 +1120,17 @@ namespace TextPad_
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(comboBoxLanguage);
+            panel3.Controls.Add(LanguageComboBox);
             panel3.Controls.Add(label3);
             resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
-            // comboBoxLanguage
+            // LanguageComboBox
             // 
-            comboBoxLanguage.FormattingEnabled = true;
-            comboBoxLanguage.Items.AddRange(new object[] { resources.GetString("comboBoxLanguage.Items"), resources.GetString("comboBoxLanguage.Items1") });
-            resources.ApplyResources(comboBoxLanguage, "comboBoxLanguage");
-            comboBoxLanguage.Name = "comboBoxLanguage";
+            LanguageComboBox.FormattingEnabled = true;
+            LanguageComboBox.Items.AddRange(new object[] { resources.GetString("LanguageComboBox.Items"), resources.GetString("LanguageComboBox.Items1") });
+            resources.ApplyResources(LanguageComboBox, "LanguageComboBox");
+            LanguageComboBox.Name = "LanguageComboBox";
             // 
             // label3
             // 
@@ -1139,16 +1140,16 @@ namespace TextPad_
             // panel5
             // 
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(wordWarpCheckBox);
+            panel5.Controls.Add(WordWarpCheckBox);
             panel5.Controls.Add(label5);
             resources.ApplyResources(panel5, "panel5");
             panel5.Name = "panel5";
             // 
-            // wordWarpCheckBox
+            // WordWarpCheckBox
             // 
-            resources.ApplyResources(wordWarpCheckBox, "wordWarpCheckBox");
-            wordWarpCheckBox.Name = "wordWarpCheckBox";
-            wordWarpCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(WordWarpCheckBox, "WordWarpCheckBox");
+            WordWarpCheckBox.Name = "WordWarpCheckBox";
+            WordWarpCheckBox.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -1187,16 +1188,16 @@ namespace TextPad_
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(overWindowsCheckBox);
+            panel4.Controls.Add(TopmostCheckBox);
             panel4.Controls.Add(label4);
             resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
-            // overWindowsCheckBox
+            // TopmostCheckBox
             // 
-            resources.ApplyResources(overWindowsCheckBox, "overWindowsCheckBox");
-            overWindowsCheckBox.Name = "overWindowsCheckBox";
-            overWindowsCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(TopmostCheckBox, "TopmostCheckBox");
+            TopmostCheckBox.Name = "TopmostCheckBox";
+            TopmostCheckBox.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -1206,6 +1207,7 @@ namespace TextPad_
             // SettingsToolsPanel
             // 
             SettingsToolsPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingsToolsPanel.Controls.Add(panel12);
             SettingsToolsPanel.Controls.Add(label14);
             SettingsToolsPanel.Controls.Add(panel6);
             SettingsToolsPanel.Controls.Add(panel7);
@@ -1213,6 +1215,25 @@ namespace TextPad_
             SettingsToolsPanel.Controls.Add(panel8);
             resources.ApplyResources(SettingsToolsPanel, "SettingsToolsPanel");
             SettingsToolsPanel.Name = "SettingsToolsPanel";
+            // 
+            // panel12
+            // 
+            panel12.BorderStyle = BorderStyle.FixedSingle;
+            panel12.Controls.Add(AutoSubstitutionCheckBox);
+            panel12.Controls.Add(label25);
+            resources.ApplyResources(panel12, "panel12");
+            panel12.Name = "panel12";
+            // 
+            // AutoSubstitutionCheckBox
+            // 
+            resources.ApplyResources(AutoSubstitutionCheckBox, "AutoSubstitutionCheckBox");
+            AutoSubstitutionCheckBox.Name = "AutoSubstitutionCheckBox";
+            AutoSubstitutionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            resources.ApplyResources(label25, "label25");
+            label25.Name = "label25";
             // 
             // label14
             // 
@@ -1222,16 +1243,16 @@ namespace TextPad_
             // panel6
             // 
             panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(runFilesPanelCheckBox);
+            panel6.Controls.Add(RunFileToolBarCheckBox);
             panel6.Controls.Add(label6);
             resources.ApplyResources(panel6, "panel6");
             panel6.Name = "panel6";
             // 
-            // runFilesPanelCheckBox
+            // RunFileToolBarCheckBox
             // 
-            resources.ApplyResources(runFilesPanelCheckBox, "runFilesPanelCheckBox");
-            runFilesPanelCheckBox.Name = "runFilesPanelCheckBox";
-            runFilesPanelCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RunFileToolBarCheckBox, "RunFileToolBarCheckBox");
+            RunFileToolBarCheckBox.Name = "RunFileToolBarCheckBox";
+            RunFileToolBarCheckBox.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -1241,16 +1262,16 @@ namespace TextPad_
             // panel7
             // 
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(statusStripCheckBox);
+            panel7.Controls.Add(StatusBarCheckBox);
             panel7.Controls.Add(label7);
             resources.ApplyResources(panel7, "panel7");
             panel7.Name = "panel7";
             // 
-            // statusStripCheckBox
+            // StatusBarCheckBox
             // 
-            resources.ApplyResources(statusStripCheckBox, "statusStripCheckBox");
-            statusStripCheckBox.Name = "statusStripCheckBox";
-            statusStripCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(StatusBarCheckBox, "StatusBarCheckBox");
+            StatusBarCheckBox.Name = "StatusBarCheckBox";
+            StatusBarCheckBox.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -1260,16 +1281,16 @@ namespace TextPad_
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(explorerCheckBox);
+            panel1.Controls.Add(ExplorerCheckBox);
             panel1.Controls.Add(label1);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
-            // explorerCheckBox
+            // ExplorerCheckBox
             // 
-            resources.ApplyResources(explorerCheckBox, "explorerCheckBox");
-            explorerCheckBox.Name = "explorerCheckBox";
-            explorerCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(ExplorerCheckBox, "ExplorerCheckBox");
+            ExplorerCheckBox.Name = "ExplorerCheckBox";
+            ExplorerCheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -1279,16 +1300,16 @@ namespace TextPad_
             // panel8
             // 
             panel8.BorderStyle = BorderStyle.FixedSingle;
-            panel8.Controls.Add(instrumentPanelCheckBox);
+            panel8.Controls.Add(ToolBarCheckBox);
             panel8.Controls.Add(label8);
             resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
             // 
-            // instrumentPanelCheckBox
+            // ToolBarCheckBox
             // 
-            resources.ApplyResources(instrumentPanelCheckBox, "instrumentPanelCheckBox");
-            instrumentPanelCheckBox.Name = "instrumentPanelCheckBox";
-            instrumentPanelCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(ToolBarCheckBox, "ToolBarCheckBox");
+            ToolBarCheckBox.Name = "ToolBarCheckBox";
+            ToolBarCheckBox.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -1546,27 +1567,27 @@ namespace TextPad_
             // FormMainUI
             // 
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(SettingsUIPanel);
-            Controls.Add(MainUIPanel);
-            KeyPreview = true;
-            MainMenuStrip = menuStrip;
-            Name = "FormMainUI";
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.Controls.Add(MainUIPanel);
+            this.Controls.Add(SettingsUIPanel);
+            this.KeyPreview = true;
+            this.MainMenuStrip = MenuBar;
+            this.Name = "FormMainUI";
             FormClosing += MainFormClosing;
             Load += MainFormLoad;
             SizeChanged += FormMainUiSizeChanged;
-            menuStrip.ResumeLayout(false);
-            menuStrip.PerformLayout();
-            contextMenuStrip.ResumeLayout(false);
-            StatusStrip.ResumeLayout(false);
-            StatusStrip.PerformLayout();
-            ToolStrip.ResumeLayout(false);
-            ToolStrip.PerformLayout();
+            MenuBar.ResumeLayout(false);
+            MenuBar.PerformLayout();
+            ContextMenu.ResumeLayout(false);
+            StatusBar.ResumeLayout(false);
+            StatusBar.PerformLayout();
+            ToolBar.ResumeLayout(false);
+            ToolBar.PerformLayout();
             RunFileToolStrip.ResumeLayout(false);
             RunFileToolStrip.PerformLayout();
-            explorerContextMenu.ResumeLayout(false);
-            folderToolStrip.ResumeLayout(false);
-            folderToolStrip.PerformLayout();
+            ExplorerContextMenu.ResumeLayout(false);
+            FolderToolBar.ResumeLayout(false);
+            FolderToolBar.PerformLayout();
             FolderExplorerPanel.ResumeLayout(false);
             FolderExplorerPanel.PerformLayout();
             MainUIPanel.ResumeLayout(false);
@@ -1592,6 +1613,8 @@ namespace TextPad_
             panel4.PerformLayout();
             SettingsToolsPanel.ResumeLayout(false);
             SettingsToolsPanel.PerformLayout();
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
@@ -1618,7 +1641,7 @@ namespace TextPad_
         }
 
         #endregion
-        private MenuStrip menuStrip;
+        private MenuStrip MenuBar;
         private ToolStripMenuItem CopyEditMenuItem;
         private ToolStripMenuItem CutEditMenuItem;
         private ToolStripMenuItem PasteEditMenuItem;
@@ -1661,43 +1684,40 @@ namespace TextPad_
         private ToolStripSeparator toolStripSep5;
         private ToolStripButton newTabToolStripItem;
         private ToolStripButton closeTabToolStripItem;
-        private ToolStripMenuItem pythonRunMenuItem;
-        private ToolStripMenuItem vbsRunMenuItem;
-        private ToolStripMenuItem batRunMenuItem;
-        public StatusStrip StatusStrip;
+        private ToolStripMenuItem PythonRunMenuItem;
+        private ToolStripMenuItem VBSRunMenuItem;
+        private ToolStripMenuItem WindowsScriptRunMenuItem;
+        public StatusStrip StatusBar;
         public ToolStrip RunFileToolStrip;
         private ToolStripStatusLabel TextLabelStatus;
-        public ToolStrip ToolStrip;
+        public ToolStrip ToolBar;
         private ToolStripMenuItem EditMenuItem;
         private ToolStripMenuItem RunMenuItem;
         private ToolStripMenuItem SettingsMenuItem;
         private ToolStripMenuItem CreateTabFileMenuItem;
         private ToolStripSeparator toolStripSep1;
         internal ToolStripMenuItem FileMenuItem;
-        internal FontDialog fontDialog;
+        internal FontDialog FontDialog_;
         internal ToolStripStatusLabel TextLengthLabel;
         private ListView FilesListView;
-        private ToolStrip folderToolStrip;
+        private ToolStrip FolderToolBar;
         private ToolStripButton openFolderToolBtn;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton upSizeListViewTool;
-        private ToolStripButton downSizeListViewTool;
-        private FolderBrowserDialog folderBrowserDialog;
-        private ImageList listViewImages;
+        private FolderBrowserDialog FolderBrowserDialog_;
+        private ImageList ExplorerImagesList;
         private ToolStripButton refreshFolderToolBtn;
         private Label workFolderLabel;
         private ToolStripButton closeFolderToolBtn;
         private ToolStripLabel RunAsToolsStripLabel;
-        internal SaveFileDialog saveFileDialog;
+        internal SaveFileDialog SaveFileDialog_;
         internal ToolStripComboBox RunScriptCombobox;
         internal Panel FolderExplorerPanel;
         private ToolStripButton aboveFolderBtn;
-        private ToolStripSeparator toolStripSeparator2;
         private ToolStripStatusLabel TextLinesLabelStatus;
         private ToolStripStatusLabel TextLinesLabel;
-        private ContextMenuStrip explorerContextMenu;
+        private ContextMenuStrip ExplorerContextMenu;
         private ToolStripMenuItem удалитьToolStripMenuItem1;
-        private ContextMenuStrip contextMenuStrip;
+        private ContextMenuStrip ContextMenu;
         private ToolStripSeparator separator1FileMenuItem;
         internal ToolStripMenuItem RecentFilesListFileItem;
         private ToolStripMenuItem OpenFileFolderFileMenuItem;
@@ -1720,13 +1740,13 @@ namespace TextPad_
         private TabPage infoTabPage;
         private Panel SettingsBottomUIPanel;
         private Button saveButton;
-        internal CheckBox explorerCheckBox;
-        internal ComboBox comboBoxLanguage;
+        internal CheckBox ExplorerCheckBox;
+        internal ComboBox LanguageComboBox;
         internal TextBox FontTextBox;
-        internal CheckBox instrumentPanelCheckBox;
-        internal ComboBox comboTheme;
-        internal CheckBox statusStripCheckBox;
-        internal CheckBox runFilesPanelCheckBox;
+        internal CheckBox ToolBarCheckBox;
+        internal ComboBox ColorThemeComboBox;
+        internal CheckBox StatusBarCheckBox;
+        internal CheckBox RunFileToolBarCheckBox;
         internal Panel SettingsUIPanel;
         internal Panel MainUIPanel;
         private TabControl tabControl;
@@ -1757,15 +1777,15 @@ namespace TextPad_
         internal TextBox textBox3;
         private ToolStripButton RunScriptButton;
         private Panel panel5;
-        internal CheckBox wordWarpCheckBox;
+        internal CheckBox WordWarpCheckBox;
         private Label label5;
         private Panel panel4;
-        internal CheckBox overWindowsCheckBox;
+        internal CheckBox TopmostCheckBox;
         private Label label4;
         private Button cancelBatton;
         private Panel programInfoPanel;
         private Panel panel11;
-        internal CheckBox exitWhenClosingLastTabCheckBox;
+        internal CheckBox ExitWhenClosingLastTabCheckBox;
         private Label label24;
         private ToolStripMenuItem CloseAllTabsFileMenuItem;
         private Button checkUpdatesButton;
@@ -1773,7 +1793,7 @@ namespace TextPad_
         private ToolStripMenuItem CloseWithoutCurrentTabFileMenuItem;
         private ToolStripMenuItem CopyPathAndFileNameEditrMenuItem;
         private ToolStripMenuItem CopyFileNameEditMenuItem;
-        internal OpenFileDialog openFileDialog;
+        internal OpenFileDialog OpenFileDialog_;
         internal ToolStripMenuItem DeleteFileMenuItem;
         private Label label10;
         private Label MTBVersionLabel;
@@ -1796,7 +1816,7 @@ namespace TextPad_
         private Panel panel10;
         private Label label20;
         private Label label19;
-        internal CheckBox autoUpdateCheckBox;
+        internal CheckBox AutoChekUpdateCheckBox;
         internal ToolStripStatusLabel StatusLabel;
         private ToolStripMenuItem OpenFolderAsProjectMenuFileItem;
         private ToolStripSeparator toolStripSeparator3;
@@ -1809,8 +1829,15 @@ namespace TextPad_
         private ToolStripMenuItem KOI8RToolStripMenuItem;
         private ToolStripMenuItem kOI8UToolStripMenuItem;
         private ToolStripMenuItem UTF8BOMToolStripMenuItem;
-        internal CTabControl cTabControl;
         private ToolStripTextBox FileNameToolTextBox;
+        internal CTabControl cTabControl;
+        private Panel panel12;
+        internal CheckBox AutoSubstitutionCheckBox;
+        private Label label25;
+        private ToolStripMenuItem PowerShellScriptToolStripMenuItem;
+        private ToolStripMenuItem hTMLToolStripMenuItem;
+        private ToolStripMenuItem CP866ToolStripMenuItem;
+        private Splitter ExplorerSplitter;
     }
 }
 

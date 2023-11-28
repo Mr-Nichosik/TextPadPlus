@@ -106,11 +106,11 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка при запуске сценария командной строки. Возможно, он неправильно сохранён или отсутствует файл cmd.exe в каталогах папки C:\Windows\ ..
+        ///   Ищет локализованную строку, похожую на Ошибка при запуске сценария командной строки. Возможно, он неправильно сохранён или отсутствует файл C:\Windows\cmd.exe..
         /// </summary>
-        public static string MSGErrorRunBatFile {
+        public static string MSGErrorRunBatCmdFile {
             get {
-                return ResourceManager.GetString("MSGErrorRunBatFile", resourceCulture);
+                return ResourceManager.GetString("MSGErrorRunBatCmdFile", resourceCulture);
             }
         }
         
@@ -124,11 +124,11 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка при запуске файла сценария Visual Basic. Возможно, он неправильно сохранён или отсутствует ядро VBS cscript.exe в каталогах папки C:\Windows\ ..
+        ///   Ищет локализованную строку, похожую на Ошибка при запуске файла сценария Visual Basic / JScript. Возможно, он неправильно сохранён или отсутствует программа Windows Based Host Script C:\Windows\System32\wscript.exe ..
         /// </summary>
-        public static string MSGErrorRunVBSFile {
+        public static string MSGErrorRunVBSJSFile {
             get {
-                return ResourceManager.GetString("MSGErrorRunVBSFile", resourceCulture);
+                return ResourceManager.GetString("MSGErrorRunVBSJSFile", resourceCulture);
             }
         }
         
@@ -196,7 +196,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Все файлы(*.*)|*.*|Текстовые документы (*.txt)|*.txt|Файл TextPad (*.tpf)|*.tpf|Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js.
+        ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*.
         /// </summary>
         public static string openFileDialogFilter {
             get {
@@ -241,7 +241,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл Windows (*.bat)|*.bat|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript (*.js)|*.js|Все файлы (*.*)|*.*.
+        ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*.
         /// </summary>
         public static string saveFileDialogFilter {
             get {

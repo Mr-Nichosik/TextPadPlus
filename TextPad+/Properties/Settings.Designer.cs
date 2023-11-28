@@ -238,5 +238,17 @@ namespace TextPad_.Properties {
                 this["ModifiedTextBox_Font"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoSubstitutionOfClosingCharacters {
+            get {
+                return ((bool)(this["AutoSubstitutionOfClosingCharacters"]));
+            }
+            set {
+                this["AutoSubstitutionOfClosingCharacters"] = value;
+            }
+        }
     }
 }
