@@ -16,13 +16,14 @@ namespace TextPad_
     /// </summary>
     internal static class Program
     {
-        // Главное окно
-        public static FormMainUI MainUI = new();
-        // Окно установщика обновлений
-        public static Updater.FormUpdaterUI UpdaterUI = new();
+        // Окна программы
+        internal static MainUI MainForm = new();
+        internal static Updater.UpdaterUI UpdaterForm = new();
+        internal static SearchUI SearchForm = new();
+        internal static PythonInterpreterUI PythonInterpreterForm = new();
         // Статус обновления программы
         // 0 - программа не обновляется; 1 - программа обновляется и зкарывать нельзя; 2 - программа обновляется и нуобходимо её закрыть
-        public static int UpdateStatus = 0;
+        public static byte UpdateStatus = 0;
 
         /// <summary>
         /// Точка входа в программу
@@ -31,7 +32,7 @@ namespace TextPad_
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormMainUI());
+            Application.Run(MainForm);
         }
     }
 }

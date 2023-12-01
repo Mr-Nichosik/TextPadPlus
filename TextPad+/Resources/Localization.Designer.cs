@@ -205,7 +205,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Проверка наличия обновлений....
+        ///   Ищет локализованную строку, похожую на Проверка наличия обновлений... .
         /// </summary>
         public static string PROGRAMStatusCheckForUpdates {
             get {
@@ -214,7 +214,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Загрузка....
+        ///   Ищет локализованную строку, похожую на Загрузка... .
         /// </summary>
         public static string PROGRAMStatusLoading {
             get {
@@ -223,7 +223,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Готово.
+        ///   Ищет локализованную строку, похожую на Готово .
         /// </summary>
         public static string PROGRAMStatusReady {
             get {
@@ -232,7 +232,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Идёт обновление....
+        ///   Ищет локализованную строку, похожую на Идёт обновление... .
         /// </summary>
         public static string PROGRAMStatusUpdating {
             get {

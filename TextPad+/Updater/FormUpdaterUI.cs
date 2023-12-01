@@ -1,9 +1,9 @@
 ﻿
 namespace TextPad_.Updater
 {
-    public partial class FormUpdaterUI : Form
+    public partial class UpdaterUI : Form
     {
-        public FormUpdaterUI()
+        public UpdaterUI()
         {
             if (Properties.Settings.Default.Language == "English")
             {
@@ -33,8 +33,8 @@ namespace TextPad_.Updater
         private void FormUpdaterUILoad(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            ProgramPathTextBox.Text = Program.MainUI.ProgramPath;
-            UpdateInstalledVerL.Text = FormMainUI.GetAssemblyVersion();
+            ProgramPathTextBox.Text = Program.MainForm.ProgramPath;
+            UpdateInstalledVerL.Text = MainUI.GetAssemblyVersion();
         }
 
         private void FormUpdaterUI_FormClosing(object sender, FormClosingEventArgs e)

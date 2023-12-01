@@ -11,7 +11,7 @@ namespace TextPad_.Updater
         private static readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
 
         // Свойства с сыллками
-        public static string ProgramVersion { get; set; } = FormMainUI.GetAssemblyVersion();
+        public static string ProgramVersion { get; set; } = MainUI.GetAssemblyVersion();
         public static string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
         public static string TextPadVersionSite { get; private set; } = "https://mr-nichosik.github.io/TextPadVersion/";
         public static string TextPadUpdateInstallerSite { get; private set; } = "https://github.com/Mr-Nichosik/TextPadPlus/releases/download/vCurrent/Setup.exe";
@@ -77,9 +77,9 @@ namespace TextPad_.Updater
                         Logger.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
-                        Program.MainUI.StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
+                        Program.MainForm.StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
 
-                        Program.MainUI.SaveParameters();
+                        Program.MainForm.SaveParameters();
                         StartUninstaller();
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
                         UpdateStatusProgressBar.Value = 25;
@@ -135,7 +135,7 @@ namespace TextPad_.Updater
                         Logger.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
-                        Program.MainUI.SaveParameters();
+                        Program.MainForm.SaveParameters();
                         StartUninstaller();
                         UpdateStatusLabel.ToolTipText = "Выполняется обновление...";
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
@@ -157,15 +157,8 @@ namespace TextPad_.Updater
 
         private static byte CheckProgramVersion()
         {
-            try
-            {
-                ServerVersion = UpdaterClient.DownloadString(TextPadVersionSite);
-            }
-            catch
-            {
-                return 1;
-            }
-
+            try { ServerVersion = UpdaterClient.DownloadString(TextPadVersionSite); }            
+            catch { return 1; }
             return 0;
         }
 
@@ -210,13 +203,13 @@ namespace TextPad_.Updater
             try
             {
                 Logger.Info("Update download starts");
-                Directory.CreateDirectory($"{Program.MainUI.ProgramPath}Update\\");
+                Directory.CreateDirectory($"{Program.MainForm.ProgramPath}Update\\");
 
-                UpdaterClient.DownloadFile(TextPadUpdateInstallerSite, $"{Program.MainUI.ProgramPath}Update\\Setup.exe");
+                UpdaterClient.DownloadFile(TextPadUpdateInstallerSite, $"{Program.MainForm.ProgramPath}Update\\Setup.exe");
 
                 Program.UpdateStatus = 2;
 
-                Process.Start("Update\\Setup.exe", $"/SILENT /DIR=\"{Program.MainUI.ProgramPath}\"");
+                Process.Start("Update\\Setup.exe", $"/SILENT /DIR=\"{Program.MainForm.ProgramPath}\"");
                 Application.Exit();
             }
             catch

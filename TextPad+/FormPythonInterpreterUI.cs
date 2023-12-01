@@ -1,9 +1,9 @@
 ﻿
 namespace TextPad_
 {
-    public partial class FormPythonInterpreterUI : Form
+    public partial class PythonInterpreterUI : Form
     {
-        public FormPythonInterpreterUI()
+        public PythonInterpreterUI()
         {
             InitializeComponent();
         }
@@ -24,15 +24,13 @@ namespace TextPad_
                 FileRunner.RunPythonScript(PathTextBox.Text);
             }
 
-            this.Close();
+            Close();
         }
 
         private void Browse(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.Cancel)
-            {
                 return;
-            }
 
             PathTextBox.Text = openFileDialog.FileName;
             Properties.Settings.Default.PythonInterpreterPath = openFileDialog.FileName;
@@ -62,9 +60,7 @@ namespace TextPad_
                 PathTextBox.Text = Properties.Settings.Default.PythonInterpreterPath;
             }
             else
-            {
                 AutoSearchRadioButton.Checked = true;
-            }
 
             openFileDialog.Filter = "*.exe|*.exe";
         }

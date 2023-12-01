@@ -13,16 +13,16 @@ namespace TextPad_
         private static MTextBox? mtb;
 
         // Метод сохранения файла "Сохранить как..."
-        public static void SaveAsFile()
+        internal static void SaveAsFile()
         {
             try
             {
                 // ModifiedTextBox на выбранной вкладке и фльтра для диалога
-                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                Program.MainUI.SaveFileDialog_.Filter = Program.MainUI.SaveFileDialog_.Filter = Resources.Localization.saveFileDialogFilter;
-                if (Program.MainUI.SaveFileDialog_.ShowDialog() == DialogResult.Cancel)
+                mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                Program.MainForm.SaveFileDialog_.Filter = Program.MainForm.SaveFileDialog_.Filter = Resources.Localization.saveFileDialogFilter;
+                if (Program.MainForm.SaveFileDialog_.ShowDialog() == DialogResult.Cancel)
                     return;
-                mtb.FileName = Program.MainUI.SaveFileDialog_.FileName;
+                mtb.FileName = Program.MainForm.SaveFileDialog_.FileName;
 
                 // В файл сохраняется текст mtb по пути, указанному в FileName, учитывая значение кодировки из mtb.
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -87,25 +87,15 @@ namespace TextPad_
                 }
 
                 // Изменение заголовка вкладки и обновление статуса файла
+                Program.MainForm.CheckFile();
                 mtb.IsFileChanged = false;
-                Program.MainUI.cTabControl.SelectedTab!.Text = Program.MainUI.cTabControl.SelectedTab!.Text.TrimEnd('*');
-                Program.MainUI.CheckFile();
-
-                // Лог
-                Logger.Info("Saving file: " + mtb.FileName);
+                Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Text = Path.GetFileName(mtb.FileName);
 
                 // Внос файла в список недавних файлов
-                foreach (ToolStripMenuItem rfmdi in Program.MainUI.RecentFilesListFileItem.DropDownItems)
-                {
-                    if (rfmdi.Text == mtb.FileName)
-                        return;
-                }
-                if (Program.MainUI.RecentFilesListFileItem.DropDownItems.Count == 10)
-                    Program.MainUI.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
-                ToolStripMenuItem tsmi = new();
-                tsmi.Text = mtb.FileName;
-                tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                Program.MainUI.RecentFilesListFileItem.DropDownItems.Add(tsmi);
+                AddFileToRecentList(mtb);
+
+                GC.Collect();
+                Logger.Info("Saving file: " + mtb.FileName);
             }
             catch (Exception ex)
             {
@@ -115,12 +105,12 @@ namespace TextPad_
         }
 
         // Метод сохранения файла, открытого на выбранной вкладке
-        public static void SaveCurrentFile()
+        internal static void SaveCurrentFile()
         {
             try
             {
                 // ModifiedTextBox на выбранной вкладке
-                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 // Если путь до файла отсутствует (Missing)
                 if (mtb.FileName == "Missing")
@@ -194,9 +184,10 @@ namespace TextPad_
 
                 // Обновление статуса файла
                 mtb.IsFileChanged = false;
-                Program.MainUI.cTabControl.SelectedTab!.Text = Program.MainUI.cTabControl.SelectedTab!.Text.TrimEnd('*');
-                Program.MainUI.CheckFile();
+                Program.MainForm.CheckFile();
+                Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Text = Path.GetFileName(mtb.FileName);
 
+                GC.Collect();
                 Logger.Info("Saving file: " + mtb.FileName);
             }
             catch (Exception ex)
@@ -207,21 +198,29 @@ namespace TextPad_
         }
 
         // Открытие файла
-        public static void OpenFile()
+        internal static void OpenFile()
         {
             try
             {
-                // Вызов openFileDialog
-                Program.MainUI.OpenFileDialog_.Filter = Resources.Localization.openFileDialogFilter;
-                if (Program.MainUI.OpenFileDialog_.ShowDialog() == DialogResult.Cancel)
-                    return;
+                mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-                // ModifiedTextBox на выбранной вкладке и фльтра для диалога
-                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                mtb.FileName = Program.MainUI.OpenFileDialog_.FileName;
+                // Если текущая вкладка пуста, открываем в ней файл, а если нет, то создаём новую
+                if (mtb.FileName != "Missing" || mtb.Text.Length > 0)
+                {
+                    Program.MainForm.CreateTab();
+                    Program.MainForm.cTabControl.SelectTab(Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.TabPages.Count - 1]);
+                    mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                }
+
+                // Вызов openFileDialog
+                Program.MainForm.OpenFileDialog_.Filter = Resources.Localization.openFileDialogFilter;
+                if (Program.MainForm.OpenFileDialog_.ShowDialog() == DialogResult.Cancel)
+                    return;
+                mtb.FileName = Program.MainForm.OpenFileDialog_.FileName;
 
                 // Считываем текст этого файла, путь берём из того же свойства, проверяем кодировку
                 StreamReader fileReader;
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                 switch (mtb.Encoding)
                 {
                     case "CP866":
@@ -282,25 +281,15 @@ namespace TextPad_
                 }
 
                 // Изменение заголовка вкладки и обновление статуса файла
-                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
+                Program.MainForm.CheckFile();
+                Program.MainForm.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
                 mtb.IsFileChanged = false;
-                Program.MainUI.CheckFile();
-
-                // Лог
-                Logger.Info("Opening file: " + mtb.FileName);
 
                 // Внос файла в список недавних файлов
-                foreach (ToolStripMenuItem rftsmi in Program.MainUI.RecentFilesListFileItem.DropDownItems)
-                {
-                    if (rftsmi.Text == mtb.FileName)
-                        return;
-                }
-                if (Program.MainUI.RecentFilesListFileItem.DropDownItems.Count == 10)
-                    Program.MainUI.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
-                ToolStripMenuItem tsmi = new();
-                tsmi.Text = mtb.FileName;
-                tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                Program.MainUI.RecentFilesListFileItem.DropDownItems.Add(tsmi);
+                AddFileToRecentList(mtb);
+
+                GC.Collect();
+                Logger.Info("Opening file: " + mtb.FileName);
             }
             catch (Exception ex)
             {
@@ -310,24 +299,24 @@ namespace TextPad_
         }
 
         // Открытие файла по конкретному пути
-        public static void OpenFile(string fileName)
+        internal static void OpenFile(string fileName)
         {
             try
             {
                 if (File.Exists(fileName) == false)
                 {
-                    MessageBox.Show(Resources.Localization.MSGErrorFileNotFound, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show(Resources.Localization.MSGErrorFileNotFound, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 // Если текущая вкладка пуста, открываем в ней файл, а если нет, то создаём новую
                 if (mtb.FileName != "Missing" || mtb.Text.Length > 0)
                 {
-                    Program.MainUI.CreateTab();
-                    Program.MainUI.cTabControl.SelectTab(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.TabPages.Count - 1]);
-                    mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                    Program.MainForm.CreateTab();
+                    Program.MainForm.cTabControl.SelectTab(Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.TabPages.Count - 1]);
+                    mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 }
 
                 // В свойство FileName записываем путь до файла, который передаётся методу
@@ -396,25 +385,15 @@ namespace TextPad_
                 }
 
                 // Изменение заголовка вкладки и обновление статуса файла
-                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
+                Program.MainForm.CheckFile();
+                Program.MainForm.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
                 mtb.IsFileChanged = false;
-                Program.MainUI.CheckFile();
-
-                // Лог
-                Logger.Info("Opening file: " + mtb.FileName);
 
                 // Внос файла в список недавних файлов
-                foreach (ToolStripMenuItem rfmdi in Program.MainUI.RecentFilesListFileItem.DropDownItems)
-                {
-                    if (rfmdi.Text == mtb.FileName)
-                        return;
-                }
-                if (Program.MainUI.RecentFilesListFileItem.DropDownItems.Count == 10)
-                    Program.MainUI.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
-                ToolStripMenuItem tsmi = new();
-                tsmi.Text = mtb.FileName;
-                tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
-                Program.MainUI.RecentFilesListFileItem.DropDownItems.Add(tsmi);
+                AddFileToRecentList(mtb);
+
+                GC.Collect();
+                Logger.Info("Opening file: " + mtb.FileName);
             }
             catch (Exception ex)
             {
@@ -424,11 +403,11 @@ namespace TextPad_
         }
 
         // Повторное открытие файла
-        public static void ReopenFile()
+        internal static void ReopenFile()
         {
             try
             {
-                mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 if (File.Exists(mtb.FileName) == false)
                 {
@@ -497,20 +476,35 @@ namespace TextPad_
                         fileReader.Close();
                         break;
                 }
-                Program.MainUI.CheckFile();
+                Program.MainForm.CheckFile();
 
                 // Изменение заголовка вкладки и обновление статуса файла
-                Program.MainUI.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
+                Program.MainForm.cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
                 mtb.IsFileChanged = false;
-                Program.MainUI.CheckFile();
+                Program.MainForm.CheckFile();
 
-                Logger.Info("Reopening file: " + Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                GC.Collect();
+                Logger.Info("Reopening file: " + Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             }
             catch (Exception ex)
             {
                 Logger.Error($"An error occurred while reopening a file. \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorWhenOpenFIle, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Метод для добавления файла в список последних
+        internal static void AddFileToRecentList(MTextBox mtb)
+        {
+            foreach (ToolStripMenuItem rftsmi in Program.MainForm.RecentFilesListFileItem.DropDownItems)
+                if (rftsmi.Text == mtb.FileName)
+                    return;
+            if (Program.MainForm.RecentFilesListFileItem.DropDownItems.Count == 10)
+                Program.MainForm.RecentFilesListFileItem.DropDownItems.RemoveAt(0);
+            ToolStripMenuItem tsmi = new();
+            tsmi.Text = mtb.FileName;
+            tsmi.Click += (sender, e) => OpenFile(tsmi.Text);
+            Program.MainForm.RecentFilesListFileItem.DropDownItems.Add(tsmi);
         }
     }
 
@@ -521,31 +515,22 @@ namespace TextPad_
         private static MTextBox? mtb;
 
         // Методы запуска файлов
-        public static void RunScript()
+        internal static void RunScript()
         {
-            if (Program.MainUI.RunScriptCombobox.SelectedIndex == 0)
-            {
-                FormPythonInterpreterUI pythonInterpreterUI = new();
-                pythonInterpreterUI.ShowDialog(Program.MainUI);
-            }
-            else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 1)
-            {
+            if (Program.MainForm.RunScriptCombobox.SelectedIndex == 0)
+                Program.PythonInterpreterForm.ShowDialog(Program.MainForm);
+            else if (Program.MainForm.RunScriptCombobox.SelectedIndex == 1)
                 RunWindowsScript();
-            }
-            else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 2)
-            {
+            else if (Program.MainForm.RunScriptCombobox.SelectedIndex == 2)
                 RunVbsJsScript();
-            }
-            else if (Program.MainUI.RunScriptCombobox.SelectedIndex == 3)
-            {
+            else if (Program.MainForm.RunScriptCombobox.SelectedIndex == 3)
                 RunHTMLPage();
-            }
         }
 
-        public static void RunPythonScript()
+        internal static void RunPythonScript()
         {
             Logger.Info("Running a Python file");
-            mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -555,24 +540,24 @@ namespace TextPad_
                     return;
                 }
 
-                TextEditor.SaveCurrentFile();
+                TextEditor.SaveAsFile();
 
-                if (Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
+                if (Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
                     return;
 
-                Process.Start(@"C:\Windows\py.exe", Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                Process.Start(@"C:\Windows\py.exe", Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             }
             catch (Exception ex)
             {
-                Logger.Error($"An error occurred while running the Python script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
+                Logger.Error($"An error occurred while running the Python script: {Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void RunPythonScript(string path)
+        internal static void RunPythonScript(string path)
         {
             Logger.Info("Running a Python file");
-            mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -582,25 +567,25 @@ namespace TextPad_
                     return;
                 }
 
-                TextEditor.SaveCurrentFile();
+                TextEditor.SaveAsFile();
 
-                if (Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
+                if (Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
                     return;
 
-                Process.Start(path, Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                Process.Start(path, Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             }
             catch (Exception ex)
             {
-                Logger.Error($"An error occurred while running the Python script at the specified path: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
+                Logger.Error($"An error occurred while running the Python script at the specified path: {Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunPythonFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void RunWindowsScript()
+        internal static void RunWindowsScript()
         {
             Logger.Info("Running a bat/cmd file");
 
-            mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -610,22 +595,22 @@ namespace TextPad_
                     return;
                 }
 
-                TextEditor.SaveCurrentFile();
+                TextEditor.SaveAsFile();
 
-                Process.Start(Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                Process.Start(Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
             }
             catch (Exception ex)
             {
-                Logger.Error($"Error while running Windows script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
+                Logger.Error($"Error while running Windows script: {Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunBatCmdFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void RunVbsJsScript()
+        internal static void RunVbsJsScript()
         {
             Logger.Info("Running a VBS / JS script");
 
-            mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             try
             {
@@ -635,25 +620,29 @@ namespace TextPad_
                     return;
                 }
 
-                TextEditor.SaveCurrentFile();
+                TextEditor.SaveAsFile();
 
                 Process.Start("wscript.exe", mtb.FileName);
             }
             catch (Exception ex)
             {
-                Logger.Error($"Error while running VBS / JS script: {Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
+                Logger.Error($"Error while running VBS / JS script: {Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
                 MessageBox.Show(Resources.Localization.MSGErrorRunVBSJSFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void RunHTMLPage()
+        internal static void RunHTMLPage()
         {
-            mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-
-            Process websiteProcess = new();
-            websiteProcess.StartInfo.UseShellExecute = true;
-            websiteProcess.StartInfo.FileName = mtb.FileName;
-            websiteProcess.Start();
+            try
+            {
+                TextEditor.SaveAsFile();
+                mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                Process websiteProcess = new();
+                websiteProcess.StartInfo.UseShellExecute = true;
+                websiteProcess.StartInfo.FileName = mtb.FileName;
+                websiteProcess.Start();
+            }
+            catch { }
         }
     }
 }

@@ -202,16 +202,16 @@
     <value>Установщик обновлений</value>
   </data>
   <data name="PROGRAMStatusCheckForUpdates" xml:space="preserve">
-    <value>Проверка наличия обновлений...</value>
+    <value>Проверка наличия обновлений... </value>
   </data>
   <data name="PROGRAMStatusLoading" xml:space="preserve">
-    <value>Загрузка...</value>
+    <value>Загрузка... </value>
   </data>
   <data name="PROGRAMStatusReady" xml:space="preserve">
-    <value>Готово</value>
+    <value>Готово </value>
   </data>
   <data name="PROGRAMStatusUpdating" xml:space="preserve">
-    <value>Идёт обновление...</value>
+    <value>Идёт обновление... </value>
   </data>
   <data name="UPDATERAbortUpdate" xml:space="preserve">
     <value>Прервать установку обновления?</value>

@@ -30,109 +30,96 @@ namespace TextPad_
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchUI));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FindTextBox = new System.Windows.Forms.TextBox();
-            this.ReplaceTextBox = new System.Windows.Forms.TextBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.ReplcaeButton = new System.Windows.Forms.Button();
-            this.ReplaceAllButton = new System.Windows.Forms.Button();
-            this.GoToLineBtn = new System.Windows.Forms.Button();
-            this.numericLineNumber = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericLineNumber)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            FindTextBox = new TextBox();
+            ReplaceTextBox = new TextBox();
+            SearchButton = new Button();
+            ReplcaeButton = new Button();
+            ReplaceAllButton = new Button();
+            GoToLineBtn = new Button();
+            numericLineNumber = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numericLineNumber).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // FindTextBox
             // 
-            resources.ApplyResources(this.FindTextBox, "FindTextBox");
-            this.FindTextBox.Name = "FindTextBox";
+            resources.ApplyResources(FindTextBox, "FindTextBox");
+            FindTextBox.Name = "FindTextBox";
             // 
             // ReplaceTextBox
             // 
-            resources.ApplyResources(this.ReplaceTextBox, "ReplaceTextBox");
-            this.ReplaceTextBox.Name = "ReplaceTextBox";
+            resources.ApplyResources(ReplaceTextBox, "ReplaceTextBox");
+            ReplaceTextBox.Name = "ReplaceTextBox";
             // 
             // SearchButton
             // 
-            resources.ApplyResources(this.SearchButton, "SearchButton");
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.Search);
+            resources.ApplyResources(SearchButton, "SearchButton");
+            SearchButton.Name = "SearchButton";
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += Search;
             // 
             // ReplcaeButton
             // 
-            resources.ApplyResources(this.ReplcaeButton, "ReplcaeButton");
-            this.ReplcaeButton.Name = "ReplcaeButton";
-            this.ReplcaeButton.UseVisualStyleBackColor = true;
-            this.ReplcaeButton.Click += new System.EventHandler(this.Replace);
+            resources.ApplyResources(ReplcaeButton, "ReplcaeButton");
+            ReplcaeButton.Name = "ReplcaeButton";
+            ReplcaeButton.UseVisualStyleBackColor = true;
+            ReplcaeButton.Click += Replace;
             // 
             // ReplaceAllButton
             // 
-            resources.ApplyResources(this.ReplaceAllButton, "ReplaceAllButton");
-            this.ReplaceAllButton.Name = "ReplaceAllButton";
-            this.ReplaceAllButton.UseVisualStyleBackColor = true;
-            this.ReplaceAllButton.Click += new System.EventHandler(this.ReplaceAll);
+            resources.ApplyResources(ReplaceAllButton, "ReplaceAllButton");
+            ReplaceAllButton.Name = "ReplaceAllButton";
+            ReplaceAllButton.UseVisualStyleBackColor = true;
+            ReplaceAllButton.Click += ReplaceAll;
             // 
             // GoToLineBtn
             // 
-            resources.ApplyResources(this.GoToLineBtn, "GoToLineBtn");
-            this.GoToLineBtn.Name = "GoToLineBtn";
-            this.GoToLineBtn.UseVisualStyleBackColor = true;
-            this.GoToLineBtn.Click += new System.EventHandler(this.GoToLine);
+            resources.ApplyResources(GoToLineBtn, "GoToLineBtn");
+            GoToLineBtn.Name = "GoToLineBtn";
+            GoToLineBtn.UseVisualStyleBackColor = true;
+            GoToLineBtn.Click += GoToLine;
             // 
             // numericLineNumber
             // 
-            resources.ApplyResources(this.numericLineNumber, "numericLineNumber");
-            this.numericLineNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericLineNumber.Maximum = new decimal(new int[] {
-            268435455,
-            1042612833,
-            542101086,
-            0});
-            this.numericLineNumber.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericLineNumber.Name = "numericLineNumber";
-            this.numericLineNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            resources.ApplyResources(numericLineNumber, "numericLineNumber");
+            numericLineNumber.BorderStyle = BorderStyle.FixedSingle;
+            numericLineNumber.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
+            numericLineNumber.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericLineNumber.Name = "numericLineNumber";
+            numericLineNumber.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // SearchUI
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.numericLineNumber);
-            this.Controls.Add(this.GoToLineBtn);
-            this.Controls.Add(this.ReplaceAllButton);
-            this.Controls.Add(this.ReplcaeButton);
-            this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.ReplaceTextBox);
-            this.Controls.Add(this.FindTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.Controls.Add(numericLineNumber);
+            this.Controls.Add(GoToLineBtn);
+            this.Controls.Add(ReplaceAllButton);
+            this.Controls.Add(ReplcaeButton);
+            this.Controls.Add(SearchButton);
+            this.Controls.Add(ReplaceTextBox);
+            this.Controls.Add(FindTextBox);
+            this.Controls.Add(label2);
+            this.Controls.Add(label1);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SearchUI";
             this.ShowInTaskbar = false;
-            ((System.ComponentModel.ISupportInitialize)(this.numericLineNumber)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            ((System.ComponentModel.ISupportInitialize)numericLineNumber).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

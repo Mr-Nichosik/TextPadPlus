@@ -1,6 +1,6 @@
 ﻿namespace TextPad_
 {
-    partial class FormPythonInterpreterUI
+    partial class PythonInterpreterUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPythonInterpreterUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PythonInterpreterUI));
             AutoSearchRadioButton = new RadioButton();
             ManuallySearchRadioButton = new RadioButton();
             label1 = new Label();
@@ -79,21 +79,21 @@
             // 
             resources.ApplyResources(openFileDialog, "openFileDialog");
             // 
-            // FormPythonInterpreterUI
+            // PythonInterpreterUI
             // 
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(DoneBtn);
-            Controls.Add(BrowseBtn);
-            Controls.Add(PathTextBox);
-            Controls.Add(label1);
-            Controls.Add(ManuallySearchRadioButton);
-            Controls.Add(AutoSearchRadioButton);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "FormPythonInterpreterUI";
-            ShowInTaskbar = false;
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.Controls.Add(DoneBtn);
+            this.Controls.Add(BrowseBtn);
+            this.Controls.Add(PathTextBox);
+            this.Controls.Add(label1);
+            this.Controls.Add(ManuallySearchRadioButton);
+            this.Controls.Add(AutoSearchRadioButton);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "PythonInterpreterUI";
+            this.ShowInTaskbar = false;
             Load += FormPythonInterpreterUILoad;
             ResumeLayout(false);
             PerformLayout();

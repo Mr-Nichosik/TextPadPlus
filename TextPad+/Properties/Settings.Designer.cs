@@ -229,7 +229,7 @@ namespace TextPad_.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Segoe UI, 10pt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Cascadia Code, 10pt")]
         public global::System.Drawing.Font ModifiedTextBox_Font {
             get {
                 return ((global::System.Drawing.Font)(this["ModifiedTextBox_Font"]));

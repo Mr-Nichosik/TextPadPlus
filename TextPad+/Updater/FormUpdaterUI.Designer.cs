@@ -1,6 +1,6 @@
 ﻿namespace TextPad_.Updater
 {
-    partial class FormUpdaterUI
+    partial class UpdaterUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUpdaterUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdaterUI));
             UpdaterInfoPanel = new Panel();
             ProgramPathTextBox = new TextBox();
             UpdatePathLabel = new Label();
@@ -135,20 +135,20 @@
             InstallUpdateManuallyBtn.UseVisualStyleBackColor = true;
             InstallUpdateManuallyBtn.Click += InstallUpdateManually;
             // 
-            // FormUpdaterUI
+            // UpdaterUI
             // 
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(InstallUpdateManuallyBtn);
-            Controls.Add(CheckForUpdatesBtn);
-            Controls.Add(label1);
-            Controls.Add(UpdateInfoTextBox);
-            Controls.Add(updateStatusStrip);
-            Controls.Add(UpdaterInfoPanel);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            Name = "FormUpdaterUI";
-            TopMost = true;
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.Controls.Add(InstallUpdateManuallyBtn);
+            this.Controls.Add(CheckForUpdatesBtn);
+            this.Controls.Add(label1);
+            this.Controls.Add(UpdateInfoTextBox);
+            this.Controls.Add(updateStatusStrip);
+            this.Controls.Add(UpdaterInfoPanel);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "UpdaterUI";
+            this.TopMost = true;
             FormClosing += FormUpdaterUI_FormClosing;
             Load += FormUpdaterUILoad;
             UpdaterInfoPanel.ResumeLayout(false);

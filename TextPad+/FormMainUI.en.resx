@@ -142,9 +142,6 @@
   <data name="RunMenuItem.Text" xml:space="preserve">
     <value>Run as</value>
   </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="CreateTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 22</value>
   </data>
@@ -334,7 +331,7 @@
   <data name="SearchEditMenuItem.Text" xml:space="preserve">
     <value>Find and replace            CTRL + F</value>
   </data>
-  <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 164</value>
   </data>
   <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
@@ -382,6 +379,12 @@
   <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
     <value>Redo</value>
   </data>
+  <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="StatusLabel.Text" xml:space="preserve">
+    <value>— </value>
+  </data>
   <data name="TextLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 21</value>
   </data>
@@ -428,6 +431,9 @@
     <value>Files will be opened and saved in this encoding</value>
   </data>
   <data name="kOI8UToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="CP866ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
   </data>
   <data name="newTabToolStripItem.Text" xml:space="preserve">
@@ -492,21 +498,30 @@
   <data name="fontToolStripItem.Text" xml:space="preserve">
     <value>Font</value>
   </data>
+  <data name="SearchToolStripItem.Text" xml:space="preserve">
+    <value>Find and replace</value>
+  </data>
   <data name="RunAsToolsStripLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 22</value>
   </data>
   <data name="RunAsToolsStripLabel.Text" xml:space="preserve">
     <value>Run as </value>
   </data>
-  <data name="explorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RunScriptCombobox.ToolTipText" xml:space="preserve">
+    <value>Select the type of script you want to launch</value>
+  </data>
+  <data name="RunScriptButton.Text" xml:space="preserve">
+    <value>Launch</value>
+  </data>
+  <data name="ExplorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 26</value>
   </data>
-  <data name="listViewImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="ExplorerImagesList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAGQAQMBkAEDARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAHEAScBxAEnARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -555,12 +570,6 @@
   </data>
   <data name="closeFolderToolBtn.Text" xml:space="preserve">
     <value>Close</value>
-  </data>
-  <data name="upSizeListViewTool.Text" xml:space="preserve">
-    <value>Scale up size</value>
-  </data>
-  <data name="downSizeListViewTool.Text" xml:space="preserve">
-    <value>Scale down size</value>
   </data>
   <data name="workFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 25</value>
@@ -722,20 +731,19 @@ Powered by .NET 8.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet
     <value>Change log</value>
   </data>
   <data name="ChangeLogTextBox.Text" xml:space="preserve">
-    <value>TextPad+ 2.7.0
+    <value>TextPad+ 2.8.0
 
 Main changes:
-—Updating the platform version from .NET 6 to .NET 8
-—Added the ability to re-open a file through the "File" menu
-—Added the ability to open the current file folder as a project folder in Explorer
-—Added the ability to clear the list of recent files
-—Added the ability to change the case of selected text in the "Edit" menu
-—Added support for multiple encodings
+—A field with the full path to the selected file has been added to the script launch panel
+—Added automatic substitution of paired characters (), {}, "", etc. Can be disabled in settings
+—Added support for some file extensions when opening and saving
+—Added the ability to run scripts in JScript and launch HTML web pages locally in the default browser
+—Added support for CP866 encoding
 
 Corrections:
-—When saving and opening a file, the "Open file folder" button is no longer blocked
-—Correction of minor bugs in the explorer
-— Improved update checking system</value>
+—Fixed a bug due to which open and saved files were marked as changed after selecting a tab
+—Fixed a bug due to which, after creating a new tab, the file path from the selected one was erased
+—Fixed a bug with copying formatted text</value>
   </data>
   <data name="checkUpdatesButton.Text" xml:space="preserve">
     <value>Check for updates</value>

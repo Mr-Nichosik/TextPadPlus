@@ -8,13 +8,13 @@ namespace TextPad_
     /// Класс главного окна программы, где обрабатывается внешний вид и пользовательский UI.
     /// Всю (наверное) логику работы программы я переместил в класс TextEditor.
     /// <summary>
-    public partial class FormMainUI : Form
+    public partial class MainUI : Form
     {
         // Logger
         private readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
 
         // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "Dev";
+        public string DateOfRelease { get; } = "01.12.2023";
         public string ProgramPath { get; } = Application.StartupPath;
         public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
 
@@ -25,7 +25,7 @@ namespace TextPad_
         private static bool isLanguageChanged = false;
 
         // Конструктор окна
-        public FormMainUI()
+        public MainUI()
         {
             if (Properties.Settings.Default.Language == "English")
             {
@@ -41,7 +41,7 @@ namespace TextPad_
             Logger.Info("MainUI Initialization");
             InitializeComponent();
 
-            Program.MainUI = this;
+            Program.MainForm = this;
 
             Logger.Debug("Program launched successfully");
         }
@@ -53,8 +53,8 @@ namespace TextPad_
 
             if (e.KeyCode == Keys.V && e.Control)
             {
-                MTextBoxPaste();
                 e.Handled = true;
+                MTextBoxPaste();
             }
 
             if (e.KeyCode == Keys.F && e.Control)
@@ -62,8 +62,7 @@ namespace TextPad_
                 mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 if (mtb.TextLength > 0)
                 {
-                    SearchUI searchUI = new();
-                    searchUI.ShowDialog(this);
+                    Program.SearchForm.ShowDialog(this);
 
                     mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 }
@@ -116,10 +115,7 @@ namespace TextPad_
         private void MTextBoxPaste()
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Paste();
-            // Это делается для того, что бы текст встал без форматирования
-            mtb.Text.ToString();
-            mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
+            mtb.Paste(DataFormats.GetFormat(DataFormats.Text));
         }
 
         private void MTextBoxPaste(object sender, EventArgs e)
@@ -229,7 +225,7 @@ namespace TextPad_
 
         private void ClearRecentFilesList(object sender, EventArgs e)
         {
-            SearchEditMenuItem.DropDownItems.Clear();
+            RecentFilesListFileItem.DropDownItems.Clear();
 
             Properties.RecentFiles.Default.RecentFile0 = "Missing";
             Properties.RecentFiles.Default.RecentFile1 = "Missing";
@@ -318,16 +314,15 @@ namespace TextPad_
             }
 
             // Цветовая схема
-            switch (ColorThemeComboBox.SelectedItem)
+            if (Properties.Settings.Default.Theme == "Dark")
             {
-                case "Белая / White":
-                    Properties.Settings.Default.Theme = "White";
-                    ColorThemeWhite();
-                    break;
-                case "Тёмная / Dark":
-                    Properties.Settings.Default.Theme = "Dark";
-                    ColorThemeDark();
-                    break;
+                Properties.Settings.Default.Theme = "Dark";
+                ColorThemeDark();
+            }
+            else
+            {
+                Properties.Settings.Default.Theme = "White";
+                ColorThemeWhite();
             }
 
             // Шрифт
@@ -359,6 +354,7 @@ namespace TextPad_
             // Проводник
             Properties.Settings.Default.FolderExplorerPanel_Visible = ExplorerCheckBox.Checked;
             FolderExplorerPanel.Visible = ExplorerCheckBox.Checked;
+            ExplorerSplitter.Visible = ExplorerCheckBox.Checked;
 
             // Нужно ли закрывать программу при закрытии последней вкладки
             Properties.Settings.Default.ExitWhenClosingLastTab = ExitWhenClosingLastTabCheckBox.Checked;
@@ -417,13 +413,12 @@ namespace TextPad_
 
         private void SearchWindow(object sender, EventArgs e)
         {
-            SearchUI searchUI = new();
-            searchUI.ShowDialog(this);
+            Program.SearchForm.ShowDialog(this);
         }
 
         private void GetUpdate(object sender, EventArgs e)
         {
-            Program.UpdaterUI.ShowDialog(this);
+            Program.UpdaterForm.ShowDialog(this);
         }
 
         // Методы для cTabControl
@@ -447,18 +442,18 @@ namespace TextPad_
                 Font = Properties.Settings.Default.ModifiedTextBox_Font,
                 AcceptsTab = true
             };
-            mtb.TextChanged += new EventHandler(MTextBoxTextChanged!);
-            mtb.DragEnter += new DragEventHandler(FileDragEnter!);
-            mtb.DragDrop += new DragEventHandler(FileDragDrop!);
-            mtb.KeyPress += new KeyPressEventHandler(MTextBoxKeyPress!);
+            mtb.TextChanged += MTextBoxTextChanged!;
+            mtb.DragEnter += FileDragEnter!;
+            mtb.DragDrop += FileDragDrop!;
+            mtb.KeyPress += MTextBoxKeyPress!;
 
             tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
 
-            if (Properties.Settings.Default.Theme == "White")
-                ColorThemeWhite();
-            else
+            if (Properties.Settings.Default.Theme == "Dark")
                 ColorThemeDark();
+            else
+                ColorThemeWhite();
 
             mtb.Encoding = Properties.Settings.Default.DefaultEncoding;
             if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
@@ -477,26 +472,18 @@ namespace TextPad_
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             TabPage tab = cTabControl.SelectedTab!;
 
-            if (mtb.TextLength != 0)
+            if (mtb.IsFileChanged == true)
             {
                 DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
-                {
                     TextEditor.SaveCurrentFile();
-                }
                 else if (dr == DialogResult.No)
-                {
                     cTabControl.TabPages.Remove(tab);
-                }
                 else if (dr == DialogResult.Cancel)
-                {
                     return;
-                }
             }
             else
-            {
                 cTabControl.TabPages.Remove(tab);
-            }
 
             if (cTabControl.TabPages.Count == 0)
             {
@@ -510,6 +497,8 @@ namespace TextPad_
                         break;
                 }
             }
+
+            GC.Collect();
         }
 
         private void CloseAllTabs(object sender, EventArgs e)
@@ -525,22 +514,14 @@ namespace TextPad_
                     {
                         TextEditor.SaveCurrentFile();
                         cTabControl.TabPages.Remove(tab);
-
                     }
                     else if (dr == DialogResult.No)
-                    {
                         cTabControl.TabPages.Remove(tab);
-
-                    }
                     else if (dr == DialogResult.Cancel)
-                    {
                         return;
-                    }
                 }
                 else
-                {
                     cTabControl.TabPages.Remove(tab);
-                }
             }
 
             // Проверяем, нужно ли выходить из программы, если заакрывается последняя вкладка
@@ -556,6 +537,8 @@ namespace TextPad_
                         break;
                 }
             }
+
+            GC.Collect();
         }
 
         private void CloseAllWithoutCurrentTab(object sender, EventArgs e)
@@ -563,9 +546,7 @@ namespace TextPad_
             foreach (TabPage tab in cTabControl.TabPages)
             {
                 if (tab == cTabControl.TabPages[cTabControl.SelectedIndex])
-                {
                     continue;
-                }
 
                 mtb = cTabControl.TabPages[cTabControl.TabPages.IndexOf(tab)].Controls.OfType<MTextBox>().First();
 
@@ -576,22 +557,14 @@ namespace TextPad_
                     {
                         TextEditor.SaveCurrentFile();
                         cTabControl.TabPages.Remove(tab);
-
                     }
                     else if (dr == DialogResult.No)
-                    {
                         cTabControl.TabPages.Remove(tab);
-
-                    }
                     else if (dr == DialogResult.Cancel)
-                    {
                         return;
-                    }
                 }
                 else
-                {
                     cTabControl.TabPages.Remove(tab);
-                }
             }
 
             // Проверяем, нужно ли выходить из программы, если заакрывается последняя вкладка
@@ -607,16 +580,25 @@ namespace TextPad_
                         break;
                 }
             }
+
+            GC.Collect();
         }
 
-        private void CTabControlSelecting(object sender, TabControlCancelEventArgs e)
+        private void CTabControlSelected(object sender, TabControlEventArgs e)
         {
             // Этот метод нужен для того, что бы на каждой новой вкладке применялись заданные ранее параметры (вкл/выкл перенос слов, цвет текста, фона, шрифт и т.д.)
             try
             {
                 mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 mtb.WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp;
-                mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
+                if (mtb.IsFileChanged == false)
+                {
+                    mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
+                    if (mtb.FileName != "Missing")
+                        cTabControl.SelectedTab!.Text = cTabControl.SelectedTab!.Text.TrimEnd('*');
+                    mtb.IsFileChanged = false;
+                }
+
                 TextLengthLabel.Text = mtb.TextLength.ToString();
                 if (mtb.Lines.Length == 0)
                     TextLinesLabel.Text = "1";
@@ -626,22 +608,16 @@ namespace TextPad_
                 CheckFile();
                 EncodingStatusLabel.Text = mtb.Encoding;
 
-                switch (Properties.Settings.Default.Theme)
-                {
-                    case "Dark":
-                        ColorThemeDark();
-                        break;
-                    case "White":
-                        ColorThemeWhite();
-                        break;
-                    default:
-                        ColorThemeWhite();
-                        break;
-                }
+                if (Properties.Settings.Default.Theme == "Dark")
+                    ColorThemeDark();
+                else
+                    ColorThemeWhite();
+
+                GC.Collect();
             }
             catch (Exception ex)
             {
-                Logger.Error($"Error while selecting tabs (?). Maybe not have any tabs open. If nothing is broken, then ignore it. \n{ex}");
+                Logger.Error($"Error while selecting tabs (?). If nothing is broken, then ignore it. \n{ex}");
                 TextLengthLabel.Text = "0";
                 TextLinesLabel.Text = "1";
             }
@@ -650,9 +626,8 @@ namespace TextPad_
         // Изменение текста в Modified TextBox
         internal void MTextBoxTextChanged(object sender, EventArgs e)
         {
-            mtb = (MTextBox)sender;
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-            // Подсчёт количества строк и символов
             TextLengthLabel.Text = mtb.Text.Length.ToString();
             if (mtb.Lines.Length == 0)
                 TextLinesLabel.Text = "1";
@@ -660,10 +635,14 @@ namespace TextPad_
                 TextLinesLabel.Text = mtb.Lines.Length.ToString();
 
             if (mtb.IsFileChanged == false)
+            {
+                mtb.IsFileChanged = true;
                 cTabControl.TabPages[cTabControl.SelectedIndex].Text += "*";
-            mtb.IsFileChanged = true;
+            }
 
             CheckFile();
+
+            GC.Collect();
         }
 
         private void MTextBoxKeyPress(object sender, KeyPressEventArgs e)
@@ -1017,8 +996,7 @@ namespace TextPad_
 
         private void RunPythonScript(object sender, EventArgs e)
         {
-            FormPythonInterpreterUI pythonInterpreterUI = new();
-            pythonInterpreterUI.ShowDialog(this);
+            Program.PythonInterpreterForm.ShowDialog(this);
         }
 
         private void RunWindowsScript(object sender, EventArgs e)
@@ -1079,18 +1057,15 @@ namespace TextPad_
         // Цветовые схемы
         internal void ColorThemeWhite()
         {
-            // цвет mtb
             cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Transparent;
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-            mtb.ForeColor = Color.Black;
             mtb.BackColor = SystemColors.Window;
             mtb.ForeColor = SystemColors.ControlText;
         }
 
         internal void ColorThemeDark()
         {
-            // цвет mtb
             cTabControl.TabPages[cTabControl.SelectedIndex].BackColor = Color.Black;
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
@@ -1180,7 +1155,7 @@ namespace TextPad_
         // Сохранение параметров программы
         internal void SaveParameters()
         {
-            Logger.Debug("Loading settings...");
+            Logger.Debug("Saving settings...");
 
             // Сохранение настроек и недавних файлов
             Properties.Settings.Default.FormMainUI_WindowState = this.WindowState.ToString();
@@ -1211,45 +1186,25 @@ namespace TextPad_
             try
             {
                 if (RecentFilesListFileItem.DropDownItems[0] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile0 = RecentFilesListFileItem.DropDownItems[0].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[1] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile1 = RecentFilesListFileItem.DropDownItems[1].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[2] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile2 = RecentFilesListFileItem.DropDownItems[2].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[3] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile3 = RecentFilesListFileItem.DropDownItems[3].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[4] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile4 = RecentFilesListFileItem.DropDownItems[4].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[5] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile5 = RecentFilesListFileItem.DropDownItems[5].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[6] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile6 = RecentFilesListFileItem.DropDownItems[6].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[7] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile7 = RecentFilesListFileItem.DropDownItems[7].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[8] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile8 = RecentFilesListFileItem.DropDownItems[8].Text;
-                }
                 if (RecentFilesListFileItem.DropDownItems[9] != null)
-                {
                     Properties.RecentFiles.Default.RecentFile9 = RecentFilesListFileItem.DropDownItems[9].Text;
-                }
             }
             catch (Exception ex) { Logger.Error($"An error occurred while saving the list of recent files. \n{ex}"); }
 
@@ -1299,11 +1254,11 @@ namespace TextPad_
                 {
                     mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                     // вв свойство TextBox'a FileName помещаем путь до файла
-                    cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName = args[1];
+                    mtb.FileName = args[1];
                     // помещаем текст
                     File.ReadAllText(args[1]);
                     // задаём даголовок вкладки
-                    cTabControl.SelectedTab!.Text = Path.GetFileName(cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName);
+                    cTabControl.SelectedTab!.Text = Path.GetFileName(mtb.FileName);
 
                     if (RecentFilesListFileItem.DropDownItems.Count == 10)
                         RecentFilesListFileItem.DropDownItems.RemoveAt(0);
@@ -1314,42 +1269,29 @@ namespace TextPad_
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error($"Error while trying to create a tab while running a program through a file: {cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName} \n{ex}");
+                    Logger.Error($"Error while trying to create a tab while running a program through a file: {mtb.FileName} \n{ex}");
                     MessageBox.Show(ex.Message, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
-            // Загрузка параметров из файла Propertis/Default/Settings.settings.
+            // Загрузка параметров из файла Settings.settings.
             Width = Properties.Settings.Default.FormMainUI_Width;
             Height = Properties.Settings.Default.FormMainUI_Height;
-            switch (Properties.Settings.Default.FormMainUI_Topmost)
-            {
-                case true:
-                    TopMost = true;
-                    break;
-                case false:
-                    TopMost = false;
-                    break;
-            }
+            if (Properties.Settings.Default.FormMainUI_Topmost == true)
+                TopMost = true;
+            else
+                TopMost = false;
             ToolBar.Visible = Properties.Settings.Default.ToolStrip_Visible;
             RunFileToolStrip.Visible = Properties.Settings.Default.RunFileToolStrip_Visible;
             StatusBar.Visible = Properties.Settings.Default.StatusStrip_Visible;
             FolderExplorerPanel.Visible = Properties.Settings.Default.FolderExplorerPanel_Visible;
             RunScriptCombobox.SelectedItem = Properties.Settings.Default.ScriptTypeToRun;
             FolderExplorerPanel.Width = Properties.Settings.Default.FolderExplorerPanel_Size;
-            switch (Properties.Settings.Default.Theme)
-            {
-                case "White":
-                    ColorThemeWhite();
-                    ColorThemeWhite();
-                    break;
-
-                case "Dark":
-                    ColorThemeDark();
-                    ColorThemeDark();
-                    break;
-            }
-            this.WindowState = Properties.Settings.Default.FormMainUI_WindowState switch
+            if (Properties.Settings.Default.Theme == "Dark")
+                ColorThemeDark();
+            else
+                ColorThemeWhite();
+            WindowState = Properties.Settings.Default.FormMainUI_WindowState switch
             {
                 "Normal" => FormWindowState.Normal,
                 "Maximized" => FormWindowState.Maximized,
@@ -1359,7 +1301,7 @@ namespace TextPad_
             if (Properties.Settings.Default.AutoCheckUpdate == true)
             {
                 StatusLabel.Text = Resources.Localization.PROGRAMStatusCheckForUpdates;
-                Updater.Updater.GetUpdateQuiet(Program.UpdaterUI.UpdateLatestVerL, Program.UpdaterUI.UpdateInfoTextBox, Program.UpdaterUI.UpdateStatusLabel, Program.UpdaterUI.UpdateStatusProgressBar);
+                Updater.Updater.GetUpdateQuiet(Program.UpdaterForm.UpdateLatestVerL, Program.UpdaterForm.UpdateInfoTextBox, Program.UpdaterForm.UpdateStatusLabel, Program.UpdaterForm.UpdateStatusProgressBar);
             }
 
             CheckFile();
@@ -1369,7 +1311,7 @@ namespace TextPad_
             else
                 StatusLabel.Text = Resources.Localization.PROGRAMStatusReady;
 
-            if (this.Width >= 900)
+            if (Width >= 900)
                 FileNameToolTextBox.Width = 610;
 
             Logger.Info($"Program path: {ProgramPath}");
@@ -1386,16 +1328,10 @@ namespace TextPad_
                 if (MessageBox.Show(Resources.Localization.UPDATERAbortUpdate, Resources.Localization.UPDATERTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     return;
                 else
-                {
-                    e.Cancel = true;
-                    return;
-                }
-
+                    e.Cancel = true; return;
             }
             else if (Program.UpdateStatus == 2)
-            {
                 Process.GetCurrentProcess().Kill();
-            }
             else
             {
                 // Закрытие всех вкладок
@@ -1407,30 +1343,20 @@ namespace TextPad_
                     {
                         DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (dr == DialogResult.Yes)
-                        {
                             TextEditor.SaveCurrentFile();
 
-                        }
                         else if (dr == DialogResult.No)
-                        {
                             cTabControl.TabPages.Remove(tab);
 
-                        }
                         else if (dr == DialogResult.Cancel)
-                        {
-                            e.Cancel = true;
-                            return;
-                        }
+                            e.Cancel = true; return;
                     }
                     else
-                    {
                         cTabControl.TabPages.Remove(tab);
-                    }
                 }
             }
 
             SaveParameters();
-
             Logger.Debug("Exit completed");
         }
 

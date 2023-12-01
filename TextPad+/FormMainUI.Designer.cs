@@ -1,7 +1,7 @@
 ﻿
 namespace TextPad_
 {
-    partial class FormMainUI
+    partial class MainUI
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,7 +30,7 @@ namespace TextPad_
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             MenuBar = new MenuStrip();
             FileMenuItem = new ToolStripMenuItem();
             CreateTabFileMenuItem = new ToolStripMenuItem();
@@ -72,7 +72,7 @@ namespace TextPad_
             SettingsMenuItem = new ToolStripMenuItem();
             RunMenuItem = new ToolStripMenuItem();
             PythonRunMenuItem = new ToolStripMenuItem();
-            PowerShellScriptToolStripMenuItem = new ToolStripMenuItem();
+            WindowsScriptToolStripMenuItem = new ToolStripMenuItem();
             VBSRunMenuItem = new ToolStripMenuItem();
             hTMLToolStripMenuItem = new ToolStripMenuItem();
             SaveFileDialog_ = new SaveFileDialog();
@@ -144,8 +144,8 @@ namespace TextPad_
             FolderExplorerPanel = new Panel();
             workFolderLabel = new Label();
             MainUIPanel = new Panel();
-            ExplorerSplitter = new Splitter();
             cTabControl = new CTabControl();
+            ExplorerSplitter = new Splitter();
             SettingsUIPanel = new Panel();
             settingsTabControl = new TabControl();
             settingsTabPage = new TabPage();
@@ -507,7 +507,7 @@ namespace TextPad_
             // 
             // RunMenuItem
             // 
-            RunMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PythonRunMenuItem, PowerShellScriptToolStripMenuItem, VBSRunMenuItem, hTMLToolStripMenuItem });
+            RunMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PythonRunMenuItem, WindowsScriptToolStripMenuItem, VBSRunMenuItem, hTMLToolStripMenuItem });
             resources.ApplyResources(RunMenuItem, "RunMenuItem");
             RunMenuItem.Name = "RunMenuItem";
             // 
@@ -517,10 +517,11 @@ namespace TextPad_
             resources.ApplyResources(PythonRunMenuItem, "PythonRunMenuItem");
             PythonRunMenuItem.Click += RunPythonScript;
             // 
-            // PowerShellScriptToolStripMenuItem
+            // WindowsScriptToolStripMenuItem
             // 
-            PowerShellScriptToolStripMenuItem.Name = "PowerShellScriptToolStripMenuItem";
-            resources.ApplyResources(PowerShellScriptToolStripMenuItem, "PowerShellScriptToolStripMenuItem");
+            WindowsScriptToolStripMenuItem.Name = "WindowsScriptToolStripMenuItem";
+            resources.ApplyResources(WindowsScriptToolStripMenuItem, "WindowsScriptToolStripMenuItem");
+            WindowsScriptToolStripMenuItem.Click += RunWindowsScript;
             // 
             // VBSRunMenuItem
             // 
@@ -532,6 +533,7 @@ namespace TextPad_
             // 
             hTMLToolStripMenuItem.Name = "hTMLToolStripMenuItem";
             resources.ApplyResources(hTMLToolStripMenuItem, "hTMLToolStripMenuItem");
+            hTMLToolStripMenuItem.Click += RunHTMLPage;
             // 
             // FontDialog_
             // 
@@ -989,8 +991,8 @@ namespace TextPad_
             // MainUIPanel
             // 
             MainUIPanel.BackColor = Color.Transparent;
-            MainUIPanel.Controls.Add(ExplorerSplitter);
             MainUIPanel.Controls.Add(cTabControl);
+            MainUIPanel.Controls.Add(ExplorerSplitter);
             MainUIPanel.Controls.Add(FolderExplorerPanel);
             MainUIPanel.Controls.Add(ToolBar);
             MainUIPanel.Controls.Add(StatusBar);
@@ -999,19 +1001,20 @@ namespace TextPad_
             resources.ApplyResources(MainUIPanel, "MainUIPanel");
             MainUIPanel.Name = "MainUIPanel";
             // 
-            // ExplorerSplitter
-            // 
-            resources.ApplyResources(ExplorerSplitter, "ExplorerSplitter");
-            ExplorerSplitter.Name = "ExplorerSplitter";
-            ExplorerSplitter.TabStop = false;
-            // 
             // cTabControl
             // 
             resources.ApplyResources(cTabControl, "cTabControl");
             cTabControl.EnabneTestFeatures = false;
             cTabControl.Name = "cTabControl";
             cTabControl.SelectedIndex = 0;
-            cTabControl.Selecting += CTabControlSelecting;
+            cTabControl.Selected += CTabControlSelected;
+            // 
+            // ExplorerSplitter
+            // 
+            ExplorerSplitter.Cursor = Cursors.SizeWE;
+            resources.ApplyResources(ExplorerSplitter, "ExplorerSplitter");
+            ExplorerSplitter.Name = "ExplorerSplitter";
+            ExplorerSplitter.TabStop = false;
             // 
             // SettingsUIPanel
             // 
@@ -1564,15 +1567,15 @@ namespace TextPad_
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += SaveSettings;
             // 
-            // FormMainUI
+            // MainUI
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.Controls.Add(MainUIPanel);
             this.Controls.Add(SettingsUIPanel);
+            this.Controls.Add(MainUIPanel);
             this.KeyPreview = true;
             this.MainMenuStrip = MenuBar;
-            this.Name = "FormMainUI";
+            this.Name = "MainUI";
             FormClosing += MainFormClosing;
             Load += MainFormLoad;
             SizeChanged += FormMainUiSizeChanged;
@@ -1834,7 +1837,7 @@ namespace TextPad_
         private Panel panel12;
         internal CheckBox AutoSubstitutionCheckBox;
         private Label label25;
-        private ToolStripMenuItem PowerShellScriptToolStripMenuItem;
+        private ToolStripMenuItem WindowsScriptToolStripMenuItem;
         private ToolStripMenuItem hTMLToolStripMenuItem;
         private ToolStripMenuItem CP866ToolStripMenuItem;
         private Splitter ExplorerSplitter;

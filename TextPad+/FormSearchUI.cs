@@ -30,7 +30,7 @@ namespace TextPad_
         {
             try
             {
-                MTextBox mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                MTextBox mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 if (mtb.Text.Contains(FindTextBox.Text))
                 {
                     int index = mtb.Text.IndexOf(FindTextBox.Text);
@@ -45,7 +45,7 @@ namespace TextPad_
                     mtb.ScrollToCaret();
                     mtb.Focus();
 
-                    Program.MainUI.TextLengthLabel.Text = mtb.Text.Length.ToString();
+                    Program.MainForm.TextLengthLabel.Text = mtb.Text.Length.ToString();
                 }
                 else
                 {
@@ -64,7 +64,7 @@ namespace TextPad_
         {
             try
             {
-                MTextBox mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                MTextBox mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 if (mtb.Text.Contains(FindTextBox.Text))
                 {
                     while (mtb.Text.Contains(FindTextBox.Text))
@@ -78,7 +78,7 @@ namespace TextPad_
                         mtb.Clear();
                         mtb.AppendText(result);
 
-                        Program.MainUI.TextLengthLabel.Text = mtb.Text.Length.ToString();
+                        Program.MainForm.TextLengthLabel.Text = mtb.Text.Length.ToString();
                     }
                 }
                 else
@@ -98,7 +98,7 @@ namespace TextPad_
         {
             try
             {
-                MTextBox mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                MTextBox mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 int lineNumber = Convert.ToInt32(numericLineNumber.Text);
                 if (lineNumber > 0 && lineNumber <= mtb.Lines.Length)
@@ -129,7 +129,7 @@ namespace TextPad_
         {
             try
             {
-                MTextBox mtb = Program.MainUI.cTabControl.TabPages[Program.MainUI.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                MTextBox mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
                 if (mtb.Text.ToLower().Contains(FindTextBox.Text.ToLower()))
                 {
