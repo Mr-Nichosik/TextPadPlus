@@ -1,4 +1,8 @@
-﻿using System.Reflection;
+﻿
+using System.Reflection;
+using System.Drawing;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CustomTabControl
 {
@@ -11,23 +15,20 @@ namespace CustomTabControl
             InitializeComponent();
         }
 
-        public bool EnabneTestFeatures
+        public static string Version
         {
-            get
-            {
-                return TestFeatures;
-            }
-            set
-            {
-                TestFeatures = value;
-            }
+            get { return Assembly.GetExecutingAssembly().GetName().Version!.ToString(3); }
         }
 
-        public static string GetAssemblyVersion()
+        public bool EnabneTestFeatures
         {
-            string assembly = Assembly.GetExecutingAssembly().GetName().Version!.ToString();
-            assembly = assembly.Remove(assembly.Length - 2);
-            return assembly;
+            get { return TestFeatures; }
+            set { TestFeatures = value; }
+        }
+
+        public void OnDrawPage(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawString("+", new Font("verdana", 10, FontStyle.Bold), Brushes.Black, e.ClipRectangle.X + 10, e.ClipRectangle.Y + 10);
         }
     }
 }

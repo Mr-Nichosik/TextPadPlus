@@ -1,6 +1,6 @@
 ﻿namespace TextPad_.Updater
 {
-    partial class UpdaterUI
+    internal sealed partial class UpdaterUI
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdaterUI));
             UpdaterInfoPanel = new Panel();
-            ProgramPathTextBox = new TextBox();
+            PathTextBox = new TextBox();
             UpdatePathLabel = new Label();
             UpdateLatestVerL = new Label();
             UpdateIatestVerLabel = new Label();
@@ -51,7 +51,7 @@
             // 
             resources.ApplyResources(UpdaterInfoPanel, "UpdaterInfoPanel");
             UpdaterInfoPanel.BorderStyle = BorderStyle.FixedSingle;
-            UpdaterInfoPanel.Controls.Add(ProgramPathTextBox);
+            UpdaterInfoPanel.Controls.Add(PathTextBox);
             UpdaterInfoPanel.Controls.Add(UpdatePathLabel);
             UpdaterInfoPanel.Controls.Add(UpdateLatestVerL);
             UpdaterInfoPanel.Controls.Add(UpdateIatestVerLabel);
@@ -59,13 +59,13 @@
             UpdaterInfoPanel.Controls.Add(UpdateInstalledVerLabel);
             UpdaterInfoPanel.Name = "UpdaterInfoPanel";
             // 
-            // ProgramPathTextBox
+            // PathTextBox
             // 
-            resources.ApplyResources(ProgramPathTextBox, "ProgramPathTextBox");
-            ProgramPathTextBox.BackColor = SystemColors.Control;
-            ProgramPathTextBox.BorderStyle = BorderStyle.FixedSingle;
-            ProgramPathTextBox.Name = "ProgramPathTextBox";
-            ProgramPathTextBox.ReadOnly = true;
+            PathTextBox.BackColor = SystemColors.Control;
+            PathTextBox.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(PathTextBox, "PathTextBox");
+            PathTextBox.Name = "PathTextBox";
+            PathTextBox.ReadOnly = true;
             // 
             // UpdatePathLabel
             // 
@@ -94,8 +94,8 @@
             // 
             // updateStatusStrip
             // 
-            resources.ApplyResources(updateStatusStrip, "updateStatusStrip");
             updateStatusStrip.Items.AddRange(new ToolStripItem[] { UpdateStatusLabel, UpdateStatusProgressBar });
+            resources.ApplyResources(updateStatusStrip, "updateStatusStrip");
             updateStatusStrip.Name = "updateStatusStrip";
             updateStatusStrip.ShowItemToolTips = true;
             // 
@@ -106,8 +106,8 @@
             // 
             // UpdateStatusProgressBar
             // 
-            resources.ApplyResources(UpdateStatusProgressBar, "UpdateStatusProgressBar");
             UpdateStatusProgressBar.Name = "UpdateStatusProgressBar";
+            resources.ApplyResources(UpdateStatusProgressBar, "UpdateStatusProgressBar");
             UpdateStatusProgressBar.Style = ProgressBarStyle.Continuous;
             // 
             // UpdateInfoTextBox
@@ -149,7 +149,6 @@
             this.MaximizeBox = false;
             this.Name = "UpdaterUI";
             this.TopMost = true;
-            FormClosing += FormUpdaterUI_FormClosing;
             Load += FormUpdaterUILoad;
             UpdaterInfoPanel.ResumeLayout(false);
             UpdaterInfoPanel.PerformLayout();
@@ -174,6 +173,6 @@
         private Button CheckForUpdatesBtn;
         private Button InstallUpdateManuallyBtn;
         internal ToolStripProgressBar UpdateStatusProgressBar;
-        private TextBox ProgramPathTextBox;
+        private TextBox PathTextBox;
     }
 }

@@ -250,5 +250,29 @@ namespace TextPad_.Properties {
                 this["AutoSubstitutionOfClosingCharacters"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
+        public int AutoSaveTime {
+            get {
+                return ((int)(this["AutoSaveTime"]));
+            }
+            set {
+                this["AutoSaveTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MTextBox_DetectUrls {
+            get {
+                return ((bool)(this["MTextBox_DetectUrls"]));
+            }
+            set {
+                this["MTextBox_DetectUrls"] = value;
+            }
+        }
     }
 }

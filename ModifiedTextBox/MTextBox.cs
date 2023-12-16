@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿
+using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -15,10 +17,7 @@ namespace ModifiedTextBox
         public bool IsFileChanged
         {
             get { return _IsChanged; }
-            set
-            {
-                _IsChanged = value;
-            }
+            set { _IsChanged = value; }
         }
 
         public string Encoding
@@ -39,11 +38,10 @@ namespace ModifiedTextBox
             }
         }
 
-        public static string GetAssemblyVersion()
+        public static string Version
         {
-            string assembly = Assembly.GetExecutingAssembly().GetName().Version!.ToString();
-            assembly = assembly.Remove(assembly.Length - 2);
-            return assembly;
+            get { return Assembly.GetExecutingAssembly().GetName().Version!.ToString(3); }
         }
+
     }
 }

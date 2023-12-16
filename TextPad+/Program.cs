@@ -8,6 +8,7 @@ global using System.Drawing;
 global using System.IO;
 global using System.Linq;
 global using System.Windows.Forms;
+global using System.Reflection;
 
 namespace TextPad_
 {
@@ -16,20 +17,26 @@ namespace TextPad_
     /// </summary>
     internal static class Program
     {
+        // Свойства для чтения с инфой о программе
+        public static readonly string Name = Assembly.GetExecutingAssembly().GetName().Name!.ToString();
+        public static readonly string Version = Assembly.GetExecutingAssembly().GetName().Version!.ToString(3);
+        public static readonly string DateOfRelease = "Dev";
+        public static readonly string Path = Application.StartupPath;
+        public static readonly string WebSite = "https://mr-nichosik.github.io/Main_Page/";
+
         // Окна программы
-        internal static MainUI MainForm = new();
-        internal static Updater.UpdaterUI UpdaterForm = new();
-        internal static SearchUI SearchForm = new();
-        internal static PythonInterpreterUI PythonInterpreterForm = new();
+        internal static readonly MainUI MainForm = new();
+        internal static readonly Updater.UpdaterUI UpdaterForm = new();
+        internal static readonly PythonInterpreterUI PythonInterpreterForm = new();
         // Статус обновления программы
-        // 0 - программа не обновляется; 1 - программа обновляется и зкарывать нельзя; 2 - программа обновляется и нуобходимо её закрыть
-        public static byte UpdateStatus = 0;
+        // 0 - программа не обновляется; 1 - программа обновляется и закрывать нельзя; 2 - программа обновляется и необходимо её закрыть
+        public static byte UpdateStatus { get; set; } = 0;
 
         /// <summary>
         /// Точка входа в программу
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             ApplicationConfiguration.Initialize();
             Application.Run(MainForm);

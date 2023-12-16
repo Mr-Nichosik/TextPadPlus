@@ -15,7 +15,7 @@
     <Description>TextPad+ x86</Description>
     <PackageIcon>TextPad+ Logo.png</PackageIcon>
     <PackageProjectUrl>https://mr-nichosik.github.io/Main_Page/</PackageProjectUrl>
-    <Version>2.8.0</Version>
+    <Version>2.9.0</Version>
     <IncludeSymbols>False</IncludeSymbols>
     <StartupObject>TextPad_.Program</StartupObject>
     <Company>TextPad+</Company>

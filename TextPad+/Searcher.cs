@@ -1,32 +1,12 @@
 ﻿
 namespace TextPad_
 {
-    /// <summary>
-    /// Класс окна с инструментами для перехода к строкам, поиска и замены слов в тексте.
-    /// </summary>
-
-    public partial class SearchUI : Form
+    internal static class Searcher
     {
-        private readonly LogSystem Logger = new LogSystem("logs");
-        private int findCutLength = 0;
+        private static readonly LogSystem Logger = new() { UserFolderName = $"{Application.StartupPath}\\logs" };
+        private static int findCutLength = 0;
 
-        public SearchUI()
-        {
-            if (Properties.Settings.Default.Language == "English")
-            {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
-            }
-            else if (Properties.Settings.Default.Language == "Russian")
-            {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
-            }
-
-            InitializeComponent();
-        }
-
-        private void Replace(object sender, EventArgs e)
+        internal static void Replace(ref TextBox FindTextBox, ref TextBox ReplaceTextBox)
         {
             try
             {
@@ -60,7 +40,7 @@ namespace TextPad_
             }
         }
 
-        private void ReplaceAll(object sender, EventArgs e)
+        internal static void ReplaceAll(ref TextBox FindTextBox, ref TextBox ReplaceTextBox)
         {
             try
             {
@@ -94,23 +74,20 @@ namespace TextPad_
             }
         }
 
-        private void GoToLine(object sender, EventArgs e)
+        internal static void GoToLine(ref NumericUpDown GoToLineNumericUpDown)
         {
             try
             {
                 MTextBox mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
-                int lineNumber = Convert.ToInt32(numericLineNumber.Text);
+                int lineNumber = Convert.ToInt32(GoToLineNumericUpDown.Text);
                 if (lineNumber > 0 && lineNumber <= mtb.Lines.Length)
                 {
-                    mtb.SelectionStart = mtb.GetFirstCharIndexFromLine(Convert.ToInt32(numericLineNumber.Text) - 1);
+                    mtb.SelectionStart = mtb.GetFirstCharIndexFromLine(Convert.ToInt32(GoToLineNumericUpDown.Text) - 1);
                     mtb.ScrollToCaret();
-                    this.Close();
                 }
                 else
-                {
                     MessageBox.Show(Resources.Localization.LineNotFound, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
             catch (Exception ex)
             {
@@ -120,12 +97,9 @@ namespace TextPad_
             }
         }
 
-        private void Search(object sender, EventArgs e)
-        {
-            Search(ref findCutLength);
-        }
+        internal static void Search(ref TextBox FindTextBox) => Search(ref FindTextBox, ref findCutLength);
 
-        private void Search(ref int findCutLength)
+        internal static void Search(ref TextBox FindTextBox, ref int findCutLength)
         {
             try
             {
@@ -145,14 +119,15 @@ namespace TextPad_
                         findCutLength += FindTextBox.Text.Length + resultPosition;
                     }
                     else if (resultPosition == -1 && findCutLength != 0)
-                    {
                         findCutLength = 0;
-                    }
+
+                    FindTextBox.BackColor = SystemColors.Window;
                 }
                 else
                 {
                     findCutLength = 0;
-                    MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FindTextBox.BackColor = Color.LavenderBlush;
+                    //MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

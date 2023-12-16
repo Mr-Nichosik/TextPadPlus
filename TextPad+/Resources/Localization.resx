@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LineNotFound" xml:space="preserve">
-    <value>По вашему запросу ничего не нашлось.</value>
+    <value>По вашему запросу ничего не нашлось</value>
   </data>
   <data name="MSGErrorCantDeleteFile" xml:space="preserve">
-    <value>Не удалось удалить элемент.</value>
+    <value>Не удалось удалить элемент</value>
   </data>
   <data name="MSGErrorNoTabsOpen" xml:space="preserve">
-    <value>Не открыто ни одной вкладки.</value>
+    <value>Не открыто ни одной вкладки</value>
   </data>
   <data name="MSGErrorPythonInterPath" xml:space="preserve">
     <value>Необходимо указать путь до интерпретатора Python.</value>
@@ -133,13 +133,13 @@
     <value>Ошибка при запуске сценария командной строки. Возможно, он неправильно сохранён или отсутствует файл C:\Windows\cmd.exe.</value>
   </data>
   <data name="MSGErrorRunPythonFile" xml:space="preserve">
-    <value>Ошибка при запуске Python программы.</value>
+    <value>Ошибка при запуске Python скрипта</value>
   </data>
   <data name="MSGErrorRunVBSJSFile" xml:space="preserve">
     <value>Ошибка при запуске файла сценария Visual Basic / JScript. Возможно, он неправильно сохранён или отсутствует программа Windows Based Host Script C:\Windows\System32\wscript.exe .</value>
   </data>
   <data name="MSGErrorWhenCheckingInternet" xml:space="preserve">
-    <value>Произошла ошибка. Проверьте подключение к интернету.</value>
+    <value>Произошла ошибка. Проверьте подключение к интернету</value>
   </data>
   <data name="MSGErrorWhenOpenFIle" xml:space="preserve">
     <value>При открытии файла возникла ошибка</value>
@@ -151,25 +151,25 @@
     <value>При сохранении файла возникла ошибка</value>
   </data>
   <data name="MSGErrorFileNotFound" xml:space="preserve">
-    <value>Файл не найден.</value>
+    <value>Файл не найден</value>
   </data>
   <data name="MSGQestionMoveFileToTrash" xml:space="preserve">
     <value>Переместить элемент в корзину?</value>
   </data>
   <data name="MSGQuestionSaveFile" xml:space="preserve">
-    <value>Сохранить текст в файл</value>
+    <value>Сохранить файл</value>
   </data>
-  <data name="newDocumentTitle" xml:space="preserve">
+  <data name="NewDocumentTitle" xml:space="preserve">
     <value>Новый документ</value>
   </data>
-  <data name="openFileDialogFilter" xml:space="preserve">
+  <data name="OpenFileDialogFilter" xml:space="preserve">
     <value>Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*</value>
   </data>
-  <data name="saveFileDialogFilter" xml:space="preserve">
+  <data name="SaveFileDialogFilter" xml:space="preserve">
     <value>Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*</value>
   </data>
   <data name="SearchUINoFoundWord" xml:space="preserve">
-    <value>Не найдено такого слова.</value>
+    <value>Слово не найдено</value>
   </data>
   <data name="SettingsLangChange" xml:space="preserve">
     <value>Для применения настроек перезапустите программу.</value>

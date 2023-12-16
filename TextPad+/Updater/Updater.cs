@@ -1,36 +1,35 @@
 ﻿
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace TextPad_.Updater
 {
-    internal class Updater
+    internal static class Updater
     {
 
         // Logger
-        private static readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
+        private static readonly LogSystem Logger = new() { UserFolderName = $"{Application.StartupPath}\\logs" };
 
         // Свойства с сыллками
-        public static string ProgramVersion { get; set; } = MainUI.GetAssemblyVersion();
-        public static string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
         public static string TextPadVersionSite { get; private set; } = "https://mr-nichosik.github.io/TextPadVersion/";
         public static string TextPadUpdateInstallerSite { get; private set; } = "https://github.com/Mr-Nichosik/TextPadPlus/releases/download/vCurrent/Setup.exe";
         public static string TextPadNewUpdateRuSite { get; private set; } = "https://mr-nichosik.github.io/TextPadNewUpdateRu/";
         public static string TextPadNewUpdateEnSite { get; private set; } = "https://mr-nichosik.github.io/TextPadNewUpdateEn/";
 
-        // Новая версия с ервера
+        // Новая с сервера
         private static string ServerVersion = "";
 
         // Веб-фигня
-        private static readonly WebClient UpdaterClient = new();
+        private static readonly HttpClient UpdaterClient = new();
 
-        public static void OpenUpdatesSite()
+        public static void OpenWebSite()
         {
             try
             {
                 Process websiteProcess = new();
                 websiteProcess.StartInfo.UseShellExecute = true;
-                websiteProcess.StartInfo.FileName = WebSite;
+                websiteProcess.StartInfo.FileName = Program.WebSite;
                 websiteProcess.Start();
             }
             catch (Exception ex)
@@ -47,13 +46,14 @@ namespace TextPad_.Updater
 
             try
             {
-                // соответствует
-                ServerVersion = UpdaterClient.DownloadString(TextPadVersionSite);
+                if (InternetConnection() == false) throw new Exception(Resources.Localization.UPDATERErrorCantCheckUpdates);
 
-                if (ServerVersion.Contains(ProgramVersion))
+                ServerVersion = await GetProgramVersion();
+
+                // соответствует
+                if (ServerVersion == Program.Version)
                 {
                     Logger.Debug("The latest version of the program is installed, the test was successful");
-
                     UpdateIatestVerL.Text = ServerVersion;
                     MessageBox.Show(Resources.Localization.UPDATERInfoLatestVersion, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -63,11 +63,9 @@ namespace TextPad_.Updater
                 {
                     // Выводим это на в интерфейс
                     UpdateIatestVerL.Text = ServerVersion;
-                    UpdateIatestVerL.Text = ServerVersion;
 
                     // пробуем получить список изменений
-                    if (GetChangelog(ref UpdateInfoTextBox) == 1)
-                        return;
+                    GetChangelog(UpdateInfoTextBox);
 
                     // спрашиваем пользователя, надо ли оно ему
 
@@ -77,16 +75,21 @@ namespace TextPad_.Updater
                         Logger.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
+                        // Работа с интерфейсом
                         Program.MainForm.StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
 
+                        // Сохранение настроек программы
                         Program.MainForm.SaveParameters();
-                        StartUninstaller();
+                        // Работа с интерфейсом
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
                         UpdateStatusProgressBar.Value = 25;
+                        // Запуск деинсталлятора текущей версии
+                        try { Process.Start("unins000.exe", $"/SILENT"); } catch { }
+                        // Работа с интерфейсом
                         UpdateStatusLabel.ToolTipText = Resources.Localization.PROGRAMStatusUpdating;
-
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDownloadAndInstall;
                         UpdateStatusProgressBar.Value = 50;
+                        // Загрузка обновления
                         await Task.Run(() => DownloadUpdate());
                     }
                     else return;
@@ -106,14 +109,14 @@ namespace TextPad_.Updater
 
             try
             {
-                if (await Task.Run(() => CheckProgramVersion()) == 1)
-                    throw new Exception("Не удалось проверить наличие обновлений");
+                if (InternetConnection() == false) throw new Exception(Resources.Localization.UPDATERErrorCantCheckUpdates);
+
+                ServerVersion = await GetProgramVersion();
 
                 // соответствует
-                if (ServerVersion.Contains(ProgramVersion))
+                if (ServerVersion == Program.Version)
                 {
                     Logger.Debug("The latest version of the program is installed, the test was successful");
-
                     UpdateIatestVerL.Text = ServerVersion;
                     return;
                 }
@@ -124,8 +127,7 @@ namespace TextPad_.Updater
                     UpdateIatestVerL.Text = ServerVersion;
 
                     // пробуем получить список изменений
-                    if (GetChangelog(ref UpdateInfoTextBox) == 1)
-                        return;
+                    GetChangelog(UpdateInfoTextBox);
 
                     // спрашиваем пользователя, надо ли оно ему
 
@@ -135,15 +137,22 @@ namespace TextPad_.Updater
                         Logger.Debug("Closing the program, downloading the update");
 
                         Program.UpdateStatus = 1;
+                        // Работа с интерфейсом
+                        Program.MainForm.StatusLabel.Text = Resources.Localization.PROGRAMStatusUpdating;
+
+                        // Сохранение настроек программы
                         Program.MainForm.SaveParameters();
-                        StartUninstaller();
-                        UpdateStatusLabel.ToolTipText = "Выполняется обновление...";
+                        // Работа с интерфейсом
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDeleteOldVersion;
                         UpdateStatusProgressBar.Value = 25;
-
-                        await Task.Run(() => DownloadUpdate());
+                        // Запуск деинсталлятора текущей версии
+                        try { Process.Start("unins000.exe", $"/SILENT"); } catch { }
+                        // Работа с интерфейсом
+                        UpdateStatusLabel.ToolTipText = Resources.Localization.PROGRAMStatusUpdating;
                         UpdateStatusLabel.Text = Resources.Localization.UPDATERStatusUpdateDownloadAndInstall;
                         UpdateStatusProgressBar.Value = 50;
+                        // Загрузка обновления
+                        await Task.Run(() => DownloadUpdate());
                     }
                     else return;
                 }
@@ -155,14 +164,23 @@ namespace TextPad_.Updater
             }
         }
 
-        private static byte CheckProgramVersion()
+        private static bool InternetConnection()
         {
-            try { ServerVersion = UpdaterClient.DownloadString(TextPadVersionSite); }            
-            catch { return 1; }
-            return 0;
+            try
+            {
+                Dns.GetHostEntryAsync("mr-nichosik.github.io");
+                return true;
+            }
+            catch { return false; }
         }
 
-        private static int GetChangelog(ref TextBox UpdateInfoTextBox)
+        private static async Task<string> GetProgramVersion()
+        {
+            HttpResponseMessage response = await UpdaterClient.GetAsync(TextPadVersionSite);
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        private static async void GetChangelog(TextBox UpdateInfoTextBox)
         {
             try
             {
@@ -172,44 +190,38 @@ namespace TextPad_.Updater
                 {
                     // Если русский, то качаем chngelog с русской версии веб страницы
                     case "Russian":
-                        UpdateInfoTextBox.Text = UpdaterClient.DownloadString(TextPadNewUpdateRuSite);
+                        HttpResponseMessage responseRu = await UpdaterClient.GetAsync(TextPadNewUpdateRuSite);
+                        UpdateInfoTextBox.Text = await responseRu.Content.ReadAsStringAsync();
                         break;
                     // Если английский
                     case "English":
-                        UpdateInfoTextBox.Text = UpdaterClient.DownloadString(TextPadNewUpdateEnSite);
+                        HttpResponseMessage responseEn = await UpdaterClient.GetAsync(TextPadNewUpdateEnSite);
+                        UpdateInfoTextBox.Text = await responseEn.Content.ReadAsStringAsync();
                         break;
                 }
                 Logger.Debug("Received update information");
-
-                return 0;
             }
             catch (Exception ex)
             {
                 Logger.Error($"{ex} error getting update information");
                 MessageBox.Show(Resources.Localization.UPDATERErrorCantCheckUpdates, Resources.Localization.UPDATERTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return 1;
             }
         }
 
-        private static void StartUninstaller()
-        {
-            try { Process.Start("unins000.exe", $"/SILENT"); }
-            catch { }
-        }
-
-        private static void DownloadUpdate()
+        private static async void DownloadUpdate()
         {
             try
             {
                 Logger.Info("Update download starts");
-                Directory.CreateDirectory($"{Program.MainForm.ProgramPath}Update\\");
+                Directory.CreateDirectory($"{Program.Path}Update\\");
 
-                UpdaterClient.DownloadFile(TextPadUpdateInstallerSite, $"{Program.MainForm.ProgramPath}Update\\Setup.exe");
+                Stream stream = await UpdaterClient.GetStreamAsync(TextPadUpdateInstallerSite);
+                FileStream file = new($"{Program.Path}Update\\Setup.exe", FileMode.CreateNew);
+                await stream.CopyToAsync(file);
 
                 Program.UpdateStatus = 2;
 
-                Process.Start("Update\\Setup.exe", $"/SILENT /DIR=\"{Program.MainForm.ProgramPath}\"");
+                Process.Start("Update\\Setup.exe", $"/SILENT /DIR=\"{Program.Path}\"");
                 Application.Exit();
             }
             catch

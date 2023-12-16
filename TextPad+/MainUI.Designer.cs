@@ -1,7 +1,7 @@
 ﻿
 namespace TextPad_
 {
-    partial class MainUI
+    internal sealed partial class MainUI
     {
         /// <summary>
         ///  Required designer variable.
@@ -40,8 +40,21 @@ namespace TextPad_
             NewWindowFileMenuItem = new ToolStripMenuItem();
             SaveFileMenuItem = new ToolStripMenuItem();
             SaveAsFileMenuItem = new ToolStripMenuItem();
+            SaveAllFileMenuItem = new ToolStripMenuItem();
             OpenFileMenuItem = new ToolStripMenuItem();
             ReopenFileMenuItem = new ToolStripMenuItem();
+            выбратьКодировкуToolStripMenuItem = new ToolStripMenuItem();
+            uTF32BEToolStripMenuItem1 = new ToolStripMenuItem();
+            uTF32ToolStripMenuItem = new ToolStripMenuItem();
+            uTF16BEToolStripMenuItem1 = new ToolStripMenuItem();
+            uTF16ToolStripMenuItem1 = new ToolStripMenuItem();
+            uTF8BOMToolStripMenuItem1 = new ToolStripMenuItem();
+            uTF8ToolStripMenuItem1 = new ToolStripMenuItem();
+            aSCIIToolStripMenuItem1 = new ToolStripMenuItem();
+            windows1251ToolStripMenuItem = new ToolStripMenuItem();
+            kOI8RToolStripMenuItem2 = new ToolStripMenuItem();
+            kOI8UToolStripMenuItem1 = new ToolStripMenuItem();
+            cP866ToolStripMenuItem1 = new ToolStripMenuItem();
             DeleteFileMenuItem = new ToolStripMenuItem();
             separator1FileMenuItem = new ToolStripSeparator();
             OpenFileFolderFileMenuItem = new ToolStripMenuItem();
@@ -108,21 +121,22 @@ namespace TextPad_
             kOI8UToolStripMenuItem = new ToolStripMenuItem();
             CP866ToolStripMenuItem = new ToolStripMenuItem();
             ToolBar = new ToolStrip();
-            newTabToolStripItem = new ToolStripButton();
-            closeTabToolStripItem = new ToolStripButton();
+            NewTabToolStripItem = new ToolStripButton();
+            CloseTabToolStripItem = new ToolStripButton();
             toolStripSep1 = new ToolStripSeparator();
-            saveToolStripItem = new ToolStripButton();
-            openToolStripItem = new ToolStripButton();
+            SaveToolStripItem = new ToolStripButton();
+            SaveAllToolStripItem = new ToolStripButton();
+            OpenToolStripItem = new ToolStripButton();
             toolStripSep2 = new ToolStripSeparator();
-            copyToolStripItem = new ToolStripButton();
-            cutToolStripItem = new ToolStripButton();
-            pasteToolStripItem = new ToolStripButton();
-            deleteToolStripItem = new ToolStripButton();
+            CopyToolStripItem = new ToolStripButton();
+            CutToolStripItem = new ToolStripButton();
+            PasteToolStripItem = new ToolStripButton();
+            DeleteToolStripItem = new ToolStripButton();
             toolStripSep3 = new ToolStripSeparator();
-            undoToolStripItem = new ToolStripButton();
-            redoToolStripItem = new ToolStripButton();
+            UndoToolStripItem = new ToolStripButton();
+            RedoToolStripItem = new ToolStripButton();
             toolStripSep4 = new ToolStripSeparator();
-            fontToolStripItem = new ToolStripButton();
+            FontToolStripItem = new ToolStripButton();
             toolStripSep5 = new ToolStripSeparator();
             SearchToolStripItem = new ToolStripButton();
             RunFileToolStrip = new ToolStrip();
@@ -145,11 +159,22 @@ namespace TextPad_
             workFolderLabel = new Label();
             MainUIPanel = new Panel();
             cTabControl = new CTabControl();
+            SearchPanel = new Panel();
+            CloseSearchPanelButton = new Button();
+            GoToLineButton = new Button();
+            GoToLineNumericUpDown = new NumericUpDown();
+            ReplaceAllButton = new Button();
+            ReplaceButton = new Button();
+            ReplaceTextBox = new TextBox();
+            FindTextBox = new TextBox();
             ExplorerSplitter = new Splitter();
             SettingsUIPanel = new Panel();
             settingsTabControl = new TabControl();
             settingsTabPage = new TabPage();
             SettingsEditorPanel = new Panel();
+            panel14 = new Panel();
+            DetectUrlsCheckBox = new CheckBox();
+            label28 = new Label();
             panel10 = new Panel();
             AutoChekUpdateCheckBox = new CheckBox();
             label20 = new Label();
@@ -174,16 +199,19 @@ namespace TextPad_
             TopmostCheckBox = new CheckBox();
             label4 = new Label();
             SettingsToolsPanel = new Panel();
+            panel13 = new Panel();
+            AutoSaveTimeComboBox = new ComboBox();
+            label27 = new Label();
             panel12 = new Panel();
             AutoSubstitutionCheckBox = new CheckBox();
             label25 = new Label();
+            panel7 = new Panel();
+            StatusBarCheckBox = new CheckBox();
+            label7 = new Label();
             label14 = new Label();
             panel6 = new Panel();
             RunFileToolBarCheckBox = new CheckBox();
             label6 = new Label();
-            panel7 = new Panel();
-            StatusBarCheckBox = new CheckBox();
-            label7 = new Label();
             panel1 = new Panel();
             ExplorerCheckBox = new CheckBox();
             label1 = new Label();
@@ -227,6 +255,7 @@ namespace TextPad_
             checkUpdatesButton = new Button();
             cancelBatton = new Button();
             saveButton = new Button();
+            AutoSaveTimer = new Timer(components);
             MenuBar.SuspendLayout();
             ContextMenu.SuspendLayout();
             StatusBar.SuspendLayout();
@@ -236,10 +265,13 @@ namespace TextPad_
             FolderToolBar.SuspendLayout();
             FolderExplorerPanel.SuspendLayout();
             MainUIPanel.SuspendLayout();
+            SearchPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)GoToLineNumericUpDown).BeginInit();
             SettingsUIPanel.SuspendLayout();
             settingsTabControl.SuspendLayout();
             settingsTabPage.SuspendLayout();
             SettingsEditorPanel.SuspendLayout();
+            panel14.SuspendLayout();
             panel10.SuspendLayout();
             panel2.SuspendLayout();
             panel11.SuspendLayout();
@@ -248,9 +280,10 @@ namespace TextPad_
             panel9.SuspendLayout();
             panel4.SuspendLayout();
             SettingsToolsPanel.SuspendLayout();
+            panel13.SuspendLayout();
             panel12.SuspendLayout();
-            panel6.SuspendLayout();
             panel7.SuspendLayout();
+            panel6.SuspendLayout();
             panel1.SuspendLayout();
             panel8.SuspendLayout();
             infoTabPage.SuspendLayout();
@@ -273,7 +306,7 @@ namespace TextPad_
             // 
             // FileMenuItem
             // 
-            FileMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CreateTabFileMenuItem, CloseTabFileMenuItem, CloseAllTabsFileMenuItem, CloseWithoutCurrentTabFileMenuItem, NewWindowFileMenuItem, SaveFileMenuItem, SaveAsFileMenuItem, OpenFileMenuItem, ReopenFileMenuItem, DeleteFileMenuItem, separator1FileMenuItem, OpenFileFolderFileMenuItem, OpenFolderAsProjectMenuFileItem, toolStripSeparator3, RecentFilesListFileItem, ClearRecentFilesListFileMenuItem, separator2FileMenuItem, ExitFileMenuItem });
+            FileMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CreateTabFileMenuItem, CloseTabFileMenuItem, CloseAllTabsFileMenuItem, CloseWithoutCurrentTabFileMenuItem, NewWindowFileMenuItem, SaveFileMenuItem, SaveAsFileMenuItem, SaveAllFileMenuItem, OpenFileMenuItem, ReopenFileMenuItem, выбратьКодировкуToolStripMenuItem, DeleteFileMenuItem, separator1FileMenuItem, OpenFileFolderFileMenuItem, OpenFolderAsProjectMenuFileItem, toolStripSeparator3, RecentFilesListFileItem, ClearRecentFilesListFileMenuItem, separator2FileMenuItem, ExitFileMenuItem });
             resources.ApplyResources(FileMenuItem, "FileMenuItem");
             FileMenuItem.Name = "FileMenuItem";
             // 
@@ -323,6 +356,13 @@ namespace TextPad_
             resources.ApplyResources(SaveAsFileMenuItem, "SaveAsFileMenuItem");
             SaveAsFileMenuItem.Click += SaveAsFile;
             // 
+            // SaveAllFileMenuItem
+            // 
+            SaveAllFileMenuItem.Image = Properties.Resources.DocumentSaveAll;
+            SaveAllFileMenuItem.Name = "SaveAllFileMenuItem";
+            resources.ApplyResources(SaveAllFileMenuItem, "SaveAllFileMenuItem");
+            SaveAllFileMenuItem.Click += SaveAllFiles;
+            // 
             // OpenFileMenuItem
             // 
             OpenFileMenuItem.Image = Properties.Resources.DocumentOpen;
@@ -335,6 +375,78 @@ namespace TextPad_
             ReopenFileMenuItem.Name = "ReopenFileMenuItem";
             resources.ApplyResources(ReopenFileMenuItem, "ReopenFileMenuItem");
             ReopenFileMenuItem.Click += ReopenFile;
+            // 
+            // выбратьКодировкуToolStripMenuItem
+            // 
+            выбратьКодировкуToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { uTF32BEToolStripMenuItem1, uTF32ToolStripMenuItem, uTF16BEToolStripMenuItem1, uTF16ToolStripMenuItem1, uTF8BOMToolStripMenuItem1, uTF8ToolStripMenuItem1, aSCIIToolStripMenuItem1, windows1251ToolStripMenuItem, kOI8RToolStripMenuItem2, kOI8UToolStripMenuItem1, cP866ToolStripMenuItem1 });
+            выбратьКодировкуToolStripMenuItem.Name = "выбратьКодировкуToolStripMenuItem";
+            resources.ApplyResources(выбратьКодировкуToolStripMenuItem, "выбратьКодировкуToolStripMenuItem");
+            // 
+            // uTF32BEToolStripMenuItem1
+            // 
+            uTF32BEToolStripMenuItem1.Name = "uTF32BEToolStripMenuItem1";
+            resources.ApplyResources(uTF32BEToolStripMenuItem1, "uTF32BEToolStripMenuItem1");
+            uTF32BEToolStripMenuItem1.Click += ChangeEncodingToUTF32BE;
+            // 
+            // uTF32ToolStripMenuItem
+            // 
+            uTF32ToolStripMenuItem.Name = "uTF32ToolStripMenuItem";
+            resources.ApplyResources(uTF32ToolStripMenuItem, "uTF32ToolStripMenuItem");
+            uTF32ToolStripMenuItem.Click += ChangeEncodingToUTF32;
+            // 
+            // uTF16BEToolStripMenuItem1
+            // 
+            uTF16BEToolStripMenuItem1.Name = "uTF16BEToolStripMenuItem1";
+            resources.ApplyResources(uTF16BEToolStripMenuItem1, "uTF16BEToolStripMenuItem1");
+            uTF16BEToolStripMenuItem1.Click += ChangeEncodingToUTF16BE;
+            // 
+            // uTF16ToolStripMenuItem1
+            // 
+            uTF16ToolStripMenuItem1.Name = "uTF16ToolStripMenuItem1";
+            resources.ApplyResources(uTF16ToolStripMenuItem1, "uTF16ToolStripMenuItem1");
+            uTF16ToolStripMenuItem1.Click += ChangeEncodingToUTF16;
+            // 
+            // uTF8BOMToolStripMenuItem1
+            // 
+            uTF8BOMToolStripMenuItem1.Name = "uTF8BOMToolStripMenuItem1";
+            resources.ApplyResources(uTF8BOMToolStripMenuItem1, "uTF8BOMToolStripMenuItem1");
+            uTF8BOMToolStripMenuItem1.Click += ChangeEncodingToUTF8BOM;
+            // 
+            // uTF8ToolStripMenuItem1
+            // 
+            uTF8ToolStripMenuItem1.Name = "uTF8ToolStripMenuItem1";
+            resources.ApplyResources(uTF8ToolStripMenuItem1, "uTF8ToolStripMenuItem1");
+            uTF8ToolStripMenuItem1.Click += ChangeEncodingToUTF8;
+            // 
+            // aSCIIToolStripMenuItem1
+            // 
+            aSCIIToolStripMenuItem1.Name = "aSCIIToolStripMenuItem1";
+            resources.ApplyResources(aSCIIToolStripMenuItem1, "aSCIIToolStripMenuItem1");
+            aSCIIToolStripMenuItem1.Click += ChangeEncodingToASCII;
+            // 
+            // windows1251ToolStripMenuItem
+            // 
+            windows1251ToolStripMenuItem.Name = "windows1251ToolStripMenuItem";
+            resources.ApplyResources(windows1251ToolStripMenuItem, "windows1251ToolStripMenuItem");
+            windows1251ToolStripMenuItem.Click += ChangeEncodingToWindows1251;
+            // 
+            // kOI8RToolStripMenuItem2
+            // 
+            kOI8RToolStripMenuItem2.Name = "kOI8RToolStripMenuItem2";
+            resources.ApplyResources(kOI8RToolStripMenuItem2, "kOI8RToolStripMenuItem2");
+            kOI8RToolStripMenuItem2.Click += ChangeEncodingToKOI8R;
+            // 
+            // kOI8UToolStripMenuItem1
+            // 
+            kOI8UToolStripMenuItem1.Name = "kOI8UToolStripMenuItem1";
+            resources.ApplyResources(kOI8UToolStripMenuItem1, "kOI8UToolStripMenuItem1");
+            kOI8UToolStripMenuItem1.Click += ChangeEncodingToKOI8U;
+            // 
+            // cP866ToolStripMenuItem1
+            // 
+            cP866ToolStripMenuItem1.Name = "cP866ToolStripMenuItem1";
+            resources.ApplyResources(cP866ToolStripMenuItem1, "cP866ToolStripMenuItem1");
+            cP866ToolStripMenuItem1.Click += ChangeEncodingToCP866;
             // 
             // DeleteFileMenuItem
             // 
@@ -497,7 +609,7 @@ namespace TextPad_
             SearchEditMenuItem.Image = Properties.Resources.Search;
             SearchEditMenuItem.Name = "SearchEditMenuItem";
             resources.ApplyResources(SearchEditMenuItem, "SearchEditMenuItem");
-            SearchEditMenuItem.Click += SearchWindow;
+            SearchEditMenuItem.Click += SearchPanelControl;
             // 
             // SettingsMenuItem
             // 
@@ -729,25 +841,25 @@ namespace TextPad_
             ToolBar.BackColor = SystemColors.Control;
             resources.ApplyResources(ToolBar, "ToolBar");
             ToolBar.GripStyle = ToolStripGripStyle.Hidden;
-            ToolBar.Items.AddRange(new ToolStripItem[] { newTabToolStripItem, closeTabToolStripItem, toolStripSep1, saveToolStripItem, openToolStripItem, toolStripSep2, copyToolStripItem, cutToolStripItem, pasteToolStripItem, deleteToolStripItem, toolStripSep3, undoToolStripItem, redoToolStripItem, toolStripSep4, fontToolStripItem, toolStripSep5, SearchToolStripItem });
+            ToolBar.Items.AddRange(new ToolStripItem[] { NewTabToolStripItem, CloseTabToolStripItem, toolStripSep1, SaveToolStripItem, SaveAllToolStripItem, OpenToolStripItem, toolStripSep2, CopyToolStripItem, CutToolStripItem, PasteToolStripItem, DeleteToolStripItem, toolStripSep3, UndoToolStripItem, RedoToolStripItem, toolStripSep4, FontToolStripItem, toolStripSep5, SearchToolStripItem });
             ToolBar.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             ToolBar.Name = "ToolBar";
             // 
-            // newTabToolStripItem
+            // NewTabToolStripItem
             // 
-            newTabToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(newTabToolStripItem, "newTabToolStripItem");
-            newTabToolStripItem.Image = Properties.Resources.DocumentCreate;
-            newTabToolStripItem.Name = "newTabToolStripItem";
-            newTabToolStripItem.Click += CreateTab;
+            NewTabToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(NewTabToolStripItem, "NewTabToolStripItem");
+            NewTabToolStripItem.Image = Properties.Resources.DocumentCreate;
+            NewTabToolStripItem.Name = "NewTabToolStripItem";
+            NewTabToolStripItem.Click += CreateTab;
             // 
-            // closeTabToolStripItem
+            // CloseTabToolStripItem
             // 
-            closeTabToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(closeTabToolStripItem, "closeTabToolStripItem");
-            closeTabToolStripItem.Image = Properties.Resources.DocumentClose;
-            closeTabToolStripItem.Name = "closeTabToolStripItem";
-            closeTabToolStripItem.Click += CloseTab;
+            CloseTabToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(CloseTabToolStripItem, "CloseTabToolStripItem");
+            CloseTabToolStripItem.Image = Properties.Resources.DocumentClose;
+            CloseTabToolStripItem.Name = "CloseTabToolStripItem";
+            CloseTabToolStripItem.Click += CloseTab;
             // 
             // toolStripSep1
             // 
@@ -755,90 +867,98 @@ namespace TextPad_
             toolStripSep1.Name = "toolStripSep1";
             resources.ApplyResources(toolStripSep1, "toolStripSep1");
             // 
-            // saveToolStripItem
+            // SaveToolStripItem
             // 
-            saveToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(saveToolStripItem, "saveToolStripItem");
-            saveToolStripItem.Image = Properties.Resources.DocumentSave;
-            saveToolStripItem.Name = "saveToolStripItem";
-            saveToolStripItem.Click += SaveFile;
+            SaveToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(SaveToolStripItem, "SaveToolStripItem");
+            SaveToolStripItem.Image = Properties.Resources.DocumentSave;
+            SaveToolStripItem.Name = "SaveToolStripItem";
+            SaveToolStripItem.Click += SaveFile;
             // 
-            // openToolStripItem
+            // SaveAllToolStripItem
             // 
-            openToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(openToolStripItem, "openToolStripItem");
-            openToolStripItem.Image = Properties.Resources.DocumentOpen;
-            openToolStripItem.Name = "openToolStripItem";
-            openToolStripItem.Click += OpenFile;
+            SaveAllToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            SaveAllToolStripItem.Image = Properties.Resources.DocumentSaveAll;
+            resources.ApplyResources(SaveAllToolStripItem, "SaveAllToolStripItem");
+            SaveAllToolStripItem.Name = "SaveAllToolStripItem";
+            SaveAllToolStripItem.Click += SaveAllFiles;
+            // 
+            // OpenToolStripItem
+            // 
+            OpenToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(OpenToolStripItem, "OpenToolStripItem");
+            OpenToolStripItem.Image = Properties.Resources.DocumentOpen;
+            OpenToolStripItem.Name = "OpenToolStripItem";
+            OpenToolStripItem.Click += OpenFile;
             // 
             // toolStripSep2
             // 
             toolStripSep2.Name = "toolStripSep2";
             resources.ApplyResources(toolStripSep2, "toolStripSep2");
             // 
-            // copyToolStripItem
+            // CopyToolStripItem
             // 
-            copyToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(copyToolStripItem, "copyToolStripItem");
-            copyToolStripItem.Image = Properties.Resources.DocumentCopy;
-            copyToolStripItem.Name = "copyToolStripItem";
-            copyToolStripItem.Click += MTextBoxCopy;
+            CopyToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(CopyToolStripItem, "CopyToolStripItem");
+            CopyToolStripItem.Image = Properties.Resources.DocumentCopy;
+            CopyToolStripItem.Name = "CopyToolStripItem";
+            CopyToolStripItem.Click += MTextBoxCopy;
             // 
-            // cutToolStripItem
+            // CutToolStripItem
             // 
-            cutToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(cutToolStripItem, "cutToolStripItem");
-            cutToolStripItem.Image = Properties.Resources.DocumentCut;
-            cutToolStripItem.Name = "cutToolStripItem";
-            cutToolStripItem.Click += MTextBoxCut;
+            CutToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(CutToolStripItem, "CutToolStripItem");
+            CutToolStripItem.Image = Properties.Resources.DocumentCut;
+            CutToolStripItem.Name = "CutToolStripItem";
+            CutToolStripItem.Click += MTextBoxCut;
             // 
-            // pasteToolStripItem
+            // PasteToolStripItem
             // 
-            pasteToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(pasteToolStripItem, "pasteToolStripItem");
-            pasteToolStripItem.Image = Properties.Resources.DocumentPaste;
-            pasteToolStripItem.Name = "pasteToolStripItem";
-            pasteToolStripItem.Click += MTextBoxPaste;
+            PasteToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(PasteToolStripItem, "PasteToolStripItem");
+            PasteToolStripItem.Image = Properties.Resources.DocumentPaste;
+            PasteToolStripItem.Name = "PasteToolStripItem";
+            PasteToolStripItem.Click += MTextBoxPaste;
             // 
-            // deleteToolStripItem
+            // DeleteToolStripItem
             // 
-            deleteToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(deleteToolStripItem, "deleteToolStripItem");
-            deleteToolStripItem.Image = Properties.Resources.DocumentDelete;
-            deleteToolStripItem.Name = "deleteToolStripItem";
-            deleteToolStripItem.Click += MTextBoxDeleteText;
+            DeleteToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(DeleteToolStripItem, "DeleteToolStripItem");
+            DeleteToolStripItem.Image = Properties.Resources.DocumentDelete;
+            DeleteToolStripItem.Name = "DeleteToolStripItem";
+            DeleteToolStripItem.Click += MTextBoxDeleteText;
             // 
             // toolStripSep3
             // 
             toolStripSep3.Name = "toolStripSep3";
             resources.ApplyResources(toolStripSep3, "toolStripSep3");
             // 
-            // undoToolStripItem
+            // UndoToolStripItem
             // 
-            undoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(undoToolStripItem, "undoToolStripItem");
-            undoToolStripItem.Name = "undoToolStripItem";
-            undoToolStripItem.Click += MTextBoxUndo;
+            UndoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(UndoToolStripItem, "UndoToolStripItem");
+            UndoToolStripItem.Name = "UndoToolStripItem";
+            UndoToolStripItem.Click += MTextBoxUndo;
             // 
-            // redoToolStripItem
+            // RedoToolStripItem
             // 
-            redoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(redoToolStripItem, "redoToolStripItem");
-            redoToolStripItem.Name = "redoToolStripItem";
-            redoToolStripItem.Click += MTextBoxRedo;
+            RedoToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(RedoToolStripItem, "RedoToolStripItem");
+            RedoToolStripItem.Name = "RedoToolStripItem";
+            RedoToolStripItem.Click += MTextBoxRedo;
             // 
             // toolStripSep4
             // 
             toolStripSep4.Name = "toolStripSep4";
             resources.ApplyResources(toolStripSep4, "toolStripSep4");
             // 
-            // fontToolStripItem
+            // FontToolStripItem
             // 
-            fontToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(fontToolStripItem, "fontToolStripItem");
-            fontToolStripItem.Image = Properties.Resources.Font;
-            fontToolStripItem.Name = "fontToolStripItem";
-            fontToolStripItem.Click += MTextBoxSelectFont;
+            FontToolStripItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(FontToolStripItem, "FontToolStripItem");
+            FontToolStripItem.Image = Properties.Resources.Font;
+            FontToolStripItem.Name = "FontToolStripItem";
+            FontToolStripItem.Click += MTextBoxSelectFont;
             // 
             // toolStripSep5
             // 
@@ -853,7 +973,7 @@ namespace TextPad_
             resources.ApplyResources(SearchToolStripItem, "SearchToolStripItem");
             SearchToolStripItem.Image = Properties.Resources.Search;
             SearchToolStripItem.Name = "SearchToolStripItem";
-            SearchToolStripItem.Click += SearchWindow;
+            SearchToolStripItem.Click += SearchPanelControl;
             // 
             // RunFileToolStrip
             // 
@@ -992,6 +1112,7 @@ namespace TextPad_
             // 
             MainUIPanel.BackColor = Color.Transparent;
             MainUIPanel.Controls.Add(cTabControl);
+            MainUIPanel.Controls.Add(SearchPanel);
             MainUIPanel.Controls.Add(ExplorerSplitter);
             MainUIPanel.Controls.Add(FolderExplorerPanel);
             MainUIPanel.Controls.Add(ToolBar);
@@ -1008,6 +1129,72 @@ namespace TextPad_
             cTabControl.Name = "cTabControl";
             cTabControl.SelectedIndex = 0;
             cTabControl.Selected += CTabControlSelected;
+            // 
+            // SearchPanel
+            // 
+            SearchPanel.BackColor = Color.WhiteSmoke;
+            SearchPanel.BorderStyle = BorderStyle.FixedSingle;
+            SearchPanel.Controls.Add(CloseSearchPanelButton);
+            SearchPanel.Controls.Add(GoToLineButton);
+            SearchPanel.Controls.Add(GoToLineNumericUpDown);
+            SearchPanel.Controls.Add(ReplaceAllButton);
+            SearchPanel.Controls.Add(ReplaceButton);
+            SearchPanel.Controls.Add(ReplaceTextBox);
+            SearchPanel.Controls.Add(FindTextBox);
+            resources.ApplyResources(SearchPanel, "SearchPanel");
+            SearchPanel.Name = "SearchPanel";
+            // 
+            // CloseSearchPanelButton
+            // 
+            resources.ApplyResources(CloseSearchPanelButton, "CloseSearchPanelButton");
+            CloseSearchPanelButton.Name = "CloseSearchPanelButton";
+            CloseSearchPanelButton.UseVisualStyleBackColor = true;
+            CloseSearchPanelButton.Click += SearchPanelControl;
+            // 
+            // GoToLineButton
+            // 
+            resources.ApplyResources(GoToLineButton, "GoToLineButton");
+            GoToLineButton.Name = "GoToLineButton";
+            GoToLineButton.UseVisualStyleBackColor = true;
+            GoToLineButton.Click += GoToLine;
+            // 
+            // GoToLineNumericUpDown
+            // 
+            GoToLineNumericUpDown.BorderStyle = BorderStyle.FixedSingle;
+            resources.ApplyResources(GoToLineNumericUpDown, "GoToLineNumericUpDown");
+            GoToLineNumericUpDown.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
+            GoToLineNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            GoToLineNumericUpDown.Name = "GoToLineNumericUpDown";
+            GoToLineNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // ReplaceAllButton
+            // 
+            resources.ApplyResources(ReplaceAllButton, "ReplaceAllButton");
+            ReplaceAllButton.Name = "ReplaceAllButton";
+            ReplaceAllButton.UseVisualStyleBackColor = true;
+            ReplaceAllButton.Click += ReplaceAll;
+            // 
+            // ReplaceButton
+            // 
+            resources.ApplyResources(ReplaceButton, "ReplaceButton");
+            ReplaceButton.Name = "ReplaceButton";
+            ReplaceButton.UseVisualStyleBackColor = true;
+            ReplaceButton.Click += Replace;
+            // 
+            // ReplaceTextBox
+            // 
+            resources.ApplyResources(ReplaceTextBox, "ReplaceTextBox");
+            ReplaceTextBox.BorderStyle = BorderStyle.FixedSingle;
+            ReplaceTextBox.Name = "ReplaceTextBox";
+            // 
+            // FindTextBox
+            // 
+            resources.ApplyResources(FindTextBox, "FindTextBox");
+            FindTextBox.BackColor = SystemColors.Window;
+            FindTextBox.BorderStyle = BorderStyle.FixedSingle;
+            FindTextBox.Name = "FindTextBox";
+            FindTextBox.TextChanged += Find;
+            FindTextBox.KeyDown += FindTextBox_KeyDown;
             // 
             // ExplorerSplitter
             // 
@@ -1046,6 +1233,7 @@ namespace TextPad_
             // SettingsEditorPanel
             // 
             SettingsEditorPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingsEditorPanel.Controls.Add(panel14);
             SettingsEditorPanel.Controls.Add(panel10);
             SettingsEditorPanel.Controls.Add(label19);
             SettingsEditorPanel.Controls.Add(panel2);
@@ -1057,12 +1245,31 @@ namespace TextPad_
             resources.ApplyResources(SettingsEditorPanel, "SettingsEditorPanel");
             SettingsEditorPanel.Name = "SettingsEditorPanel";
             // 
+            // panel14
+            // 
+            resources.ApplyResources(panel14, "panel14");
+            panel14.BorderStyle = BorderStyle.FixedSingle;
+            panel14.Controls.Add(DetectUrlsCheckBox);
+            panel14.Controls.Add(label28);
+            panel14.Name = "panel14";
+            // 
+            // DetectUrlsCheckBox
+            // 
+            resources.ApplyResources(DetectUrlsCheckBox, "DetectUrlsCheckBox");
+            DetectUrlsCheckBox.Name = "DetectUrlsCheckBox";
+            DetectUrlsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            resources.ApplyResources(label28, "label28");
+            label28.Name = "label28";
+            // 
             // panel10
             // 
+            resources.ApplyResources(panel10, "panel10");
             panel10.BorderStyle = BorderStyle.FixedSingle;
             panel10.Controls.Add(AutoChekUpdateCheckBox);
             panel10.Controls.Add(label20);
-            resources.ApplyResources(panel10, "panel10");
             panel10.Name = "panel10";
             // 
             // AutoChekUpdateCheckBox
@@ -1083,10 +1290,10 @@ namespace TextPad_
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(ColorThemeComboBox);
             panel2.Controls.Add(label2);
-            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
             // ColorThemeComboBox
@@ -1103,10 +1310,10 @@ namespace TextPad_
             // 
             // panel11
             // 
+            resources.ApplyResources(panel11, "panel11");
             panel11.BorderStyle = BorderStyle.FixedSingle;
             panel11.Controls.Add(ExitWhenClosingLastTabCheckBox);
             panel11.Controls.Add(label24);
-            resources.ApplyResources(panel11, "panel11");
             panel11.Name = "panel11";
             // 
             // ExitWhenClosingLastTabCheckBox
@@ -1122,10 +1329,10 @@ namespace TextPad_
             // 
             // panel3
             // 
+            resources.ApplyResources(panel3, "panel3");
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(LanguageComboBox);
             panel3.Controls.Add(label3);
-            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
             // LanguageComboBox
@@ -1142,10 +1349,10 @@ namespace TextPad_
             // 
             // panel5
             // 
+            resources.ApplyResources(panel5, "panel5");
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(WordWarpCheckBox);
             panel5.Controls.Add(label5);
-            resources.ApplyResources(panel5, "panel5");
             panel5.Name = "panel5";
             // 
             // WordWarpCheckBox
@@ -1161,11 +1368,11 @@ namespace TextPad_
             // 
             // panel9
             // 
+            resources.ApplyResources(panel9, "panel9");
             panel9.BorderStyle = BorderStyle.FixedSingle;
             panel9.Controls.Add(textBox3);
             panel9.Controls.Add(FontTextBox);
             panel9.Controls.Add(label9);
-            resources.ApplyResources(panel9, "panel9");
             panel9.Name = "panel9";
             // 
             // textBox3
@@ -1190,10 +1397,10 @@ namespace TextPad_
             // 
             // panel4
             // 
+            resources.ApplyResources(panel4, "panel4");
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(TopmostCheckBox);
             panel4.Controls.Add(label4);
-            resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
             // TopmostCheckBox
@@ -1210,21 +1417,42 @@ namespace TextPad_
             // SettingsToolsPanel
             // 
             SettingsToolsPanel.BorderStyle = BorderStyle.FixedSingle;
+            SettingsToolsPanel.Controls.Add(panel13);
             SettingsToolsPanel.Controls.Add(panel12);
+            SettingsToolsPanel.Controls.Add(panel7);
             SettingsToolsPanel.Controls.Add(label14);
             SettingsToolsPanel.Controls.Add(panel6);
-            SettingsToolsPanel.Controls.Add(panel7);
             SettingsToolsPanel.Controls.Add(panel1);
             SettingsToolsPanel.Controls.Add(panel8);
             resources.ApplyResources(SettingsToolsPanel, "SettingsToolsPanel");
             SettingsToolsPanel.Name = "SettingsToolsPanel";
             // 
+            // panel13
+            // 
+            resources.ApplyResources(panel13, "panel13");
+            panel13.BorderStyle = BorderStyle.FixedSingle;
+            panel13.Controls.Add(AutoSaveTimeComboBox);
+            panel13.Controls.Add(label27);
+            panel13.Name = "panel13";
+            // 
+            // AutoSaveTimeComboBox
+            // 
+            AutoSaveTimeComboBox.FormattingEnabled = true;
+            AutoSaveTimeComboBox.Items.AddRange(new object[] { resources.GetString("AutoSaveTimeComboBox.Items"), resources.GetString("AutoSaveTimeComboBox.Items1"), resources.GetString("AutoSaveTimeComboBox.Items2"), resources.GetString("AutoSaveTimeComboBox.Items3"), resources.GetString("AutoSaveTimeComboBox.Items4") });
+            resources.ApplyResources(AutoSaveTimeComboBox, "AutoSaveTimeComboBox");
+            AutoSaveTimeComboBox.Name = "AutoSaveTimeComboBox";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(label27, "label27");
+            label27.Name = "label27";
+            // 
             // panel12
             // 
+            resources.ApplyResources(panel12, "panel12");
             panel12.BorderStyle = BorderStyle.FixedSingle;
             panel12.Controls.Add(AutoSubstitutionCheckBox);
             panel12.Controls.Add(label25);
-            resources.ApplyResources(panel12, "panel12");
             panel12.Name = "panel12";
             // 
             // AutoSubstitutionCheckBox
@@ -1238,36 +1466,12 @@ namespace TextPad_
             resources.ApplyResources(label25, "label25");
             label25.Name = "label25";
             // 
-            // label14
-            // 
-            resources.ApplyResources(label14, "label14");
-            label14.Name = "label14";
-            // 
-            // panel6
-            // 
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(RunFileToolBarCheckBox);
-            panel6.Controls.Add(label6);
-            resources.ApplyResources(panel6, "panel6");
-            panel6.Name = "panel6";
-            // 
-            // RunFileToolBarCheckBox
-            // 
-            resources.ApplyResources(RunFileToolBarCheckBox, "RunFileToolBarCheckBox");
-            RunFileToolBarCheckBox.Name = "RunFileToolBarCheckBox";
-            RunFileToolBarCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
-            // 
             // panel7
             // 
+            resources.ApplyResources(panel7, "panel7");
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(StatusBarCheckBox);
             panel7.Controls.Add(label7);
-            resources.ApplyResources(panel7, "panel7");
             panel7.Name = "panel7";
             // 
             // StatusBarCheckBox
@@ -1281,12 +1485,36 @@ namespace TextPad_
             resources.ApplyResources(label7, "label7");
             label7.Name = "label7";
             // 
+            // label14
+            // 
+            resources.ApplyResources(label14, "label14");
+            label14.Name = "label14";
+            // 
+            // panel6
+            // 
+            resources.ApplyResources(panel6, "panel6");
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(RunFileToolBarCheckBox);
+            panel6.Controls.Add(label6);
+            panel6.Name = "panel6";
+            // 
+            // RunFileToolBarCheckBox
+            // 
+            resources.ApplyResources(RunFileToolBarCheckBox, "RunFileToolBarCheckBox");
+            RunFileToolBarCheckBox.Name = "RunFileToolBarCheckBox";
+            RunFileToolBarCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(ExplorerCheckBox);
             panel1.Controls.Add(label1);
-            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
             // ExplorerCheckBox
@@ -1302,10 +1530,10 @@ namespace TextPad_
             // 
             // panel8
             // 
+            resources.ApplyResources(panel8, "panel8");
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(ToolBarCheckBox);
             panel8.Controls.Add(label8);
-            resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
             // 
             // ToolBarCheckBox
@@ -1567,12 +1795,18 @@ namespace TextPad_
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += SaveSettings;
             // 
+            // AutoSaveTimer
+            // 
+            AutoSaveTimer.Enabled = true;
+            AutoSaveTimer.Interval = 60000;
+            AutoSaveTimer.Tick += AutoSave;
+            // 
             // MainUI
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.Controls.Add(SettingsUIPanel);
             this.Controls.Add(MainUIPanel);
+            this.Controls.Add(SettingsUIPanel);
             this.KeyPreview = true;
             this.MainMenuStrip = MenuBar;
             this.Name = "MainUI";
@@ -1595,11 +1829,16 @@ namespace TextPad_
             FolderExplorerPanel.PerformLayout();
             MainUIPanel.ResumeLayout(false);
             MainUIPanel.PerformLayout();
+            SearchPanel.ResumeLayout(false);
+            SearchPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)GoToLineNumericUpDown).EndInit();
             SettingsUIPanel.ResumeLayout(false);
             settingsTabControl.ResumeLayout(false);
             settingsTabPage.ResumeLayout(false);
             SettingsEditorPanel.ResumeLayout(false);
             SettingsEditorPanel.PerformLayout();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             panel2.ResumeLayout(false);
@@ -1616,12 +1855,14 @@ namespace TextPad_
             panel4.PerformLayout();
             SettingsToolsPanel.ResumeLayout(false);
             SettingsToolsPanel.PerformLayout();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel8.ResumeLayout(false);
@@ -1665,28 +1906,27 @@ namespace TextPad_
         private ToolStripMenuItem отменитьToolStripMenuItem2;
         private ToolStripMenuItem вернутьToolStripMenuItem;
         private ToolStripMenuItem SaveFileMenuItem;
-        private ToolStripMenuItem SaveAsFileMenuItem;
         private ToolStripMenuItem OpenFileMenuItem;
         private ToolStripSeparator separator2FileMenuItem;
         private ToolStripMenuItem ExitFileMenuItem;
         private ToolStripMenuItem SearchEditMenuItem;
         private ToolStripMenuItem CloseTabFileMenuItem;
-        private ToolStripButton saveToolStripItem;
-        private ToolStripButton openToolStripItem;
+        private ToolStripButton SaveToolStripItem;
+        private ToolStripButton OpenToolStripItem;
         private ToolStripSeparator toolStripSep2;
-        private ToolStripButton copyToolStripItem;
-        private ToolStripButton cutToolStripItem;
-        private ToolStripButton pasteToolStripItem;
-        private ToolStripButton deleteToolStripItem;
+        private ToolStripButton CopyToolStripItem;
+        private ToolStripButton CutToolStripItem;
+        private ToolStripButton PasteToolStripItem;
+        private ToolStripButton DeleteToolStripItem;
         private ToolStripSeparator toolStripSep3;
-        private ToolStripButton undoToolStripItem;
-        private ToolStripButton redoToolStripItem;
+        private ToolStripButton UndoToolStripItem;
+        private ToolStripButton RedoToolStripItem;
         private ToolStripSeparator toolStripSep4;
         private ToolStripButton SearchToolStripItem;
-        private ToolStripButton fontToolStripItem;
+        private ToolStripButton FontToolStripItem;
         private ToolStripSeparator toolStripSep5;
-        private ToolStripButton newTabToolStripItem;
-        private ToolStripButton closeTabToolStripItem;
+        private ToolStripButton NewTabToolStripItem;
+        private ToolStripButton CloseTabToolStripItem;
         private ToolStripMenuItem PythonRunMenuItem;
         private ToolStripMenuItem VBSRunMenuItem;
         private ToolStripMenuItem WindowsScriptRunMenuItem;
@@ -1833,7 +2073,6 @@ namespace TextPad_
         private ToolStripMenuItem kOI8UToolStripMenuItem;
         private ToolStripMenuItem UTF8BOMToolStripMenuItem;
         private ToolStripTextBox FileNameToolTextBox;
-        internal CTabControl cTabControl;
         private Panel panel12;
         internal CheckBox AutoSubstitutionCheckBox;
         private Label label25;
@@ -1841,6 +2080,37 @@ namespace TextPad_
         private ToolStripMenuItem hTMLToolStripMenuItem;
         private ToolStripMenuItem CP866ToolStripMenuItem;
         private Splitter ExplorerSplitter;
+        private ToolStripMenuItem SaveAllFileMenuItem;
+        private ToolStripButton SaveAllToolStripItem;
+        private Timer AutoSaveTimer;
+        private Panel panel13;
+        private Label label27;
+        private ComboBox AutoSaveTimeComboBox;
+        private Panel SearchPanel;
+        private Button ReplaceButton;
+        private TextBox ReplaceTextBox;
+        private TextBox FindTextBox;
+        private Button ReplaceAllButton;
+        private NumericUpDown GoToLineNumericUpDown;
+        private Button GoToLineButton;
+        private Button CloseSearchPanelButton;
+        private ToolStripMenuItem SaveAsFileMenuItem;
+        private ToolStripMenuItem выбратьКодировкуToolStripMenuItem;
+        private ToolStripMenuItem uTF32BEToolStripMenuItem1;
+        private ToolStripMenuItem uTF32ToolStripMenuItem;
+        private ToolStripMenuItem uTF16BEToolStripMenuItem1;
+        private ToolStripMenuItem uTF16ToolStripMenuItem1;
+        private ToolStripMenuItem uTF8BOMToolStripMenuItem1;
+        private ToolStripMenuItem uTF8ToolStripMenuItem1;
+        private ToolStripMenuItem aSCIIToolStripMenuItem1;
+        private ToolStripMenuItem windows1251ToolStripMenuItem;
+        private ToolStripMenuItem kOI8RToolStripMenuItem2;
+        private ToolStripMenuItem kOI8UToolStripMenuItem1;
+        private ToolStripMenuItem cP866ToolStripMenuItem1;
+        internal CTabControl cTabControl;
+        private Panel panel14;
+        internal CheckBox DetectUrlsCheckBox;
+        private Label label28;
     }
 }
 

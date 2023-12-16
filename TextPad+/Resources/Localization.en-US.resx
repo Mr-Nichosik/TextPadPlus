@@ -159,10 +159,10 @@
   <data name="MSGQuestionSaveFile" xml:space="preserve">
     <value>Save text to</value>
   </data>
-  <data name="newDocumentTitle" xml:space="preserve">
+  <data name="NewDocumentTitle" xml:space="preserve">
     <value>New document</value>
   </data>
-  <data name="openFileDialogFilter" xml:space="preserve">
+  <data name="OpenFileDialogFilter" xml:space="preserve">
     <value>Text Documents (*.txt)|*.txt|TextPad File*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|DOS Batch File (*.bat)|*.bat|Batch Windows file (*.cmd)|*.cmd|PowerShell script (*.ps1)|*.ps1|Python files (*.py)|*.py|Web page (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI configuration (*.ini)|*.ini|XML configuration (*.xml)|*.xml|All files (*.*)|*.*</value>
   </data>
   <data name="PROGRAMStatusCheckForUpdates" xml:space="preserve">
@@ -177,7 +177,7 @@
   <data name="PROGRAMStatusUpdating" xml:space="preserve">
     <value>Updating... </value>
   </data>
-  <data name="saveFileDialogFilter" xml:space="preserve">
+  <data name="SaveFileDialogFilter" xml:space="preserve">
     <value>Text Documents (*.txt)|*.txt|TextPad File*.tpf)|*.tpf |VBS Script File (*.vbs)|*.vbs|DOS Batch File (*.bat)|*.bat|Batch Windows file (*.cmd)|*.cmd|PowerShell script (*.ps1)|*.ps1|Python files (*.py)|*.py|Web page (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI configuration (*.ini)|*.ini|XML configuration (*.xml)|*.xml|All files (*.*)|*.*</value>
   </data>
   <data name="SearchUINoFoundWord" xml:space="preserve">

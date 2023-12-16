@@ -1,19 +1,14 @@
 ﻿
 namespace TextPad_
 {
-    public partial class PythonInterpreterUI : Form
+    internal sealed partial class PythonInterpreterUI : Form
     {
-        public PythonInterpreterUI()
-        {
-            InitializeComponent();
-        }
+        public PythonInterpreterUI() => InitializeComponent();
 
         private void Start(object sender, EventArgs e)
         {
             if (AutoSearchRadioButton.Checked == true)
-            {
-                FileRunner.RunPythonScript();
-            }
+                FileWorker.RunPythonScript();
             else if (ManuallySearchRadioButton.Checked == true)
             {
                 if (PathTextBox.Text == "")
@@ -21,7 +16,7 @@ namespace TextPad_
                     MessageBox.Show(Resources.Localization.MSGErrorPythonInterPath, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                FileRunner.RunPythonScript(PathTextBox.Text);
+                FileWorker.RunPythonScript(PathTextBox.Text);
             }
 
             Close();
@@ -49,7 +44,6 @@ namespace TextPad_
                     BrowseBtn.Enabled = true;
                     break;
             }
-
         }
 
         private void FormPythonInterpreterUILoad(object sender, EventArgs e)

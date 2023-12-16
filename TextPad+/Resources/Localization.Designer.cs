@@ -61,7 +61,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на По вашему запросу ничего не нашлось..
+        ///   Ищет локализованную строку, похожую на По вашему запросу ничего не нашлось.
         /// </summary>
         public static string LineNotFound {
             get {
@@ -70,7 +70,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось удалить элемент..
+        ///   Ищет локализованную строку, похожую на Не удалось удалить элемент.
         /// </summary>
         public static string MSGErrorCantDeleteFile {
             get {
@@ -79,7 +79,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Файл не найден..
+        ///   Ищет локализованную строку, похожую на Файл не найден.
         /// </summary>
         public static string MSGErrorFileNotFound {
             get {
@@ -88,7 +88,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не открыто ни одной вкладки..
+        ///   Ищет локализованную строку, похожую на Не открыто ни одной вкладки.
         /// </summary>
         public static string MSGErrorNoTabsOpen {
             get {
@@ -115,7 +115,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка при запуске Python программы..
+        ///   Ищет локализованную строку, похожую на Ошибка при запуске Python скрипта.
         /// </summary>
         public static string MSGErrorRunPythonFile {
             get {
@@ -133,7 +133,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Произошла ошибка. Проверьте подключение к интернету..
+        ///   Ищет локализованную строку, похожую на Произошла ошибка. Проверьте подключение к интернету.
         /// </summary>
         public static string MSGErrorWhenCheckingInternet {
             get {
@@ -178,7 +178,7 @@ namespace TextPad_.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Сохранить текст в файл.
+        ///   Ищет локализованную строку, похожую на Сохранить файл.
         /// </summary>
         public static string MSGQuestionSaveFile {
             get {
@@ -189,18 +189,18 @@ namespace TextPad_.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Новый документ.
         /// </summary>
-        public static string newDocumentTitle {
+        public static string NewDocumentTitle {
             get {
-                return ResourceManager.GetString("newDocumentTitle", resourceCulture);
+                return ResourceManager.GetString("NewDocumentTitle", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*.
         /// </summary>
-        public static string openFileDialogFilter {
+        public static string OpenFileDialogFilter {
             get {
-                return ResourceManager.GetString("openFileDialogFilter", resourceCulture);
+                return ResourceManager.GetString("OpenFileDialogFilter", resourceCulture);
             }
         }
         
@@ -243,14 +243,14 @@ namespace TextPad_.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Текстовые документы (*.txt)|*.txt|Файл TextPad*.tpf)|*.tpf |Файл сценария VBS (*.vbs)|*.vbs|Пакетный файл DOS (*.bat)|*.bat|Пакетный файл Windows (*.cmd)|*.cmd|Сценарий PowerShell (*.ps1)|*.ps1|Python files (*.py)|*.py|Web страница (*.html)|*.html|Cascade Style Sheets (*.css)|*.css|JavaScript, JScript (*.js)|*.js|INI конфигурация (*.ini)|*.ini|XML конфигурация (*.xml)|*.xml|Все файлы (*.*)|*.*.
         /// </summary>
-        public static string saveFileDialogFilter {
+        public static string SaveFileDialogFilter {
             get {
-                return ResourceManager.GetString("saveFileDialogFilter", resourceCulture);
+                return ResourceManager.GetString("SaveFileDialogFilter", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не найдено такого слова..
+        ///   Ищет локализованную строку, похожую на Слово не найдено.
         /// </summary>
         public static string SearchUINoFoundWord {
             get {

@@ -1,6 +1,6 @@
 ﻿namespace TextPad_
 {
-    partial class PythonInterpreterUI
+    internal sealed partial class PythonInterpreterUI
     {
         /// <summary>
         /// Required designer variable.

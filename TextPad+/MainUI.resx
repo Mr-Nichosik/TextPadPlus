@@ -118,43 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="MenuBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>11, 18</value>
+    <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="MenuBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MenuBar.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="MenuBar.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MenuBar.Name" xml:space="preserve">
-    <value>MenuBar</value>
-  </data>
-  <data name="&gt;&gt;MenuBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuBar.Parent" xml:space="preserve">
-    <value>MainUIPanel</value>
-  </data>
-  <data name="&gt;&gt;MenuBar.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="FileMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
-  </data>
-  <data name="FileMenuItem.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
   <data name="CreateTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 22</value>
   </data>
@@ -197,6 +163,12 @@
   <data name="SaveAsFileMenuItem.Text" xml:space="preserve">
     <value>Сохранить как</value>
   </data>
+  <data name="SaveAllFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
+  </data>
+  <data name="SaveAllFileMenuItem.Text" xml:space="preserve">
+    <value>Сохранить все</value>
+  </data>
   <data name="OpenFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 22</value>
   </data>
@@ -208,6 +180,78 @@
   </data>
   <data name="ReopenFileMenuItem.Text" xml:space="preserve">
     <value>Открыть повторно</value>
+  </data>
+  <data name="uTF32BEToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uTF32BEToolStripMenuItem1.Text" xml:space="preserve">
+    <value>UTF-32 BE</value>
+  </data>
+  <data name="uTF32ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uTF32ToolStripMenuItem.Text" xml:space="preserve">
+    <value>UTF-32</value>
+  </data>
+  <data name="uTF16BEToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uTF16BEToolStripMenuItem1.Text" xml:space="preserve">
+    <value>UTF-16 BE</value>
+  </data>
+  <data name="uTF16ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uTF16ToolStripMenuItem1.Text" xml:space="preserve">
+    <value>UTF-16</value>
+  </data>
+  <data name="uTF8BOMToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uTF8BOMToolStripMenuItem1.Text" xml:space="preserve">
+    <value>UTF-8 BOM</value>
+  </data>
+  <data name="uTF8ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="uTF8ToolStripMenuItem1.Text" xml:space="preserve">
+    <value>UTF-8</value>
+  </data>
+  <data name="aSCIIToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="aSCIIToolStripMenuItem1.Text" xml:space="preserve">
+    <value>ASCII</value>
+  </data>
+  <data name="windows1251ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="windows1251ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Windows-1251</value>
+  </data>
+  <data name="kOI8RToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="kOI8RToolStripMenuItem2.Text" xml:space="preserve">
+    <value>KOI8-R</value>
+  </data>
+  <data name="kOI8UToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="kOI8UToolStripMenuItem1.Text" xml:space="preserve">
+    <value>KOI8-U</value>
+  </data>
+  <data name="cP866ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="cP866ToolStripMenuItem1.Text" xml:space="preserve">
+    <value>CP866</value>
+  </data>
+  <data name="выбратьКодировкуToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 22</value>
+  </data>
+  <data name="выбратьКодировкуToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выбрать кодировку</value>
   </data>
   <data name="DeleteFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 22</value>
@@ -254,14 +298,14 @@
   <data name="ExitFileMenuItem.Text" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="EditMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="FileMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="EditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
+  <data name="FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
   </data>
-  <data name="EditMenuItem.Text" xml:space="preserve">
-    <value>Правка</value>
+  <data name="FileMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
   </data>
   <data name="CopyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
@@ -293,12 +337,6 @@
   <data name="DeleteEditMenuItem.Text" xml:space="preserve">
     <value>Удалить</value>
   </data>
-  <data name="RegisterEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="RegisterEditMenuItem.Text" xml:space="preserve">
-    <value>Регистер</value>
-  </data>
   <data name="ToUpperEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 22</value>
   </data>
@@ -310,6 +348,12 @@
   </data>
   <data name="ToLowerEditMenuItem.Text" xml:space="preserve">
     <value>строчные</value>
+  </data>
+  <data name="RegisterEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="RegisterEditMenuItem.Text" xml:space="preserve">
+    <value>Регистер</value>
   </data>
   <data name="menuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 6</value>
@@ -335,12 +379,6 @@
   <data name="DateEditMenuItem.Text" xml:space="preserve">
     <value>Дата и время</value>
   </data>
-  <data name="CopyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 22</value>
-  </data>
-  <data name="CopyToClipboardEditMenuItem.Text" xml:space="preserve">
-    <value>Копировать в буфер обмена</value>
-  </data>
   <data name="CopyPathAndFileNameEditrMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
@@ -353,11 +391,26 @@
   <data name="CopyFileNameEditMenuItem.Text" xml:space="preserve">
     <value>Имя файла</value>
   </data>
+  <data name="CopyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 22</value>
+  </data>
+  <data name="CopyToClipboardEditMenuItem.Text" xml:space="preserve">
+    <value>Копировать в буфер обмена</value>
+  </data>
   <data name="SearchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 22</value>
   </data>
   <data name="SearchEditMenuItem.Text" xml:space="preserve">
     <value>Найти и заменить       CTRL + F</value>
+  </data>
+  <data name="EditMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="EditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="EditMenuItem.Text" xml:space="preserve">
+    <value>Правка</value>
   </data>
   <data name="SettingsMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
@@ -367,15 +420,6 @@
   </data>
   <data name="SettingsMenuItem.Text" xml:space="preserve">
     <value>Настройки</value>
-  </data>
-  <data name="RunMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="RunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
-  </data>
-  <data name="RunMenuItem.Text" xml:space="preserve">
-    <value>Запустить как</value>
   </data>
   <data name="PythonRunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -401,27 +445,52 @@
   <data name="hTMLToolStripMenuItem.Text" xml:space="preserve">
     <value>HTML</value>
   </data>
+  <data name="RunMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="RunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 20</value>
+  </data>
+  <data name="RunMenuItem.Text" xml:space="preserve">
+    <value>Запустить как</value>
+  </data>
+  <data name="MenuBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MenuBar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="MenuBar.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MenuBar.Name" xml:space="preserve">
+    <value>MenuBar</value>
+  </data>
+  <data name="&gt;&gt;MenuBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuBar.Parent" xml:space="preserve">
+    <value>MainUIPanel</value>
+  </data>
+  <data name="&gt;&gt;MenuBar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <metadata name="SaveFileDialog_.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>103, 20</value>
+    <value>119, 17</value>
   </metadata>
   <metadata name="OpenFileDialog_.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 21</value>
+    <value>254, 17</value>
   </metadata>
   <metadata name="FontDialog_.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>342, 20</value>
+    <value>394, 17</value>
   </metadata>
   <metadata name="ContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>750, 21</value>
+    <value>846, 17</value>
   </metadata>
-  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 164</value>
-  </data>
-  <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
-    <value>ContextMenu</value>
-  </data>
-  <data name="&gt;&gt;ContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 22</value>
   </data>
@@ -467,36 +536,21 @@
   <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
     <value>Вернуть</value>
   </data>
+  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 164</value>
+  </data>
+  <data name="&gt;&gt;ContextMenu.Name" xml:space="preserve">
+    <value>ContextMenu</value>
+  </data>
+  <data name="&gt;&gt;ContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="StatusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>441, 18</value>
+    <value>511, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="StatusBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="StatusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 504</value>
-  </data>
-  <data name="StatusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 26</value>
-  </data>
-  <data name="StatusBar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="StatusBar.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.Name" xml:space="preserve">
-    <value>StatusBar</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.Parent" xml:space="preserve">
-    <value>MainUIPanel</value>
-  </data>
-  <data name="&gt;&gt;StatusBar.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="StatusLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
@@ -568,21 +622,6 @@
     <value>—</value>
   </data>
   <data name="EncodingStatusLabel.ToolTipText" xml:space="preserve">
-    <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
-  </data>
-  <data name="EncodingDropDownBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="EncodingDropDownBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="EncodingDropDownBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 24</value>
-  </data>
-  <data name="EncodingDropDownBtn.Text" xml:space="preserve">
-    <value>Кодировка</value>
-  </data>
-  <data name="EncodingDropDownBtn.ToolTipText" xml:space="preserve">
     <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
   </data>
   <data name="utf32BEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -684,11 +723,247 @@
   <data name="CP866ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>В этой кодировке будут открываться и сохраняться файлы</value>
   </data>
+  <data name="EncodingDropDownBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="EncodingDropDownBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="EncodingDropDownBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="EncodingDropDownBtn.Text" xml:space="preserve">
+    <value>Кодировка</value>
+  </data>
+  <data name="EncodingDropDownBtn.ToolTipText" xml:space="preserve">
+    <value>Кодировка, в которой будут открываться и сохраняться файлы</value>
+  </data>
+  <data name="StatusBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 504</value>
+  </data>
+  <data name="StatusBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 26</value>
+  </data>
+  <data name="StatusBar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="StatusBar.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusBar.Name" xml:space="preserve">
+    <value>StatusBar</value>
+  </data>
+  <data name="&gt;&gt;StatusBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusBar.Parent" xml:space="preserve">
+    <value>MainUIPanel</value>
+  </data>
+  <data name="&gt;&gt;StatusBar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <metadata name="ToolBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>536, 20</value>
+    <value>614, 17</value>
   </metadata>
   <data name="ToolBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
+  </data>
+  <data name="NewTabToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="NewTabToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="NewTabToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="NewTabToolStripItem.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="CloseTabToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="CloseTabToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="CloseTabToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="CloseTabToolStripItem.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="toolStripSep1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="SaveToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="SaveToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="SaveToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="SaveToolStripItem.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SaveAllToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="SaveAllToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="SaveAllToolStripItem.Text" xml:space="preserve">
+    <value>Сохранить все</value>
+  </data>
+  <data name="OpenToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="OpenToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="OpenToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="OpenToolStripItem.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="toolStripSep2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="CopyToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="CopyToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="CopyToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="CopyToolStripItem.Text" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="CutToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="CutToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="CutToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="CutToolStripItem.Text" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="PasteToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="PasteToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="PasteToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="PasteToolStripItem.Text" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="DeleteToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="DeleteToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="DeleteToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="DeleteToolStripItem.Text" xml:space="preserve">
+    <value>Удалить текст</value>
+  </data>
+  <data name="toolStripSep3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="UndoToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="UndoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHcSURBVGhD7dq/K+1xHMfxI79ykUlXBleYpExKWe5ylfsH
+        MCg/SnYpAyUGGYw2g0nKcBeDDEpcWZQSm0KUIpmUkl/PV1Lvvp0jPz7f03nr+6xHCX3PeXV++J5zpJKS
+        crMyLOIK8yiAuzTiP56MLrgq3QjphpsyjdhEMVxUinVER2yhHC5KRuRKyYhc6VuM0BVN9xT7Gdc4xy6W
+        MY1O/ESsVWAb6a5USI/QuGHEMipbQ6xbzKIKQQt51/oI3Q37EbRMpyL6nn72nkpQjUa0QVdyDvt4QPTY
+        r/Q7Qc+kQ4zJlB4XQzhB9PiyBDdjVCFGcYfoZcwgaHGPUS04hj2+ntnaEbRsjGnAJezxD1GEoGVjTCvu
+        YY/fh+C9NeYHQqTX//bYO4ilTGNGEKIaRB/89YildGMmEaoN2GMPIrY0ZgW6oD2EPMUYgx2iu1vs6ZQm
+        7+XLYP2BHaJb32XNsEOO4DKdo9khF3BZJb7FkFrYIW7vWjr1t0MO4LLfsEPcPmv1wA5ZgMvGYYdMwWX/
+        YIf0wmXRF1lNcNcv2BE3yIe7BmCHrMJla7BD9G6ku3SOZV/q6g2IOrhrAvbW0GeTLjuDHaLHi8tO8TpC
+        /4igz2lc9he6VfR3pEPfSEpK+mqp1DOl1lSacpTlNQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="UndoToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="UndoToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="UndoToolStripItem.Text" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="RedoToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="RedoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVGhD7dlLSFVRFMbxmw/UEBoIgg90FjRrIIEORQTz
+        iWlGJGoiClkUjpRw7lTEmeCwYaDo3EnTqBxFEPYciE803/Zf0IXF5giS6xxYcj74TS549v04nn323jeT
+        Js31TB+28RsP5AOPycUOzv85wSO4Sw42kC0ijtENd3kIuRNhGZf/Zj2QL6/LHKED7iIP/SnCMu1wl36E
+        ZQ7RBncZQFSZVrjLU0SVaYa7DCIsc4D7SCQVeIwpLOI95K29Cf2l/tce6hFLKjGBD4ga3Jp5mSrMQabJ
+        qAHjYlbkBl5gF1EDxcmsRCHeIGoQIcsNeS5m0Ys63EEZ5G8vm2GcQV97Hw24cgqwDH3xrM8YRQmumiGE
+        Jf6gESaR50FfXMiUOIY8WOSiabcJJpF9gr64kLtwF1a56K1u9iIsxk/oAX6gGlaJWjSar7NeIRzA8k7I
+        pBDuScyX8TLVfoEeZBpW6UIiG6t70IPIPF4Kq/yCvn5sW91x6IEWYBn97MV6+PAWusgzWKYFMnGITvkg
+        rqxCF6mBy4TLb8spN9GEK9ubcJmwSD5cZgu6yC24zHfoIuVwmU/QRSyXJolGDhB0EZeHZZIZ6CIv4TLP
+        oYvMw2VqoYt8hMsUQb9LZC9tufpNNCvQd+UJXOY1dJEluMxt6OMZ2fzIOZXLvIO+K5NwmRHoImtwGTkS
+        Wke2yFe4jfzIIgW+wezkL02aNEkkk/kLlY9XMGRXDpIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="RedoToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="RedoToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="RedoToolStripItem.Text" xml:space="preserve">
+    <value>Вернуть</value>
+  </data>
+  <data name="toolStripSep4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="FontToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="FontToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="FontToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="FontToolStripItem.Text" xml:space="preserve">
+    <value>Шрифт</value>
+  </data>
+  <data name="toolStripSep5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 6</value>
+  </data>
+  <data name="SearchToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="SearchToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="SearchToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="SearchToolStripItem.Text" xml:space="preserve">
+    <value>Найти и заменить</value>
   </data>
   <data name="ToolBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 49</value>
@@ -712,227 +987,11 @@
     <value>MainUIPanel</value>
   </data>
   <data name="&gt;&gt;ToolBar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="newTabToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="newTabToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="newTabToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="newTabToolStripItem.Text" xml:space="preserve">
-    <value>Создать</value>
-  </data>
-  <data name="closeTabToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="closeTabToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="closeTabToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="closeTabToolStripItem.Text" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="toolStripSep1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="saveToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="saveToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="saveToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="saveToolStripItem.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="openToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="openToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="openToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="openToolStripItem.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="toolStripSep2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="copyToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="copyToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="copyToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="copyToolStripItem.Text" xml:space="preserve">
-    <value>Копировать</value>
-  </data>
-  <data name="cutToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="cutToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="cutToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="cutToolStripItem.Text" xml:space="preserve">
-    <value>Вырезать</value>
-  </data>
-  <data name="pasteToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="pasteToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="pasteToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="pasteToolStripItem.Text" xml:space="preserve">
-    <value>Вставить</value>
-  </data>
-  <data name="deleteToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="deleteToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="deleteToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="deleteToolStripItem.Text" xml:space="preserve">
-    <value>Удалить текст</value>
-  </data>
-  <data name="toolStripSep3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="undoToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="undoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHcSURBVGhD7dq/K+1xHMfxI79ykUlXBleYpExKWe5ylfsH
-        MCg/SnYpAyUGGYw2g0nKcBeDDEpcWZQSm0KUIpmUkl/PV1Lvvp0jPz7f03nr+6xHCX3PeXV++J5zpJKS
-        crMyLOIK8yiAuzTiP56MLrgq3QjphpsyjdhEMVxUinVER2yhHC5KRuRKyYhc6VuM0BVN9xT7Gdc4xy6W
-        MY1O/ESsVWAb6a5USI/QuGHEMipbQ6xbzKIKQQt51/oI3Q37EbRMpyL6nn72nkpQjUa0QVdyDvt4QPTY
-        r/Q7Qc+kQ4zJlB4XQzhB9PiyBDdjVCFGcYfoZcwgaHGPUS04hj2+ntnaEbRsjGnAJezxD1GEoGVjTCvu
-        YY/fh+C9NeYHQqTX//bYO4ilTGNGEKIaRB/89YildGMmEaoN2GMPIrY0ZgW6oD2EPMUYgx2iu1vs6ZQm
-        7+XLYP2BHaJb32XNsEOO4DKdo9khF3BZJb7FkFrYIW7vWjr1t0MO4LLfsEPcPmv1wA5ZgMvGYYdMwWX/
-        YIf0wmXRF1lNcNcv2BE3yIe7BmCHrMJla7BD9G6ku3SOZV/q6g2IOrhrAvbW0GeTLjuDHaLHi8tO8TpC
-        /4igz2lc9he6VfR3pEPfSEpK+mqp1DOl1lSacpTlNQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="undoToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="undoToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="undoToolStripItem.Text" xml:space="preserve">
-    <value>Отменить</value>
-  </data>
-  <data name="redoToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="redoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVGhD7dlLSFVRFMbxmw/UEBoIgg90FjRrIIEORQTz
-        iWlGJGoiClkUjpRw7lTEmeCwYaDo3EnTqBxFEPYciE803/Zf0IXF5giS6xxYcj74TS549v04nn323jeT
-        Js31TB+28RsP5AOPycUOzv85wSO4Sw42kC0ijtENd3kIuRNhGZf/Zj2QL6/LHKED7iIP/SnCMu1wl36E
-        ZQ7RBncZQFSZVrjLU0SVaYa7DCIsc4D7SCQVeIwpLOI95K29Cf2l/tce6hFLKjGBD4ga3Jp5mSrMQabJ
-        qAHjYlbkBl5gF1EDxcmsRCHeIGoQIcsNeS5m0Ys63EEZ5G8vm2GcQV97Hw24cgqwDH3xrM8YRQmumiGE
-        Jf6gESaR50FfXMiUOIY8WOSiabcJJpF9gr64kLtwF1a56K1u9iIsxk/oAX6gGlaJWjSar7NeIRzA8k7I
-        pBDuScyX8TLVfoEeZBpW6UIiG6t70IPIPF4Kq/yCvn5sW91x6IEWYBn97MV6+PAWusgzWKYFMnGITvkg
-        rqxCF6mBy4TLb8spN9GEK9ubcJmwSD5cZgu6yC24zHfoIuVwmU/QRSyXJolGDhB0EZeHZZIZ6CIv4TLP
-        oYvMw2VqoYt8hMsUQb9LZC9tufpNNCvQd+UJXOY1dJEluMxt6OMZ2fzIOZXLvIO+K5NwmRHoImtwGTkS
-        Wke2yFe4jfzIIgW+wezkL02aNEkkk/kLlY9XMGRXDpIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="redoToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="redoToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="redoToolStripItem.Text" xml:space="preserve">
-    <value>Вернуть</value>
-  </data>
-  <data name="toolStripSep4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="fontToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="fontToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="fontToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="fontToolStripItem.Text" xml:space="preserve">
-    <value>Шрифт</value>
-  </data>
-  <data name="toolStripSep5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 6</value>
-  </data>
-  <data name="SearchToolStripItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="SearchToolStripItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="SearchToolStripItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 20</value>
-  </data>
-  <data name="SearchToolStripItem.Text" xml:space="preserve">
-    <value>Найти и заменить</value>
+    <value>4</value>
   </data>
   <metadata name="RunFileToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>622, 20</value>
+    <value>707, 17</value>
   </metadata>
-  <data name="RunFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="RunFileToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>12, 0, 0, 0</value>
-  </data>
-  <data name="RunFileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 25</value>
-  </data>
-  <data name="RunFileToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="RunFileToolStrip.Text" xml:space="preserve">
-    <value>toolStrip2</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolStrip.Name" xml:space="preserve">
-    <value>RunFileToolStrip</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolStrip.Parent" xml:space="preserve">
-    <value>MainUIPanel</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="RunAsToolsStripLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
@@ -984,9 +1043,43 @@
   <data name="FileNameToolTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 23</value>
   </data>
+  <data name="RunFileToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="RunFileToolStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 0, 0, 0</value>
+  </data>
+  <data name="RunFileToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 25</value>
+  </data>
+  <data name="RunFileToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="RunFileToolStrip.Text" xml:space="preserve">
+    <value>toolStrip2</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolStrip.Name" xml:space="preserve">
+    <value>RunFileToolStrip</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolStrip.Parent" xml:space="preserve">
+    <value>MainUIPanel</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolStrip.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <metadata name="ExplorerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1275, 19</value>
+    <value>151, 54</value>
   </metadata>
+  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
+  </data>
+  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
   <data name="ExplorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 26</value>
   </data>
@@ -1000,14 +1093,14 @@
     <value>Fill</value>
   </data>
   <metadata name="ExplorerImagesList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1136, 18</value>
+    <value>1267, 17</value>
   </metadata>
   <data name="ExplorerImagesList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAHoAScB6AEnARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAF4AS0BeAEtARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -1063,41 +1156,11 @@
   <data name="&gt;&gt;FilesListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
-  </data>
-  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
   <metadata name="FolderToolBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>862, 19</value>
+    <value>973, 17</value>
   </metadata>
   <data name="FolderToolBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
-  </data>
-  <data name="FolderToolBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 0</value>
-  </data>
-  <data name="FolderToolBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 453</value>
-  </data>
-  <data name="FolderToolBar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="FolderToolBar.Text" xml:space="preserve">
-    <value>FoldersToolStrip</value>
-  </data>
-  <data name="&gt;&gt;FolderToolBar.Name" xml:space="preserve">
-    <value>FolderToolBar</value>
-  </data>
-  <data name="&gt;&gt;FolderToolBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FolderToolBar.Parent" xml:space="preserve">
-    <value>FolderExplorerPanel</value>
-  </data>
-  <data name="&gt;&gt;FolderToolBar.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="openFolderToolBtn.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1138,45 +1201,33 @@
   <data name="aboveFolderBtn.Text" xml:space="preserve">
     <value>На уровень выше</value>
   </data>
-  <metadata name="FolderBrowserDialog_.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>978, 20</value>
-  </metadata>
-  <data name="&gt;&gt;workFolderLabel.Name" xml:space="preserve">
-    <value>workFolderLabel</value>
+  <data name="FolderToolBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 0</value>
   </data>
-  <data name="&gt;&gt;workFolderLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="FolderToolBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 453</value>
   </data>
-  <data name="&gt;&gt;workFolderLabel.Parent" xml:space="preserve">
+  <data name="FolderToolBar.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="FolderToolBar.Text" xml:space="preserve">
+    <value>FoldersToolStrip</value>
+  </data>
+  <data name="&gt;&gt;FolderToolBar.Name" xml:space="preserve">
+    <value>FolderToolBar</value>
+  </data>
+  <data name="&gt;&gt;FolderToolBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FolderToolBar.Parent" xml:space="preserve">
     <value>FolderExplorerPanel</value>
   </data>
-  <data name="&gt;&gt;workFolderLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FolderExplorerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="FolderExplorerPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>782, 49</value>
-  </data>
-  <data name="FolderExplorerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 455</value>
-  </data>
-  <data name="FolderExplorerPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;FolderExplorerPanel.Name" xml:space="preserve">
-    <value>FolderExplorerPanel</value>
-  </data>
-  <data name="&gt;&gt;FolderExplorerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FolderExplorerPanel.Parent" xml:space="preserve">
-    <value>MainUIPanel</value>
-  </data>
-  <data name="&gt;&gt;FolderExplorerPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FolderToolBar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="FolderBrowserDialog_.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1099, 17</value>
+  </metadata>
   <data name="workFolderLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1213,68 +1264,41 @@
   <data name="&gt;&gt;workFolderLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;cTabControl.Name" xml:space="preserve">
-    <value>cTabControl</value>
+  <data name="FolderExplorerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="&gt;&gt;cTabControl.Type" xml:space="preserve">
-    <value>CustomTabControl.CTabControl, CustomTabControl, Culture=neutral, PublicKeyToken=null</value>
+  <data name="FolderExplorerPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>782, 49</value>
   </data>
-  <data name="&gt;&gt;cTabControl.Parent" xml:space="preserve">
-    <value>MainUIPanel</value>
+  <data name="FolderExplorerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 455</value>
   </data>
-  <data name="&gt;&gt;cTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="FolderExplorerPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;ExplorerSplitter.Name" xml:space="preserve">
-    <value>ExplorerSplitter</value>
+  <data name="&gt;&gt;FolderExplorerPanel.Name" xml:space="preserve">
+    <value>FolderExplorerPanel</value>
   </data>
-  <data name="&gt;&gt;ExplorerSplitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Splitter, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExplorerSplitter.Parent" xml:space="preserve">
-    <value>MainUIPanel</value>
-  </data>
-  <data name="&gt;&gt;ExplorerSplitter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="MainUIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="MainUIPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MainUIPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 530</value>
-  </data>
-  <data name="MainUIPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;MainUIPanel.Name" xml:space="preserve">
-    <value>MainUIPanel</value>
-  </data>
-  <data name="&gt;&gt;MainUIPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;FolderExplorerPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MainUIPanel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;FolderExplorerPanel.Parent" xml:space="preserve">
+    <value>MainUIPanel</value>
   </data>
-  <data name="&gt;&gt;MainUIPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FolderExplorerPanel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="cTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="cTabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
   <data name="cTabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 49</value>
   </data>
   <data name="cTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 455</value>
+    <value>748, 361</value>
   </data>
   <data name="cTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;cTabControl.Name" xml:space="preserve">
     <value>cTabControl</value>
@@ -1287,6 +1311,225 @@
   </data>
   <data name="&gt;&gt;cTabControl.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="CloseSearchPanelButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="CloseSearchPanelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="CloseSearchPanelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="CloseSearchPanelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="CloseSearchPanelButton.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="CloseSearchPanelButton.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageAboveText</value>
+  </data>
+  <data name="&gt;&gt;CloseSearchPanelButton.Name" xml:space="preserve">
+    <value>CloseSearchPanelButton</value>
+  </data>
+  <data name="&gt;&gt;CloseSearchPanelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseSearchPanelButton.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;CloseSearchPanelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GoToLineButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="GoToLineButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 65</value>
+  </data>
+  <data name="GoToLineButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="GoToLineButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GoToLineButton.Text" xml:space="preserve">
+    <value>Перейти к строке</value>
+  </data>
+  <data name="&gt;&gt;GoToLineButton.Name" xml:space="preserve">
+    <value>GoToLineButton</value>
+  </data>
+  <data name="&gt;&gt;GoToLineButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GoToLineButton.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;GoToLineButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GoToLineNumericUpDown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="GoToLineNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 65</value>
+  </data>
+  <data name="GoToLineNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 23</value>
+  </data>
+  <data name="GoToLineNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;GoToLineNumericUpDown.Name" xml:space="preserve">
+    <value>GoToLineNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;GoToLineNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GoToLineNumericUpDown.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;GoToLineNumericUpDown.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ReplaceAllButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ReplaceAllButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ReplaceAllButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 36</value>
+  </data>
+  <data name="ReplaceAllButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 23</value>
+  </data>
+  <data name="ReplaceAllButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ReplaceAllButton.Text" xml:space="preserve">
+    <value>Заменить всё</value>
+  </data>
+  <data name="&gt;&gt;ReplaceAllButton.Name" xml:space="preserve">
+    <value>ReplaceAllButton</value>
+  </data>
+  <data name="&gt;&gt;ReplaceAllButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReplaceAllButton.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;ReplaceAllButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ReplaceButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ReplaceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 7</value>
+  </data>
+  <data name="ReplaceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 23</value>
+  </data>
+  <data name="ReplaceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ReplaceButton.Text" xml:space="preserve">
+    <value>Заменить</value>
+  </data>
+  <data name="&gt;&gt;ReplaceButton.Name" xml:space="preserve">
+    <value>ReplaceButton</value>
+  </data>
+  <data name="&gt;&gt;ReplaceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReplaceButton.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;ReplaceButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ReplaceTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ReplaceTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 36</value>
+  </data>
+  <data name="ReplaceTextBox.PlaceholderText" xml:space="preserve">
+    <value>Замена...</value>
+  </data>
+  <data name="ReplaceTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>591, 23</value>
+  </data>
+  <data name="ReplaceTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ReplaceTextBox.Name" xml:space="preserve">
+    <value>ReplaceTextBox</value>
+  </data>
+  <data name="&gt;&gt;ReplaceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReplaceTextBox.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;ReplaceTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="FindTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="FindTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 7</value>
+  </data>
+  <data name="FindTextBox.PlaceholderText" xml:space="preserve">
+    <value>Поиск...</value>
+  </data>
+  <data name="FindTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>591, 23</value>
+  </data>
+  <data name="FindTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FindTextBox.Name" xml:space="preserve">
+    <value>FindTextBox</value>
+  </data>
+  <data name="&gt;&gt;FindTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FindTextBox.Parent" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;FindTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SearchPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="SearchPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 410</value>
+  </data>
+  <data name="SearchPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>748, 94</value>
+  </data>
+  <data name="SearchPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="SearchPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Name" xml:space="preserve">
+    <value>SearchPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.Parent" xml:space="preserve">
+    <value>MainUIPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ExplorerSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -1316,7 +1559,31 @@
     <value>MainUIPanel</value>
   </data>
   <data name="&gt;&gt;ExplorerSplitter.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="MainUIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="MainUIPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MainUIPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 530</value>
+  </data>
+  <data name="MainUIPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;MainUIPanel.Name" xml:space="preserve">
+    <value>MainUIPanel</value>
+  </data>
+  <data name="&gt;&gt;MainUIPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainUIPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainUIPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="settingsTabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Bottom</value>
@@ -1324,556 +1591,89 @@
   <data name="settingsTabPage.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;SettingsEditorPanel.Name" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
+  <data name="panel14.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;SettingsEditorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingsEditorPanel.Parent" xml:space="preserve">
-    <value>settingsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SettingsEditorPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.Name" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.Parent" xml:space="preserve">
-    <value>settingsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="settingsTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="settingsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 460</value>
-  </data>
-  <data name="settingsTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="settingsTabPage.Text" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
-  <data name="&gt;&gt;settingsTabPage.Name" xml:space="preserve">
-    <value>settingsTabPage</value>
-  </data>
-  <data name="&gt;&gt;settingsTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsTabPage.Parent" xml:space="preserve">
-    <value>settingsTabControl</value>
-  </data>
-  <data name="&gt;&gt;settingsTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage4.AutoScroll" type="System.Boolean, mscorlib">
+  <data name="DetectUrlsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;programInfoPanel.Name" xml:space="preserve">
-    <value>programInfoPanel</value>
+  <data name="DetectUrlsCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;programInfoPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="DetectUrlsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 6</value>
   </data>
-  <data name="&gt;&gt;programInfoPanel.Parent" xml:space="preserve">
-    <value>tabPage4</value>
+  <data name="DetectUrlsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
   </data>
-  <data name="&gt;&gt;programInfoPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;infoTextBox.Name" xml:space="preserve">
-    <value>infoTextBox</value>
-  </data>
-  <data name="&gt;&gt;infoTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoTextBox.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;infoTextBox.ZOrder" xml:space="preserve">
+  <data name="DetectUrlsCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;programComponentsPanel.Name" xml:space="preserve">
-    <value>programComponentsPanel</value>
+  <data name="&gt;&gt;DetectUrlsCheckBox.Name" xml:space="preserve">
+    <value>DetectUrlsCheckBox</value>
   </data>
-  <data name="&gt;&gt;programComponentsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programComponentsPanel.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;programComponentsPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabPage4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 9pt, style=Bold</value>
-  </data>
-  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPage4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabPage4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 1, 4, 3</value>
-  </data>
-  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 432</value>
-  </data>
-  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>О программе</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ChangeLogTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ChangeLogTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="ChangeLogTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 3</value>
-  </data>
-  <data name="ChangeLogTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ChangeLogTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="ChangeLogTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 426</value>
-  </data>
-  <data name="ChangeLogTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="ChangeLogTextBox.Text" xml:space="preserve">
-    <value>TextPad+ 2.8.0
-
-Основные изменения:
-—В панель запуска скрипта добавлено поле с полным путём до выбранного файла
-—Добавлена автоматическое подставление парных символов (), {}, "" и т.д. Можно отключить в настройках
-—Добавлена поддержка некоторых расширений файлов при открытии и сохранении
-—Добавлена возможность запуска скриптов на языке JScript и локального запуска веб-страниц HTML в браузере по умолчанию
-—Добавлена поддержка кодировки CP866
-
-Исправления:
-—Исправлена ошибка, из-за которой открытые и сохранённые файлы после выбора вкладки помечались изменёнными
-—Исправлена ошибка, из-за которой после создания новой вкладки, путь файла из выбранной стирался
-—Исправлена ошибка с копирование форматированного текста
-_________________________________________________________________________________________________________________
-
-TextPad+ 2.7.0
-
-Основные изменения:
-—Обновление версии платформы с .NET 6 до .NET 8
-—Добавлена возможность повторно открыть файл через меню "Файл"
-—Добавлена возможность открыть папку текущего файла как папку проекта в проводнике
-—Добавлена возможность очистить список последних файлов
-—Добавлена возможность в меню "Правка" изменить регистр выделенного текста
-—Добавлена поддержка нескольких кодировок
-
-Исправления:
-—При сохранении и открытии файла кнопка "Открыть папку файла" больше не блокируется
-—Исправление мелких ошибок в работе проводника
-—Доработана система проверки обновлений
-—Исправление небольших ошибок</value>
-  </data>
-  <data name="&gt;&gt;ChangeLogTextBox.Name" xml:space="preserve">
-    <value>ChangeLogTextBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeLogTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeLogTextBox.Parent" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;ChangeLogTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="tabPage5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabPage5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 432</value>
-  </data>
-  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>Список изменений</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
-    <value>tabPage5</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 460</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>infoTabPage</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="infoTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="infoTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 460</value>
-  </data>
-  <data name="infoTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="infoTabPage.Text" xml:space="preserve">
-    <value>Справка</value>
-  </data>
-  <data name="&gt;&gt;infoTabPage.Name" xml:space="preserve">
-    <value>infoTabPage</value>
-  </data>
-  <data name="&gt;&gt;infoTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoTabPage.Parent" xml:space="preserve">
-    <value>settingsTabControl</value>
-  </data>
-  <data name="&gt;&gt;infoTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="settingsTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="settingsTabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="settingsTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="settingsTabControl.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="settingsTabControl.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="settingsTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 488</value>
-  </data>
-  <data name="settingsTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;settingsTabControl.Name" xml:space="preserve">
-    <value>settingsTabControl</value>
-  </data>
-  <data name="&gt;&gt;settingsTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsTabControl.Parent" xml:space="preserve">
-    <value>SettingsUIPanel</value>
-  </data>
-  <data name="&gt;&gt;settingsTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;checkUpdatesButton.Name" xml:space="preserve">
-    <value>checkUpdatesButton</value>
-  </data>
-  <data name="&gt;&gt;checkUpdatesButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkUpdatesButton.Parent" xml:space="preserve">
-    <value>SettingsBottomUIPanel</value>
-  </data>
-  <data name="&gt;&gt;checkUpdatesButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cancelBatton.Name" xml:space="preserve">
-    <value>cancelBatton</value>
-  </data>
-  <data name="&gt;&gt;cancelBatton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cancelBatton.Parent" xml:space="preserve">
-    <value>SettingsBottomUIPanel</value>
-  </data>
-  <data name="&gt;&gt;cancelBatton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;saveButton.Name" xml:space="preserve">
-    <value>saveButton</value>
-  </data>
-  <data name="&gt;&gt;saveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
-    <value>SettingsBottomUIPanel</value>
-  </data>
-  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SettingsBottomUIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="SettingsBottomUIPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 488</value>
-  </data>
-  <data name="SettingsBottomUIPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 42</value>
-  </data>
-  <data name="SettingsBottomUIPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;SettingsBottomUIPanel.Name" xml:space="preserve">
-    <value>SettingsBottomUIPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingsBottomUIPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingsBottomUIPanel.Parent" xml:space="preserve">
-    <value>SettingsUIPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingsBottomUIPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SettingsUIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="SettingsUIPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="SettingsUIPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 530</value>
-  </data>
-  <data name="SettingsUIPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="SettingsUIPanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;SettingsUIPanel.Name" xml:space="preserve">
-    <value>SettingsUIPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingsUIPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingsUIPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SettingsUIPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel10.Name" xml:space="preserve">
-    <value>panel10</value>
-  </data>
-  <data name="&gt;&gt;panel10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel10.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel10.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel11.Name" xml:space="preserve">
-    <value>panel11</value>
-  </data>
-  <data name="&gt;&gt;panel11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel11.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel9.Name" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;panel9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="SettingsEditorPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="SettingsEditorPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 380</value>
-  </data>
-  <data name="SettingsEditorPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;SettingsEditorPanel.Name" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingsEditorPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingsEditorPanel.Parent" xml:space="preserve">
-    <value>settingsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SettingsEditorPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AutoChekUpdateCheckBox.Name" xml:space="preserve">
-    <value>AutoChekUpdateCheckBox</value>
-  </data>
-  <data name="&gt;&gt;AutoChekUpdateCheckBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;DetectUrlsCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AutoChekUpdateCheckBox.Parent" xml:space="preserve">
-    <value>panel10</value>
+  <data name="&gt;&gt;DetectUrlsCheckBox.Parent" xml:space="preserve">
+    <value>panel14</value>
   </data>
-  <data name="&gt;&gt;AutoChekUpdateCheckBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DetectUrlsCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
+  <data name="label28.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+  <data name="label28.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 15</value>
+  </data>
+  <data name="label28.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Подсветка ссылок:</value>
+  </data>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
+  </data>
+  <data name="&gt;&gt;label28.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>panel10</value>
+  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
+    <value>panel14</value>
   </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="panel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 338</value>
+  <data name="panel14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 374</value>
   </data>
-  <data name="panel10.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel14.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 30</value>
   </data>
-  <data name="panel10.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="panel14.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;panel10.Name" xml:space="preserve">
-    <value>panel10</value>
+  <data name="&gt;&gt;panel14.Name" xml:space="preserve">
+    <value>panel14</value>
   </data>
-  <data name="&gt;&gt;panel10.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel14.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel10.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel14.Parent" xml:space="preserve">
     <value>SettingsEditorPanel</value>
   </data>
-  <data name="&gt;&gt;panel10.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel14.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="panel10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="AutoChekUpdateCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1912,13 +1712,13 @@ TextPad+ 2.7.0
     <value>3, 5</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 15</value>
+    <value>247, 15</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
-    <value>Проверять наличие обновлений при входе:</value>
+    <value>Проверка наличия обновлений при входе:</value>
   </data>
   <data name="&gt;&gt;label20.Name" xml:space="preserve">
     <value>label20</value>
@@ -1930,6 +1730,27 @@ TextPad+ 2.7.0
     <value>panel10</value>
   </data>
   <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 338</value>
+  </data>
+  <data name="panel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 30</value>
+  </data>
+  <data name="panel10.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panel10.Name" xml:space="preserve">
+    <value>panel10</value>
+  </data>
+  <data name="&gt;&gt;panel10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel10.Parent" xml:space="preserve">
+    <value>SettingsEditorPanel</value>
+  </data>
+  <data name="&gt;&gt;panel10.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
@@ -1963,52 +1784,10 @@ TextPad+ 2.7.0
     <value>SettingsEditorPanel</value>
   </data>
   <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ColorThemeComboBox.Name" xml:space="preserve">
-    <value>ColorThemeComboBox</value>
-  </data>
-  <data name="&gt;&gt;ColorThemeComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColorThemeComboBox.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;ColorThemeComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 51</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 60</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>SettingsEditorPanel</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="ColorThemeComboBox.Items" xml:space="preserve">
     <value>Белая / White</value>
@@ -2067,50 +1846,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;ExitWhenClosingLastTabCheckBox.Name" xml:space="preserve">
-    <value>ExitWhenClosingLastTabCheckBox</value>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 51</value>
   </data>
-  <data name="&gt;&gt;ExitWhenClosingLastTabCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 60</value>
   </data>
-  <data name="&gt;&gt;ExitWhenClosingLastTabCheckBox.Parent" xml:space="preserve">
-    <value>panel11</value>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;ExitWhenClosingLastTabCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="&gt;&gt;label24.Name" xml:space="preserve">
-    <value>label24</value>
-  </data>
-  <data name="&gt;&gt;label24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
-    <value>panel11</value>
-  </data>
-  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 302</value>
-  </data>
-  <data name="panel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
-  </data>
-  <data name="panel11.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;panel11.Name" xml:space="preserve">
-    <value>panel11</value>
-  </data>
-  <data name="&gt;&gt;panel11.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel11.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>SettingsEditorPanel</value>
   </data>
-  <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="panel11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="ExitWhenClosingLastTabCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2169,50 +1927,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;LanguageComboBox.Name" xml:space="preserve">
-    <value>LanguageComboBox</value>
+  <data name="panel11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 302</value>
   </data>
-  <data name="&gt;&gt;LanguageComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 30</value>
   </data>
-  <data name="&gt;&gt;LanguageComboBox.Parent" xml:space="preserve">
-    <value>panel3</value>
+  <data name="panel11.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="&gt;&gt;LanguageComboBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel11.Name" xml:space="preserve">
+    <value>panel11</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 117</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 60</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel11.Parent" xml:space="preserve">
     <value>SettingsEditorPanel</value>
   </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel11.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="LanguageComboBox.Items" xml:space="preserve">
     <value>Русский / Russian</value>
@@ -2271,50 +2008,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;WordWarpCheckBox.Name" xml:space="preserve">
-    <value>WordWarpCheckBox</value>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 117</value>
   </data>
-  <data name="&gt;&gt;WordWarpCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 60</value>
   </data>
-  <data name="&gt;&gt;WordWarpCheckBox.Parent" xml:space="preserve">
-    <value>panel5</value>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;WordWarpCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 266</value>
-  </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
-  </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
     <value>SettingsEditorPanel</value>
   </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="panel5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="WordWarpCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2373,62 +2089,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 266</value>
   </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 30</value>
   </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
-    <value>panel9</value>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
   </data>
-  <data name="&gt;&gt;FontTextBox.Name" xml:space="preserve">
-    <value>FontTextBox</value>
-  </data>
-  <data name="&gt;&gt;FontTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FontTextBox.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;FontTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 183</value>
-  </data>
-  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 41</value>
-  </data>
-  <data name="panel9.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;panel9.Name" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;panel9.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
     <value>SettingsEditorPanel</value>
   </data>
-  <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="panel9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
@@ -2458,7 +2141,7 @@ TextPad+ 2.7.0
     <value>0</value>
   </data>
   <data name="FontTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11.25pt</value>
+    <value>Segoe UI, 11pt</value>
   </data>
   <data name="FontTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 6</value>
@@ -2514,50 +2197,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;TopmostCheckBox.Name" xml:space="preserve">
-    <value>TopmostCheckBox</value>
+  <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 183</value>
   </data>
-  <data name="&gt;&gt;TopmostCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 41</value>
   </data>
-  <data name="&gt;&gt;TopmostCheckBox.Parent" xml:space="preserve">
-    <value>panel4</value>
+  <data name="panel9.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;TopmostCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel9.Name" xml:space="preserve">
+    <value>panel9</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 230</value>
-  </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
-  </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel9.Parent" xml:space="preserve">
     <value>SettingsEditorPanel</value>
   </data>
-  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="TopmostCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2616,143 +2278,140 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;panel12.Name" xml:space="preserve">
-    <value>panel12</value>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 230</value>
   </data>
-  <data name="&gt;&gt;panel12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel12.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;panel12.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel8.Name" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;panel8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel8.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="SettingsToolsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>439, 20</value>
-  </data>
-  <data name="SettingsToolsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 235</value>
-  </data>
-  <data name="SettingsToolsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.Name" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.Parent" xml:space="preserve">
-    <value>settingsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SettingsToolsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;AutoSubstitutionCheckBox.Name" xml:space="preserve">
-    <value>AutoSubstitutionCheckBox</value>
-  </data>
-  <data name="&gt;&gt;AutoSubstitutionCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AutoSubstitutionCheckBox.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;AutoSubstitutionCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label25.Name" xml:space="preserve">
-    <value>label25</value>
-  </data>
-  <data name="&gt;&gt;label25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
-    <value>panel12</value>
-  </data>
-  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 194</value>
-  </data>
-  <data name="panel12.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 30</value>
   </data>
-  <data name="panel12.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
-  <data name="&gt;&gt;panel12.Name" xml:space="preserve">
-    <value>panel12</value>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
   </data>
-  <data name="&gt;&gt;panel12.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel12.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
+    <value>SettingsEditorPanel</value>
+  </data>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SettingsEditorPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="SettingsEditorPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>396, 417</value>
+  </data>
+  <data name="SettingsEditorPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;SettingsEditorPanel.Name" xml:space="preserve">
+    <value>SettingsEditorPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingsEditorPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingsEditorPanel.Parent" xml:space="preserve">
+    <value>settingsTabPage</value>
+  </data>
+  <data name="&gt;&gt;SettingsEditorPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Items" xml:space="preserve">
+    <value>Выключить (Disable)</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Items1" xml:space="preserve">
+    <value>При каждом изменении текста (On text changed)</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Items2" xml:space="preserve">
+    <value>1 Минута (Minute)</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Items3" xml:space="preserve">
+    <value>2 Минуты (Minutes)</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Items4" xml:space="preserve">
+    <value>5 Минут (Minutes)</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 11</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 23</value>
+  </data>
+  <data name="AutoSaveTimeComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;AutoSaveTimeComboBox.Name" xml:space="preserve">
+    <value>AutoSaveTimeComboBox</value>
+  </data>
+  <data name="&gt;&gt;AutoSaveTimeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AutoSaveTimeComboBox.Parent" xml:space="preserve">
+    <value>panel13</value>
+  </data>
+  <data name="&gt;&gt;AutoSaveTimeComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label27.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 14</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="label27.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Автосохранение:</value>
+  </data>
+  <data name="&gt;&gt;label27.Name" xml:space="preserve">
+    <value>label27</value>
+  </data>
+  <data name="&gt;&gt;label27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label27.Parent" xml:space="preserve">
+    <value>panel13</value>
+  </data>
+  <data name="&gt;&gt;label27.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 51</value>
+  </data>
+  <data name="panel13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 60</value>
+  </data>
+  <data name="panel13.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;panel13.Name" xml:space="preserve">
+    <value>panel13</value>
+  </data>
+  <data name="&gt;&gt;panel13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel13.Parent" xml:space="preserve">
     <value>SettingsToolsPanel</value>
   </data>
-  <data name="&gt;&gt;panel12.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel13.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="panel12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="AutoSubstitutionCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2791,13 +2450,13 @@ TextPad+ 2.7.0
     <value>4, 6</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 15</value>
+    <value>228, 15</value>
   </data>
   <data name="label25.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
-    <value>Подставлять закрывающие символы:</value>
+    <value>Подставление закрывающие символы:</value>
   </data>
   <data name="&gt;&gt;label25.Name" xml:space="preserve">
     <value>label25</value>
@@ -2811,182 +2470,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="panel12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 230</value>
   </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 12</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 17</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Инструменты</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.Name" xml:space="preserve">
-    <value>RunFileToolBarCheckBox</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.Parent" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 122</value>
-  </data>
-  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel12.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 30</value>
   </data>
-  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="panel12.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
-    <value>panel6</value>
+  <data name="&gt;&gt;panel12.Name" xml:space="preserve">
+    <value>panel12</value>
   </data>
-  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel12.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel12.Parent" xml:space="preserve">
     <value>SettingsToolsPanel</value>
   </data>
-  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="RunFileToolBarCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RunFileToolBarCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="RunFileToolBarCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 6</value>
-  </data>
-  <data name="RunFileToolBarCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="RunFileToolBarCheckBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;panel12.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.Name" xml:space="preserve">
-    <value>RunFileToolBarCheckBox</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.Parent" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;RunFileToolBarCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 15</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Панель запуска скриптов:</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;StatusBarCheckBox.Name" xml:space="preserve">
-    <value>StatusBarCheckBox</value>
-  </data>
-  <data name="&gt;&gt;StatusBarCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusBarCheckBox.Parent" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;StatusBarCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 51</value>
-  </data>
-  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
-  </data>
-  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
-    <value>SettingsToolsPanel</value>
-  </data>
-  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="panel7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="StatusBarCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3045,50 +2551,140 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;ExplorerCheckBox.Name" xml:space="preserve">
-    <value>ExplorerCheckBox</value>
+  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 266</value>
   </data>
-  <data name="&gt;&gt;ExplorerCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExplorerCheckBox.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ExplorerCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 158</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 30</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
+    <value>panel7</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
     <value>SettingsToolsPanel</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 12</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 17</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>SettingsToolsPanel</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="RunFileToolBarCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RunFileToolBarCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RunFileToolBarCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 6</value>
+  </data>
+  <data name="RunFileToolBarCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="RunFileToolBarCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolBarCheckBox.Name" xml:space="preserve">
+    <value>RunFileToolBarCheckBox</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolBarCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolBarCheckBox.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;RunFileToolBarCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 15</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Панель запуска скриптов:</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 159</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 30</value>
+  </data>
+  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
+    <value>SettingsToolsPanel</value>
+  </data>
+  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="ExplorerCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3147,50 +2743,29 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;ToolBarCheckBox.Name" xml:space="preserve">
-    <value>ToolBarCheckBox</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 196</value>
   </data>
-  <data name="&gt;&gt;ToolBarCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolBarCheckBox.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;ToolBarCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 86</value>
-  </data>
-  <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 30</value>
   </data>
-  <data name="panel8.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;panel8.Name" xml:space="preserve">
-    <value>panel8</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;panel8.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel8.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>SettingsToolsPanel</value>
   </data>
-  <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="panel8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="ToolBarCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3249,161 +2824,74 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;ProgramNameLabel.Name" xml:space="preserve">
-    <value>ProgramNameLabel</value>
+  <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 126</value>
   </data>
-  <data name="&gt;&gt;ProgramNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 27</value>
   </data>
-  <data name="&gt;&gt;ProgramNameLabel.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;ProgramNameLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.Name" xml:space="preserve">
-    <value>pictureBox</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label23.Name" xml:space="preserve">
-    <value>label23</value>
-  </data>
-  <data name="&gt;&gt;label23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;textBoxWebSiteUrl.Name" xml:space="preserve">
-    <value>textBoxWebSiteUrl</value>
-  </data>
-  <data name="&gt;&gt;textBoxWebSiteUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxWebSiteUrl.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;textBoxWebSiteUrl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;DeveloperLabel.Name" xml:space="preserve">
-    <value>DeveloperLabel</value>
-  </data>
-  <data name="&gt;&gt;DeveloperLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeveloperLabel.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;DeveloperLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label22.Name" xml:space="preserve">
-    <value>label22</value>
-  </data>
-  <data name="&gt;&gt;label22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;DateOfReleaseLabel.Name" xml:space="preserve">
-    <value>DateOfReleaseLabel</value>
-  </data>
-  <data name="&gt;&gt;DateOfReleaseLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DateOfReleaseLabel.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;DateOfReleaseLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
-  </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.Name" xml:space="preserve">
-    <value>VersionLabel</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;VersionLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelWebSite.Name" xml:space="preserve">
-    <value>labelWebSite</value>
-  </data>
-  <data name="&gt;&gt;labelWebSite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWebSite.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;labelWebSite.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;buttonWebsite.Name" xml:space="preserve">
-    <value>buttonWebsite</value>
-  </data>
-  <data name="&gt;&gt;buttonWebsite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonWebsite.Parent" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;buttonWebsite.ZOrder" xml:space="preserve">
+  <data name="panel8.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="programInfoPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;panel8.Name" xml:space="preserve">
+    <value>panel8</value>
   </data>
-  <data name="programInfoPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 1</value>
-  </data>
-  <data name="programInfoPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 207</value>
-  </data>
-  <data name="programInfoPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;programInfoPanel.Name" xml:space="preserve">
-    <value>programInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;programInfoPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;programInfoPanel.Parent" xml:space="preserve">
-    <value>tabPage4</value>
+  <data name="&gt;&gt;panel8.Parent" xml:space="preserve">
+    <value>SettingsToolsPanel</value>
   </data>
-  <data name="&gt;&gt;programInfoPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel8.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SettingsToolsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 20</value>
+  </data>
+  <data name="SettingsToolsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 308</value>
+  </data>
+  <data name="SettingsToolsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;SettingsToolsPanel.Name" xml:space="preserve">
+    <value>SettingsToolsPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingsToolsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingsToolsPanel.Parent" xml:space="preserve">
+    <value>settingsTabPage</value>
+  </data>
+  <data name="&gt;&gt;SettingsToolsPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="settingsTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="settingsTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 460</value>
+  </data>
+  <data name="settingsTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="settingsTabPage.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="&gt;&gt;settingsTabPage.Name" xml:space="preserve">
+    <value>settingsTabPage</value>
+  </data>
+  <data name="&gt;&gt;settingsTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsTabPage.Parent" xml:space="preserve">
+    <value>settingsTabControl</value>
+  </data>
+  <data name="&gt;&gt;settingsTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage4.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="ProgramNameLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -3765,6 +3253,30 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;buttonWebsite.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="programInfoPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="programInfoPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 1</value>
+  </data>
+  <data name="programInfoPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>956, 207</value>
+  </data>
+  <data name="programInfoPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;programInfoPanel.Name" xml:space="preserve">
+    <value>programInfoPanel</value>
+  </data>
+  <data name="&gt;&gt;programInfoPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;programInfoPanel.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;programInfoPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="infoTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -3808,57 +3320,6 @@ TextPad+ 2.7.0
   <data name="programComponentsPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="&gt;&gt;componentsTable.Name" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Parent" xml:space="preserve">
-    <value>programComponentsPanel</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="componentsTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LSVersionLabel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CTCLabelVersion" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MTBVersionLabel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label26" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,333336,Percent,33,333336" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="&gt;&gt;programComponentsTitle.Name" xml:space="preserve">
-    <value>programComponentsTitle</value>
-  </data>
-  <data name="&gt;&gt;programComponentsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programComponentsTitle.Parent" xml:space="preserve">
-    <value>programComponentsPanel</value>
-  </data>
-  <data name="&gt;&gt;programComponentsTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="programComponentsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="programComponentsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 288</value>
-  </data>
-  <data name="programComponentsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>956, 141</value>
-  </data>
-  <data name="programComponentsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;programComponentsPanel.Name" xml:space="preserve">
-    <value>programComponentsPanel</value>
-  </data>
-  <data name="&gt;&gt;programComponentsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programComponentsPanel.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;programComponentsPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="componentsTable.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3870,180 +3331,6 @@ TextPad+ 2.7.0
   </data>
   <data name="componentsTable.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.Name" xml:space="preserve">
-    <value>LSVersionLabel</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;LSVersionLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.Name" xml:space="preserve">
-    <value>CTCLabelVersion</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;CTCLabelVersion.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.Name" xml:space="preserve">
-    <value>MTBVersionLabel</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;MTBVersionLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;label26.Name" xml:space="preserve">
-    <value>label26</value>
-  </data>
-  <data name="&gt;&gt;label26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="componentsTable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="componentsTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 27</value>
-  </data>
-  <data name="componentsTable.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="componentsTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 112</value>
-  </data>
-  <data name="componentsTable.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Name" xml:space="preserve">
-    <value>componentsTable</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.Parent" xml:space="preserve">
-    <value>programComponentsPanel</value>
-  </data>
-  <data name="&gt;&gt;componentsTable.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="componentsTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LSVersionLabel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CTCLabelVersion" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MTBVersionLabel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label26" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,333336,Percent,33,333336" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -4477,6 +3764,36 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="componentsTable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="componentsTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="componentsTable.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="componentsTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>954, 112</value>
+  </data>
+  <data name="componentsTable.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.Name" xml:space="preserve">
+    <value>componentsTable</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.Parent" xml:space="preserve">
+    <value>programComponentsPanel</value>
+  </data>
+  <data name="&gt;&gt;componentsTable.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="componentsTable.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LSVersionLabel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CTCLabelVersion" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MTBVersionLabel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label26" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,333336,Percent,33,333336" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="programComponentsTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -4515,6 +3832,246 @@ TextPad+ 2.7.0
   </data>
   <data name="&gt;&gt;programComponentsTitle.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="programComponentsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="programComponentsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 288</value>
+  </data>
+  <data name="programComponentsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>956, 141</value>
+  </data>
+  <data name="programComponentsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;programComponentsPanel.Name" xml:space="preserve">
+    <value>programComponentsPanel</value>
+  </data>
+  <data name="&gt;&gt;programComponentsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;programComponentsPanel.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;programComponentsPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPage4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 9pt, style=Bold</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPage4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPage4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 1, 4, 3</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 432</value>
+  </data>
+  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Основная информация</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ChangeLogTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ChangeLogTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="ChangeLogTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="ChangeLogTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ChangeLogTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="ChangeLogTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>956, 426</value>
+  </data>
+  <data name="ChangeLogTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ChangeLogTextBox.Text" xml:space="preserve">
+    <value>TextPad+ 2.9.0
+
+Основные изменения:
+—Добавлено автосохранение
+—Добавлена возможность сохранить все файлы
+—Окно поиска перенесено в панель снизу
+—Добавлена возможность выбрать кодировку в меню "Файл"
+—Добавлена возможность открывать ссылки в браузере и выключить их подсветку
+
+Исправления:
+—Исправлена ошибка, из-за которой не изменялась цветовая схема
+—Исправления мелких ошибок
+—Доработана система обновлений
+—Табуляция укорочена до 4 пробелов
+—Улучшена система логирования
+—Исправление небольших ошибок
+_________________________________________________________________________________________________________________
+
+TextPad+ 2.8.0
+
+Основные изменения:
+—В панель запуска скрипта добавлено поле с полным путём до выбранного файла
+—Добавлена автоматическое подставление парных символов (), {}, "" и т.д. Можно отключить в настройках
+—Добавлена поддержка некоторых расширений файлов при открытии и сохранении
+—Добавлена возможность запуска скриптов на языке JScript и локального запуска веб-страниц HTML в браузере по умолчанию
+—Добавлена поддержка кодировки CP866
+
+Исправления:
+—Исправлена ошибка, из-за которой открытые и сохранённые файлы после выбора вкладки помечались изменёнными
+—Исправлена ошибка, из-за которой после создания новой вкладки, путь файла из выбранной стирался
+—Исправлена ошибка с копирование форматированного текста</value>
+  </data>
+  <data name="&gt;&gt;ChangeLogTextBox.Name" xml:space="preserve">
+    <value>ChangeLogTextBox</value>
+  </data>
+  <data name="&gt;&gt;ChangeLogTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChangeLogTextBox.Parent" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;ChangeLogTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPage5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPage5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPage5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 432</value>
+  </data>
+  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>Список изменений</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Name" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 460</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>infoTabPage</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="infoTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="infoTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>972, 460</value>
+  </data>
+  <data name="infoTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="infoTabPage.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="&gt;&gt;infoTabPage.Name" xml:space="preserve">
+    <value>infoTabPage</value>
+  </data>
+  <data name="&gt;&gt;infoTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoTabPage.Parent" xml:space="preserve">
+    <value>settingsTabControl</value>
+  </data>
+  <data name="&gt;&gt;infoTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="settingsTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="settingsTabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="settingsTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="settingsTabControl.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="settingsTabControl.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="settingsTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 488</value>
+  </data>
+  <data name="settingsTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;settingsTabControl.Name" xml:space="preserve">
+    <value>settingsTabControl</value>
+  </data>
+  <data name="&gt;&gt;settingsTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsTabControl.Parent" xml:space="preserve">
+    <value>SettingsUIPanel</value>
+  </data>
+  <data name="&gt;&gt;settingsTabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="checkUpdatesButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -4609,11 +4166,65 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="SettingsBottomUIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="SettingsBottomUIPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 488</value>
+  </data>
+  <data name="SettingsBottomUIPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 42</value>
+  </data>
+  <data name="SettingsBottomUIPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;SettingsBottomUIPanel.Name" xml:space="preserve">
+    <value>SettingsBottomUIPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingsBottomUIPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingsBottomUIPanel.Parent" xml:space="preserve">
+    <value>SettingsUIPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingsBottomUIPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SettingsUIPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="SettingsUIPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="SettingsUIPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 530</value>
+  </data>
+  <data name="SettingsUIPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="SettingsUIPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SettingsUIPanel.Name" xml:space="preserve">
+    <value>SettingsUIPanel</value>
+  </data>
+  <data name="&gt;&gt;SettingsUIPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SettingsUIPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SettingsUIPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="AutoSaveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>13, 53</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>63</value>
+    <value>51</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
@@ -4883,6 +4494,12 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;SaveAsFileMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;SaveAllFileMenuItem.Name" xml:space="preserve">
+    <value>SaveAllFileMenuItem</value>
+  </data>
+  <data name="&gt;&gt;SaveAllFileMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;OpenFileMenuItem.Name" xml:space="preserve">
     <value>OpenFileMenuItem</value>
   </data>
@@ -4893,6 +4510,78 @@ TextPad+ 2.7.0
     <value>ReopenFileMenuItem</value>
   </data>
   <data name="&gt;&gt;ReopenFileMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;выбратьКодировкуToolStripMenuItem.Name" xml:space="preserve">
+    <value>выбратьКодировкуToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;выбратьКодировкуToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTF32BEToolStripMenuItem1.Name" xml:space="preserve">
+    <value>uTF32BEToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;uTF32BEToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTF32ToolStripMenuItem.Name" xml:space="preserve">
+    <value>uTF32ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;uTF32ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTF16BEToolStripMenuItem1.Name" xml:space="preserve">
+    <value>uTF16BEToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;uTF16BEToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTF16ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>uTF16ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;uTF16ToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTF8BOMToolStripMenuItem1.Name" xml:space="preserve">
+    <value>uTF8BOMToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;uTF8BOMToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uTF8ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>uTF8ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;uTF8ToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aSCIIToolStripMenuItem1.Name" xml:space="preserve">
+    <value>aSCIIToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;aSCIIToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;windows1251ToolStripMenuItem.Name" xml:space="preserve">
+    <value>windows1251ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;windows1251ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kOI8RToolStripMenuItem2.Name" xml:space="preserve">
+    <value>kOI8RToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;kOI8RToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kOI8UToolStripMenuItem1.Name" xml:space="preserve">
+    <value>kOI8UToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;kOI8UToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cP866ToolStripMenuItem1.Name" xml:space="preserve">
+    <value>cP866ToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;cP866ToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;DeleteFileMenuItem.Name" xml:space="preserve">
@@ -5273,16 +4962,16 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;CP866ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newTabToolStripItem.Name" xml:space="preserve">
-    <value>newTabToolStripItem</value>
+  <data name="&gt;&gt;NewTabToolStripItem.Name" xml:space="preserve">
+    <value>NewTabToolStripItem</value>
   </data>
-  <data name="&gt;&gt;newTabToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;NewTabToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;closeTabToolStripItem.Name" xml:space="preserve">
-    <value>closeTabToolStripItem</value>
+  <data name="&gt;&gt;CloseTabToolStripItem.Name" xml:space="preserve">
+    <value>CloseTabToolStripItem</value>
   </data>
-  <data name="&gt;&gt;closeTabToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CloseTabToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSep1.Name" xml:space="preserve">
@@ -5291,16 +4980,22 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;toolStripSep1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveToolStripItem.Name" xml:space="preserve">
-    <value>saveToolStripItem</value>
+  <data name="&gt;&gt;SaveToolStripItem.Name" xml:space="preserve">
+    <value>SaveToolStripItem</value>
   </data>
-  <data name="&gt;&gt;saveToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openToolStripItem.Name" xml:space="preserve">
-    <value>openToolStripItem</value>
+  <data name="&gt;&gt;SaveAllToolStripItem.Name" xml:space="preserve">
+    <value>SaveAllToolStripItem</value>
   </data>
-  <data name="&gt;&gt;openToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveAllToolStripItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripItem.Name" xml:space="preserve">
+    <value>OpenToolStripItem</value>
+  </data>
+  <data name="&gt;&gt;OpenToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSep2.Name" xml:space="preserve">
@@ -5309,28 +5004,28 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;toolStripSep2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;copyToolStripItem.Name" xml:space="preserve">
-    <value>copyToolStripItem</value>
+  <data name="&gt;&gt;CopyToolStripItem.Name" xml:space="preserve">
+    <value>CopyToolStripItem</value>
   </data>
-  <data name="&gt;&gt;copyToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CopyToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cutToolStripItem.Name" xml:space="preserve">
-    <value>cutToolStripItem</value>
+  <data name="&gt;&gt;CutToolStripItem.Name" xml:space="preserve">
+    <value>CutToolStripItem</value>
   </data>
-  <data name="&gt;&gt;cutToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;CutToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pasteToolStripItem.Name" xml:space="preserve">
-    <value>pasteToolStripItem</value>
+  <data name="&gt;&gt;PasteToolStripItem.Name" xml:space="preserve">
+    <value>PasteToolStripItem</value>
   </data>
-  <data name="&gt;&gt;pasteToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;PasteToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deleteToolStripItem.Name" xml:space="preserve">
-    <value>deleteToolStripItem</value>
+  <data name="&gt;&gt;DeleteToolStripItem.Name" xml:space="preserve">
+    <value>DeleteToolStripItem</value>
   </data>
-  <data name="&gt;&gt;deleteToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeleteToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSep3.Name" xml:space="preserve">
@@ -5339,16 +5034,16 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;toolStripSep3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;undoToolStripItem.Name" xml:space="preserve">
-    <value>undoToolStripItem</value>
+  <data name="&gt;&gt;UndoToolStripItem.Name" xml:space="preserve">
+    <value>UndoToolStripItem</value>
   </data>
-  <data name="&gt;&gt;undoToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;UndoToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;redoToolStripItem.Name" xml:space="preserve">
-    <value>redoToolStripItem</value>
+  <data name="&gt;&gt;RedoToolStripItem.Name" xml:space="preserve">
+    <value>RedoToolStripItem</value>
   </data>
-  <data name="&gt;&gt;redoToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;RedoToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSep4.Name" xml:space="preserve">
@@ -5357,10 +5052,10 @@ TextPad+ 2.7.0
   <data name="&gt;&gt;toolStripSep4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fontToolStripItem.Name" xml:space="preserve">
-    <value>fontToolStripItem</value>
+  <data name="&gt;&gt;FontToolStripItem.Name" xml:space="preserve">
+    <value>FontToolStripItem</value>
   </data>
-  <data name="&gt;&gt;fontToolStripItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;FontToolStripItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSep5.Name" xml:space="preserve">
@@ -5446,6 +5141,12 @@ TextPad+ 2.7.0
   </data>
   <data name="&gt;&gt;FolderBrowserDialog_.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AutoSaveTimer.Name" xml:space="preserve">
+    <value>AutoSaveTimer</value>
+  </data>
+  <data name="&gt;&gt;AutoSaveTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainUI</value>

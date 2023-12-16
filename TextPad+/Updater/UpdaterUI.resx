@@ -117,154 +117,371 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="UpdaterInfoPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PathTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 89</value>
+  </data>
+  <data name="PathTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 23</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="InstallUpdateManuallyBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="PathTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;InstallUpdateManuallyBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;PathTextBox.Name" xml:space="preserve">
+    <value>PathTextBox</value>
   </data>
-  <data name="&gt;&gt;ProgramPathTextBox.Name" xml:space="preserve">
-    <value>ProgramPathTextBox</value>
+  <data name="&gt;&gt;PathTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="UpdateIatestVerLabel.Text" xml:space="preserve">
-    <value>Последняя версия:</value>
+  <data name="&gt;&gt;PathTextBox.Parent" xml:space="preserve">
+    <value>UpdaterInfoPanel</value>
+  </data>
+  <data name="&gt;&gt;PathTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UpdatePathLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UpdatePathLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="UpdatePathLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 95</value>
+  </data>
+  <data name="UpdatePathLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 17</value>
   </data>
   <data name="UpdatePathLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;ProgramPathTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="UpdatePathLabel.Text" xml:space="preserve">
+    <value>Расположение:</value>
+  </data>
+  <data name="&gt;&gt;UpdatePathLabel.Name" xml:space="preserve">
+    <value>UpdatePathLabel</value>
+  </data>
+  <data name="&gt;&gt;UpdatePathLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdatePathLabel.Parent" xml:space="preserve">
+    <value>UpdaterInfoPanel</value>
   </data>
   <data name="&gt;&gt;UpdatePathLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CheckForUpdatesBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 28</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 180</value>
-  </data>
-  <data name="UpdateInstalledVerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 17</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerLabel.Name" xml:space="preserve">
-    <value>UpdateInstalledVerLabel</value>
-  </data>
-  <data name="UpdateInstalledVerLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="UpdateIatestVerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="&gt;&gt;UpdateInfoTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="UpdateIatestVerLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="UpdateInfoTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="updateStatusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="UpdateIatestVerLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="UpdateInstalledVerLabel.Text" xml:space="preserve">
-    <value>Установленная версия:</value>
-  </data>
-  <data name="UpdateStatusLabel.ToolTipText" xml:space="preserve">
-    <value>Фоновые задачи не выполняются.</value>
-  </data>
-  <data name="UpdateInstalledVerL.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="UpdateStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 17</value>
-  </data>
-  <data name="&gt;&gt;UpdateInfoTextBox.Name" xml:space="preserve">
-    <value>UpdateInfoTextBox</value>
-  </data>
   <data name="UpdateLatestVerL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Что нового:</value>
-  </data>
-  <data name="UpdateInstalledVerL.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CheckForUpdatesBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 418</value>
-  </data>
-  <data name="updateStatusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 454</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="InstallUpdateManuallyBtn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="UpdateLatestVerL.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
   </data>
-  <data name="ProgramPathTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 89</value>
+  <data name="UpdateLatestVerL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 51</value>
   </data>
-  <data name="ProgramPathTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 23</value>
+  <data name="UpdateLatestVerL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 17</value>
   </data>
-  <data name="&gt;&gt;ProgramPathTextBox.Parent" xml:space="preserve">
+  <data name="UpdateLatestVerL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="UpdateLatestVerL.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;UpdateLatestVerL.Name" xml:space="preserve">
+    <value>UpdateLatestVerL</value>
+  </data>
+  <data name="&gt;&gt;UpdateLatestVerL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateLatestVerL.Parent" xml:space="preserve">
     <value>UpdaterInfoPanel</value>
   </data>
-  <data name="&gt;&gt;CheckForUpdatesBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;UpdateLatestVerL.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="UpdateIatestVerLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="UpdateIatestVerLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="UpdateIatestVerLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 51</value>
+  </data>
+  <data name="UpdateIatestVerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="UpdateIatestVerLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UpdateIatestVerLabel.Text" xml:space="preserve">
+    <value>Последняя версия:</value>
+  </data>
+  <data name="&gt;&gt;UpdateIatestVerLabel.Name" xml:space="preserve">
+    <value>UpdateIatestVerLabel</value>
+  </data>
+  <data name="&gt;&gt;UpdateIatestVerLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateIatestVerLabel.Parent" xml:space="preserve">
+    <value>UpdaterInfoPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateIatestVerLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="UpdateInstalledVerL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UpdateInstalledVerL.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="UpdateInstalledVerL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="UpdateInstalledVerL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 17</value>
+  </data>
+  <data name="UpdateInstalledVerL.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="UpdateInstalledVerL.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerL.Name" xml:space="preserve">
+    <value>UpdateInstalledVerL</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerL.Parent" xml:space="preserve">
+    <value>UpdaterInfoPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="UpdateInstalledVerLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UpdateInstalledVerLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="UpdateInstalledVerLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 22</value>
+  </data>
+  <data name="UpdateInstalledVerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 17</value>
+  </data>
+  <data name="UpdateInstalledVerLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="UpdateInstalledVerLabel.Text" xml:space="preserve">
+    <value>Установленная версия:</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerLabel.Name" xml:space="preserve">
+    <value>UpdateInstalledVerLabel</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerLabel.Parent" xml:space="preserve">
+    <value>UpdaterInfoPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateInstalledVerLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="UpdaterInfoPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 27</value>
+  </data>
+  <data name="UpdaterInfoPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>627, 141</value>
+  </data>
+  <data name="UpdaterInfoPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;UpdaterInfoPanel.Name" xml:space="preserve">
+    <value>UpdaterInfoPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdaterInfoPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdaterInfoPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;UpdaterInfoPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="updateStatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="UpdateStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="UpdateStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 17</value>
+  </data>
+  <data name="UpdateStatusLabel.Text" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="UpdateStatusLabel.ToolTipText" xml:space="preserve">
+    <value>Фоновые задачи не выполняются.</value>
+  </data>
+  <data name="UpdateStatusProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
+  </data>
+  <data name="updateStatusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 454</value>
+  </data>
+  <data name="updateStatusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>681, 22</value>
+  </data>
+  <data name="updateStatusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;updateStatusStrip.Name" xml:space="preserve">
+    <value>updateStatusStrip</value>
+  </data>
+  <data name="&gt;&gt;updateStatusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;updateStatusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;updateStatusStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="UpdateInfoTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="UpdateInfoTextBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Off</value>
+  </data>
+  <data name="UpdateInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 216</value>
+  </data>
+  <data name="UpdateInfoTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UpdateInfoTextBox.PlaceholderText" xml:space="preserve">
+    <value>Здесь будут отображаться изменения в новой версии</value>
+  </data>
+  <data name="UpdateInfoTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="UpdateInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>627, 196</value>
+  </data>
+  <data name="UpdateInfoTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;UpdateInfoTextBox.Name" xml:space="preserve">
+    <value>UpdateInfoTextBox</value>
+  </data>
+  <data name="&gt;&gt;UpdateInfoTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateInfoTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UpdateInfoTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11.25pt, style=Bold</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 180</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Что нового:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CheckForUpdatesBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="CheckForUpdatesBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 418</value>
+  </data>
+  <data name="CheckForUpdatesBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 28</value>
+  </data>
+  <data name="CheckForUpdatesBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CheckForUpdatesBtn.Text" xml:space="preserve">
+    <value>Проверить наличие обновлений</value>
+  </data>
+  <data name="&gt;&gt;CheckForUpdatesBtn.Name" xml:space="preserve">
+    <value>CheckForUpdatesBtn</value>
+  </data>
+  <data name="&gt;&gt;CheckForUpdatesBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckForUpdatesBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CheckForUpdatesBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="InstallUpdateManuallyBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="InstallUpdateManuallyBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 418</value>
+  </data>
+  <data name="InstallUpdateManuallyBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 28</value>
+  </data>
+  <data name="InstallUpdateManuallyBtn.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="InstallUpdateManuallyBtn.Text" xml:space="preserve">
     <value>Установить обновление вручную</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;InstallUpdateManuallyBtn.Name" xml:space="preserve">
+    <value>InstallUpdateManuallyBtn</value>
   </data>
-  <data name="CheckForUpdatesBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;InstallUpdateManuallyBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="UpdateInstalledVerLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="UpdateInfoTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>UpdaterUI</value>
-  </data>
-  <data name="&gt;&gt;UpdateIatestVerLabel.Parent" xml:space="preserve">
-    <value>UpdaterInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateInfoTextBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;InstallUpdateManuallyBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;UpdaterInfoPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;InstallUpdateManuallyBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;updateStatusStrip.Name" xml:space="preserve">
-    <value>updateStatusStrip</value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
   </data>
-  <data name="&gt;&gt;CheckForUpdatesBtn.Name" xml:space="preserve">
-    <value>CheckForUpdatesBtn</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="UpdateLatestVerL.Text" xml:space="preserve">
-    <value>—</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>681, 476</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -905,242 +1122,25 @@
         //////////////////////////////////////////////////8=
 </value>
   </data>
-  <data name="UpdateLatestVerL.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;UpdateIatestVerLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;UpdatePathLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="UpdaterInfoPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="UpdateInstalledVerLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="InstallUpdateManuallyBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 28</value>
-  </data>
-  <data name="InstallUpdateManuallyBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 418</value>
-  </data>
-  <data name="&gt;&gt;updateStatusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InstallUpdateManuallyBtn.Name" xml:space="preserve">
-    <value>InstallUpdateManuallyBtn</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Обновить программу</value>
   </data>
   <data name="&gt;&gt;UpdateStatusLabel.Name" xml:space="preserve">
     <value>UpdateStatusLabel</value>
   </data>
-  <data name="&gt;&gt;InstallUpdateManuallyBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="UpdaterInfoPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>627, 141</value>
-  </data>
-  <data name="UpdatePathLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="UpdateInfoTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="UpdateInstalledVerL.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;UpdatePathLabel.Name" xml:space="preserve">
-    <value>UpdatePathLabel</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 20</value>
-  </data>
-  <data name="UpdateInstalledVerL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="updateStatusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 22</value>
-  </data>
-  <data name="UpdateLatestVerL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;UpdateIatestVerLabel.Name" xml:space="preserve">
-    <value>UpdateIatestVerLabel</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateIatestVerLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="UpdateInfoTextBox.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="UpdateInstalledVerL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 17</value>
-  </data>
-  <data name="UpdateInstalledVerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 22</value>
-  </data>
-  <data name="UpdateInfoTextBox.PlaceholderText" xml:space="preserve">
-    <value>Здесь будут отображаться изменения в новой версии</value>
-  </data>
-  <data name="&gt;&gt;UpdateLatestVerL.Name" xml:space="preserve">
-    <value>UpdateLatestVerL</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerL.Parent" xml:space="preserve">
-    <value>UpdaterInfoPanel</value>
-  </data>
-  <data name="UpdateStatusProgressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 16</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;UpdatePathLabel.Parent" xml:space="preserve">
-    <value>UpdaterInfoPanel</value>
-  </data>
-  <data name="UpdatePathLabel.Text" xml:space="preserve">
-    <value>Расположение:</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerLabel.Parent" xml:space="preserve">
-    <value>UpdaterInfoPanel</value>
-  </data>
-  <data name="ProgramPathTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;UpdateLatestVerL.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InstallUpdateManuallyBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CheckForUpdatesBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;UpdateLatestVerL.Parent" xml:space="preserve">
-    <value>UpdaterInfoPanel</value>
-  </data>
   <data name="&gt;&gt;UpdateStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerL.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="UpdatePathLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
-  </data>
-  <data name="&gt;&gt;UpdaterInfoPanel.Name" xml:space="preserve">
-    <value>UpdaterInfoPanel</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="UpdaterInfoPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 27</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;UpdateStatusProgressBar.Name" xml:space="preserve">
     <value>UpdateStatusProgressBar</value>
   </data>
-  <data name="UpdateStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  <data name="&gt;&gt;UpdateStatusProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UpdaterUI</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="UpdateInfoTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>627, 196</value>
-  </data>
-  <data name="UpdateLatestVerL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 17</value>
-  </data>
-  <data name="CheckForUpdatesBtn.Text" xml:space="preserve">
-    <value>Проверить наличие обновлений</value>
-  </data>
-  <data name="UpdaterInfoPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="UpdatePathLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UpdateInstalledVerL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="&gt;&gt;UpdateInfoTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="UpdateInfoTextBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Off</value>
-  </data>
-  <data name="UpdatePathLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 95</value>
-  </data>
-  <data name="UpdateStatusLabel.Text" xml:space="preserve">
-    <value>Готово</value>
-  </data>
-  <data name="UpdateIatestVerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 51</value>
-  </data>
-  <data name="UpdateLatestVerL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 51</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="&gt;&gt;UpdateInstalledVerL.Name" xml:space="preserve">
-    <value>UpdateInstalledVerL</value>
-  </data>
-  <data name="&gt;&gt;updateStatusStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 11.25pt, style=Bold</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Обновить программу</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>681, 476</value>
-  </data>
-  <data name="&gt;&gt;UpdateStatusProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdaterInfoPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="UpdateInfoTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 216</value>
-  </data>
-  <data name="&gt;&gt;CheckForUpdatesBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ProgramPathTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;UpdateLatestVerL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;updateStatusStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="CheckForUpdatesBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="updateStatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

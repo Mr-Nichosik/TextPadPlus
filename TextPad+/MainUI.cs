@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.VisualBasic.FileIO;
-using System.Reflection;
 
 namespace TextPad_
 {
@@ -8,23 +7,18 @@ namespace TextPad_
     /// Класс главного окна программы, где обрабатывается внешний вид и пользовательский UI.
     /// Всю (наверное) логику работы программы я переместил в класс TextEditor.
     /// <summary>
-    public partial class MainUI : Form
+    internal sealed partial class MainUI : Form
     {
         // Logger
-        private readonly LogSystem Logger = new($"{Application.StartupPath}\\logs");
-
-        // Авто свойства для чтения с инфой о программе
-        public string DateOfRelease { get; } = "01.12.2023";
-        public string ProgramPath { get; } = Application.StartupPath;
-        public string WebSite { get; private set; } = "https://mr-nichosik.github.io/Main_Page/";
+        private readonly LogSystem Logger = new() { UserFolderName = $"{Application.StartupPath}\\logs" };
 
         // Общее поле для Modified TextBox
         private MTextBox? mtb;
 
-        // Поле для настроек программы. Если isLangChanched = true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
-        private static bool isLanguageChanged = false;
+        // Поле для настроек программы. Если равно true, то при выходе из настроек появится сообщение о необходимости перезапустить программу
+        private bool isLanguageChanged = false;
 
-        // Конструктор окна
+        // Конструктор класса
         public MainUI()
         {
             if (Properties.Settings.Default.Language == "English")
@@ -41,12 +35,10 @@ namespace TextPad_
             Logger.Info("MainUI Initialization");
             InitializeComponent();
 
-            Program.MainForm = this;
-
             Logger.Debug("Program launched successfully");
         }
 
-        // Переопределение OnKeyDown для добавления сочетаний клавиш
+        // Переопределение OnKeyDown для обработки сочетаний клавиш
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
@@ -57,71 +49,58 @@ namespace TextPad_
                 MTextBoxPaste();
             }
 
-            if (e.KeyCode == Keys.F && e.Control)
+            if (e.KeyCode == Keys.F && e.Control && MainUIPanel.Visible == true && SearchPanel.Visible == false)
             {
-                mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-                if (mtb.TextLength > 0)
+                if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().TextLength > 0)
                 {
-                    Program.SearchForm.ShowDialog(this);
-
-                    mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                    SearchPanel.Visible = true;
                 }
                 e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.F && e.Control && MainUIPanel.Visible == true && SearchPanel.Visible == true)
+                SearchPanel.Visible = false;
+
+            if (e.KeyCode == Keys.Z && e.Control && e.Shift)
+            {
+                cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().Redo();
             }
         }
 
         #region Обработка событий разных элементов формы
 
         // Методы для кнопок панели инструментов, контекстного и главного меню
-        private void SaveAsFile(object sender, EventArgs e)
-        {
-            TextEditor.SaveAsFile();
-        }
+        private void SaveAsFile(object sender, EventArgs e) => FileWorker.SaveAsFile();
 
-        private void SaveFile(object sender, EventArgs e)
-        {
-            TextEditor.SaveCurrentFile();
-        }
+        private void SaveFile(object sender, EventArgs e) => FileWorker.SaveFile();
 
-        private void OpenFile(object sender, EventArgs e)
-        {
-            TextEditor.OpenFile();
-        }
+        private void SaveAllFiles(object sender, EventArgs e) => FileWorker.SaveAllFiles();
 
-        private void ReopenFile(object sender, EventArgs e)
-        {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            TextEditor.ReopenFile();
-        }
+        private void AutoSave(object sender, EventArgs e) => FileWorker.SaveAllFiles(false);
+
+        private void OpenFile(object sender, EventArgs e) => FileWorker.OpenFile();
+
+        private void ReopenFile(object sender, EventArgs e) => FileWorker.ReopenFile();
 
         private void MTextBoxCopy(object sender, EventArgs e)
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (mtb.TextLength > 0)
-            {
                 mtb.Copy();
-            }
         }
 
         private void MTextBoxCut(object sender, EventArgs e)
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (mtb.TextLength > 0)
-            {
                 mtb.Cut();
-            }
         }
 
         private void MTextBoxPaste()
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Paste(DataFormats.GetFormat(DataFormats.Text));
+            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().Paste(DataFormats.GetFormat(DataFormats.Text));
         }
 
-        private void MTextBoxPaste(object sender, EventArgs e)
-        {
-            MTextBoxPaste();
-        }
+        private void MTextBoxPaste(object sender, EventArgs e) => MTextBoxPaste();
 
         private void MTextBoxSelectFont(object sender, EventArgs e)
         {
@@ -135,36 +114,29 @@ namespace TextPad_
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (mtb.TextLength > 0)
-            {
                 mtb.SelectAll();
-            }
         }
 
         private void MTextBoxUndo(object sender, EventArgs e)
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Undo();
+            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().Undo();
         }
 
         private void MTextBoxRedo(object sender, EventArgs e)
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.Redo();
+            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().Redo();
         }
 
         private void MTextBoxDeleteText(object sender, EventArgs e)
         {
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
             if (mtb.TextLength > 0)
-            {
                 mtb.SelectedText = "";
-            }
         }
 
         private void MTextBoxInsertDateAndTime(object sender, EventArgs e)
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-            mtb.AppendText(Convert.ToString(DateTime.Now));
+            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().SelectedText = DateTime.Now.ToString();
         }
 
         private void OpenFileFolder(object sender, EventArgs e)
@@ -200,9 +172,7 @@ namespace TextPad_
                     }
                 }
                 else
-                {
                     MessageBox.Show(Resources.Localization.MSGErrorCantDeleteFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
             }
             catch (Exception ex) { Logger.Error($"An error while deleting the file (?). \n{ex}"); }
         }
@@ -258,14 +228,14 @@ namespace TextPad_
             MainUIPanel.Visible = false;
             SettingsUIPanel.Visible = true;
 
-            textBoxWebSiteUrl.Text = WebSite;
-            ProgramNameLabel.Text = $"{GetAssemblyName()} {GetAssemblyVersion()}";
-            VersionLabel.Text = GetAssemblyVersion();
-            DateOfReleaseLabel.Text = DateOfRelease;
+            textBoxWebSiteUrl.Text = Program.WebSite;
+            ProgramNameLabel.Text = $"{Program.Name} {Program.Version}";
+            VersionLabel.Text = Program.Version;
+            DateOfReleaseLabel.Text = Program.DateOfRelease;
 
-            LSVersionLabel.Text = LogSystem.GetAssemblyVersion();
-            CTCLabelVersion.Text = CTabControl.GetAssemblyVersion();
-            MTBVersionLabel.Text = MTextBox.GetAssemblyVersion();
+            LSVersionLabel.Text = LogSystem.Version;
+            CTCLabelVersion.Text = CTabControl.Version;
+            MTBVersionLabel.Text = MTextBox.Version;
 
             // Загрузка настроек
             StatusBarCheckBox.Checked = Properties.Settings.Default.StatusStrip_Visible;
@@ -280,7 +250,16 @@ namespace TextPad_
             AutoSubstitutionCheckBox.Checked = Properties.Settings.Default.AutoSubstitutionOfClosingCharacters;
             FontTextBox.Text = Properties.Settings.Default.ModifiedTextBox_Font.ToString();
             FontDialog_.Font = Properties.Settings.Default.ModifiedTextBox_Font;
+            DetectUrlsCheckBox.Checked = Properties.Settings.Default.MTextBox_DetectUrls;
 
+            AutoSaveTimeComboBox.SelectedItem = Properties.Settings.Default.AutoSaveTime switch
+            {
+                1 => "При каждом изменении текста (On text changed)",
+                60000 => "1 Минута (Minute)",
+                120000 => "2 Минуты (Minutes)",
+                300000 => "5 Минут (Minutes)",
+                _ => "Выключить (Disable)",
+            };
             ColorThemeComboBox.SelectedItem = Properties.Settings.Default.Theme switch
             {
                 "Dark" => "Тёмная / Dark",
@@ -314,7 +293,7 @@ namespace TextPad_
             }
 
             // Цветовая схема
-            if (Properties.Settings.Default.Theme == "Dark")
+            if (ColorThemeComboBox.SelectedIndex == 1)
             {
                 Properties.Settings.Default.Theme = "Dark";
                 ColorThemeDark();
@@ -326,22 +305,22 @@ namespace TextPad_
             }
 
             // Шрифт
-            FontTextBox.Text = FontDialog_.Font.ToString();
             Properties.Settings.Default.ModifiedTextBox_Font = FontDialog_.Font;
             Properties.Settings.Default.Save();
+            FontTextBox.Text = FontDialog_.Font.ToString();
             mtb.Font = FontDialog_.Font;
 
             // Стркоа состояния
-            StatusBar.Visible = StatusBarCheckBox.Checked;
             Properties.Settings.Default.StatusStrip_Visible = StatusBarCheckBox.Checked;
+            StatusBar.Visible = StatusBarCheckBox.Checked;
 
             // Topmost
-            TopMost = TopmostCheckBox.Checked;
             Properties.Settings.Default.FormMainUI_Topmost = TopmostCheckBox.Checked;
+            TopMost = TopmostCheckBox.Checked;
 
             // Панель запуска файлов
-            RunFileToolStrip.Visible = RunFileToolBarCheckBox.Checked;
             Properties.Settings.Default.RunFileToolStrip_Visible = RunFileToolBarCheckBox.Checked;
+            RunFileToolStrip.Visible = RunFileToolBarCheckBox.Checked;
 
             // Перенос слов
             Properties.Settings.Default.ModifiedTextBox_WordWarp = WordWarpCheckBox.Checked;
@@ -365,6 +344,41 @@ namespace TextPad_
             // Нужно ли подставлять закрывающие символы
             Properties.Settings.Default.AutoSubstitutionOfClosingCharacters = AutoSubstitutionCheckBox.Checked;
 
+            // Время автосохранения
+            switch (AutoSaveTimeComboBox.SelectedItem)
+            {
+                case "При каждом изменении текста (On text changed)":
+                    Properties.Settings.Default.AutoSaveTime = 1;
+                    AutoSaveTimer.Enabled = false;
+                    break;
+                case "1 Минута (Minute)":
+                    Properties.Settings.Default.AutoSaveTime = 60000;
+                    AutoSaveTimer.Interval = Properties.Settings.Default.AutoSaveTime;
+                    AutoSaveTimer.Enabled = true;
+                    break;
+
+                case "2 Минуты (Minutes)":
+                    Properties.Settings.Default.AutoSaveTime = 120000;
+                    AutoSaveTimer.Interval = Properties.Settings.Default.AutoSaveTime;
+                    AutoSaveTimer.Enabled = true;
+                    break;
+
+                case "5 Минут (Minutes)":
+                    Properties.Settings.Default.AutoSaveTime = 300000;
+                    AutoSaveTimer.Interval = Properties.Settings.Default.AutoSaveTime;
+                    AutoSaveTimer.Enabled = true;
+                    break;
+
+                default:
+                    Properties.Settings.Default.AutoSaveTime = 0;
+                    AutoSaveTimer.Enabled = false;
+                    break;
+            }
+
+            // Подсветка ссылок
+            Properties.Settings.Default.MTextBox_DetectUrls = DetectUrlsCheckBox.Checked;
+            mtb.DetectUrls = DetectUrlsCheckBox.Checked;
+
             // Сообщение о перезапуске программы
             if (isLanguageChanged == true)
             {
@@ -384,10 +398,7 @@ namespace TextPad_
             SettingsUIPanel.Visible = false;
         }
 
-        private void ChangeFont(object sender, EventArgs e)
-        {
-            FontDialog_.ShowDialog();
-        }
+        private void ChangeFont(object sender, EventArgs e) => FontDialog_.ShowDialog();
 
         private void OpenWebSite(object sender, EventArgs e)
         {
@@ -395,7 +406,7 @@ namespace TextPad_
             {
                 Process websiteProcess = new();
                 websiteProcess.StartInfo.UseShellExecute = true;
-                websiteProcess.StartInfo.FileName = WebSite;
+                websiteProcess.StartInfo.FileName = Program.WebSite;
                 websiteProcess.Start();
             }
             catch (Exception ex)
@@ -405,21 +416,9 @@ namespace TextPad_
             }
         }
 
-        // Открытие окон и нажатия на кнопки в настройках
-        private void NewWindow(object sender, EventArgs e)
-        {
-            Process.Start("TextPad+.exe");
-        }
+        private void NewWindow(object sender, EventArgs e) => Process.Start("TextPad+.exe");
 
-        private void SearchWindow(object sender, EventArgs e)
-        {
-            Program.SearchForm.ShowDialog(this);
-        }
-
-        private void GetUpdate(object sender, EventArgs e)
-        {
-            Program.UpdaterForm.ShowDialog(this);
-        }
+        private void GetUpdate(object sender, EventArgs e) => Program.UpdaterForm.ShowDialog(this);
 
         // Методы для cTabControl
         internal void CreateTab()
@@ -430,7 +429,7 @@ namespace TextPad_
              * метод для которого (TbTextChanged) я создал заранее. Это нужно для динамичного изменения настроек программы в текущей вкладке, например, юзер может выключить функцию
              * переноса слов.
             */
-            TabPage tpage = new(Resources.Localization.newDocumentTitle);
+            TabPage tpage = new(Resources.Localization.NewDocumentTitle);
             MTextBox mtb = new MTextBox
             {
                 AllowDrop = true,
@@ -446,6 +445,8 @@ namespace TextPad_
             mtb.DragEnter += FileDragEnter!;
             mtb.DragDrop += FileDragDrop!;
             mtb.KeyPress += MTextBoxKeyPress!;
+            mtb.LinkClicked += MTextBoxLinkClicked!;
+            tpage.Paint += cTabControl.OnDrawPage!;
 
             tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
@@ -454,7 +455,7 @@ namespace TextPad_
                 ColorThemeDark();
             else
                 ColorThemeWhite();
-
+            mtb.DetectUrls = Properties.Settings.Default.MTextBox_DetectUrls;
             mtb.Encoding = Properties.Settings.Default.DefaultEncoding;
             if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
                 EncodingStatusLabel.Text = mtb.Encoding;
@@ -462,10 +463,7 @@ namespace TextPad_
             CheckFile();
         }
 
-        private void CreateTab(object sender, EventArgs e)
-        {
-            CreateTab();
-        }
+        private void CreateTab(object sender, EventArgs e) => CreateTab();
 
         private void CloseTab(object sender, EventArgs e)
         {
@@ -476,7 +474,7 @@ namespace TextPad_
             {
                 DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
-                    TextEditor.SaveCurrentFile();
+                    FileWorker.SaveFile();
                 else if (dr == DialogResult.No)
                     cTabControl.TabPages.Remove(tab);
                 else if (dr == DialogResult.Cancel)
@@ -512,7 +510,7 @@ namespace TextPad_
                     DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
-                        TextEditor.SaveCurrentFile();
+                        FileWorker.SaveFile();
                         cTabControl.TabPages.Remove(tab);
                     }
                     else if (dr == DialogResult.No)
@@ -555,7 +553,7 @@ namespace TextPad_
                     DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
-                        TextEditor.SaveCurrentFile();
+                        FileWorker.SaveFile();
                         cTabControl.TabPages.Remove(tab);
                     }
                     else if (dr == DialogResult.No)
@@ -608,6 +606,8 @@ namespace TextPad_
                 CheckFile();
                 EncodingStatusLabel.Text = mtb.Encoding;
 
+                mtb.DetectUrls = DetectUrlsCheckBox.Checked;
+
                 if (Properties.Settings.Default.Theme == "Dark")
                     ColorThemeDark();
                 else
@@ -634,14 +634,15 @@ namespace TextPad_
             else
                 TextLinesLabel.Text = mtb.Lines.Length.ToString();
 
-            if (mtb.IsFileChanged == false)
+            if (Properties.Settings.Default.AutoSaveTime == 1 & mtb.FileName != "Missing")
+                FileWorker.SaveFile(false);
+            else if (mtb.IsFileChanged == false)
             {
                 mtb.IsFileChanged = true;
                 cTabControl.TabPages[cTabControl.SelectedIndex].Text += "*";
             }
 
             CheckFile();
-
             GC.Collect();
         }
 
@@ -681,11 +682,32 @@ namespace TextPad_
                         mtb.SelectedText = "\'\'";
                         mtb.SelectionStart--;
                         break;
+                    case (char)Keys.Tab:
+                        e.Handled = true;
+                        mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+                        mtb.SelectedText = "    ";
+                        break;
                 }
             }
         }
 
+        private void MTextBoxLinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            mtb = Program.MainForm.cTabControl.TabPages[Program.MainForm.cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            Process linkProcess = new();
+            linkProcess.StartInfo.UseShellExecute = true;
+            linkProcess.StartInfo.FileName = e.LinkText;
+            linkProcess.Start();
+        }
+
+        //private void MTextBoxMouseWheel(object sender, MouseEventArgs e)
+        //{
+        //    mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+        //    ZoomFactorStatusLabel.Text = Math.Round(mtb.ZoomFactor * 100, 1) + "%";
+        //}
+
         // Методы для перетаскивания и скидывания файлов и текста
+
         private void FileDragEnter(object sender, DragEventArgs e)
         {
             if (e.Data!.GetDataPresent(DataFormats.Text))
@@ -697,15 +719,13 @@ namespace TextPad_
 
         private void FileDragDrop(object sender, DragEventArgs e)
         {
-            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-
             if (e.Data!.GetDataPresent(DataFormats.Text))
-                mtb.Text += e.Data.GetData(DataFormats.Text);
+                cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().Text += e.Data.GetData(DataFormats.Text);
 
             else if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop)!;
-                TextEditor.OpenFile(files[0]);
+                FileWorker.OpenFile(files[0]);
             }
         }
 
@@ -781,9 +801,7 @@ namespace TextPad_
         private void OpenFolder(object sender, EventArgs e)
         {
             if (FolderBrowserDialog_.ShowDialog() == DialogResult.Cancel)
-            {
                 return;
-            }
 
             workFolderLabel.Text = new DirectoryInfo(FolderBrowserDialog_.SelectedPath).Name;
             FilesListView.Clear();
@@ -805,7 +823,7 @@ namespace TextPad_
                 FilesListView.Items.Add(lvi);
             }
         }
-
+        
         private void OpenFileFolderAsProject(object sender, EventArgs e)
         {
             if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName == "Missing")
@@ -840,9 +858,7 @@ namespace TextPad_
             {
                 string parentDirectory = Directory.GetParent(FolderBrowserDialog_.SelectedPath)!.ToString();
                 if (!Directory.Exists(parentDirectory))
-                {
                     return;
-                }
 
                 FolderBrowserDialog_.SelectedPath = parentDirectory;
 
@@ -855,7 +871,6 @@ namespace TextPad_
                     ListViewItem lvi = new(new DirectoryInfo(item).Name, 0);
                     lvi.ToolTipText = item;
                     FilesListView.Items.Add(lvi);
-
                 }
 
                 // Файлы
@@ -874,10 +889,7 @@ namespace TextPad_
             try
             {
                 if (!Directory.Exists(FolderBrowserDialog_.SelectedPath))
-                {
                     return;
-                }
-
                 FilesListView.Clear();
 
                 // Папки
@@ -921,7 +933,6 @@ namespace TextPad_
                     ListViewItem lvi = new(new DirectoryInfo(item).Name, 0);
                     lvi.ToolTipText = item;
                     FilesListView.Items.Add(lvi);
-
                 }
 
                 // Файлы
@@ -932,11 +943,10 @@ namespace TextPad_
                     FilesListView.Items.Add(lvi);
                 }
             }
-
             else if (File.Exists(path))
-            {
-                TextEditor.OpenFile(path);
-            }
+                FileWorker.OpenFile(path);
+
+            GC.Collect();
         }
 
         private void CloseFolder(object sender, EventArgs e)
@@ -964,24 +974,18 @@ namespace TextPad_
                 if (File.Exists(FilesListView.Items[FilesListView.FocusedItem!.Index].ToolTipText))
                 {
                     if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                    {
                         return;
-                    }
                     FileSystem.DeleteFile(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                 }
                 else if (Directory.Exists(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText))
                 {
                     if (MessageBox.Show(Resources.Localization.MSGQestionMoveFileToTrash, "TextPad+", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                    {
                         return;
-                    }
 
                     FileSystem.DeleteDirectory(FilesListView.Items[FilesListView.FocusedItem.Index].ToolTipText, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                 }
                 else
-                {
                     MessageBox.Show(Resources.Localization.MSGErrorCantDeleteFile, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
 
                 RefreshFolder(sender, e);
             }
@@ -989,36 +993,41 @@ namespace TextPad_
         }
 
         // Методы для кнопок панели запуска файлов
-        private void RunScript(object sender, EventArgs e)
+        private void RunScript(object sender, EventArgs e) => FileWorker.RunScript();
+
+        private void RunPythonScript(object sender, EventArgs e) => Program.PythonInterpreterForm.ShowDialog(this);
+
+        private void RunWindowsScript(object sender, EventArgs e) => FileWorker.RunWindowsScript();
+
+        private void RunVbsJsScript(object sender, EventArgs e) => FileWorker.RunVbsJsScript();
+
+        private void RunHTMLPage(object sender, EventArgs e) => FileWorker.RunHTMLPage();
+
+        // Поиск
+        private void SearchPanelControl(object sender, EventArgs e)
         {
-            FileRunner.RunScript();
+            if (SearchPanel.Visible == false)
+                SearchPanel.Visible = true;
+            else
+                SearchPanel.Visible = false;
         }
 
-        private void RunPythonScript(object sender, EventArgs e)
-        {
-            Program.PythonInterpreterForm.ShowDialog(this);
-        }
+        private void Find(object sender, EventArgs e) => Searcher.Search(ref FindTextBox);
 
-        private void RunWindowsScript(object sender, EventArgs e)
-        {
-            FileRunner.RunWindowsScript();
-        }
+        private void Replace(object sender, EventArgs e) => Searcher.Replace(ref FindTextBox, ref ReplaceTextBox);
 
-        private void RunVbsJsScript(object sender, EventArgs e)
-        {
-            FileRunner.RunVbsJsScript();
-        }
+        private void ReplaceAll(object sender, EventArgs e) => Searcher.ReplaceAll(ref FindTextBox, ref ReplaceTextBox);
 
-        private void RunHTMLPage(object sender, EventArgs e)
+        private void GoToLine(object sender, EventArgs e) => Searcher.GoToLine(ref GoToLineNumericUpDown);
+
+        private void FindTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            FileRunner.RunHTMLPage();
+            if (e.KeyCode == Keys.Enter)
+                Searcher.Search(ref FindTextBox);
         }
 
         // Просто выход
-        private void Exit(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        private void Exit(object sender, EventArgs e) => Application.Exit();
 
         #endregion
 
@@ -1054,6 +1063,35 @@ namespace TextPad_
             FileNameToolTextBox.Text = mtb.FileName == "Missing" ? "" : mtb.FileName;
         }
 
+        internal void CheckFile(int tabIndex)
+        {
+            mtb = cTabControl.TabPages[tabIndex].Controls.OfType<MTextBox>().First();
+            if (mtb.Text.Length == 0)
+            {
+                SearchEditMenuItem.Enabled = false;
+                SearchToolStripItem.Enabled = false;
+            }
+            else
+            {
+                SearchEditMenuItem.Enabled = true;
+                SearchToolStripItem.Enabled = true;
+            }
+            if (mtb.FileName == "Missing")
+            {
+                OpenFileFolderFileMenuItem.Enabled = false;
+                DeleteFileMenuItem.Enabled = false;
+                OpenFolderAsProjectMenuFileItem.Enabled = false;
+                ReopenFileMenuItem.Enabled = false;
+            }
+            else
+            {
+                OpenFileFolderFileMenuItem.Enabled = true;
+                DeleteFileMenuItem.Enabled = true;
+                OpenFolderAsProjectMenuFileItem.Enabled = true;
+                ReopenFileMenuItem.Enabled = true;
+            }
+        }
+
         // Цветовые схемы
         internal void ColorThemeWhite()
         {
@@ -1082,70 +1120,70 @@ namespace TextPad_
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile0;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile1 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile1;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile2 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile2;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile3 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile3;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile4 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile4;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile5 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile5;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile6 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile6;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile7 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile7;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile8 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile8;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 if (Properties.RecentFiles.Default.RecentFile9 != "Missing")
                 {
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = Properties.RecentFiles.Default.RecentFile9;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
             }
@@ -1185,25 +1223,25 @@ namespace TextPad_
 
             try
             {
-                if (RecentFilesListFileItem.DropDownItems[0] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 0 && RecentFilesListFileItem.DropDownItems[0] != null)
                     Properties.RecentFiles.Default.RecentFile0 = RecentFilesListFileItem.DropDownItems[0].Text;
-                if (RecentFilesListFileItem.DropDownItems[1] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 1 && RecentFilesListFileItem.DropDownItems[1] != null)
                     Properties.RecentFiles.Default.RecentFile1 = RecentFilesListFileItem.DropDownItems[1].Text;
-                if (RecentFilesListFileItem.DropDownItems[2] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 2 && RecentFilesListFileItem.DropDownItems[2] != null)
                     Properties.RecentFiles.Default.RecentFile2 = RecentFilesListFileItem.DropDownItems[2].Text;
-                if (RecentFilesListFileItem.DropDownItems[3] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 3 && RecentFilesListFileItem.DropDownItems[3] != null)
                     Properties.RecentFiles.Default.RecentFile3 = RecentFilesListFileItem.DropDownItems[3].Text;
-                if (RecentFilesListFileItem.DropDownItems[4] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 4 && RecentFilesListFileItem.DropDownItems[4] != null)
                     Properties.RecentFiles.Default.RecentFile4 = RecentFilesListFileItem.DropDownItems[4].Text;
-                if (RecentFilesListFileItem.DropDownItems[5] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 5 && RecentFilesListFileItem.DropDownItems[5] != null)
                     Properties.RecentFiles.Default.RecentFile5 = RecentFilesListFileItem.DropDownItems[5].Text;
-                if (RecentFilesListFileItem.DropDownItems[6] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 6 && RecentFilesListFileItem.DropDownItems[6] != null)
                     Properties.RecentFiles.Default.RecentFile6 = RecentFilesListFileItem.DropDownItems[6].Text;
-                if (RecentFilesListFileItem.DropDownItems[7] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 7 && RecentFilesListFileItem.DropDownItems[7] != null)
                     Properties.RecentFiles.Default.RecentFile7 = RecentFilesListFileItem.DropDownItems[7].Text;
-                if (RecentFilesListFileItem.DropDownItems[8] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 8 && RecentFilesListFileItem.DropDownItems[8] != null)
                     Properties.RecentFiles.Default.RecentFile8 = RecentFilesListFileItem.DropDownItems[8].Text;
-                if (RecentFilesListFileItem.DropDownItems[9] != null)
+                if (RecentFilesListFileItem.DropDownItems.Count > 9 && RecentFilesListFileItem.DropDownItems[9] != null)
                     Properties.RecentFiles.Default.RecentFile9 = RecentFilesListFileItem.DropDownItems[9].Text;
             }
             catch (Exception ex) { Logger.Error($"An error occurred while saving the list of recent files. \n{ex}"); }
@@ -1212,29 +1250,6 @@ namespace TextPad_
 
             Logger.Debug("Settings saved");
         }
-
-        #region Методы для получения информации о сборке
-
-        internal static string GetAssemblyName()
-        {
-            string assembly = Assembly.GetExecutingAssembly().GetName().Name!.ToString();
-            return assembly;
-        }
-
-        internal static string GetAssemblyVersion()
-        {
-            string assembly = Assembly.GetExecutingAssembly().GetName().Version!.ToString();
-            assembly = assembly.Remove(assembly.Length - 2);
-            return assembly;
-        }
-
-        internal static string GetAssemblyCompany()
-        {
-            object[] assemblyCustomAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-            return ((AssemblyCompanyAttribute)assemblyCustomAttributes[0]).Company.ToString();
-        }
-
-        #endregion
 
         // Обработчики загрузки и закрытия формы
         private void MainFormLoad(object sender, EventArgs e)
@@ -1264,12 +1279,12 @@ namespace TextPad_
                         RecentFilesListFileItem.DropDownItems.RemoveAt(0);
                     ToolStripMenuItem tsmi = new();
                     tsmi.Text = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().FileName;
-                    tsmi.Click += (sender, e) => TextEditor.OpenFile(tsmi.Text);
+                    tsmi.Click += (sender, e) => FileWorker.OpenFile(tsmi.Text);
                     RecentFilesListFileItem.DropDownItems.Add(tsmi);
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error($"Error while trying to create a tab while running a program through a file: {mtb.FileName} \n{ex}");
+                    Logger.Error($"Error while trying to create a tab while running a program through a file: {args[1]} \n{ex}");
                     MessageBox.Show(ex.Message, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -1303,6 +1318,15 @@ namespace TextPad_
                 StatusLabel.Text = Resources.Localization.PROGRAMStatusCheckForUpdates;
                 Updater.Updater.GetUpdateQuiet(Program.UpdaterForm.UpdateLatestVerL, Program.UpdaterForm.UpdateInfoTextBox, Program.UpdaterForm.UpdateStatusLabel, Program.UpdaterForm.UpdateStatusProgressBar);
             }
+            if (Properties.Settings.Default.AutoSaveTime > 1)
+            {
+                AutoSaveTimer.Enabled = true;
+                AutoSaveTimer.Interval = Properties.Settings.Default.AutoSaveTime;
+            }
+            else
+                AutoSaveTimer.Enabled = false;
+
+            Logger.Warning(AutoSaveTimer.Enabled.ToString() + " : " + Properties.Settings.Default.AutoSaveTime);
 
             CheckFile();
 
@@ -1314,7 +1338,7 @@ namespace TextPad_
             if (Width >= 900)
                 FileNameToolTextBox.Width = 610;
 
-            Logger.Info($"Program path: {ProgramPath}");
+            Logger.Info($"Program path: {Program.Path}");
             Logger.Debug("loading is complete");
         }
 
@@ -1343,7 +1367,7 @@ namespace TextPad_
                     {
                         DialogResult dr = MessageBox.Show($"{Resources.Localization.MSGQuestionSaveFile} \"{tab.Text}\"?", "TextPad+", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (dr == DialogResult.Yes)
-                            TextEditor.SaveCurrentFile();
+                            FileWorker.SaveFile();
 
                         else if (dr == DialogResult.No)
                             cTabControl.TabPages.Remove(tab);

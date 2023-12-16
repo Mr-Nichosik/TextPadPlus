@@ -63,26 +63,6 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ArrowDown {
-            get {
-                object obj = ResourceManager.GetObject("ArrowDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ArrowUp {
-            get {
-                object obj = ResourceManager.GetObject("ArrowUp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DocumentClose {
             get {
                 object obj = ResourceManager.GetObject("DocumentClose", resourceCulture);
@@ -163,6 +143,16 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DocumentSaveAll {
+            get {
+                object obj = ResourceManager.GetObject("DocumentSaveAll", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DocumentSaveAs {
             get {
                 object obj = ResourceManager.GetObject("DocumentSaveAs", resourceCulture);
@@ -223,9 +213,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap redo {
+        internal static System.Drawing.Bitmap Redo {
             get {
-                object obj = ResourceManager.GetObject("redo", resourceCulture);
+                object obj = ResourceManager.GetObject("Redo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +253,9 @@ namespace TextPad_.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap undo {
+        internal static System.Drawing.Bitmap Undo {
             get {
-                object obj = ResourceManager.GetObject("undo", resourceCulture);
+                object obj = ResourceManager.GetObject("Undo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

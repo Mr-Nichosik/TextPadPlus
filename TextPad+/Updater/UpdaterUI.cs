@@ -1,7 +1,7 @@
 ﻿
 namespace TextPad_.Updater
 {
-    public partial class UpdaterUI : Form
+    internal sealed partial class UpdaterUI : Form
     {
         public UpdaterUI()
         {
@@ -19,33 +19,19 @@ namespace TextPad_.Updater
             InitializeComponent();
         }
 
-        private void CheckForUpdates(object sender, EventArgs e)
-        {
-            Updater.GetUpdate(UpdateLatestVerL, UpdateInfoTextBox, UpdateStatusLabel, UpdateStatusProgressBar);
-        }
+        private void CheckForUpdates(object sender, EventArgs e) => Updater.GetUpdate(UpdateLatestVerL, UpdateInfoTextBox, UpdateStatusLabel, UpdateStatusProgressBar);
 
         private void InstallUpdateManually(object sender, EventArgs e)
         {
-            Updater.OpenUpdatesSite();
+            Updater.OpenWebSite();
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void FormUpdaterUILoad(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            ProgramPathTextBox.Text = Program.MainForm.ProgramPath;
-            UpdateInstalledVerL.Text = MainUI.GetAssemblyVersion();
-        }
-
-        private void FormUpdaterUI_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //if (Program.isUpdating == true)
-            //{
-            //    if (MessageBox.Show("Прервать установку обновления?", Resources.Localization.UPDATERTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            //        return;
-            //    else
-            //        e.Cancel = true;
-            //}
+            PathTextBox.Text = Program.Path;
+            UpdateInstalledVerL.Text = Program.Version;
         }
     }
 }
