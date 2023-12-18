@@ -61,9 +61,9 @@
             // 
             // PathTextBox
             // 
+            resources.ApplyResources(PathTextBox, "PathTextBox");
             PathTextBox.BackColor = SystemColors.Control;
             PathTextBox.BorderStyle = BorderStyle.FixedSingle;
-            resources.ApplyResources(PathTextBox, "PathTextBox");
             PathTextBox.Name = "PathTextBox";
             PathTextBox.ReadOnly = true;
             // 
@@ -94,8 +94,8 @@
             // 
             // updateStatusStrip
             // 
-            updateStatusStrip.Items.AddRange(new ToolStripItem[] { UpdateStatusLabel, UpdateStatusProgressBar });
             resources.ApplyResources(updateStatusStrip, "updateStatusStrip");
+            updateStatusStrip.Items.AddRange(new ToolStripItem[] { UpdateStatusLabel, UpdateStatusProgressBar });
             updateStatusStrip.Name = "updateStatusStrip";
             updateStatusStrip.ShowItemToolTips = true;
             // 
@@ -106,8 +106,8 @@
             // 
             // UpdateStatusProgressBar
             // 
-            UpdateStatusProgressBar.Name = "UpdateStatusProgressBar";
             resources.ApplyResources(UpdateStatusProgressBar, "UpdateStatusProgressBar");
+            UpdateStatusProgressBar.Name = "UpdateStatusProgressBar";
             UpdateStatusProgressBar.Style = ProgressBarStyle.Continuous;
             // 
             // UpdateInfoTextBox

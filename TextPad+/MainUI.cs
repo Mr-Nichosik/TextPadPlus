@@ -5,7 +5,7 @@ namespace TextPad_
 {
     /// <summary>
     /// Класс главного окна программы, где обрабатывается внешний вид и пользовательский UI.
-    /// Всю (наверное) логику работы программы я переместил в класс TextEditor.
+    /// Логику открытия, сохранения и запуска файлов я перенёс в класс FileWorker.
     /// <summary>
     internal sealed partial class MainUI : Form
     {
@@ -23,13 +23,13 @@ namespace TextPad_
         {
             if (Properties.Settings.Default.Language == "English")
             {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+                Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+                Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             }
             else if (Properties.Settings.Default.Language == "Russian")
             {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
+                Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
+                Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("ru-RU");
             }
 
             Logger.Info("MainUI Initialization");
@@ -49,20 +49,23 @@ namespace TextPad_
                 MTextBoxPaste();
             }
 
-            if (e.KeyCode == Keys.F && e.Control && MainUIPanel.Visible == true && SearchPanel.Visible == false)
+            if (e.KeyCode == Keys.F && e.Control && MainUIPanel.Visible == true)
             {
-                if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().TextLength > 0)
+                if (SearchPanel.Visible == false)
                 {
-                    SearchPanel.Visible = true;
+                    if (cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().TextLength > 0)
+                        SearchPanel.Visible = true;
                 }
+                else
+                    SearchPanel.Visible = false;
+
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.F && e.Control && MainUIPanel.Visible == true && SearchPanel.Visible == true)
-                SearchPanel.Visible = false;
 
             if (e.KeyCode == Keys.Z && e.Control && e.Shift)
             {
                 cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().Redo();
+                e.Handled = true;
             }
         }
 
@@ -135,9 +138,7 @@ namespace TextPad_
         }
 
         private void MTextBoxInsertDateAndTime(object sender, EventArgs e)
-        {
-            cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().SelectedText = DateTime.Now.ToString();
-        }
+            => cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First().SelectedText = DateTime.Now.ToString();
 
         private void OpenFileFolder(object sender, EventArgs e)
         {
@@ -294,15 +295,9 @@ namespace TextPad_
 
             // Цветовая схема
             if (ColorThemeComboBox.SelectedIndex == 1)
-            {
                 Properties.Settings.Default.Theme = "Dark";
-                ColorThemeDark();
-            }
             else
-            {
                 Properties.Settings.Default.Theme = "White";
-                ColorThemeWhite();
-            }
 
             // Шрифт
             Properties.Settings.Default.ModifiedTextBox_Font = FontDialog_.Font;
@@ -388,6 +383,7 @@ namespace TextPad_
 
             Properties.Settings.Default.Save();
 
+            CheckFile();
             SettingsUIPanel.Visible = false;
             MainUIPanel.Visible = true;
         }
@@ -447,14 +443,9 @@ namespace TextPad_
             mtb.KeyPress += MTextBoxKeyPress!;
             mtb.LinkClicked += MTextBoxLinkClicked!;
             tpage.Paint += cTabControl.OnDrawPage!;
-
             tpage.Controls.Add(mtb);
             cTabControl.TabPages.Add(tpage);
 
-            if (Properties.Settings.Default.Theme == "Dark")
-                ColorThemeDark();
-            else
-                ColorThemeWhite();
             mtb.DetectUrls = Properties.Settings.Default.MTextBox_DetectUrls;
             mtb.Encoding = Properties.Settings.Default.DefaultEncoding;
             if (cTabControl.TabPages[cTabControl.SelectedIndex] == tpage)
@@ -582,15 +573,16 @@ namespace TextPad_
             GC.Collect();
         }
 
+        // Этот метод нужен для того, что бы на каждой новой вкладке применялись заданные ранее параметры (вкл/выкл перенос слов, цвет текста, фона, шрифт и т.д.)
         private void CTabControlSelected(object sender, TabControlEventArgs e)
         {
-            // Этот метод нужен для того, что бы на каждой новой вкладке применялись заданные ранее параметры (вкл/выкл перенос слов, цвет текста, фона, шрифт и т.д.)
             try
             {
                 mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
                 mtb.WordWrap = Properties.Settings.Default.ModifiedTextBox_WordWarp;
                 if (mtb.IsFileChanged == false)
                 {
+                    CheckFile();
                     mtb.Font = Properties.Settings.Default.ModifiedTextBox_Font;
                     if (mtb.FileName != "Missing")
                         cTabControl.SelectedTab!.Text = cTabControl.SelectedTab!.Text.TrimEnd('*');
@@ -603,17 +595,9 @@ namespace TextPad_
                 else
                     TextLinesLabel.Text = mtb.Lines.Length.ToString();
 
-                CheckFile();
                 EncodingStatusLabel.Text = mtb.Encoding;
-
+                FileNameToolTextBox.Text = mtb.FileName == "Missing" ? "" : mtb.FileName;
                 mtb.DetectUrls = DetectUrlsCheckBox.Checked;
-
-                if (Properties.Settings.Default.Theme == "Dark")
-                    ColorThemeDark();
-                else
-                    ColorThemeWhite();
-
-                GC.Collect();
             }
             catch (Exception ex)
             {
@@ -621,6 +605,8 @@ namespace TextPad_
                 TextLengthLabel.Text = "0";
                 TextLinesLabel.Text = "1";
             }
+
+            GC.Collect();
         }
 
         // Изменение текста в Modified TextBox
@@ -629,10 +615,7 @@ namespace TextPad_
             mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
 
             TextLengthLabel.Text = mtb.Text.Length.ToString();
-            if (mtb.Lines.Length == 0)
-                TextLinesLabel.Text = "1";
-            else
-                TextLinesLabel.Text = mtb.Lines.Length.ToString();
+            TextLinesLabel.Text = mtb.Lines.Length.ToString();
 
             if (Properties.Settings.Default.AutoSaveTime == 1 & mtb.FileName != "Missing")
                 FileWorker.SaveFile(false);
@@ -643,7 +626,6 @@ namespace TextPad_
             }
 
             CheckFile();
-            GC.Collect();
         }
 
         private void MTextBoxKeyPress(object sender, KeyPressEventArgs e)
@@ -700,14 +682,13 @@ namespace TextPad_
             linkProcess.Start();
         }
 
-        //private void MTextBoxMouseWheel(object sender, MouseEventArgs e)
-        //{
-        //    mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
-        //    ZoomFactorStatusLabel.Text = Math.Round(mtb.ZoomFactor * 100, 1) + "%";
-        //}
+        private void MTextBoxMouseWheel(object sender, MouseEventArgs e)
+        {
+            mtb = cTabControl.TabPages[cTabControl.SelectedIndex].Controls.OfType<MTextBox>().First();
+            //ZoomFactorStatusLabel.Text = Math.Round(mtb.ZoomFactor * 100, 1) + "%";
+        }
 
         // Методы для перетаскивания и скидывания файлов и текста
-
         private void FileDragEnter(object sender, DragEventArgs e)
         {
             if (e.Data!.GetDataPresent(DataFormats.Text))
@@ -1060,7 +1041,22 @@ namespace TextPad_
                 ReopenFileMenuItem.Enabled = true;
             }
 
-            FileNameToolTextBox.Text = mtb.FileName == "Missing" ? "" : mtb.FileName;
+            if (mtb.IsFileChanged == false)
+            {
+                if (Properties.Settings.Default.Theme == "Dark")
+                    ColorThemeDark();
+                else
+                    ColorThemeWhite();
+                mtb.IsFileChanged = false;
+                cTabControl.SelectedTab!.Text = cTabControl.SelectedTab!.Text.TrimEnd('*');
+            }
+            else
+            {
+                if (Properties.Settings.Default.Theme == "Dark")
+                    ColorThemeDark();
+                else
+                    ColorThemeWhite();
+            }
         }
 
         internal void CheckFile(int tabIndex)
@@ -1302,10 +1298,6 @@ namespace TextPad_
             FolderExplorerPanel.Visible = Properties.Settings.Default.FolderExplorerPanel_Visible;
             RunScriptCombobox.SelectedItem = Properties.Settings.Default.ScriptTypeToRun;
             FolderExplorerPanel.Width = Properties.Settings.Default.FolderExplorerPanel_Size;
-            if (Properties.Settings.Default.Theme == "Dark")
-                ColorThemeDark();
-            else
-                ColorThemeWhite();
             WindowState = Properties.Settings.Default.FormMainUI_WindowState switch
             {
                 "Normal" => FormWindowState.Normal,

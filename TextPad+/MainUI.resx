@@ -1100,7 +1100,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAF4AS0BeAEtARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAGkAS4BpAEuARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -1583,7 +1583,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainUIPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="settingsTabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Bottom</value>
@@ -1655,7 +1655,7 @@
     <value>21, 374</value>
   </data>
   <data name="panel14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel14.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1736,7 +1736,7 @@
     <value>21, 338</value>
   </data>
   <data name="panel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel10.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1850,7 +1850,7 @@
     <value>21, 51</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 60</value>
+    <value>354, 60</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1931,7 +1931,7 @@
     <value>21, 302</value>
   </data>
   <data name="panel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel11.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2012,7 +2012,7 @@
     <value>21, 117</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 60</value>
+    <value>354, 60</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -2093,7 +2093,7 @@
     <value>21, 266</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2201,7 +2201,7 @@
     <value>21, 183</value>
   </data>
   <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 41</value>
+    <value>354, 41</value>
   </data>
   <data name="panel9.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2258,13 +2258,13 @@
     <value>4, 5</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 15</value>
+    <value>181, 15</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Поверх других окон:</value>
+    <value>Закрепить поверх других окон:</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -2282,7 +2282,7 @@
     <value>21, 230</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2393,7 +2393,7 @@
     <value>20, 51</value>
   </data>
   <data name="panel13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 60</value>
+    <value>354, 60</value>
   </data>
   <data name="panel13.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2456,7 +2456,7 @@
     <value>0</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
-    <value>Подставление закрывающие символы:</value>
+    <value>Подставление закрывающих символы:</value>
   </data>
   <data name="&gt;&gt;label25.Name" xml:space="preserve">
     <value>label25</value>
@@ -2474,7 +2474,7 @@
     <value>20, 230</value>
   </data>
   <data name="panel12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel12.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2555,7 +2555,7 @@
     <value>20, 266</value>
   </data>
   <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel7.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2666,7 +2666,7 @@
     <value>20, 159</value>
   </data>
   <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel6.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2747,7 +2747,7 @@
     <value>20, 196</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 30</value>
+    <value>354, 30</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -2828,7 +2828,7 @@
     <value>20, 126</value>
   </data>
   <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 27</value>
+    <value>354, 27</value>
   </data>
   <data name="panel8.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -3927,6 +3927,7 @@
 —Доработана система обновлений
 —Табуляция укорочена до 4 пробелов
 —Улучшена система логирования
+—Исправлена ошибка с пометкой несохранённых файлов при смене темы
 —Исправление небольших ошибок
 _________________________________________________________________________________________________________________
 

@@ -4,10 +4,9 @@ using System.Text;
 namespace TextPad_
 {
     /// <summary>
-    /// Класс, созданный для того, что бы обрабатывать всю логику работы текстового редактора. Пока что работает только исключительно с MTextBox.
-    /// Его методы вызываются из класса главного окна программы (MainForm).
+    /// Класс, занимающийся открытием, соханением файлов и запуском скриптов.
     /// </summary>
-    internal class FileWorker
+    internal static class FileWorker
     {
         private static readonly LogSystem Logger = new() { UserFolderName = $"{Application.StartupPath}\\logs" };
         private static MTextBox? mtb;
@@ -696,9 +695,7 @@ namespace TextPad_
             }
         }
 
-        //
         // Метод для добавления файла в список последних
-        //
         internal static void AddFileToRecentList(MTextBox mtb)
         {
             foreach (ToolStripMenuItem rftsmi in Program.MainForm.RecentFilesListFileItem.DropDownItems)

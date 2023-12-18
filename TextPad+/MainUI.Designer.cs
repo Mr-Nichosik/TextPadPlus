@@ -255,7 +255,7 @@ namespace TextPad_
             checkUpdatesButton = new Button();
             cancelBatton = new Button();
             saveButton = new Button();
-            AutoSaveTimer = new Timer(components);
+            AutoSaveTimer = new System.Windows.Forms.Timer(components);
             MenuBar.SuspendLayout();
             ContextMenu.SuspendLayout();
             StatusBar.SuspendLayout();
@@ -2082,7 +2082,7 @@ namespace TextPad_
         private Splitter ExplorerSplitter;
         private ToolStripMenuItem SaveAllFileMenuItem;
         private ToolStripButton SaveAllToolStripItem;
-        private Timer AutoSaveTimer;
+        private System.Windows.Forms.Timer AutoSaveTimer;
         private Panel panel13;
         private Label label27;
         private ComboBox AutoSaveTimeComboBox;

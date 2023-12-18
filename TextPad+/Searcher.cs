@@ -1,6 +1,9 @@
 ﻿
 namespace TextPad_
 {
+    /// <summary>
+    /// Класс, занимающийся поиском, заменой в тексте и т.п.
+    /// </summary>
     internal static class Searcher
     {
         private static readonly LogSystem Logger = new() { UserFolderName = $"{Application.StartupPath}\\logs" };
@@ -28,9 +31,7 @@ namespace TextPad_
                     Program.MainForm.TextLengthLabel.Text = mtb.Text.Length.ToString();
                 }
                 else
-                {
                     MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information); // в противном случае сообщаем о не найденном слове 
-                }
             }
             catch (Exception ex)
             {
@@ -62,9 +63,7 @@ namespace TextPad_
                     }
                 }
                 else
-                {
                     MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information); // в противном случае сообщаем о не найденном слове 
-                }
             }
             catch (Exception ex)
             {
@@ -127,7 +126,6 @@ namespace TextPad_
                 {
                     findCutLength = 0;
                     FindTextBox.BackColor = Color.LavenderBlush;
-                    //MessageBox.Show(Resources.Localization.SearchUINoFoundWord, "TextPad+", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

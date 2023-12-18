@@ -118,30 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="FileMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="EditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="EditMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="SettingsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="SettingsMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="RunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
-  </data>
-  <data name="RunMenuItem.Text" xml:space="preserve">
-    <value>Run as</value>
-  </data>
   <data name="CreateTabFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 22</value>
   </data>
@@ -184,6 +160,12 @@
   <data name="SaveAsFileMenuItem.Text" xml:space="preserve">
     <value>Save as</value>
   </data>
+  <data name="SaveAllFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="SaveAllFileMenuItem.Text" xml:space="preserve">
+    <value>Save all</value>
+  </data>
   <data name="OpenFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 22</value>
   </data>
@@ -195,6 +177,12 @@
   </data>
   <data name="ReopenFileMenuItem.Text" xml:space="preserve">
     <value>Reopen</value>
+  </data>
+  <data name="выбратьКодировкуToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="выбратьКодировкуToolStripMenuItem.Text" xml:space="preserve">
+    <value>Change encoding</value>
   </data>
   <data name="DeleteFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 22</value>
@@ -241,6 +229,12 @@
   <data name="ExitFileMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="FileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="FileMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
   <data name="CopyEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
@@ -271,12 +265,6 @@
   <data name="DeleteEditMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="RegisterEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="RegisterEditMenuItem.Text" xml:space="preserve">
-    <value>Register</value>
-  </data>
   <data name="ToUpperEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
@@ -288,6 +276,12 @@
   </data>
   <data name="ToLowerEditMenuItem.Text" xml:space="preserve">
     <value>lower</value>
+  </data>
+  <data name="RegisterEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="RegisterEditMenuItem.Text" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="menuStripSep2.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 6</value>
@@ -313,17 +307,17 @@
   <data name="DateEditMenuItem.Text" xml:space="preserve">
     <value>Date and time</value>
   </data>
-  <data name="CopyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="CopyToClipboardEditMenuItem.Text" xml:space="preserve">
-    <value>Copy to clipboard</value>
-  </data>
   <data name="CopyPathAndFileNameEditrMenuItem.Text" xml:space="preserve">
     <value>Path and file name</value>
   </data>
   <data name="CopyFileNameEditMenuItem.Text" xml:space="preserve">
     <value>File name</value>
+  </data>
+  <data name="CopyToClipboardEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="CopyToClipboardEditMenuItem.Text" xml:space="preserve">
+    <value>Copy to clipboard</value>
   </data>
   <data name="SearchEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
@@ -331,8 +325,23 @@
   <data name="SearchEditMenuItem.Text" xml:space="preserve">
     <value>Find and replace            CTRL + F</value>
   </data>
-  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 164</value>
+  <data name="EditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="EditMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="SettingsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="SettingsMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="RunMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="RunMenuItem.Text" xml:space="preserve">
+    <value>Run as</value>
   </data>
   <data name="копироватьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
@@ -379,11 +388,8 @@
   <data name="вернутьToolStripMenuItem.Text" xml:space="preserve">
     <value>Redo</value>
   </data>
-  <data name="StatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="StatusLabel.Text" xml:space="preserve">
-    <value>— </value>
+  <data name="ContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 164</value>
   </data>
   <data name="TextLabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 21</value>
@@ -402,6 +408,12 @@
   </data>
   <data name="StatusStripEncodingLabel.Text" xml:space="preserve">
     <value>Current encoding: </value>
+  </data>
+  <data name="StatusStripEncodingLabel.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="EncodingStatusLabel.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
   </data>
   <data name="utf32BEToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
@@ -436,31 +448,37 @@
   <data name="CP866ToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Files will be opened and saved in this encoding</value>
   </data>
-  <data name="newTabToolStripItem.Text" xml:space="preserve">
+  <data name="EncodingDropDownBtn.ToolTipText" xml:space="preserve">
+    <value>Files will be opened and saved in this encoding</value>
+  </data>
+  <data name="NewTabToolStripItem.Text" xml:space="preserve">
     <value>Create</value>
   </data>
-  <data name="closeTabToolStripItem.Text" xml:space="preserve">
+  <data name="CloseTabToolStripItem.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="saveToolStripItem.Text" xml:space="preserve">
+  <data name="SaveToolStripItem.Text" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="openToolStripItem.Text" xml:space="preserve">
+  <data name="SaveAllToolStripItem.Text" xml:space="preserve">
+    <value>Save all</value>
+  </data>
+  <data name="OpenToolStripItem.Text" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="copyToolStripItem.Text" xml:space="preserve">
+  <data name="CopyToolStripItem.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
-  <data name="cutToolStripItem.Text" xml:space="preserve">
+  <data name="CutToolStripItem.Text" xml:space="preserve">
     <value>Cut</value>
   </data>
-  <data name="pasteToolStripItem.Text" xml:space="preserve">
+  <data name="PasteToolStripItem.Text" xml:space="preserve">
     <value>Paste</value>
   </data>
-  <data name="deleteToolStripItem.Text" xml:space="preserve">
+  <data name="DeleteToolStripItem.Text" xml:space="preserve">
     <value>Delete text</value>
   </data>
-  <data name="undoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="UndoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHcSURBVGhD7dq/K+1xHMfxI79ykUlXBleYpExKWe5ylfsH
@@ -474,10 +492,10 @@
         /4igz2lc9he6VfR3pEPfSEpK+mqp1DOl1lSacpTlNQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="undoToolStripItem.Text" xml:space="preserve">
+  <data name="UndoToolStripItem.Text" xml:space="preserve">
     <value>Undo</value>
   </data>
-  <data name="redoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="RedoToolStripItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVGhD7dlLSFVRFMbxmw/UEBoIgg90FjRrIIEORQTz
@@ -492,10 +510,10 @@
         Wke2yFe4jfzIIgW+wezkL02aNEkkk/kLlY9XMGRXDpIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="redoToolStripItem.Text" xml:space="preserve">
+  <data name="RedoToolStripItem.Text" xml:space="preserve">
     <value>Redo</value>
   </data>
-  <data name="fontToolStripItem.Text" xml:space="preserve">
+  <data name="FontToolStripItem.Text" xml:space="preserve">
     <value>Font</value>
   </data>
   <data name="SearchToolStripItem.Text" xml:space="preserve">
@@ -513,6 +531,12 @@
   <data name="RunScriptButton.Text" xml:space="preserve">
     <value>Launch</value>
   </data>
+  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="ExplorerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 26</value>
   </data>
@@ -521,7 +545,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgcAAAJNU0Z0AUkBTAIBAQIB
-        AAHEAScBxAEnARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
+        AAHsAScB7AEnARABAAEQAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMAAUADAAEQAwABAQEAAQgG
         AAEEGAABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHAAdwBwAEAAfABygGmAQABMwUAATMB
         AAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANCAQADOQEAAYABfAH/AQACUAH/AQAB
         kwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/ATMDAAFmAwABmQMAAcwCAAEzAwAC
@@ -556,12 +580,6 @@
         AAs=
 </value>
   </data>
-  <data name="удалитьToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="удалитьToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
   <data name="openFolderToolBtn.Text" xml:space="preserve">
     <value>Open folder</value>
   </data>
@@ -571,28 +589,50 @@
   <data name="closeFolderToolBtn.Text" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="aboveFolderBtn.Text" xml:space="preserve">
+    <value>One level up</value>
+  </data>
   <data name="workFolderLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 25</value>
   </data>
   <data name="workFolderLabel.Text" xml:space="preserve">
     <value>Work folder</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="settingsTabPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="CloseSearchPanelButton.Text" xml:space="preserve">
+    <value>Close</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="settingsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="GoToLineButton.Text" xml:space="preserve">
+    <value>Go to line</value>
   </data>
-  <data name="settingsTabPage.Text" xml:space="preserve">
-    <value>Settings</value>
+  <data name="ReplaceAllButton.Text" xml:space="preserve">
+    <value>Replace all</value>
+  </data>
+  <data name="ReplaceButton.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="ReplaceTextBox.PlaceholderText" xml:space="preserve">
+    <value>Replace...</value>
+  </data>
+  <data name="FindTextBox.PlaceholderText" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Link highlighting:</value>
+  </data>
+  <data name="panel14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 15</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Check for updates on startup:</value>
+  </data>
+  <data name="panel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 17</value>
@@ -606,11 +646,17 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Editor color scheme:</value>
   </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 60</value>
+  </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 15</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>Exit when closing the last tab:</value>
+  </data>
+  <data name="panel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 15</value>
@@ -618,11 +664,17 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Language:</value>
   </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 60</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Word wrap:</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 15</value>
@@ -630,11 +682,44 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Editor font:</value>
   </data>
+  <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 41</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 15</value>
+    <value>167, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Window topmost:</value>
+    <value>Snap on top of other windows</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Autosave:</value>
+  </data>
+  <data name="panel13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 60</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 15</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Substitution of closing characters:</value>
+  </data>
+  <data name="panel12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 15</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Status bar: </value>
+  </data>
+  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 7</value>
@@ -651,11 +736,8 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Script Launcher:</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 15</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Status bar: </value>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 15</value>
@@ -663,17 +745,28 @@
   <data name="label1.Text" xml:space="preserve">
     <value>File browser:</value>
   </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 30</value>
+  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Toolbar:</value>
   </data>
-  <data name="infoTabPage.Text" xml:space="preserve">
-    <value>Reference</value>
+  <data name="panel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 27</value>
   </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>About program</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="settingsTabPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="settingsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="settingsTabPage.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -727,23 +820,33 @@ Powered by .NET 8.0 platform: https://dotnet.microsoft.com/en-us/download/dotnet
   <data name="programComponentsTitle.Text" xml:space="preserve">
     <value>Program components:</value>
   </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Basic information</value>
+  </data>
+  <data name="ChangeLogTextBox.Text" xml:space="preserve">
+    <value>TextPad+ 2.9.0
+
+Main changes:
+—Added autosave
+—Added the ability to save all files
+—The search window has been moved to the panel below
+—Added the ability to select encoding in the "File" menu
+—Added the ability to open links in the browser and turn off their backlighting
+
+Corrections:
+—Fixed a bug due to which the color scheme did not change
+—Minor bug fixes
+— Improved update system
+—Tab stops shortened to 4 spaces
+—Improved logging system
+—Fixed a bug with marking unsaved files when changing the theme
+—Fix minor bugs</value>
+  </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>Change log</value>
   </data>
-  <data name="ChangeLogTextBox.Text" xml:space="preserve">
-    <value>TextPad+ 2.8.0
-
-Main changes:
-—A field with the full path to the selected file has been added to the script launch panel
-—Added automatic substitution of paired characters (), {}, "", etc. Can be disabled in settings
-—Added support for some file extensions when opening and saving
-—Added the ability to run scripts in JScript and launch HTML web pages locally in the default browser
-—Added support for CP866 encoding
-
-Corrections:
-—Fixed a bug due to which open and saved files were marked as changed after selecting a tab
-—Fixed a bug due to which, after creating a new tab, the file path from the selected one was erased
-—Fixed a bug with copying formatted text</value>
+  <data name="infoTabPage.Text" xml:space="preserve">
+    <value>About program</value>
   </data>
   <data name="checkUpdatesButton.Text" xml:space="preserve">
     <value>Check for updates</value>

@@ -1,6 +1,9 @@
 ﻿
 namespace TextPad_
 {
+    /// <summary>
+    /// Небольшой класс для окна с выбором интерпретатора Python.
+    /// </summary>
     internal sealed partial class PythonInterpreterUI : Form
     {
         public PythonInterpreterUI() => InitializeComponent();

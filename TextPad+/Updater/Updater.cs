@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace TextPad_.Updater
 {
+    /// <summary>
+    /// Класс, занимающийся обновлением программы.
+    /// Его методы вызываются из UpdaterUI
+    /// </summary>
     internal static class Updater
     {
-
         // Logger
         private static readonly LogSystem Logger = new() { UserFolderName = $"{Application.StartupPath}\\logs" };
 
